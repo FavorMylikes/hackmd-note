@@ -5,6 +5,9 @@ lang: zh-tw
 功能介紹
 ===
 
+
+[![hackmd-github-sync-badge](https://hackmd.io/GYxOqzYKQFSsYom63ftuvA/badge)](https://hackmd.io/GYxOqzYKQFSsYom63ftuvA)
+
 **[English version](/features)**
 **[中文版](/features-tw)**
 **[日本語版](/features-jp)**
