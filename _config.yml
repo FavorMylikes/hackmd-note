@@ -1,11 +1,9 @@
 theme: jekyll-dash
-title: MinusGix Notes
-email: MinusGix@gmail.com
+title: 麦丽素 Notes
 locale: "en-US"
 description: >- # this means to ignore newlines until "baseurl:"
   A place for notes on various topics.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://minusgix.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  MinusGix
 
 # Build settings
