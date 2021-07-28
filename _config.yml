@@ -1,13 +1,40 @@
-remote_theme: pages-themes/hacker@v0.2.0
+theme: jekyll-dash
+title: MinusGix Notes
+email: MinusGix@gmail.com
+locale: "en-US"
+description: >- # this means to ignore newlines until "baseurl:"
+  A place for notes on various topics.
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://minusgix.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  MinusGix
+
+# Build settings
 plugins:
-  - jekyll-remote-theme # add this line to the plugins list if you already have o
   - jekyll-feed
   - jekyll/tagging
   - jekyll-paginate
   - kramdown-math-katex
-title: [My Blog]
-description: [My daily note at UCAS]
-destination: ./build
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
 
 # jekyll-paginate
 paginate: 5
@@ -20,16 +47,19 @@ tag_page_dir: tag
 
 dash:
   date_format: "%b %-d, %Y"
+
 #  disqus:
 #    shortname: <your-discuss-shortname>
 
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
-    - url: https://github.com/FavorMylikes
+    - url: https://github.com/Minusgix
       icon: github-square
       color: red
+  
   markdown: kramdown
+
 markdown: kramdown
 kramdown:
   math_engine: katex
