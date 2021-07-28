@@ -1,6 +1,37 @@
 remote_theme: pages-themes/hacker@v0.2.0
 plugins:
   - jekyll-remote-theme # add this line to the plugins list if you already have o
+  - jekyll-feed
+  - jekyll/tagging
+  - jekyll-paginate
+  - kramdown-math-katex
 title: [My Blog]
 description: [My daily note at UCAS]
 destination: ./build
+
+# jekyll-paginate
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# jekyll-tagging (optional)
+tag_permalink_style: pretty
+tag_page_layout: tag_page
+tag_page_dir: tag
+
+dash:
+  date_format: "%b %-d, %Y"
+#  disqus:
+#    shortname: <your-discuss-shortname>
+
+  # generate social links in footer
+  # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
+  social_links:
+    - url: https://github.com/FavorMylikes
+      icon: github-square
+      color: red
+  markdown: kramdown
+markdown: kramdown
+kramdown:
+  math_engine: katex
+  math_engine_opts: {}
+katex:
