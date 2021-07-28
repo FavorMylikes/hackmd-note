@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem "jekyll", "~> 4.1.1"
+gem "jekyll"
 gem "github-pages"
 gem "jekyll-theme-tactile"
 gem "jekyll-dash", "~> 2.0.0"
@@ -11,7 +11,6 @@ group :jekyll_plugins do
     gem "jekyll-paginate"
     gem "kramdown-math-katex"
     gem "katex"
-
     gem "execjs"
 end
 
