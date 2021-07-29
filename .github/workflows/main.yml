@@ -9,40 +9,22 @@ jobs:
   jekyll:
     runs-on: ubuntu-20.04
     steps:
-      - name: Setup
+      - name: 🎬 Setup
         uses: actions/checkout@v2
-
-        # include the lines below if you are using jekyll-last-modified-at
-        # or if you would otherwise need to fetch the full commit history
-        # however this may be very slow for large repositories!
-        # with:
-        # fetch-depth: '0'
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
-
-      - name: Install dependencies & build site
+      - name: 🔧 Build
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
           jekyll_src: .
           gem_src: .
-          # format_output: true Uses prettier https://prettier.io to format jekyll output HTML.
-          # prettier_opts: '{ "useTabs": true }'
-          # jekyll_src: sample_site
-          # gem_src: sample_site
-          # key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          # restore-keys: ${{ runner.os }}-gems-
-          # custom_opts: '--drafts --future'
-          ### If you need to specify any Jekyll build options, enable the above input
-          ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
-
-      - name: 🚀 deploy
+        
+      - name: 🚀 Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-          # if the repo you are deploying to is <username>.github.io, uncomment the line below.
-          # if you are including the line below, make sure your source files are NOT in the master branch:
-          # publish_branch: master
+          enable_jekyll: true
