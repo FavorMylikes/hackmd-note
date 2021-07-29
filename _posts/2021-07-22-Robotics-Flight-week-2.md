@@ -28,7 +28,7 @@ katex: true
   - [Coursera: robotics-flight](https://www.coursera.org/learn/robotics-flight/lecture/4hTtQ/axis-angle-representations-for-rotations)
   - Euler angle
     - 对于在三维空间里的一个参考系，任何坐标系的取向，都可以用三个欧拉角来表现
-    - ![20210722161724](<https://upload.wikimedia.org/wikipedia/commons/a/a1/Eulerangles.svg> =200x) ![20210722161724](<https://upload.wikimedia.org/wikipedia/commons/8/85/Euler2a.gif> =200x)
+    - <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Eulerangles.svg" width="200px" alt="20210722161724"> <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Euler2a.gif" width="200px" alt="20210722161724">
     - ![rotation matrix](https://wikimedia.org/api/rest_v1/media/math/render/svg/f595113fb1de4758a1c61c17fc5b6b9b3a6f5bae)
     - 从左到右依次代表绕着z轴的旋转、绕着交点线的旋转、绕着Z轴的旋转。
     - ![rotation matrix](https://wikimedia.org/api/rest_v1/media/math/render/svg/e848138776eedd86b3fff5b2e85337ff7b61e20f)
@@ -37,7 +37,7 @@ katex: true
     - here's $\mathbf{k}$  is unit vector
     - $\mathbf{v_{rot}} = \mathbf{v}\cos\theta + (\mathbf{k}\times\mathbf{v})\sin\theta + \mathbf{k}(\mathbf{k}\cdotp\mathbf{v}(1-\cos\theta))$
       - proof
-      - ![wiki](<https://upload.wikimedia.org/wikipedia/commons/c/cc/Orthogonal_decomposition_unit_vector_rodrigues_rotation_formula.svg> =300x)
+      - <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Orthogonal_decomposition_unit_vector_rodrigues_rotation_formula.svg" width="300px" alt="wiki">
       $$
         \begin{aligned}
         \mathbf{v_{rot}} &= \mathbf{v_{\parallel rot}} + \mathbf{v_{\perp rot}}\\
