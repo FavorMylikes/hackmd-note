@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://favormylikes.github.io/hackmd-note/feed.xml" rel="self" type="application/atom+xml" /><link href="https://favormylikes.github.io/hackmd-note/" rel="alternate" type="text/html" /><updated>2021-07-29T13:21:49+00:00</updated><id>https://favormylikes.github.io/hackmd-note/feed.xml</id><title type="html">麦丽素</title><subtitle>A place for notes on various topics.</subtitle><entry><title type="html">Jekyll+Github page+Gihub Actions</title><link href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html" rel="alternate" type="text/html" title="Jekyll+Github page+Gihub Actions" /><published>2021-07-28T02:32:00+00:00</published><updated>2021-07-28T02:32:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html">&lt;h2 id=&quot;尝试使用github-pages&quot;&gt;尝试使用github pages&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://favormylikes.github.io/hackmd-note/feed.xml" rel="self" type="application/atom+xml" /><link href="https://favormylikes.github.io/hackmd-note/" rel="alternate" type="text/html" /><updated>2021-07-29T14:13:06+00:00</updated><id>https://favormylikes.github.io/hackmd-note/feed.xml</id><title type="html">麦丽素</title><subtitle>A place for notes on various topics.</subtitle><entry><title type="html">Jekyll+Github page+Gihub Actions</title><link href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html" rel="alternate" type="text/html" title="Jekyll+Github page+Gihub Actions" /><published>2021-07-28T02:32:00+00:00</published><updated>2021-07-28T02:32:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html">&lt;h2 id=&quot;尝试使用github-pages&quot;&gt;尝试使用github pages&lt;/h2&gt;
 
 &lt;h3 id=&quot;主要组件&quot;&gt;主要组件&lt;/h3&gt;
 
@@ -82,7 +82,121 @@
       &lt;li&gt;&lt;a href=&quot;https://github.com/peaceiris/actions-gh-pages&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="tutorial" /><summary type="html">尝试使用github pages</summary></entry><entry><title type="html">Robotics Perception week 1</title><link href="https://favormylikes.github.io/hackmd-note/coursera/3d/2021/07/27/Robotics-Perception-week-1.html" rel="alternate" type="text/html" title="Robotics Perception week 1" /><published>2021-07-27T02:38:00+00:00</published><updated>2021-07-27T02:38:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/coursera/3d/2021/07/27/Robotics-Perception-week-1</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/coursera/3d/2021/07/27/Robotics-Perception-week-1.html">&lt;h2 id=&quot;准备看点摄像机视觉&quot;&gt;准备看点摄像机视觉&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="tutorial" /><summary type="html">尝试使用github pages</summary></entry><entry><title type="html">Build Blog System</title><link href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Build-Blog-System.html" rel="alternate" type="text/html" title="Build Blog System" /><published>2021-07-28T02:32:00+00:00</published><updated>2021-07-28T02:32:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Build-Blog-System</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Build-Blog-System.html">&lt;h2 id=&quot;build-blog-system-by-github-pages-and-jekyll&quot;&gt;Build Blog System by Github pages and jekyll&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;markdown
+    &lt;ol&gt;
+      &lt;li&gt;github use GFM[GitHub Flavored Markdown]
+        &lt;ol&gt;
+          &lt;li&gt;resizing image only support by inner html code like&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;img src=&quot;src&quot;, alt=&quot;&quot;, weight=&quot;&quot;&amp;gt;&amp;lt;/img&amp;gt;&lt;/code&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;kramdown
+        &lt;ol&gt;
+          &lt;li&gt;resizing image by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;![](){height:&quot;100px&quot;}&lt;/code&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;hackmd
+        &lt;ol&gt;
+          &lt;li&gt;resizing image by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;![](src... =100x100)&lt;/code&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;markdownlint &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MD033&lt;/code&gt; does not recommand for inner html&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;finily I disable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MD033&lt;/code&gt; in vscode by setting&lt;/p&gt;
+
+        &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;markdownlint.config&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;MD033&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;component&quot;&gt;Component&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes\head\custom.html&amp;lt;head&amp;gt;&lt;/code&gt;to overload katex render
+    &lt;ul&gt;
+      &lt;li&gt;cause as a jekyll theme &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimal-mistakes-jekyll&lt;/code&gt;, you can override any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; file by your own file with the same name&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;limjh16/jekyll-action-ts@v2&lt;/code&gt; to build site file
+    &lt;ul&gt;
+      &lt;li&gt;this component require Gemfile.lock&lt;/li&gt;
+      &lt;li&gt;cause &lt;a href=&quot;https://github.com/limjh16/jekyll-action-ts/blob/9edf74e2e5aaa10d272c427efb8702a45a70a0b2/src/main.ts#L157&quot;&gt;&lt;img src=&quot;https://i.loli.net/2021/07/29/fO1NCPuslEaTYIx.png&quot; alt=&quot;20210729214617&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;so if you need update your Gemfile for any reason, before &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt;, you’d better run&lt;/p&gt;
+
+        &lt;pre&gt;&lt;code class=&quot;language-gem&quot;&gt;bundle lock --update --add-platform x86_64-linux --remove-platform x64-mingw32
+&lt;/code&gt;&lt;/pre&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/07/29/o8DiY5TLvEJd4HS.png&quot; alt=&quot;20210729215017&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;peaceiris/actions-gh-pages@v3&lt;/code&gt; to push file to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;nothing need talk about&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;katex
+    &lt;ul&gt;
+      &lt;li&gt;setting with js&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;DOMContentLoaded&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;renderMathInElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;delimiters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;display&lt;/code&gt; here mean css style &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;block&lt;/code&gt;, if change it to true, the formular will be center and block there.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;gem “therubyracer”
+    &lt;ul&gt;
+      &lt;li&gt;this a js engine&lt;/li&gt;
+      &lt;li&gt;and you can choose one from [&lt;a href=&quot;https://github.com/cowboyd/therubyracer#therubyracer&quot;&gt;therubyracer&lt;/a&gt;, &lt;a href=&quot;https://github.com/cowboyd/therubyrhino#therubyrhino&quot;&gt;therubyrhino&lt;/a&gt;, &lt;a href=&quot;https://github.com/judofyr/duktape.rb#duktaperb&quot;&gt;duktape&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt;]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jekyll-theme&quot;&gt;Jekyll Theme&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;config it at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;theme: minimal-mistakes-jekyll&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;add dependency at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;minimal-mistakes-jekyll&quot;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;minimal-mistakes-jekyll&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;there’s other theme you can use
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dash&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;select from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github pages&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;useful-link&quot;&gt;Useful link&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gendignoux.com/blog/2020/05/23/katex.html#adding-katex-resources-to-a-blog-post&quot;&gt;How I blog about math: an update on KaTeX with Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://frankindev.com/2017/02/08/using-katex-in-jekyll/&quot;&gt;Jekyll 中使用 KaTeX SsKatex&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="tutorial" /><summary type="html">Build Blog System by Github pages and jekyll</summary></entry><entry><title type="html">Robotics Perception week 1</title><link href="https://favormylikes.github.io/hackmd-note/coursera/3d/2021/07/27/Robotics-Perception-week-1.html" rel="alternate" type="text/html" title="Robotics Perception week 1" /><published>2021-07-27T02:38:00+00:00</published><updated>2021-07-27T02:38:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/coursera/3d/2021/07/27/Robotics-Perception-week-1</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/coursera/3d/2021/07/27/Robotics-Perception-week-1.html">&lt;h2 id=&quot;准备看点摄像机视觉&quot;&gt;准备看点摄像机视觉&lt;/h2&gt;
 
 &lt;h3 id=&quot;week1&quot;&gt;Week1&lt;/h3&gt;
 
@@ -143,7 +257,7 @@
       &lt;li&gt;投影面上的直线
         &lt;ul&gt;
           &lt;li&gt;$ax+by+c=0$&lt;/li&gt;
-          &lt;li&gt;vector notation 
+          &lt;li&gt;vector notation
 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mrow&gt;&lt;mo fence=&quot;true&quot;&gt;[&lt;/mo&gt;&lt;mtable rowspacing=&quot;0.1600em&quot; columnalign=&quot;center center center&quot; columnspacing=&quot;1em&quot;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;false&quot;&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;false&quot;&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;false&quot;&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;mo fence=&quot;true&quot;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mo fence=&quot;true&quot;&gt;[&lt;/mo&gt;&lt;mtable rowspacing=&quot;0.1600em&quot; columnalign=&quot;center&quot; columnspacing=&quot;1em&quot;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;false&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;false&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&quot;0&quot; displaystyle=&quot;false&quot;&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;mo fence=&quot;true&quot;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;0=\begin{bmatrix}
     a&amp;amp;b&amp;amp;c
 \end{bmatrix}\begin{bmatrix}
@@ -1925,55 +2039,4 @@ $&lt;/li&gt;
 &lt;ul&gt;
   &lt;li&gt;三维重建综述&lt;/li&gt;
   &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/3edc8471faea4ec0350dd49526aac66.png&quot; alt=&quot;3edc8471faea4ec0350dd49526aac66&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="env" /><category term="system" /><summary type="html">尝试解决上网问题</summary></entry><entry><title type="html">First Day, install ubuntu</title><link href="https://favormylikes.github.io/hackmd-note/env/system/2021/07/19/First-Day-install-ubuntu.html" rel="alternate" type="text/html" title="First Day, install ubuntu" /><published>2021-07-19T02:32:00+00:00</published><updated>2021-07-19T02:32:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/env/system/2021/07/19/First-Day-install-ubuntu</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/env/system/2021/07/19/First-Day-install-ubuntu.html">&lt;h2 id=&quot;台式机被格式化-usb装ubuntu系统-18045&quot;&gt;台式机被格式化, USB装Ubuntu系统， 18.04.5&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;没有登录账户
-    &lt;ul&gt;
-      &lt;li&gt;网络层的非特殊站点均要求登录
-        &lt;ul&gt;
-          &lt;li&gt;172.18.50.22:8080&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;目前观察到的不要求登录的站点
-        &lt;ul&gt;
-          &lt;li&gt;archive.ubuntu.com&lt;/li&gt;
-          &lt;li&gt;anconda.com&lt;/li&gt;
-          &lt;li&gt;search.cpan.org&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;在试图安装snap时, 出现Ca认证错误，怀疑跟网络环境有关&lt;/p&gt;
-
-        &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl s_client &lt;span class=&quot;nt&quot;&gt;-connect&lt;/span&gt; api.snapcraft.io:443
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;出现&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Verification error: self signed certificate&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;issuer=CN = H3C-HTTPS-Self-Signed-Certificate-5978b0f0a780e531&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;怀疑H3C路由器做了固定域名策略&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;装了哪些组件&quot;&gt;装了哪些组件&lt;/h2&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;namp
-apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;traceroute
-apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python
-apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;tree
-apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;conda
-apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;snap
-apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;make
-apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;gcc 
-apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libncurses-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;what-is-the-next&quot;&gt;What is the next&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;install snap&lt;/li&gt;
-  &lt;li&gt;install node 14&lt;/li&gt;
-  &lt;li&gt;install jupyterlab&lt;/li&gt;
-  &lt;li&gt;install pytorch&lt;/li&gt;
-  &lt;li&gt;install tensorboard&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="env" /><category term="system" /><summary type="html">台式机被格式化, USB装Ubuntu系统， 18.04.5</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="env" /><category term="system" /><summary type="html">尝试解决上网问题</summary></entry></feed>

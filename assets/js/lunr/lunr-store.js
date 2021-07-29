@@ -58,4 +58,10 @@ var store = [{
         "tags": [],
         "url": "/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html",
         "teaser": null
+      },{
+        "title": "Build Blog System",
+        "excerpt":"Build Blog System by Github pages and jekyll markdown github use GFM[GitHub Flavored Markdown] resizing image only support by inner html code like&lt;img src=\"src\", alt=\"\", weight=\"\"&gt;&lt;/img&gt; kramdown resizing image by ![](){height:\"100px\"} hackmd resizing image by ![](src... =100x100) markdownlint MD033 does not recommand for inner html finily I disable MD033 in...","categories": ["tutorial"],
+        "tags": [],
+        "url": "/hackmd-note/tutorial/2021/07/28/Build-Blog-System.html",
+        "teaser": null
       }]
