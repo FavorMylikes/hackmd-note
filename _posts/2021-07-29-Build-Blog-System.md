@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title:  "Build Blog System"
 date:   2021-07-28 10:32:00 +0800
 categories: tutorial
@@ -74,3 +74,4 @@ katex: false
 
 - [How I blog about math: an update on KaTeX with Jekyll](https://gendignoux.com/blog/2020/05/23/katex.html#adding-katex-resources-to-a-blog-post)
 - [Jekyll 中使用 KaTeX SsKatex](https://frankindev.com/2017/02/08/using-katex-in-jekyll/)
+- [minimal-mistakes/docs/quick-start-guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#remote-theme-method)
