@@ -13,10 +13,15 @@ gem "therubyracer"
 gem "minimal-mistakes-jekyll"
 # gem "jekyll-dash", "~> 2.0.0"
 group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.15.1"
+  gem "jekyll-tagging"
+  gem "jekyll-paginate"
+  
   gem 'jekyll-katex'
   gem "kramdown-math-katex"
   gem "katex"
   gem "execjs"
+
   # gem "github-pages" # require jekyll (= 1.1.2)
   gem "jekyll-include-cache"
 end
