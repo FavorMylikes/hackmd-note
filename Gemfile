@@ -12,11 +12,16 @@ gem "therubyracer"
 # Theme
 gem "minimal-mistakes-jekyll"
 # gem "jekyll-dash", "~> 2.0.0"
+gem "github-pages", group: :jekyll_plugins
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.15.1"
-  gem "jekyll-tagging"
   gem "jekyll-paginate"
-  
+  gem "jekyll-tagging"
+  gem "jekyll-sitemap"
+  gem "jekyll-gist"
+  gem "jekyll-feed"
+  gem "jemoji"
+  gem "jekyll-algolia"
+
   gem 'jekyll-katex'
   gem "kramdown-math-katex"
   gem "katex"
@@ -24,6 +29,7 @@ group :jekyll_plugins do
 
   # gem "github-pages" # require jekyll (= 1.1.2)
   gem "jekyll-include-cache"
+  gem "github-pages"
 end
 
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
