@@ -45,7 +45,7 @@ katex: true
     - $(0,0,1)$表示无限远处的线
   - 投影面上的直线
     - $ax+by+c=0$
-    - vector notation 
+    - vector notation
       $$
       0=\begin{bmatrix}
           a&b&c
