@@ -19,7 +19,7 @@ paginate: 5 # amount of posts to show
 paginate_path: /hackmd-note/page:num/
 
 plugins:
-  - kramdown-math-katex
+  # - kramdown-math-katex
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
