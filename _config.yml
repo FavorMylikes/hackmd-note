@@ -15,7 +15,7 @@ url: "https://favormylikes.github.io"
 github_username:  FavorMylikes
 
 paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+paginate_path: /hackmd-note/page:num/
 
 plugins:
   - kramdown-math-katex
