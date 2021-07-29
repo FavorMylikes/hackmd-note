@@ -9,22 +9,19 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Hello Jekyll! - 麦丽素</title>
-<meta name="description" content="A place for notes on various topics.">
+<!-- begin _includes/seo.html --><title>Jekyll+Github page+Gihub Actions - 麦丽素</title>
+<meta name="description" content="尝试使用github pages">
 
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="麦丽素">
-<meta property="og:title" content="Hello Jekyll!">
-<meta property="og:url" content="https://favormylikes.github.io/hackmd-note/README.html">
+<meta property="og:title" content="Jekyll+Github page+Gihub Actions">
+<meta property="og:url" content="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html">
 
 
-  <meta property="og:description" content="A place for notes on various topics.">
-
-
-
+  <meta property="og:description" content="尝试使用github pages">
 
 
 
@@ -32,9 +29,14 @@
 
 
 
+  <meta property="article:published_time" content="2021-07-28T02:32:00+00:00">
 
 
-<link rel="canonical" href="https://favormylikes.github.io/hackmd-note/README.html">
+
+
+
+
+<link rel="canonical" href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html">
 
 
 
@@ -80,7 +82,7 @@
     
   </head>
 
-  <body class="layout--home">
+  <body class="layout--posts">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -128,29 +130,114 @@
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title">Hello Jekyll!</h1>
+      <h1 id="page-title" class="page__title">Jekyll+Github page+Gihub Actions</h1>
     
-    <h2 id="日常干了啥">日常干了啥</h2>
+    <h2 id="尝试使用github-pages">尝试使用github pages</h2>
 
-<h3 id="变成周报可能会非常方便">变成周报可能会非常方便</h3>
-
-<blockquote>
-  <p>Rember <code class="language-plaintext highlighter-rouge">bundle lock --update --add-platform x86_64-linux --remove-platform x64-mingw32</code></p>
-</blockquote>
+<h3 id="主要组件">主要组件</h3>
 
 <ul>
-  <li>以后用<a href="https://frankindev.com/2017/02/08/using-katex-in-jekyll/">sskatex</a></li>
+  <li><a href="https://jekyllcn.com">Jekyll</a>
+    <ul>
+      <li>静态网站生成器</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Github Actions</code>
+    <ul>
+      <li>需要项目下存在<code class="language-plaintext highlighter-rouge">.github/workflows/*.yml</code>, 作为<code class="language-plaintext highlighter-rouge">Github Actions</code>的扫描程序</li>
+      <li><a href="https://github.com/marketplace">Action marketplace</a></li>
+      <li><code class="language-plaintext highlighter-rouge">_config.yml</code>, 根目录下，<code class="language-plaintext highlighter-rouge">Jekyll</code>运行时需要的配置</li>
+    </ul>
+  </li>
+  <li>ruby
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Gemfile</code>  ruby 需要的版本</li>
+      <li><code class="language-plaintext highlighter-rouge">Gemfile.lock</code> ruby 一台机器已经安装各个组件的具体版本以及依赖条件</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="运行流程">运行流程</h3>
+
+<p>![1627526442(1)](<a href="https://i.loli.net/2021/07/29/weIDpHRvW9XB5Cu.png">https://i.loli.net/2021/07/29/weIDpHRvW9XB5Cu.png</a> =400x)</p>
+
+<ol>
+  <li>Actions扫描workflows下的配置文件寻找job</li>
+  <li>Actions按照顺序依次执行</li>
+  <li>ruby 按照Gemfile.lock的文件安装指定组件版本</li>
+  <li>ruby拿到_config.yml的配置之后依次执行
+    <ol>
+      <li>主题
+        <ol>
+          <li>dash</li>
+        </ol>
+      </li>
+      <li>插件
+        <ol>
+          <li>jekyll-feed</li>
+          <li>jekyll/tagging</li>
+          <li>jekyll-paginate
+            <ol>
+              <li><code class="language-plaintext highlighter-rouge">paginate</code>: 5 # 分页数</li>
+              <li>paginate_path: “/hackmd-note/page:num/”  # 扫描位置</li>
+            </ol>
+          </li>
+          <li>kramdown-math-katex</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="参考">参考</h3>
+
+<ul>
+  <li><a href="minusgix.github.io">minusgix.github.io</a>
+    <ul>
+      <li>![20210729105618](<a href="https://i.loli.net/2021/07/29/dvO7q5fJcZ8CKVg.png">https://i.loli.net/2021/07/29/dvO7q5fJcZ8CKVg.png</a> =400x)</li>
+      <li><a href="https://github.com/MinusGix/minusgix.github.io">git</a></li>
+    </ul>
+  </li>
+  <li><a href="http://mma.iydon.top/">南方科技大学数学建模协会</a>
+    <ul>
+      <li>![20210729105755](<a href="https://i.loli.net/2021/07/29/S2QE5VHcbLBZK6a.png">https://i.loli.net/2021/07/29/S2QE5VHcbLBZK6a.png</a> =400x)</li>
+      <li><a href="https://github.com/SUSTech-MMA/sustech-mma.github.io">git</a></li>
+      <li>需要本地构建</li>
+    </ul>
+  </li>
+  <li><a href="https://leopardpan.github.io">leopardpan</a>
+    <ul>
+      <li>效果同上</li>
+      <li><a href="https://github.com/leopardpan/leopardpan.github.io">git</a></li>
+    </ul>
+  </li>
+  <li><a href="https://actions-gh-pages.peaceiris.com/">actions-gh-pages</a>
+    <ul>
+      <li><a href="https://github.com/peaceiris/actions-gh-pages">git</a></li>
+    </ul>
+  </li>
 </ul>
 
 
-<h3 class="archive__subtitle">Recent Posts</h3>
-
-
-
-
-<div class="entries-list">
+<ul class="taxonomy__index">
   
-    
+  
+    <li>
+      <a href="#2021">
+        <strong>2021</strong> <span class="taxonomy__count">10</span>
+      </a>
+    </li>
+  
+</ul>
+
+
+
+
+  <section id="2021" class="taxonomy__section">
+    <h2 class="archive__subtitle">2021</h2>
+    <div class="entries-list">
+      
+        
 
 
 
@@ -171,8 +258,8 @@
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -193,8 +280,8 @@
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -215,8 +302,8 @@
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -237,8 +324,8 @@
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -259,8 +346,8 @@
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -281,8 +368,8 @@
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -303,8 +390,8 @@
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -325,8 +412,8 @@
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -347,8 +434,8 @@
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -369,10 +456,10 @@
   </article>
 </div>
 
-  
-</div>
-
-
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
+  </section>
 
 
   </div>
