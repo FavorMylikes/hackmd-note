@@ -6,8 +6,8 @@ source "https://rubygems.org"
 # gem "github-pages","~> 202" , group: :jekyll_plugins
 # #>>>>>>>>>>>>>>>>>>>>>
 # # If you have any plugins, put them here!
-gem "github-pages", group: :jekyll_plugins  # github page use
-# # gem "jekyll"                              # localhost or not remote theme
+# gem "github-pages", group: :jekyll_plugins  # github page use
+gem "jekyll"                              # localhost or not remote theme
 # #>>>>>>>>>>>>>>>>>>>>>
 gem "therubyracer"
 # Theme
