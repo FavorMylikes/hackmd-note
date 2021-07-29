@@ -45,11 +45,14 @@ katex: true
     - $(0,0,1)$表示无限远处的线
   - 投影面上的直线
     - $ax+by+c=0$
-    - vector notation $0=\begin{bmatrix}
-        a&b&c
-    \end{bmatrix}\begin{bmatrix}
-        x\\y\\1
-    \end{bmatrix}$
+    - vector notation 
+      $$
+      0=\begin{bmatrix}
+          a&b&c
+      \end{bmatrix}\begin{bmatrix}
+          x\\y\\1
+      \end{bmatrix}
+      $$
     - ![20210727205253](<https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727205253.png> =400x)
     - 极坐标$\rho = x\cos\theta + y\sin\theta$
       - $\rho$原点到直线的距离

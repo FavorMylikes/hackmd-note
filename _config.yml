@@ -8,7 +8,7 @@ url: "https://favormylikes.github.io"
 github_username:  FavorMylikes
 
 plugins:
-  - jekyll-katex
+  - kramdown-math-katex
 
 markdown: kramdown
 kramdown:
