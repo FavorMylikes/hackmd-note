@@ -1,6 +1,7 @@
 ---
 layout: home
 title: KaTeX with Jekyll
+author_profile: true
 katex: true
 ---
 

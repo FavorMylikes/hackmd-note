@@ -124,6 +124,7 @@ PLATFORMS
 DEPENDENCIES
   execjs
   jekyll
+  jekyll-include-cache
   jekyll-katex
   katex
   kramdown-math-katex

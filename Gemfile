@@ -17,6 +17,8 @@ group :jekyll_plugins do
   gem "kramdown-math-katex"
   gem "katex"
   gem "execjs"
+  # gem "github-pages" # require jekyll (= 1.1.2)
+  gem "jekyll-include-cache"
 end
 
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
