@@ -1,5 +1,5 @@
-theme: jekyll-dash
-title: 麦丽素 Notes
+theme: minimal-mistakes-jekyll
+title: 麦丽素
 locale: "en-US"
 description: >- # this means to ignore newlines until "baseurl:"
   A place for notes on various topics.
