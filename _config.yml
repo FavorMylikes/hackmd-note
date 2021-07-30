@@ -17,6 +17,9 @@ baseurl: "/hackmd-note" # the subpath of your site, e.g. /blog
 url: "https://favormylikes.github.io"
 github_username:  FavorMylikes
 
+
+paginate_path: '/blog/:num/'
+
 pagination: # jekyll-paginate-v2
   enabled: true
   debug: true  # open debug
