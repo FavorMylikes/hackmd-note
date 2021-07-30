@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://favormylikes.github.io/hackmd-note/feed.xml" rel="self" type="application/atom+xml" /><link href="https://favormylikes.github.io/hackmd-note/" rel="alternate" type="text/html" /><updated>2021-07-30T09:32:12+00:00</updated><id>https://favormylikes.github.io/hackmd-note/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><entry><title type="html">Double slash test</title><link href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-29T07:37:00+00:00</published><updated>2021-07-29T07:37:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html">&lt;h2 id=&quot;render&quot;&gt;Render&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://favormylikes.github.io/hackmd-note/feed.xml" rel="self" type="application/atom+xml" /><link href="https://favormylikes.github.io/hackmd-note/" rel="alternate" type="text/html" /><updated>2021-07-30T09:34:45+00:00</updated><id>https://favormylikes.github.io/hackmd-note/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><entry><title type="html">Double slash test</title><link href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-29T07:37:00+00:00</published><updated>2021-07-29T07:37:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html">&lt;h2 id=&quot;render&quot;&gt;Render&lt;/h2&gt;
 
 &lt;h3 id=&quot;no-dollar&quot;&gt;No dollar&lt;/h3&gt;
 
@@ -23,16 +23,24 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-\[A\]
+    &lt;div class=&quot;kdmath&quot;&gt;$$
+A
+$$&lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-\[/A\]
+    &lt;div class=&quot;kdmath&quot;&gt;$$
+/A
+$$&lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-\[\\A\]
+    &lt;div class=&quot;kdmath&quot;&gt;$$
+\\A
+$$&lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-\[//A\]
+    &lt;div class=&quot;kdmath&quot;&gt;$$
+//A
+$$&lt;/div&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -59,16 +67,20 @@
   &lt;li&gt;single line
     &lt;ul&gt;
       &lt;li&gt;
-\[\begin{bmatrix}1\\2\\3\end{bmatrix}\]
+        &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{bmatrix}1\\2\\3\end{bmatrix}
+$$&lt;/div&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;multy line
     &lt;ul&gt;
       &lt;li&gt;
-\[\begin{bmatrix}
+        &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{bmatrix}
     1\\2\\3
-    \end{bmatrix}\]
+    \end{bmatrix}
+$$&lt;/div&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -80,20 +92,24 @@
   &lt;li&gt;Eng
     &lt;ul&gt;
       &lt;li&gt;
-\[\begin{cases}
+        &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{cases}
       a=1 \text{here $a=1$}\\
       a=2 \text{here $a\neq 1$}\\
-  \end{cases}\]
+  \end{cases}
+$$&lt;/div&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Chinese
     &lt;ul&gt;
       &lt;li&gt;
-\[\begin{cases}
+        &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{cases}
       a=1 \text{这里 $a=1$}\\
       a=2 \text{那里 $a\neq 1$}\\
-  \end{cases}\]
+  \end{cases}
+$$&lt;/div&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -384,11 +400,11 @@
         &lt;ul&gt;
           &lt;li&gt;$ax+by+c=0$&lt;/li&gt;
           &lt;li&gt;vector notation
-\(0=\begin{bmatrix}
-    a&amp;amp;b&amp;amp;c
+&lt;span class=&quot;kdmath&quot;&gt;$0=\begin{bmatrix}
+    a&amp;b&amp;c
 \end{bmatrix}\begin{bmatrix}
     x\\y\\1
-\end{bmatrix}\)&lt;/li&gt;
+\end{bmatrix}$&lt;/span&gt;&lt;/li&gt;
           &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727205253.png&quot; width=&quot;400px&quot; alt=&quot;20210727205253&quot; /&gt;&lt;/li&gt;
           &lt;li&gt;极坐标$\rho = x\cos\theta + y\sin\theta$
             &lt;ul&gt;
@@ -431,29 +447,33 @@
       &lt;li&gt;若已知$H_1, pos, d_{1,ref}$ 求 $f$
         &lt;ul&gt;
           &lt;li&gt;
-\[\begin{aligned}
-      \frac{h_1}{f_{ref}} = \frac{H_1}{d_{1,ref}}&amp;amp;, \frac{h_1'}{f} = \frac{H_1}{d_{1,ref}-pos}\\
-      \frac{f_{ref}}{d_{1,ref}}&amp;amp;=\frac{f}{d_{1,ref}-pos}\\
-      f &amp;amp;= (d_{1,ref}-pos)\frac{f_{ref}}{d_{1,ref}}
-  \end{aligned}\]
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+      \frac{h_1}{f_{ref}} = \frac{H_1}{d_{1,ref}}&amp;, \frac{h_1'}{f} = \frac{H_1}{d_{1,ref}-pos}\\
+      \frac{f_{ref}}{d_{1,ref}}&amp;=\frac{f}{d_{1,ref}-pos}\\
+      f &amp;= (d_{1,ref}-pos)\frac{f_{ref}}{d_{1,ref}}
+  \end{aligned}
+$$&lt;/div&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;若已知$H_1, H_2, d_{1,ref}, d_{2,ref}, r=\frac{h_1’}{h_2’}, f_{ref}$，求$f, pos$, 利用一个像的大小不变，移动相机， 根据另外一个像的比例，计算焦距和移动距离
         &lt;ul&gt;
           &lt;li&gt;
-\[\begin{aligned}
-      &amp;amp;\begin{cases}
-          \frac{H_1}{d_{1,ref}}&amp;amp;=\frac{h_1}{f_{ref}}&amp;amp;(1)\\
-          \frac{H_2}{d_{2,ref}}&amp;amp;=\frac{h_2}{f_{ref}}&amp;amp;(2)\\
-          \frac{H_1}{d_{1,ref}-pos}&amp;amp;=\frac{h_1'}{f}&amp;amp;(3)\\
-          \frac{H_2}{d_{2,ref}-pos}&amp;amp;=\frac{h_2'}{f}&amp;amp;(4)\\
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+      &amp;\begin{cases}
+          \frac{H_1}{d_{1,ref}}&amp;=\frac{h_1}{f_{ref}}&amp;(1)\\
+          \frac{H_2}{d_{2,ref}}&amp;=\frac{h_2}{f_{ref}}&amp;(2)\\
+          \frac{H_1}{d_{1,ref}-pos}&amp;=\frac{h_1'}{f}&amp;(3)\\
+          \frac{H_2}{d_{2,ref}-pos}&amp;=\frac{h_2'}{f}&amp;(4)\\
       \end{cases}\\
-      \frac{h_1}{f}&amp;amp;=\frac{H_1}{d_{1,ref}-pos}=r\frac{H_2}{d_{2,ref}-pos}&amp;amp;(3)(4)联立\\
-      pos&amp;amp;=\frac{rH_2d_{1,ref} - H_1d_{2,ref}}{rH_2-H_1}\\
-      h_1&amp;amp;=f_{ref}\frac{H_1}{d_{1,ref}}=rf\frac{H_2}{d_{2,ref} - pos}&amp;amp;(1)(3)联立\\
-      f &amp;amp;= (d_{1,ref}-pos)\frac{f_{ref}}{d_{1,ref}}
-  \end{aligned}\]
+      \frac{h_1}{f}&amp;=\frac{H_1}{d_{1,ref}-pos}=r\frac{H_2}{d_{2,ref}-pos}&amp;(3)(4)联立\\
+      pos&amp;=\frac{rH_2d_{1,ref} - H_1d_{2,ref}}{rH_2-H_1}\\
+      h_1&amp;=f_{ref}\frac{H_1}{d_{1,ref}}=rf\frac{H_2}{d_{2,ref} - pos}&amp;(1)(3)联立\\
+      f &amp;= (d_{1,ref}-pos)\frac{f_{ref}}{d_{1,ref}}
+  \end{aligned}
+$$&lt;/div&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
@@ -478,13 +498,15 @@
         &lt;ul&gt;
           &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210728000136.png&quot; alt=&quot;20210728000136&quot; /&gt;&lt;/li&gt;
           &lt;li&gt;
-\[\begin{aligned}
-      &amp;amp;\because \triangle_{\perp}AOB, OD\perp AB\\
-      &amp;amp;\therefore h^2=d_1d_2\\
-      &amp;amp;\because \triangle_{\perp}DHO\\
-      &amp;amp;\therefore f^2=d_3^2+h^2\\
-      &amp;amp;\therefore f = \sqrt{d_3^2 + d_1d_2}
-  \end{aligned}\]
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+      &amp;\because \triangle_{\perp}AOB, OD\perp AB\\
+      &amp;\therefore h^2=d_1d_2\\
+      &amp;\because \triangle_{\perp}DHO\\
+      &amp;\therefore f^2=d_3^2+h^2\\
+      &amp;\therefore f = \sqrt{d_3^2 + d_1d_2}
+  \end{aligned}
+$$&lt;/div&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
@@ -524,26 +546,28 @@
               &lt;li&gt;Z-X-Y顺序旋转[顺序不一定是Z-X-Y，也可能是Z-X-Z或其他，但运算矩阵要一致]&lt;/li&gt;
               &lt;li&gt;旋转矩阵$R$&lt;/li&gt;
               &lt;li&gt;
-\[\begin{aligned}
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
     R
-    &amp;amp;= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
-    &amp;amp;=\begin{bmatrix}
-    \cos{(\psi)} &amp;amp; -\sin{(\psi)} &amp;amp; 0\\
-    \sin{(\psi)} &amp;amp; \cos{(\psi)} &amp;amp; 0\\
-    0 &amp;amp; 0 &amp;amp; 1
+    &amp;= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
+    &amp;=\begin{bmatrix}
+    \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
+    \sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
+    0 &amp; 0 &amp; 1
     \end{bmatrix}
     \begin{bmatrix}
-    1&amp;amp;0&amp;amp;0\\
-    0&amp;amp;\cos{(\phi)} &amp;amp; -\sin{(\phi)}\\
-    0&amp;amp;\sin{(\phi)} &amp;amp; \cos{(\phi)}\\
+    1&amp;0&amp;0\\
+    0&amp;\cos{(\phi)} &amp; -\sin{(\phi)}\\
+    0&amp;\sin{(\phi)} &amp; \cos{(\phi)}\\
     \end{bmatrix}
     \begin{bmatrix}
-    \cos{(\theta )} &amp;amp; 0 &amp;amp; \sin{(\theta )}\\
-    0 &amp;amp; 1 &amp;amp; 0\\
-    - \sin{(\theta)} &amp;amp; 0 &amp;amp; \cos{(\theta )}
+    \cos{(\theta )} &amp; 0 &amp; \sin{(\theta )}\\
+    0 &amp; 1 &amp; 0\\
+    - \sin{(\theta)} &amp; 0 &amp; \cos{(\theta )}
     \end{bmatrix}\\
-    &amp;amp;=\begin{bmatrix}- s(\theta ) s(\phi ) s(\psi ) + c(\theta ) c(\psi ) &amp;amp; - s(\psi ) c(\phi ) &amp;amp; s(\theta ) c(\psi ) + s(\phi ) s(\psi ) c(\theta )\\s(\theta ) s(\phi ) c(\psi ) + s(\psi ) c(\theta ) &amp;amp; c(\phi ) c(\psi ) &amp;amp; s(\theta ) s(\psi ) - s(\phi ) c(\theta ) c(\psi )\\- s(\theta ) c(\phi ) &amp;amp; s(\phi ) &amp;amp; c(\theta ) c(\phi )\end{bmatrix}&amp;amp;\text{$s\rightarrow \sin, c \rightarrow \cos$}
-  \end{aligned}\]
+    &amp;=\begin{bmatrix}- s(\theta ) s(\phi ) s(\psi ) + c(\theta ) c(\psi ) &amp; - s(\psi ) c(\phi ) &amp; s(\theta ) c(\psi ) + s(\phi ) s(\psi ) c(\theta )\\s(\theta ) s(\phi ) c(\psi ) + s(\psi ) c(\theta ) &amp; c(\phi ) c(\psi ) &amp; s(\theta ) s(\psi ) - s(\phi ) c(\theta ) c(\psi )\\- s(\theta ) c(\phi ) &amp; s(\phi ) &amp; c(\theta ) c(\phi )\end{bmatrix}&amp;\text{$s\rightarrow \sin, c \rightarrow \cos$}
+  \end{aligned}
+$$&lt;/div&gt;
               &lt;/li&gt;
               &lt;li&gt;初始时，假定$\mathbf{p}$为惯性系坐标，此时惯性系和随体系并未发生变换，因此，$\mathbf{p}$也可以表示随体系坐标，当刚体发生旋转后，随体系下坐标并未发生变化，$\mathbf{q}=R\mathbf{p}$描述了随体系坐标到新的惯性系坐标的变换&lt;/li&gt;
             &lt;/ul&gt;
@@ -551,10 +575,12 @@
           &lt;li&gt;速度
             &lt;ul&gt;
               &lt;li&gt;
-\[\begin{aligned}
-        \dot \mathbf{q}&amp;amp;=\dot R\mathbf{p} + R\mathbf{\dot p}\\
-        &amp;amp;=\dot R\mathbf{p}&amp;amp;\text{$\mathbf{p}$为常数时,$\dot \mathbf{q}=0$}\\
-    \end{aligned}\]
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+        \dot \mathbf{q}&amp;=\dot R\mathbf{p} + R\mathbf{\dot p}\\
+        &amp;=\dot R\mathbf{p}&amp;\text{$\mathbf{p}$为常数时,$\dot \mathbf{q}=0$}\\
+    \end{aligned}
+$$&lt;/div&gt;
               &lt;/li&gt;
               &lt;li&gt;此时旋转后的点的速度仅取决于$R$对于时间$t$的导数&lt;/li&gt;
               &lt;li&gt;$R^T\dot \mathbf{q} = R^T\dot R\mathbf{p}$, 两侧同时乘$R^T$, 即旋转矩阵的逆操作&lt;/li&gt;
@@ -564,14 +590,14 @@
                   &lt;li&gt;$b$表示body frame&lt;/li&gt;
                   &lt;li&gt;$\hat \omega$是一种特殊记法，由于角速度中仅有3个独立的量，而$R^T\dot R$表示一个矩阵，为了简便记录，用$\hat \omega$代替&lt;/li&gt;
                   &lt;li&gt;若$\omega = [\omega_1, \omega_2, \omega_3]$
-\(\hat \omega = \begin{bmatrix}0&amp;amp;-\omega_3&amp;amp;\omega_2\\\omega_3&amp;amp;0&amp;amp;-\omega_1\\-\omega_2&amp;amp;\omega_1&amp;amp;0\end{bmatrix}\)&lt;/li&gt;
+&lt;span class=&quot;kdmath&quot;&gt;$\hat \omega = \begin{bmatrix}0&amp;-\omega_3&amp;\omega_2\\\omega_3&amp;0&amp;-\omega_1\\-\omega_2&amp;\omega_1&amp;0\end{bmatrix}$&lt;/span&gt;&lt;/li&gt;
                 &lt;/ul&gt;
               &lt;/li&gt;
               &lt;li&gt;又有
-\(\begin{aligned}
-    \dot \mathbf{q} &amp;amp;= \dot R\mathbf{p}\\
-    &amp;amp;=\dot RR^T\mathbf{q}&amp;amp;\text{$\mathbf{p}$为$\mathbf{q}$的逆向旋转}
-\end{aligned}\)
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
+    \dot \mathbf{q} &amp;= \dot R\mathbf{p}\\
+    &amp;=\dot RR^T\mathbf{q}&amp;\text{$\mathbf{p}$为$\mathbf{q}$的逆向旋转}
+\end{aligned}$&lt;/span&gt;
                 &lt;ul&gt;
                   &lt;li&gt;$\dot \mathbf{q}$为惯性系速度&lt;/li&gt;
                   &lt;li&gt;$\dot RR^T$为惯性系角速度，记为$\hat \omega^s$&lt;/li&gt;
@@ -585,65 +611,69 @@
               &lt;li&gt;以$z$轴为例子
                 &lt;ul&gt;
                   &lt;li&gt;
-\[\begin{aligned}
-      R_{z(\psi)} &amp;amp;= \begin{bmatrix}
-      \cos{(\psi)} &amp;amp; -\sin{(\psi)} &amp;amp; 0\\
-      \sin{(\psi)} &amp;amp; \cos{(\psi)} &amp;amp; 0\\
-      0 &amp;amp; 0 &amp;amp; 1
+                    &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+      R_{z(\psi)} &amp;= \begin{bmatrix}
+      \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
+      \sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
+      0 &amp; 0 &amp; 1
       \end{bmatrix}\\
       \hat \omega^b
-      &amp;amp;=R^T\dot R\\
-      &amp;amp;= \begin{bmatrix}
-          \cos{(\psi)} &amp;amp; \sin{(\psi)} &amp;amp; 0\\
-          -\sin{(\psi)} &amp;amp; \cos{(\psi)} &amp;amp; 0\\
-          0 &amp;amp; 0 &amp;amp; 1
+      &amp;=R^T\dot R\\
+      &amp;= \begin{bmatrix}
+          \cos{(\psi)} &amp; \sin{(\psi)} &amp; 0\\
+          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
+          0 &amp; 0 &amp; 1
       \end{bmatrix}
       \begin{bmatrix}
-          -\sin{(\psi)} &amp;amp; \cos{(\psi)} &amp;amp; 0\\
-          \cos{(\psi)} &amp;amp; -\sin{(\psi)} &amp;amp; 0\\
-          0 &amp;amp; 0 &amp;amp; 0
+          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
+          \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
+          0 &amp; 0 &amp; 0
       \end{bmatrix}\dot \psi\\
-      &amp;amp;=\begin{bmatrix}
-          0&amp;amp;-1&amp;amp;0\\
-          1&amp;amp;0&amp;amp;0\\
-          0&amp;amp;0&amp;amp;0
+      &amp;=\begin{bmatrix}
+          0&amp;-1&amp;0\\
+          1&amp;0&amp;0\\
+          0&amp;0&amp;0
       \end{bmatrix}\dot \psi\\
-      \hat \omega^s&amp;amp;=\dot RR^T\\
-      &amp;amp;=\dot \psi\begin{bmatrix}
-          -\sin{(\psi)} &amp;amp; \cos{(\psi)} &amp;amp; 0\\
-          \cos{(\psi)} &amp;amp; -\sin{(\psi)} &amp;amp; 0\\
-          0 &amp;amp; 0 &amp;amp; 0
+      \hat \omega^s&amp;=\dot RR^T\\
+      &amp;=\dot \psi\begin{bmatrix}
+          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
+          \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
+          0 &amp; 0 &amp; 0
       \end{bmatrix}
       \begin{bmatrix}
-          \cos{(\psi)} &amp;amp; \sin{(\psi)} &amp;amp; 0\\
-          -\sin{(\psi)} &amp;amp; \cos{(\psi)} &amp;amp; 0\\
-          0 &amp;amp; 0 &amp;amp; 1
+          \cos{(\psi)} &amp; \sin{(\psi)} &amp; 0\\
+          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
+          0 &amp; 0 &amp; 1
       \end{bmatrix}\\
-      &amp;amp;=\dot \psi\begin{bmatrix}
-          0&amp;amp;-1&amp;amp;0\\
-          1&amp;amp;0&amp;amp;0\\
-          0&amp;amp;0&amp;amp;0
+      &amp;=\dot \psi\begin{bmatrix}
+          0&amp;-1&amp;0\\
+          1&amp;0&amp;0\\
+          0&amp;0&amp;0
       \end{bmatrix}\\
-  \end{aligned}\]
+  \end{aligned}
+$$&lt;/div&gt;
                   &lt;/li&gt;
                   &lt;li&gt;此时因为旋转轴为$z$, 注意向量上方的$\hat {\omega}$
-   \(\hat \omega^b=\hat \omega^s=\hat{\begin{bmatrix}0\\0\\1\end{bmatrix}}\)&lt;/li&gt;
+   &lt;span class=&quot;kdmath&quot;&gt;$\hat \omega^b=\hat \omega^s=\hat{\begin{bmatrix}0\\0\\1\end{bmatrix}}$&lt;/span&gt;&lt;/li&gt;
                 &lt;/ul&gt;
               &lt;/li&gt;
               &lt;li&gt;多轴例子[由于转轴非常轴，因此两个参考系内的结果并不一样]
                 &lt;ul&gt;
                   &lt;li&gt;
-\[\begin{aligned}
-      R&amp;amp;= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
-      \hat \omega^b&amp;amp;=R^T\dot R\\
-      &amp;amp;=(R_ZR_XR_Y)^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
-      &amp;amp;=R_Y^TR_X^TR_Z^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
-      &amp;amp;=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
-      \hat \omega^s&amp;amp;=\dot RR^T\\
-      &amp;amp;=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)(R_ZR_XR_Y)^T\\
-      &amp;amp;=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)R_Y^TR_X^TR_Z^T\\
-      &amp;amp;=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T
-  \end{aligned}\]
+                    &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+      R&amp;= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
+      \hat \omega^b&amp;=R^T\dot R\\
+      &amp;=(R_ZR_XR_Y)^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
+      &amp;=R_Y^TR_X^TR_Z^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
+      &amp;=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
+      \hat \omega^s&amp;=\dot RR^T\\
+      &amp;=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)(R_ZR_XR_Y)^T\\
+      &amp;=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)R_Y^TR_X^TR_Z^T\\
+      &amp;=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T
+  \end{aligned}
+$$&lt;/div&gt;
                   &lt;/li&gt;
                 &lt;/ul&gt;
               &lt;/li&gt;
@@ -656,13 +686,14 @@
                       &lt;li&gt;&lt;strong&gt;使用上述文章的推导&lt;/strong&gt;(与文章推导结果不一致，需要取逆或转置)
                         &lt;ul&gt;
                           &lt;li&gt;
-\[\begin{aligned}
+                            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
       \begin{bmatrix}
           p\\
           q\\
           r
       \end{bmatrix}
-      &amp;amp;=
+      &amp;=
       (R_XR_Y)^T
       \begin{bmatrix}
           0\\0\\\dot \psi
@@ -676,17 +707,18 @@
       \begin{bmatrix}
           0\\\dot \theta\\0
       \end{bmatrix}\\
-      &amp;amp;=\begin{bmatrix}
-          c\theta&amp;amp;0&amp;amp;-c\phi s\theta\\
-          0&amp;amp;1&amp;amp;s\phi\\
-          s\theta&amp;amp;0&amp;amp;c\phi c\theta
+      &amp;=\begin{bmatrix}
+          c\theta&amp;0&amp;-c\phi s\theta\\
+          0&amp;1&amp;s\phi\\
+          s\theta&amp;0&amp;c\phi c\theta
       \end{bmatrix}
       \begin{bmatrix}
           \dot \phi\\
           \dot \theta\\
           \dot \psi\\
       \end{bmatrix}
-  \end{aligned}\]
+  \end{aligned}
+$$&lt;/div&gt;
                           &lt;/li&gt;
                         &lt;/ul&gt;
                       &lt;/li&gt;
@@ -779,9 +811,9 @@ $$&lt;/li&gt;
       &lt;li&gt;牛顿欧拉方程[Newton-Euler’s Equation]
         &lt;ul&gt;
           &lt;li&gt;牛顿方程
-\(\mathbf{r}=\begin{bmatrix}
+&lt;span class=&quot;kdmath&quot;&gt;$\mathbf{r}=\begin{bmatrix}
     x\\y\\z
-  \end{bmatrix}\)
+  \end{bmatrix}$&lt;/span&gt;
             &lt;ul&gt;
               &lt;li&gt;$\begin{aligned}
 m\mathbf{\ddot r}
@@ -795,13 +827,13 @@ m\mathbf{\ddot r}
             &lt;/ul&gt;
           &lt;/li&gt;
           &lt;li&gt;欧拉方程
-\(\begin{aligned}
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
     I \begin{bmatrix}
         \dot p\\
         \dot q\\
         \dot r
     \end{bmatrix}
-    &amp;amp;=\begin{bmatrix}
+    &amp;=\begin{bmatrix}
         L(F_2-F_4)\\
         L(F_3-F_1)\\
         M_1-M_2+M_3-M_4
@@ -816,10 +848,10 @@ m\mathbf{\ddot r}
     \begin{bmatrix}
         p\\q\\r
     \end{bmatrix}\\
-    &amp;amp;=\begin{bmatrix}
-        0&amp;amp;L&amp;amp;0&amp;amp;L\\
-        -L&amp;amp;0&amp;amp;L&amp;amp;0\\
-        \gamma&amp;amp;-\gamma&amp;amp;\gamma&amp;amp;-\gamma
+    &amp;=\begin{bmatrix}
+        0&amp;L&amp;0&amp;L\\
+        -L&amp;0&amp;L&amp;0\\
+        \gamma&amp;-\gamma&amp;\gamma&amp;-\gamma
     \end{bmatrix}
     \begin{bmatrix}
         F_1\\F_2\\F_3\\F_4
@@ -834,17 +866,17 @@ m\mathbf{\ddot r}
     I
     \begin{bmatrix}
         p\\q\\r
-    \end{bmatrix}&amp;amp;\text{$\gamma=\frac{k_M}{k_F}$, 无人机的参数，用于计算转动惯量}\\
-    \mathbf{u_2}&amp;amp;=\begin{bmatrix}
-        0&amp;amp;L&amp;amp;0&amp;amp;L\\
-        -L&amp;amp;0&amp;amp;L&amp;amp;0\\
-        \gamma&amp;amp;-\gamma&amp;amp;\gamma&amp;amp;-\gamma
+    \end{bmatrix}&amp;\text{$\gamma=\frac{k_M}{k_F}$, 无人机的参数，用于计算转动惯量}\\
+    \mathbf{u_2}&amp;=\begin{bmatrix}
+        0&amp;L&amp;0&amp;L\\
+        -L&amp;0&amp;L&amp;0\\
+        \gamma&amp;-\gamma&amp;\gamma&amp;-\gamma
     \end{bmatrix}
     \begin{bmatrix}
         F_1\\F_2\\F_3\\F_4
     \end{bmatrix}\\
-    I_{xx}\ddot \phi &amp;amp;= L(F_2-F_4)&amp;amp;\text{角加速度}
-  \end{aligned}\)&lt;/li&gt;
+    I_{xx}\ddot \phi &amp;= L(F_2-F_4)&amp;\text{角加速度}
+  \end{aligned}$&lt;/span&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -869,11 +901,13 @@ m\mathbf{\ddot r}
                   &lt;li&gt;$F = \dot x^2$&lt;/li&gt;
                   &lt;li&gt;利用E-L方程&lt;/li&gt;
                   &lt;li&gt;
-\[\begin{aligned}
-     \frac{\partial}{\partial x}F-\frac{d}{dt}(\frac{\partial F}{\partial \dot x}) &amp;amp;= 0\\
-     0 - 2\ddot x &amp;amp;= 0\\
-     x &amp;amp;= c_0t+c_1&amp;amp;\text{匀速直线运动}\\
-  \end{aligned}\]
+                    &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+     \frac{\partial}{\partial x}F-\frac{d}{dt}(\frac{\partial F}{\partial \dot x}) &amp;= 0\\
+     0 - 2\ddot x &amp;= 0\\
+     x &amp;= c_0t+c_1&amp;\text{匀速直线运动}\\
+  \end{aligned}
+$$&lt;/div&gt;
                   &lt;/li&gt;
                 &lt;/ul&gt;
               &lt;/li&gt;
@@ -883,12 +917,14 @@ m\mathbf{\ddot r}
                   &lt;li&gt;此时的E-L方程
                     &lt;ul&gt;
                       &lt;li&gt;
-\[\begin{aligned}
+                        &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
       \frac{\partial F}{\partial x} - \frac{d}{dt}(\frac{\partial L}{\partial \dot x}) + \frac{d^2}{dt^2}(\frac{\partial F}{\partial \ddot x}) - \frac{d^3}{dt^3}(\frac{\partial L}{\partial x^{(3)}})
-      &amp;amp;=0\\
-      0 - 0 + 0 - 2x^{(6)} &amp;amp;= 0\\
-      x &amp;amp;= c_0t^5 + c_1t^4+c_2t^3 +c_3t^2 + c_4t+c_5
-  \end{aligned}\]
+      &amp;=0\\
+      0 - 0 + 0 - 2x^{(6)} &amp;= 0\\
+      x &amp;= c_0t^5 + c_1t^4+c_2t^3 +c_3t^2 + c_4t+c_5
+  \end{aligned}
+$$&lt;/div&gt;
                       &lt;/li&gt;
                     &lt;/ul&gt;
                   &lt;/li&gt;
@@ -897,17 +933,20 @@ m\mathbf{\ddot r}
                       &lt;li&gt;边界(Boundary condition)
                         &lt;ul&gt;
                           &lt;li&gt;
-\[\begin{cases}
-        [x, \dot x, \ddot x]\big |_{t=0} &amp;amp;= [a, 0, 0]&amp;amp;\text{假定初始速度为0，初始加速度为0，初始位置为a}\\
-        [x, \dot x, \ddot x]\big |_{t=T} &amp;amp;= [b, 0, 0]&amp;amp;\text{假定终止速度为0，终止加速度为0，终止位置为b}
-    \end{cases}\]
+                            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{cases}
+        [x, \dot x, \ddot x]\big |_{t=0} &amp;= [a, 0, 0]&amp;\text{假定初始速度为0，初始加速度为0，初始位置为a}\\
+        [x, \dot x, \ddot x]\big |_{t=T} &amp;= [b, 0, 0]&amp;\text{假定终止速度为0，终止加速度为0，终止位置为b}
+    \end{cases}
+$$&lt;/div&gt;
                           &lt;/li&gt;
                         &lt;/ul&gt;
                       &lt;/li&gt;
                       &lt;li&gt;列出求解矩阵
                         &lt;ul&gt;
                           &lt;li&gt;
-\[\begin{aligned}
+                            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
         \begin{bmatrix}
             x(0)\\x(T)\\\dot x(0)\\\dot x(T)\\\ddot x(0)\\\ddot x(T)
         \end{bmatrix}
@@ -917,31 +956,34 @@ m\mathbf{\ddot r}
         \end{bmatrix}
         =
         \begin{bmatrix}
-            0&amp;amp;0&amp;amp;0&amp;amp;0&amp;amp;0&amp;amp;1\\
-            T^5&amp;amp;T^4&amp;amp;T^3&amp;amp;T^2&amp;amp;T&amp;amp;1\\
-            0&amp;amp;0&amp;amp;0&amp;amp;0&amp;amp;1&amp;amp;0\\
-            5T^4&amp;amp;4T^3&amp;amp;3T^2&amp;amp;2T&amp;amp;1&amp;amp;0\\
-            0&amp;amp;0&amp;amp;0&amp;amp;2&amp;amp;0&amp;amp;0\\
-            20T^3&amp;amp;12T^2&amp;amp;6T&amp;amp;2&amp;amp;0&amp;amp;0\\
+            0&amp;0&amp;0&amp;0&amp;0&amp;1\\
+            T^5&amp;T^4&amp;T^3&amp;T^2&amp;T&amp;1\\
+            0&amp;0&amp;0&amp;0&amp;1&amp;0\\
+            5T^4&amp;4T^3&amp;3T^2&amp;2T&amp;1&amp;0\\
+            0&amp;0&amp;0&amp;2&amp;0&amp;0\\
+            20T^3&amp;12T^2&amp;6T&amp;2&amp;0&amp;0\\
         \end{bmatrix}
         \begin{bmatrix}
             c_0\\c_1\\c_2\\c_3\\c_4\\c_5
         \end{bmatrix}
-    \end{aligned}\]
+    \end{aligned}
+$$&lt;/div&gt;
                           &lt;/li&gt;
                         &lt;/ul&gt;
                       &lt;/li&gt;
                       &lt;li&gt;解出$c_0 ~ c_5$即可
                         &lt;ul&gt;
                           &lt;li&gt;
-\[\begin{bmatrix}
-        &amp;amp;\frac{6 b}{T^{5}}-\frac{6 a}{T^{5}}\\
-        &amp;amp;\frac{15 a}{T^{4}}-\frac{15 b}{T^{4}}\\
-        &amp;amp;\frac{10 b}{T^{3}}-\frac{10 a}{T^{3}}&amp;amp;\\
-        &amp;amp;0\\
-        &amp;amp;0\\
-        &amp;amp;a
-    \end{bmatrix}\]
+                            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{bmatrix}
+        &amp;\frac{6 b}{T^{5}}-\frac{6 a}{T^{5}}\\
+        &amp;\frac{15 a}{T^{4}}-\frac{15 b}{T^{4}}\\
+        &amp;\frac{10 b}{T^{3}}-\frac{10 a}{T^{3}}&amp;\\
+        &amp;0\\
+        &amp;0\\
+        &amp;a
+    \end{bmatrix}
+$$&lt;/div&gt;
                           &lt;/li&gt;
                         &lt;/ul&gt;
                       &lt;/li&gt;
@@ -962,10 +1004,10 @@ m\mathbf{\ddot r}
         &lt;ul&gt;
           &lt;li&gt;For $J[x(t), y(t)] = \int_0^TF(t, x, y, \dot x, \dot y)dt$&lt;/li&gt;
           &lt;li&gt;E-L:
-\(\begin{aligned}
-              \frac{\partial F}{\partial x} - \frac{d}{dt}(\frac{\partial F}{\partial \dot x}) &amp;amp;= 0\\
-              \frac{\partial F}{\partial y} - \frac{d}{dt}(\frac{\partial F}{\partial \dot y}) &amp;amp;= 0
-      \end{aligned}\)&lt;/li&gt;
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
+              \frac{\partial F}{\partial x} - \frac{d}{dt}(\frac{\partial F}{\partial \dot x}) &amp;= 0\\
+              \frac{\partial F}{\partial y} - \frac{d}{dt}(\frac{\partial F}{\partial \dot y}) &amp;= 0
+      \end{aligned}$&lt;/span&gt;&lt;/li&gt;
           &lt;li&gt;使用例子
             &lt;ul&gt;
               &lt;li&gt;&lt;a href=&quot;https://www.jneurosci.org/content/jneuro/5/7/1688.full.pdf&quot;&gt;手臂动作协调: 实验验证的数学模型： The coordination of arm movements: an experimentally confirmed mathematical model - Tamar Flash, Neville Hogan 1985&lt;/a&gt;
@@ -981,24 +1023,24 @@ m\mathbf{\ddot r}
         &lt;ul&gt;
           &lt;li&gt;使物体依次通过m个点，但由于运动时无法忽略惯性作用，因此我们需要增加速度约束&lt;/li&gt;
           &lt;li&gt;For
-\(\begin{aligned}
-      t&amp;amp;=\begin{bmatrix}
-          t_0&amp;amp; t_1&amp;amp;\dotsc t_m
-      \end{bmatrix}^T&amp;amp;\\
-      x&amp;amp;=\begin{bmatrix}
-          x_0&amp;amp; x_1&amp;amp;\dotsc x_m
-      \end{bmatrix}^T&amp;amp;
-  \end{aligned}\)&lt;/li&gt;
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
+      t&amp;=\begin{bmatrix}
+          t_0&amp; t_1&amp;\dotsc t_m
+      \end{bmatrix}^T&amp;\\
+      x&amp;=\begin{bmatrix}
+          x_0&amp; x_1&amp;\dotsc x_m
+      \end{bmatrix}^T&amp;
+  \end{aligned}$&lt;/span&gt;&lt;/li&gt;
           &lt;li&gt;$J[x(t)] = [\int_{t_0}^{t_1}(\ddot x^2)dx + \int_{t_1}^{t_2}(\ddot x^2)dx + \dotsc +\int_{t_{m-1}}^{t_m}(\ddot x^2)dx]$&lt;/li&gt;
           &lt;li&gt;分段求解，得到
-\(\begin{aligned}
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
       x(t) = \begin{cases}
-          x_1(t) &amp;amp;= c_{10}t^3 + c_{11}t^2 + c_{12}t + c_{13}&amp;amp;t_0\le t\le t_1\\
-          x_2(t) &amp;amp;= c_{20}t^3 + c_{21}t^2 + c_{22}t + c_{23}&amp;amp;t_1\le t\le t_2\\
+          x_1(t) &amp;= c_{10}t^3 + c_{11}t^2 + c_{12}t + c_{13}&amp;t_0\le t\le t_1\\
+          x_2(t) &amp;= c_{20}t^3 + c_{21}t^2 + c_{22}t + c_{23}&amp;t_1\le t\le t_2\\
           \dotsc\\
-          x_m(t) &amp;amp;= c_{m0}t^3 + c_{m1}t^2 + c_{m2}t + c_{m3}&amp;amp;t_0\le t\le t_m\\
+          x_m(t) &amp;= c_{m0}t^3 + c_{m1}t^2 + c_{m2}t + c_{m3}&amp;t_0\le t\le t_m\\
       \end{cases}
-  \end{aligned}\)&lt;/li&gt;
+  \end{aligned}$&lt;/span&gt;&lt;/li&gt;
           &lt;li&gt;为了求解$4m$个变量$c_{ij}$，我们需要$4m$个方程[约束]来进行确定
             &lt;ul&gt;
               &lt;li&gt;有位置方程
@@ -1152,10 +1194,10 @@ m\mathbf{\ddot r}
               &lt;li&gt;最速曲线问题
                 &lt;ol&gt;
                   &lt;li&gt;能量守恒
-\(\begin{aligned}
-    \frac{1}{2}mv^2&amp;amp;=mgy\\
-    v^2 &amp;amp;= 2gy
-    \end{aligned}\)&lt;/li&gt;
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
+    \frac{1}{2}mv^2&amp;=mgy\\
+    v^2 &amp;= 2gy
+    \end{aligned}$&lt;/span&gt;&lt;/li&gt;
                   &lt;li&gt;速度公式 $v = \frac{ds}{dt} = \sqrt{\frac{1+y’^2}{dt}}dx$&lt;/li&gt;
                   &lt;li&gt;$dt = {\sqrt\frac{1+y’^2}{v}}dx = \sqrt{\frac{1+y’^2}{2gy}}dx$&lt;/li&gt;
                   &lt;li&gt;$x_0$到$x_1$的时间为$t = \int_{x_0}^{x_1}dt = \int_{x_0}^{x_1}\sqrt{\frac{1+y’^2}{2gy}}dx$&lt;/li&gt;
@@ -1182,13 +1224,15 @@ m\mathbf{\ddot r}
               &lt;li&gt;$J[y(x)] = \int_{x_0}^{x_1}F(x, y, y’)dx$&lt;/li&gt;
               &lt;li&gt;$F$为最简泛函的核&lt;/li&gt;
               &lt;li&gt;
-\[\begin{aligned}
-    \Delta J &amp;amp;= J[y_0(x)] - J[y(x)]\\
-    &amp;amp;= J[y(x) + \delta y] - J[y(x)]\\
-    &amp;amp;= \int_{x_0}^{x_1}[F(x, y+\delta y, y' + \delta y') - F(x, y, y')]dx\\
-    &amp;amp;= \int_{x_0}^{x_1}(F_2\delta y + F_3\delta y')dx + \dotsc + \int_{x_0^{x_1}}[\frac{1}{n!}(\delta y\frac{\partial}{\partial y} + \delta y'\frac{\partial}{\partial y'})^n]dx &amp;amp;\text{多元函数的泰勒展开}&amp;amp;\\
-    &amp;amp;&amp;amp;\text{$F_1, F_2, F_3$} 为偏导数&amp;amp;\\
-  \end{aligned}\]
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+    \Delta J &amp;= J[y_0(x)] - J[y(x)]\\
+    &amp;= J[y(x) + \delta y] - J[y(x)]\\
+    &amp;= \int_{x_0}^{x_1}[F(x, y+\delta y, y' + \delta y') - F(x, y, y')]dx\\
+    &amp;= \int_{x_0}^{x_1}(F_2\delta y + F_3\delta y')dx + \dotsc + \int_{x_0^{x_1}}[\frac{1}{n!}(\delta y\frac{\partial}{\partial y} + \delta y'\frac{\partial}{\partial y'})^n]dx &amp;\text{多元函数的泰勒展开}&amp;\\
+    &amp;&amp;\text{$F_1, F_2, F_3$} 为偏导数&amp;\\
+  \end{aligned}
+$$&lt;/div&gt;
               &lt;/li&gt;
               &lt;li&gt;其中$\int_{x_0}^{x_1}(F_2\delta y + F_3\delta y’)dx$称为&lt;strong&gt;泛函的变分&lt;/strong&gt;，记为$\delta J$&lt;/li&gt;
             &lt;/ul&gt;
@@ -1216,17 +1260,19 @@ m\mathbf{\ddot r}
             &lt;/table&gt;
           &lt;/li&gt;
           &lt;li&gt;
-\[\begin{aligned}
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
   \frac{d\Phi}{d\epsilon}
-     &amp;amp;= \int_{x_0}^{x_1}F_2[x, y(x) + \epsilon \eta(x), y'(x) + \epsilon \eta'(x)]\eta(x) + F_3[x, y(x) + \epsilon\eta(x), y'(x)+\epsilon\eta'(x)]\eta'(x)dx\\
-     &amp;amp;=\int_{x_0}^{x_1}[F_2\eta(x) + F_3\eta'(x)]dx&amp;amp;\text{令$\epsilon = 0$}\\
-     &amp;amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3\eta'(x)dx\\
-     &amp;amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3d\eta(x)&amp;amp;\text{分部积分法}\\
-     &amp;amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + F_3\eta(x)\big|_{x_0}^{x_1} - \int_{x_0}^{x_1}\eta(x)\frac{dF_3}{dx}dx&amp;amp;\text{这里要求$F_3存在对x的导数$}\\
-     &amp;amp;=\int_{x_0}^{x_1}(F_2\eta(x) - \eta(x)\frac{dF_3}{dx})dx + F_3\eta(x)\big|_{x_0}^{x_1}\\
-     &amp;amp;=\int_{x_0}^{x_1}[F_2 -\frac{dF_3}{dx}]\eta(x)dx&amp;amp;\text{$\eta(x_0) = 0, \eta(x_1) = 0\rightarrow F_3\eta(x)\big|_{x_0}^{x_1} = 0$}\\
-     &amp;amp;=0&amp;amp;\text{\textcircled 1}
-  \end{aligned}\]
+     &amp;= \int_{x_0}^{x_1}F_2[x, y(x) + \epsilon \eta(x), y'(x) + \epsilon \eta'(x)]\eta(x) + F_3[x, y(x) + \epsilon\eta(x), y'(x)+\epsilon\eta'(x)]\eta'(x)dx\\
+     &amp;=\int_{x_0}^{x_1}[F_2\eta(x) + F_3\eta'(x)]dx&amp;\text{令$\epsilon = 0$}\\
+     &amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3\eta'(x)dx\\
+     &amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3d\eta(x)&amp;\text{分部积分法}\\
+     &amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + F_3\eta(x)\big|_{x_0}^{x_1} - \int_{x_0}^{x_1}\eta(x)\frac{dF_3}{dx}dx&amp;\text{这里要求$F_3存在对x的导数$}\\
+     &amp;=\int_{x_0}^{x_1}(F_2\eta(x) - \eta(x)\frac{dF_3}{dx})dx + F_3\eta(x)\big|_{x_0}^{x_1}\\
+     &amp;=\int_{x_0}^{x_1}[F_2 -\frac{dF_3}{dx}]\eta(x)dx&amp;\text{$\eta(x_0) = 0, \eta(x_1) = 0\rightarrow F_3\eta(x)\big|_{x_0}^{x_1} = 0$}\\
+     &amp;=0&amp;\text{\textcircled 1}
+  \end{aligned}
+$$&lt;/div&gt;
           &lt;/li&gt;
           &lt;li&gt;引理
             &lt;ul&gt;
@@ -1263,16 +1309,18 @@ m\mathbf{\ddot r}
       &lt;li&gt;两点间最短距离
         &lt;ul&gt;
           &lt;li&gt;
-\[\begin{aligned}
- J[y(x)] &amp;amp;= \int_{x_0}^{x_1}{\sqrt{1 + y'^2}dx} \\
- F&amp;amp;=\sqrt{1 + y'^2}\\
- \frac{\partial F}{\partial y} &amp;amp;= 0\\
- \frac{\partial F}{\partial y'} &amp;amp;= \frac{y'}{\sqrt{1+y'^2}}\\
- E-L: 0 - \frac{d}{dx}[ \frac{y'}{\sqrt{1+y'^2}}] &amp;amp;= 0\\
- \frac{y'}{\sqrt{1+y'^2}} &amp;amp;= C\\
- y' &amp;amp;= \sqrt{\frac{C^2}{1-C^2}} = C_0\\
- y &amp;amp; = C_0x + C_1
- \end{aligned}\]
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+ J[y(x)] &amp;= \int_{x_0}^{x_1}{\sqrt{1 + y'^2}dx} \\
+ F&amp;=\sqrt{1 + y'^2}\\
+ \frac{\partial F}{\partial y} &amp;= 0\\
+ \frac{\partial F}{\partial y'} &amp;= \frac{y'}{\sqrt{1+y'^2}}\\
+ E-L: 0 - \frac{d}{dx}[ \frac{y'}{\sqrt{1+y'^2}}] &amp;= 0\\
+ \frac{y'}{\sqrt{1+y'^2}} &amp;= C\\
+ y' &amp;= \sqrt{\frac{C^2}{1-C^2}} = C_0\\
+ y &amp; = C_0x + C_1
+ \end{aligned}
+$$&lt;/div&gt;
           &lt;/li&gt;
           &lt;li&gt;因此是导数为常数的直线&lt;/li&gt;
         &lt;/ul&gt;
@@ -1283,36 +1331,42 @@ m\mathbf{\ddot r}
           &lt;li&gt;引理(在$x$不存在时的简便计算法)
             &lt;ul&gt;
               &lt;li&gt;
-\[\begin{aligned}
-       F(y, y')&amp;amp;= \sqrt{\frac{1+y'^2}{2gy}}\\
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+       F(y, y')&amp;= \sqrt{\frac{1+y'^2}{2gy}}\\
        \frac{d}{dt}(F - y'F_2)
-       &amp;amp;= \frac{d}{dt}F - \frac{d}{dt}(y'F_2)\\
-       &amp;amp;=[y'F_1 + y''F_2] - [y''F_2 + y'\frac{d}{dt}F_2]&amp;amp;\text{这里要求$y''$存在}\\
-       &amp;amp;=y'F_1-y'\frac{d}{dt}F_2\\
-       &amp;amp;=y'[F_1-\frac{d}{dt}F_2]\\
-       &amp;amp;=0&amp;amp;\text{here $F_1=\frac{\partial F}{\partial y}, F_2=\frac{\partial F}{\partial y'}$, hence $F_1-\frac{d}{dt}F_2 = 0$ 为EL方程 }\\
-       \therefore F - y'F_2 &amp;amp;= C &amp;amp;\text{here $C$为常数}
-   \end{aligned}\]
+       &amp;= \frac{d}{dt}F - \frac{d}{dt}(y'F_2)\\
+       &amp;=[y'F_1 + y''F_2] - [y''F_2 + y'\frac{d}{dt}F_2]&amp;\text{这里要求$y''$存在}\\
+       &amp;=y'F_1-y'\frac{d}{dt}F_2\\
+       &amp;=y'[F_1-\frac{d}{dt}F_2]\\
+       &amp;=0&amp;\text{here $F_1=\frac{\partial F}{\partial y}, F_2=\frac{\partial F}{\partial y'}$, hence $F_1-\frac{d}{dt}F_2 = 0$ 为EL方程 }\\
+       \therefore F - y'F_2 &amp;= C &amp;\text{here $C$为常数}
+   \end{aligned}
+$$&lt;/div&gt;
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
           &lt;li&gt;
-\[\begin{aligned}
-     F - y'F_2 &amp;amp;= \sqrt{\frac{1+y'^2}{2gy}} - y'\frac{2y'\frac{1}{2}(1+y'^2)^{-\frac{1}{2}}}{\sqrt{2gy}}\\
-     &amp;amp;=\sqrt{\frac{1+y'^2}{2gy}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
-     &amp;amp;=\frac{1+y'^2}{\sqrt{2gy}\sqrt{1+y'^2}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
-     &amp;amp;= \frac{1}{\sqrt{2gy}\sqrt{1+y'^2}}\\
-     &amp;amp;=C&amp;amp;\text{利用上面的引理}\\
-     \therefore y(1+y'^2) &amp;amp;= \frac{1}{2gC^2}
- \end{aligned}\]
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+     F - y'F_2 &amp;= \sqrt{\frac{1+y'^2}{2gy}} - y'\frac{2y'\frac{1}{2}(1+y'^2)^{-\frac{1}{2}}}{\sqrt{2gy}}\\
+     &amp;=\sqrt{\frac{1+y'^2}{2gy}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
+     &amp;=\frac{1+y'^2}{\sqrt{2gy}\sqrt{1+y'^2}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
+     &amp;= \frac{1}{\sqrt{2gy}\sqrt{1+y'^2}}\\
+     &amp;=C&amp;\text{利用上面的引理}\\
+     \therefore y(1+y'^2) &amp;= \frac{1}{2gC^2}
+ \end{aligned}
+$$&lt;/div&gt;
           &lt;/li&gt;
           &lt;li&gt;解得(积分表或换元$y’=\cot\frac{\theta}{2}$), 摆线
             &lt;ul&gt;
               &lt;li&gt;
-\[\begin{cases}
-       x&amp;amp;=\frac{C}{2}(\theta - \sin\theta)\\
-       y&amp;amp;=\frac{C}{2}(1-\cos\theta)
-   \end{cases}\]
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{cases}
+       x&amp;=\frac{C}{2}(\theta - \sin\theta)\\
+       y&amp;=\frac{C}{2}(1-\cos\theta)
+   \end{cases}
+$$&lt;/div&gt;
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
@@ -1328,10 +1382,12 @@ m\mathbf{\ddot r}
           &lt;li&gt;两点间最短路径
             &lt;ul&gt;
               &lt;li&gt;
-\[\begin{cases}
-    y(x_0)&amp;amp;= y_0\\
-    y(x_1)&amp;amp;= y_1\\
-  \end{cases}\]
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{cases}
+    y(x_0)&amp;= y_0\\
+    y(x_1)&amp;= y_1\\
+  \end{cases}
+$$&lt;/div&gt;
               &lt;/li&gt;
               &lt;li&gt;代入$y = C_0x$&lt;/li&gt;
               &lt;li&gt;得到$C_0 = \frac{y_1 - y_0}{x_1 - x_0}$&lt;/li&gt;
@@ -1340,24 +1396,26 @@ m\mathbf{\ddot r}
           &lt;li&gt;最速降线
             &lt;ul&gt;
               &lt;li&gt;
-\[\begin{cases}
-    y(x_0)&amp;amp;= y_0\\
-    y(x_1)&amp;amp;= y_1\\
-  \end{cases}\]
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{cases}
+    y(x_0)&amp;= y_0\\
+    y(x_1)&amp;= y_1\\
+  \end{cases}
+$$&lt;/div&gt;
               &lt;/li&gt;
               &lt;li&gt;代入
-\(\begin{cases}
-    x&amp;amp;=\frac{C}{2}(\theta - \sin\theta)\\
-    y&amp;amp;=\frac{C}{2}(1-\cos\theta)
-  \end{cases}\)&lt;/li&gt;
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{cases}
+    x&amp;=\frac{C}{2}(\theta - \sin\theta)\\
+    y&amp;=\frac{C}{2}(1-\cos\theta)
+  \end{cases}$&lt;/span&gt;&lt;/li&gt;
               &lt;li&gt;得到
-\(\begin{aligned}
-    y &amp;amp;= \cot\frac{\theta}{2}\\
-    A(x,y) &amp;amp;= \theta^2\\
-    B(x,y) &amp;amp;= 4x\theta + 4y\\
-    D(x,y) &amp;amp;= 4(x^2+y^2)\\
-    C&amp;amp;=\frac{D_1A_2 - D_2A_1}{B_1A_2 - B_2A_1}
-\end{aligned}\)&lt;/li&gt;
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
+    y &amp;= \cot\frac{\theta}{2}\\
+    A(x,y) &amp;= \theta^2\\
+    B(x,y) &amp;= 4x\theta + 4y\\
+    D(x,y) &amp;= 4(x^2+y^2)\\
+    C&amp;=\frac{D_1A_2 - D_2A_1}{B_1A_2 - B_2A_1}
+\end{aligned}$&lt;/span&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
@@ -1379,7 +1437,8 @@ m\mathbf{\ddot r}
               &lt;li&gt;write system of first-order differencial equations as matrix.
                 &lt;ul&gt;
                   &lt;li&gt;
-\[\begin{bmatrix}
+                    &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{bmatrix}
  \dot x_1\\
  \dot x_2\\
  \dotsc\\
@@ -1391,7 +1450,8 @@ m\mathbf{\ddot r}
    x_3\\
    \dotsc\\
    g(x_1, x_2, \dotsc, x_n, \mathbf{u})
- \end{bmatrix}\]
+ \end{bmatrix}
+$$&lt;/div&gt;
                   &lt;/li&gt;
                   &lt;li&gt;$\mathbf{\dot x} = f(\mathbf{x}, \mathbf{u})$&lt;/li&gt;
                 &lt;/ul&gt;
@@ -1402,7 +1462,9 @@ m\mathbf{\ddot r}
             &lt;ul&gt;
               &lt;li&gt;for equation $m\ddot y(t) + ky(t) = u(t)$&lt;/li&gt;
               &lt;li&gt;
-\[\dot x=\begin{bmatrix}\dot x_1\\ \dot x_2\end{bmatrix} = \begin{bmatrix}x_2\\\frac{u(t)-kx_1}{m}\end{bmatrix}=\begin{bmatrix}0&amp;amp;1\\-\frac{k}{m}&amp;amp;0\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix} + \begin{bmatrix}0\\1\end{bmatrix}u(t)\]
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\dot x=\begin{bmatrix}\dot x_1\\ \dot x_2\end{bmatrix} = \begin{bmatrix}x_2\\\frac{u(t)-kx_1}{m}\end{bmatrix}=\begin{bmatrix}0&amp;1\\-\frac{k}{m}&amp;0\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix} + \begin{bmatrix}0\\1\end{bmatrix}u(t)
+$$&lt;/div&gt;
               &lt;/li&gt;
               &lt;li&gt;$\mathbf{\dot X}=A\mathbf{X}+B\mathbf{u}$&lt;/li&gt;
             &lt;/ul&gt;
@@ -1411,14 +1473,17 @@ m\mathbf{\ddot r}
             &lt;ul&gt;
               &lt;li&gt;Define states $x_1 = y,x_2 = z, x_3 = \phi, x_4 = \dot y, x_5 = \dot z, x_6 = \dot \phi$&lt;/li&gt;
               &lt;li&gt;
-\[\begin{aligned}
-    m\ddot y &amp;amp;= sin(\phi) u_1\\
-    m\ddot z &amp;amp;= cos(\phi) u_1 + mg\\
-    I_{xx} \ddot \phi &amp;amp;= u_2
-    \end{aligned}\]
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+    m\ddot y &amp;= sin(\phi) u_1\\
+    m\ddot z &amp;= cos(\phi) u_1 + mg\\
+    I_{xx} \ddot \phi &amp;= u_2
+    \end{aligned}
+$$&lt;/div&gt;
               &lt;/li&gt;
               &lt;li&gt;
-\[\begin{bmatrix}
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{bmatrix}
     \dot x_1\\
     \dot x_2\\
     \dot x_3\\
@@ -1434,7 +1499,8 @@ m\mathbf{\ddot r}
     \frac{\sin(x_3)u_1}{m}\\
     \frac{\cos(x_3)u_1}{m} - g\\
     u_2
-    \end{bmatrix}\]
+    \end{bmatrix}
+$$&lt;/div&gt;
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
@@ -1487,26 +1553,32 @@ $&lt;/li&gt;
             &lt;ul&gt;
               &lt;li&gt;$\phi\sim 0 \rightarrow \sin\phi\sim \phi, \cos\phi\sim 1$&lt;/li&gt;
               &lt;li&gt;
-\[\begin{aligned}
-    \ddot y &amp;amp;= -g\phi\\
-    \ddot z &amp;amp;= -g + \frac{u_1}{m}\\
-    \ddot \phi &amp;amp;=\frac{u_2}{I_{xx}}
-    \end{aligned}\]
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+    \ddot y &amp;= -g\phi\\
+    \ddot z &amp;= -g + \frac{u_1}{m}\\
+    \ddot \phi &amp;=\frac{u_2}{I_{xx}}
+    \end{aligned}
+$$&lt;/div&gt;
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
           &lt;li&gt;PD controller
             &lt;ul&gt;
               &lt;li&gt;
-\[\begin{aligned}e_p&amp;amp;=r_T(t)-r\\e_v&amp;amp;=\dot r_T(t) - \dot r\end{aligned}\]
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}e_p&amp;=r_T(t)-r\\e_v&amp;=\dot r_T(t) - \dot r\end{aligned}
+$$&lt;/div&gt;
               &lt;/li&gt;
               &lt;li&gt;$\ddot r_c=\ddot r_T(t) + k_pe_p+k_ve_v$&lt;/li&gt;
               &lt;li&gt;
-\[\begin{aligned}
-        u_1&amp;amp;=mg+m\ddot z_c&amp;amp;=&amp;amp;m[g+\ddot z_T(t)+k_{vz}(\dot z_T(t) - \dot z) + k_{pz}(z_T(t)-z)]\\
-        u_2&amp;amp;=I_{xx}\ddot \phi_c &amp;amp;=&amp;amp; I_{xx}[\ddot \phi_T(t)+ k_{v\phi}(\dot\phi_T(t) - \dot\phi) + k_{pz}(\phi_T(t) - \phi)]\\
-        \phi_c &amp;amp;= -\frac{\ddot y_c}{g} &amp;amp;=&amp;amp; -\frac{1}{g}[\ddot y_T(t) + k_{vy}(\dot y_T(t) - \dot y) + k_{py}(y_T(t)-y)]
-    \end{aligned}\]
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+        u_1&amp;=mg+m\ddot z_c&amp;=&amp;m[g+\ddot z_T(t)+k_{vz}(\dot z_T(t) - \dot z) + k_{pz}(z_T(t)-z)]\\
+        u_2&amp;=I_{xx}\ddot \phi_c &amp;=&amp; I_{xx}[\ddot \phi_T(t)+ k_{v\phi}(\dot\phi_T(t) - \dot\phi) + k_{pz}(\phi_T(t) - \phi)]\\
+        \phi_c &amp;= -\frac{\ddot y_c}{g} &amp;=&amp; -\frac{1}{g}[\ddot y_T(t) + k_{vy}(\dot y_T(t) - \dot y) + k_{py}(y_T(t)-y)]
+    \end{aligned}
+$$&lt;/div&gt;
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
@@ -1783,13 +1855,13 @@ $&lt;/li&gt;
             &lt;ul&gt;
               &lt;li&gt;proof&lt;/li&gt;
               &lt;li&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/cc/Orthogonal_decomposition_unit_vector_rodrigues_rotation_formula.svg&quot; width=&quot;300px&quot; alt=&quot;wiki&quot; /&gt;
-\(\begin{aligned}
-\mathbf{v_{rot}} &amp;amp;= \mathbf{v_{\parallel rot}} + \mathbf{v_{\perp rot}}\\
-&amp;amp;= \mathbf{v_{\parallel}} + \cos(\theta)\mathbf{v_{\perp}} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-&amp;amp;= \mathbf{v_{\parallel}} + \cos(\theta)(\mathbf{v} - \mathbf{v_{\parallel}}) + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-&amp;amp;= \cos(\theta)\mathbf{v} + (1-\cos(\theta))\mathbf{v_{\parallel}} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-&amp;amp;= \cos(\theta)\mathbf{v} + (1-\cos(\theta))(\mathbf{k}\cdotp\mathbf{v})\mathbf{k} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-\end{aligned}\)&lt;/li&gt;
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
+\mathbf{v_{rot}} &amp;= \mathbf{v_{\parallel rot}} + \mathbf{v_{\perp rot}}\\
+&amp;= \mathbf{v_{\parallel}} + \cos(\theta)\mathbf{v_{\perp}} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
+&amp;= \mathbf{v_{\parallel}} + \cos(\theta)(\mathbf{v} - \mathbf{v_{\parallel}}) + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
+&amp;= \cos(\theta)\mathbf{v} + (1-\cos(\theta))\mathbf{v_{\parallel}} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
+&amp;= \cos(\theta)\mathbf{v} + (1-\cos(\theta))(\mathbf{k}\cdotp\mathbf{v})\mathbf{k} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
+\end{aligned}$&lt;/span&gt;&lt;/li&gt;
               &lt;li&gt;calculator the rotation matirx given by $\mathbf{k}$ and $\theta$&lt;/li&gt;
               &lt;li&gt;&lt;img src=&quot;https://wikimedia.org/api/rest_v1/media/math/render/svg/fa49bfffbf7815645f831552513cb080d9c5c9f1&quot; alt=&quot;wiki&quot; /&gt;&lt;/li&gt;
               &lt;li&gt;&lt;img src=&quot;https://wikimedia.org/api/rest_v1/media/math/render/svg/734b982cadf1ec3e27f95a27ffa3f77723897261&quot; alt=&quot;wiki&quot; /&gt;&lt;/li&gt;
@@ -1826,11 +1898,13 @@ $&lt;/li&gt;
       &lt;li&gt;Derivative of the rotation matrix
         &lt;ul&gt;
           &lt;li&gt;
-\[\begin{aligned}
-  \frac{d}{dt}(A\pm B) &amp;amp;= \dot A \pm \dot B\\
-  \frac{d}{dt}(AB) &amp;amp;= \dot A B + A \dot B\\
-  \frac{d}{dt}(A(\theta(t))) &amp;amp;= \frac{dA}{d\theta}\dot \theta
-  \end{aligned}\]
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+  \frac{d}{dt}(A\pm B) &amp;= \dot A \pm \dot B\\
+  \frac{d}{dt}(AB) &amp;= \dot A B + A \dot B\\
+  \frac{d}{dt}(A(\theta(t))) &amp;= \frac{dA}{d\theta}\dot \theta
+  \end{aligned}
+$$&lt;/div&gt;
           &lt;/li&gt;
           &lt;li&gt;Angular velocity
             &lt;ul&gt;

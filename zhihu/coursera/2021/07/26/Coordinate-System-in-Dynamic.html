@@ -274,7 +274,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          4 minute read
         
       </span>
     
@@ -328,26 +328,28 @@
               <li>Z-X-Y顺序旋转[顺序不一定是Z-X-Y，也可能是Z-X-Z或其他，但运算矩阵要一致]</li>
               <li>旋转矩阵$R$</li>
               <li>
-\[\begin{aligned}
+                <div class="kdmath">$$
+\begin{aligned}
     R
-    &amp;= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
-    &amp;=\begin{bmatrix}
-    \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
-    \sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-    0 &amp; 0 &amp; 1
+    &= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
+    &=\begin{bmatrix}
+    \cos{(\psi)} & -\sin{(\psi)} & 0\\
+    \sin{(\psi)} & \cos{(\psi)} & 0\\
+    0 & 0 & 1
     \end{bmatrix}
     \begin{bmatrix}
-    1&amp;0&amp;0\\
-    0&amp;\cos{(\phi)} &amp; -\sin{(\phi)}\\
-    0&amp;\sin{(\phi)} &amp; \cos{(\phi)}\\
+    1&0&0\\
+    0&\cos{(\phi)} & -\sin{(\phi)}\\
+    0&\sin{(\phi)} & \cos{(\phi)}\\
     \end{bmatrix}
     \begin{bmatrix}
-    \cos{(\theta )} &amp; 0 &amp; \sin{(\theta )}\\
-    0 &amp; 1 &amp; 0\\
-    - \sin{(\theta)} &amp; 0 &amp; \cos{(\theta )}
+    \cos{(\theta )} & 0 & \sin{(\theta )}\\
+    0 & 1 & 0\\
+    - \sin{(\theta)} & 0 & \cos{(\theta )}
     \end{bmatrix}\\
-    &amp;=\begin{bmatrix}- s(\theta ) s(\phi ) s(\psi ) + c(\theta ) c(\psi ) &amp; - s(\psi ) c(\phi ) &amp; s(\theta ) c(\psi ) + s(\phi ) s(\psi ) c(\theta )\\s(\theta ) s(\phi ) c(\psi ) + s(\psi ) c(\theta ) &amp; c(\phi ) c(\psi ) &amp; s(\theta ) s(\psi ) - s(\phi ) c(\theta ) c(\psi )\\- s(\theta ) c(\phi ) &amp; s(\phi ) &amp; c(\theta ) c(\phi )\end{bmatrix}&amp;\text{$s\rightarrow \sin, c \rightarrow \cos$}
-  \end{aligned}\]
+    &=\begin{bmatrix}- s(\theta ) s(\phi ) s(\psi ) + c(\theta ) c(\psi ) & - s(\psi ) c(\phi ) & s(\theta ) c(\psi ) + s(\phi ) s(\psi ) c(\theta )\\s(\theta ) s(\phi ) c(\psi ) + s(\psi ) c(\theta ) & c(\phi ) c(\psi ) & s(\theta ) s(\psi ) - s(\phi ) c(\theta ) c(\psi )\\- s(\theta ) c(\phi ) & s(\phi ) & c(\theta ) c(\phi )\end{bmatrix}&\text{$s\rightarrow \sin, c \rightarrow \cos$}
+  \end{aligned}
+$$</div>
               </li>
               <li>初始时，假定$\mathbf{p}$为惯性系坐标，此时惯性系和随体系并未发生变换，因此，$\mathbf{p}$也可以表示随体系坐标，当刚体发生旋转后，随体系下坐标并未发生变化，$\mathbf{q}=R\mathbf{p}$描述了随体系坐标到新的惯性系坐标的变换</li>
             </ul>
@@ -355,10 +357,12 @@
           <li>速度
             <ul>
               <li>
-\[\begin{aligned}
-        \dot \mathbf{q}&amp;=\dot R\mathbf{p} + R\mathbf{\dot p}\\
-        &amp;=\dot R\mathbf{p}&amp;\text{$\mathbf{p}$为常数时,$\dot \mathbf{q}=0$}\\
-    \end{aligned}\]
+                <div class="kdmath">$$
+\begin{aligned}
+        \dot \mathbf{q}&=\dot R\mathbf{p} + R\mathbf{\dot p}\\
+        &=\dot R\mathbf{p}&\text{$\mathbf{p}$为常数时,$\dot \mathbf{q}=0$}\\
+    \end{aligned}
+$$</div>
               </li>
               <li>此时旋转后的点的速度仅取决于$R$对于时间$t$的导数</li>
               <li>$R^T\dot \mathbf{q} = R^T\dot R\mathbf{p}$, 两侧同时乘$R^T$, 即旋转矩阵的逆操作</li>
@@ -368,14 +372,14 @@
                   <li>$b$表示body frame</li>
                   <li>$\hat \omega$是一种特殊记法，由于角速度中仅有3个独立的量，而$R^T\dot R$表示一个矩阵，为了简便记录，用$\hat \omega$代替</li>
                   <li>若$\omega = [\omega_1, \omega_2, \omega_3]$
-\(\hat \omega = \begin{bmatrix}0&amp;-\omega_3&amp;\omega_2\\\omega_3&amp;0&amp;-\omega_1\\-\omega_2&amp;\omega_1&amp;0\end{bmatrix}\)</li>
+<span class="kdmath">$\hat \omega = \begin{bmatrix}0&-\omega_3&\omega_2\\\omega_3&0&-\omega_1\\-\omega_2&\omega_1&0\end{bmatrix}$</span></li>
                 </ul>
               </li>
               <li>又有
-\(\begin{aligned}
-    \dot \mathbf{q} &amp;= \dot R\mathbf{p}\\
-    &amp;=\dot RR^T\mathbf{q}&amp;\text{$\mathbf{p}$为$\mathbf{q}$的逆向旋转}
-\end{aligned}\)
+<span class="kdmath">$\begin{aligned}
+    \dot \mathbf{q} &= \dot R\mathbf{p}\\
+    &=\dot RR^T\mathbf{q}&\text{$\mathbf{p}$为$\mathbf{q}$的逆向旋转}
+\end{aligned}$</span>
                 <ul>
                   <li>$\dot \mathbf{q}$为惯性系速度</li>
                   <li>$\dot RR^T$为惯性系角速度，记为$\hat \omega^s$</li>
@@ -389,65 +393,69 @@
               <li>以$z$轴为例子
                 <ul>
                   <li>
-\[\begin{aligned}
-      R_{z(\psi)} &amp;= \begin{bmatrix}
-      \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
-      \sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-      0 &amp; 0 &amp; 1
+                    <div class="kdmath">$$
+\begin{aligned}
+      R_{z(\psi)} &= \begin{bmatrix}
+      \cos{(\psi)} & -\sin{(\psi)} & 0\\
+      \sin{(\psi)} & \cos{(\psi)} & 0\\
+      0 & 0 & 1
       \end{bmatrix}\\
       \hat \omega^b
-      &amp;=R^T\dot R\\
-      &amp;= \begin{bmatrix}
-          \cos{(\psi)} &amp; \sin{(\psi)} &amp; 0\\
-          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-          0 &amp; 0 &amp; 1
+      &=R^T\dot R\\
+      &= \begin{bmatrix}
+          \cos{(\psi)} & \sin{(\psi)} & 0\\
+          -\sin{(\psi)} & \cos{(\psi)} & 0\\
+          0 & 0 & 1
       \end{bmatrix}
       \begin{bmatrix}
-          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-          \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
-          0 &amp; 0 &amp; 0
+          -\sin{(\psi)} & \cos{(\psi)} & 0\\
+          \cos{(\psi)} & -\sin{(\psi)} & 0\\
+          0 & 0 & 0
       \end{bmatrix}\dot \psi\\
-      &amp;=\begin{bmatrix}
-          0&amp;-1&amp;0\\
-          1&amp;0&amp;0\\
-          0&amp;0&amp;0
+      &=\begin{bmatrix}
+          0&-1&0\\
+          1&0&0\\
+          0&0&0
       \end{bmatrix}\dot \psi\\
-      \hat \omega^s&amp;=\dot RR^T\\
-      &amp;=\dot \psi\begin{bmatrix}
-          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-          \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
-          0 &amp; 0 &amp; 0
+      \hat \omega^s&=\dot RR^T\\
+      &=\dot \psi\begin{bmatrix}
+          -\sin{(\psi)} & \cos{(\psi)} & 0\\
+          \cos{(\psi)} & -\sin{(\psi)} & 0\\
+          0 & 0 & 0
       \end{bmatrix}
       \begin{bmatrix}
-          \cos{(\psi)} &amp; \sin{(\psi)} &amp; 0\\
-          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-          0 &amp; 0 &amp; 1
+          \cos{(\psi)} & \sin{(\psi)} & 0\\
+          -\sin{(\psi)} & \cos{(\psi)} & 0\\
+          0 & 0 & 1
       \end{bmatrix}\\
-      &amp;=\dot \psi\begin{bmatrix}
-          0&amp;-1&amp;0\\
-          1&amp;0&amp;0\\
-          0&amp;0&amp;0
+      &=\dot \psi\begin{bmatrix}
+          0&-1&0\\
+          1&0&0\\
+          0&0&0
       \end{bmatrix}\\
-  \end{aligned}\]
+  \end{aligned}
+$$</div>
                   </li>
                   <li>此时因为旋转轴为$z$, 注意向量上方的$\hat {\omega}$
-   \(\hat \omega^b=\hat \omega^s=\hat{\begin{bmatrix}0\\0\\1\end{bmatrix}}\)</li>
+   <span class="kdmath">$\hat \omega^b=\hat \omega^s=\hat{\begin{bmatrix}0\\0\\1\end{bmatrix}}$</span></li>
                 </ul>
               </li>
               <li>多轴例子[由于转轴非常轴，因此两个参考系内的结果并不一样]
                 <ul>
                   <li>
-\[\begin{aligned}
-      R&amp;= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
-      \hat \omega^b&amp;=R^T\dot R\\
-      &amp;=(R_ZR_XR_Y)^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
-      &amp;=R_Y^TR_X^TR_Z^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
-      &amp;=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
-      \hat \omega^s&amp;=\dot RR^T\\
-      &amp;=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)(R_ZR_XR_Y)^T\\
-      &amp;=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)R_Y^TR_X^TR_Z^T\\
-      &amp;=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T
-  \end{aligned}\]
+                    <div class="kdmath">$$
+\begin{aligned}
+      R&= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
+      \hat \omega^b&=R^T\dot R\\
+      &=(R_ZR_XR_Y)^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
+      &=R_Y^TR_X^TR_Z^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
+      &=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
+      \hat \omega^s&=\dot RR^T\\
+      &=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)(R_ZR_XR_Y)^T\\
+      &=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)R_Y^TR_X^TR_Z^T\\
+      &=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T
+  \end{aligned}
+$$</div>
                   </li>
                 </ul>
               </li>
@@ -460,13 +468,14 @@
                       <li><strong>使用上述文章的推导</strong>(与文章推导结果不一致，需要取逆或转置)
                         <ul>
                           <li>
-\[\begin{aligned}
+                            <div class="kdmath">$$
+\begin{aligned}
       \begin{bmatrix}
           p\\
           q\\
           r
       \end{bmatrix}
-      &amp;=
+      &=
       (R_XR_Y)^T
       \begin{bmatrix}
           0\\0\\\dot \psi
@@ -480,17 +489,18 @@
       \begin{bmatrix}
           0\\\dot \theta\\0
       \end{bmatrix}\\
-      &amp;=\begin{bmatrix}
-          c\theta&amp;0&amp;-c\phi s\theta\\
-          0&amp;1&amp;s\phi\\
-          s\theta&amp;0&amp;c\phi c\theta
+      &=\begin{bmatrix}
+          c\theta&0&-c\phi s\theta\\
+          0&1&s\phi\\
+          s\theta&0&c\phi c\theta
       \end{bmatrix}
       \begin{bmatrix}
           \dot \phi\\
           \dot \theta\\
           \dot \psi\\
       \end{bmatrix}
-  \end{aligned}\]
+  \end{aligned}
+$$</div>
                           </li>
                         </ul>
                       </li>
@@ -583,9 +593,9 @@ $$</li>
       <li>牛顿欧拉方程[Newton-Euler’s Equation]
         <ul>
           <li>牛顿方程
-\(\mathbf{r}=\begin{bmatrix}
+<span class="kdmath">$\mathbf{r}=\begin{bmatrix}
     x\\y\\z
-  \end{bmatrix}\)
+  \end{bmatrix}$</span>
             <ul>
               <li>$\begin{aligned}
 m\mathbf{\ddot r}
@@ -599,13 +609,13 @@ m\mathbf{\ddot r}
             </ul>
           </li>
           <li>欧拉方程
-\(\begin{aligned}
+<span class="kdmath">$\begin{aligned}
     I \begin{bmatrix}
         \dot p\\
         \dot q\\
         \dot r
     \end{bmatrix}
-    &amp;=\begin{bmatrix}
+    &=\begin{bmatrix}
         L(F_2-F_4)\\
         L(F_3-F_1)\\
         M_1-M_2+M_3-M_4
@@ -620,10 +630,10 @@ m\mathbf{\ddot r}
     \begin{bmatrix}
         p\\q\\r
     \end{bmatrix}\\
-    &amp;=\begin{bmatrix}
-        0&amp;L&amp;0&amp;L\\
-        -L&amp;0&amp;L&amp;0\\
-        \gamma&amp;-\gamma&amp;\gamma&amp;-\gamma
+    &=\begin{bmatrix}
+        0&L&0&L\\
+        -L&0&L&0\\
+        \gamma&-\gamma&\gamma&-\gamma
     \end{bmatrix}
     \begin{bmatrix}
         F_1\\F_2\\F_3\\F_4
@@ -638,17 +648,17 @@ m\mathbf{\ddot r}
     I
     \begin{bmatrix}
         p\\q\\r
-    \end{bmatrix}&amp;\text{$\gamma=\frac{k_M}{k_F}$, 无人机的参数，用于计算转动惯量}\\
-    \mathbf{u_2}&amp;=\begin{bmatrix}
-        0&amp;L&amp;0&amp;L\\
-        -L&amp;0&amp;L&amp;0\\
-        \gamma&amp;-\gamma&amp;\gamma&amp;-\gamma
+    \end{bmatrix}&\text{$\gamma=\frac{k_M}{k_F}$, 无人机的参数，用于计算转动惯量}\\
+    \mathbf{u_2}&=\begin{bmatrix}
+        0&L&0&L\\
+        -L&0&L&0\\
+        \gamma&-\gamma&\gamma&-\gamma
     \end{bmatrix}
     \begin{bmatrix}
         F_1\\F_2\\F_3\\F_4
     \end{bmatrix}\\
-    I_{xx}\ddot \phi &amp;= L(F_2-F_4)&amp;\text{角加速度}
-  \end{aligned}\)</li>
+    I_{xx}\ddot \phi &= L(F_2-F_4)&\text{角加速度}
+  \end{aligned}$</span></li>
         </ul>
       </li>
     </ul>

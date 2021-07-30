@@ -419,10 +419,10 @@
               <li>最速曲线问题
                 <ol>
                   <li>能量守恒
-\(\begin{aligned}
-    \frac{1}{2}mv^2&amp;=mgy\\
-    v^2 &amp;= 2gy
-    \end{aligned}\)</li>
+<span class="kdmath">$\begin{aligned}
+    \frac{1}{2}mv^2&=mgy\\
+    v^2 &= 2gy
+    \end{aligned}$</span></li>
                   <li>速度公式 $v = \frac{ds}{dt} = \sqrt{\frac{1+y’^2}{dt}}dx$</li>
                   <li>$dt = {\sqrt\frac{1+y’^2}{v}}dx = \sqrt{\frac{1+y’^2}{2gy}}dx$</li>
                   <li>$x_0$到$x_1$的时间为$t = \int_{x_0}^{x_1}dt = \int_{x_0}^{x_1}\sqrt{\frac{1+y’^2}{2gy}}dx$</li>
@@ -449,13 +449,15 @@
               <li>$J[y(x)] = \int_{x_0}^{x_1}F(x, y, y’)dx$</li>
               <li>$F$为最简泛函的核</li>
               <li>
-\[\begin{aligned}
-    \Delta J &amp;= J[y_0(x)] - J[y(x)]\\
-    &amp;= J[y(x) + \delta y] - J[y(x)]\\
-    &amp;= \int_{x_0}^{x_1}[F(x, y+\delta y, y' + \delta y') - F(x, y, y')]dx\\
-    &amp;= \int_{x_0}^{x_1}(F_2\delta y + F_3\delta y')dx + \dotsc + \int_{x_0^{x_1}}[\frac{1}{n!}(\delta y\frac{\partial}{\partial y} + \delta y'\frac{\partial}{\partial y'})^n]dx &amp;\text{多元函数的泰勒展开}&amp;\\
-    &amp;&amp;\text{$F_1, F_2, F_3$} 为偏导数&amp;\\
-  \end{aligned}\]
+                <div class="kdmath">$$
+\begin{aligned}
+    \Delta J &= J[y_0(x)] - J[y(x)]\\
+    &= J[y(x) + \delta y] - J[y(x)]\\
+    &= \int_{x_0}^{x_1}[F(x, y+\delta y, y' + \delta y') - F(x, y, y')]dx\\
+    &= \int_{x_0}^{x_1}(F_2\delta y + F_3\delta y')dx + \dotsc + \int_{x_0^{x_1}}[\frac{1}{n!}(\delta y\frac{\partial}{\partial y} + \delta y'\frac{\partial}{\partial y'})^n]dx &\text{多元函数的泰勒展开}&\\
+    &&\text{$F_1, F_2, F_3$} 为偏导数&\\
+  \end{aligned}
+$$</div>
               </li>
               <li>其中$\int_{x_0}^{x_1}(F_2\delta y + F_3\delta y’)dx$称为<strong>泛函的变分</strong>，记为$\delta J$</li>
             </ul>
@@ -483,17 +485,19 @@
             </table>
           </li>
           <li>
-\[\begin{aligned}
+            <div class="kdmath">$$
+\begin{aligned}
   \frac{d\Phi}{d\epsilon}
-     &amp;= \int_{x_0}^{x_1}F_2[x, y(x) + \epsilon \eta(x), y'(x) + \epsilon \eta'(x)]\eta(x) + F_3[x, y(x) + \epsilon\eta(x), y'(x)+\epsilon\eta'(x)]\eta'(x)dx\\
-     &amp;=\int_{x_0}^{x_1}[F_2\eta(x) + F_3\eta'(x)]dx&amp;\text{令$\epsilon = 0$}\\
-     &amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3\eta'(x)dx\\
-     &amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3d\eta(x)&amp;\text{分部积分法}\\
-     &amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + F_3\eta(x)\big|_{x_0}^{x_1} - \int_{x_0}^{x_1}\eta(x)\frac{dF_3}{dx}dx&amp;\text{这里要求$F_3存在对x的导数$}\\
-     &amp;=\int_{x_0}^{x_1}(F_2\eta(x) - \eta(x)\frac{dF_3}{dx})dx + F_3\eta(x)\big|_{x_0}^{x_1}\\
-     &amp;=\int_{x_0}^{x_1}[F_2 -\frac{dF_3}{dx}]\eta(x)dx&amp;\text{$\eta(x_0) = 0, \eta(x_1) = 0\rightarrow F_3\eta(x)\big|_{x_0}^{x_1} = 0$}\\
-     &amp;=0&amp;\text{\textcircled 1}
-  \end{aligned}\]
+     &= \int_{x_0}^{x_1}F_2[x, y(x) + \epsilon \eta(x), y'(x) + \epsilon \eta'(x)]\eta(x) + F_3[x, y(x) + \epsilon\eta(x), y'(x)+\epsilon\eta'(x)]\eta'(x)dx\\
+     &=\int_{x_0}^{x_1}[F_2\eta(x) + F_3\eta'(x)]dx&\text{令$\epsilon = 0$}\\
+     &=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3\eta'(x)dx\\
+     &=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3d\eta(x)&\text{分部积分法}\\
+     &=\int_{x_0}^{x_1}F_2\eta(x)dx + F_3\eta(x)\big|_{x_0}^{x_1} - \int_{x_0}^{x_1}\eta(x)\frac{dF_3}{dx}dx&\text{这里要求$F_3存在对x的导数$}\\
+     &=\int_{x_0}^{x_1}(F_2\eta(x) - \eta(x)\frac{dF_3}{dx})dx + F_3\eta(x)\big|_{x_0}^{x_1}\\
+     &=\int_{x_0}^{x_1}[F_2 -\frac{dF_3}{dx}]\eta(x)dx&\text{$\eta(x_0) = 0, \eta(x_1) = 0\rightarrow F_3\eta(x)\big|_{x_0}^{x_1} = 0$}\\
+     &=0&\text{\textcircled 1}
+  \end{aligned}
+$$</div>
           </li>
           <li>引理
             <ul>
@@ -530,16 +534,18 @@
       <li>两点间最短距离
         <ul>
           <li>
-\[\begin{aligned}
- J[y(x)] &amp;= \int_{x_0}^{x_1}{\sqrt{1 + y'^2}dx} \\
- F&amp;=\sqrt{1 + y'^2}\\
- \frac{\partial F}{\partial y} &amp;= 0\\
- \frac{\partial F}{\partial y'} &amp;= \frac{y'}{\sqrt{1+y'^2}}\\
- E-L: 0 - \frac{d}{dx}[ \frac{y'}{\sqrt{1+y'^2}}] &amp;= 0\\
- \frac{y'}{\sqrt{1+y'^2}} &amp;= C\\
- y' &amp;= \sqrt{\frac{C^2}{1-C^2}} = C_0\\
- y &amp; = C_0x + C_1
- \end{aligned}\]
+            <div class="kdmath">$$
+\begin{aligned}
+ J[y(x)] &= \int_{x_0}^{x_1}{\sqrt{1 + y'^2}dx} \\
+ F&=\sqrt{1 + y'^2}\\
+ \frac{\partial F}{\partial y} &= 0\\
+ \frac{\partial F}{\partial y'} &= \frac{y'}{\sqrt{1+y'^2}}\\
+ E-L: 0 - \frac{d}{dx}[ \frac{y'}{\sqrt{1+y'^2}}] &= 0\\
+ \frac{y'}{\sqrt{1+y'^2}} &= C\\
+ y' &= \sqrt{\frac{C^2}{1-C^2}} = C_0\\
+ y & = C_0x + C_1
+ \end{aligned}
+$$</div>
           </li>
           <li>因此是导数为常数的直线</li>
         </ul>
@@ -550,36 +556,42 @@
           <li>引理(在$x$不存在时的简便计算法)
             <ul>
               <li>
-\[\begin{aligned}
-       F(y, y')&amp;= \sqrt{\frac{1+y'^2}{2gy}}\\
+                <div class="kdmath">$$
+\begin{aligned}
+       F(y, y')&= \sqrt{\frac{1+y'^2}{2gy}}\\
        \frac{d}{dt}(F - y'F_2)
-       &amp;= \frac{d}{dt}F - \frac{d}{dt}(y'F_2)\\
-       &amp;=[y'F_1 + y''F_2] - [y''F_2 + y'\frac{d}{dt}F_2]&amp;\text{这里要求$y''$存在}\\
-       &amp;=y'F_1-y'\frac{d}{dt}F_2\\
-       &amp;=y'[F_1-\frac{d}{dt}F_2]\\
-       &amp;=0&amp;\text{here $F_1=\frac{\partial F}{\partial y}, F_2=\frac{\partial F}{\partial y'}$, hence $F_1-\frac{d}{dt}F_2 = 0$ 为EL方程 }\\
-       \therefore F - y'F_2 &amp;= C &amp;\text{here $C$为常数}
-   \end{aligned}\]
+       &= \frac{d}{dt}F - \frac{d}{dt}(y'F_2)\\
+       &=[y'F_1 + y''F_2] - [y''F_2 + y'\frac{d}{dt}F_2]&\text{这里要求$y''$存在}\\
+       &=y'F_1-y'\frac{d}{dt}F_2\\
+       &=y'[F_1-\frac{d}{dt}F_2]\\
+       &=0&\text{here $F_1=\frac{\partial F}{\partial y}, F_2=\frac{\partial F}{\partial y'}$, hence $F_1-\frac{d}{dt}F_2 = 0$ 为EL方程 }\\
+       \therefore F - y'F_2 &= C &\text{here $C$为常数}
+   \end{aligned}
+$$</div>
               </li>
             </ul>
           </li>
           <li>
-\[\begin{aligned}
-     F - y'F_2 &amp;= \sqrt{\frac{1+y'^2}{2gy}} - y'\frac{2y'\frac{1}{2}(1+y'^2)^{-\frac{1}{2}}}{\sqrt{2gy}}\\
-     &amp;=\sqrt{\frac{1+y'^2}{2gy}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
-     &amp;=\frac{1+y'^2}{\sqrt{2gy}\sqrt{1+y'^2}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
-     &amp;= \frac{1}{\sqrt{2gy}\sqrt{1+y'^2}}\\
-     &amp;=C&amp;\text{利用上面的引理}\\
-     \therefore y(1+y'^2) &amp;= \frac{1}{2gC^2}
- \end{aligned}\]
+            <div class="kdmath">$$
+\begin{aligned}
+     F - y'F_2 &= \sqrt{\frac{1+y'^2}{2gy}} - y'\frac{2y'\frac{1}{2}(1+y'^2)^{-\frac{1}{2}}}{\sqrt{2gy}}\\
+     &=\sqrt{\frac{1+y'^2}{2gy}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
+     &=\frac{1+y'^2}{\sqrt{2gy}\sqrt{1+y'^2}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
+     &= \frac{1}{\sqrt{2gy}\sqrt{1+y'^2}}\\
+     &=C&\text{利用上面的引理}\\
+     \therefore y(1+y'^2) &= \frac{1}{2gC^2}
+ \end{aligned}
+$$</div>
           </li>
           <li>解得(积分表或换元$y’=\cot\frac{\theta}{2}$), 摆线
             <ul>
               <li>
-\[\begin{cases}
-       x&amp;=\frac{C}{2}(\theta - \sin\theta)\\
-       y&amp;=\frac{C}{2}(1-\cos\theta)
-   \end{cases}\]
+                <div class="kdmath">$$
+\begin{cases}
+       x&=\frac{C}{2}(\theta - \sin\theta)\\
+       y&=\frac{C}{2}(1-\cos\theta)
+   \end{cases}
+$$</div>
               </li>
             </ul>
           </li>
@@ -595,10 +607,12 @@
           <li>两点间最短路径
             <ul>
               <li>
-\[\begin{cases}
-    y(x_0)&amp;= y_0\\
-    y(x_1)&amp;= y_1\\
-  \end{cases}\]
+                <div class="kdmath">$$
+\begin{cases}
+    y(x_0)&= y_0\\
+    y(x_1)&= y_1\\
+  \end{cases}
+$$</div>
               </li>
               <li>代入$y = C_0x$</li>
               <li>得到$C_0 = \frac{y_1 - y_0}{x_1 - x_0}$</li>
@@ -607,24 +621,26 @@
           <li>最速降线
             <ul>
               <li>
-\[\begin{cases}
-    y(x_0)&amp;= y_0\\
-    y(x_1)&amp;= y_1\\
-  \end{cases}\]
+                <div class="kdmath">$$
+\begin{cases}
+    y(x_0)&= y_0\\
+    y(x_1)&= y_1\\
+  \end{cases}
+$$</div>
               </li>
               <li>代入
-\(\begin{cases}
-    x&amp;=\frac{C}{2}(\theta - \sin\theta)\\
-    y&amp;=\frac{C}{2}(1-\cos\theta)
-  \end{cases}\)</li>
+<span class="kdmath">$\begin{cases}
+    x&=\frac{C}{2}(\theta - \sin\theta)\\
+    y&=\frac{C}{2}(1-\cos\theta)
+  \end{cases}$</span></li>
               <li>得到
-\(\begin{aligned}
-    y &amp;= \cot\frac{\theta}{2}\\
-    A(x,y) &amp;= \theta^2\\
-    B(x,y) &amp;= 4x\theta + 4y\\
-    D(x,y) &amp;= 4(x^2+y^2)\\
-    C&amp;=\frac{D_1A_2 - D_2A_1}{B_1A_2 - B_2A_1}
-\end{aligned}\)</li>
+<span class="kdmath">$\begin{aligned}
+    y &= \cot\frac{\theta}{2}\\
+    A(x,y) &= \theta^2\\
+    B(x,y) &= 4x\theta + 4y\\
+    D(x,y) &= 4(x^2+y^2)\\
+    C&=\frac{D_1A_2 - D_2A_1}{B_1A_2 - B_2A_1}
+\end{aligned}$</span></li>
             </ul>
           </li>
         </ul>

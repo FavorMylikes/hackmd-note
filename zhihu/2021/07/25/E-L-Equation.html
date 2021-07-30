@@ -314,11 +314,13 @@
                   <li>$F = \dot x^2$</li>
                   <li>利用E-L方程</li>
                   <li>
-\[\begin{aligned}
-     \frac{\partial}{\partial x}F-\frac{d}{dt}(\frac{\partial F}{\partial \dot x}) &amp;= 0\\
-     0 - 2\ddot x &amp;= 0\\
-     x &amp;= c_0t+c_1&amp;\text{匀速直线运动}\\
-  \end{aligned}\]
+                    <div class="kdmath">$$
+\begin{aligned}
+     \frac{\partial}{\partial x}F-\frac{d}{dt}(\frac{\partial F}{\partial \dot x}) &= 0\\
+     0 - 2\ddot x &= 0\\
+     x &= c_0t+c_1&\text{匀速直线运动}\\
+  \end{aligned}
+$$</div>
                   </li>
                 </ul>
               </li>
@@ -328,12 +330,14 @@
                   <li>此时的E-L方程
                     <ul>
                       <li>
-\[\begin{aligned}
+                        <div class="kdmath">$$
+\begin{aligned}
       \frac{\partial F}{\partial x} - \frac{d}{dt}(\frac{\partial L}{\partial \dot x}) + \frac{d^2}{dt^2}(\frac{\partial F}{\partial \ddot x}) - \frac{d^3}{dt^3}(\frac{\partial L}{\partial x^{(3)}})
-      &amp;=0\\
-      0 - 0 + 0 - 2x^{(6)} &amp;= 0\\
-      x &amp;= c_0t^5 + c_1t^4+c_2t^3 +c_3t^2 + c_4t+c_5
-  \end{aligned}\]
+      &=0\\
+      0 - 0 + 0 - 2x^{(6)} &= 0\\
+      x &= c_0t^5 + c_1t^4+c_2t^3 +c_3t^2 + c_4t+c_5
+  \end{aligned}
+$$</div>
                       </li>
                     </ul>
                   </li>
@@ -342,17 +346,20 @@
                       <li>边界(Boundary condition)
                         <ul>
                           <li>
-\[\begin{cases}
-        [x, \dot x, \ddot x]\big |_{t=0} &amp;= [a, 0, 0]&amp;\text{假定初始速度为0，初始加速度为0，初始位置为a}\\
-        [x, \dot x, \ddot x]\big |_{t=T} &amp;= [b, 0, 0]&amp;\text{假定终止速度为0，终止加速度为0，终止位置为b}
-    \end{cases}\]
+                            <div class="kdmath">$$
+\begin{cases}
+        [x, \dot x, \ddot x]\big |_{t=0} &= [a, 0, 0]&\text{假定初始速度为0，初始加速度为0，初始位置为a}\\
+        [x, \dot x, \ddot x]\big |_{t=T} &= [b, 0, 0]&\text{假定终止速度为0，终止加速度为0，终止位置为b}
+    \end{cases}
+$$</div>
                           </li>
                         </ul>
                       </li>
                       <li>列出求解矩阵
                         <ul>
                           <li>
-\[\begin{aligned}
+                            <div class="kdmath">$$
+\begin{aligned}
         \begin{bmatrix}
             x(0)\\x(T)\\\dot x(0)\\\dot x(T)\\\ddot x(0)\\\ddot x(T)
         \end{bmatrix}
@@ -362,31 +369,34 @@
         \end{bmatrix}
         =
         \begin{bmatrix}
-            0&amp;0&amp;0&amp;0&amp;0&amp;1\\
-            T^5&amp;T^4&amp;T^3&amp;T^2&amp;T&amp;1\\
-            0&amp;0&amp;0&amp;0&amp;1&amp;0\\
-            5T^4&amp;4T^3&amp;3T^2&amp;2T&amp;1&amp;0\\
-            0&amp;0&amp;0&amp;2&amp;0&amp;0\\
-            20T^3&amp;12T^2&amp;6T&amp;2&amp;0&amp;0\\
+            0&0&0&0&0&1\\
+            T^5&T^4&T^3&T^2&T&1\\
+            0&0&0&0&1&0\\
+            5T^4&4T^3&3T^2&2T&1&0\\
+            0&0&0&2&0&0\\
+            20T^3&12T^2&6T&2&0&0\\
         \end{bmatrix}
         \begin{bmatrix}
             c_0\\c_1\\c_2\\c_3\\c_4\\c_5
         \end{bmatrix}
-    \end{aligned}\]
+    \end{aligned}
+$$</div>
                           </li>
                         </ul>
                       </li>
                       <li>解出$c_0 ~ c_5$即可
                         <ul>
                           <li>
-\[\begin{bmatrix}
-        &amp;\frac{6 b}{T^{5}}-\frac{6 a}{T^{5}}\\
-        &amp;\frac{15 a}{T^{4}}-\frac{15 b}{T^{4}}\\
-        &amp;\frac{10 b}{T^{3}}-\frac{10 a}{T^{3}}&amp;\\
-        &amp;0\\
-        &amp;0\\
-        &amp;a
-    \end{bmatrix}\]
+                            <div class="kdmath">$$
+\begin{bmatrix}
+        &\frac{6 b}{T^{5}}-\frac{6 a}{T^{5}}\\
+        &\frac{15 a}{T^{4}}-\frac{15 b}{T^{4}}\\
+        &\frac{10 b}{T^{3}}-\frac{10 a}{T^{3}}&\\
+        &0\\
+        &0\\
+        &a
+    \end{bmatrix}
+$$</div>
                           </li>
                         </ul>
                       </li>
@@ -407,10 +417,10 @@
         <ul>
           <li>For $J[x(t), y(t)] = \int_0^TF(t, x, y, \dot x, \dot y)dt$</li>
           <li>E-L:
-\(\begin{aligned}
-              \frac{\partial F}{\partial x} - \frac{d}{dt}(\frac{\partial F}{\partial \dot x}) &amp;= 0\\
-              \frac{\partial F}{\partial y} - \frac{d}{dt}(\frac{\partial F}{\partial \dot y}) &amp;= 0
-      \end{aligned}\)</li>
+<span class="kdmath">$\begin{aligned}
+              \frac{\partial F}{\partial x} - \frac{d}{dt}(\frac{\partial F}{\partial \dot x}) &= 0\\
+              \frac{\partial F}{\partial y} - \frac{d}{dt}(\frac{\partial F}{\partial \dot y}) &= 0
+      \end{aligned}$</span></li>
           <li>使用例子
             <ul>
               <li><a href="https://www.jneurosci.org/content/jneuro/5/7/1688.full.pdf">手臂动作协调: 实验验证的数学模型： The coordination of arm movements: an experimentally confirmed mathematical model - Tamar Flash, Neville Hogan 1985</a>
@@ -426,24 +436,24 @@
         <ul>
           <li>使物体依次通过m个点，但由于运动时无法忽略惯性作用，因此我们需要增加速度约束</li>
           <li>For
-\(\begin{aligned}
-      t&amp;=\begin{bmatrix}
-          t_0&amp; t_1&amp;\dotsc t_m
-      \end{bmatrix}^T&amp;\\
-      x&amp;=\begin{bmatrix}
-          x_0&amp; x_1&amp;\dotsc x_m
-      \end{bmatrix}^T&amp;
-  \end{aligned}\)</li>
+<span class="kdmath">$\begin{aligned}
+      t&=\begin{bmatrix}
+          t_0& t_1&\dotsc t_m
+      \end{bmatrix}^T&\\
+      x&=\begin{bmatrix}
+          x_0& x_1&\dotsc x_m
+      \end{bmatrix}^T&
+  \end{aligned}$</span></li>
           <li>$J[x(t)] = [\int_{t_0}^{t_1}(\ddot x^2)dx + \int_{t_1}^{t_2}(\ddot x^2)dx + \dotsc +\int_{t_{m-1}}^{t_m}(\ddot x^2)dx]$</li>
           <li>分段求解，得到
-\(\begin{aligned}
+<span class="kdmath">$\begin{aligned}
       x(t) = \begin{cases}
-          x_1(t) &amp;= c_{10}t^3 + c_{11}t^2 + c_{12}t + c_{13}&amp;t_0\le t\le t_1\\
-          x_2(t) &amp;= c_{20}t^3 + c_{21}t^2 + c_{22}t + c_{23}&amp;t_1\le t\le t_2\\
+          x_1(t) &= c_{10}t^3 + c_{11}t^2 + c_{12}t + c_{13}&t_0\le t\le t_1\\
+          x_2(t) &= c_{20}t^3 + c_{21}t^2 + c_{22}t + c_{23}&t_1\le t\le t_2\\
           \dotsc\\
-          x_m(t) &amp;= c_{m0}t^3 + c_{m1}t^2 + c_{m2}t + c_{m3}&amp;t_0\le t\le t_m\\
+          x_m(t) &= c_{m0}t^3 + c_{m1}t^2 + c_{m2}t + c_{m3}&t_0\le t\le t_m\\
       \end{cases}
-  \end{aligned}\)</li>
+  \end{aligned}$</span></li>
           <li>为了求解$4m$个变量$c_{ij}$，我们需要$4m$个方程[约束]来进行确定
             <ul>
               <li>有位置方程

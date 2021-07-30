@@ -343,13 +343,13 @@
             <ul>
               <li>proof</li>
               <li><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Orthogonal_decomposition_unit_vector_rodrigues_rotation_formula.svg" width="300px" alt="wiki" />
-\(\begin{aligned}
-\mathbf{v_{rot}} &amp;= \mathbf{v_{\parallel rot}} + \mathbf{v_{\perp rot}}\\
-&amp;= \mathbf{v_{\parallel}} + \cos(\theta)\mathbf{v_{\perp}} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-&amp;= \mathbf{v_{\parallel}} + \cos(\theta)(\mathbf{v} - \mathbf{v_{\parallel}}) + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-&amp;= \cos(\theta)\mathbf{v} + (1-\cos(\theta))\mathbf{v_{\parallel}} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-&amp;= \cos(\theta)\mathbf{v} + (1-\cos(\theta))(\mathbf{k}\cdotp\mathbf{v})\mathbf{k} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-\end{aligned}\)</li>
+<span class="kdmath">$\begin{aligned}
+\mathbf{v_{rot}} &= \mathbf{v_{\parallel rot}} + \mathbf{v_{\perp rot}}\\
+&= \mathbf{v_{\parallel}} + \cos(\theta)\mathbf{v_{\perp}} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
+&= \mathbf{v_{\parallel}} + \cos(\theta)(\mathbf{v} - \mathbf{v_{\parallel}}) + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
+&= \cos(\theta)\mathbf{v} + (1-\cos(\theta))\mathbf{v_{\parallel}} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
+&= \cos(\theta)\mathbf{v} + (1-\cos(\theta))(\mathbf{k}\cdotp\mathbf{v})\mathbf{k} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
+\end{aligned}$</span></li>
               <li>calculator the rotation matirx given by $\mathbf{k}$ and $\theta$</li>
               <li><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fa49bfffbf7815645f831552513cb080d9c5c9f1" alt="wiki" /></li>
               <li><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/734b982cadf1ec3e27f95a27ffa3f77723897261" alt="wiki" /></li>
@@ -386,11 +386,13 @@
       <li>Derivative of the rotation matrix
         <ul>
           <li>
-\[\begin{aligned}
-  \frac{d}{dt}(A\pm B) &amp;= \dot A \pm \dot B\\
-  \frac{d}{dt}(AB) &amp;= \dot A B + A \dot B\\
-  \frac{d}{dt}(A(\theta(t))) &amp;= \frac{dA}{d\theta}\dot \theta
-  \end{aligned}\]
+            <div class="kdmath">$$
+\begin{aligned}
+  \frac{d}{dt}(A\pm B) &= \dot A \pm \dot B\\
+  \frac{d}{dt}(AB) &= \dot A B + A \dot B\\
+  \frac{d}{dt}(A(\theta(t))) &= \frac{dA}{d\theta}\dot \theta
+  \end{aligned}
+$$</div>
           </li>
           <li>Angular velocity
             <ul>

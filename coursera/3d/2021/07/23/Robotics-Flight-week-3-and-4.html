@@ -309,7 +309,8 @@
               <li>write system of first-order differencial equations as matrix.
                 <ul>
                   <li>
-\[\begin{bmatrix}
+                    <div class="kdmath">$$
+\begin{bmatrix}
  \dot x_1\\
  \dot x_2\\
  \dotsc\\
@@ -321,7 +322,8 @@
    x_3\\
    \dotsc\\
    g(x_1, x_2, \dotsc, x_n, \mathbf{u})
- \end{bmatrix}\]
+ \end{bmatrix}
+$$</div>
                   </li>
                   <li>$\mathbf{\dot x} = f(\mathbf{x}, \mathbf{u})$</li>
                 </ul>
@@ -332,7 +334,9 @@
             <ul>
               <li>for equation $m\ddot y(t) + ky(t) = u(t)$</li>
               <li>
-\[\dot x=\begin{bmatrix}\dot x_1\\ \dot x_2\end{bmatrix} = \begin{bmatrix}x_2\\\frac{u(t)-kx_1}{m}\end{bmatrix}=\begin{bmatrix}0&amp;1\\-\frac{k}{m}&amp;0\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix} + \begin{bmatrix}0\\1\end{bmatrix}u(t)\]
+                <div class="kdmath">$$
+\dot x=\begin{bmatrix}\dot x_1\\ \dot x_2\end{bmatrix} = \begin{bmatrix}x_2\\\frac{u(t)-kx_1}{m}\end{bmatrix}=\begin{bmatrix}0&1\\-\frac{k}{m}&0\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix} + \begin{bmatrix}0\\1\end{bmatrix}u(t)
+$$</div>
               </li>
               <li>$\mathbf{\dot X}=A\mathbf{X}+B\mathbf{u}$</li>
             </ul>
@@ -341,14 +345,17 @@
             <ul>
               <li>Define states $x_1 = y,x_2 = z, x_3 = \phi, x_4 = \dot y, x_5 = \dot z, x_6 = \dot \phi$</li>
               <li>
-\[\begin{aligned}
-    m\ddot y &amp;= sin(\phi) u_1\\
-    m\ddot z &amp;= cos(\phi) u_1 + mg\\
-    I_{xx} \ddot \phi &amp;= u_2
-    \end{aligned}\]
+                <div class="kdmath">$$
+\begin{aligned}
+    m\ddot y &= sin(\phi) u_1\\
+    m\ddot z &= cos(\phi) u_1 + mg\\
+    I_{xx} \ddot \phi &= u_2
+    \end{aligned}
+$$</div>
               </li>
               <li>
-\[\begin{bmatrix}
+                <div class="kdmath">$$
+\begin{bmatrix}
     \dot x_1\\
     \dot x_2\\
     \dot x_3\\
@@ -364,7 +371,8 @@
     \frac{\sin(x_3)u_1}{m}\\
     \frac{\cos(x_3)u_1}{m} - g\\
     u_2
-    \end{bmatrix}\]
+    \end{bmatrix}
+$$</div>
               </li>
             </ul>
           </li>
@@ -417,26 +425,32 @@ $</li>
             <ul>
               <li>$\phi\sim 0 \rightarrow \sin\phi\sim \phi, \cos\phi\sim 1$</li>
               <li>
-\[\begin{aligned}
-    \ddot y &amp;= -g\phi\\
-    \ddot z &amp;= -g + \frac{u_1}{m}\\
-    \ddot \phi &amp;=\frac{u_2}{I_{xx}}
-    \end{aligned}\]
+                <div class="kdmath">$$
+\begin{aligned}
+    \ddot y &= -g\phi\\
+    \ddot z &= -g + \frac{u_1}{m}\\
+    \ddot \phi &=\frac{u_2}{I_{xx}}
+    \end{aligned}
+$$</div>
               </li>
             </ul>
           </li>
           <li>PD controller
             <ul>
               <li>
-\[\begin{aligned}e_p&amp;=r_T(t)-r\\e_v&amp;=\dot r_T(t) - \dot r\end{aligned}\]
+                <div class="kdmath">$$
+\begin{aligned}e_p&=r_T(t)-r\\e_v&=\dot r_T(t) - \dot r\end{aligned}
+$$</div>
               </li>
               <li>$\ddot r_c=\ddot r_T(t) + k_pe_p+k_ve_v$</li>
               <li>
-\[\begin{aligned}
-        u_1&amp;=mg+m\ddot z_c&amp;=&amp;m[g+\ddot z_T(t)+k_{vz}(\dot z_T(t) - \dot z) + k_{pz}(z_T(t)-z)]\\
-        u_2&amp;=I_{xx}\ddot \phi_c &amp;=&amp; I_{xx}[\ddot \phi_T(t)+ k_{v\phi}(\dot\phi_T(t) - \dot\phi) + k_{pz}(\phi_T(t) - \phi)]\\
-        \phi_c &amp;= -\frac{\ddot y_c}{g} &amp;=&amp; -\frac{1}{g}[\ddot y_T(t) + k_{vy}(\dot y_T(t) - \dot y) + k_{py}(y_T(t)-y)]
-    \end{aligned}\]
+                <div class="kdmath">$$
+\begin{aligned}
+        u_1&=mg+m\ddot z_c&=&m[g+\ddot z_T(t)+k_{vz}(\dot z_T(t) - \dot z) + k_{pz}(z_T(t)-z)]\\
+        u_2&=I_{xx}\ddot \phi_c &=& I_{xx}[\ddot \phi_T(t)+ k_{v\phi}(\dot\phi_T(t) - \dot\phi) + k_{pz}(\phi_T(t) - \phi)]\\
+        \phi_c &= -\frac{\ddot y_c}{g} &=& -\frac{1}{g}[\ddot y_T(t) + k_{vy}(\dot y_T(t) - \dot y) + k_{py}(y_T(t)-y)]
+    \end{aligned}
+$$</div>
               </li>
             </ul>
           </li>
