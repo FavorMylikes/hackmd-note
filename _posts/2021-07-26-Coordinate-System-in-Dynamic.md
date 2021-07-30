@@ -62,7 +62,9 @@ katex: true
         - $b$表示body frame
         - $\hat \omega$是一种特殊记法，由于角速度中仅有3个独立的量，而$R^T\dot R$表示一个矩阵，为了简便记录，用$\hat \omega$代替
         - 若$\omega = [\omega_1, \omega_2, \omega_3]$
-        - 则$\hat \omega = \begin{bmatrix}0&-\omega_3&\omega_2\\\omega_3&0&-\omega_1\\-\omega_2&\omega_1&0\end{bmatrix}$
+        $$
+             \hat \omega = \begin{bmatrix}0&-\omega_3&\omega_2\\\omega_3&0&-\omega_1\\-\omega_2&\omega_1&0\end{bmatrix}
+        $$
       - 又有
         $$\begin{aligned}
             \dot \mathbf{q} &= \dot R\mathbf{p}\\
@@ -114,7 +116,10 @@ katex: true
                     0&0&0
                 \end{bmatrix}\\
             \end{aligned}$$
-        - 此时$\hat \omega^b=\hat \omega^s=\hat{\begin{bmatrix}0\\0\\1\end{bmatrix}}$, 因为旋转轴为$z$, 注意向量上方的$\hat {\omega}$
+        - 此时因为旋转轴为$z$, 注意向量上方的$\hat {\omega}$
+             $$
+                \hat \omega^b=\hat \omega^s=\hat{\begin{bmatrix}0\\0\\1\end{bmatrix}}
+             $$
       - 多轴例子[由于转轴非常轴，因此两个参考系内的结果并不一样]
         - $$
             \begin{aligned}
