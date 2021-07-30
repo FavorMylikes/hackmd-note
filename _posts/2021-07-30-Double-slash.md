@@ -72,8 +72,18 @@ katex: true
 ### Two method for rendering katex
 
 1. Render at server side
-   1. [Jekyll 中使用 KaTeX SsKatex](https://frankindev.com/2017/02/08/using-katex-in-jekyll/)
-   2. Not sure it could works or not.
+   - [Jekyll 中使用 KaTeX SsKatex](https://frankindev.com/2017/02/08/using-katex-in-jekyll/)
+   - Not sure it could works or not.
+   - You need set config at `_config.yml`
+
+    ```yaml
+        kramdown:
+            math_engine: null
+    ```
+
+   - The `math_engine` be set `mathjax` as default
+   - If you wanna use `javascript` for rendering, you'd better set it be `null`
+   - For more selection for it, check [here](https://kramdown.gettalong.org/options.html#option-math-engine).
 2. Render at client side
    -. Require you have `katex.js` and `katex.css` at head, katex will render when you brower open.
    -. So you need consider about the order of rendering markdown and katex
