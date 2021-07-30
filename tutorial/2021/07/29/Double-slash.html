@@ -289,7 +289,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#no-dollar">No dollar</a></li><li><a href="#single-dollar">Single dollar</a></li><li><a href="#double-dollar">Double dollar</a></li><li><a href="#matrix-with-single-dollar">Matrix with Single Dollar</a></li><li><a href="#matrix-with-double-dollar">Matrix with Double Dollar</a></li></ul>
+              <ul class="toc__menu"><li><a href="#no-dollar">No dollar</a></li><li><a href="#single-dollar">Single dollar</a></li><li><a href="#double-dollar">Double dollar</a></li><li><a href="#matrix-with-single-dollar">Matrix with Single Dollar</a></li><li><a href="#matrix-with-double-dollar">Matrix with Double Dollar</a></li><li><a href="#markdown-confict-with-katex">Markdown confict with katex</a><ul><li><a href="#two-method-for-rendering-katex">Two method for rendering katex</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -367,6 +367,31 @@
     </ul>
   </li>
 </ul>
+
+<h2 id="markdown-confict-with-katex">Markdown confict with katex</h2>
+
+<h3 id="two-method-for-rendering-katex">Two method for rendering katex</h3>
+
+<ol>
+  <li>Render at server side
+    <ol>
+      <li><a href="https://frankindev.com/2017/02/08/using-katex-in-jekyll/">Jekyll 中使用 KaTeX SsKatex</a></li>
+      <li>Not sure it could works or not.</li>
+    </ol>
+  </li>
+  <li>
+    <p>Render at client side
+-. Require you have <code class="language-plaintext highlighter-rouge">katex.js</code> and <code class="language-plaintext highlighter-rouge">katex.css</code> at head, katex will render when you brower open.
+-. So you need consider about the order of rendering markdown and katex
+-. For example, you have a md file like</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ABC*$123$DE*F$
+</code></pre></div>    </div>
+
+    <p>-. It will convert <code class="language-plaintext highlighter-rouge">$123$DE$</code> as <em>Italic</em> first
+-. And then the rendering for katex</p>
+  </li>
+</ol>
 
         
       </section>
