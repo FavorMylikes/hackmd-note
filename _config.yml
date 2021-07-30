@@ -22,6 +22,8 @@ pagination: # jekyll-paginate-v2
   debug: true  # open debug
   per_page: 5
   permalink: '/blog/page/:num/'
+  sort_field: 'date'
+  sort_reverse: true
   trail:
     before: 2
     after: 2
