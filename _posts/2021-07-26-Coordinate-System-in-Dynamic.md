@@ -212,8 +212,7 @@ https://zhuanlan.zhihu.com/p/86468301)
                 \hat \omega^b&=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
                 &=\begin{bmatrix}
                 0 & - \dot \phi s{(\theta )} - \dot \psi c{(\phi )} c{(\theta )} & \dot \psi s{(\phi )} + \dot \theta\\
-                \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )} & 0 & - \dot \phi c{(\theta )} + \dot \psi s{(\theta )} c{(\phi )}\\
-                - \dot \psi s{(\phi )} - \dot \theta & \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )} & 0\end{bmatrix}\\
+                \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )} & 0 & - \dot \phi c{(\theta )} + \dot \psi s{(\theta )} c{(\phi )}\\- \dot \psi s{(\phi )} - \dot \theta & \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )} & 0\end{bmatrix}\\
                 &=\hat {
                 \begin{bmatrix}
                     \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )}\\
