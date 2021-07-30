@@ -247,9 +247,11 @@ https://zhuanlan.zhihu.com/p/86468301)
               $$
   - 牛顿欧拉方程[Newton-Euler's Equation]
     - 牛顿方程
-      - $\mathbf{r}=\begin{bmatrix}
+      $$
+      \mathbf{r}=\begin{bmatrix}
           x\\y\\z
-      \end{bmatrix}$
+        \end{bmatrix}
+      $$
       - $\begin{aligned}
         m\mathbf{\ddot r}
         &= R\begin{bmatrix}

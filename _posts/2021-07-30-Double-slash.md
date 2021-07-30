@@ -50,6 +50,23 @@ katex: true
         1\\2\\3
         \end{bmatrix}$$
 
+### Dollar nesting
+
+- Eng
+  - $$
+      \begin{cases}
+          a=1 \text{here $a=1$}\\
+          a=2 \text{here $a\neq 1$}\\
+      \end{cases}
+    $$
+- Chinese
+  - $$
+      \begin{cases}
+          a=1 \text{这里 $a=1$}\\
+          a=2 \text{那里 $a\neq 1$}\\
+      \end{cases}
+    $$
+
 ## Markdown confict with katex
 
 ### Two method for rendering katex
