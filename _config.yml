@@ -20,7 +20,7 @@ github_username:  FavorMylikes
 pagination: # jekyll-paginate-v2
   enabled: true
   per_page: 5
-  permalink: /blog/page/:num/
+  permalink: '/blog/page/:num/'
   trail:
     before: 2
     after: 2
