@@ -1,1 +1,1 @@
-Sitemap: https://favormylikes.github.io/hackmd-note/sitemap.xml
+Sitemap: https://favormylikes.github.io/sitemap.xml
