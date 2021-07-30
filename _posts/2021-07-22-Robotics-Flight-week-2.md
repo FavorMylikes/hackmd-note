@@ -86,7 +86,9 @@ https://www.zhihu.com/question/27518189/answer/1471591199)
     - Skew - Symmetric Matrices and the Hat Operator
       - symmetric matrix: $A^T = A$
       - skey-symmetric matrix: $A^T = -A$
-      - $\hat a = \hat{\begin{bmatrix}a_1\\a_2\\a_3\end{bmatrix}} = \begin{bmatrix}0&-a_3&a_2\\a_3&0&-a_1\\-a_2&a_1&0\end{bmatrix}$
+      - $$
+          \hat a = \hat{\begin{bmatrix}a_1\\a_2\\a_3\end{bmatrix}} = \begin{bmatrix}0&-a_3&a_2\\a_3&0&-a_1\\-a_2&a_1&0\end{bmatrix}
+        $$
       - $\mathbf{u}\times\mathbf{v} = \hat{\mathbf{u}}\mathbf{v}$
       - $\hat\omega^b = R^T\dot R$
       - $\hat\omega^s = \dot RR^T$

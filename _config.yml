@@ -13,7 +13,7 @@ subtitle : "麦丽素的日常"
 locale: "en-US"
 description: >- # this means to ignore newlines until "baseurl:"
   A place for notes on various topics.
-baseurl: "/hackmd-note" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://favormylikes.github.io"
 github_username:  FavorMylikes
 timezone: Asia/Shanghai

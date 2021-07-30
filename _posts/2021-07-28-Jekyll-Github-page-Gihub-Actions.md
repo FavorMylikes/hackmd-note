@@ -35,7 +35,7 @@ katex: false
       2. jekyll/tagging
       3. jekyll-paginate
          1. `paginate`: 5 # 分页数
-         2. paginate_path: "/hackmd-note/page:num/"  # 扫描位置
+         2. paginate_path: "/page:num/"  # 扫描位置
       4. kramdown-math-katex
 
 ### 参考

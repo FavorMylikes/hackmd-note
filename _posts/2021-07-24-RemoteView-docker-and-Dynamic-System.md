@@ -238,7 +238,7 @@ https://zhuanlan.zhihu.com/p/20727402)
         $$
       - 得到
         $$\begin{aligned}
-            y &= \cot\frac{\theta}{2}\\
+            y' &= \cot\frac{\theta}{2}\\
             A(x,y) &= \theta^2\\
             B(x,y) &= 4x\theta + 4y\\
             D(x,y) &= 4(x^2+y^2)\\
