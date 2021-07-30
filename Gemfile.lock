@@ -172,7 +172,6 @@ DEPENDENCIES
   jekyll-gist
   jekyll-include-cache
   jekyll-katex
-  jekyll-paginate
   jekyll-paginate-v2
   jekyll-sitemap
   jekyll-tagging
