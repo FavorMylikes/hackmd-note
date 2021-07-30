@@ -1,0 +1,8 @@
+麦丽素:
+  name        : "麦丽素"
+  bio         : "My life is getting better"
+  avatar      : "https://www.gravatar.com/avatar/7ac850b26f9a21a153f8f581964e22cd?s=200"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:l786112323@gmail.com"
