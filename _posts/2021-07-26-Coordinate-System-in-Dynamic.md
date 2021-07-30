@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title:  "Coordinate System in Dynamic"
 date:   2021-07-26 11:02:00 +0800
 categories: zhihu coursera

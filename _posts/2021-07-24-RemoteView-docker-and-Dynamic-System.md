@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title:  "Install RemoteView.docker, Finish Dynamic System Control[1]"
 date:   2021-07-24 09:57:00 +0800
 categories: env system docker zhihu

@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title:  "E-L Equation"
 date:   2021-07-25 11:07:00 +0800
 categories: zhihu

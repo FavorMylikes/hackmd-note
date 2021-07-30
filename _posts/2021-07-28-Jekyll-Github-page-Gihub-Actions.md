@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title:  "Jekyll+Github page+Gihub Actions"
 date:   2021-07-28 10:32:00 +0800
 categories: tutorial

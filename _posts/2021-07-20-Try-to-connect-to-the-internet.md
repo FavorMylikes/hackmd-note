@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title:  "Try to connect to the internet"
 date:   2021-07-20 10:37:00 +0800
 categories: env system

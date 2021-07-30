@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title:  "Robotics Perception week 1"
 date:   2021-07-27 10:38:00 +0800
 categories: coursera 3D

@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title:  "Install Remote Browser[remoteview], And Coursera Robotics-Flight week 2"
 date:   2021-07-22 11:12:00 +0800
 categories: env system coursera

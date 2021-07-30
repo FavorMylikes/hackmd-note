@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title:  "Robotics-Flight week 1 and 2"
 date:   2021-07-21 10:12:00 +0800
 categories: coursera system env
