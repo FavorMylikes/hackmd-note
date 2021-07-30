@@ -73,7 +73,9 @@ katex: true
     - $u_2 = L(F_1 - F_2)$
       - L is the arm length of the quadrotor.
     - Newton equation
-      - $m\mathbf{\ddot r}=m\begin{bmatrix}\ddot y\\\ddot z\end{bmatrix}=\begin{bmatrix}0\\-mg\end{bmatrix} + R\begin{bmatrix}0\\u_1\end{bmatrix} = \begin{bmatrix}0\\-mg\end{bmatrix} + \begin{bmatrix}-u_1\sin\phi\\u_1\cos\phi\end{bmatrix}$
+      - $$
+          m\mathbf{\ddot r}=m\begin{bmatrix}\ddot y\\\ddot z\end{bmatrix}=\begin{bmatrix}0\\-mg\end{bmatrix} + R\begin{bmatrix}0\\u_1\end{bmatrix} = \begin{bmatrix}0\\-mg\end{bmatrix} + \begin{bmatrix}-u_1\sin\phi\\u_1\cos\phi\end{bmatrix}
+        $$
     - Euler equation
       - $I_{xx}\ddot \phi = u_2$
     - Newton-Euler equation

@@ -26,7 +26,7 @@ katex: true
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727142444.png" width="400px" alt="20210727142444">
   - $o^\star$为眼睛位置
   - $S$为垂足
-  - $OS=O^\starS$, 因此$\angle{SOO^\star}=45\degree$
+  - $OS=O^\star$, 因此$\angle{SOO^\star}=45\degree$
   - $P$为平面图上一点
   - 连接$P-O$交图像平面$M$
   - 连接$P-O^\star$交图像平面$P^\star$

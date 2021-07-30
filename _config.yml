@@ -16,7 +16,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/hackmd-note" # the subpath of your site, e.g. /blog
 url: "https://favormylikes.github.io"
 github_username:  FavorMylikes
-
+timezone: Asia/Shanghai
 
 paginate_path: '/blog/:num/'
 
@@ -76,5 +76,3 @@ kramdown:
   math_engine: null  # default is mathjax, see here https://kramdown.gettalong.org/options.html#option-math-engine
   # math_engine_opts: {}
 katex:
-
-timezone: Asia/Shanghai
