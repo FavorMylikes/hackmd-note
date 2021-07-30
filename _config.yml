@@ -7,6 +7,7 @@ minimal_mistakes_skin : "contrast" # "air", "aqua", "contrast", "dark", "dirt", 
 search: true
 
 # Site Settings
+author: "麦丽素"
 title: "Notes B"
 title_separator : "/"
 subtitle : "麦丽素的日常"
