@@ -17,8 +17,10 @@ baseurl: "/hackmd-note" # the subpath of your site, e.g. /blog
 url: "https://favormylikes.github.io"
 github_username:  FavorMylikes
 
-paginate: 5 # amount of posts to show
-paginate_path: /blog/page:num/
+pagination: # jekyll-paginate-v2
+  enabled: true
+  per_page: 5
+  permalink: /blog/page:num/
 
 plugins:
   # - kramdown-math-katex
