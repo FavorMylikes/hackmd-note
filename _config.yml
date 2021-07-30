@@ -73,6 +73,6 @@ defaults:
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  # math_engine: katex
+  math_engine: null
   # math_engine_opts: {}
 katex:
