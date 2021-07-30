@@ -274,7 +274,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -417,10 +417,21 @@ $$</div>
 
 <ol>
   <li>Render at server side
-    <ol>
+    <ul>
       <li><a href="https://frankindev.com/2017/02/08/using-katex-in-jekyll/">Jekyll 中使用 KaTeX SsKatex</a></li>
       <li>Not sure it could works or not.</li>
-    </ol>
+      <li>You need set config at <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+    </ul>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="na">kramdown</span><span class="pi">:</span>
+         <span class="na">math_engine</span><span class="pi">:</span> <span class="no">null</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">math_engine</code> be set <code class="language-plaintext highlighter-rouge">mathjax</code> as default</li>
+      <li>If you wanna use <code class="language-plaintext highlighter-rouge">javascript</code> for rendering, you’d better set it be <code class="language-plaintext highlighter-rouge">null</code></li>
+      <li>For more selection for it, check <a href="https://kramdown.gettalong.org/options.html#option-math-engine">here</a>.</li>
+    </ul>
   </li>
   <li>
     <p>Render at client side

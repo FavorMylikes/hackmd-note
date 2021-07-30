@@ -506,79 +506,76 @@ $$</div>
                       </li>
                       <li><strong>直接使用$\hat \omega$公式</strong>
                         <ul>
-                          <li>$$
-  \begin{aligned}
-      \hat \omega^s&amp;=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T<br />
-      &amp;=\begin{bmatrix}
-          0 &amp; - \dot \psi - \dot \theta s{(\phi )} &amp; \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}<br />
-          \dot \psi + \dot \theta s{(\phi )} &amp; 0 &amp; - \dot \phi c{(\psi )} + \dot \theta s{(\psi )} c{(\phi )}<br />
-          - \dot \phi s{(\psi )} - \dot \theta c{(\phi )} c{(\psi )} &amp; \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )} &amp; 0
-      \end{bmatrix}<br />
-      &amp;=\hat {
+                          <li>
+                            <div class="kdmath">$$
+\begin{aligned}
+      \hat \omega^s&=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T\\
+      &=\begin{bmatrix}
+          0 & - \dot \psi - \dot \theta s{(\phi )} & \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}\\
+          \dot \psi + \dot \theta s{(\phi )} & 0 & - \dot \phi c{(\psi )} + \dot \theta s{(\psi )} c{(\phi )}\\- \dot \phi s{(\psi )} - \dot \theta c{(\phi )} c{(\psi )} & \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )} & 0
+      \end{bmatrix}\\
+      &=\hat {
       \begin{bmatrix}
-          \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )}<br />
-          \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}<br />
+          \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )}\\
+          \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}\\
           \dot \psi + \dot \theta s{(\phi )}
-      \end{bmatrix}}&amp;\text{注意符号}<br />
-      &amp;=\hat {
+      \end{bmatrix}}&\text{注意符号}\\
+      &=\hat {
           \begin{bmatrix}
-              c(\psi)&amp;-s(\psi)c(\phi)&amp;0<br />
-              s(\psi)&amp;c(\phi)s(\phi)&amp;0<br />
-              0&amp;s(\phi)&amp;1
+              c(\psi)&-s(\psi)c(\phi)&0\\
+              s(\psi)&c(\phi)s(\phi)&0\\
+              0&s(\phi)&1
           \end{bmatrix}
           \begin{bmatrix}
-              \dot \phi<br />
-              \dot \theta<br />
+              \dot \phi\\
+              \dot \theta\\
               \dot \psi
           \end{bmatrix}
-      }<br />
-      \omega^s&amp;=\begin{bmatrix}
-              c(\psi)&amp;-s(\psi)c(\phi)&amp;0<br />
-              s(\psi)&amp;c(\phi)s(\phi)&amp;0<br />
-              0&amp;s(\phi)&amp;1
+      }\\
+      \omega^s&=\begin{bmatrix}
+              c(\psi)&-s(\psi)c(\phi)&0\\
+              s(\psi)&c(\phi)s(\phi)&0\\
+              0&s(\phi)&1
           \end{bmatrix}
           \begin{bmatrix}
-              \dot \phi<br />
-              \dot \theta<br />
+              \dot \phi\\
+              \dot \theta\\
               \dot \psi
-          \end{bmatrix}<br />
-  \hat \omega^b&amp;=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y<br />
-  &amp;=\begin{bmatrix}
-  0 &amp; - \dot \phi s{(\theta )} - \dot \psi c{(\phi )} c{(\theta )} &amp; \dot \psi s{(\phi )} + \dot \theta<br />
-  \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )} &amp; 0 &amp; - \dot \phi c{(\theta )} + \dot \psi s{(\theta )} c{(\phi )}<br />
-                            <ul>
-                              <li>\dot \psi s{(\phi )} - \dot \theta &amp; \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )} &amp; 0\end{bmatrix}<br />
-  &amp;=\hat {
+          \end{bmatrix}\\
+  \hat \omega^b&=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
+  &=\begin{bmatrix}
+  0 & - \dot \phi s{(\theta )} - \dot \psi c{(\phi )} c{(\theta )} & \dot \psi s{(\phi )} + \dot \theta\\
+  \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )} & 0 & - \dot \phi c{(\theta )} + \dot \psi s{(\theta )} c{(\phi )}\\  - \dot \psi s{(\phi )} - \dot \theta & \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )} & 0\end{bmatrix}\\
+  &=\hat {
   \begin{bmatrix}
-  \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )}<br />
-  \dot \psi s{(\phi )} + \dot \theta<br />
-  \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )}
-  \end{bmatrix}}&amp;\text{注意符号}<br />
-  &amp;=\hat {
-  \begin{bmatrix}
-      c(\theta)&amp;0&amp;-s(\theta)c(\phi)<br />
-      0&amp;1&amp;s(\phi)<br />
-      s(\theta)&amp;0&amp;c(\phi)c(\theta)
-  \end{bmatrix}
-  \begin{bmatrix}
-      \dot \phi<br />
-      \dot \theta<br />
-      \dot \psi
-  \end{bmatrix}
-  }<br />
-  \omega^b&amp;=\begin{bmatrix}
-      c(\theta)&amp;0&amp;-s(\theta)c(\phi)<br />
-      0&amp;1&amp;s(\phi)<br />
-      s(\theta)&amp;0&amp;c(\phi)c(\theta)
-  \end{bmatrix}
-  \begin{bmatrix}
-      \dot \phi<br />
-      \dot \theta<br />
-      \dot \psi
-  \end{bmatrix}
+      \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )}\\
+      \dot \psi s{(\phi )} + \dot \theta\\
+      \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )}
+  \end{bmatrix}}&\text{注意符号}\\
+  &=\hat {
+      \begin{bmatrix}
+          c(\theta)&0&-s(\theta)c(\phi)\\
+          0&1&s(\phi)\\
+          s(\theta)&0&c(\phi)c(\theta)
+      \end{bmatrix}
+      \begin{bmatrix}
+          \dot \phi\\
+          \dot \theta\\
+          \dot \psi
+      \end{bmatrix}
+  }\\
+  \omega^b&=\begin{bmatrix}
+          c(\theta)&0&-s(\theta)c(\phi)\\
+          0&1&s(\phi)\\
+          s(\theta)&0&c(\phi)c(\theta)
+      \end{bmatrix}
+      \begin{bmatrix}
+          \dot \phi\\
+          \dot \theta\\
+          \dot \psi
+      \end{bmatrix}
   \end{aligned}
-$$</li>
-                            </ul>
+$$</div>
                           </li>
                         </ul>
                       </li>
@@ -597,15 +594,19 @@ $$</li>
     x\\y\\z
   \end{bmatrix}$</span>
             <ul>
-              <li>$\begin{aligned}
+              <li>
+                <div class="kdmath">$$
+\begin{aligned}
 m\mathbf{\ddot r}
-&amp;= R\begin{bmatrix}
-    0\0\F_1+F_2+F_3+F_4
-\end{bmatrix}-\begin{bmatrix}0\0\mg\end{bmatrix}<br />
-&amp;= R\begin{bmatrix}
-    0\0\u_1
-\end{bmatrix}-\begin{bmatrix}0\0\mg\end{bmatrix}<br />
-\end{aligned}$</li>
+&= R\begin{bmatrix}
+    0\\0\\F_1+F_2+F_3+F_4
+\end{bmatrix}-\begin{bmatrix}0\\0\\mg\end{bmatrix}\\
+&= R\begin{bmatrix}
+    0\\0\\u_1
+\end{bmatrix}-\begin{bmatrix}0\\0\\mg\end{bmatrix}\\
+\end{aligned}
+$$</div>
+              </li>
             </ul>
           </li>
           <li>欧拉方程
@@ -741,7 +742,7 @@ m\mathbf{\ddot r}
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     

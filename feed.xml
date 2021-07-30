@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://favormylikes.github.io/hackmd-note/feed.xml" rel="self" type="application/atom+xml" /><link href="https://favormylikes.github.io/hackmd-note/" rel="alternate" type="text/html" /><updated>2021-07-30T09:34:45+00:00</updated><id>https://favormylikes.github.io/hackmd-note/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><entry><title type="html">Double slash test</title><link href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-29T07:37:00+00:00</published><updated>2021-07-29T07:37:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html">&lt;h2 id=&quot;render&quot;&gt;Render&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://favormylikes.github.io/hackmd-note/feed.xml" rel="self" type="application/atom+xml" /><link href="https://favormylikes.github.io/hackmd-note/" rel="alternate" type="text/html" /><updated>2021-07-30T09:58:31+00:00</updated><id>https://favormylikes.github.io/hackmd-note/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><entry><title type="html">Double slash test</title><link href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-29T07:37:00+00:00</published><updated>2021-07-29T07:37:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html">&lt;h2 id=&quot;render&quot;&gt;Render&lt;/h2&gt;
 
 &lt;h3 id=&quot;no-dollar&quot;&gt;No dollar&lt;/h3&gt;
 
@@ -121,10 +121,21 @@ $$&lt;/div&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Render at server side
-    &lt;ol&gt;
+    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://frankindev.com/2017/02/08/using-katex-in-jekyll/&quot;&gt;Jekyll 中使用 KaTeX SsKatex&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;Not sure it could works or not.&lt;/li&gt;
-    &lt;/ol&gt;
+      &lt;li&gt;You need set config at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     &lt;span class=&quot;na&quot;&gt;kramdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;math_engine&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;null&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;math_engine&lt;/code&gt; be set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mathjax&lt;/code&gt; as default&lt;/li&gt;
+      &lt;li&gt;If you wanna use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;javascript&lt;/code&gt; for rendering, you’d better set it be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;null&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;For more selection for it, check &lt;a href=&quot;https://kramdown.gettalong.org/options.html#option-math-engine&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Render at client side
@@ -724,79 +735,76 @@ $$&lt;/div&gt;
                       &lt;/li&gt;
                       &lt;li&gt;&lt;strong&gt;直接使用$\hat \omega$公式&lt;/strong&gt;
                         &lt;ul&gt;
-                          &lt;li&gt;$$
-  \begin{aligned}
-      \hat \omega^s&amp;amp;=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T&lt;br /&gt;
-      &amp;amp;=\begin{bmatrix}
-          0 &amp;amp; - \dot \psi - \dot \theta s{(\phi )} &amp;amp; \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}&lt;br /&gt;
-          \dot \psi + \dot \theta s{(\phi )} &amp;amp; 0 &amp;amp; - \dot \phi c{(\psi )} + \dot \theta s{(\psi )} c{(\phi )}&lt;br /&gt;
-          - \dot \phi s{(\psi )} - \dot \theta c{(\phi )} c{(\psi )} &amp;amp; \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )} &amp;amp; 0
-      \end{bmatrix}&lt;br /&gt;
-      &amp;amp;=\hat {
+                          &lt;li&gt;
+                            &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+      \hat \omega^s&amp;=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T\\
+      &amp;=\begin{bmatrix}
+          0 &amp; - \dot \psi - \dot \theta s{(\phi )} &amp; \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}\\
+          \dot \psi + \dot \theta s{(\phi )} &amp; 0 &amp; - \dot \phi c{(\psi )} + \dot \theta s{(\psi )} c{(\phi )}\\- \dot \phi s{(\psi )} - \dot \theta c{(\phi )} c{(\psi )} &amp; \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )} &amp; 0
+      \end{bmatrix}\\
+      &amp;=\hat {
       \begin{bmatrix}
-          \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )}&lt;br /&gt;
-          \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}&lt;br /&gt;
+          \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )}\\
+          \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}\\
           \dot \psi + \dot \theta s{(\phi )}
-      \end{bmatrix}}&amp;amp;\text{注意符号}&lt;br /&gt;
-      &amp;amp;=\hat {
+      \end{bmatrix}}&amp;\text{注意符号}\\
+      &amp;=\hat {
           \begin{bmatrix}
-              c(\psi)&amp;amp;-s(\psi)c(\phi)&amp;amp;0&lt;br /&gt;
-              s(\psi)&amp;amp;c(\phi)s(\phi)&amp;amp;0&lt;br /&gt;
-              0&amp;amp;s(\phi)&amp;amp;1
+              c(\psi)&amp;-s(\psi)c(\phi)&amp;0\\
+              s(\psi)&amp;c(\phi)s(\phi)&amp;0\\
+              0&amp;s(\phi)&amp;1
           \end{bmatrix}
           \begin{bmatrix}
-              \dot \phi&lt;br /&gt;
-              \dot \theta&lt;br /&gt;
+              \dot \phi\\
+              \dot \theta\\
               \dot \psi
           \end{bmatrix}
-      }&lt;br /&gt;
-      \omega^s&amp;amp;=\begin{bmatrix}
-              c(\psi)&amp;amp;-s(\psi)c(\phi)&amp;amp;0&lt;br /&gt;
-              s(\psi)&amp;amp;c(\phi)s(\phi)&amp;amp;0&lt;br /&gt;
-              0&amp;amp;s(\phi)&amp;amp;1
+      }\\
+      \omega^s&amp;=\begin{bmatrix}
+              c(\psi)&amp;-s(\psi)c(\phi)&amp;0\\
+              s(\psi)&amp;c(\phi)s(\phi)&amp;0\\
+              0&amp;s(\phi)&amp;1
           \end{bmatrix}
           \begin{bmatrix}
-              \dot \phi&lt;br /&gt;
-              \dot \theta&lt;br /&gt;
+              \dot \phi\\
+              \dot \theta\\
               \dot \psi
-          \end{bmatrix}&lt;br /&gt;
-  \hat \omega^b&amp;amp;=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y&lt;br /&gt;
-  &amp;amp;=\begin{bmatrix}
-  0 &amp;amp; - \dot \phi s{(\theta )} - \dot \psi c{(\phi )} c{(\theta )} &amp;amp; \dot \psi s{(\phi )} + \dot \theta&lt;br /&gt;
-  \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )} &amp;amp; 0 &amp;amp; - \dot \phi c{(\theta )} + \dot \psi s{(\theta )} c{(\phi )}&lt;br /&gt;
-                            &lt;ul&gt;
-                              &lt;li&gt;\dot \psi s{(\phi )} - \dot \theta &amp;amp; \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )} &amp;amp; 0\end{bmatrix}&lt;br /&gt;
-  &amp;amp;=\hat {
+          \end{bmatrix}\\
+  \hat \omega^b&amp;=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
+  &amp;=\begin{bmatrix}
+  0 &amp; - \dot \phi s{(\theta )} - \dot \psi c{(\phi )} c{(\theta )} &amp; \dot \psi s{(\phi )} + \dot \theta\\
+  \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )} &amp; 0 &amp; - \dot \phi c{(\theta )} + \dot \psi s{(\theta )} c{(\phi )}\\  - \dot \psi s{(\phi )} - \dot \theta &amp; \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )} &amp; 0\end{bmatrix}\\
+  &amp;=\hat {
   \begin{bmatrix}
-  \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )}&lt;br /&gt;
-  \dot \psi s{(\phi )} + \dot \theta&lt;br /&gt;
-  \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )}
-  \end{bmatrix}}&amp;amp;\text{注意符号}&lt;br /&gt;
-  &amp;amp;=\hat {
-  \begin{bmatrix}
-      c(\theta)&amp;amp;0&amp;amp;-s(\theta)c(\phi)&lt;br /&gt;
-      0&amp;amp;1&amp;amp;s(\phi)&lt;br /&gt;
-      s(\theta)&amp;amp;0&amp;amp;c(\phi)c(\theta)
-  \end{bmatrix}
-  \begin{bmatrix}
-      \dot \phi&lt;br /&gt;
-      \dot \theta&lt;br /&gt;
-      \dot \psi
-  \end{bmatrix}
-  }&lt;br /&gt;
-  \omega^b&amp;amp;=\begin{bmatrix}
-      c(\theta)&amp;amp;0&amp;amp;-s(\theta)c(\phi)&lt;br /&gt;
-      0&amp;amp;1&amp;amp;s(\phi)&lt;br /&gt;
-      s(\theta)&amp;amp;0&amp;amp;c(\phi)c(\theta)
-  \end{bmatrix}
-  \begin{bmatrix}
-      \dot \phi&lt;br /&gt;
-      \dot \theta&lt;br /&gt;
-      \dot \psi
-  \end{bmatrix}
+      \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )}\\
+      \dot \psi s{(\phi )} + \dot \theta\\
+      \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )}
+  \end{bmatrix}}&amp;\text{注意符号}\\
+  &amp;=\hat {
+      \begin{bmatrix}
+          c(\theta)&amp;0&amp;-s(\theta)c(\phi)\\
+          0&amp;1&amp;s(\phi)\\
+          s(\theta)&amp;0&amp;c(\phi)c(\theta)
+      \end{bmatrix}
+      \begin{bmatrix}
+          \dot \phi\\
+          \dot \theta\\
+          \dot \psi
+      \end{bmatrix}
+  }\\
+  \omega^b&amp;=\begin{bmatrix}
+          c(\theta)&amp;0&amp;-s(\theta)c(\phi)\\
+          0&amp;1&amp;s(\phi)\\
+          s(\theta)&amp;0&amp;c(\phi)c(\theta)
+      \end{bmatrix}
+      \begin{bmatrix}
+          \dot \phi\\
+          \dot \theta\\
+          \dot \psi
+      \end{bmatrix}
   \end{aligned}
-$$&lt;/li&gt;
-                            &lt;/ul&gt;
+$$&lt;/div&gt;
                           &lt;/li&gt;
                         &lt;/ul&gt;
                       &lt;/li&gt;
@@ -815,15 +823,19 @@ $$&lt;/li&gt;
     x\\y\\z
   \end{bmatrix}$&lt;/span&gt;
             &lt;ul&gt;
-              &lt;li&gt;$\begin{aligned}
+              &lt;li&gt;
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
 m\mathbf{\ddot r}
-&amp;amp;= R\begin{bmatrix}
-    0\0\F_1+F_2+F_3+F_4
-\end{bmatrix}-\begin{bmatrix}0\0\mg\end{bmatrix}&lt;br /&gt;
-&amp;amp;= R\begin{bmatrix}
-    0\0\u_1
-\end{bmatrix}-\begin{bmatrix}0\0\mg\end{bmatrix}&lt;br /&gt;
-\end{aligned}$&lt;/li&gt;
+&amp;= R\begin{bmatrix}
+    0\\0\\F_1+F_2+F_3+F_4
+\end{bmatrix}-\begin{bmatrix}0\\0\\mg\end{bmatrix}\\
+&amp;= R\begin{bmatrix}
+    0\\0\\u_1
+\end{bmatrix}-\begin{bmatrix}0\\0\\mg\end{bmatrix}\\
+\end{aligned}
+$$&lt;/div&gt;
+              &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
           &lt;li&gt;欧拉方程
