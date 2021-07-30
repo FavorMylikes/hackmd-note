@@ -23,7 +23,6 @@ group :jekyll_plugins do
   gem "jemoji"
   gem "jekyll-algolia"
 
-  gem 'jekyll-katex'
   gem "kramdown-math-katex"
   gem "katex"
   gem "execjs"

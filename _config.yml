@@ -68,7 +68,7 @@ defaults:
     values:
       layout: single
       author_profile: false
-      share: true    
+      share: true
 
 markdown: kramdown
 highlighter: rouge
