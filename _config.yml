@@ -7,9 +7,9 @@ minimal_mistakes_skin : "contrast" # "air", "aqua", "contrast", "dark", "dirt", 
 search: true
 
 # Site Settings
-title: Notes
+title: "Notes B"
 title_separator : "/"
-subtitle : "麦"
+subtitle : "麦丽素的日常"
 locale: "en-US"
 description: >- # this means to ignore newlines until "baseurl:"
   A place for notes on various topics.
