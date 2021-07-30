@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://favormylikes.github.io/hackmd-note/feed.xml" rel="self" type="application/atom+xml" /><link href="https://favormylikes.github.io/hackmd-note/" rel="alternate" type="text/html" /><updated>2021-07-30T07:32:13+00:00</updated><id>https://favormylikes.github.io/hackmd-note/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><entry><title type="html">Jekyll+Github page+Gihub Actions</title><link href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html" rel="alternate" type="text/html" title="Jekyll+Github page+Gihub Actions" /><published>2021-07-28T02:32:00+00:00</published><updated>2021-07-28T02:32:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html">&lt;h2 id=&quot;尝试使用github-pages&quot;&gt;尝试使用github pages&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://favormylikes.github.io/hackmd-note/feed.xml" rel="self" type="application/atom+xml" /><link href="https://favormylikes.github.io/hackmd-note/" rel="alternate" type="text/html" /><updated>2021-07-30T07:39:54+00:00</updated><id>https://favormylikes.github.io/hackmd-note/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><entry><title type="html">Double slash test</title><link href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-29T07:37:00+00:00</published><updated>2021-07-29T07:37:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html">&lt;ul&gt;
+  &lt;li&gt;A&lt;/li&gt;
+  &lt;li&gt;/A&lt;/li&gt;
+  &lt;li&gt;//A&lt;/li&gt;
+  &lt;li&gt;\A&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;\A&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$A$&lt;/li&gt;
+  &lt;li&gt;$/A$&lt;/li&gt;
+  &lt;li&gt;$\A$&lt;/li&gt;
+  &lt;li&gt;$//A$&lt;/li&gt;
+  &lt;li&gt;
+    &lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;A&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.68333em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;A&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;/&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;/A&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;A&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mspace linebreak=&quot;newline&quot;&gt;&lt;/mspace&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;\\A&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;mspace newline&quot;&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.68333em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;A&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;/&lt;/mi&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;/&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;//A&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;A&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="tutorial" /><summary type="html">A /A //A \A \A</summary></entry><entry><title type="html">Jekyll+Github page+Gihub Actions</title><link href="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html" rel="alternate" type="text/html" title="Jekyll+Github page+Gihub Actions" /><published>2021-07-28T02:32:00+00:00</published><updated>2021-07-28T02:32:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/28/Jekyll-Github-page-Gihub-Actions.html">&lt;h2 id=&quot;尝试使用github-pages&quot;&gt;尝试使用github pages&lt;/h2&gt;
 
 &lt;h3 id=&quot;主要组件&quot;&gt;主要组件&lt;/h3&gt;
 
@@ -2000,45 +2024,4 @@ $&lt;/li&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;This request has been blocked; this endpoint must be available over WSS.&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="coursera" /><category term="system" /><category term="env" /><summary type="html">准备看点Coursera课程</summary></entry><entry><title type="html">Try to connect to the internet</title><link href="https://favormylikes.github.io/hackmd-note/env/system/2021/07/20/Try-to-connect-to-the-internet.html" rel="alternate" type="text/html" title="Try to connect to the internet" /><published>2021-07-20T02:37:00+00:00</published><updated>2021-07-20T02:37:00+00:00</updated><id>https://favormylikes.github.io/hackmd-note/env/system/2021/07/20/Try-to-connect-to-the-internet</id><content type="html" xml:base="https://favormylikes.github.io/hackmd-note/env/system/2021/07/20/Try-to-connect-to-the-internet.html">&lt;h2 id=&quot;尝试解决上网问题&quot;&gt;尝试解决上网问题&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;笔记本-wifi-暂时走刘浩宇师兄的账号密码&lt;/li&gt;
-  &lt;li&gt;台式机还没有办法联网
-    &lt;ul&gt;
-      &lt;li&gt;利用暂时的漏洞&lt;/li&gt;
-      &lt;li&gt;通过ipv6搭建ssh信道&lt;/li&gt;
-      &lt;li&gt;目前的路由
-        &lt;ul&gt;
-          &lt;li&gt;台式机-&amp;gt;seattle ipv6-&amp;gt;阿里云-&amp;gt;笔记本&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;由于未联网状态下无法使用openvpn的1194或其他端口，暂时解决访问问题&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;seattle 到 台式机的root登录&lt;/p&gt;
-
-    &lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PermitRootLogin yes
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;使用nginx反向代理，将台式机暴露给公网&lt;/li&gt;
-  &lt;li&gt;ali-hk -ipv6-&amp;gt; 台式机&lt;/li&gt;
-  &lt;li&gt;地址 &lt;a href=&quot;http://ucas.lifelab.space&quot;&gt;公网地址&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://ucas.lifelab.space/jupyter&quot;&gt;jupyter-lab&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;装了哪些组件&quot;&gt;装了哪些组件&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;apt install sshpass&lt;/li&gt;
-  &lt;li&gt;apt install openvpn&lt;/li&gt;
-  &lt;li&gt;apt install unzip&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;阅读&quot;&gt;阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;三维重建综述&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/3edc8471faea4ec0350dd49526aac66.png&quot; alt=&quot;3edc8471faea4ec0350dd49526aac66&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="env" /><category term="system" /><summary type="html">尝试解决上网问题</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="coursera" /><category term="system" /><category term="env" /><summary type="html">准备看点Coursera课程</summary></entry></feed>

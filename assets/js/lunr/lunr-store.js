@@ -64,4 +64,10 @@ var store = [{
         "tags": [],
         "url": "/hackmd-note/tutorial/2021/07/28/Build-Blog-System.html",
         "teaser": null
+      },{
+        "title": "Double slash test",
+        "excerpt":"   A   /A   //A   \\A        \\A       $A$   $/A$   $\\A$   $//A$        AAA           /A/A/A           A\\\\AA           //A//A//A     ","categories": ["tutorial"],
+        "tags": [],
+        "url": "/hackmd-note/tutorial/2021/07/29/Double-slash.html",
+        "teaser": null
       }]
