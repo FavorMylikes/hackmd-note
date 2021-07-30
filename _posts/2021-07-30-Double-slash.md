@@ -6,8 +6,9 @@ categories: tutorial
 katex: true
 ---
 
+## Render
 
-## No dollar
+### No dollar
 
 - A
 - /A
@@ -15,21 +16,21 @@ katex: true
 - \A
 - \\A
 
-## Single dollar
+### Single dollar
 
 - $A$
 - $/A$
 - $\\A$
 - $//A$
 
-## Double dollar
+### Double dollar
 
 - $$A$$
 - $$/A$$
 - $$\\A$$
 - $$//A$$
 
-## Matrix with Single Dollar
+### Matrix with Single Dollar
 
 - single line
   - $\begin{bmatrix}1\\2\\3\end{bmatrix}$
@@ -38,7 +39,7 @@ katex: true
         1\\2\\3
         \end{bmatrix}$
 
-## Matrix with Double Dollar
+### Matrix with Double Dollar
 
 - single line
   - $$
@@ -61,7 +62,7 @@ katex: true
    -. So you need consider about the order of rendering markdown and katex
    -. For example, you have a md file like
 
-    ```html
+    ```markdown
     $ABC*$123$DE*F$
     ```
 
