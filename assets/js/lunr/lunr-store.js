@@ -70,4 +70,10 @@ var store = [{
         "tags": [],
         "url": "/tutorial/2021/07/29/Double-slash.html",
         "teaser": null
+      },{
+        "title": "Double slash test",
+        "excerpt":"Inistall FLTK FLTK(Fast Light Toolkit，读做”fulltick”) 通过OpenGL和内建的GLUT模拟器提供3D图形支持 Download form offical site Pinoccio recommend for 1.1.7 or 1.1.x Flollow This video Install Cmake gui from office Remeber set the correct config, I’m using VS2017 and x64 system Configure and Generate Close Select sln file from build dir Open it in VS20XX. Open...","categories": ["3D"],
+        "tags": [],
+        "url": "/3d/2021/07/30/Initial-3D-builder-environment.html",
+        "teaser": null
       }]
