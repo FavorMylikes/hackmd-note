@@ -179,8 +179,7 @@ https://zhuanlan.zhihu.com/p/86468301)
                     \hat \omega^s&=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T\\
                     &=\begin{bmatrix}
                         0 & - \dot \psi - \dot \theta s{(\phi )} & \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}\\
-                        \dot \psi + \dot \theta s{(\phi )} & 0 & - \dot \phi c{(\psi )} + \dot \theta s{(\psi )} c{(\phi )}\\
-                        - \dot \phi s{(\psi )} - \dot \theta c{(\phi )} c{(\psi )} & \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )} & 0
+                        \dot \psi + \dot \theta s{(\phi )} & 0 & - \dot \phi c{(\psi )} + \dot \theta s{(\psi )} c{(\phi )}\\- \dot \phi s{(\psi )} - \dot \theta c{(\phi )} c{(\psi )} & \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )} & 0
                     \end{bmatrix}\\
                     &=\hat {
                     \begin{bmatrix}
@@ -252,7 +251,8 @@ https://zhuanlan.zhihu.com/p/86468301)
           x\\y\\z
         \end{bmatrix}
       $$
-      - $\begin{aligned}
+      - $$
+        \begin{aligned}
         m\mathbf{\ddot r}
         &= R\begin{bmatrix}
             0\\0\\F_1+F_2+F_3+F_4
@@ -260,7 +260,8 @@ https://zhuanlan.zhihu.com/p/86468301)
         &= R\begin{bmatrix}
             0\\0\\u_1
         \end{bmatrix}-\begin{bmatrix}0\\0\\mg\end{bmatrix}\\
-        \end{aligned}$
+        \end{aligned}
+        $$
     - 欧拉方程
       $$
         \begin{aligned}

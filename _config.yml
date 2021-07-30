@@ -73,6 +73,6 @@ defaults:
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  math_engine: null
+  math_engine: null  # default is mathjax, see here https://kramdown.gettalong.org/options.html#option-math-engine
   # math_engine_opts: {}
 katex:
