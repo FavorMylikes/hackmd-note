@@ -24,15 +24,15 @@ katex: true
 
 - 平面图到透视图
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727142444.png" width="400px" alt="20210727142444">
-  - $o^*$为眼睛位置
+  - $o^\star$为眼睛位置
   - $S$为垂足
-  - $OS=O^*S$, 因此$\angle{SOO^*}=45\degree$
+  - $OS=O^\starS$, 因此$\angle{SOO^\star}=45\degree$
   - $P$为平面图上一点
   - 连接$P-O$交图像平面$M$
-  - 连接$P-O^*$交图像平面$P^*$
-  - $\triangle MLP^*$相似于$\triangle OSO^*$
+  - 连接$P-O^\star$交图像平面$P^\star$
+  - $\triangle MLP^\star\sim\triangle OSO^\star$
   - $\angle LMP'$为$45\degree$
-  - $\triangle MLP^*=\triangle MLP'$, 即，将成像面的点$P^*$映射到平面$P'$变为透视图
+  - $\triangle MLP^\star=\triangle MLP'$, 即，将成像面的点$P^\star$映射到平面$P'$变为透视图
   - 因此，$P'$是$P$关于$ML$对称的透视图
 - [多透视点画法](https://dd.salgoodsam.com/the-walls-bend/)[Kim Jung Gi](http://kimjunggi.net/)
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727155712.png" width="400px" alt="20210727155712">
