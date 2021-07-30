@@ -66,7 +66,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Double slash test",
-        "excerpt":"No dollar A /A //A \\A \\A Single dollar $A$ $/A$ $\\A$ $//A$ Double dollar AAA /A/A/A A\\\\AA //A//A//A Matrix with Single Dollar single line $\\begin{bmatrix}1\\2\\3\\end{bmatrix}$ multy line $\\begin{bmatrix} 1\\2\\3 \\end{bmatrix}$ Matrix with Double Dollar single line [123]\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}⎣⎡​123​⎦⎤​ multy line [123]\\begin{bmatrix} 1\\\\2\\\\3 \\end{bmatrix}⎣⎡​123​⎦⎤​ Markdown confict with katex Two method for...","categories": ["tutorial"],
+        "excerpt":"Render No dollar A /A //A \\A \\A Single dollar $A$ $/A$ $\\A$ $//A$ Double dollar AAA /A/A/A A\\\\AA //A//A//A Matrix with Single Dollar single line $\\begin{bmatrix}1\\2\\3\\end{bmatrix}$ multy line $\\begin{bmatrix} 1\\2\\3 \\end{bmatrix}$ Matrix with Double Dollar single line [123]\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}⎣⎡​123​⎦⎤​ multy line [123]\\begin{bmatrix} 1\\\\2\\\\3 \\end{bmatrix}⎣⎡​123​⎦⎤​ Markdown confict with katex Two method...","categories": ["tutorial"],
         "tags": [],
         "url": "/hackmd-note/tutorial/2021/07/29/Double-slash.html",
         "teaser": null

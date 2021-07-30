@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Double slash test / Notes B</title>
-<meta name="description" content="No dollar">
+<meta name="description" content="Render">
 
 
 
@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://favormylikes.github.io/hackmd-note/tutorial/2021/07/29/Double-slash.html">
 
 
-  <meta property="og:description" content="No dollar">
+  <meta property="og:description" content="Render">
 
 
 
@@ -251,7 +251,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Double slash test">
-    <meta itemprop="description" content="No dollar">
+    <meta itemprop="description" content="Render">
     <meta itemprop="datePublished" content="2021-07-29T07:37:00+00:00">
     
 
@@ -289,12 +289,14 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#no-dollar">No dollar</a></li><li><a href="#single-dollar">Single dollar</a></li><li><a href="#double-dollar">Double dollar</a></li><li><a href="#matrix-with-single-dollar">Matrix with Single Dollar</a></li><li><a href="#matrix-with-double-dollar">Matrix with Double Dollar</a></li><li><a href="#markdown-confict-with-katex">Markdown confict with katex</a><ul><li><a href="#two-method-for-rendering-katex">Two method for rendering katex</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#render">Render</a><ul><li><a href="#no-dollar">No dollar</a></li><li><a href="#single-dollar">Single dollar</a></li><li><a href="#double-dollar">Double dollar</a></li><li><a href="#matrix-with-single-dollar">Matrix with Single Dollar</a></li><li><a href="#matrix-with-double-dollar">Matrix with Double Dollar</a></li></ul></li><li><a href="#markdown-confict-with-katex">Markdown confict with katex</a><ul><li><a href="#two-method-for-rendering-katex">Two method for rendering katex</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="no-dollar">No dollar</h2>
+        <h2 id="render">Render</h2>
+
+<h3 id="no-dollar">No dollar</h3>
 
 <ul>
   <li>A</li>
@@ -304,7 +306,7 @@
   <li>\A</li>
 </ul>
 
-<h2 id="single-dollar">Single dollar</h2>
+<h3 id="single-dollar">Single dollar</h3>
 
 <ul>
   <li>$A$</li>
@@ -313,7 +315,7 @@
   <li>$//A$</li>
 </ul>
 
-<h2 id="double-dollar">Double dollar</h2>
+<h3 id="double-dollar">Double dollar</h3>
 
 <ul>
   <li>
@@ -330,7 +332,7 @@
   </li>
 </ul>
 
-<h2 id="matrix-with-single-dollar">Matrix with Single Dollar</h2>
+<h3 id="matrix-with-single-dollar">Matrix with Single Dollar</h3>
 
 <ul>
   <li>single line
@@ -347,7 +349,7 @@
   </li>
 </ul>
 
-<h2 id="matrix-with-double-dollar">Matrix with Double Dollar</h2>
+<h3 id="matrix-with-double-dollar">Matrix with Double Dollar</h3>
 
 <ul>
   <li>single line
@@ -385,7 +387,7 @@
 -. So you need consider about the order of rendering markdown and katex
 -. For example, you have a md file like</p>
 
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ABC*$123$DE*F$
+    <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ABC<span class="ge">*$123$DE*</span>F$
 </code></pre></div>    </div>
 
     <p>-. It will convert <code class="language-plaintext highlighter-rouge">$123$DE$</code> as <em>Italic</em> first
