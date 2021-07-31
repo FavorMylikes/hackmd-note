@@ -3,7 +3,8 @@ layout: single
 title:  "Jekyll+Github page+Gihub Actions"
 date:   2021-07-28 10:32:00 +0800
 categories: tutorial
-katex: false
+header:
+  teaser: 
 ---
 
 ## 尝试使用github pages
@@ -41,10 +42,10 @@ katex: false
 ### 参考
 
 - [minusgix.github.io](minusgix.github.io)
-  - <img src="https://i.loli.net/2021/07/29/dvO7q5fJcZ8CKVg.png" width="400px" alt="20210729105618">
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imge706435a04d4061079e6e726c22e50a.png" alt="e706435a04d4061079e6e726c22e50a" width="400px">
   - [git](https://github.com/MinusGix/minusgix.github.io)
 - [南方科技大学数学建模协会](http://mma.iydon.top/)
-  - <img src="https://i.loli.net/2021/07/29/S2QE5VHcbLBZK6a.png" width="400px" alt="20210729105755">
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgefa0c2da86f50e9c201928439427b2c.png" alt="efa0c2da86f50e9c201928439427b2c" width="400px">
   - [git](https://github.com/SUSTech-MMA/sustech-mma.github.io)
   - 需要本地构建
 - [leopardpan](https://leopardpan.github.io)

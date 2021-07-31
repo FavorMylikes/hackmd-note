@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Double slash test"
+title:  "Initial 3D Builder environment"
 date:   "2021-7-30 20:41:19 +0800"
 categories: 3D 
 ---
@@ -33,11 +33,11 @@ categories: 3D
   - `连接器[linker]` `输入[input]` `附加依赖项`
 
     ```vim
-        fltkd.lib
-        wsock32.lib
-        comctl32.lib
-        fltk_jpegd.lib
-        fltk_imagesd.lib
+    fltkd.lib
+    wsock32.lib
+    comctl32.lib
+    fltk_jpegd.lib
+    fltk_imagesd.lib
     ```
 
 - Code

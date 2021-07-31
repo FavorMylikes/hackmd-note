@@ -18,6 +18,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://ucas.io/"
 github_username:  FavorMylikes
 timezone: Asia/Shanghai
+logo: "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgucas_logo.png"
 
 paginate_path: '/blog/:num/'
 
