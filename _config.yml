@@ -42,8 +42,8 @@ tag_archive:
 # jekyll-archives https://github.com/jekyll/jekyll-archives
 jekyll-archives:
   enabled:
-    - category
-    - tag
+    - categories
+    - tags
     - year
     - month
   layouts:
