@@ -25,7 +25,6 @@ header:
 
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7458703.png" alt="7458703" width="400">
 
-
 1. Actions扫描workflows下的配置文件寻找job
 2. Actions按照顺序依次执行
 3. ruby 按照Gemfile.lock的文件安装指定组件版本

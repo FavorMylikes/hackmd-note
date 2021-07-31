@@ -22,7 +22,7 @@ group :jekyll_plugins do
   gem "jekyll-gist"
   gem "jekyll-feed"
   gem "jemoji"
-  gem "jekyll-algolia"
+  gem "jekyll-algolia"  # a search provider https://mmistakes.github.io/minimal-mistakes/docs/configuration/#algolia
 
   gem "kramdown-math-katex"
   gem "katex"
