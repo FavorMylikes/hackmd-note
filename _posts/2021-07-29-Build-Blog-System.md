@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Build Blog System"
-date:   2021-07-28 10:32:00 +0800
+date:   2021-07-29 10:29:00 +0800
 categories: tutorial
 katex: false
 toc: true

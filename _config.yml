@@ -20,6 +20,10 @@ github_username:  FavorMylikes
 timezone: Asia/Shanghai
 logo: "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgucas_logo.png"
 
+# google search 
+google:  # https://mmistakes.github.io/minimal-mistakes/docs/configuration/#google-custom-search-engine
+  search_engine_id: 4bd7c7b29a8fd940b
+
 # jekyll-algolia
 search_provider: algolia
 algolia:
