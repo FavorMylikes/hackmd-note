@@ -42,11 +42,15 @@ tag_archive:
 # jekyll-archives https://github.com/jekyll/jekyll-archives
 jekyll-archives:
   enabled:
-    - categories
-    - tags
+    - category
+    - tag
+    - year
+    - month
   layouts:
     category: archive-taxonomy
     tag: archive-taxonomy
+    year: year-archive
+    month: month-archive
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
