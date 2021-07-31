@@ -38,7 +38,7 @@ category_archive:
 tag_archive:
   type: jekyll-archives
   path: /tags/
-  
+
 # jekyll-archives https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
@@ -74,6 +74,9 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+
+include:
+  - _pages
 
 defaults:
   # _posts
