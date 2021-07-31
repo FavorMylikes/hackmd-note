@@ -77,9 +77,9 @@ var store = [{
         "url": "/3d/Initial-3D-builder-environment/",
         "teaser": null
       },{
-        "title": "Add Jekyll Search And Logo",
-        "excerpt":" ","categories": [],
+        "title": "Jekyll Search And Logo",
+        "excerpt":"Jekyll-Algolia Jekyll-Algolia A search engine to help you get a list of result. But have some bugs I have post a new issue at here jekyll-archives include: - _pages jekyll-archives: enabled: - categories - tags layouts: category: archive-taxonomy tag: archive-taxonomy permalinks: category: /categories/:name/ tag: /tags/:name/ First, you need _include make...","categories": ["tutorial"],
         "tags": [],
-        "url": "/Add-Jekyll-Search-And-Logo/",
+        "url": "/tutorial/Add-Jekyll-Search-And-Logo/",
         "teaser": null
       }]
