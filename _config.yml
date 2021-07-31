@@ -20,8 +20,19 @@ github_username:  FavorMylikes
 timezone: Asia/Shanghai
 logo: "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgucas_logo.png"
 
-paginate_path: '/blog/:num/'
+# jekyll-algolia
+search_provider: algolia
+  application_id: 7UHEFEG9HB
+  index_name: prod_UCAS_IO
+  search_only_api_key: b1cdde9827760050f51383c6c78127bf
+  powered_by: # true (default), false
 
+# jekyll-archives
+permalink: /:categories/:title/
+breadcrumbs: true  # disabled by default
+
+# jykell Paginate 
+paginate_path: '/blog/:num/'
 pagination: # jekyll-paginate-v2
   enabled: true
   debug: true  # open debug
@@ -49,6 +60,8 @@ defaults:
       type: posts
     values:
       layout: single
+      show_date: true
+      date_format: "%Y-%m-%d"
       author_profile: true
       read_time: true
       comments: true

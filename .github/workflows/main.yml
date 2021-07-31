@@ -11,17 +11,27 @@ jobs:
     steps:
       - name: 🎬 Setup
         uses: actions/checkout@v2
-      - name: Setup ruby
+      - name: 💎 Setup ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
+      - name: 💾 Cache 
+        uses: actions/cache@v2  # This action allows caching dependencies and build outputs to improve workflow execution time.
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
       - name: 🔧 Build
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
           jekyll_src: .
           gem_src: .
-        
+      - name: 🔍 Algolia Jekyll Action
+        uses: dieghernan/algolia-jekyll-action@v1
+        with:
+          APIKEY: '${{ secrets.ALGOLIA_API_KEY }}'
       - name: 🚀 Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

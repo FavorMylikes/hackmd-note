@@ -15,6 +15,7 @@ gem "minimal-mistakes-jekyll"
 # gem "jekyll-dash", "~> 2.0.0"
 group :jekyll_plugins do
 #   gem "jekyll-paginate"
+  gem "jekyll-archives"
   gem "jekyll-paginate-v2"
   gem "jekyll-tagging"
   gem "jekyll-sitemap"
