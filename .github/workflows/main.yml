@@ -29,7 +29,7 @@ jobs:
           jekyll_src: .
           gem_src: .
       - name: 🔍 Algolia Jekyll Action
-        run: ALGOLIA_API_KEY='${{ secrets.ALGOLIA_API_KEY }}' bundle exec jekyll algolia
+        run: ALGOLIA_API_KEY='${{ secrets.ALGOLIA_API_KEY }}' bundle exec jekyll algolia --verbose
       # - name: 🔍 Algolia Jekyll Action
       #   uses: dieghernan/algolia-jekyll-action@v1
       #   with:
