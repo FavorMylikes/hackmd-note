@@ -50,6 +50,7 @@ jekyll-archives:
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
+    month: '/:year/:month/'
 permalink: /:categories/:title/
 breadcrumbs: true  # disabled by default
 

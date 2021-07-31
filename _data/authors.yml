@@ -6,3 +6,6 @@
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:l786112323@gmail.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/FavorMylikes"
