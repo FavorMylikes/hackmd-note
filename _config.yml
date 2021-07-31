@@ -32,23 +32,24 @@ algolia:
   search_only_api_key: b1cdde9827760050f51383c6c78127bf
   powered_by: # true (default), false
 
-# jekyll-archives
 category_archive:
   type: jekyll-archives
   path: /categories/
 tag_archive:
   type: jekyll-archives
   path: /tags/
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
-  permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
+  
+# jekyll-archives https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
 permalink: /:categories/:title/
 breadcrumbs: true  # disabled by default
 
