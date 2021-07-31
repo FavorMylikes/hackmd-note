@@ -76,4 +76,10 @@ var store = [{
         "tags": [],
         "url": "/3d/Initial-3D-builder-environment/",
         "teaser": null
+      },{
+        "title": "Add Jekyll Search And Logo",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/Add-Jekyll-Search-And-Logo/",
+        "teaser": null
       }]
