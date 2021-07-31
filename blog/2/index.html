@@ -167,6 +167,8 @@
       
 
 
+  
+
 
 <div id="main" role="main">
   
@@ -295,7 +297,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/zhihu/coursera/2021/07/26/Coordinate-System-in-Dynamic.html" rel="permalink">Coordinate System in Dynamic
+        <a href="/zhihu/coursera/Coordinate-System-in-Dynamic/" rel="permalink">Coordinate System in Dynamic
 </a>
       
     </h2>
@@ -303,8 +305,15 @@
 
   <p class="page__meta">
     
-
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-26T11:02:00+08:00">July 26, 2021</time>
+      </span>
     
+
+    <span class="page__meta-sep"></span>
 
     
       
@@ -335,7 +344,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/zhihu/2021/07/25/E-L-Equation.html" rel="permalink">E-L Equation
+        <a href="/zhihu/E-L-Equation/" rel="permalink">E-L Equation
 </a>
       
     </h2>
@@ -343,8 +352,15 @@
 
   <p class="page__meta">
     
-
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-25T11:07:00+08:00">July 25, 2021</time>
+      </span>
     
+
+    <span class="page__meta-sep"></span>
 
     
       
@@ -375,7 +391,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/env/system/docker/zhihu/2021/07/24/RemoteView-docker-and-Dynamic-System.html" rel="permalink">Install RemoteView.docker, Finish Dynamic System Control[1]
+        <a href="/env/system/docker/zhihu/RemoteView-docker-and-Dynamic-System/" rel="permalink">Install RemoteView.docker, Finish Dynamic System Control[1]
 </a>
       
     </h2>
@@ -383,8 +399,15 @@
 
   <p class="page__meta">
     
-
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-24T09:57:00+08:00">July 24, 2021</time>
+      </span>
     
+
+    <span class="page__meta-sep"></span>
 
     
       
@@ -415,7 +438,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/coursera/3d/2021/07/23/Robotics-Flight-week-3-and-4.html" rel="permalink">Robotics-Flight week 3 and 4, 3D rebuilding
+        <a href="/coursera/3d/Robotics-Flight-week-3-and-4/" rel="permalink">Robotics-Flight week 3 and 4, 3D rebuilding
 </a>
       
     </h2>
@@ -423,8 +446,15 @@
 
   <p class="page__meta">
     
-
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-23T10:17:00+08:00">July 23, 2021</time>
+      </span>
     
+
+    <span class="page__meta-sep"></span>
 
     
       
@@ -455,7 +485,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/env/system/coursera/2021/07/22/Robotics-Flight-week-2.html" rel="permalink">Install Remote Browser[remoteview], And Coursera Robotics-Flight week 2
+        <a href="/env/system/coursera/Robotics-Flight-week-2/" rel="permalink">Install Remote Browser[remoteview], And Coursera Robotics-Flight week 2
 </a>
       
     </h2>
@@ -463,8 +493,15 @@
 
   <p class="page__meta">
     
-
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-22T11:12:00+08:00">July 22, 2021</time>
+      </span>
     
+
+    <span class="page__meta-sep"></span>
 
     
       
@@ -539,13 +576,8 @@
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
-    <label class="sr-only" for="search">
-      Enter your search term...
-    </label>
-    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
-  </form>
-  <div id="results" class="results"></div></div>
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
 
       </div>
     
@@ -576,11 +608,68 @@
   <script src="/assets/js/main.min.js"></script>
 
 
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
 
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '7UHEFEG9HB',
+  apiKey: 'b1cdde9827760050f51383c6c78127bf',
+  indexName: 'prod_UCAS_IO',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
 
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="/${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
 
 
 

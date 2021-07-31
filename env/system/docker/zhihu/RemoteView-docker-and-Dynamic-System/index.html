@@ -1,0 +1,1104 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Install RemoteView.docker, Finish Dynamic System Control[1] / Notes B</title>
+<meta name="description" content="尝试安装 remoteview">
+
+
+  <meta name="author" content="麦丽素">
+  
+  <meta property="article:author" content="麦丽素">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Notes B">
+<meta property="og:title" content="Install RemoteView.docker, Finish Dynamic System Control[1]">
+<meta property="og:url" content="https://ucas.io//env/system/docker/zhihu/RemoteView-docker-and-Dynamic-System/">
+
+
+  <meta property="og:description" content="尝试安装 remoteview">
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210724144046.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-07-24T09:57:00+08:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io//env/system/docker/zhihu/RemoteView-docker-and-Dynamic-System/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://ucas.io//"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Notes B Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+  <!--KaTeX-->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+      });
+    });
+  </script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgucas_logo.png" alt="Notes B"></a>
+        
+        <a class="site-title" href="/">
+          Notes B
+          <span class="site-subtitle">麦丽素的日常</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://ucas.io///" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/env" itemprop="item"><span itemprop="name">Env</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/system" itemprop="item"><span itemprop="name">System</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/docker" itemprop="item"><span itemprop="name">Docker</span></a>
+          <meta itemprop="position" content="4" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/zhihu" itemprop="item"><span itemprop="name">Zhihu</span></a>
+          <meta itemprop="position" content="5" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Install RemoteView.docker, Finish Dynamic System Control[1]</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://www.gravatar.com/avatar/7ac850b26f9a21a153f8f581964e22cd?s=200" alt="麦丽素" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">麦丽素</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>My life is getting better</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:l786112323@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Install RemoteView.docker, Finish Dynamic System Control[1]">
+    <meta itemprop="description" content="尝试安装 remoteview">
+    <meta itemprop="datePublished" content="2021-07-24T09:57:00+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Install RemoteView.docker, Finish Dynamic System Control[1]
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-24T09:57:00+08:00">July 24, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#尝试安装-remoteview">尝试安装 remoteview</a></li><li><a href="#准备搞明白泛函">准备搞明白泛函</a><ul><li><a href="#无人机的动力学系统">无人机的动力学系统</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="尝试安装-remoteview">尝试安装 remoteview</h2>
+
+<ul>
+  <li>搞定浏览器嵌套</li>
+  <li><a href="https://hub.docker.com/r/dosyago/browsergapce">docker</a></li>
+  <li>
+    <p><a href="https://github.com/i5ik/ViewFinderJS">github</a></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  docker <span class="nt">-v</span> pull dosyago/browsergapce:2.5 <span class="c"># from other has access to internet</span>
+  docker save <span class="nt">-o</span> remoteview.docker dosyago/browsergapce:2.5
+  docker load <span class="nt">-i</span> remoteview.docker  <span class="c"># at ucas server</span>
+  wget https://raw.githubusercontent.com/c9fe/ViewFinder/master/chrome.json
+  docker run <span class="nt">-d</span> <span class="nt">-p</span> 8002:8002 <span class="nt">--security-opt</span> <span class="nv">seccomp</span><span class="o">=</span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/chrome.json dosyago/browsergapce:2.5
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>nginx</p>
+
+    <div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">rewrite_log</span> <span class="no">on</span><span class="p">;</span>
+  <span class="k">proxy_pass</span> <span class="s">http://127.0.0.1:8002/</span><span class="p">;</span>
+  <span class="k">proxy_redirect</span> <span class="n">/</span> <span class="n">/browser/</span><span class="p">;</span>
+  <span class="k">rewrite</span> <span class="s">^(?!/browser)/?(.*)</span>$ <span class="n">/browser/</span><span class="nv">$2</span> <span class="s">last</span><span class="p">;</span>
+  <span class="k">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+  <span class="k">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+  <span class="k">proxy_set_header</span> <span class="s">Connection</span> <span class="s">"upgrade"</span><span class="p">;</span>
+  <span class="k">proxy_set_header</span> <span class="s">Origin</span> <span class="s">""</span><span class="p">;</span>
+  <span class="k">sub_filter</span> <span class="s">'/api/v1/tabs'</span> <span class="s">'/browser/api/v1/tabs'</span><span class="p">;</span>
+  <span class="k">sub_filter</span> <span class="s">'login'</span> <span class="s">'browser/login'</span><span class="p">;</span>
+  <span class="k">sub_filter_types</span> <span class="s">*</span><span class="p">;</span>
+  <span class="k">sub_filter_once</span> <span class="no">off</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210724144046.png" alt="20210724144046" /></li>
+</ul>
+
+<h2 id="准备搞明白泛函">准备搞明白泛函</h2>
+
+<h3 id="无人机的动力学系统">无人机的动力学系统</h3>
+
+<ul>
+  <li>从问题到思路
+    <ul>
+      <li>实际问题[由浅入深]:
+        <ol>
+          <li>一个4旋翼无人机从空间中A点到B点需要的动力输出方程应该如何设计</li>
+          <li>一个4旋翼无人机从空间中A点到B点再到C点中，不希望再B点停留(hover)，动力输出方程应该如何设计</li>
+          <li>多个无人机如何先后通过某一点而不发生碰撞</li>
+        </ol>
+      </li>
+      <li>转化为抽象子问题[由浅入深]
+        <ol>
+          <li>假定我们可以在任意时刻指定任意大小的速度<strong>1阶动力学问题</strong>
+            <ol>
+              <li>在2D或3D空间内从A点到B点需要的速度方程</li>
+            </ol>
+          </li>
+          <li>假定我们可以在任意时刻指定任意大小的加速度<code class="language-plaintext highlighter-rouge">推力</code><strong>2阶动力学问题</strong></li>
+          <li>假定我们可以在任意时刻指定任意大小的加加速度<code class="language-plaintext highlighter-rouge">给定电压条件下推力随电压持续增加或减少</code><strong>3阶动力学问题</strong></li>
+        </ol>
+      </li>
+      <li>需要解决的数学子问题
+        <ul>
+          <li>使用<strong>Euler-Lagrange Equation[欧拉-拉格朗日方程]</strong> 求解</li>
+          <li>变分法推导<strong>Euler-Lagrange Equation[欧拉-拉格朗日方程]</strong></li>
+          <li>惯性系(body-fixed frame)与旋转矩阵</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>变分法与泛函
+    <ul>
+      <li>参考文章
+        <ul>
+          <li><a href="https://www.cnblogs.com/bigmonkey/p/9519387.html">寻找“最好”（2）——欧拉-拉格朗日方程 - 博客园</a></li>
+          <li><a href="https://www.linchenguang.com/2019/06/08/exercise-in-Euler-Lagrange-equation/">欧拉-拉格朗日方程练习 - linchenguang.com</a></li>
+          <li><a href="https://zhuanlan.zhihu.com/p/45912984">从最速降线问题到欧拉-拉格朗日方程 - 地狱少女火炮兰的文章 - 知乎</a></li>
+          <li><a href="https://zhuanlan.zhihu.com/p/148949128">Euler-Lagrange Equation (欧拉-拉格朗日方程)推导 - TranSirius的文章 - 知乎</a></li>
+          <li><a href="https://zhuanlan.zhihu.com/p/41573146">变分法理解1——泛函简介 - 清雅白鹿记的文章 - 知乎</a></li>
+          <li><a href="https://zhuanlan.zhihu.com/p/41810184">变分法理解2——基本方法 - 清雅白鹿记的文章 - 知乎</a></li>
+          <li><a href="https://zhuanlan.zhihu.com/p/20727402">变分法简介Part 2.（Calculus of Variations） - Dr.Stein的文章 - 知乎</a></li>
+          <li><a href="https://zh.wikipedia.org/wiki/%E5%8F%98%E5%88%86%E6%B3%95#%E6%AC%A7%E6%8B%89-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B">变分法#欧拉-拉格朗日方程 - Wikipedia</a></li>
+        </ul>
+      </li>
+      <li>泛函
+        <ul>
+          <li>对等概念
+            <ul>
+              <li>函数: 值-&gt;值 运算</li>
+              <li>泛函: 函数-&gt;值 运算 即函数的函数</li>
+              <li>求解函数极值，即寻找函数中的最大值或最小值</li>
+              <li>求解泛函极值，即寻找一种函数的形式，使得这样的函数形式有最大值或最小值</li>
+            </ul>
+          </li>
+          <li>泛函形式
+            <ul>
+              <li>一般常见的形式
+                <ul>
+                  <li>$J[y(x)] = \int_{x_0}^{x_1}F(x, y, y’)dx$</li>
+                  <li>即，从$x_0$到$x_1$的曲线积分值</li>
+                  <li>这里的基本假设，$y’$存在，即寻找一条光滑曲线以达到特定极值</li>
+                  <li>下方E-L方程推导过程中的证明中有使用$y’’$，因此，特定公式的成立，可能需要依赖其他条件</li>
+                  <li>如果存在导数不存在或者是折线的情况就要更一般的考虑</li>
+                </ul>
+              </li>
+              <li>其他假设下的形式
+                <ul>
+                  <li>$J[y(x)] = \int_{x_0}^{x_1}F(x, y, y’, y’’, y’’’, \dotsc)dx$</li>
+                  <li>这里就假设$y’’‘$甚至更高的导数存在</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>求解例子[由浅入深]
+            <ol>
+              <li>两点之间的最短路径
+                <ol>
+                  <li>曲线的微元$ds = \sqrt{1 + \frac{dy}{dx}^2}$</li>
+                  <li>曲线长 $S = \int_{x_0}^{x_1}ds = \int_{x_0}^{x_1}{\sqrt{1 + y’^2}dx}$</li>
+                  <li>问题等价为找到一个函数$y$使$S$最小</li>
+                  <li>泛函式$J[y(x)] = \int_{x_0}^{x_1}F(y’)dx$</li>
+                </ol>
+              </li>
+              <li>最速曲线问题
+                <ol>
+                  <li>能量守恒
+<span class="kdmath">$\begin{aligned}
+    \frac{1}{2}mv^2&=mgy\\
+    v^2 &= 2gy
+    \end{aligned}$</span></li>
+                  <li>速度公式 $v = \frac{ds}{dt} = \sqrt{\frac{1+y’^2}{dt}}dx$</li>
+                  <li>$dt = {\sqrt\frac{1+y’^2}{v}}dx = \sqrt{\frac{1+y’^2}{2gy}}dx$</li>
+                  <li>$x_0$到$x_1$的时间为$t = \int_{x_0}^{x_1}dt = \int_{x_0}^{x_1}\sqrt{\frac{1+y’^2}{2gy}}dx$</li>
+                  <li>问题等价为找到一个函数$y$使$t$最小</li>
+                  <li>泛函1式$J[y(x)] = \int_{x_0}^{x_1}F(y, y’)dx$</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>变分 <strong>[Calculus of variations]</strong>
+        <ul>
+          <li>函数的变分
+            <ul>
+              <li>在定义域$[x_0, x_1]$, $\delta y = y(x) - y_0(x)$称为函数$y(x)$在$y_0(x)$处的变分</li>
+              <li>$y_0$为另一可取函数</li>
+              <li>变分即为两个函数相减产生的新的函数，新函数$\delta y$在定义域$[x_0, x_1]$出随$x$变化</li>
+            </ul>
+          </li>
+          <li>泛函的变分
+            <ul>
+              <li>最简泛函的变分</li>
+              <li>$J[y(x)] = \int_{x_0}^{x_1}F(x, y, y’)dx$</li>
+              <li>$F$为最简泛函的核</li>
+              <li>
+                <div class="kdmath">$$
+\begin{aligned}
+    \Delta J &= J[y_0(x)] - J[y(x)]\\
+    &= J[y(x) + \delta y] - J[y(x)]\\
+    &= \int_{x_0}^{x_1}[F(x, y+\delta y, y' + \delta y') - F(x, y, y')]dx\\
+    &= \int_{x_0}^{x_1}(F_2\delta y + F_3\delta y')dx + \dotsc + \int_{x_0^{x_1}}[\frac{1}{n!}(\delta y\frac{\partial}{\partial y} + \delta y'\frac{\partial}{\partial y'})^n]dx &\text{多元函数的泰勒展开}&\\
+    &&\text{$F_1, F_2, F_3$} 为偏导数&\\
+  \end{aligned}
+$$</div>
+              </li>
+              <li>其中$\int_{x_0}^{x_1}(F_2\delta y + F_3\delta y’)dx$称为<strong>泛函的变分</strong>，记为$\delta J$</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>利用变分法求解泛函极值(极值存在的函数形式)
+        <ul>
+          <li>假设$y(x)$为我们要出来的函数</li>
+          <li>那么$y(x) + \delta y$为$x_0$到$x_1$的所有可能形式</li>
+          <li>记$\tilde{y}(x) = y(x) + \delta y = y(x) + \epsilon \eta(x)$</li>
+          <li>其中$\eta(x)$为满足$\eta(x_0) = \eta(x_1) = 0$的任意函数</li>
+          <li>$\epsilon$为一个常量</li>
+          <li>$\epsilon = 0$时，$\tilde y(x)$即为所求函数</li>
+          <li>记$\Phi(\epsilon) = J[\tilde y(x)] = J[y(x) + \epsilon \eta(x)] = \int_{x_0}^{x_1}F(x, y(x) + \epsilon \eta(x), y’(x) + \epsilon \eta’(x))dx$</li>
+          <li>我们希望$\Phi(\epsilon)$在$\epsilon = 0$时取极值</li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>则$\Phi’(\epsilon)\big</td>
+                  <td>_{\epsilon =0 } = 0$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <div class="kdmath">$$
+\begin{aligned}
+  \frac{d\Phi}{d\epsilon}
+     &= \int_{x_0}^{x_1}F_2[x, y(x) + \epsilon \eta(x), y'(x) + \epsilon \eta'(x)]\eta(x) + F_3[x, y(x) + \epsilon\eta(x), y'(x)+\epsilon\eta'(x)]\eta'(x)dx\\
+     &=\int_{x_0}^{x_1}[F_2\eta(x) + F_3\eta'(x)]dx&\text{令$\epsilon = 0$}\\
+     &=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3\eta'(x)dx\\
+     &=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3d\eta(x)&\text{分部积分法}\\
+     &=\int_{x_0}^{x_1}F_2\eta(x)dx + F_3\eta(x)\big|_{x_0}^{x_1} - \int_{x_0}^{x_1}\eta(x)\frac{dF_3}{dx}dx&\text{这里要求$F_3存在对x的导数$}\\
+     &=\int_{x_0}^{x_1}(F_2\eta(x) - \eta(x)\frac{dF_3}{dx})dx + F_3\eta(x)\big|_{x_0}^{x_1}\\
+     &=\int_{x_0}^{x_1}[F_2 -\frac{dF_3}{dx}]\eta(x)dx&\text{$\eta(x_0) = 0, \eta(x_1) = 0\rightarrow F_3\eta(x)\big|_{x_0}^{x_1} = 0$}\\
+     &=0&\text{\textcircled 1}
+  \end{aligned}
+$$</div>
+          </li>
+          <li>引理
+            <ul>
+              <li>$f(x)$在$[x_0, x_1]$内连续,$\eta(x)$是满足$\eta(x_0)=0,\eta(x_1)=0$的任意函数</li>
+              <li>若$\int_{x_0}^{x_1}f(x)\eta(x)dx = 0$</li>
+              <li>则对所有的$x\in[x_0, x_1]$,有$f(x)\equiv0$</li>
+              <li>证明:
+                <ul>
+                  <li>反证法, 设$f(x)$不恒为0</li>
+                  <li>取$\eta(x) = -f(x)(x-x_0)(x-x_1)$</li>
+                  <li>取$x_0\lt x\lt x_1$, 所以$(x-x_0)(x-x_1)\lt 0$</li>
+                  <li>所以$\int_{x_0}^{x_1}f(x)\eta(x)dx = \int_{x_0}^{x_1}-f(x)^2(x-x_0)(x-x_1)\gt 0$</li>
+                  <li>与预设矛盾，因此$f(x)\equiv 0$</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>利用上述引理
+            <ul>
+              <li>$\text{\textcircled 1}$式</li>
+              <li>$\int_{x_0}^{x_1}(F_2-\frac{dF_3}{dx})\eta(x)dx = 0$</li>
+              <li>$F_2-\frac{dF_3}{dx} = 0$</li>
+              <li>即<strong>Euler-Lagrange Equation[欧拉-拉格朗日方程]</strong></li>
+              <li>$\frac{\partial}{\partial y}F - \frac{d}{dx}(\frac{\partial}{\partial y’}F) = 0$</li>
+            </ul>
+          </li>
+          <li><strong>Euler-Lagrange Equation[欧拉-拉格朗日方程]</strong>表示，极值函数的存在形式一定满足该条件</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>利用E-L求解
+    <ol>
+      <li>两点间最短距离
+        <ul>
+          <li>
+            <div class="kdmath">$$
+\begin{aligned}
+ J[y(x)] &= \int_{x_0}^{x_1}{\sqrt{1 + y'^2}dx} \\
+ F&=\sqrt{1 + y'^2}\\
+ \frac{\partial F}{\partial y} &= 0\\
+ \frac{\partial F}{\partial y'} &= \frac{y'}{\sqrt{1+y'^2}}\\
+ E-L: 0 - \frac{d}{dx}[ \frac{y'}{\sqrt{1+y'^2}}] &= 0\\
+ \frac{y'}{\sqrt{1+y'^2}} &= C\\
+ y' &= \sqrt{\frac{C^2}{1-C^2}} = C_0\\
+ y & = C_0x + C_1
+ \end{aligned}
+$$</div>
+          </li>
+          <li>因此是导数为常数的直线</li>
+        </ul>
+      </li>
+      <li>最速降线问题
+        <ul>
+          <li>$J[y(x)] = \int_{x_0}^{x_1}\sqrt{\frac{1+y’^2}{2gy}}dx$</li>
+          <li>引理(在$x$不存在时的简便计算法)
+            <ul>
+              <li>
+                <div class="kdmath">$$
+\begin{aligned}
+       F(y, y')&= \sqrt{\frac{1+y'^2}{2gy}}\\
+       \frac{d}{dt}(F - y'F_2)
+       &= \frac{d}{dt}F - \frac{d}{dt}(y'F_2)\\
+       &=[y'F_1 + y''F_2] - [y''F_2 + y'\frac{d}{dt}F_2]&\text{这里要求$y''$存在}\\
+       &=y'F_1-y'\frac{d}{dt}F_2\\
+       &=y'[F_1-\frac{d}{dt}F_2]\\
+       &=0&\text{here $F_1=\frac{\partial F}{\partial y}, F_2=\frac{\partial F}{\partial y'}$, hence $F_1-\frac{d}{dt}F_2 = 0$ 为EL方程 }\\
+       \therefore F - y'F_2 &= C &\text{here $C$为常数}
+   \end{aligned}
+$$</div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="kdmath">$$
+\begin{aligned}
+     F - y'F_2 &= \sqrt{\frac{1+y'^2}{2gy}} - y'\frac{2y'\frac{1}{2}(1+y'^2)^{-\frac{1}{2}}}{\sqrt{2gy}}\\
+     &=\sqrt{\frac{1+y'^2}{2gy}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
+     &=\frac{1+y'^2}{\sqrt{2gy}\sqrt{1+y'^2}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
+     &= \frac{1}{\sqrt{2gy}\sqrt{1+y'^2}}\\
+     &=C&\text{利用上面的引理}\\
+     \therefore y(1+y'^2) &= \frac{1}{2gC^2}
+ \end{aligned}
+$$</div>
+          </li>
+          <li>解得(积分表或换元$y’=\cot\frac{\theta}{2}$), 摆线
+            <ul>
+              <li>
+                <div class="kdmath">$$
+\begin{cases}
+       x&=\frac{C}{2}(\theta - \sin\theta)\\
+       y&=\frac{C}{2}(1-\cos\theta)
+   \end{cases}
+$$</div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>约束
+    <ul>
+      <li>指求解时需要满足的条件</li>
+      <li>求解例子
+        <ul>
+          <li>两点间最短路径
+            <ul>
+              <li>
+                <div class="kdmath">$$
+\begin{cases}
+    y(x_0)&= y_0\\
+    y(x_1)&= y_1\\
+  \end{cases}
+$$</div>
+              </li>
+              <li>代入$y = C_0x$</li>
+              <li>得到$C_0 = \frac{y_1 - y_0}{x_1 - x_0}$</li>
+            </ul>
+          </li>
+          <li>最速降线
+            <ul>
+              <li>
+                <div class="kdmath">$$
+\begin{cases}
+    y(x_0)&= y_0\\
+    y(x_1)&= y_1\\
+  \end{cases}
+$$</div>
+              </li>
+              <li>代入
+<span class="kdmath">$\begin{cases}
+    x&=\frac{C}{2}(\theta - \sin\theta)\\
+    y&=\frac{C}{2}(1-\cos\theta)
+  \end{cases}$</span></li>
+              <li>得到
+<span class="kdmath">$\begin{aligned}
+    y' &= \cot\frac{\theta}{2}\\
+    A(x,y) &= \theta^2\\
+    B(x,y) &= 4x\theta + 4y\\
+    D(x,y) &= 4(x^2+y^2)\\
+    C&=\frac{D_1A_2 - D_2A_1}{B_1A_2 - B_2A_1}
+\end{aligned}$</span></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-24T09:57:00+08:00">July 24, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Install+RemoteView.docker%2C+Finish+Dynamic+System+Control%5B1%5D%20https%3A%2F%2Fucas.io%2F%2Fenv%2Fsystem%2Fdocker%2Fzhihu%2FRemoteView-docker-and-Dynamic-System%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F%2Fenv%2Fsystem%2Fdocker%2Fzhihu%2FRemoteView-docker-and-Dynamic-System%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F%2Fenv%2Fsystem%2Fdocker%2Fzhihu%2FRemoteView-docker-and-Dynamic-System%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/coursera/3d/Robotics-Flight-week-3-and-4/" class="pagination--pager" title="Robotics-Flight week 3 and 4, 3D rebuilding
+">Previous</a>
+    
+    
+      <a href="/zhihu/E-L-Equation/" class="pagination--pager" title="E-L Equation
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Initial-3D-builder-environment/" rel="permalink">Initial 3D Builder environment
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-30T20:41:19+08:00">July 30, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Inistall FLTK
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tutorial/Double-slash/" rel="permalink">Double slash test
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-29T15:37:00+08:00">July 29, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Render
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tutorial/Build-Blog-System/" rel="permalink">Build Blog System
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-28T10:32:00+08:00">July 28, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Build Blog System by Github pages and jekyll
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imge706435a04d4061079e6e726c22e50a.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tutorial/Jekyll-Github-page-Gihub-Actions/" rel="permalink">Jekyll+Github page+Gihub Actions
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-28T10:32:00+08:00">July 28, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">尝试使用github pages
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '7UHEFEG9HB',
+  apiKey: 'b1cdde9827760050f51383c6c78127bf',
+  indexName: 'prod_UCAS_IO',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="/${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
