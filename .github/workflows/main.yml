@@ -29,9 +29,11 @@ jobs:
           jekyll_src: .
           gem_src: .
       - name: 🔍 Algolia Jekyll Action
-        uses: dieghernan/algolia-jekyll-action@v1
-        with:
-          APIKEY: '${{ secrets.ALGOLIA_API_KEY }}'
+        run: ALGOLIA_API_KEY='${{ secrets.ALGOLIA_API_KEY }}' bundle exec jekyll algolia
+      # - name: 🔍 Algolia Jekyll Action
+      #   uses: dieghernan/algolia-jekyll-action@v1
+      #   with:
+      #     APIKEY: '${{ secrets.ALGOLIA_API_KEY }}'
       - name: 🚀 Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
