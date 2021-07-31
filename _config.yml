@@ -33,6 +33,22 @@ algolia:
   powered_by: # true (default), false
 
 # jekyll-archives
+category_archive:
+  type: jekyll-archives
+  path: /categories/
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 permalink: /:categories/:title/
 breadcrumbs: true  # disabled by default
 
@@ -89,6 +105,17 @@ defaults:
       layout: single
       author_profile: false
       share: true
+  # jekyll-archives
+  - scope:
+      path: ""
+      type: tag
+    values:
+      author_profile: true
+  - scope:
+      path: ""
+      type: category
+    values:
+      comments: false
 
 markdown: kramdown
 highlighter: rouge
