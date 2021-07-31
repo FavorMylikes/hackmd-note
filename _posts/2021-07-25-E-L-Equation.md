@@ -3,7 +3,8 @@ layout: single
 title:  "E-L Equation"
 date:   2021-07-25 11:07:00 +0800
 categories: zhihu
-katex: true
+header:
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210725184457.png
 ---
 
 ## 准备搞明白泛函

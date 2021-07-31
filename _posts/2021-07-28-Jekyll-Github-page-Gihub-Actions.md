@@ -4,7 +4,7 @@ title:  "Jekyll+Github page+Gihub Actions"
 date:   2021-07-28 10:32:00 +0800
 categories: tutorial
 header:
-  teaser: 
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imge706435a04d4061079e6e726c22e50a.png
 ---
 
 ## 尝试使用github pages
@@ -23,7 +23,8 @@ header:
 
 ### 运行流程
 
-<img src="https://i.loli.net/2021/07/29/weIDpHRvW9XB5Cu.png" width="400px" alt="1627526442(1)">
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7458703.png" alt="7458703" width="400">
+
 
 1. Actions扫描workflows下的配置文件寻找job
 2. Actions按照顺序依次执行

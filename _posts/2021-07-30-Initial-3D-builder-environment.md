@@ -14,14 +14,14 @@ categories: 3D
 - Flollow This video
   - <iframe width="560" height="315" src="https://www.youtube.com/embed/6sNKtyl4hQM?start=195" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   - Install `Cmake gui` from [office](https://cmake.org/download/)
-    - <img src="https://i.loli.net/2021/07/30/WTuvMeYALdRnfij.png" alt="20210730221541" width="400px">
+    - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7361062.png" alt="7361062" width="400px">
     - Remeber set the correct config, I'm using `VS2017` and `x64 system`
     - Configure and Generate
     - Close
   - Select `sln` file from `build` dir
   - Open it in VS20XX.
 - Open `Demo.exe` at `fltk-1.3.7\build\bin\test\Release`
-  - <img src="https://i.loli.net/2021/07/30/Tq5LmQzdFJXsHok.png" alt="20210730232259" width="400px">
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7324062.png" alt="7324062" width="400px">
   - Have fun.
 
 ## Develop FLTK project
@@ -55,4 +55,5 @@ int main() {
 }
 ```
 
-<img src="https://i.loli.net/2021/07/30/dSov5hX1RzNijDu.png" alt="" width="200px">
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7405187.png" alt="7405187" width="200">

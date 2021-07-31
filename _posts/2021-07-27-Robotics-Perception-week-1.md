@@ -3,7 +3,8 @@ layout: single
 title:  "Robotics Perception week 1"
 date:   2021-07-27 10:38:00 +0800
 categories: coursera 3D
-katex: true
+header:
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727143124.png
 ---
 
 ## 准备看点摄像机视觉

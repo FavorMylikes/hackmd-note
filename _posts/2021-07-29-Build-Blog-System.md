@@ -31,14 +31,14 @@ toc: true
   - cause as a jekyll theme `minimal-mistakes-jekyll`, you can override any `_includes` file by your own file with the same name
 - use `limjh16/jekyll-action-ts@v2` to build site file
   - this component require Gemfile.lock
-  - cause [<img src="https://i.loli.net/2021/07/29/fO1NCPuslEaTYIx.png" alt="20210729214617">](https://github.com/limjh16/jekyll-action-ts/blob/9edf74e2e5aaa10d272c427efb8702a45a70a0b2/src/main.ts#L157)
+  - cause [<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7492062.png" alt="7492062">](https://github.com/limjh16/jekyll-action-ts/blob/9edf74e2e5aaa10d272c427efb8702a45a70a0b2/src/main.ts#L157)
   - so if you need update your Gemfile for any reason, before `git push`, you'd better run
 
     ```gem
     bundle lock --update --add-platform x86_64-linux --remove-platform x64-mingw32
     ```
 
-    <img src="https://i.loli.net/2021/07/29/o8DiY5TLvEJd4HS.png" alt="20210729215017">
+    <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7523421.png" alt="7523421">
 - use `peaceiris/actions-gh-pages@v3` to push file to `site`
   - nothing need talk about
 - katex

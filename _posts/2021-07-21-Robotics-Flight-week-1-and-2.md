@@ -4,6 +4,8 @@ title:  "Robotics-Flight week 1 and 2"
 date:   2021-07-21 10:12:00 +0800
 categories: coursera system env
 katex: true
+header:
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210721131633.png
 ---
 
 ## 准备看点Coursera课程

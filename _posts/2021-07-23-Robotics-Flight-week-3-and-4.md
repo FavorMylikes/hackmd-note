@@ -3,7 +3,8 @@ layout: single
 title: "Robotics-Flight week 3 and 4, 3D rebuilding"
 date:  2021-07-23 10:17:00 +0800
 categories: coursera 3D
-katex: true
+header:
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210723122620.png
 ---
 
 ## 准备看点Coursera

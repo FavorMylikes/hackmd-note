@@ -3,7 +3,8 @@ layout: single
 title:  "Coordinate System in Dynamic"
 date:   2021-07-26 11:02:00 +0800
 categories: zhihu coursera
-katex: true
+header:
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png
 ---
 
 ## 准备搞明白泛函

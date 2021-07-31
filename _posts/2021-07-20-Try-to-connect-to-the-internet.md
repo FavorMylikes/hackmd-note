@@ -4,6 +4,8 @@ title:  "Try to connect to the internet"
 date:   2021-07-20 10:37:00 +0800
 categories: env system
 katex: true
+header:
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/3edc8471faea4ec0350dd49526aac66.png
 ---
 
 ## 尝试解决上网问题
