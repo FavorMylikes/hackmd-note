@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io//" rel="alternate" type="text/html" /><updated>2021-08-01T00:05:44+08:00</updated><id>https://ucas.io//feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Initial 3D Builder environment</title><link href="https://ucas.io//3d/Initial-3D-builder-environment/" rel="alternate" type="text/html" title="Initial 3D Builder environment" /><published>2021-07-30T20:41:19+08:00</published><updated>2021-07-30T20:41:19+08:00</updated><id>https://ucas.io//3d/Initial-3D-builder-environment</id><content type="html" xml:base="https://ucas.io//3d/Initial-3D-builder-environment/">&lt;h2 id=&quot;inistall-fltk&quot;&gt;Inistall FLTK&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io//" rel="alternate" type="text/html" /><updated>2021-08-01T00:27:34+08:00</updated><id>https://ucas.io//feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Initial 3D Builder environment</title><link href="https://ucas.io//3d/Initial-3D-builder-environment/" rel="alternate" type="text/html" title="Initial 3D Builder environment" /><published>2021-07-30T20:41:19+08:00</published><updated>2021-07-30T20:41:19+08:00</updated><id>https://ucas.io//3d/Initial-3D-builder-environment</id><content type="html" xml:base="https://ucas.io//3d/Initial-3D-builder-environment/">&lt;h2 id=&quot;inistall-fltk&quot;&gt;Inistall FLTK&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;FLTK&lt;/strong&gt;(Fast Light Toolkit，读做”fulltick”)&lt;/li&gt;
@@ -68,7 +68,7 @@ fltk_imagesd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7405187.png&quot; alt=&quot;7405187&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3D" /><summary type="html">Inistall FLTK</summary></entry><entry><title type="html">Double slash test</title><link href="https://ucas.io//tutorial/Double-slash/" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-29T15:37:00+08:00</published><updated>2021-07-29T15:37:00+08:00</updated><id>https://ucas.io//tutorial/Double-slash</id><content type="html" xml:base="https://ucas.io//tutorial/Double-slash/">&lt;h2 id=&quot;render&quot;&gt;Render&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7405187.png&quot; alt=&quot;7405187&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3D" /><summary type="html">Inistall FLTK</summary></entry><entry><title type="html">Double slash test</title><link href="https://ucas.io//tutorial/Double-slash/" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-30T11:02:00+08:00</published><updated>2021-07-30T11:02:00+08:00</updated><id>https://ucas.io//tutorial/Double-slash</id><content type="html" xml:base="https://ucas.io//tutorial/Double-slash/">&lt;h2 id=&quot;render&quot;&gt;Render&lt;/h2&gt;
 
 &lt;h3 id=&quot;no-dollar&quot;&gt;No dollar&lt;/h3&gt;
 
@@ -219,91 +219,7 @@ $$&lt;/div&gt;
     &lt;p&gt;-. It will convert &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$123$DE$&lt;/code&gt; as &lt;em&gt;Italic&lt;/em&gt; first
 -. And then the rendering for katex&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Render</summary></entry><entry><title type="html">Jekyll+Github page+Gihub Actions</title><link href="https://ucas.io//tutorial/Jekyll-Github-page-Gihub-Actions/" rel="alternate" type="text/html" title="Jekyll+Github page+Gihub Actions" /><published>2021-07-28T10:32:00+08:00</published><updated>2021-07-28T10:32:00+08:00</updated><id>https://ucas.io//tutorial/Jekyll-Github-page-Gihub-Actions</id><content type="html" xml:base="https://ucas.io//tutorial/Jekyll-Github-page-Gihub-Actions/">&lt;h2 id=&quot;尝试使用github-pages&quot;&gt;尝试使用github pages&lt;/h2&gt;
-
-&lt;h3 id=&quot;主要组件&quot;&gt;主要组件&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jekyllcn.com&quot;&gt;Jekyll&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;静态网站生成器&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Github Actions&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;需要项目下存在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github/workflows/*.yml&lt;/code&gt;, 作为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Github Actions&lt;/code&gt;的扫描程序&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/marketplace&quot;&gt;Action marketplace&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;, 根目录下，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;运行时需要的配置&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;ruby
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;  ruby 需要的版本&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; ruby 一台机器已经安装各个组件的具体版本以及依赖条件&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;运行流程&quot;&gt;运行流程&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7458703.png&quot; alt=&quot;7458703&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Actions扫描workflows下的配置文件寻找job&lt;/li&gt;
-  &lt;li&gt;Actions按照顺序依次执行&lt;/li&gt;
-  &lt;li&gt;ruby 按照Gemfile.lock的文件安装指定组件版本&lt;/li&gt;
-  &lt;li&gt;ruby拿到_config.yml的配置之后依次执行
-    &lt;ol&gt;
-      &lt;li&gt;主题
-        &lt;ol&gt;
-          &lt;li&gt;dash&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;插件
-        &lt;ol&gt;
-          &lt;li&gt;jekyll-feed&lt;/li&gt;
-          &lt;li&gt;jekyll/tagging&lt;/li&gt;
-          &lt;li&gt;jekyll-paginate
-            &lt;ol&gt;
-              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginate&lt;/code&gt;: 5 # 分页数&lt;/li&gt;
-              &lt;li&gt;paginate_path: “/page:num/”  # 扫描位置&lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-          &lt;li&gt;kramdown-math-katex&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;minusgix.github.io&quot;&gt;minusgix.github.io&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imge706435a04d4061079e6e726c22e50a.png&quot; alt=&quot;e706435a04d4061079e6e726c22e50a&quot; width=&quot;400px&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/MinusGix/minusgix.github.io&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://mma.iydon.top/&quot;&gt;南方科技大学数学建模协会&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgefa0c2da86f50e9c201928439427b2c.png&quot; alt=&quot;efa0c2da86f50e9c201928439427b2c&quot; width=&quot;400px&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/SUSTech-MMA/sustech-mma.github.io&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;需要本地构建&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://leopardpan.github.io&quot;&gt;leopardpan&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;效果同上&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/leopardpan/leopardpan.github.io&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://actions-gh-pages.peaceiris.com/&quot;&gt;actions-gh-pages&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/peaceiris/actions-gh-pages&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">尝试使用github pages</summary></entry><entry><title type="html">Build Blog System</title><link href="https://ucas.io//tutorial/Build-Blog-System/" rel="alternate" type="text/html" title="Build Blog System" /><published>2021-07-28T10:32:00+08:00</published><updated>2021-07-28T10:32:00+08:00</updated><id>https://ucas.io//tutorial/Build-Blog-System</id><content type="html" xml:base="https://ucas.io//tutorial/Build-Blog-System/">&lt;h2 id=&quot;build-blog-system-by-github-pages-and-jekyll&quot;&gt;Build Blog System by Github pages and jekyll&lt;/h2&gt;
+&lt;/ol&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Render</summary></entry><entry><title type="html">Build Blog System</title><link href="https://ucas.io//tutorial/Build-Blog-System/" rel="alternate" type="text/html" title="Build Blog System" /><published>2021-07-29T10:29:00+08:00</published><updated>2021-07-29T10:29:00+08:00</updated><id>https://ucas.io//tutorial/Build-Blog-System</id><content type="html" xml:base="https://ucas.io//tutorial/Build-Blog-System/">&lt;h2 id=&quot;build-blog-system-by-github-pages-and-jekyll&quot;&gt;Build Blog System by Github pages and jekyll&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;markdown
@@ -419,7 +335,91 @@ $$&lt;/div&gt;
   &lt;li&gt;&lt;a href=&quot;https://frankindev.com/2017/02/08/using-katex-in-jekyll/&quot;&gt;Jekyll 中使用 KaTeX SsKatex&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#remote-theme-method&quot;&gt;minimal-mistakes/docs/quick-start-guide&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/mm-github-pages-starter&quot;&gt;mm-github-pages-starter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Build Blog System by Github pages and jekyll</summary></entry><entry><title type="html">Robotics Perception week 1</title><link href="https://ucas.io//coursera/3d/Robotics-Perception-week-1/" rel="alternate" type="text/html" title="Robotics Perception week 1" /><published>2021-07-27T10:38:00+08:00</published><updated>2021-07-27T10:38:00+08:00</updated><id>https://ucas.io//coursera/3d/Robotics-Perception-week-1</id><content type="html" xml:base="https://ucas.io//coursera/3d/Robotics-Perception-week-1/">&lt;h2 id=&quot;准备看点摄像机视觉&quot;&gt;准备看点摄像机视觉&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Build Blog System by Github pages and jekyll</summary></entry><entry><title type="html">Jekyll+Github page+Gihub Actions</title><link href="https://ucas.io//tutorial/Jekyll-Github-page-Gihub-Actions/" rel="alternate" type="text/html" title="Jekyll+Github page+Gihub Actions" /><published>2021-07-28T10:32:00+08:00</published><updated>2021-07-28T10:32:00+08:00</updated><id>https://ucas.io//tutorial/Jekyll-Github-page-Gihub-Actions</id><content type="html" xml:base="https://ucas.io//tutorial/Jekyll-Github-page-Gihub-Actions/">&lt;h2 id=&quot;尝试使用github-pages&quot;&gt;尝试使用github pages&lt;/h2&gt;
+
+&lt;h3 id=&quot;主要组件&quot;&gt;主要组件&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllcn.com&quot;&gt;Jekyll&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;静态网站生成器&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Github Actions&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;需要项目下存在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github/workflows/*.yml&lt;/code&gt;, 作为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Github Actions&lt;/code&gt;的扫描程序&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/marketplace&quot;&gt;Action marketplace&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;, 根目录下，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;运行时需要的配置&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ruby
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;  ruby 需要的版本&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; ruby 一台机器已经安装各个组件的具体版本以及依赖条件&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;运行流程&quot;&gt;运行流程&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7458703.png&quot; alt=&quot;7458703&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Actions扫描workflows下的配置文件寻找job&lt;/li&gt;
+  &lt;li&gt;Actions按照顺序依次执行&lt;/li&gt;
+  &lt;li&gt;ruby 按照Gemfile.lock的文件安装指定组件版本&lt;/li&gt;
+  &lt;li&gt;ruby拿到_config.yml的配置之后依次执行
+    &lt;ol&gt;
+      &lt;li&gt;主题
+        &lt;ol&gt;
+          &lt;li&gt;dash&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;插件
+        &lt;ol&gt;
+          &lt;li&gt;jekyll-feed&lt;/li&gt;
+          &lt;li&gt;jekyll/tagging&lt;/li&gt;
+          &lt;li&gt;jekyll-paginate
+            &lt;ol&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paginate&lt;/code&gt;: 5 # 分页数&lt;/li&gt;
+              &lt;li&gt;paginate_path: “/page:num/”  # 扫描位置&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;kramdown-math-katex&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;minusgix.github.io&quot;&gt;minusgix.github.io&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imge706435a04d4061079e6e726c22e50a.png&quot; alt=&quot;e706435a04d4061079e6e726c22e50a&quot; width=&quot;400px&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/MinusGix/minusgix.github.io&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mma.iydon.top/&quot;&gt;南方科技大学数学建模协会&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgefa0c2da86f50e9c201928439427b2c.png&quot; alt=&quot;efa0c2da86f50e9c201928439427b2c&quot; width=&quot;400px&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/SUSTech-MMA/sustech-mma.github.io&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;需要本地构建&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://leopardpan.github.io&quot;&gt;leopardpan&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;效果同上&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/leopardpan/leopardpan.github.io&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://actions-gh-pages.peaceiris.com/&quot;&gt;actions-gh-pages&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/peaceiris/actions-gh-pages&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">尝试使用github pages</summary></entry><entry><title type="html">Robotics Perception week 1</title><link href="https://ucas.io//coursera/3d/Robotics-Perception-week-1/" rel="alternate" type="text/html" title="Robotics Perception week 1" /><published>2021-07-27T10:38:00+08:00</published><updated>2021-07-27T10:38:00+08:00</updated><id>https://ucas.io//coursera/3d/Robotics-Perception-week-1</id><content type="html" xml:base="https://ucas.io//coursera/3d/Robotics-Perception-week-1/">&lt;h2 id=&quot;准备看点摄像机视觉&quot;&gt;准备看点摄像机视觉&lt;/h2&gt;
 
 &lt;h3 id=&quot;week1&quot;&gt;Week1&lt;/h3&gt;
 
