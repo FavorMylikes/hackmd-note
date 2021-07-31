@@ -55,5 +55,4 @@ int main() {
 }
 ```
 
-
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7405187.png" alt="7405187" width="200">
