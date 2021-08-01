@@ -41,21 +41,19 @@ tag_archive:
 
 # jekyll-archives https://github.com/jekyll/jekyll-archives
 jekyll-archives:
-  enabled:
-    - categories
-    - tags
-    - year
-    - month
+  enabled: true
   layouts:
     category: archive-taxonomy
     tag: archive-taxonomy
-    year: year-archive
-    # month: month-archive
+    year: archive-taxonomy
+    month: archive-taxonomy
+    day: archive-taxonomy
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
-    month: '/:year/:month/'
     year: '/year/:year/'
+    month: '/month/:year/:month/'
+    day: '/day/:year/:month/:day/'
 permalink: /:categories/:title/
 breadcrumbs: true  # disabled by default
 
