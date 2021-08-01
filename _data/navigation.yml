@@ -7,3 +7,5 @@ main:
     url: /tags/
   - title: "Years"
     url: /years/
+  - title: "Months"
+    url: /months/
