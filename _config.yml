@@ -40,21 +40,22 @@ tag_archive:
   path: /tags/
 
 # jekyll-archives https://github.com/jekyll/jekyll-archives
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-    # - year
-    # - month
-  layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
-    # year: year-archive
-    # month: month-archive
-  permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
-    month: '/:year/:month/'
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#     # - year
+#     # - month
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#     # year: year-archive
+#     # month: month-archive
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+#     month: '/:year/:month/'
+#     year: '/:year/'
 permalink: /:categories/:title/
 breadcrumbs: true  # disabled by default
 
