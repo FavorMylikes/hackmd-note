@@ -52,7 +52,7 @@ jekyll-archives:
     category: /categories/:name/
     tag: /tags/:name/
     year: '/years/:year/'
-    month: '/months/:year/:month/'
+    month: '/months/:month/'
     day: '/days/:year/:month/:day/'
 permalink: /:categories/:title/
 breadcrumbs: true  # disabled by default
