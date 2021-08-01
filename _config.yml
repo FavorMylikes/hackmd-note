@@ -51,9 +51,9 @@ jekyll-archives:
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
-    year: '/year/:year/'
-    month: '/month/:year/:month/'
-    day: '/day/:year/:month/:day/'
+    year: '/years/:year/'
+    month: '/months/:year/:month/'
+    day: '/days/:year/:month/:day/'
 permalink: /:categories/:title/
 breadcrumbs: true  # disabled by default
 
