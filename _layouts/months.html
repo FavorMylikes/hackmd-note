@@ -1,0 +1,16 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+<ul class="taxonomy__index">
+  {% assign postsInYearMonth = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y/%m"' %}
+  {% for month in postsInYearMonth %}
+    <li>
+        <a href="{{ site.jekyll-archives.permalinks.month | replace: ':month', month.name }}">
+        <strong>{{ month.name }}</strong> <span class="taxonomy__count">{{ month.items | size }}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
