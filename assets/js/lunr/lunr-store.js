@@ -71,6 +71,12 @@ var store = [{
         "url": "/tutorial/Double-slash/",
         "teaser": null
       },{
+        "title": "Jekyll Archive",
+        "excerpt":"How Jekyll Archive Work      用Ruby写的   主要作用是将文章按categories, tags, year, month, day, 生成新的索引页面   但是对于索引页面本身，jekyll-archive, 并未创建   因此需要_pages中的页面进行辅助   在nav中加入连接，才可以   Minimal-Mistakes在Archive界面上的处理逻辑      它实现了自己的pages   但是仅仅使用#作为业内索引，而并没有生成连接   我的实现逻辑      同样在_layouts中实现years.html, tags.html, months.html   在_pages中进行相应的调用   不过为了和jekyll-archive配合，将日期连接统一改成了dates\\:year\\:month  ","categories": ["tutorial"],
+        "tags": [],
+        "url": "/tutorial/Jekyll-Archive/",
+        "teaser": null
+      },{
         "title": "Initial 3D Builder environment",
         "excerpt":"Inistall FLTK FLTK(Fast Light Toolkit，读做”fulltick”) 通过OpenGL和内建的GLUT模拟器提供3D图形支持 Download form offical site Pinoccio recommend for 1.1.7 or 1.1.x Flollow This video Install Cmake gui from office Remeber set the correct config, I’m using VS2017 and x64 system Configure and Generate Close Select sln file from build dir Open it in VS20XX. Open...","categories": ["3D"],
         "tags": [],
