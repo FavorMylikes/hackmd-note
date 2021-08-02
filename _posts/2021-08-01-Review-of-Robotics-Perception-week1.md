@@ -3,6 +3,8 @@ layout: single
 title:  "Review of Robotics Perception week1"
 date:   "2021-8-1 16:53:36 +0800"
 categories: 3d coursera
+header:
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801194917.png
 ---
 
 ## Review of week 1

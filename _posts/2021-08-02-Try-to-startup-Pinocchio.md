@@ -3,6 +3,8 @@ layout: single
 title:  "Try To Start Up Pinocchio"
 date:   "2021-8-2 10:32:48 +0800"
 categories: 3d
+header:
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png
 ---
 
 ## Install Visual Studio 2019
