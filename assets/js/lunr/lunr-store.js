@@ -101,9 +101,9 @@ var store = [{
         "url": "/3d/coursera/Robotics-Perception-week2/",
         "teaser": null
       },{
-        "title": "Try To Start Up Binocchio",
+        "title": "Try To Start Up Pinocchio",
         "excerpt":"Install Visual Studio 2019 Cmake generate x64 and x32 for Fltk Target at \\Path\\to\\fltk-1.3.7\\build-2019-32 \\Path\\to\\fltk-1.3.7\\build-2019-64 The Whole Configuration for Pinocchio 参考文章 Visual Studio 2019 配置 OpenGL - 「已注销」的文章 - 知乎 Marco[宏]，全局定义，避免hash_map警告 For AttachWeights, DemoUI,Pinocchio,PinocchioStatic Set Property&gt;C/C++&gt;Preprocessor&gt;Preprocessor Definitions Append _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS; Lib[库] Set Property&gt;VC++ Directories&gt;Library Directories Append \\Path\\to\\fltk-1.3.7\\build-2019-32\\lib\\Debug; Fltk lib dir Download...","categories": ["3d"],
         "tags": [],
-        "url": "/3d/Try-to-startup-binocchio/",
+        "url": "/3d/Try-to-startup-Pinocchio/",
         "teaser": null
       }]
