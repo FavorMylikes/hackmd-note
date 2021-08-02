@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Try To Start Up Binocchio"
-date:   "2021-7-30 10:32:48 +0800"
+date:   "2021-8-2 10:32:48 +0800"
 categories: 3d
 ---
 
@@ -80,3 +80,23 @@ Follow this [create-user-defined-environment-variables-macros](https://sites.goo
 8. Your project will inherit it like
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802174054.png" alt="20210802174054">
 9. And make sure the check box `Inherit from parent or project defaults` has been choosen.
+
+### Run **`Pinocchio`**
+
+- Under `./Debug` you'll see `DemoUI.exe` after `Building`
+- Type run, The usage will display
+
+```powershell
+Usage: DemoUI filename.{obj | ply | off | gts | stl}
+              [-skel skelname] [-rot x y z deg]* [-scale s]
+              [-meshonly | -mo] [-circlesonly | -co]
+              [-motion motionname] [-nofit]
+```
+
+- But we don't have any obj file under `data` dir as the github `README.md` say
+- I have found another repo is [stnoh/Pinocchio](https://github.com/stnoh/Pinocchio)
+- Move `DemoUI\data\test.obj` into oringinal project and run with command below
+
+```powershell
+.\DemoUI.exe ..\DemoUI\data\test.obj -motion ..\DemoUI\data\walkAndSkip.txt
+```
