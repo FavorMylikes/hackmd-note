@@ -93,7 +93,7 @@ var store = [{
         "excerpt":"Review of week 1 First Person Camera World $x’, y’$ 为投影面坐标 $X,Y$ 为物体实际坐标 $Z$为物体距离原点距离 $C$为第一视角原点 $f$为焦距 投影面为一个虚像，真实成像是个倒像，但大小一致 $x’=f\\frac{X}{Z}, y’=f\\frac{Y}{Z}$ 矩阵形式 $$ Z_c \\begin{bmatrix} x'\\\\y'\\\\1 \\end{bmatrix} = \\begin{bmatrix} f&0&0&0\\\\ 0&f&0&0\\\\ 0&0&1&0\\\\ \\end{bmatrix} \\begin{bmatrix} X_c\\\\Y_c\\\\Z_c\\\\1 \\end{bmatrix} $$ 这里的1作为3位空间的齐次项 Conversion form mm to pixels 光学中心$O_C,O_r$ $x’,y’$投影面坐标(像素) $c,r$为实际距离 缩放加平移之后 $s_x, s_y$为像素宽 $c-O_c=\\frac{x’}{s_x}, r-O_r=\\frac{y’}{s_y}$ 矩阵形式...","categories": ["3d","coursera"],
         "tags": [],
         "url": "/3d/coursera/Review-of-Robotics-Perception-week1/",
-        "teaser": null
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801194917.png"
       },{
         "title": "Robotics Pecreption week2",
         "excerpt":" ","categories": ["3d","coursera"],
@@ -105,5 +105,5 @@ var store = [{
         "excerpt":"Install Visual Studio 2019 Cmake generate x64 and x32 for Fltk Target at \\Path\\to\\fltk-1.3.7\\build-2019-32 \\Path\\to\\fltk-1.3.7\\build-2019-64 The Whole Configuration for Pinocchio 参考文章 Visual Studio 2019 配置 OpenGL - 「已注销」的文章 - 知乎 Marco[宏]，全局定义，避免hash_map警告 For AttachWeights, DemoUI,Pinocchio,PinocchioStatic Set Property&gt;C/C++&gt;Preprocessor&gt;Preprocessor Definitions Append _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS; Lib[库] Set Property&gt;VC++ Directories&gt;Library Directories Append \\Path\\to\\fltk-1.3.7\\build-2019-32\\lib\\Debug; Fltk lib dir Download...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Try-to-startup-Pinocchio/",
-        "teaser": null
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png"
       }]
