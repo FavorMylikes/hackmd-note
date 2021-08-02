@@ -1,117 +1,133 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-02T17:50:41+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Initial 3D Builder environment</title><link href="https://ucas.io/3d/Initial-3D-builder-environment/" rel="alternate" type="text/html" title="Initial 3D Builder environment" /><published>2021-07-30T20:41:19+08:00</published><updated>2021-07-30T20:41:19+08:00</updated><id>https://ucas.io/3d/Initial-3D-builder-environment</id><content type="html" xml:base="https://ucas.io/3d/Initial-3D-builder-environment/">&lt;h2 id=&quot;inistall-fltk&quot;&gt;Inistall FLTK&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-02T17:53:47+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics Pecreption week2</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-week2/" rel="alternate" type="text/html" title="Robotics Pecreption week2" /><published>2021-08-02T10:32:48+08:00</published><updated>2021-08-02T10:32:48+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-week2</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-week2/"></content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html"></summary></entry><entry><title type="html">Try To Start Up Binocchio</title><link href="https://ucas.io/3d/Try-to-startup-binocchio/" rel="alternate" type="text/html" title="Try To Start Up Binocchio" /><published>2021-08-02T10:32:48+08:00</published><updated>2021-08-02T10:32:48+08:00</updated><id>https://ucas.io/3d/Try-to-startup-binocchio</id><content type="html" xml:base="https://ucas.io/3d/Try-to-startup-binocchio/">&lt;h2 id=&quot;install-visual-studio-2019&quot;&gt;Install Visual Studio 2019&lt;/h2&gt;
+
+&lt;h3 id=&quot;cmake-generate-x64-and-x32-for-fltk&quot;&gt;Cmake generate x64 and x32 for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Fltk&lt;/code&gt;&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;FLTK&lt;/strong&gt;(Fast Light Toolkit，读做”fulltick”)&lt;/li&gt;
-  &lt;li&gt;通过OpenGL和内建的GLUT模拟器提供3D图形支持&lt;/li&gt;
-  &lt;li&gt;Download form offical &lt;a href=&quot;https://www.fltk.org/software.php&quot;&gt;site&lt;/a&gt;
+  &lt;li&gt;Target at&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-32&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-64&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-whole-configuration-for-pinocchio&quot;&gt;The Whole Configuration for Pinocchio&lt;/h3&gt;
+
+&lt;h4 id=&quot;参考文章&quot;&gt;参考文章&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/90857517&quot;&gt;Visual Studio 2019 配置 OpenGL - 「已注销」的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;marco宏全局定义避免hash_map警告&quot;&gt;Marco[宏]，全局定义，避免&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash_map&lt;/code&gt;警告&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AttachWeights&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoUI&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pinocchio&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PinocchioStatic&lt;/code&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/Pinoccio/library-pinoccio&quot;&gt;Pinoccio&lt;/a&gt; recommend for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.1.7&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.1.x&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;C/C++&amp;gt;Preprocessor&amp;gt;Preprocessor Definitions&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Flollow This video
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;lib库&quot;&gt;Lib[库]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;VC++ Directories&amp;gt;Library Directories&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Append
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6sNKtyl4hQM?start=195&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Install &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cmake gui&lt;/code&gt; from &lt;a href=&quot;https://cmake.org/download/&quot;&gt;office&lt;/a&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-32\lib\Debug;&lt;/code&gt; Fltk lib dir&lt;/li&gt;
+      &lt;li&gt;Download at &lt;a href=&quot;https://www.fltk.org/software.php&quot;&gt;www.fltk.org&lt;/a&gt;
         &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7361062.png&quot; alt=&quot;7361062&quot; width=&quot;400px&quot; /&gt;&lt;/li&gt;
-          &lt;li&gt;Remeber set the correct config, I’m using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VS2017&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x64 system&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;Configure and Generate&lt;/li&gt;
-          &lt;li&gt;Close&lt;/li&gt;
+          &lt;li&gt;Choose a version, For me, v1.3.7 is ok[Now is 2021/08/02]&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;Select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sln&lt;/code&gt; file from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build&lt;/code&gt; dir&lt;/li&gt;
-      &lt;li&gt;Open it in VS20XX.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Open &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Demo.exe&lt;/code&gt; at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fltk-1.3.7\build\bin\test\Release&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7324062.png&quot; alt=&quot;7324062&quot; width=&quot;400px&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;Have fun.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;develop-fltk-project&quot;&gt;Develop FLTK project&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Config for VS2017
-    &lt;ul&gt;
-      &lt;li&gt;choose the right &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;平台&lt;/code&gt; as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x64&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;增加库目录 at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VC++目录&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\path\to\fltk-1.3.7\build\lib\Debug&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C/C++&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;附加包含目录&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\path\to\fltk-1.3.7&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;连接器[linker]&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;输入[input]&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;附加依赖项&lt;/code&gt;&lt;/p&gt;
-
-        &lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fltkd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-wsock32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-comctl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-fltk_jpegd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-fltk_imagesd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glfw-3.3.4.bin.WIN32\lib-vc2019;&lt;/code&gt; glfw
+        &lt;ul&gt;
+          &lt;li&gt;Download at &lt;a href=&quot;https://www.glfw.org/download.html&quot;&gt;www.glfw.org&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;Choose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;32-bit version&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glew-2.1.0.win32\lib\Release\Win32;&lt;/code&gt; glew
+        &lt;ul&gt;
+          &lt;li&gt;Download at &lt;a href=&quot;http://glew.sourceforge.net/&quot;&gt;glew.sourceforge.net&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;Choose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Windows 32-bit and 64-bit&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Code&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;FL/Fl.H&amp;gt;
-#include&amp;lt;FL/Fl_Box.H&amp;gt;
-#include&amp;lt;FL/Fl_Window.H&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;Fl_Window&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Window title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;Fl_Box&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7405187.png&quot; alt=&quot;7405187&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3D" /><summary type="html">Inistall FLTK</summary></entry><entry><title type="html">Jekyll Search And Logo</title><link href="https://ucas.io/tutorial/Add-Jekyll-Search-And-Logo/" rel="alternate" type="text/html" title="Jekyll Search And Logo" /><published>2021-07-30T20:41:19+08:00</published><updated>2021-07-30T20:41:19+08:00</updated><id>https://ucas.io/tutorial/Add-Jekyll-Search-And-Logo</id><content type="html" xml:base="https://ucas.io/tutorial/Add-Jekyll-Search-And-Logo/">&lt;h2 id=&quot;jekyll-algolia&quot;&gt;Jekyll-Algolia&lt;/h2&gt;
+&lt;h4 id=&quot;include引用header文件索引&quot;&gt;Include[引用Header文件索引]&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/configuration/#algolia&quot;&gt;Jekyll-Algolia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;A search engine to help you get a list of result.&lt;/li&gt;
-  &lt;li&gt;But have some bugs&lt;/li&gt;
-  &lt;li&gt;I have post a new issue at &lt;a href=&quot;https://github.com/algolia/jekyll-algolia/issues/180&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;C/C++&amp;gt;General&amp;gt;Addtional Include Directories&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glew-2.1.0.win32\include&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glfw-3.3.4.bin.WIN32\include&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;jekyll-archives&quot;&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll-archives&quot;&gt;jekyll-archives&lt;/a&gt;&lt;/h2&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_pages&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;jekyll-archives&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;categories&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tags&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;layouts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;archive-taxonomy&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;archive-taxonomy&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;permalinks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/categories/:name/&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/:name/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;linker连接器引入需要的lib&quot;&gt;Linker[连接器]，引入需要的lib&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;First, you need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_include&lt;/code&gt; make jekyll find all extension pages.&lt;/li&gt;
-  &lt;li&gt;And, create some &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;md&lt;/code&gt; file with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Front Matter&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;Linker&amp;gt;input&amp;gt;Addtional Dependencies&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Append&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Posts&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Tag&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tags&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fltkd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib           # &lt;span class=&quot;k&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; Debug， fltk&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; Release
+wsock32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+comctl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+fltk_zd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib         # fltk
+fltk_gld&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib        # fltk
+fltk_jpegd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib      # fltk
+fltk_imagesd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib    # fltk
+opengl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib  
+glfw3&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib           # glfw
+glew32s&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib         # glew
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h4 id=&quot;set-all-properties-above-with-project-property-sheet&quot;&gt;Set All Properties Above with Project Property Sheet&lt;/h4&gt;
+
+&lt;p&gt;Follow this &lt;a href=&quot;https://sites.google.com/site/pinyotae/Home/visual-studio-visual-c/create-user-defined-environment-variables-macros&quot;&gt;create-user-defined-environment-variables-macros&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tool&amp;gt;Other Windows&amp;gt;Property Manager&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Select a Project&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add New Project Property Sheet&lt;/code&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Choose Project Root Path&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select other project&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add Existing Porperty Sheet&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Double click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property Sheet&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Add all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lib&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linker.input&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preprocessor&lt;/code&gt;, above talk about&lt;/li&gt;
+  &lt;li&gt;Your project will inherit it like
+&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802174054.png&quot; alt=&quot;20210802174054&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;And make sure the check box &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Inherit from parent or project defaults&lt;/code&gt; has been choosen.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;run-pinocchio&quot;&gt;Run &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pinocchio&lt;/code&gt;&lt;/strong&gt;&lt;/h3&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;Then, jekyll will create those pages like
-&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801015732.png&quot; alt=&quot;20210801015732&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;But it just create a single html page&lt;/li&gt;
-  &lt;li&gt;You can check it here &lt;a href=&quot;https://github.com/FavorMylikes/hackmd-note/tree/gh-pages/categories&quot;&gt;categories&lt;/a&gt; that make form &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages/tag-archive.md&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Jekyll-Algolia</summary></entry><entry><title type="html">Jekyll Archive</title><link href="https://ucas.io/tutorial/Jekyll-Archive/" rel="alternate" type="text/html" title="Jekyll Archive" /><published>2021-07-30T16:53:36+08:00</published><updated>2021-07-30T16:53:36+08:00</updated><id>https://ucas.io/tutorial/Jekyll-Archive</id><content type="html" xml:base="https://ucas.io/tutorial/Jekyll-Archive/">&lt;h2 id=&quot;how-jekyll-archive-work&quot;&gt;How Jekyll Archive Work&lt;/h2&gt;
+  &lt;li&gt;Under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./Debug&lt;/code&gt; you’ll see &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoUI.exe&lt;/code&gt; after &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Building&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Type run, The usage will display&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Usage:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DemoUI&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filename.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ply&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gts&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-skel&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;skelname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-rot&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;deg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-scale&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-meshonly&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-mo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-circlesonly&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-co&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-motion&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;motionname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-nofit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;But we don’t have any obj file under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; dir as the github &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;README.md&lt;/code&gt; say&lt;/li&gt;
+  &lt;li&gt;I have found another repo is &lt;a href=&quot;https://github.com/stnoh/Pinocchio&quot;&gt;stnoh/Pinocchio&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Move &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoUI\data\test.obj&lt;/code&gt; into oringinal project and run with command below&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;\DemoUI.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\DemoUI\data\test.obj&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-motion&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\DemoUI\data\walkAndSkip.txt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Install Visual Studio 2019</summary></entry><entry><title type="html">Jekyll Archive</title><link href="https://ucas.io/tutorial/Jekyll-Archive/" rel="alternate" type="text/html" title="Jekyll Archive" /><published>2021-08-01T16:53:36+08:00</published><updated>2021-08-01T16:53:36+08:00</updated><id>https://ucas.io/tutorial/Jekyll-Archive</id><content type="html" xml:base="https://ucas.io/tutorial/Jekyll-Archive/">&lt;h2 id=&quot;how-jekyll-archive-work&quot;&gt;How Jekyll Archive Work&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ruby&lt;/code&gt;写的&lt;/li&gt;
@@ -134,7 +150,7 @@ fltk_imagesd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
   &lt;li&gt;同样在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;中实现&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;years.html&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tags.html&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;months.html&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages&lt;/code&gt;中进行相应的调用&lt;/li&gt;
   &lt;li&gt;不过为了和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-archive&lt;/code&gt;配合，将日期连接统一改成了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dates\:year\:month&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">How Jekyll Archive Work</summary></entry><entry><title type="html">Review of Robotics Perception week1</title><link href="https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1/" rel="alternate" type="text/html" title="Review of Robotics Perception week1" /><published>2021-07-30T16:53:36+08:00</published><updated>2021-07-30T16:53:36+08:00</updated><id>https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1</id><content type="html" xml:base="https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1/">&lt;h2 id=&quot;review-of-week-1&quot;&gt;Review of week 1&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">How Jekyll Archive Work</summary></entry><entry><title type="html">Review of Robotics Perception week1</title><link href="https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1/" rel="alternate" type="text/html" title="Review of Robotics Perception week1" /><published>2021-08-01T16:53:36+08:00</published><updated>2021-08-01T16:53:36+08:00</updated><id>https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1</id><content type="html" xml:base="https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1/">&lt;h2 id=&quot;review-of-week-1&quot;&gt;Review of week 1&lt;/h2&gt;
 
 &lt;h3 id=&quot;first-person-camera-world&quot;&gt;First Person Camera World&lt;/h3&gt;
 
@@ -313,7 +329,120 @@ L\big (\mathbf{K}\begin{bmatrix}
 \end{bmatrix} \begin{bmatrix}
   \mathbf{X}\\1
 \end{bmatrix}\big)$&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Review of week 1</summary></entry><entry><title type="html">Double slash test</title><link href="https://ucas.io/tutorial/Double-slash/" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-30T11:02:00+08:00</published><updated>2021-07-30T11:02:00+08:00</updated><id>https://ucas.io/tutorial/Double-slash</id><content type="html" xml:base="https://ucas.io/tutorial/Double-slash/">&lt;h2 id=&quot;render&quot;&gt;Render&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Review of week 1</summary></entry><entry><title type="html">Initial 3D Builder environment</title><link href="https://ucas.io/3d/Initial-3D-builder-environment/" rel="alternate" type="text/html" title="Initial 3D Builder environment" /><published>2021-07-30T20:41:19+08:00</published><updated>2021-07-30T20:41:19+08:00</updated><id>https://ucas.io/3d/Initial-3D-builder-environment</id><content type="html" xml:base="https://ucas.io/3d/Initial-3D-builder-environment/">&lt;h2 id=&quot;inistall-fltk&quot;&gt;Inistall FLTK&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;FLTK&lt;/strong&gt;(Fast Light Toolkit，读做”fulltick”)&lt;/li&gt;
+  &lt;li&gt;通过OpenGL和内建的GLUT模拟器提供3D图形支持&lt;/li&gt;
+  &lt;li&gt;Download form offical &lt;a href=&quot;https://www.fltk.org/software.php&quot;&gt;site&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/Pinoccio/library-pinoccio&quot;&gt;Pinoccio&lt;/a&gt; recommend for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.1.7&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.1.x&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Flollow This video
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6sNKtyl4hQM?start=195&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Install &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cmake gui&lt;/code&gt; from &lt;a href=&quot;https://cmake.org/download/&quot;&gt;office&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7361062.png&quot; alt=&quot;7361062&quot; width=&quot;400px&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;Remeber set the correct config, I’m using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VS2017&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x64 system&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;Configure and Generate&lt;/li&gt;
+          &lt;li&gt;Close&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sln&lt;/code&gt; file from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build&lt;/code&gt; dir&lt;/li&gt;
+      &lt;li&gt;Open it in VS20XX.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Open &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Demo.exe&lt;/code&gt; at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fltk-1.3.7\build\bin\test\Release&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7324062.png&quot; alt=&quot;7324062&quot; width=&quot;400px&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;Have fun.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;develop-fltk-project&quot;&gt;Develop FLTK project&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Config for VS2017
+    &lt;ul&gt;
+      &lt;li&gt;choose the right &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;平台&lt;/code&gt; as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x64&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;增加库目录 at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VC++目录&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\path\to\fltk-1.3.7\build\lib\Debug&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C/C++&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;附加包含目录&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\path\to\fltk-1.3.7&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;连接器[linker]&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;输入[input]&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;附加依赖项&lt;/code&gt;&lt;/p&gt;
+
+        &lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fltkd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+wsock32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+comctl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+fltk_jpegd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+fltk_imagesd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;FL/Fl.H&amp;gt;
+#include&amp;lt;FL/Fl_Box.H&amp;gt;
+#include&amp;lt;FL/Fl_Window.H&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Fl_Window&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Window title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Fl_Box&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7405187.png&quot; alt=&quot;7405187&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3D" /><summary type="html">Inistall FLTK</summary></entry><entry><title type="html">Jekyll Search And Logo</title><link href="https://ucas.io/tutorial/Add-Jekyll-Search-And-Logo/" rel="alternate" type="text/html" title="Jekyll Search And Logo" /><published>2021-07-30T20:41:19+08:00</published><updated>2021-07-30T20:41:19+08:00</updated><id>https://ucas.io/tutorial/Add-Jekyll-Search-And-Logo</id><content type="html" xml:base="https://ucas.io/tutorial/Add-Jekyll-Search-And-Logo/">&lt;h2 id=&quot;jekyll-algolia&quot;&gt;Jekyll-Algolia&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/configuration/#algolia&quot;&gt;Jekyll-Algolia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A search engine to help you get a list of result.&lt;/li&gt;
+  &lt;li&gt;But have some bugs&lt;/li&gt;
+  &lt;li&gt;I have post a new issue at &lt;a href=&quot;https://github.com/algolia/jekyll-algolia/issues/180&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jekyll-archives&quot;&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll-archives&quot;&gt;jekyll-archives&lt;/a&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_pages&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;jekyll-archives&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;categories&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tags&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;layouts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;archive-taxonomy&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;archive-taxonomy&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;permalinks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/categories/:name/&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/:name/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First, you need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_include&lt;/code&gt; make jekyll find all extension pages.&lt;/li&gt;
+  &lt;li&gt;And, create some &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;md&lt;/code&gt; file with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Front Matter&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Posts&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Tag&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tags&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Then, jekyll will create those pages like
+&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801015732.png&quot; alt=&quot;20210801015732&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;But it just create a single html page&lt;/li&gt;
+  &lt;li&gt;You can check it here &lt;a href=&quot;https://github.com/FavorMylikes/hackmd-note/tree/gh-pages/categories&quot;&gt;categories&lt;/a&gt; that make form &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages/tag-archive.md&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Jekyll-Algolia</summary></entry><entry><title type="html">Double slash test</title><link href="https://ucas.io/tutorial/Double-slash/" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-30T11:02:00+08:00</published><updated>2021-07-30T11:02:00+08:00</updated><id>https://ucas.io/tutorial/Double-slash</id><content type="html" xml:base="https://ucas.io/tutorial/Double-slash/">&lt;h2 id=&quot;render&quot;&gt;Render&lt;/h2&gt;
 
 &lt;h3 id=&quot;no-dollar&quot;&gt;No dollar&lt;/h3&gt;
 
@@ -464,114 +593,7 @@ $$&lt;/div&gt;
     &lt;p&gt;-. It will convert &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$123$DE$&lt;/code&gt; as &lt;em&gt;Italic&lt;/em&gt; first
 -. And then the rendering for katex&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Render</summary></entry><entry><title type="html">Robotics Pecreption week2</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-week2/" rel="alternate" type="text/html" title="Robotics Pecreption week2" /><published>2021-07-30T10:32:48+08:00</published><updated>2021-07-30T10:32:48+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-week2</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-week2/"></content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html"></summary></entry><entry><title type="html">Try To Start Up Binocchio</title><link href="https://ucas.io/3d/Try-to-startup-binocchio/" rel="alternate" type="text/html" title="Try To Start Up Binocchio" /><published>2021-07-30T10:32:48+08:00</published><updated>2021-07-30T10:32:48+08:00</updated><id>https://ucas.io/3d/Try-to-startup-binocchio</id><content type="html" xml:base="https://ucas.io/3d/Try-to-startup-binocchio/">&lt;h2 id=&quot;install-visual-studio-2019&quot;&gt;Install Visual Studio 2019&lt;/h2&gt;
-
-&lt;h3 id=&quot;cmake-generate-x64-and-x32-for-fltk&quot;&gt;Cmake generate x64 and x32 for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Fltk&lt;/code&gt;&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Target at&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-32&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-64&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-whole-configuration-for-pinocchio&quot;&gt;The Whole Configuration for Pinocchio&lt;/h3&gt;
-
-&lt;h4 id=&quot;参考文章&quot;&gt;参考文章&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/90857517&quot;&gt;Visual Studio 2019 配置 OpenGL - 「已注销」的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;marco宏全局定义避免hash_map警告&quot;&gt;Marco[宏]，全局定义，避免&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash_map&lt;/code&gt;警告&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;For &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AttachWeights&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoUI&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pinocchio&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PinocchioStatic&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;C/C++&amp;gt;Preprocessor&amp;gt;Preprocessor Definitions&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;lib库&quot;&gt;Lib[库]&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;VC++ Directories&amp;gt;Library Directories&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Append
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-32\lib\Debug;&lt;/code&gt; Fltk lib dir&lt;/li&gt;
-      &lt;li&gt;Download at &lt;a href=&quot;https://www.fltk.org/software.php&quot;&gt;www.fltk.org&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Choose a version, For me, v1.3.7 is ok[Now is 2021/08/02]&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glfw-3.3.4.bin.WIN32\lib-vc2019;&lt;/code&gt; glfw
-        &lt;ul&gt;
-          &lt;li&gt;Download at &lt;a href=&quot;https://www.glfw.org/download.html&quot;&gt;www.glfw.org&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;Choose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;32-bit version&lt;/code&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glew-2.1.0.win32\lib\Release\Win32;&lt;/code&gt; glew
-        &lt;ul&gt;
-          &lt;li&gt;Download at &lt;a href=&quot;http://glew.sourceforge.net/&quot;&gt;glew.sourceforge.net&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;Choose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Windows 32-bit and 64-bit&lt;/code&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;include引用header文件索引&quot;&gt;Include[引用Header文件索引]&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;C/C++&amp;gt;General&amp;gt;Addtional Include Directories&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glew-2.1.0.win32\include&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glfw-3.3.4.bin.WIN32\include&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;linker连接器引入需要的lib&quot;&gt;Linker[连接器]，引入需要的lib&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;Linker&amp;gt;input&amp;gt;Addtional Dependencies&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Append&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fltkd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib           # &lt;span class=&quot;k&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; Debug， fltk&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; Release
-wsock32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-comctl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-fltk_zd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib         # fltk
-fltk_gld&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib        # fltk
-fltk_jpegd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib      # fltk
-fltk_imagesd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib    # fltk
-opengl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib  
-glfw3&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib           # glfw
-glew32s&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib         # glew
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;set-all-properties-above-with-project-property-sheet&quot;&gt;Set All Properties Above with Project Property Sheet&lt;/h4&gt;
-
-&lt;p&gt;Follow this &lt;a href=&quot;https://sites.google.com/site/pinyotae/Home/visual-studio-visual-c/create-user-defined-environment-variables-macros&quot;&gt;create-user-defined-environment-variables-macros&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Open &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tool&amp;gt;Other Windows&amp;gt;Property Manager&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Select a Project&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add New Project Property Sheet&lt;/code&gt;
-    &lt;ol&gt;
-      &lt;li&gt;Choose Project Root Path&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Select other project&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add Existing Porperty Sheet&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Double click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property Sheet&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Add all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lib&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linker.input&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preprocessor&lt;/code&gt;, above talk about&lt;/li&gt;
-  &lt;li&gt;Your project will inherit it like
-&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802174054.png&quot; alt=&quot;20210802174054&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;And make sure the check box &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Inherit from parent or project defaults&lt;/code&gt; has been choosen.&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Install Visual Studio 2019</summary></entry><entry><title type="html">Build Blog System</title><link href="https://ucas.io/tutorial/Build-Blog-System/" rel="alternate" type="text/html" title="Build Blog System" /><published>2021-07-29T10:29:00+08:00</published><updated>2021-07-29T10:29:00+08:00</updated><id>https://ucas.io/tutorial/Build-Blog-System</id><content type="html" xml:base="https://ucas.io/tutorial/Build-Blog-System/">&lt;h2 id=&quot;build-blog-system-by-github-pages-and-jekyll&quot;&gt;Build Blog System by Github pages and jekyll&lt;/h2&gt;
+&lt;/ol&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Render</summary></entry><entry><title type="html">Build Blog System</title><link href="https://ucas.io/tutorial/Build-Blog-System/" rel="alternate" type="text/html" title="Build Blog System" /><published>2021-07-29T10:29:00+08:00</published><updated>2021-07-29T10:29:00+08:00</updated><id>https://ucas.io/tutorial/Build-Blog-System</id><content type="html" xml:base="https://ucas.io/tutorial/Build-Blog-System/">&lt;h2 id=&quot;build-blog-system-by-github-pages-and-jekyll&quot;&gt;Build Blog System by Github pages and jekyll&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;markdown

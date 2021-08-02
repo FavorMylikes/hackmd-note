@@ -65,22 +65,22 @@ var store = [{
         "url": "/tutorial/Build-Blog-System/",
         "teaser": null
       },{
-        "title": "Robotics Pecreption week2",
-        "excerpt":" ","categories": ["3d","coursera"],
-        "tags": [],
-        "url": "/3d/coursera/Robotics-Perception-week2/",
-        "teaser": null
-      },{
-        "title": "Try To Start Up Binocchio",
-        "excerpt":"Install Visual Studio 2019 Cmake generate x64 and x32 for Fltk Target at \\Path\\to\\fltk-1.3.7\\build-2019-32 \\Path\\to\\fltk-1.3.7\\build-2019-64 The Whole Configuration for Pinocchio 参考文章 Visual Studio 2019 配置 OpenGL - 「已注销」的文章 - 知乎 Marco[宏]，全局定义，避免hash_map警告 For AttachWeights, DemoUI,Pinocchio,PinocchioStatic Set Property&gt;C/C++&gt;Preprocessor&gt;Preprocessor Definitions Append _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS; Lib[库] Set Property&gt;VC++ Directories&gt;Library Directories Append \\Path\\to\\fltk-1.3.7\\build-2019-32\\lib\\Debug; Fltk lib dir Download...","categories": ["3d"],
-        "tags": [],
-        "url": "/3d/Try-to-startup-binocchio/",
-        "teaser": null
-      },{
         "title": "Double slash test",
         "excerpt":"Render No dollar A /A //A \\A \\A Single dollar $A$ $/A$ $\\A$ $//A$ Double dollar $$ A $$ $$ /A $$ $$ \\\\A $$ $$ //A $$ Matrix with Single Dollar single line $\\begin{bmatrix}1\\2\\3\\end{bmatrix}$ multy line $\\begin{bmatrix} 1\\2\\3 \\end{bmatrix}$ Matrix with Double Dollar single line $$ \\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix} $$ multy...","categories": ["tutorial"],
         "tags": [],
         "url": "/tutorial/Double-slash/",
+        "teaser": null
+      },{
+        "title": "Initial 3D Builder environment",
+        "excerpt":"Inistall FLTK FLTK(Fast Light Toolkit，读做”fulltick”) 通过OpenGL和内建的GLUT模拟器提供3D图形支持 Download form offical site Pinoccio recommend for 1.1.7 or 1.1.x Flollow This video Install Cmake gui from office Remeber set the correct config, I’m using VS2017 and x64 system Configure and Generate Close Select sln file from build dir Open it in VS20XX. Open...","categories": ["3D"],
+        "tags": [],
+        "url": "/3d/Initial-3D-builder-environment/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7324062.png"
+      },{
+        "title": "Jekyll Search And Logo",
+        "excerpt":"Jekyll-Algolia Jekyll-Algolia A search engine to help you get a list of result. But have some bugs I have post a new issue at here jekyll-archives include: - _pages jekyll-archives: enabled: - categories - tags layouts: category: archive-taxonomy tag: archive-taxonomy permalinks: category: /categories/:name/ tag: /tags/:name/ First, you need _include make...","categories": ["tutorial"],
+        "tags": [],
+        "url": "/tutorial/Add-Jekyll-Search-And-Logo/",
         "teaser": null
       },{
         "title": "Jekyll Archive",
@@ -95,15 +95,15 @@ var store = [{
         "url": "/3d/coursera/Review-of-Robotics-Perception-week1/",
         "teaser": null
       },{
-        "title": "Initial 3D Builder environment",
-        "excerpt":"Inistall FLTK FLTK(Fast Light Toolkit，读做”fulltick”) 通过OpenGL和内建的GLUT模拟器提供3D图形支持 Download form offical site Pinoccio recommend for 1.1.7 or 1.1.x Flollow This video Install Cmake gui from office Remeber set the correct config, I’m using VS2017 and x64 system Configure and Generate Close Select sln file from build dir Open it in VS20XX. Open...","categories": ["3D"],
+        "title": "Robotics Pecreption week2",
+        "excerpt":" ","categories": ["3d","coursera"],
         "tags": [],
-        "url": "/3d/Initial-3D-builder-environment/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7324062.png"
+        "url": "/3d/coursera/Robotics-Perception-week2/",
+        "teaser": null
       },{
-        "title": "Jekyll Search And Logo",
-        "excerpt":"Jekyll-Algolia Jekyll-Algolia A search engine to help you get a list of result. But have some bugs I have post a new issue at here jekyll-archives include: - _pages jekyll-archives: enabled: - categories - tags layouts: category: archive-taxonomy tag: archive-taxonomy permalinks: category: /categories/:name/ tag: /tags/:name/ First, you need _include make...","categories": ["tutorial"],
+        "title": "Try To Start Up Binocchio",
+        "excerpt":"Install Visual Studio 2019 Cmake generate x64 and x32 for Fltk Target at \\Path\\to\\fltk-1.3.7\\build-2019-32 \\Path\\to\\fltk-1.3.7\\build-2019-64 The Whole Configuration for Pinocchio 参考文章 Visual Studio 2019 配置 OpenGL - 「已注销」的文章 - 知乎 Marco[宏]，全局定义，避免hash_map警告 For AttachWeights, DemoUI,Pinocchio,PinocchioStatic Set Property&gt;C/C++&gt;Preprocessor&gt;Preprocessor Definitions Append _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS; Lib[库] Set Property&gt;VC++ Directories&gt;Library Directories Append \\Path\\to\\fltk-1.3.7\\build-2019-32\\lib\\Debug; Fltk lib dir Download...","categories": ["3d"],
         "tags": [],
-        "url": "/tutorial/Add-Jekyll-Search-And-Logo/",
+        "url": "/3d/Try-to-startup-binocchio/",
         "teaser": null
       }]

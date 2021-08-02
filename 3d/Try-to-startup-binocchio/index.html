@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-07-30T10:32:48+08:00">
+  <meta property="article:published_time" content="2021-08-02T10:32:48+08:00">
 
 
 
@@ -324,7 +324,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Try To Start Up Binocchio">
     <meta itemprop="description" content="Install Visual Studio 2019">
-    <meta itemprop="datePublished" content="2021-07-30T10:32:48+08:00">
+    <meta itemprop="datePublished" content="2021-08-02T10:32:48+08:00">
     
 
     <div class="page__inner-wrap">
@@ -340,7 +340,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-07-30T10:32:48+08:00">July 30, 2021</time>
+        <time datetime="2021-08-02T10:32:48+08:00">August 2, 2021</time>
       </span>
     
 
@@ -353,7 +353,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -368,7 +368,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#install-visual-studio-2019">Install Visual Studio 2019</a><ul><li><a href="#cmake-generate-x64-and-x32-for-fltk">Cmake generate x64 and x32 for Fltk</a></li><li><a href="#the-whole-configuration-for-pinocchio">The Whole Configuration for Pinocchio</a><ul><li><a href="#参考文章">参考文章</a></li><li><a href="#marco宏全局定义避免hash_map警告">Marco[宏]，全局定义，避免hash_map警告</a></li><li><a href="#lib库">Lib[库]</a></li><li><a href="#include引用header文件索引">Include[引用Header文件索引]</a></li><li><a href="#linker连接器引入需要的lib">Linker[连接器]，引入需要的lib</a></li><li><a href="#set-all-properties-above-with-project-property-sheet">Set All Properties Above with Project Property Sheet</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#install-visual-studio-2019">Install Visual Studio 2019</a><ul><li><a href="#cmake-generate-x64-and-x32-for-fltk">Cmake generate x64 and x32 for Fltk</a></li><li><a href="#the-whole-configuration-for-pinocchio">The Whole Configuration for Pinocchio</a><ul><li><a href="#参考文章">参考文章</a></li><li><a href="#marco宏全局定义避免hash_map警告">Marco[宏]，全局定义，避免hash_map警告</a></li><li><a href="#lib库">Lib[库]</a></li><li><a href="#include引用header文件索引">Include[引用Header文件索引]</a></li><li><a href="#linker连接器引入需要的lib">Linker[连接器]，引入需要的lib</a></li><li><a href="#set-all-properties-above-with-project-property-sheet">Set All Properties Above with Project Property Sheet</a></li></ul></li><li><a href="#run-pinocchio">Run Pinocchio</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -482,6 +482,28 @@ glew32s<span class="p">.</span>lib         # glew
   <li>And make sure the check box <code class="language-plaintext highlighter-rouge">Inherit from parent or project defaults</code> has been choosen.</li>
 </ol>
 
+<h3 id="run-pinocchio">Run <strong><code class="language-plaintext highlighter-rouge">Pinocchio</code></strong></h3>
+
+<ul>
+  <li>Under <code class="language-plaintext highlighter-rouge">./Debug</code> you’ll see <code class="language-plaintext highlighter-rouge">DemoUI.exe</code> after <code class="language-plaintext highlighter-rouge">Building</code></li>
+  <li>Type run, The usage will display</li>
+</ul>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Usage:</span><span class="w"> </span><span class="nx">DemoUI</span><span class="w"> </span><span class="nx">filename.</span><span class="p">{</span><span class="n">obj</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ply</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">off</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gts</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">stl</span><span class="p">}</span><span class="w">
+              </span><span class="p">[</span><span class="nt">-skel</span><span class="w"> </span><span class="n">skelname</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="nt">-rot</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="nx">z</span><span class="w"> </span><span class="nx">deg</span><span class="p">]</span><span class="o">*</span><span class="w"> </span><span class="p">[</span><span class="nt">-scale</span><span class="w"> </span><span class="n">s</span><span class="p">]</span><span class="w">
+              </span><span class="p">[</span><span class="nt">-meshonly</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">-mo</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="nt">-circlesonly</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">-co</span><span class="p">]</span><span class="w">
+              </span><span class="p">[</span><span class="nt">-motion</span><span class="w"> </span><span class="n">motionname</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="nt">-nofit</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>But we don’t have any obj file under <code class="language-plaintext highlighter-rouge">data</code> dir as the github <code class="language-plaintext highlighter-rouge">README.md</code> say</li>
+  <li>I have found another repo is <a href="https://github.com/stnoh/Pinocchio">stnoh/Pinocchio</a></li>
+  <li>Move <code class="language-plaintext highlighter-rouge">DemoUI\data\test.obj</code> into oringinal project and run with command below</li>
+</ul>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="n">\DemoUI.exe</span><span class="w"> </span><span class="o">..</span><span class="nx">\DemoUI\data\test.obj</span><span class="w"> </span><span class="nt">-motion</span><span class="w"> </span><span class="o">..</span><span class="nx">\DemoUI\data\walkAndSkip.txt</span><span class="w">
+</span></code></pre></div></div>
+
         
       </section>
 
@@ -507,7 +529,7 @@ glew32s<span class="p">.</span>lib         # glew
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-30T10:32:48+08:00">July 30, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-02T10:32:48+08:00">August 2, 2021</time></p>
 
 
       </footer>
@@ -530,8 +552,7 @@ glew32s<span class="p">.</span>lib         # glew
 ">Previous</a>
     
     
-      <a href="/tutorial/Double-slash/" class="pagination--pager" title="Double slash test
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -555,7 +576,7 @@ glew32s<span class="p">.</span>lib         # glew
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/tutorial/Add-Jekyll-Search-And-Logo/" rel="permalink">Jekyll Search And Logo
+        <a href="/3d/coursera/Robotics-Perception-week2/" rel="permalink">Robotics Pecreption week2
 </a>
       
     </h2>
@@ -567,7 +588,7 @@ glew32s<span class="p">.</span>lib         # glew
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-07-30T20:41:19+08:00">July 30, 2021</time>
+        <time datetime="2021-08-02T10:32:48+08:00">August 2, 2021</time>
       </span>
     
 
@@ -587,58 +608,7 @@ glew32s<span class="p">.</span>lib         # glew
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Jekyll-Algolia
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7324062.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/Initial-3D-builder-environment/" rel="permalink">Initial 3D Builder environment
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-07-30T20:41:19+08:00">July 30, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Inistall FLTK
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -665,7 +635,7 @@ glew32s<span class="p">.</span>lib         # glew
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-07-30T16:53:36+08:00">July 30, 2021</time>
+        <time datetime="2021-08-01T16:53:36+08:00">August 1, 2021</time>
       </span>
     
 
@@ -712,7 +682,7 @@ glew32s<span class="p">.</span>lib         # glew
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-07-30T16:53:36+08:00">July 30, 2021</time>
+        <time datetime="2021-08-01T16:53:36+08:00">August 1, 2021</time>
       </span>
     
 
@@ -733,6 +703,53 @@ glew32s<span class="p">.</span>lib         # glew
 
 
     <p class="archive__item-excerpt" itemprop="description">How Jekyll Archive Work
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tutorial/Add-Jekyll-Search-And-Logo/" rel="permalink">Jekyll Search And Logo
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-30T20:41:19+08:00">July 30, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Jekyll-Algolia
 </p>
   </article>
 </div>
