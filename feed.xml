@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-01T17:03:24+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Initial 3D Builder environment</title><link href="https://ucas.io/3d/Initial-3D-builder-environment/" rel="alternate" type="text/html" title="Initial 3D Builder environment" /><published>2021-07-30T20:41:19+08:00</published><updated>2021-07-30T20:41:19+08:00</updated><id>https://ucas.io/3d/Initial-3D-builder-environment</id><content type="html" xml:base="https://ucas.io/3d/Initial-3D-builder-environment/">&lt;h2 id=&quot;inistall-fltk&quot;&gt;Inistall FLTK&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-02T17:50:41+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Initial 3D Builder environment</title><link href="https://ucas.io/3d/Initial-3D-builder-environment/" rel="alternate" type="text/html" title="Initial 3D Builder environment" /><published>2021-07-30T20:41:19+08:00</published><updated>2021-07-30T20:41:19+08:00</updated><id>https://ucas.io/3d/Initial-3D-builder-environment</id><content type="html" xml:base="https://ucas.io/3d/Initial-3D-builder-environment/">&lt;h2 id=&quot;inistall-fltk&quot;&gt;Inistall FLTK&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;FLTK&lt;/strong&gt;(Fast Light Toolkit，读做”fulltick”)&lt;/li&gt;
@@ -134,7 +134,186 @@ fltk_imagesd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
   &lt;li&gt;同样在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;中实现&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;years.html&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tags.html&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;months.html&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages&lt;/code&gt;中进行相应的调用&lt;/li&gt;
   &lt;li&gt;不过为了和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-archive&lt;/code&gt;配合，将日期连接统一改成了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dates\:year\:month&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">How Jekyll Archive Work</summary></entry><entry><title type="html">Double slash test</title><link href="https://ucas.io/tutorial/Double-slash/" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-30T11:02:00+08:00</published><updated>2021-07-30T11:02:00+08:00</updated><id>https://ucas.io/tutorial/Double-slash</id><content type="html" xml:base="https://ucas.io/tutorial/Double-slash/">&lt;h2 id=&quot;render&quot;&gt;Render&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">How Jekyll Archive Work</summary></entry><entry><title type="html">Review of Robotics Perception week1</title><link href="https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1/" rel="alternate" type="text/html" title="Review of Robotics Perception week1" /><published>2021-07-30T16:53:36+08:00</published><updated>2021-07-30T16:53:36+08:00</updated><id>https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1</id><content type="html" xml:base="https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1/">&lt;h2 id=&quot;review-of-week-1&quot;&gt;Review of week 1&lt;/h2&gt;
+
+&lt;h3 id=&quot;first-person-camera-world&quot;&gt;First Person Camera World&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801194917.png&quot; alt=&quot;20210801194917&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$x’, y’$ 为投影面坐标&lt;/li&gt;
+  &lt;li&gt;$X,Y$ 为物体实际坐标&lt;/li&gt;
+  &lt;li&gt;$Z$为物体距离原点距离&lt;/li&gt;
+  &lt;li&gt;$C$为第一视角原点&lt;/li&gt;
+  &lt;li&gt;$f$为焦距&lt;/li&gt;
+  &lt;li&gt;投影面为一个虚像，真实成像是个倒像，但大小一致&lt;/li&gt;
+  &lt;li&gt;$x’=f\frac{X}{Z}, y’=f\frac{Y}{Z}$&lt;/li&gt;
+  &lt;li&gt;矩阵形式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+Z_c
+\begin{bmatrix}
+    x'\\y'\\1
+\end{bmatrix}
+=
+\begin{bmatrix}
+    f&amp;0&amp;0&amp;0\\
+    0&amp;f&amp;0&amp;0\\
+    0&amp;0&amp;1&amp;0\\
+\end{bmatrix}
+\begin{bmatrix}
+    X_c\\Y_c\\Z_c\\1
+\end{bmatrix}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;这里的1作为3位空间的齐次项&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;conversion-form-mm-to-pixels&quot;&gt;Conversion form mm to pixels&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801201358.png&quot; alt=&quot;20210801201358&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;光学中心$O_C,O_r$&lt;/li&gt;
+  &lt;li&gt;$x’,y’$投影面坐标(像素)&lt;/li&gt;
+  &lt;li&gt;$c,r$为实际距离&lt;/li&gt;
+  &lt;li&gt;缩放加平移之后&lt;/li&gt;
+  &lt;li&gt;$s_x, s_y$为像素宽&lt;/li&gt;
+  &lt;li&gt;$c-O_c=\frac{x’}{s_x}, r-O_r=\frac{y’}{s_y}$&lt;/li&gt;
+  &lt;li&gt;矩阵形式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{bmatrix}
+    x\\y\\z
+\end{bmatrix}
+=\begin{bmatrix}
+    a_x&amp;s&amp;P_x\\
+    0&amp;a_y&amp;P_y\\
+    0&amp;0&amp;1\\
+\end{bmatrix}
+\begin{bmatrix}
+    x'\\y'\\z'
+\end{bmatrix}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Here $a_x, a_y$ is two scala factor, 用于表示像素和米的倍数关系&lt;/li&gt;
+  &lt;li&gt;$P_x, p_y$ is the principle point(where optical axis hits image plane)&lt;/li&gt;
+  &lt;li&gt;$s$ is the slant factor, when the image plane is not normal to the optical axis
+    &lt;ul&gt;
+      &lt;li&gt;就是说，相机的成像面可能和透镜面不平行导致的位差，需要一个参数来纠正&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;comine-the-intrinsic-camera-parameters&quot;&gt;Comine the intrinsic camera parameters&lt;/h3&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+    \begin{bmatrix}
+        x\\y\\z
+    \end{bmatrix}
+    &amp;=
+    \begin{bmatrix}
+        a_x&amp;s&amp;P_x\\
+        0&amp;a_y&amp;P_y\\
+        0&amp;0&amp;1
+    \end{bmatrix}
+    \begin{bmatrix}
+        f&amp;0&amp;0&amp;0\\
+        0&amp;f&amp;0&amp;0\\
+        0&amp;0&amp;1&amp;0\\
+        0&amp;0&amp;0&amp;0\\
+    \end{bmatrix}
+    \begin{bmatrix}
+        x'\\y'\\z'
+    \end{bmatrix}\\
+    &amp;=
+    \begin{bmatrix}
+        a_xf&amp;sf&amp;P_x\\
+        0&amp;a_yf&amp;P_y\\
+        0&amp;0&amp;1
+    \end{bmatrix}
+    \begin{bmatrix}
+        x'\\y'\\z'
+    \end{bmatrix}\\
+\end{aligned}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mark $K$ as &lt;strong&gt;Calibration matrix&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+K=\begin{bmatrix}
+        a_xf&amp;sf&amp;P_x\\
+        0&amp;a_yf&amp;P_y\\
+        0&amp;0&amp;1
+\end{bmatrix}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;From 3D World in first person view to 2D pixel in first persion view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+Z\begin{bmatrix}
+    u_{img}\\v_{img}\\1
+\end{bmatrix}
+=
+\begin{bmatrix}
+    f_x&amp;s&amp;p_x\\
+    &amp;f_y&amp;p_y\\
+    &amp;&amp;1
+\end{bmatrix}
+\begin{bmatrix}
+    \mathbf{I_{3*3}}&amp;\mathbf{0}
+\end{bmatrix}
+\begin{bmatrix}
+    X_{cam}\\Y_{cam}\\Z_{cam}\\1
+\end{bmatrix}
+$$&lt;/div&gt;
+
+&lt;h3 id=&quot;third-person-to-first-person-3d-mappgin&quot;&gt;Third Person to First person 3d mappgin&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;旋转加平移
+&lt;span class=&quot;kdmath&quot;&gt;$\mathbf{X_c} = \begin{bmatrix}
+  \mathbf{R_{3*3}}&amp;t_{3*1}\\
+  \mathbf{0}&amp;1
+\end{bmatrix}
+\mathbf{X}$&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;combining-internal-and-external-parameters&quot;&gt;Combining Internal and External parameters&lt;/h3&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+    \mathbf{x} &amp;= \mathbf{K_{3*3}}[\mathbf{I};0]_{3*4}\mathbf{X_c}\\
+    &amp;=\mathbf{K}
+    \begin{bmatrix}
+        \mathbf{R}&amp;t
+    \end{bmatrix}\mathbf{X}
+\end{aligned}
+$$&lt;/div&gt;
+
+&lt;h3 id=&quot;非线性失真&quot;&gt;非线性失真&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用于处理球面映射出现的偏差
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{bmatrix}
+  \mathbf{x}\\1
+\end{bmatrix}
+=
+L\big (\mathbf{K}\begin{bmatrix}
+  \mathbf{R}&amp;t
+\end{bmatrix} \begin{bmatrix}
+  \mathbf{X}\\1
+\end{bmatrix}\big)$&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Review of week 1</summary></entry><entry><title type="html">Double slash test</title><link href="https://ucas.io/tutorial/Double-slash/" rel="alternate" type="text/html" title="Double slash test" /><published>2021-07-30T11:02:00+08:00</published><updated>2021-07-30T11:02:00+08:00</updated><id>https://ucas.io/tutorial/Double-slash</id><content type="html" xml:base="https://ucas.io/tutorial/Double-slash/">&lt;h2 id=&quot;render&quot;&gt;Render&lt;/h2&gt;
 
 &lt;h3 id=&quot;no-dollar&quot;&gt;No dollar&lt;/h3&gt;
 
@@ -285,7 +464,114 @@ $$&lt;/div&gt;
     &lt;p&gt;-. It will convert &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$123$DE$&lt;/code&gt; as &lt;em&gt;Italic&lt;/em&gt; first
 -. And then the rendering for katex&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Render</summary></entry><entry><title type="html">Build Blog System</title><link href="https://ucas.io/tutorial/Build-Blog-System/" rel="alternate" type="text/html" title="Build Blog System" /><published>2021-07-29T10:29:00+08:00</published><updated>2021-07-29T10:29:00+08:00</updated><id>https://ucas.io/tutorial/Build-Blog-System</id><content type="html" xml:base="https://ucas.io/tutorial/Build-Blog-System/">&lt;h2 id=&quot;build-blog-system-by-github-pages-and-jekyll&quot;&gt;Build Blog System by Github pages and jekyll&lt;/h2&gt;
+&lt;/ol&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Render</summary></entry><entry><title type="html">Robotics Pecreption week2</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-week2/" rel="alternate" type="text/html" title="Robotics Pecreption week2" /><published>2021-07-30T10:32:48+08:00</published><updated>2021-07-30T10:32:48+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-week2</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-week2/"></content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html"></summary></entry><entry><title type="html">Try To Start Up Binocchio</title><link href="https://ucas.io/3d/Try-to-startup-binocchio/" rel="alternate" type="text/html" title="Try To Start Up Binocchio" /><published>2021-07-30T10:32:48+08:00</published><updated>2021-07-30T10:32:48+08:00</updated><id>https://ucas.io/3d/Try-to-startup-binocchio</id><content type="html" xml:base="https://ucas.io/3d/Try-to-startup-binocchio/">&lt;h2 id=&quot;install-visual-studio-2019&quot;&gt;Install Visual Studio 2019&lt;/h2&gt;
+
+&lt;h3 id=&quot;cmake-generate-x64-and-x32-for-fltk&quot;&gt;Cmake generate x64 and x32 for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Fltk&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Target at&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-32&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-64&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-whole-configuration-for-pinocchio&quot;&gt;The Whole Configuration for Pinocchio&lt;/h3&gt;
+
+&lt;h4 id=&quot;参考文章&quot;&gt;参考文章&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/90857517&quot;&gt;Visual Studio 2019 配置 OpenGL - 「已注销」的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;marco宏全局定义避免hash_map警告&quot;&gt;Marco[宏]，全局定义，避免&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash_map&lt;/code&gt;警告&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AttachWeights&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoUI&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pinocchio&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PinocchioStatic&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;C/C++&amp;gt;Preprocessor&amp;gt;Preprocessor Definitions&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;lib库&quot;&gt;Lib[库]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;VC++ Directories&amp;gt;Library Directories&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Append
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-32\lib\Debug;&lt;/code&gt; Fltk lib dir&lt;/li&gt;
+      &lt;li&gt;Download at &lt;a href=&quot;https://www.fltk.org/software.php&quot;&gt;www.fltk.org&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Choose a version, For me, v1.3.7 is ok[Now is 2021/08/02]&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glfw-3.3.4.bin.WIN32\lib-vc2019;&lt;/code&gt; glfw
+        &lt;ul&gt;
+          &lt;li&gt;Download at &lt;a href=&quot;https://www.glfw.org/download.html&quot;&gt;www.glfw.org&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;Choose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;32-bit version&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glew-2.1.0.win32\lib\Release\Win32;&lt;/code&gt; glew
+        &lt;ul&gt;
+          &lt;li&gt;Download at &lt;a href=&quot;http://glew.sourceforge.net/&quot;&gt;glew.sourceforge.net&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;Choose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Windows 32-bit and 64-bit&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;include引用header文件索引&quot;&gt;Include[引用Header文件索引]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;C/C++&amp;gt;General&amp;gt;Addtional Include Directories&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glew-2.1.0.win32\include&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glfw-3.3.4.bin.WIN32\include&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;linker连接器引入需要的lib&quot;&gt;Linker[连接器]，引入需要的lib&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;Linker&amp;gt;input&amp;gt;Addtional Dependencies&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Append&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fltkd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib           # &lt;span class=&quot;k&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; Debug， fltk&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; Release
+wsock32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+comctl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+fltk_zd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib         # fltk
+fltk_gld&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib        # fltk
+fltk_jpegd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib      # fltk
+fltk_imagesd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib    # fltk
+opengl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib  
+glfw3&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib           # glfw
+glew32s&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib         # glew
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;set-all-properties-above-with-project-property-sheet&quot;&gt;Set All Properties Above with Project Property Sheet&lt;/h4&gt;
+
+&lt;p&gt;Follow this &lt;a href=&quot;https://sites.google.com/site/pinyotae/Home/visual-studio-visual-c/create-user-defined-environment-variables-macros&quot;&gt;create-user-defined-environment-variables-macros&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tool&amp;gt;Other Windows&amp;gt;Property Manager&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Select a Project&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add New Project Property Sheet&lt;/code&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Choose Project Root Path&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select other project&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add Existing Porperty Sheet&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Double click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property Sheet&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Add all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lib&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linker.input&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preprocessor&lt;/code&gt;, above talk about&lt;/li&gt;
+  &lt;li&gt;Your project will inherit it like
+&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802174054.png&quot; alt=&quot;20210802174054&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;And make sure the check box &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Inherit from parent or project defaults&lt;/code&gt; has been choosen.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Install Visual Studio 2019</summary></entry><entry><title type="html">Build Blog System</title><link href="https://ucas.io/tutorial/Build-Blog-System/" rel="alternate" type="text/html" title="Build Blog System" /><published>2021-07-29T10:29:00+08:00</published><updated>2021-07-29T10:29:00+08:00</updated><id>https://ucas.io/tutorial/Build-Blog-System</id><content type="html" xml:base="https://ucas.io/tutorial/Build-Blog-System/">&lt;h2 id=&quot;build-blog-system-by-github-pages-and-jekyll&quot;&gt;Build Blog System by Github pages and jekyll&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;markdown
@@ -659,915 +945,4 @@ $$&lt;/div&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="coursera" /><category term="3D" /><summary type="html">准备看点摄像机视觉</summary></entry><entry><title type="html">Coordinate System in Dynamic</title><link href="https://ucas.io/zhihu/coursera/Coordinate-System-in-Dynamic/" rel="alternate" type="text/html" title="Coordinate System in Dynamic" /><published>2021-07-26T11:02:00+08:00</published><updated>2021-07-26T11:02:00+08:00</updated><id>https://ucas.io/zhihu/coursera/Coordinate-System-in-Dynamic</id><content type="html" xml:base="https://ucas.io/zhihu/coursera/Coordinate-System-in-Dynamic/">&lt;h2 id=&quot;准备搞明白泛函&quot;&gt;准备搞明白泛函&lt;/h2&gt;
-
-&lt;h3 id=&quot;无人机的动力学系统&quot;&gt;无人机的动力学系统&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;动力系统
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png&quot; alt=&quot;20210726104110&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;惯性系[inertial frame]$\mathbf{A}$
-        &lt;ul&gt;
-          &lt;li&gt;3个转轴$a_1, a_2, a_3$&lt;/li&gt;
-          &lt;li&gt;原点$O$&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;随体系[body frame]或固连系[body-fixed frame]或体坐标系[body coordinate]$\mathbf{B}$
-        &lt;ul&gt;
-          &lt;li&gt;3个转轴$b_1, b_2, b_3$&lt;/li&gt;
-          &lt;li&gt;原点$C$&lt;/li&gt;
-          &lt;li&gt;$L$为旋翼到质心的距离&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;这个体系描述了这样一种运动
-        &lt;ul&gt;
-          &lt;li&gt;刚体从O点移动到C点，并且进行了旋转变换，此时由于随体系与刚体保持不动，因此随体系坐标不变，而随体系相对于惯性系存在变化，因此旋转矩阵是描述刚体旋转后的惯性系坐标变换&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;旋转矩阵$\mathbf{R}$[同一个点到两个坐标系的运算]
-        &lt;ul&gt;
-          &lt;li&gt;欧拉角[刚体的转动可以视为绕不同的轴，独立转动3次]&lt;/li&gt;
-          &lt;li&gt;如果不考虑位移[位移可以通过向量加法单独运算]，那么刚体仅存在旋转运动
-            &lt;ul&gt;
-              &lt;li&gt;Z-X-Y顺序旋转[顺序不一定是Z-X-Y，也可能是Z-X-Z或其他，但运算矩阵要一致]&lt;/li&gt;
-              &lt;li&gt;旋转矩阵$R$&lt;/li&gt;
-              &lt;li&gt;
-                &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-    R
-    &amp;= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
-    &amp;=\begin{bmatrix}
-    \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
-    \sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-    0 &amp; 0 &amp; 1
-    \end{bmatrix}
-    \begin{bmatrix}
-    1&amp;0&amp;0\\
-    0&amp;\cos{(\phi)} &amp; -\sin{(\phi)}\\
-    0&amp;\sin{(\phi)} &amp; \cos{(\phi)}\\
-    \end{bmatrix}
-    \begin{bmatrix}
-    \cos{(\theta )} &amp; 0 &amp; \sin{(\theta )}\\
-    0 &amp; 1 &amp; 0\\
-    - \sin{(\theta)} &amp; 0 &amp; \cos{(\theta )}
-    \end{bmatrix}\\
-    &amp;=\begin{bmatrix}- s(\theta ) s(\phi ) s(\psi ) + c(\theta ) c(\psi ) &amp; - s(\psi ) c(\phi ) &amp; s(\theta ) c(\psi ) + s(\phi ) s(\psi ) c(\theta )\\s(\theta ) s(\phi ) c(\psi ) + s(\psi ) c(\theta ) &amp; c(\phi ) c(\psi ) &amp; s(\theta ) s(\psi ) - s(\phi ) c(\theta ) c(\psi )\\- s(\theta ) c(\phi ) &amp; s(\phi ) &amp; c(\theta ) c(\phi )\end{bmatrix}&amp;\text{$s\rightarrow \sin, c \rightarrow \cos$}
-  \end{aligned}
-$$&lt;/div&gt;
-              &lt;/li&gt;
-              &lt;li&gt;初始时，假定$\mathbf{p}$为惯性系坐标，此时惯性系和随体系并未发生变换，因此，$\mathbf{p}$也可以表示随体系坐标，当刚体发生旋转后，随体系下坐标并未发生变化，$\mathbf{q}=R\mathbf{p}$描述了随体系坐标到新的惯性系坐标的变换&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;速度
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-        \dot \mathbf{q}&amp;=\dot R\mathbf{p} + R\mathbf{\dot p}\\
-        &amp;=\dot R\mathbf{p}&amp;\text{$\mathbf{p}$为常数时,$\dot \mathbf{q}=0$}\\
-    \end{aligned}
-$$&lt;/div&gt;
-              &lt;/li&gt;
-              &lt;li&gt;此时旋转后的点的速度仅取决于$R$对于时间$t$的导数&lt;/li&gt;
-              &lt;li&gt;$R^T\dot \mathbf{q} = R^T\dot R\mathbf{p}$, 两侧同时乘$R^T$, 即旋转矩阵的逆操作&lt;/li&gt;
-              &lt;li&gt;$R^T\dot \mathbf{q}$为随体系中的速度&lt;/li&gt;
-              &lt;li&gt;$R^T\dot R$为随体系的角速度，记为$\hat \omega^b$
-                &lt;ul&gt;
-                  &lt;li&gt;$b$表示body frame&lt;/li&gt;
-                  &lt;li&gt;$\hat \omega$是一种特殊记法，由于角速度中仅有3个独立的量，而$R^T\dot R$表示一个矩阵，为了简便记录，用$\hat \omega$代替&lt;/li&gt;
-                  &lt;li&gt;若$\omega = [\omega_1, \omega_2, \omega_3]$
-&lt;span class=&quot;kdmath&quot;&gt;$\hat \omega = \begin{bmatrix}0&amp;-\omega_3&amp;\omega_2\\\omega_3&amp;0&amp;-\omega_1\\-\omega_2&amp;\omega_1&amp;0\end{bmatrix}$&lt;/span&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;又有
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-    \dot \mathbf{q} &amp;= \dot R\mathbf{p}\\
-    &amp;=\dot RR^T\mathbf{q}&amp;\text{$\mathbf{p}$为$\mathbf{q}$的逆向旋转}
-\end{aligned}$&lt;/span&gt;
-                &lt;ul&gt;
-                  &lt;li&gt;$\dot \mathbf{q}$为惯性系速度&lt;/li&gt;
-                  &lt;li&gt;$\dot RR^T$为惯性系角速度，记为$\hat \omega^s$&lt;/li&gt;
-                  &lt;li&gt;$s$表示spatial[&lt;strong&gt;空间&lt;/strong&gt;]&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;角速度计算
-            &lt;ul&gt;
-              &lt;li&gt;以$z$轴为例子
-                &lt;ul&gt;
-                  &lt;li&gt;
-                    &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-      R_{z(\psi)} &amp;= \begin{bmatrix}
-      \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
-      \sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-      0 &amp; 0 &amp; 1
-      \end{bmatrix}\\
-      \hat \omega^b
-      &amp;=R^T\dot R\\
-      &amp;= \begin{bmatrix}
-          \cos{(\psi)} &amp; \sin{(\psi)} &amp; 0\\
-          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-          0 &amp; 0 &amp; 1
-      \end{bmatrix}
-      \begin{bmatrix}
-          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-          \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
-          0 &amp; 0 &amp; 0
-      \end{bmatrix}\dot \psi\\
-      &amp;=\begin{bmatrix}
-          0&amp;-1&amp;0\\
-          1&amp;0&amp;0\\
-          0&amp;0&amp;0
-      \end{bmatrix}\dot \psi\\
-      \hat \omega^s&amp;=\dot RR^T\\
-      &amp;=\dot \psi\begin{bmatrix}
-          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-          \cos{(\psi)} &amp; -\sin{(\psi)} &amp; 0\\
-          0 &amp; 0 &amp; 0
-      \end{bmatrix}
-      \begin{bmatrix}
-          \cos{(\psi)} &amp; \sin{(\psi)} &amp; 0\\
-          -\sin{(\psi)} &amp; \cos{(\psi)} &amp; 0\\
-          0 &amp; 0 &amp; 1
-      \end{bmatrix}\\
-      &amp;=\dot \psi\begin{bmatrix}
-          0&amp;-1&amp;0\\
-          1&amp;0&amp;0\\
-          0&amp;0&amp;0
-      \end{bmatrix}\\
-  \end{aligned}
-$$&lt;/div&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;此时因为旋转轴为$z$, 注意向量上方的$\hat {\omega}$
-   &lt;span class=&quot;kdmath&quot;&gt;$\hat \omega^b=\hat \omega^s=\hat{\begin{bmatrix}0\\0\\1\end{bmatrix}}$&lt;/span&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;多轴例子[由于转轴非常轴，因此两个参考系内的结果并不一样]
-                &lt;ul&gt;
-                  &lt;li&gt;
-                    &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-      R&amp;= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
-      \hat \omega^b&amp;=R^T\dot R\\
-      &amp;=(R_ZR_XR_Y)^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
-      &amp;=R_Y^TR_X^TR_Z^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
-      &amp;=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
-      \hat \omega^s&amp;=\dot RR^T\\
-      &amp;=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)(R_ZR_XR_Y)^T\\
-      &amp;=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)R_Y^TR_X^TR_Z^T\\
-      &amp;=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T
-  \end{aligned}
-$$&lt;/div&gt;
-                  &lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;无人机角速度推导
-                &lt;ul&gt;
-                  &lt;li&gt;&lt;a href=&quot;https://zinghd.gitee.io/kinematics-euler-angle-model/&quot;&gt;参考文章 - zinghd.gitee.io&lt;/a&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/a735148617/article/details/116740453&quot;&gt;欧拉角速度与角速度的关系推导——欧拉运动方程 (存在公式错误)&lt;/a&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/86468301&quot;&gt;（番外）姿态与旋转矩阵（II） - Tam Alex的文章 - 知乎&lt;/a&gt;
-                    &lt;ul&gt;
-                      &lt;li&gt;&lt;strong&gt;使用上述文章的推导&lt;/strong&gt;(与文章推导结果不一致，需要取逆或转置)
-                        &lt;ul&gt;
-                          &lt;li&gt;
-                            &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-      \begin{bmatrix}
-          p\\
-          q\\
-          r
-      \end{bmatrix}
-      &amp;=
-      (R_XR_Y)^T
-      \begin{bmatrix}
-          0\\0\\\dot \psi
-      \end{bmatrix}
-      +
-      R_Y^T
-      \begin{bmatrix}
-          \dot\phi\\0\\0
-      \end{bmatrix}
-      +
-      \begin{bmatrix}
-          0\\\dot \theta\\0
-      \end{bmatrix}\\
-      &amp;=\begin{bmatrix}
-          c\theta&amp;0&amp;-c\phi s\theta\\
-          0&amp;1&amp;s\phi\\
-          s\theta&amp;0&amp;c\phi c\theta
-      \end{bmatrix}
-      \begin{bmatrix}
-          \dot \phi\\
-          \dot \theta\\
-          \dot \psi\\
-      \end{bmatrix}
-  \end{aligned}
-$$&lt;/div&gt;
-                          &lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                      &lt;li&gt;&lt;strong&gt;直接使用$\hat \omega$公式&lt;/strong&gt;
-                        &lt;ul&gt;
-                          &lt;li&gt;
-                            &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-      \hat \omega^s&amp;=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T\\
-      &amp;=\begin{bmatrix}
-          0 &amp; - \dot \psi - \dot \theta s{(\phi )} &amp; \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}\\
-          \dot \psi + \dot \theta s{(\phi )} &amp; 0 &amp; - \dot \phi c{(\psi )} + \dot \theta s{(\psi )} c{(\phi )}\\- \dot \phi s{(\psi )} - \dot \theta c{(\phi )} c{(\psi )} &amp; \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )} &amp; 0
-      \end{bmatrix}\\
-      &amp;=\hat {
-      \begin{bmatrix}
-          \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )}\\
-          \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}\\
-          \dot \psi + \dot \theta s{(\phi )}
-      \end{bmatrix}}&amp;\text{注意符号}\\
-      &amp;=\hat {
-          \begin{bmatrix}
-              c(\psi)&amp;-s(\psi)c(\phi)&amp;0\\
-              s(\psi)&amp;c(\phi)s(\phi)&amp;0\\
-              0&amp;s(\phi)&amp;1
-          \end{bmatrix}
-          \begin{bmatrix}
-              \dot \phi\\
-              \dot \theta\\
-              \dot \psi
-          \end{bmatrix}
-      }\\
-      \omega^s&amp;=\begin{bmatrix}
-              c(\psi)&amp;-s(\psi)c(\phi)&amp;0\\
-              s(\psi)&amp;c(\phi)s(\phi)&amp;0\\
-              0&amp;s(\phi)&amp;1
-          \end{bmatrix}
-          \begin{bmatrix}
-              \dot \phi\\
-              \dot \theta\\
-              \dot \psi
-          \end{bmatrix}\\
-  \hat \omega^b&amp;=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
-  &amp;=\begin{bmatrix}
-  0 &amp; - \dot \phi s{(\theta )} - \dot \psi c{(\phi )} c{(\theta )} &amp; \dot \psi s{(\phi )} + \dot \theta\\
-  \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )} &amp; 0 &amp; - \dot \phi c{(\theta )} + \dot \psi s{(\theta )} c{(\phi )}\\  - \dot \psi s{(\phi )} - \dot \theta &amp; \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )} &amp; 0\end{bmatrix}\\
-  &amp;=\hat {
-  \begin{bmatrix}
-      \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )}\\
-      \dot \psi s{(\phi )} + \dot \theta\\
-      \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )}
-  \end{bmatrix}}&amp;\text{注意符号}\\
-  &amp;=\hat {
-      \begin{bmatrix}
-          c(\theta)&amp;0&amp;-s(\theta)c(\phi)\\
-          0&amp;1&amp;s(\phi)\\
-          s(\theta)&amp;0&amp;c(\phi)c(\theta)
-      \end{bmatrix}
-      \begin{bmatrix}
-          \dot \phi\\
-          \dot \theta\\
-          \dot \psi
-      \end{bmatrix}
-  }\\
-  \omega^b&amp;=\begin{bmatrix}
-          c(\theta)&amp;0&amp;-s(\theta)c(\phi)\\
-          0&amp;1&amp;s(\phi)\\
-          s(\theta)&amp;0&amp;c(\phi)c(\theta)
-      \end{bmatrix}
-      \begin{bmatrix}
-          \dot \phi\\
-          \dot \theta\\
-          \dot \psi
-      \end{bmatrix}
-  \end{aligned}
-$$&lt;/div&gt;
-                          &lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;牛顿欧拉方程[Newton-Euler’s Equation]
-        &lt;ul&gt;
-          &lt;li&gt;牛顿方程
-&lt;span class=&quot;kdmath&quot;&gt;$\mathbf{r}=\begin{bmatrix}
-    x\\y\\z
-  \end{bmatrix}$&lt;/span&gt;
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-m\mathbf{\ddot r}
-&amp;= R\begin{bmatrix}
-    0\\0\\F_1+F_2+F_3+F_4
-\end{bmatrix}-\begin{bmatrix}0\\0\\mg\end{bmatrix}\\
-&amp;= R\begin{bmatrix}
-    0\\0\\u_1
-\end{bmatrix}-\begin{bmatrix}0\\0\\mg\end{bmatrix}\\
-\end{aligned}
-$$&lt;/div&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;欧拉方程
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-    I \begin{bmatrix}
-        \dot p\\
-        \dot q\\
-        \dot r
-    \end{bmatrix}
-    &amp;=\begin{bmatrix}
-        L(F_2-F_4)\\
-        L(F_3-F_1)\\
-        M_1-M_2+M_3-M_4
-    \end{bmatrix}-
-    \begin{bmatrix}
-        p\\
-        q\\
-        r\\
-    \end{bmatrix}
-    \times
-    I
-    \begin{bmatrix}
-        p\\q\\r
-    \end{bmatrix}\\
-    &amp;=\begin{bmatrix}
-        0&amp;L&amp;0&amp;L\\
-        -L&amp;0&amp;L&amp;0\\
-        \gamma&amp;-\gamma&amp;\gamma&amp;-\gamma
-    \end{bmatrix}
-    \begin{bmatrix}
-        F_1\\F_2\\F_3\\F_4
-    \end{bmatrix}
-    -
-    \begin{bmatrix}
-        p\\
-        q\\
-        r\\
-    \end{bmatrix}
-    \times
-    I
-    \begin{bmatrix}
-        p\\q\\r
-    \end{bmatrix}&amp;\text{$\gamma=\frac{k_M}{k_F}$, 无人机的参数，用于计算转动惯量}\\
-    \mathbf{u_2}&amp;=\begin{bmatrix}
-        0&amp;L&amp;0&amp;L\\
-        -L&amp;0&amp;L&amp;0\\
-        \gamma&amp;-\gamma&amp;\gamma&amp;-\gamma
-    \end{bmatrix}
-    \begin{bmatrix}
-        F_1\\F_2\\F_3\\F_4
-    \end{bmatrix}\\
-    I_{xx}\ddot \phi &amp;= L(F_2-F_4)&amp;\text{角加速度}
-  \end{aligned}$&lt;/span&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><category term="coursera" /><summary type="html">准备搞明白泛函</summary></entry><entry><title type="html">E-L Equation</title><link href="https://ucas.io/zhihu/E-L-Equation/" rel="alternate" type="text/html" title="E-L Equation" /><published>2021-07-25T11:07:00+08:00</published><updated>2021-07-25T11:07:00+08:00</updated><id>https://ucas.io/zhihu/E-L-Equation</id><content type="html" xml:base="https://ucas.io/zhihu/E-L-Equation/">&lt;h2 id=&quot;准备搞明白泛函&quot;&gt;准备搞明白泛函&lt;/h2&gt;
-
-&lt;h3 id=&quot;无人机的动力学系统&quot;&gt;无人机的动力学系统&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;运动轨迹方程与E-L方程
-    &lt;ul&gt;
-      &lt;li&gt;高阶E-L方程
-        &lt;ul&gt;
-          &lt;li&gt;For $J[y(x)] = \int_{x_0}^{x_1}F(x, \dot x, \ddot x, \dotsc, x^{(n)})dx$&lt;/li&gt;
-          &lt;li&gt;这里的$\dot x$为x的一阶导数，即速度，由于在力学领域，经常使用$\dot x, \ddot x$的形式描述高阶导数(牛顿导数记号)，这里也一并改为此种写法&lt;/li&gt;
-          &lt;li&gt;E-L : $\frac{\partial F}{\partial x} - \frac{d}{dt}(\frac{\partial F}{\partial \dot x}) + \frac{d^2}{dt^2}(\frac{\partial F}{\partial \ddot x}) - \frac{d^3}{dt^3}(\frac{\partial F}{\partial x^{(3)}}) + \dotsc +(-1)^n \frac{d^n}{dt^n}(\frac{\partial F}{\partial x^{(n)}})= 0$&lt;/li&gt;
-          &lt;li&gt;计算例子
-            &lt;ul&gt;
-              &lt;li&gt;求解从时间$0$到时间$t$, 速度的平方最小的函数, 即，一阶动力学问题
-                &lt;ul&gt;
-                  &lt;li&gt;$J[x(t)] = \int_{0}^{T}\dot x^2dt$&lt;/li&gt;
-                  &lt;li&gt;$F = \dot x^2$&lt;/li&gt;
-                  &lt;li&gt;利用E-L方程&lt;/li&gt;
-                  &lt;li&gt;
-                    &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-     \frac{\partial}{\partial x}F-\frac{d}{dt}(\frac{\partial F}{\partial \dot x}) &amp;= 0\\
-     0 - 2\ddot x &amp;= 0\\
-     x &amp;= c_0t+c_1&amp;\text{匀速直线运动}\\
-  \end{aligned}
-$$&lt;/div&gt;
-                  &lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;求解从时间$0$到时间$t$, 加加速度的平方最小的函数, 即，三阶动力学问题
-                &lt;ul&gt;
-                  &lt;li&gt;$J[x(t)] = \int_{0}^{T}(x^{(3)})^2dt$&lt;/li&gt;
-                  &lt;li&gt;此时的E-L方程
-                    &lt;ul&gt;
-                      &lt;li&gt;
-                        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-      \frac{\partial F}{\partial x} - \frac{d}{dt}(\frac{\partial L}{\partial \dot x}) + \frac{d^2}{dt^2}(\frac{\partial F}{\partial \ddot x}) - \frac{d^3}{dt^3}(\frac{\partial L}{\partial x^{(3)}})
-      &amp;=0\\
-      0 - 0 + 0 - 2x^{(6)} &amp;= 0\\
-      x &amp;= c_0t^5 + c_1t^4+c_2t^3 +c_3t^2 + c_4t+c_5
-  \end{aligned}
-$$&lt;/div&gt;
-                      &lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;求解参数
-                    &lt;ul&gt;
-                      &lt;li&gt;边界(Boundary condition)
-                        &lt;ul&gt;
-                          &lt;li&gt;
-                            &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{cases}
-        [x, \dot x, \ddot x]\big |_{t=0} &amp;= [a, 0, 0]&amp;\text{假定初始速度为0，初始加速度为0，初始位置为a}\\
-        [x, \dot x, \ddot x]\big |_{t=T} &amp;= [b, 0, 0]&amp;\text{假定终止速度为0，终止加速度为0，终止位置为b}
-    \end{cases}
-$$&lt;/div&gt;
-                          &lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                      &lt;li&gt;列出求解矩阵
-                        &lt;ul&gt;
-                          &lt;li&gt;
-                            &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-        \begin{bmatrix}
-            x(0)\\x(T)\\\dot x(0)\\\dot x(T)\\\ddot x(0)\\\ddot x(T)
-        \end{bmatrix}
-        =
-        \begin{bmatrix}
-            a\\b\\0\\0\\0\\0
-        \end{bmatrix}
-        =
-        \begin{bmatrix}
-            0&amp;0&amp;0&amp;0&amp;0&amp;1\\
-            T^5&amp;T^4&amp;T^3&amp;T^2&amp;T&amp;1\\
-            0&amp;0&amp;0&amp;0&amp;1&amp;0\\
-            5T^4&amp;4T^3&amp;3T^2&amp;2T&amp;1&amp;0\\
-            0&amp;0&amp;0&amp;2&amp;0&amp;0\\
-            20T^3&amp;12T^2&amp;6T&amp;2&amp;0&amp;0\\
-        \end{bmatrix}
-        \begin{bmatrix}
-            c_0\\c_1\\c_2\\c_3\\c_4\\c_5
-        \end{bmatrix}
-    \end{aligned}
-$$&lt;/div&gt;
-                          &lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                      &lt;li&gt;解出$c_0 ~ c_5$即可
-                        &lt;ul&gt;
-                          &lt;li&gt;
-                            &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{bmatrix}
-        &amp;\frac{6 b}{T^{5}}-\frac{6 a}{T^{5}}\\
-        &amp;\frac{15 a}{T^{4}}-\frac{15 b}{T^{4}}\\
-        &amp;\frac{10 b}{T^{3}}-\frac{10 a}{T^{3}}&amp;\\
-        &amp;0\\
-        &amp;0\\
-        &amp;a
-    \end{bmatrix}
-$$&lt;/div&gt;
-                          &lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                      &lt;li&gt;得到的位置，速度，加速度曲线如下(a=0, b=1, T=50)
-                        &lt;ul&gt;
-                          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210725184457.png&quot; alt=&quot;20210725184457&quot; /&gt;&lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;多维E-L方程
-        &lt;ul&gt;
-          &lt;li&gt;For $J[x(t), y(t)] = \int_0^TF(t, x, y, \dot x, \dot y)dt$&lt;/li&gt;
-          &lt;li&gt;E-L:
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-              \frac{\partial F}{\partial x} - \frac{d}{dt}(\frac{\partial F}{\partial \dot x}) &amp;= 0\\
-              \frac{\partial F}{\partial y} - \frac{d}{dt}(\frac{\partial F}{\partial \dot y}) &amp;= 0
-      \end{aligned}$&lt;/span&gt;&lt;/li&gt;
-          &lt;li&gt;使用例子
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.jneurosci.org/content/jneuro/5/7/1688.full.pdf&quot;&gt;手臂动作协调: 实验验证的数学模型： The coordination of arm movements: an experimentally confirmed mathematical model - Tamar Flash, Neville Hogan 1985&lt;/a&gt;
-                &lt;ul&gt;
-                  &lt;li&gt;$J[x(t), y(t), \theta(t)] = \int_{0}^{T}[(x^{(3)})^2+(y^{(3)})^2+(\theta^{(3)})^2]dt$&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;多段轨迹[增加约束条件]
-        &lt;ul&gt;
-          &lt;li&gt;使物体依次通过m个点，但由于运动时无法忽略惯性作用，因此我们需要增加速度约束&lt;/li&gt;
-          &lt;li&gt;For
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-      t&amp;=\begin{bmatrix}
-          t_0&amp; t_1&amp;\dotsc t_m
-      \end{bmatrix}^T&amp;\\
-      x&amp;=\begin{bmatrix}
-          x_0&amp; x_1&amp;\dotsc x_m
-      \end{bmatrix}^T&amp;
-  \end{aligned}$&lt;/span&gt;&lt;/li&gt;
-          &lt;li&gt;$J[x(t)] = [\int_{t_0}^{t_1}(\ddot x^2)dx + \int_{t_1}^{t_2}(\ddot x^2)dx + \dotsc +\int_{t_{m-1}}^{t_m}(\ddot x^2)dx]$&lt;/li&gt;
-          &lt;li&gt;分段求解，得到
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-      x(t) = \begin{cases}
-          x_1(t) &amp;= c_{10}t^3 + c_{11}t^2 + c_{12}t + c_{13}&amp;t_0\le t\le t_1\\
-          x_2(t) &amp;= c_{20}t^3 + c_{21}t^2 + c_{22}t + c_{23}&amp;t_1\le t\le t_2\\
-          \dotsc\\
-          x_m(t) &amp;= c_{m0}t^3 + c_{m1}t^2 + c_{m2}t + c_{m3}&amp;t_0\le t\le t_m\\
-      \end{cases}
-  \end{aligned}$&lt;/span&gt;&lt;/li&gt;
-          &lt;li&gt;为了求解$4m$个变量$c_{ij}$，我们需要$4m$个方程[约束]来进行确定
-            &lt;ul&gt;
-              &lt;li&gt;有位置方程
-                &lt;ul&gt;
-                  &lt;li&gt;$x_n(t_{n-1}) = x_{n-1}$ 前一个$x$是方程，后一个$x$是值, 共$m$个&lt;/li&gt;
-                  &lt;li&gt;$x_n(t_n) = x_n$, 共$m$个&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;有速度方程[通过某一点，速度不变]
-                &lt;ul&gt;
-                  &lt;li&gt;$\dot x_n(t_n) = \dot x_{n+1}(t_n)$ 共$m-1$个&lt;/li&gt;
-                  &lt;li&gt;$\dot x_1(t_0) = 0$ \ 终点停止&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;有加速度方程[加速度连续，不存在阶跃的情况]
-                &lt;ul&gt;
-                  &lt;li&gt;$\ddot x_n(t_n) = \ddot x_{n+1}(t_n)$ 共$m-1$个&lt;/li&gt;
-                  &lt;li&gt;$\dot x_1(t_m) = 0$ \ 终点停止&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;共4m个方程组&lt;/li&gt;
-              &lt;li&gt;利用以上方程组即可求解&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">准备搞明白泛函</summary></entry><entry><title type="html">Install RemoteView.docker, Finish Dynamic System Control[1]</title><link href="https://ucas.io/env/system/docker/zhihu/RemoteView-docker-and-Dynamic-System/" rel="alternate" type="text/html" title="Install RemoteView.docker, Finish Dynamic System Control[1]" /><published>2021-07-24T09:57:00+08:00</published><updated>2021-07-24T09:57:00+08:00</updated><id>https://ucas.io/env/system/docker/zhihu/RemoteView-docker-and-Dynamic-System</id><content type="html" xml:base="https://ucas.io/env/system/docker/zhihu/RemoteView-docker-and-Dynamic-System/">&lt;h2 id=&quot;尝试安装-remoteview&quot;&gt;尝试安装 remoteview&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;搞定浏览器嵌套&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/dosyago/browsergapce&quot;&gt;docker&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/i5ik/ViewFinderJS&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  docker &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; pull dosyago/browsergapce:2.5 &lt;span class=&quot;c&quot;&gt;# from other has access to internet&lt;/span&gt;
-  docker save &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; remoteview.docker dosyago/browsergapce:2.5
-  docker load &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; remoteview.docker  &lt;span class=&quot;c&quot;&gt;# at ucas server&lt;/span&gt;
-  wget https://raw.githubusercontent.com/c9fe/ViewFinder/master/chrome.json
-  docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8002:8002 &lt;span class=&quot;nt&quot;&gt;--security-opt&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;seccomp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/chrome.json dosyago/browsergapce:2.5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;nginx&lt;/p&gt;
-
-    &lt;div class=&quot;language-nginx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;rewrite_log&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://127.0.0.1:8002/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;proxy_redirect&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/browser/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;rewrite&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;^(?!/browser)/?(.*)&lt;/span&gt;$ &lt;span class=&quot;n&quot;&gt;/browser/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;proxy_http_version&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Upgrade&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$http_upgrade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Connection&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;upgrade&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Origin&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;sub_filter&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/api/v1/tabs'&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/browser/api/v1/tabs'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;sub_filter&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'login'&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'browser/login'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;sub_filter_types&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;sub_filter_once&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210724144046.png&quot; alt=&quot;20210724144046&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;准备搞明白泛函&quot;&gt;准备搞明白泛函&lt;/h2&gt;
-
-&lt;h3 id=&quot;无人机的动力学系统&quot;&gt;无人机的动力学系统&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;从问题到思路
-    &lt;ul&gt;
-      &lt;li&gt;实际问题[由浅入深]:
-        &lt;ol&gt;
-          &lt;li&gt;一个4旋翼无人机从空间中A点到B点需要的动力输出方程应该如何设计&lt;/li&gt;
-          &lt;li&gt;一个4旋翼无人机从空间中A点到B点再到C点中，不希望再B点停留(hover)，动力输出方程应该如何设计&lt;/li&gt;
-          &lt;li&gt;多个无人机如何先后通过某一点而不发生碰撞&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;转化为抽象子问题[由浅入深]
-        &lt;ol&gt;
-          &lt;li&gt;假定我们可以在任意时刻指定任意大小的速度&lt;strong&gt;1阶动力学问题&lt;/strong&gt;
-            &lt;ol&gt;
-              &lt;li&gt;在2D或3D空间内从A点到B点需要的速度方程&lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-          &lt;li&gt;假定我们可以在任意时刻指定任意大小的加速度&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;推力&lt;/code&gt;&lt;strong&gt;2阶动力学问题&lt;/strong&gt;&lt;/li&gt;
-          &lt;li&gt;假定我们可以在任意时刻指定任意大小的加加速度&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;给定电压条件下推力随电压持续增加或减少&lt;/code&gt;&lt;strong&gt;3阶动力学问题&lt;/strong&gt;&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;需要解决的数学子问题
-        &lt;ul&gt;
-          &lt;li&gt;使用&lt;strong&gt;Euler-Lagrange Equation[欧拉-拉格朗日方程]&lt;/strong&gt; 求解&lt;/li&gt;
-          &lt;li&gt;变分法推导&lt;strong&gt;Euler-Lagrange Equation[欧拉-拉格朗日方程]&lt;/strong&gt;&lt;/li&gt;
-          &lt;li&gt;惯性系(body-fixed frame)与旋转矩阵&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;变分法与泛函
-    &lt;ul&gt;
-      &lt;li&gt;参考文章
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/bigmonkey/p/9519387.html&quot;&gt;寻找“最好”（2）——欧拉-拉格朗日方程 - 博客园&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://www.linchenguang.com/2019/06/08/exercise-in-Euler-Lagrange-equation/&quot;&gt;欧拉-拉格朗日方程练习 - linchenguang.com&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/45912984&quot;&gt;从最速降线问题到欧拉-拉格朗日方程 - 地狱少女火炮兰的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/148949128&quot;&gt;Euler-Lagrange Equation (欧拉-拉格朗日方程)推导 - TranSirius的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/41573146&quot;&gt;变分法理解1——泛函简介 - 清雅白鹿记的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/41810184&quot;&gt;变分法理解2——基本方法 - 清雅白鹿记的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/20727402&quot;&gt;变分法简介Part 2.（Calculus of Variations） - Dr.Stein的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%8F%98%E5%88%86%E6%B3%95#%E6%AC%A7%E6%8B%89-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B&quot;&gt;变分法#欧拉-拉格朗日方程 - Wikipedia&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;泛函
-        &lt;ul&gt;
-          &lt;li&gt;对等概念
-            &lt;ul&gt;
-              &lt;li&gt;函数: 值-&amp;gt;值 运算&lt;/li&gt;
-              &lt;li&gt;泛函: 函数-&amp;gt;值 运算 即函数的函数&lt;/li&gt;
-              &lt;li&gt;求解函数极值，即寻找函数中的最大值或最小值&lt;/li&gt;
-              &lt;li&gt;求解泛函极值，即寻找一种函数的形式，使得这样的函数形式有最大值或最小值&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;泛函形式
-            &lt;ul&gt;
-              &lt;li&gt;一般常见的形式
-                &lt;ul&gt;
-                  &lt;li&gt;$J[y(x)] = \int_{x_0}^{x_1}F(x, y, y’)dx$&lt;/li&gt;
-                  &lt;li&gt;即，从$x_0$到$x_1$的曲线积分值&lt;/li&gt;
-                  &lt;li&gt;这里的基本假设，$y’$存在，即寻找一条光滑曲线以达到特定极值&lt;/li&gt;
-                  &lt;li&gt;下方E-L方程推导过程中的证明中有使用$y’’$，因此，特定公式的成立，可能需要依赖其他条件&lt;/li&gt;
-                  &lt;li&gt;如果存在导数不存在或者是折线的情况就要更一般的考虑&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;其他假设下的形式
-                &lt;ul&gt;
-                  &lt;li&gt;$J[y(x)] = \int_{x_0}^{x_1}F(x, y, y’, y’’, y’’’, \dotsc)dx$&lt;/li&gt;
-                  &lt;li&gt;这里就假设$y’’‘$甚至更高的导数存在&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;求解例子[由浅入深]
-            &lt;ol&gt;
-              &lt;li&gt;两点之间的最短路径
-                &lt;ol&gt;
-                  &lt;li&gt;曲线的微元$ds = \sqrt{1 + \frac{dy}{dx}^2}$&lt;/li&gt;
-                  &lt;li&gt;曲线长 $S = \int_{x_0}^{x_1}ds = \int_{x_0}^{x_1}{\sqrt{1 + y’^2}dx}$&lt;/li&gt;
-                  &lt;li&gt;问题等价为找到一个函数$y$使$S$最小&lt;/li&gt;
-                  &lt;li&gt;泛函式$J[y(x)] = \int_{x_0}^{x_1}F(y’)dx$&lt;/li&gt;
-                &lt;/ol&gt;
-              &lt;/li&gt;
-              &lt;li&gt;最速曲线问题
-                &lt;ol&gt;
-                  &lt;li&gt;能量守恒
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-    \frac{1}{2}mv^2&amp;=mgy\\
-    v^2 &amp;= 2gy
-    \end{aligned}$&lt;/span&gt;&lt;/li&gt;
-                  &lt;li&gt;速度公式 $v = \frac{ds}{dt} = \sqrt{\frac{1+y’^2}{dt}}dx$&lt;/li&gt;
-                  &lt;li&gt;$dt = {\sqrt\frac{1+y’^2}{v}}dx = \sqrt{\frac{1+y’^2}{2gy}}dx$&lt;/li&gt;
-                  &lt;li&gt;$x_0$到$x_1$的时间为$t = \int_{x_0}^{x_1}dt = \int_{x_0}^{x_1}\sqrt{\frac{1+y’^2}{2gy}}dx$&lt;/li&gt;
-                  &lt;li&gt;问题等价为找到一个函数$y$使$t$最小&lt;/li&gt;
-                  &lt;li&gt;泛函1式$J[y(x)] = \int_{x_0}^{x_1}F(y, y’)dx$&lt;/li&gt;
-                &lt;/ol&gt;
-              &lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;变分 &lt;strong&gt;[Calculus of variations]&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;函数的变分
-            &lt;ul&gt;
-              &lt;li&gt;在定义域$[x_0, x_1]$, $\delta y = y(x) - y_0(x)$称为函数$y(x)$在$y_0(x)$处的变分&lt;/li&gt;
-              &lt;li&gt;$y_0$为另一可取函数&lt;/li&gt;
-              &lt;li&gt;变分即为两个函数相减产生的新的函数，新函数$\delta y$在定义域$[x_0, x_1]$出随$x$变化&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;泛函的变分
-            &lt;ul&gt;
-              &lt;li&gt;最简泛函的变分&lt;/li&gt;
-              &lt;li&gt;$J[y(x)] = \int_{x_0}^{x_1}F(x, y, y’)dx$&lt;/li&gt;
-              &lt;li&gt;$F$为最简泛函的核&lt;/li&gt;
-              &lt;li&gt;
-                &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-    \Delta J &amp;= J[y_0(x)] - J[y(x)]\\
-    &amp;= J[y(x) + \delta y] - J[y(x)]\\
-    &amp;= \int_{x_0}^{x_1}[F(x, y+\delta y, y' + \delta y') - F(x, y, y')]dx\\
-    &amp;= \int_{x_0}^{x_1}(F_2\delta y + F_3\delta y')dx + \dotsc + \int_{x_0^{x_1}}[\frac{1}{n!}(\delta y\frac{\partial}{\partial y} + \delta y'\frac{\partial}{\partial y'})^n]dx &amp;\text{多元函数的泰勒展开}&amp;\\
-    &amp;&amp;\text{$F_1, F_2, F_3$} 为偏导数&amp;\\
-  \end{aligned}
-$$&lt;/div&gt;
-              &lt;/li&gt;
-              &lt;li&gt;其中$\int_{x_0}^{x_1}(F_2\delta y + F_3\delta y’)dx$称为&lt;strong&gt;泛函的变分&lt;/strong&gt;，记为$\delta J$&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;利用变分法求解泛函极值(极值存在的函数形式)
-        &lt;ul&gt;
-          &lt;li&gt;假设$y(x)$为我们要出来的函数&lt;/li&gt;
-          &lt;li&gt;那么$y(x) + \delta y$为$x_0$到$x_1$的所有可能形式&lt;/li&gt;
-          &lt;li&gt;记$\tilde{y}(x) = y(x) + \delta y = y(x) + \epsilon \eta(x)$&lt;/li&gt;
-          &lt;li&gt;其中$\eta(x)$为满足$\eta(x_0) = \eta(x_1) = 0$的任意函数&lt;/li&gt;
-          &lt;li&gt;$\epsilon$为一个常量&lt;/li&gt;
-          &lt;li&gt;$\epsilon = 0$时，$\tilde y(x)$即为所求函数&lt;/li&gt;
-          &lt;li&gt;记$\Phi(\epsilon) = J[\tilde y(x)] = J[y(x) + \epsilon \eta(x)] = \int_{x_0}^{x_1}F(x, y(x) + \epsilon \eta(x), y’(x) + \epsilon \eta’(x))dx$&lt;/li&gt;
-          &lt;li&gt;我们希望$\Phi(\epsilon)$在$\epsilon = 0$时取极值&lt;/li&gt;
-          &lt;li&gt;
-            &lt;table&gt;
-              &lt;tbody&gt;
-                &lt;tr&gt;
-                  &lt;td&gt;则$\Phi’(\epsilon)\big&lt;/td&gt;
-                  &lt;td&gt;_{\epsilon =0 } = 0$&lt;/td&gt;
-                &lt;/tr&gt;
-              &lt;/tbody&gt;
-            &lt;/table&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-  \frac{d\Phi}{d\epsilon}
-     &amp;= \int_{x_0}^{x_1}F_2[x, y(x) + \epsilon \eta(x), y'(x) + \epsilon \eta'(x)]\eta(x) + F_3[x, y(x) + \epsilon\eta(x), y'(x)+\epsilon\eta'(x)]\eta'(x)dx\\
-     &amp;=\int_{x_0}^{x_1}[F_2\eta(x) + F_3\eta'(x)]dx&amp;\text{令$\epsilon = 0$}\\
-     &amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3\eta'(x)dx\\
-     &amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + \int_{x_0}^{x_1}F_3d\eta(x)&amp;\text{分部积分法}\\
-     &amp;=\int_{x_0}^{x_1}F_2\eta(x)dx + F_3\eta(x)\big|_{x_0}^{x_1} - \int_{x_0}^{x_1}\eta(x)\frac{dF_3}{dx}dx&amp;\text{这里要求$F_3存在对x的导数$}\\
-     &amp;=\int_{x_0}^{x_1}(F_2\eta(x) - \eta(x)\frac{dF_3}{dx})dx + F_3\eta(x)\big|_{x_0}^{x_1}\\
-     &amp;=\int_{x_0}^{x_1}[F_2 -\frac{dF_3}{dx}]\eta(x)dx&amp;\text{$\eta(x_0) = 0, \eta(x_1) = 0\rightarrow F_3\eta(x)\big|_{x_0}^{x_1} = 0$}\\
-     &amp;=0&amp;\text{\textcircled 1}
-  \end{aligned}
-$$&lt;/div&gt;
-          &lt;/li&gt;
-          &lt;li&gt;引理
-            &lt;ul&gt;
-              &lt;li&gt;$f(x)$在$[x_0, x_1]$内连续,$\eta(x)$是满足$\eta(x_0)=0,\eta(x_1)=0$的任意函数&lt;/li&gt;
-              &lt;li&gt;若$\int_{x_0}^{x_1}f(x)\eta(x)dx = 0$&lt;/li&gt;
-              &lt;li&gt;则对所有的$x\in[x_0, x_1]$,有$f(x)\equiv0$&lt;/li&gt;
-              &lt;li&gt;证明:
-                &lt;ul&gt;
-                  &lt;li&gt;反证法, 设$f(x)$不恒为0&lt;/li&gt;
-                  &lt;li&gt;取$\eta(x) = -f(x)(x-x_0)(x-x_1)$&lt;/li&gt;
-                  &lt;li&gt;取$x_0\lt x\lt x_1$, 所以$(x-x_0)(x-x_1)\lt 0$&lt;/li&gt;
-                  &lt;li&gt;所以$\int_{x_0}^{x_1}f(x)\eta(x)dx = \int_{x_0}^{x_1}-f(x)^2(x-x_0)(x-x_1)\gt 0$&lt;/li&gt;
-                  &lt;li&gt;与预设矛盾，因此$f(x)\equiv 0$&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;利用上述引理
-            &lt;ul&gt;
-              &lt;li&gt;$\text{\textcircled 1}$式&lt;/li&gt;
-              &lt;li&gt;$\int_{x_0}^{x_1}(F_2-\frac{dF_3}{dx})\eta(x)dx = 0$&lt;/li&gt;
-              &lt;li&gt;$F_2-\frac{dF_3}{dx} = 0$&lt;/li&gt;
-              &lt;li&gt;即&lt;strong&gt;Euler-Lagrange Equation[欧拉-拉格朗日方程]&lt;/strong&gt;&lt;/li&gt;
-              &lt;li&gt;$\frac{\partial}{\partial y}F - \frac{d}{dx}(\frac{\partial}{\partial y’}F) = 0$&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Euler-Lagrange Equation[欧拉-拉格朗日方程]&lt;/strong&gt;表示，极值函数的存在形式一定满足该条件&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;利用E-L求解
-    &lt;ol&gt;
-      &lt;li&gt;两点间最短距离
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
- J[y(x)] &amp;= \int_{x_0}^{x_1}{\sqrt{1 + y'^2}dx} \\
- F&amp;=\sqrt{1 + y'^2}\\
- \frac{\partial F}{\partial y} &amp;= 0\\
- \frac{\partial F}{\partial y'} &amp;= \frac{y'}{\sqrt{1+y'^2}}\\
- E-L: 0 - \frac{d}{dx}[ \frac{y'}{\sqrt{1+y'^2}}] &amp;= 0\\
- \frac{y'}{\sqrt{1+y'^2}} &amp;= C\\
- y' &amp;= \sqrt{\frac{C^2}{1-C^2}} = C_0\\
- y &amp; = C_0x + C_1
- \end{aligned}
-$$&lt;/div&gt;
-          &lt;/li&gt;
-          &lt;li&gt;因此是导数为常数的直线&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;最速降线问题
-        &lt;ul&gt;
-          &lt;li&gt;$J[y(x)] = \int_{x_0}^{x_1}\sqrt{\frac{1+y’^2}{2gy}}dx$&lt;/li&gt;
-          &lt;li&gt;引理(在$x$不存在时的简便计算法)
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-       F(y, y')&amp;= \sqrt{\frac{1+y'^2}{2gy}}\\
-       \frac{d}{dt}(F - y'F_2)
-       &amp;= \frac{d}{dt}F - \frac{d}{dt}(y'F_2)\\
-       &amp;=[y'F_1 + y''F_2] - [y''F_2 + y'\frac{d}{dt}F_2]&amp;\text{这里要求$y''$存在}\\
-       &amp;=y'F_1-y'\frac{d}{dt}F_2\\
-       &amp;=y'[F_1-\frac{d}{dt}F_2]\\
-       &amp;=0&amp;\text{here $F_1=\frac{\partial F}{\partial y}, F_2=\frac{\partial F}{\partial y'}$, hence $F_1-\frac{d}{dt}F_2 = 0$ 为EL方程 }\\
-       \therefore F - y'F_2 &amp;= C &amp;\text{here $C$为常数}
-   \end{aligned}
-$$&lt;/div&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-     F - y'F_2 &amp;= \sqrt{\frac{1+y'^2}{2gy}} - y'\frac{2y'\frac{1}{2}(1+y'^2)^{-\frac{1}{2}}}{\sqrt{2gy}}\\
-     &amp;=\sqrt{\frac{1+y'^2}{2gy}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
-     &amp;=\frac{1+y'^2}{\sqrt{2gy}\sqrt{1+y'^2}} - \frac{y'^2}{\sqrt{2gy}\sqrt{1+y'^2}}\\
-     &amp;= \frac{1}{\sqrt{2gy}\sqrt{1+y'^2}}\\
-     &amp;=C&amp;\text{利用上面的引理}\\
-     \therefore y(1+y'^2) &amp;= \frac{1}{2gC^2}
- \end{aligned}
-$$&lt;/div&gt;
-          &lt;/li&gt;
-          &lt;li&gt;解得(积分表或换元$y’=\cot\frac{\theta}{2}$), 摆线
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{cases}
-       x&amp;=\frac{C}{2}(\theta - \sin\theta)\\
-       y&amp;=\frac{C}{2}(1-\cos\theta)
-   \end{cases}
-$$&lt;/div&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;约束
-    &lt;ul&gt;
-      &lt;li&gt;指求解时需要满足的条件&lt;/li&gt;
-      &lt;li&gt;求解例子
-        &lt;ul&gt;
-          &lt;li&gt;两点间最短路径
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{cases}
-    y(x_0)&amp;= y_0\\
-    y(x_1)&amp;= y_1\\
-  \end{cases}
-$$&lt;/div&gt;
-              &lt;/li&gt;
-              &lt;li&gt;代入$y = C_0x$&lt;/li&gt;
-              &lt;li&gt;得到$C_0 = \frac{y_1 - y_0}{x_1 - x_0}$&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;最速降线
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{cases}
-    y(x_0)&amp;= y_0\\
-    y(x_1)&amp;= y_1\\
-  \end{cases}
-$$&lt;/div&gt;
-              &lt;/li&gt;
-              &lt;li&gt;代入
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{cases}
-    x&amp;=\frac{C}{2}(\theta - \sin\theta)\\
-    y&amp;=\frac{C}{2}(1-\cos\theta)
-  \end{cases}$&lt;/span&gt;&lt;/li&gt;
-              &lt;li&gt;得到
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-    y' &amp;= \cot\frac{\theta}{2}\\
-    A(x,y) &amp;= \theta^2\\
-    B(x,y) &amp;= 4x\theta + 4y\\
-    D(x,y) &amp;= 4(x^2+y^2)\\
-    C&amp;=\frac{D_1A_2 - D_2A_1}{B_1A_2 - B_2A_1}
-\end{aligned}$&lt;/span&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="env" /><category term="system" /><category term="docker" /><category term="zhihu" /><summary type="html">尝试安装 remoteview</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="coursera" /><category term="3D" /><summary type="html">准备看点摄像机视觉</summary></entry></feed>
