@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Try To Start Up Binocchio"
+title:  "Try To Start Up Pinocchio"
 date:   "2021-8-2 10:32:48 +0800"
 categories: 3d
 ---
