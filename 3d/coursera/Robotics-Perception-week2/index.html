@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Robotics Pecreption week2 / Notes B</title>
-<meta name="description" content="">
+<meta name="description" content="Homogeneous Coordinate[齐次坐标]">
 
 
   <meta name="author" content="麦丽素">
@@ -26,15 +26,17 @@
 <meta property="og:url" content="https://ucas.io/3d/coursera/Robotics-Perception-week2/">
 
 
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Homogeneous Coordinate[齐次坐标]">
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802233241.png">
 
 
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-02T10:32:48+08:00">
+  <meta property="article:published_time" content="2021-08-02T18:49:17+08:00">
 
 
 
@@ -333,8 +335,8 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Robotics Pecreption week2">
-    <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2021-08-02T10:32:48+08:00">
+    <meta itemprop="description" content="Homogeneous Coordinate[齐次坐标]">
+    <meta itemprop="datePublished" content="2021-08-02T18:49:17+08:00">
     
 
     <div class="page__inner-wrap">
@@ -350,7 +352,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-02T10:32:48+08:00">August 2, 2021</time>
+        <time datetime="2021-08-02T18:49:17+08:00">August 2, 2021</time>
       </span>
     
 
@@ -378,12 +380,93 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#homogeneous-coordinate齐次坐标">Homogeneous Coordinate[齐次坐标]</a></li><li><a href="#reference参考文章">Reference[参考文章]</a></li><li><a href="#实际问题">实际问题</a></li><li><a href="#齐次坐标的好处">齐次坐标的好处</a></li></ul>
 
             </nav>
           </aside>
         
-        
+        <h2 id="homogeneous-coordinate齐次坐标">Homogeneous Coordinate[齐次坐标]</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Homo</code> means <a href="https://www.dictionary.com/browse/homo">dictionary.com</a></li>
+</ul>
+
+<blockquote>
+  <p>a combining form appearing in loanwords from Greek, where it meant “<strong>same</strong>” (homology); on this model, used in the formation of compound words (homomorphic).</p>
+</blockquote>
+
+<h2 id="reference参考文章">Reference[参考文章]</h2>
+
+<ul>
+  <li><a href="https://blog.csdn.net/popy007/article/details/1797121">深入探索透视投影变换 - Twinsen[CSDN]</a>
+    <ul>
+      <li><a href="https://www.codenong.com/cs109304516/">内容相同，这里的排版可能更舒服</a></li>
+    </ul>
+  </li>
+  <li><a href="https://www.cnblogs.com/MorStar/p/14852275.html">齐次坐标的理解 - MorStar[cnblogs]</a>
+    <ul>
+      <li><a href="http://www.songho.ca/math/homogeneous/homogeneous.html">Homogeneous Coordinates - 안성호(Song Ho Ahn)[英文原文]</a></li>
+    </ul>
+  </li>
+  <li><a href="https://zh.wikipedia.org/wiki/%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87">齐次坐标 - Wikipedia</a></li>
+  <li>计算机视觉中的多视图几何 2.2.1</li>
+  <li><a href="https://www.tomdalling.com/blog/modern-opengl/explaining-homogenous-coordinates-and-projective-geometry/">Explaining Homogeneous Coordinates &amp; Projective Geometry</a></li>
+</ul>
+
+<h2 id="实际问题">实际问题</h2>
+
+<ul>
+  <li>对于平面上的两条平行直线
+<span class="kdmath">$\begin{aligned}
+  l_1 &: AX+BY+C=0\\
+  l_2 &: AX+BY+D=0\\
+\end{aligned}$</span></li>
+  <li>求解时，若$C\neq D$则无解, 若$C=D$, 则$l_1,l_2$重合</li>
+  <li>引入新的维度$w$, 令
+<span class="kdmath">$\begin{aligned}
+  l_1 &: AX+BY+Cw=0\\
+  l_2 &: AX+BY+Dw=0\\
+\end{aligned}$</span></li>
+  <li>此时存在解$(x,y,0)$, 作为两平行线的交点坐标</li>
+  <li>它的本质，是将分母提出来，避免分母为零误解的情况发生</li>
+  <li>对于$w$不为0时的情况</li>
+  <li>齐次坐标$(x,y,w)$等价于笛卡尔坐标$(\frac{x}{w}, \frac{y}{w})$</li>
+  <li>那么反过来，笛卡尔坐标$(x,y)$对应齐次坐标$(\lambda x,\lambda y,\lambda *1)$</li>
+  <li>我们发现新的坐标系下每个点前的系数阶都是一致的，因此我们称之为齐次坐标</li>
+  <li>更一般的，对于一个$k$次多项式$g(x,y)$,可以通过将$x\rightarrow \frac{x}{z}, y\rightarrow \frac{y}{z}$再乘$z^k$的形式变为齐次形式，即</li>
+  <li>$f(x,y,z) = z^kg(\frac{x}{z}, \frac{y}{z})$</li>
+  <li>此时，方程的每一项都已阶数$k$一致的项，这就是<code class="language-plaintext highlighter-rouge">Homo</code>的来源</li>
+</ul>
+
+<h2 id="齐次坐标的好处">齐次坐标的好处</h2>
+
+<ol>
+  <li>
+    <p>以上可以用$(x,y,0)$表示两个平行线在无穷远处的交点在射影面上的表示
+ <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802222042.png" alt="20210802222042" width="400" /></p>
+  </li>
+  <li>直线的齐次表示$(a, b, c)$代表$ax+by+c=0$, 满足所有方程上的点的集合
+    <ol>
+      <li>其几何含义为，以$&lt;a,b,c&gt;$为法向量在3维空间中与投影面($z=Z$)的交线</li>
+      <li>因此，当$&lt;0,0,c&gt;$表示无法与投影面相交的无穷远处的直线</li>
+      <li>而$&lt;0,0,0&gt;$无法表示成射线形式，因此在射影空间$\mathbb{P}^2$为$\mathbb{R}^3-(0,0,0)$，即去掉原点的三维实数空间</li>
+    </ol>
+  </li>
+  <li>点的齐次表示, $\mathbf{x} = [x,y,1]^T$, $\mathbf{x}^T[a,b,c]=0$表示满足在线上的点
+    <ol>
+      <li>有，点$\mathbf{x}$在直线$I$上，当且仅当$\mathbf{x}^T\mathbf{I}=0$</li>
+      <li>直线交点，即，两个直线叉乘后的向量表示</li>
+      <li>即$\mathbf{x}$满足$\mathbf{I_1}^t\mathbf{x}=\mathbf{I_2}^t\mathbf{x}=0$</li>
+      <li>$\mathbf{x}=\mathbf{I_1}\times \mathbf{I_2}$</li>
+    </ol>
+  </li>
+  <li>过两点的直线
+    <ol>
+      <li>$\mathbf{I}=\mathbf{x_1}\times\mathbf{x_2}$</li>
+    </ol>
+  </li>
+</ol>
+
 
         
       </section>
@@ -412,7 +495,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-02T10:32:48+08:00">August 2, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-02T18:49:17+08:00">August 2, 2021</time></p>
 
 
       </footer>
@@ -431,12 +514,11 @@
       
   <nav class="pagination">
     
-      <a href="/3d/coursera/Review-of-Robotics-Perception-week1/" class="pagination--pager" title="Review of Robotics Perception week1
+      <a href="/3d/Try-to-startup-Pinocchio/" class="pagination--pager" title="Try To Start Up Pinocchio
 ">Previous</a>
     
     
-      <a href="/3d/Try-to-startup-Pinocchio/" class="pagination--pager" title="Try To Start Up Pinocchio
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 

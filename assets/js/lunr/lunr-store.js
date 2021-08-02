@@ -95,15 +95,15 @@ var store = [{
         "url": "/3d/coursera/Review-of-Robotics-Perception-week1/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801194917.png"
       },{
-        "title": "Robotics Pecreption week2",
-        "excerpt":" ","categories": ["3d","coursera"],
-        "tags": [],
-        "url": "/3d/coursera/Robotics-Perception-week2/",
-        "teaser": null
-      },{
         "title": "Try To Start Up Pinocchio",
         "excerpt":"Install Visual Studio 2019 Cmake generate x64 and x32 for Fltk Target at \\Path\\to\\fltk-1.3.7\\build-2019-32 \\Path\\to\\fltk-1.3.7\\build-2019-64 The Whole Configuration for Pinocchio 参考文章 Visual Studio 2019 配置 OpenGL - 「已注销」的文章 - 知乎 Marco[宏]，全局定义，避免hash_map警告 For AttachWeights, DemoUI,Pinocchio,PinocchioStatic Set Property&gt;C/C++&gt;Preprocessor&gt;Preprocessor Definitions Append _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS; Lib[库] Set Property&gt;VC++ Directories&gt;Library Directories Append \\Path\\to\\fltk-1.3.7\\build-2019-32\\lib\\Debug; Fltk lib dir Download...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Try-to-startup-Pinocchio/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png"
+      },{
+        "title": "Robotics Pecreption week2",
+        "excerpt":"Homogeneous Coordinate[齐次坐标] Homo means dictionary.com a combining form appearing in loanwords from Greek, where it meant “same” (homology); on this model, used in the formation of compound words (homomorphic). Reference[参考文章] 深入探索透视投影变换 - Twinsen[CSDN] 内容相同，这里的排版可能更舒服 齐次坐标的理解 - MorStar[cnblogs] Homogeneous Coordinates - 안성호(Song Ho Ahn)[英文原文] 齐次坐标 - Wikipedia 计算机视觉中的多视图几何 2.2.1 Explaining Homogeneous...","categories": ["3d","coursera"],
+        "tags": [],
+        "url": "/3d/coursera/Robotics-Perception-week2/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802233241.png"
       }]
