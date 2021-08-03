@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-03T21:27:32+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Two Method Of Perception Matrix with 4 points</title><link href="https://ucas.io/3d/coursera/Two-method-of-Perception-matrix/" rel="alternate" type="text/html" title="Two Method Of Perception Matrix with 4 points" /><published>2021-08-03T20:50:05+08:00</published><updated>2021-08-03T20:50:05+08:00</updated><id>https://ucas.io/3d/coursera/Two-method-of-Perception-matrix</id><content type="html" xml:base="https://ucas.io/3d/coursera/Two-method-of-Perception-matrix/">&lt;h2 id=&quot;线性代数推导&quot;&gt;线性代数推导&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-04T00:15:52+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Two Method Of Perception Matrix with 4 points</title><link href="https://ucas.io/3d/coursera/Two-method-of-Perception-matrix/" rel="alternate" type="text/html" title="Two Method Of Perception Matrix with 4 points" /><published>2021-08-03T20:50:05+08:00</published><updated>2021-08-03T20:50:05+08:00</updated><id>https://ucas.io/3d/coursera/Two-method-of-Perception-matrix</id><content type="html" xml:base="https://ucas.io/3d/coursera/Two-method-of-Perception-matrix/">&lt;h2 id=&quot;线性代数推导&quot;&gt;线性代数推导&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;参考
@@ -162,7 +162,64 @@ A=\begin{bmatrix}
     0&amp;\frac{5}{3}&amp;-2\\
     \frac{1}{3}&amp;-\frac{5}{3}&amp;1
 \end{bmatrix}
-$$&lt;/div&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">线性代数推导</summary></entry><entry><title type="html">Robotics Perception week2</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-week2/" rel="alternate" type="text/html" title="Robotics Perception week2" /><published>2021-08-02T18:49:17+08:00</published><updated>2021-08-02T18:49:17+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-week2</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-week2/">&lt;h2 id=&quot;homogeneous-coordinate齐次坐标&quot;&gt;Homogeneous Coordinate[齐次坐标]&lt;/h2&gt;
+$$&lt;/div&gt;
+
+&lt;h2 id=&quot;cross-ratio交比定理&quot;&gt;Cross-ratio[交比定理]&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/9/94/Projection_geometry.svg&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;CR&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ac&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ac&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ad&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;定义: Cross-ratio ${A,B;C,D}=\frac{AC}{AD}:\frac{BC}{BD}$&lt;/li&gt;
+  &lt;li&gt;有${A,B;C,D} = {A’,B’;C’,D’}$&lt;/li&gt;
+  &lt;li&gt;性质
+    &lt;ul&gt;
+      &lt;li&gt;影射[Perception transform]不变性&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;利用三角形面积证明&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+    \{A,B;C,D\}&amp;=\frac{AC}{AD}:\frac{BC}{BD}\\
+    &amp;=\frac{AC·BD}{AD·BC}\\
+    &amp;=\frac{S_{\triangle ACO}·S_{\triangle BDO}}{S_{\triangle ADO}·S_{\triangle BCO}}\\
+    &amp;=\frac{AO·CO\sin(\angle AOC)·BO·DO\sin(\angle BOD)}{AO·DO\sin(\angle AOD)·BO·CO\sin(\angle BOC)}\\
+    &amp;=\frac{\sin(\angle AOC)\sin(\angle BOD)}{\sin(\angle AOD)\sin(\angle BOC)}
+\end{aligned}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;因此，交比只与角度有关，因此是定值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;利用交比定理计算&quot;&gt;利用交比定理计算&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210803230153.png&quot; alt=&quot;20210803230153&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;求解火车到下一个火车站的距离&lt;/li&gt;
+  &lt;li&gt;由图知，$A’B’=2,A’C’=4,C’D’=4$&lt;/li&gt;
+  &lt;li&gt;有${A’,B’;C’,D’}=\frac{A’C’}{A’D’}:\frac{B’C’}{B’D’}=\frac{1}{6}$&lt;/li&gt;
+  &lt;li&gt;已知$AC=50km$, from image &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;next station 50km&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;${A’,B’;C’,D’}={A,B;C,D}=\frac{AC}{BC}$, 由于D点在无穷远，因此，$\frac{AD}{BD}\simeq1$&lt;/li&gt;
+  &lt;li&gt;$BC=33.33km$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;寻找灭点vanishing-point&quot;&gt;寻找灭点[Vanishing point]&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210803231138.png&quot; alt=&quot;20210803231138&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;求解灭点D在图像中的位置&lt;/li&gt;
+  &lt;li&gt;根据图片，有$\frac{A’C’}{A’D’}:\frac{B’C’}{B’D’}=\frac{AC}{BC}$&lt;/li&gt;
+  &lt;li&gt;因为是瓷砖&lt;/li&gt;
+  &lt;li&gt;所以$\frac{AC}{BC}=2$&lt;/li&gt;
+  &lt;li&gt;那么如果已知$A’,C’,D’$的位置，即可计算出$D’$的位置&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">线性代数推导</summary></entry><entry><title type="html">Robotics Perception week2</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-week2/" rel="alternate" type="text/html" title="Robotics Perception week2" /><published>2021-08-02T18:49:17+08:00</published><updated>2021-08-02T18:49:17+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-week2</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-week2/">&lt;h2 id=&quot;homogeneous-coordinate齐次坐标&quot;&gt;Homogeneous Coordinate[齐次坐标]&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Homo&lt;/code&gt; means &lt;a href=&quot;https://www.dictionary.com/browse/homo&quot;&gt;dictionary.com&lt;/a&gt;&lt;/li&gt;
