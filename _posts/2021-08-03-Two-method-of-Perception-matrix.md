@@ -2,7 +2,7 @@
 layout: single
 title:  "Two Method Of Perception Matrix with 4 points"
 date:   "2021-8-3 20:50:05 +0800"
-categories: 3d
+categories: 3d coursera
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png
 ---
@@ -11,6 +11,7 @@ header:
 
 - 参考
   - [inf.ed.ac.uk](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/EPSRC_SSAZ/node11.html)
+  - [多视图几何 2.3]
 - 对于点$x$经过$H$变换后有如下公式
 $$
 \begin{aligned}
