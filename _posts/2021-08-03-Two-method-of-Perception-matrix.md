@@ -187,3 +187,50 @@ A=\begin{bmatrix}
     \frac{1}{3}&-\frac{5}{3}&1
 \end{bmatrix}
 $$
+
+## Cross-ratio[交比定理]
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Projection_geometry.svg"/>
+
+```python
+CR = lambda ac,ad,bc,bd: ac*bd/bc/ad
+```
+
+- 定义: Cross-ratio $\{A,B;C,D\}=\frac{AC}{AD}:\frac{BC}{BD}$
+- 有$\{A,B;C,D\} = \{A',B';C',D'\}$
+- 性质
+  - 影射[Perception transform]不变性
+- 利用三角形面积证明
+
+$$
+\begin{aligned}
+    \{A,B;C,D\}&=\frac{AC}{AD}:\frac{BC}{BD}\\
+    &=\frac{AC·BD}{AD·BC}\\
+    &=\frac{S_{\triangle ACO}·S_{\triangle BDO}}{S_{\triangle ADO}·S_{\triangle BCO}}\\
+    &=\frac{AO·CO\sin(\angle AOC)·BO·DO\sin(\angle BOD)}{AO·DO\sin(\angle AOD)·BO·CO\sin(\angle BOC)}\\
+    &=\frac{\sin(\angle AOC)\sin(\angle BOD)}{\sin(\angle AOD)\sin(\angle BOC)}
+\end{aligned}
+$$
+
+- 因此，交比只与角度有关，因此是定值
+
+## 利用交比定理计算
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210803230153.png" alt="20210803230153">
+
+- 求解火车到下一个火车站的距离
+- 由图知，$A'B'=2,A'C'=4,C'D'=4$
+- 有$\{A',B';C',D'\}=\frac{A'C'}{A'D'}:\frac{B'C'}{B'D'}=\frac{1}{6}$
+- 已知$AC=50km$, from image `next station 50km`
+- $\{A',B';C',D'\}=\{A,B;C,D\}=\frac{AC}{BC}$, 由于D点在无穷远，因此，$\frac{AD}{BD}\simeq1$
+- $BC=33.33km$
+
+## 寻找灭点[Vanishing point]
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210803231138.png" alt="20210803231138">
+
+- 求解灭点D在图像中的位置
+- 根据图片，有$\frac{A'C'}{A'D'}:\frac{B'C'}{B'D'}=\frac{AC}{BC}$
+- 因为是瓷砖
+- 所以$\frac{AC}{BC}=2$
+- 那么如果已知$A',C',D'$的位置，即可计算出$D'$的位置
