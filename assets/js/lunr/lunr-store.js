@@ -101,9 +101,15 @@ var store = [{
         "url": "/3d/Try-to-startup-Pinocchio/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png"
       },{
-        "title": "Robotics Pecreption week2",
-        "excerpt":"Homogeneous Coordinate[齐次坐标] Homo means dictionary.com a combining form appearing in loanwords from Greek, where it meant “same” (homology); on this model, used in the formation of compound words (homomorphic). Reference[参考文章] 深入探索透视投影变换 - Twinsen[CSDN] 内容相同，这里的排版可能更舒服 齐次坐标的理解 - MorStar[cnblogs] Homogeneous Coordinates - 안성호(Song Ho Ahn)[英文原文] 齐次坐标 - Wikipedia 计算机视觉中的多视图几何 2.2.1 Explaining Homogeneous...","categories": ["3d","coursera"],
+        "title": "Robotics Perception week2",
+        "excerpt":"Homogeneous Coordinate[齐次坐标] Homo means dictionary.com a combining form appearing in loanwords from Greek, where it meant “same” (homology); on this model, used in the formation of compound words (homomorphic). Reference[参考文章] 深入探索透视投影变换 - Twinsen[CSDN] 内容相同，这里的排版可能更舒服 齐次坐标的理解 - MorStar[cnblogs] Homogeneous Coordinates - 안성호(Song Ho Ahn) [英文原文] 齐次坐标 - Wikipedia 计算机视觉中的多视图几何 2.2.1 Explaining...","categories": ["3d","coursera"],
         "tags": [],
         "url": "/3d/coursera/Robotics-Perception-week2/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802233241.png"
+      },{
+        "title": "Two Method Of Perception Matrix with 4 points",
+        "excerpt":"线性代数推导 参考 inf.ed.ac.uk 对于点$x$经过$H$变换后有如下公式 $\\begin{aligned} \\begin{bmatrix} y'\\\\x'\\\\1 \\end{bmatrix} &= \\mathbf{H} \\begin{bmatrix} x\\\\y\\\\1 \\end{bmatrix}\\\\ &= \\begin{bmatrix} h_{11}&h_{12}&h_{13}\\\\ h_{21}&h_{22}&h_{23}\\\\ h_{31}&h_{32}&h_{33} \\end{bmatrix} \\begin{bmatrix} x\\\\y\\\\1 \\end{bmatrix}\\\\ \\end{aligned}$ 根据一个点，我们可以得到两个方程组 $\\begin{aligned} x' &= \\frac{h_{11}x+h_{12}y+h_{13}}{h_{31}x+h_{32}y+h_{33}}\\\\ y' &= \\frac{h_{21}x+h_{22}y+h_{23}}{h_{31}x+h_{32}y+h_{33}}\\\\ \\end{aligned}$ 其中$h_{31}x+h_{32}y+h_{33}$ 用于表示一个未知的倍数变量 表示成矩阵形式有 $\\begin{bmatrix} x&y&1&0&0&0&-x'x&-x'y&-x'\\\\ 0&0&0&x&y&1&-y'x&-y'y&-y'\\\\ \\end{bmatrix} \\begin{bmatrix} h_{11}\\\\ h_{12}\\\\ h_{13}\\\\ h_{21}\\\\ h_{22}\\\\ h_{23}\\\\ h_{31}\\\\ h_{32}\\\\ h_{33}\\\\ \\end{bmatrix}...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Two-method-of-Perception-matrix/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png"
       }]
