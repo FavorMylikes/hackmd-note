@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Robotics Pecreption week2"
+title:  "Robotics Perception week2"
 date:   "2021-8-2 18:49:17 +0800"
 categories: 3d coursera
 header:
@@ -18,7 +18,7 @@ header:
 - [深入探索透视投影变换 - Twinsen[CSDN]](https://blog.csdn.net/popy007/article/details/1797121)
   - [内容相同，这里的排版可能更舒服](https://www.codenong.com/cs109304516/)
 - [齐次坐标的理解 - MorStar[cnblogs]](https://www.cnblogs.com/MorStar/p/14852275.html)
-  - [Homogeneous Coordinates - 안성호(Song Ho Ahn)[英文原文]](http://www.songho.ca/math/homogeneous/homogeneous.html)
+  - [Homogeneous Coordinates - 안성호(Song Ho Ahn) [英文原文]](http://www.songho.ca/math/homogeneous/homogeneous.html)
 - [齐次坐标 - Wikipedia](https://zh.wikipedia.org/wiki/%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87)
 - 计算机视觉中的多视图几何 2.2.1
 - [Explaining Homogeneous Coordinates & Projective Geometry](https://www.tomdalling.com/blog/modern-opengl/explaining-homogenous-coordinates-and-projective-geometry/)
@@ -67,3 +67,6 @@ $$
 4. 过两点的直线
    1. $\mathbf{I}=\mathbf{x_1}\times\mathbf{x_2}$
 
+## Perception
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1627922867(1).jpg" alt="1627922867(1)">
