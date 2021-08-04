@@ -107,9 +107,15 @@ var store = [{
         "url": "/3d/coursera/Robotics-Perception-week2/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802233241.png"
       },{
-        "title": "",
+        "title": "Robotics-Perception-week2[2]",
         "excerpt":"Two Method Of Perception Matrix with 4 points 线性代数推导 参考 inf.ed.ac.uk [多视图几何 2.3] 对于点$x$经过$H$变换后有如下公式 $\\begin{aligned} \\begin{bmatrix} y'\\\\x'\\\\1 \\end{bmatrix} &= \\mathbf{H} \\begin{bmatrix} x\\\\y\\\\1 \\end{bmatrix}\\\\ &= \\begin{bmatrix} h_{11}&h_{12}&h_{13}\\\\ h_{21}&h_{22}&h_{23}\\\\ h_{31}&h_{32}&h_{33} \\end{bmatrix} \\begin{bmatrix} x\\\\y\\\\1 \\end{bmatrix}\\\\ \\end{aligned}$ 根据一个点，我们可以得到两个方程组 $\\begin{aligned} x' &= \\frac{h_{11}x+h_{12}y+h_{13}}{h_{31}x+h_{32}y+h_{33}}\\\\ y' &= \\frac{h_{21}x+h_{22}y+h_{23}}{h_{31}x+h_{32}y+h_{33}}\\\\ \\end{aligned}$ 其中$h_{31}x+h_{32}y+h_{33}$ 用于表示一个未知的倍数变量 表示成矩阵形式有 $\\begin{bmatrix} x&y&1&0&0&0&-x'x&-x'y&-x'\\\\ 0&0&0&x&y&1&-y'x&-y'y&-y'\\\\ \\end{bmatrix} \\begin{bmatrix}...","categories": ["3d","coursera"],
         "tags": [],
-        "url": "/3d/coursera/Two-method-of-Perception-matrix/",
+        "url": "/3d/coursera/Robotics-Perception-Week2/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png"
+      },{
+        "title": "Robotics-Perception-Week3",
+        "excerpt":"Visual Features[视觉特征提取]   SIFT [Scale-invariant feature transform] 尺度不变特征转换   Reference      zhaoxuhui.top   图像特征尺度不变性-拉普拉斯-高斯差DOG-SIFT特征提取-旋转不变性-SVD分析-齐次坐标的理解-线性的理解-齐次方程的理解 CSDN   🤙SIFT算法详解 - zddblog[CSDN]   🤙SIFT算法原理详解 - Alliswell-WP[cnblogs]   🤙UCF Computer Vision Video Lectures 2012[5] -  Dr. Mubarak Shah[Youtube]  ","categories": ["3d","coursera"],
+        "tags": [],
+        "url": "/3d/coursera/Robotics-Perception-Week3/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804142207.png"
       }]
