@@ -1,13 +1,15 @@
 ---
 layout: single
-title:  "Two Method Of Perception Matrix with 4 points"
+title:  ""
 date:   "2021-8-3 20:50:05 +0800"
 categories: 3d coursera
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png
 ---
 
-## 线性代数推导
+## Two Method Of Perception Matrix with 4 points
+
+### 线性代数推导
 
 - 参考
   - [inf.ed.ac.uk](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/EPSRC_SSAZ/node11.html)
@@ -86,7 +88,7 @@ $$
 $$
 - 当左侧矩阵可逆时，方程又解，令$h_3$为1，求解其他$h$
 
-## 构造基向量
+### 构造基向量
 
 - 我们需要求映射$H$, 使得$\mathbf{Ha=a'},\dotsc, \mathbf{Hd=d'}$
 - 由于$\mathbf{a,b,c}$三点线性无关，因此，总可以找到一种比例$\alpha, \beta, \gamma$ 使得$\alpha \mathbf{a} + \beta \mathbf{b} + \gamma \mathbf{c} = \mathbf{d}$
@@ -130,7 +132,7 @@ $$
 $$
 - $\mathbf{H=BA^{-1}}$即为所求矩阵
 
-### 计算例子(1)
+#### 计算例子(1)
 
 $$
 \begin{matrix}
@@ -149,7 +151,7 @@ M=\begin{bmatrix}
 \end{bmatrix}
 $$
 
-### 计算例子(2)
+#### 计算例子(2)
 
 $$
 \begin{matrix}
@@ -168,7 +170,7 @@ A=\begin{bmatrix}
 \end{bmatrix}
 $$
 
-### 计算例子(3)
+#### 计算例子(3)
 
 $$
 \begin{matrix}
@@ -188,7 +190,7 @@ A=\begin{bmatrix}
 \end{bmatrix}
 $$
 
-## Cross-ratio[交比定理]
+### Cross-ratio[交比定理]
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Projection_geometry.svg"/>
 
@@ -214,7 +216,7 @@ $$
 
 - 因此，交比只与角度有关，因此是定值
 
-## 利用交比定理计算
+### 利用交比定理计算
 
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210803230153.png" alt="20210803230153">
 
@@ -225,7 +227,7 @@ $$
 - $\{A',B';C',D'\}=\{A,B;C,D\}=\frac{AC}{BC}$, 由于D点在无穷远，因此，$\frac{AD}{BD}\simeq1$
 - $BC=33.33km$
 
-## 寻找灭点[Vanishing point]
+### 寻找灭点[Vanishing point]
 
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210803231138.png" alt="20210803231138">
 
