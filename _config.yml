@@ -70,6 +70,13 @@ pagination: # jekyll-paginate-v2
     before: 2
     after: 2
 
+# Analysis provider
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-QN8PZ697F8"
+    anonymize_ip: false # default
+
 plugins:
   # - kramdown-math-katex
   - jekyll-archives
