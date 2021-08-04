@@ -388,7 +388,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#visual-features视觉特征提取">Visual Features[视觉特征提取]</a><ul><li><a href="#sift-scale-invariant-feature-transform-尺度不变特征转换">SIFT [Scale-invariant feature transform] 尺度不变特征转换</a><ul><li><a href="#reference">Reference</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#visual-features视觉特征提取">Visual Features[视觉特征提取]</a><ul><li><a href="#sift-scale-invariant-feature-transform-尺度不变特征转换">SIFT [Scale-invariant feature transform] 尺度不变特征转换</a><ul><li><a href="#gaussian-pyramid高斯金字塔">Gaussian pyramid[高斯金字塔]</a></li><li><a href="#拉普拉斯金字塔">拉普拉斯金字塔</a></li><li><a href="#sift算法中的多尺度金字塔">Sift算法中的多尺度金字塔</a></li><li><a href="#差分金字塔与difference-of-gaussiandog高斯函数的差分">差分金字塔与Difference of Gaussian(DOG)高斯函数的差分</a></li><li><a href="#reference">Reference</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -397,6 +397,39 @@
 
 <h3 id="sift-scale-invariant-feature-transform-尺度不变特征转换">SIFT [Scale-invariant feature transform] 尺度不变特征转换</h3>
 
+<ul>
+  <li>大致思想</li>
+  <li>我们需要同一个相机按不同视角拍摄的同一处的画面</li>
+  <li>类似于全景图</li>
+  <li>在拼接全景图时，我们需要找到对应的特征点，才能方便图片对接</li>
+  <li><code class="language-plaintext highlighter-rouge">SIFT</code>即为一种寻找特征点的算法</li>
+  <li>对于一张图片进行不同$\sigma=1, \sqrt{2}, 2, \dotsc$的二维高斯卷积得到一组(octive)</li>
+  <li>再将这张图片进行降采样(隔点采样)，拿到缩水的图片</li>
+  <li>对于缩水的图片再次进行卷积，使用的$2\sigma=2, 2\sqrt{2}, 4 \dotsc$</li>
+  <li>对于同一组(octive)的图片，相邻两张做差，得到<code class="language-plaintext highlighter-rouge">DoG</code> Difference of Gaussian, 其实是一种<code class="language-plaintext highlighter-rouge">LoG</code> laplacian of gaussian的近似</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804152043.png" alt="20210804152043" /></p>
+
+<h4 id="gaussian-pyramid高斯金字塔">Gaussian pyramid[高斯金字塔]</h4>
+
+<ul>
+  <li>迭代(高斯卷积-&gt;降采样-&gt;得到一个长宽只有$\frac{1}{2}$的图)</li>
+</ul>
+
+<h4 id="拉普拉斯金字塔">拉普拉斯金字塔</h4>
+
+<h4 id="sift算法中的多尺度金字塔">Sift算法中的多尺度金字塔</h4>
+
+<h4 id="差分金字塔与difference-of-gaussiandog高斯函数的差分">差分金字塔与Difference of Gaussian(DOG)高斯函数的差分</h4>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804151129.png" alt="20210804151129" /></p>
+
+<p>同时，需要归一化，以避免信号流式</p>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804152921.png" alt="20210804152921" /></p>
+
+<p>拿到的最大响应点即我们需要的特征点</p>
 <h4 id="reference">Reference</h4>
 
 <ul>
