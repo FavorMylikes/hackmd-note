@@ -107,8 +107,8 @@ var store = [{
         "url": "/3d/coursera/Robotics-Perception-week2/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802233241.png"
       },{
-        "title": "Two Method Of Perception Matrix with 4 points",
-        "excerpt":"线性代数推导 参考 inf.ed.ac.uk [多视图几何 2.3] 对于点$x$经过$H$变换后有如下公式 $\\begin{aligned} \\begin{bmatrix} y'\\\\x'\\\\1 \\end{bmatrix} &= \\mathbf{H} \\begin{bmatrix} x\\\\y\\\\1 \\end{bmatrix}\\\\ &= \\begin{bmatrix} h_{11}&h_{12}&h_{13}\\\\ h_{21}&h_{22}&h_{23}\\\\ h_{31}&h_{32}&h_{33} \\end{bmatrix} \\begin{bmatrix} x\\\\y\\\\1 \\end{bmatrix}\\\\ \\end{aligned}$ 根据一个点，我们可以得到两个方程组 $\\begin{aligned} x' &= \\frac{h_{11}x+h_{12}y+h_{13}}{h_{31}x+h_{32}y+h_{33}}\\\\ y' &= \\frac{h_{21}x+h_{22}y+h_{23}}{h_{31}x+h_{32}y+h_{33}}\\\\ \\end{aligned}$ 其中$h_{31}x+h_{32}y+h_{33}$ 用于表示一个未知的倍数变量 表示成矩阵形式有 $\\begin{bmatrix} x&y&1&0&0&0&-x'x&-x'y&-x'\\\\ 0&0&0&x&y&1&-y'x&-y'y&-y'\\\\ \\end{bmatrix} \\begin{bmatrix} h_{11}\\\\ h_{12}\\\\ h_{13}\\\\ h_{21}\\\\ h_{22}\\\\ h_{23}\\\\ h_{31}\\\\ h_{32}\\\\...","categories": ["3d","coursera"],
+        "title": "",
+        "excerpt":"Two Method Of Perception Matrix with 4 points 线性代数推导 参考 inf.ed.ac.uk [多视图几何 2.3] 对于点$x$经过$H$变换后有如下公式 $\\begin{aligned} \\begin{bmatrix} y'\\\\x'\\\\1 \\end{bmatrix} &= \\mathbf{H} \\begin{bmatrix} x\\\\y\\\\1 \\end{bmatrix}\\\\ &= \\begin{bmatrix} h_{11}&h_{12}&h_{13}\\\\ h_{21}&h_{22}&h_{23}\\\\ h_{31}&h_{32}&h_{33} \\end{bmatrix} \\begin{bmatrix} x\\\\y\\\\1 \\end{bmatrix}\\\\ \\end{aligned}$ 根据一个点，我们可以得到两个方程组 $\\begin{aligned} x' &= \\frac{h_{11}x+h_{12}y+h_{13}}{h_{31}x+h_{32}y+h_{33}}\\\\ y' &= \\frac{h_{21}x+h_{22}y+h_{23}}{h_{31}x+h_{32}y+h_{33}}\\\\ \\end{aligned}$ 其中$h_{31}x+h_{32}y+h_{33}$ 用于表示一个未知的倍数变量 表示成矩阵形式有 $\\begin{bmatrix} x&y&1&0&0&0&-x'x&-x'y&-x'\\\\ 0&0&0&x&y&1&-y'x&-y'y&-y'\\\\ \\end{bmatrix} \\begin{bmatrix}...","categories": ["3d","coursera"],
         "tags": [],
         "url": "/3d/coursera/Two-method-of-Perception-matrix/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png"
