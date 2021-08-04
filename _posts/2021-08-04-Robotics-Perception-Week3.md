@@ -40,6 +40,7 @@ header:
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804152921.png" alt="20210804152921">
 
 拿到的最大响应点即我们需要的特征点
+
 #### Reference
 
 - [zhaoxuhui.top](http://zhaoxuhui.top/blog/2019/11/12/robotics-perception-assignment-3.html#1visual-features)

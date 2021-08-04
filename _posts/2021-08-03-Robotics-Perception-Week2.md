@@ -4,7 +4,7 @@ title:  "Robotics-Perception-week2[2]"
 date:   "2021-8-3 20:50:05 +0800"
 categories: 3d coursera
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png
+  teaser: https://upload.wikimedia.org/wikipedia/commons/9/94/Projection_geometry.svg
 ---
 
 ## Two Method Of Perception Matrix with 4 points
