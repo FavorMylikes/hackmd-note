@@ -48,3 +48,27 @@ header:
 - [🤙SIFT算法详解 - zddblog[CSDN]](https://blog.csdn.net/zddblog/article/details/7521424)
 - [🤙SIFT算法原理详解 - Alliswell-WP[cnblogs]](https://www.cnblogs.com/Alliswell-WP/p/SIFT.html)
 - [🤙UCF Computer Vision Video Lectures 2012[5] -  Dr. Mubarak Shah[Youtube]](https://www.youtube.com/watch?v=NPcMS49V5hg)
+
+## SVD
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805002318.png" alt="20210805002318">
+
+- $A_{m\times n}=U_{m\times m}D_{m\times n}V_{n\times n}^T$
+- $U$, 每列正交
+- $V$, 正交
+
+### 平均脸
+
+- 把每张图片按$1\times n$重新排列
+- 组成一个$n\times N$的矩阵
+- 通过SVD分解，拿到前几个特征，进行重构后即可
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805003209.png" alt="20210805003209">
+
+- 改变$D$的元素个数，可以更改$A$的秩
+- 使$D$取倒数，则可计算$A^{-1}=VD^{-1}U^T$
+- $D$非负
+
+## RANSAC[Random Sample Consenus]
+
+- 
