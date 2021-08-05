@@ -111,11 +111,17 @@ var store = [{
         "excerpt":"Two Method Of Perception Matrix with 4 points 线性代数推导 参考 inf.ed.ac.uk [多视图几何 2.3] 对于点$x$经过$H$变换后有如下公式 $\\begin{aligned} \\begin{bmatrix} y'\\\\x'\\\\1 \\end{bmatrix} &= \\mathbf{H} \\begin{bmatrix} x\\\\y\\\\1 \\end{bmatrix}\\\\ &= \\begin{bmatrix} h_{11}&h_{12}&h_{13}\\\\ h_{21}&h_{22}&h_{23}\\\\ h_{31}&h_{32}&h_{33} \\end{bmatrix} \\begin{bmatrix} x\\\\y\\\\1 \\end{bmatrix}\\\\ \\end{aligned}$ 根据一个点，我们可以得到两个方程组 $\\begin{aligned} x' &= \\frac{h_{11}x+h_{12}y+h_{13}}{h_{31}x+h_{32}y+h_{33}}\\\\ y' &= \\frac{h_{21}x+h_{22}y+h_{23}}{h_{31}x+h_{32}y+h_{33}}\\\\ \\end{aligned}$ 其中$h_{31}x+h_{32}y+h_{33}$ 用于表示一个未知的倍数变量 表示成矩阵形式有 $\\begin{bmatrix} x&y&1&0&0&0&-x'x&-x'y&-x'\\\\ 0&0&0&x&y&1&-y'x&-y'y&-y'\\\\ \\end{bmatrix} \\begin{bmatrix}...","categories": ["3d","coursera"],
         "tags": [],
         "url": "/3d/coursera/Robotics-Perception-Week2/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png"
+        "teaser": "https://upload.wikimedia.org/wikipedia/commons/9/94/Projection_geometry.svg"
       },{
         "title": "Robotics-Perception-Week3",
         "excerpt":"Visual Features[视觉特征提取] SIFT [Scale-invariant feature transform] 尺度不变特征转换 大致思想 我们需要同一个相机按不同视角拍摄的同一处的画面 类似于全景图 在拼接全景图时，我们需要找到对应的特征点，才能方便图片对接 SIFT即为一种寻找特征点的算法 对于一张图片进行不同$\\sigma=1, \\sqrt{2}, 2, \\dotsc$的二维高斯卷积得到一组(octive) 再将这张图片进行降采样(隔点采样)，拿到缩水的图片 对于缩水的图片再次进行卷积，使用的$2\\sigma=2, 2\\sqrt{2}, 4 \\dotsc$ 对于同一组(octive)的图片，相邻两张做差，得到DoG Difference of Gaussian, 其实是一种LoG laplacian of gaussian的近似 Gaussian pyramid[高斯金字塔] 迭代(高斯卷积-&gt;降采样-&gt;得到一个长宽只有$\\frac{1}{2}$的图) 拉普拉斯金字塔 Sift算法中的多尺度金字塔 差分金字塔与Difference of Gaussian(DOG)高斯函数的差分 同时，需要归一化，以避免信号流式 拿到的最大响应点即我们需要的特征点 Reference zhaoxuhui.top 图像特征尺度不变性-拉普拉斯-高斯差DOG-SIFT特征提取-旋转不变性-SVD分析-齐次坐标的理解-线性的理解-齐次方程的理解 CSDN 🤙SIFT算法详解 - zddblog[CSDN] 🤙SIFT算法原理详解 - Alliswell-WP[cnblogs] 🤙UCF...","categories": ["3d","coursera"],
         "tags": [],
         "url": "/3d/coursera/Robotics-Perception-Week3/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804142207.png"
+      },{
+        "title": "Robotics-Perception-Week3",
+        "excerpt":"colmap/colmap feature_extractor 特征提取 matcher exhaustive_matcher 特征匹配 vocab_tree_matcher sequential_matcher spatial_matcher transitive_matcher matches_importer mapper Sparse 3D reconstruction / mapping of the dataset using SfM after performing feature extraction and matching model_converter Convert the COLMAP export format to another format, such as PLY or NVM SFM[Structure from Motion] mapillary/OpenSfM - github Open source...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Try-To-Start-Up-Texture/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804193756.png"
       }]

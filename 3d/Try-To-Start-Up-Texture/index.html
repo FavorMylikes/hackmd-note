@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Robotics-Flight week 1 and 2 / Notes B</title>
-<meta name="description" content="准备看点Coursera课程">
+<!-- begin _includes/seo.html --><title>Robotics-Perception-Week3 / Notes B</title>
+<meta name="description" content="colmap/colmap">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Robotics-Flight week 1 and 2">
-<meta property="og:url" content="https://ucas.io/coursera/system/env/Robotics-Flight-week-1-and-2/">
+<meta property="og:title" content="Robotics-Perception-Week3">
+<meta property="og:url" content="https://ucas.io/3d/Try-To-Start-Up-Texture/">
 
 
-  <meta property="og:description" content="准备看点Coursera课程">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210721131633.png">
+  <meta property="og:description" content="colmap/colmap">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-07-21T10:12:00+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804193756.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-04T16:28:14+08:00">
 
-<link rel="canonical" href="https://ucas.io/coursera/system/env/Robotics-Flight-week-1-and-2/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/Try-To-Start-Up-Texture/">
 
 
 
@@ -205,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/coursera" itemprop="item"><span itemprop="name">Coursera</span></a>
+          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -213,27 +213,7 @@
     
       
       
-        
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/system" itemprop="item"><span itemprop="name">System</span></a>
-          <meta itemprop="position" content="3" />
-        </li>
-        <span class="sep">/</span>
-      
-    
-      
-      
-        
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/env" itemprop="item"><span itemprop="name">Env</span></a>
-          <meta itemprop="position" content="4" />
-        </li>
-        <span class="sep">/</span>
-      
-    
-      
-      
-        <li class="current">Robotics-Flight week 1 and 2</li>
+        <li class="current">Robotics-Perception-Week3</li>
       
     
   </ol>
@@ -352,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Robotics-Flight week 1 and 2">
-    <meta itemprop="description" content="准备看点Coursera课程">
-    <meta itemprop="datePublished" content="2021-07-21T10:12:00+08:00">
+    <meta itemprop="headline" content="Robotics-Perception-Week3">
+    <meta itemprop="description" content="colmap/colmap">
+    <meta itemprop="datePublished" content="2021-08-04T16:28:14+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Robotics-Flight week 1 and 2
+          <h1 id="page-title" class="page__title" itemprop="headline">Robotics-Perception-Week3
 </h1>
           
 
@@ -370,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-07-21T10:12:00+08:00">July 21, 2021</time>
+        <time datetime="2021-08-04T16:28:14+08:00">August 4, 2021</time>
       </span>
     
 
@@ -383,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -398,93 +378,135 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#准备看点coursera课程">准备看点Coursera课程</a></li><li><a href="#ubuntu-chromedriver-remote-browser">Ubuntu chromedriver remote browser</a></li><li><a href="#what-is-the-next">what is the next</a></li></ul>
+              <ul class="toc__menu"><li><a href="#colmapcolmap">colmap/colmap</a></li><li><a href="#sfmstructure-from-motion">SFM[Structure from Motion]</a></li><li><a href="#mvsmulti-view-stereo">MVS[Multi View Stereo]</a></li><li><a href="#code">Code</a></li><li><a href="#maya">Maya</a></li><li><a href="#reference">Reference</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="准备看点coursera课程">准备看点Coursera课程</h2>
+        <h2 id="colmapcolmap"><a href="https://github.com/colmap/colmap">colmap/colmap</a></h2>
 
 <ul>
-  <li><a href="https://www.coursera.org/learn/robotics-flight/">Coursera: robotics-flight</a>
+  <li>feature_extractor 特征提取</li>
+  <li>matcher
     <ul>
-      <li>Week 1
-        <ul>
-          <li>State Estimation
-            <ul>
-              <li>obtaub reliable estimates of position and velocity</li>
-            </ul>
-          </li>
-          <li>SLAM(Simultaneous Localization And Mapping)</li>
-          <li>Control for trajectory tracking in a simple second-order system
-            <ul>
-              <li>PD control
-                <ul>
-                  <li>$u(t) = x’’^{des}(t)+K_ve’(t)+K_pe(t)$</li>
-                </ul>
-              </li>
-              <li>PID control (proportion integration differentiation)
-                <ul>
-                  <li>$u(t) = x’’^{des}(t)+K_ve’(t)+K_pe(t)+K_i\int_0^t{e(\tau)d\tau}$</li>
-                  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210721131633.png" alt="20210721131633" /></li>
-                  <li>code <a href="https://ucas.lifelab.space/jupyter/lab/tree/PID_control.ipynb">Here</a></li>
-                  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210721132159.png" alt="20210721132159" /></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>Week2
-        <ul>
-          <li>rotation matrix
-            <ul>
-              <li>is orthogonal matrix</li>
-              <li>all vector is 1</li>
-              <li>$R^{-1} = R^T$</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      <li>exhaustive_matcher 特征匹配</li>
+      <li>vocab_tree_matcher</li>
+      <li>sequential_matcher</li>
+      <li>spatial_matcher</li>
+      <li>transitive_matcher</li>
+      <li>matches_importer</li>
+    </ul>
+  </li>
+  <li>mapper
+    <ul>
+      <li>Sparse 3D reconstruction / mapping of the dataset using SfM after performing feature extraction and matching</li>
+    </ul>
+  </li>
+  <li>model_converter
+    <ul>
+      <li>Convert the COLMAP export format to another format, such as PLY or NVM</li>
     </ul>
   </li>
 </ul>
 
-<h2 id="ubuntu-chromedriver-remote-browser">Ubuntu chromedriver remote browser</h2>
+<h2 id="sfmstructure-from-motion">SFM[Structure from Motion]</h2>
 
 <ul>
-  <li>apt install libnss3
+  <li><a href="https://github.com/mapillary/OpenSfM">mapillary/OpenSfM - github</a>
     <ul>
-      <li>
-        <blockquote>
-          <p>fix [Service chromedriver unexpectedly exited. Status code was: 127]</p>
-        </blockquote>
-      </li>
+      <li>Open source Structure-from-Motion pipeline</li>
+      <li><a href="https://cmsc426.github.io/sfm/">cmsc426</a></li>
     </ul>
   </li>
-  <li>wget <a href="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb">https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</a></li>
-  <li>apt install ./google-chrome-stable_current_amd64.deb</li>
-  <li>try to use nginx reserve proxy to handle 9200 port</li>
+  <li>
+    <p><a href="https://www.opensfm.org/">official website</a></p>
+  </li>
+  <li>feature_extractor</li>
 </ul>
 
-<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">location</span> <span class="n">/chrome/</span> <span class="p">{</span>
-        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:9222/</span><span class="p">;</span>
-        <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
-        <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
-        <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="s">"upgrade"</span><span class="p">;</span>
-        <span class="kn">proxy_set_header</span> <span class="s">Origin</span> <span class="s">""</span><span class="p">;</span>
-        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="s">"[********]"</span><span class="p">;</span>  <span class="c1"># cause chrome use host as ws address</span>
-        <span class="kn">sub_filter</span> <span class="s">'/json'</span> <span class="s">'/chrome/json'</span><span class="p">;</span>
-        <span class="kn">sub_filter_types</span> <span class="s">*</span><span class="p">;</span>
-        <span class="kn">sub_filter_once</span> <span class="no">off</span><span class="p">;</span>
-<span class="p">}</span>
+<h2 id="mvsmulti-view-stereo">MVS[Multi View Stereo]</h2>
+
+<ul>
+  <li><a href="https://github.com/cdcseacave/openMVS">cdcseacave/openMVS - github</a></li>
+  <li>InterfaceVisualSFM 稠密稀疏化</li>
+  <li>DensifyPointCloud 稠密重建</li>
+  <li>ReconstructMesh 重建mesh</li>
+  <li>RefineMesh 网格优化</li>
+  <li>TextureMesh 文理贴图</li>
+</ul>
+
+<h2 id="code">Code</h2>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">::These parameters are specific to computer</span>
+
+<span class="c">::Store current Directory:</span>
+<span class="kd">set</span> <span class="kd">currDir</span><span class="o">=</span><span class="nv">%CD%</span>
+
+<span class="c">::get folder name as variable</span>
+<span class="kd">SET</span> <span class="s2">"MYDIR=</span><span class="vm">%~p0</span><span class="s2">"</span>
+<span class="kd">set</span> <span class="kd">MYDIR1</span><span class="o">=</span><span class="vm">%MYDIR</span>:<span class="o">~</span><span class="m">0</span><span class="o">,-</span><span class="m">1</span><span class="err">%</span>
+<span class="k">for</span> <span class="vm">%%f</span> <span class="k">in</span> <span class="o">(</span><span class="vm">%MYDIR1</span><span class="err">%</span><span class="o">)</span> <span class="k">do</span> <span class="kd">set</span> <span class="kd">myfolder</span><span class="o">=</span><span class="vm">%%~nxf</span>
+
+<span class="kd">set</span> <span class="kd">root</span><span class="o">=</span><span class="s2">"\path\to\3DReconstruction_release"</span>
+<span class="c">:: Set SFM directory</span>
+<span class="kd">set</span> <span class="kd">colDir</span><span class="o">=</span><span class="nv">%root%</span>\software\SFM
+
+<span class="c">:: Set MVS directory</span>
+<span class="kd">set</span> <span class="kd">oMVS</span><span class="o">=</span><span class="nv">%root%</span>\software\MVS
+
+<span class="c">:: Set Working Directory</span>
+<span class="kd">set</span> <span class="kd">workDir</span><span class="o">=</span><span class="nv">%root%</span>\temp<span class="na">-workspace</span>\<span class="nv">%myfolder%</span>\
+
+<span class="c">:: Set System env path</span>
+<span class="kd">set</span> <span class="nb">path</span><span class="o">=</span><span class="nv">%colDir%</span>\lib\<span class="o">;</span><span class="nv">%oMVS%</span><span class="o">;</span><span class="nv">%path%</span>
+
+<span class="nb">mkdir</span> <span class="nv">%workDir%</span> 
+<span class="nb">copy</span> <span class="o">*</span>.jpg <span class="nv">%workDir%</span>\ 
+<span class="nb">cd</span> <span class="na">/d </span><span class="nv">%workDir%</span>
+
+<span class="nv">%colDir%</span>\bin\feature_extractor <span class="na">--database</span>_path <span class="kd">database</span>.db <span class="na">--image</span>_path .
+<span class="nv">%colDir%</span>\bin\exhaustive_matcher <span class="na">--database</span>_path <span class="kd">database</span>.db
+<span class="c">::%colDir%\exhaustive_matcher --database_path database.db --SiftMatching.max_num_matches 10000</span>
+<span class="nb">mkdir</span> <span class="kd">sparse</span>
+<span class="nv">%colDir%</span>\bin\mapper <span class="na">--database</span>_path <span class="nv">%workDir%</span>\database.db <span class="na">--image</span>_path . <span class="na">--export</span>_path <span class="nv">%workDir%</span>\sparse
+<span class="nv">%colDir%</span>\bin\model_converter <span class="na">--input</span>_path <span class="kd">sparse</span>\0 <span class="na">--output</span>_path <span class="kd">model</span>.nvm <span class="na">--output</span>_type <span class="kd">NVM</span>
+<span class="nv">%oMVS%</span>\InterfaceVisualSFM.exe <span class="kd">model</span>.nvm
+<span class="nv">%oMVS%</span>\DensifyPointCloud.exe <span class="kd">model</span>.mvs
+<span class="nv">%oMVS%</span>\ReconstructMesh.exe <span class="kd">model_dense</span>.mvs
+<span class="c">::%oMVS%\TextureMesh.exe --export-type obj -o %myfolder%.obj model_dense_mesh.mvs</span>
+<span class="nv">%oMVS%</span>\RefineMesh.exe <span class="na">--resolution-level </span><span class="m">1</span> <span class="kd">model_dense_mesh</span>.mvs
+<span class="c">::%oMVS%\RefineMesh.exe --resolution-level 3 model_dense_mesh.mvs</span>
+<span class="nv">%oMVS%</span>\TextureMesh.exe <span class="na">--export-type </span><span class="kd">obj</span> <span class="na">-o </span><span class="nv">%myfolder%</span>.obj <span class="kd">model_dense_mesh_refine</span>.mvs
+
+<span class="nb">mkdir</span> <span class="nv">%currDir%</span>\model\
+<span class="nb">copy</span> <span class="o">*</span>.obj <span class="nv">%currDir%</span>\model\
+<span class="nb">copy</span> <span class="o">*</span>.mtl <span class="nv">%currDir%</span>\model\
+<span class="nb">copy</span> <span class="o">*</span><span class="kd">Kd</span>.jpg <span class="nv">%currDir%</span>\model\
+
+
+<span class="c">::cd %currDir%</span>
+
+<span class="c">::If you want to automate removal of the working folder, use the following line.</span>
+<span class="c">::Don't use it if you want to keep intermediate steps.</span>
+<span class="c">::rmdir /S /Q %workDir%</span>
+
+<span class="nb">pause</span>
 </code></pre></div></div>
 
-<h2 id="what-is-the-next">what is the next</h2>
+<h2 id="maya">Maya</h2>
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">This request has been blocked; this endpoint must be available over WSS.</code></li>
-</ul>
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805143531.png" alt="20210805143531" /></p>
+
+<h2 id="reference">Reference</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[实战</td>
+      <td>手把手教你跑三维重建代码！ - 计算机视觉life的文章 - 知乎](https://zhuanlan.zhihu.com/p/360412732)</td>
+    </tr>
+  </tbody>
+</table>
 
         
       </section>
@@ -503,11 +525,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/coursera" class="page__taxonomy-item" rel="tag">coursera</a><span class="sep">, </span>
-    
-      <a href="/categories/env" class="page__taxonomy-item" rel="tag">env</a><span class="sep">, </span>
-    
-      <a href="/categories/system" class="page__taxonomy-item" rel="tag">system</a>
+      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
     
     </span>
   </p>
@@ -515,7 +533,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-21T10:12:00+08:00">July 21, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-04T16:28:14+08:00">August 4, 2021</time></p>
 
 
       </footer>
@@ -523,23 +541,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Robotics-Flight+week+1+and+2%20https%3A%2F%2Fucas.io%2Fcoursera%2Fsystem%2Fenv%2FRobotics-Flight-week-1-and-2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Robotics-Perception-Week3%20https%3A%2F%2Fucas.io%2F3d%2FTry-To-Start-Up-Texture%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fcoursera%2Fsystem%2Fenv%2FRobotics-Flight-week-1-and-2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FTry-To-Start-Up-Texture%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fcoursera%2Fsystem%2Fenv%2FRobotics-Flight-week-1-and-2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FTry-To-Start-Up-Texture%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/env/system/Try-to-connect-to-the-internet/" class="pagination--pager" title="Try to connect to the internet
+      <a href="/3d/coursera/Robotics-Perception-Week3/" class="pagination--pager" title="Robotics-Perception-Week3
 ">Previous</a>
     
     
-      <a href="/env/system/coursera/Robotics-Flight-week-2/" class="pagination--pager" title="Install Remote Browser[remoteview], And Coursera Robotics-Flight week 2
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -553,57 +570,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804193756.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/Try-To-Start-Up-Texture/" rel="permalink">Robotics-Perception-Week3
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-04T16:28:14+08:00">August 4, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">colmap/colmap
-</p>
-  </article>
-</div>
-
         
           
 
@@ -753,6 +719,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Homogeneous Coordinate[齐次坐标]
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Try-to-startup-Pinocchio/" rel="permalink">Try To Start Up Pinocchio
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-02T10:32:48+08:00">August 2, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Install Visual Studio 2019
 </p>
   </article>
 </div>

@@ -388,7 +388,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#visual-features视觉特征提取">Visual Features[视觉特征提取]</a><ul><li><a href="#sift-scale-invariant-feature-transform-尺度不变特征转换">SIFT [Scale-invariant feature transform] 尺度不变特征转换</a><ul><li><a href="#gaussian-pyramid高斯金字塔">Gaussian pyramid[高斯金字塔]</a></li><li><a href="#拉普拉斯金字塔">拉普拉斯金字塔</a></li><li><a href="#sift算法中的多尺度金字塔">Sift算法中的多尺度金字塔</a></li><li><a href="#差分金字塔与difference-of-gaussiandog高斯函数的差分">差分金字塔与Difference of Gaussian(DOG)高斯函数的差分</a></li><li><a href="#reference">Reference</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#visual-features视觉特征提取">Visual Features[视觉特征提取]</a><ul><li><a href="#sift-scale-invariant-feature-transform-尺度不变特征转换">SIFT [Scale-invariant feature transform] 尺度不变特征转换</a><ul><li><a href="#gaussian-pyramid高斯金字塔">Gaussian pyramid[高斯金字塔]</a></li><li><a href="#拉普拉斯金字塔">拉普拉斯金字塔</a></li><li><a href="#sift算法中的多尺度金字塔">Sift算法中的多尺度金字塔</a></li><li><a href="#差分金字塔与difference-of-gaussiandog高斯函数的差分">差分金字塔与Difference of Gaussian(DOG)高斯函数的差分</a></li><li><a href="#reference">Reference</a></li></ul></li></ul></li><li><a href="#svd">SVD</a><ul><li><a href="#平均脸">平均脸</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -430,6 +430,7 @@
 <p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804152921.png" alt="20210804152921" /></p>
 
 <p>拿到的最大响应点即我们需要的特征点</p>
+
 <h4 id="reference">Reference</h4>
 
 <ul>
@@ -438,6 +439,32 @@
   <li><a href="https://blog.csdn.net/zddblog/article/details/7521424">🤙SIFT算法详解 - zddblog[CSDN]</a></li>
   <li><a href="https://www.cnblogs.com/Alliswell-WP/p/SIFT.html">🤙SIFT算法原理详解 - Alliswell-WP[cnblogs]</a></li>
   <li><a href="https://www.youtube.com/watch?v=NPcMS49V5hg">🤙UCF Computer Vision Video Lectures 2012[5] -  Dr. Mubarak Shah[Youtube]</a></li>
+</ul>
+
+<h2 id="svd">SVD</h2>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805002318.png" alt="20210805002318" /></p>
+
+<ul>
+  <li>$A_{m\times n}=U_{m\times m}D_{m\times n}V_{n\times n}^T$</li>
+  <li>$U$, 每列正交</li>
+  <li>$V$, 正交</li>
+</ul>
+
+<h3 id="平均脸">平均脸</h3>
+
+<ul>
+  <li>把每张图片按$1\times n$重新排列</li>
+  <li>组成一个$n\times N$的矩阵</li>
+  <li>通过SVD分解，拿到前几个特征，进行重构后即可</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805003209.png" alt="20210805003209" /></p>
+
+<ul>
+  <li>改变$D$的元素个数，可以更改$A$的秩</li>
+  <li>使$D$取倒数，则可计算$A^{-1}=VD^{-1}U^T$</li>
+  <li>$D$非负</li>
 </ul>
 
         
@@ -490,7 +517,8 @@
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/3d/Try-To-Start-Up-Texture/" class="pagination--pager" title="Robotics-Perception-Week3
+">Next</a>
     
   </nav>
 
@@ -513,7 +541,58 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802180508.png" alt="">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804193756.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Try-To-Start-Up-Texture/" rel="permalink">Robotics-Perception-Week3
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-04T16:28:14+08:00">August 4, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">colmap/colmap
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Projection_geometry.svg" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -653,57 +732,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Install Visual Studio 2019
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801194917.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/coursera/Review-of-Robotics-Perception-week1/" rel="permalink">Review of Robotics Perception week1
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-01T16:53:36+08:00">August 1, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Review of week 1
 </p>
   </article>
 </div>

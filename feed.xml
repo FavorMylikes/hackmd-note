@@ -1,4 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-04T17:27:03+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics-Perception-Week3</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week3/" rel="alternate" type="text/html" title="Robotics-Perception-Week3" /><published>2021-08-04T10:25:53+08:00</published><updated>2021-08-04T10:25:53+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week3</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week3/">&lt;h2 id=&quot;visual-features视觉特征提取&quot;&gt;Visual Features[视觉特征提取]&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-05T14:36:36+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics-Perception-Week3</title><link href="https://ucas.io/3d/Try-To-Start-Up-Texture/" rel="alternate" type="text/html" title="Robotics-Perception-Week3" /><published>2021-08-04T16:28:14+08:00</published><updated>2021-08-04T16:28:14+08:00</updated><id>https://ucas.io/3d/Try-To-Start-Up-Texture</id><content type="html" xml:base="https://ucas.io/3d/Try-To-Start-Up-Texture/">&lt;h2 id=&quot;colmapcolmap&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;colmap/colmap&lt;/a&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;feature_extractor 特征提取&lt;/li&gt;
+  &lt;li&gt;matcher
+    &lt;ul&gt;
+      &lt;li&gt;exhaustive_matcher 特征匹配&lt;/li&gt;
+      &lt;li&gt;vocab_tree_matcher&lt;/li&gt;
+      &lt;li&gt;sequential_matcher&lt;/li&gt;
+      &lt;li&gt;spatial_matcher&lt;/li&gt;
+      &lt;li&gt;transitive_matcher&lt;/li&gt;
+      &lt;li&gt;matches_importer&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;mapper
+    &lt;ul&gt;
+      &lt;li&gt;Sparse 3D reconstruction / mapping of the dataset using SfM after performing feature extraction and matching&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;model_converter
+    &lt;ul&gt;
+      &lt;li&gt;Convert the COLMAP export format to another format, such as PLY or NVM&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sfmstructure-from-motion&quot;&gt;SFM[Structure from Motion]&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;mapillary/OpenSfM - github&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Open source Structure-from-Motion pipeline&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://cmsc426.github.io/sfm/&quot;&gt;cmsc426&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.opensfm.org/&quot;&gt;official website&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;feature_extractor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mvsmulti-view-stereo&quot;&gt;MVS[Multi View Stereo]&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;cdcseacave/openMVS - github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;InterfaceVisualSFM 稠密稀疏化&lt;/li&gt;
+  &lt;li&gt;DensifyPointCloud 稠密重建&lt;/li&gt;
+  &lt;li&gt;ReconstructMesh 重建mesh&lt;/li&gt;
+  &lt;li&gt;RefineMesh 网格优化&lt;/li&gt;
+  &lt;li&gt;TextureMesh 文理贴图&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+
+&lt;div class=&quot;language-bat highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;::These parameters are specific to computer&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;::Store current Directory:&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;currDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%CD%&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;::get folder name as variable&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;MYDIR=&lt;/span&gt;&lt;span class=&quot;vm&quot;&gt;%~p0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;MYDIR1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;vm&quot;&gt;%MYDIR&lt;/span&gt;:&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;vm&quot;&gt;%%f&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vm&quot;&gt;%MYDIR1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;myfolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;vm&quot;&gt;%%~nxf&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;\path\to\3DReconstruction_release&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;:: Set SFM directory&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;colDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%root%&lt;/span&gt;\software\SFM
+
+&lt;span class=&quot;c&quot;&gt;:: Set MVS directory&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;oMVS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%root%&lt;/span&gt;\software\MVS
+
+&lt;span class=&quot;c&quot;&gt;:: Set Working Directory&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;workDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%root%&lt;/span&gt;\temp&lt;span class=&quot;na&quot;&gt;-workspace&lt;/span&gt;\&lt;span class=&quot;nv&quot;&gt;%myfolder%&lt;/span&gt;\
+
+&lt;span class=&quot;c&quot;&gt;:: Set System env path&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%colDir%&lt;/span&gt;\lib\&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%path%&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;%workDir%&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;copy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;.jpg &lt;span class=&quot;nv&quot;&gt;%workDir%&lt;/span&gt;\ 
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/d &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%workDir%&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;%colDir%&lt;/span&gt;\bin\feature_extractor &lt;span class=&quot;na&quot;&gt;--database&lt;/span&gt;_path &lt;span class=&quot;kd&quot;&gt;database&lt;/span&gt;.db &lt;span class=&quot;na&quot;&gt;--image&lt;/span&gt;_path .
+&lt;span class=&quot;nv&quot;&gt;%colDir%&lt;/span&gt;\bin\exhaustive_matcher &lt;span class=&quot;na&quot;&gt;--database&lt;/span&gt;_path &lt;span class=&quot;kd&quot;&gt;database&lt;/span&gt;.db
+&lt;span class=&quot;c&quot;&gt;::%colDir%\exhaustive_matcher --database_path database.db --SiftMatching.max_num_matches 10000&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;sparse&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;%colDir%&lt;/span&gt;\bin\mapper &lt;span class=&quot;na&quot;&gt;--database&lt;/span&gt;_path &lt;span class=&quot;nv&quot;&gt;%workDir%&lt;/span&gt;\database.db &lt;span class=&quot;na&quot;&gt;--image&lt;/span&gt;_path . &lt;span class=&quot;na&quot;&gt;--export&lt;/span&gt;_path &lt;span class=&quot;nv&quot;&gt;%workDir%&lt;/span&gt;\sparse
+&lt;span class=&quot;nv&quot;&gt;%colDir%&lt;/span&gt;\bin\model_converter &lt;span class=&quot;na&quot;&gt;--input&lt;/span&gt;_path &lt;span class=&quot;kd&quot;&gt;sparse&lt;/span&gt;\0 &lt;span class=&quot;na&quot;&gt;--output&lt;/span&gt;_path &lt;span class=&quot;kd&quot;&gt;model&lt;/span&gt;.nvm &lt;span class=&quot;na&quot;&gt;--output&lt;/span&gt;_type &lt;span class=&quot;kd&quot;&gt;NVM&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;\InterfaceVisualSFM.exe &lt;span class=&quot;kd&quot;&gt;model&lt;/span&gt;.nvm
+&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;\DensifyPointCloud.exe &lt;span class=&quot;kd&quot;&gt;model&lt;/span&gt;.mvs
+&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;\ReconstructMesh.exe &lt;span class=&quot;kd&quot;&gt;model_dense&lt;/span&gt;.mvs
+&lt;span class=&quot;c&quot;&gt;::%oMVS%\TextureMesh.exe --export-type obj -o %myfolder%.obj model_dense_mesh.mvs&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;\RefineMesh.exe &lt;span class=&quot;na&quot;&gt;--resolution-level &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;model_dense_mesh&lt;/span&gt;.mvs
+&lt;span class=&quot;c&quot;&gt;::%oMVS%\RefineMesh.exe --resolution-level 3 model_dense_mesh.mvs&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;\TextureMesh.exe &lt;span class=&quot;na&quot;&gt;--export-type &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;-o &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%myfolder%&lt;/span&gt;.obj &lt;span class=&quot;kd&quot;&gt;model_dense_mesh_refine&lt;/span&gt;.mvs
+
+&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;%currDir%&lt;/span&gt;\model\
+&lt;span class=&quot;nb&quot;&gt;copy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;.obj &lt;span class=&quot;nv&quot;&gt;%currDir%&lt;/span&gt;\model\
+&lt;span class=&quot;nb&quot;&gt;copy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;.mtl &lt;span class=&quot;nv&quot;&gt;%currDir%&lt;/span&gt;\model\
+&lt;span class=&quot;nb&quot;&gt;copy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;Kd&lt;/span&gt;.jpg &lt;span class=&quot;nv&quot;&gt;%currDir%&lt;/span&gt;\model\
+
+
+&lt;span class=&quot;c&quot;&gt;::cd %currDir%&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;::If you want to automate removal of the working folder, use the following line.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;::Don't use it if you want to keep intermediate steps.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;::rmdir /S /Q %workDir%&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;pause&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;maya&quot;&gt;Maya&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805143531.png&quot; alt=&quot;20210805143531&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[实战&lt;/td&gt;
+      &lt;td&gt;手把手教你跑三维重建代码！ - 计算机视觉life的文章 - 知乎](https://zhuanlan.zhihu.com/p/360412732)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">colmap/colmap</summary></entry><entry><title type="html">Robotics-Perception-Week3</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week3/" rel="alternate" type="text/html" title="Robotics-Perception-Week3" /><published>2021-08-04T10:25:53+08:00</published><updated>2021-08-04T10:25:53+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week3</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week3/">&lt;h2 id=&quot;visual-features视觉特征提取&quot;&gt;Visual Features[视觉特征提取]&lt;/h2&gt;
 
 &lt;h3 id=&quot;sift-scale-invariant-feature-transform-尺度不变特征转换&quot;&gt;SIFT [Scale-invariant feature transform] 尺度不变特征转换&lt;/h3&gt;
 
@@ -35,6 +158,7 @@
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804152921.png&quot; alt=&quot;20210804152921&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;拿到的最大响应点即我们需要的特征点&lt;/p&gt;
+
 &lt;h4 id=&quot;reference&quot;&gt;Reference&lt;/h4&gt;
 
 &lt;ul&gt;
@@ -43,6 +167,32 @@
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/zddblog/article/details/7521424&quot;&gt;🤙SIFT算法详解 - zddblog[CSDN]&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/Alliswell-WP/p/SIFT.html&quot;&gt;🤙SIFT算法原理详解 - Alliswell-WP[cnblogs]&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=NPcMS49V5hg&quot;&gt;🤙UCF Computer Vision Video Lectures 2012[5] -  Dr. Mubarak Shah[Youtube]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;svd&quot;&gt;SVD&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805002318.png&quot; alt=&quot;20210805002318&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$A_{m\times n}=U_{m\times m}D_{m\times n}V_{n\times n}^T$&lt;/li&gt;
+  &lt;li&gt;$U$, 每列正交&lt;/li&gt;
+  &lt;li&gt;$V$, 正交&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;平均脸&quot;&gt;平均脸&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;把每张图片按$1\times n$重新排列&lt;/li&gt;
+  &lt;li&gt;组成一个$n\times N$的矩阵&lt;/li&gt;
+  &lt;li&gt;通过SVD分解，拿到前几个特征，进行重构后即可&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805003209.png&quot; alt=&quot;20210805003209&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;改变$D$的元素个数，可以更改$A$的秩&lt;/li&gt;
+  &lt;li&gt;使$D$取倒数，则可计算$A^{-1}=VD^{-1}U^T$&lt;/li&gt;
+  &lt;li&gt;$D$非负&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Visual Features[视觉特征提取]</summary></entry><entry><title type="html">Robotics-Perception-week2[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week2/" rel="alternate" type="text/html" title="Robotics-Perception-week2[2]" /><published>2021-08-03T20:50:05+08:00</published><updated>2021-08-03T20:50:05+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week2</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week2/">&lt;h2 id=&quot;two-method-of-perception-matrix-with-4-points&quot;&gt;Two Method Of Perception Matrix with 4 points&lt;/h2&gt;
 
 &lt;h3 id=&quot;线性代数推导&quot;&gt;线性代数推导&lt;/h3&gt;
@@ -945,120 +1095,4 @@ $$&lt;/div&gt;
     &lt;p&gt;-. It will convert &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$123$DE$&lt;/code&gt; as &lt;em&gt;Italic&lt;/em&gt; first
 -. And then the rendering for katex&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Render</summary></entry><entry><title type="html">Build Blog System</title><link href="https://ucas.io/tutorial/Build-Blog-System/" rel="alternate" type="text/html" title="Build Blog System" /><published>2021-07-29T10:29:00+08:00</published><updated>2021-07-29T10:29:00+08:00</updated><id>https://ucas.io/tutorial/Build-Blog-System</id><content type="html" xml:base="https://ucas.io/tutorial/Build-Blog-System/">&lt;h2 id=&quot;build-blog-system-by-github-pages-and-jekyll&quot;&gt;Build Blog System by Github pages and jekyll&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;markdown
-    &lt;ol&gt;
-      &lt;li&gt;github use GFM[GitHub Flavored Markdown]
-        &lt;ol&gt;
-          &lt;li&gt;resizing image only support by inner html code like&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;img src=&quot;src&quot;, alt=&quot;&quot;, weight=&quot;&quot;&amp;gt;&amp;lt;/img&amp;gt;&lt;/code&gt;&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;kramdown
-        &lt;ol&gt;
-          &lt;li&gt;resizing image by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;![](){height:&quot;100px&quot;}&lt;/code&gt;&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;hackmd
-        &lt;ol&gt;
-          &lt;li&gt;resizing image by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;![](src... =100x100)&lt;/code&gt;&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;markdownlint &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MD033&lt;/code&gt; does not recommand for inner html&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;finily I disable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MD033&lt;/code&gt; in vscode by setting&lt;/p&gt;
-
-        &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;markdownlint.config&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;MD033&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;component&quot;&gt;Component&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes\head\custom.html&amp;lt;head&amp;gt;&lt;/code&gt;to overload katex render
-    &lt;ul&gt;
-      &lt;li&gt;cause as a jekyll theme &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimal-mistakes-jekyll&lt;/code&gt;, you can override any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; file by your own file with the same name&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;limjh16/jekyll-action-ts@v2&lt;/code&gt; to build site file
-    &lt;ul&gt;
-      &lt;li&gt;this component require Gemfile.lock&lt;/li&gt;
-      &lt;li&gt;cause &lt;a href=&quot;https://github.com/limjh16/jekyll-action-ts/blob/9edf74e2e5aaa10d272c427efb8702a45a70a0b2/src/main.ts#L157&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7492062.png&quot; alt=&quot;7492062&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;so if you need update your Gemfile for any reason, before &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt;, you’d better run&lt;/p&gt;
-
-        &lt;pre&gt;&lt;code class=&quot;language-gem&quot;&gt;bundle lock --update --add-platform x86_64-linux --remove-platform x64-mingw32
-&lt;/code&gt;&lt;/pre&gt;
-
-        &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7523421.png&quot; alt=&quot;7523421&quot; /&gt;&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;peaceiris/actions-gh-pages@v3&lt;/code&gt; to push file to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;nothing need talk about&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;katex
-    &lt;ul&gt;
-      &lt;li&gt;setting with js&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;DOMContentLoaded&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;renderMathInElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;delimiters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;display&lt;/code&gt; here mean css style &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;block&lt;/code&gt;, if change it to true, the formular will be center and block there.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;gem “therubyracer”
-    &lt;ul&gt;
-      &lt;li&gt;this a js engine&lt;/li&gt;
-      &lt;li&gt;and you can choose one from [&lt;a href=&quot;https://github.com/cowboyd/therubyracer#therubyracer&quot;&gt;therubyracer&lt;/a&gt;, &lt;a href=&quot;https://github.com/cowboyd/therubyrhino#therubyrhino&quot;&gt;therubyrhino&lt;/a&gt;, &lt;a href=&quot;https://github.com/judofyr/duktape.rb#duktaperb&quot;&gt;duktape&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt;]&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;jekyll-theme&quot;&gt;Jekyll Theme&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;config it at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;theme: minimal-mistakes-jekyll&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;add dependency at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;minimal-mistakes-jekyll&quot;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;minimal-mistakes-jekyll&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;there’s other theme you can use
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dash&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;select from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github pages&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;useful-link&quot;&gt;Useful link&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://gendignoux.com/blog/2020/05/23/katex.html#adding-katex-resources-to-a-blog-post&quot;&gt;How I blog about math: an update on KaTeX with Jekyll&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://frankindev.com/2017/02/08/using-katex-in-jekyll/&quot;&gt;Jekyll 中使用 KaTeX SsKatex&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#remote-theme-method&quot;&gt;minimal-mistakes/docs/quick-start-guide&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/mm-github-pages-starter&quot;&gt;mm-github-pages-starter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Build Blog System by Github pages and jekyll</summary></entry></feed>
+&lt;/ol&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Render</summary></entry></feed>
