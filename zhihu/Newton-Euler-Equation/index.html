@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Coordinate System in Dynamic / Notes B</title>
-<meta name="description" content="准备搞明白泛函">
+<!-- begin _includes/seo.html --><title>Newton Euler Equation / Notes B</title>
+<meta name="description" content="">
 
 
   <meta name="author" content="麦丽素">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Coordinate System in Dynamic">
-<meta property="og:url" content="https://ucas.io/zhihu/coursera/Coordinate-System-in-Dynamic/">
+<meta property="og:title" content="Newton Euler Equation">
+<meta property="og:url" content="https://ucas.io/zhihu/Newton-Euler-Equation/">
 
 
-  <meta property="og:description" content="准备搞明白泛函">
+  <meta property="og:description" content="">
 
 
 
@@ -36,14 +36,14 @@
 
 
 
-  <meta property="article:published_time" content="2021-07-26T11:02:00+08:00">
+  <meta property="article:published_time" content="2021-07-25T14:50:47+08:00">
 
 
 
 
 
 
-<link rel="canonical" href="https://ucas.io/zhihu/coursera/Coordinate-System-in-Dynamic/">
+<link rel="canonical" href="https://ucas.io/zhihu/Newton-Euler-Equation/">
 
 
 
@@ -213,17 +213,7 @@
     
       
       
-        
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/coursera" itemprop="item"><span itemprop="name">Coursera</span></a>
-          <meta itemprop="position" content="3" />
-        </li>
-        <span class="sep">/</span>
-      
-    
-      
-      
-        <li class="current">Coordinate System in Dynamic</li>
+        <li class="current">Newton Euler Equation</li>
       
     
   </ol>
@@ -342,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Coordinate System in Dynamic">
-    <meta itemprop="description" content="准备搞明白泛函">
-    <meta itemprop="datePublished" content="2021-07-26T11:02:00+08:00">
+    <meta itemprop="headline" content="Newton Euler Equation">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2021-07-25T14:50:47+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Coordinate System in Dynamic
+          <h1 id="page-title" class="page__title" itemprop="headline">Newton Euler Equation
 </h1>
           
 
@@ -360,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-07-26T11:02:00+08:00">July 26, 2021</time>
+        <time datetime="2021-07-25T14:50:47+08:00">July 25, 2021</time>
       </span>
     
 
@@ -373,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          1 minute read
         
       </span>
     
@@ -388,381 +378,250 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#准备搞明白泛函">准备搞明白泛函</a><ul><li><a href="#无人机的动力学系统">无人机的动力学系统</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#牛顿欧拉方程">牛顿欧拉方程</a><ul><li><a href="#newton-equation">Newton Equation</a></li><li><a href="#euler-equation">Euler Equation</a></li><li><a href="#牛顿欧拉方程即为">牛顿欧拉方程即为</a></li><li><a href="#欧拉方程的推导">欧拉方程的推导</a></li><li><a href="#reference">Reference</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="准备搞明白泛函">准备搞明白泛函</h2>
+        <p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png" /></p>
 
-<h3 id="无人机的动力学系统">无人机的动力学系统</h3>
+<h2 id="牛顿欧拉方程">牛顿欧拉方程</h2>
+
+<h3 id="newton-equation">Newton Equation</h3>
 
 <ul>
-  <li>动力系统
-    <ul>
-      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png" alt="20210726104110" /></li>
-      <li>惯性系[inertial frame]$\mathbf{A}$
-        <ul>
-          <li>3个转轴$a_1, a_2, a_3$</li>
-          <li>原点$O$</li>
-        </ul>
-      </li>
-      <li>随体系[body frame]或固连系[body-fixed frame]或体坐标系[body coordinate]$\mathbf{B}$
-        <ul>
-          <li>3个转轴$b_1, b_2, b_3$</li>
-          <li>原点$C$</li>
-          <li>$L$为旋翼到质心的距离</li>
-        </ul>
-      </li>
-      <li>这个体系描述了这样一种运动
-        <ul>
-          <li>刚体从O点移动到C点，并且进行了旋转变换，此时由于随体系与刚体保持不动，因此随体系坐标不变，而随体系相对于惯性系存在变化，因此旋转矩阵是描述刚体旋转后的惯性系坐标变换</li>
-        </ul>
-      </li>
-      <li>旋转矩阵$\mathbf{R}$[同一个点到两个坐标系的运算]
-        <ul>
-          <li>欧拉角[刚体的转动可以视为绕不同的轴，独立转动3次]</li>
-          <li>如果不考虑位移[位移可以通过向量加法单独运算]，那么刚体仅存在旋转运动
-            <ul>
-              <li>Z-X-Y顺序旋转[顺序不一定是Z-X-Y，也可能是Z-X-Z或其他，但运算矩阵要一致]</li>
-              <li>旋转矩阵$R$</li>
-              <li>
-                <div class="kdmath">$$
-\begin{aligned}
-    R
-    &= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
-    &=\begin{bmatrix}
-    \cos{(\psi)} & -\sin{(\psi)} & 0\\
-    \sin{(\psi)} & \cos{(\psi)} & 0\\
-    0 & 0 & 1
-    \end{bmatrix}
-    \begin{bmatrix}
-    1&0&0\\
-    0&\cos{(\phi)} & -\sin{(\phi)}\\
-    0&\sin{(\phi)} & \cos{(\phi)}\\
-    \end{bmatrix}
-    \begin{bmatrix}
-    \cos{(\theta )} & 0 & \sin{(\theta )}\\
-    0 & 1 & 0\\
-    - \sin{(\theta)} & 0 & \cos{(\theta )}
-    \end{bmatrix}\\
-    &=\begin{bmatrix}- s(\theta ) s(\phi ) s(\psi ) + c(\theta ) c(\psi ) & - s(\psi ) c(\phi ) & s(\theta ) c(\psi ) + s(\phi ) s(\psi ) c(\theta )\\s(\theta ) s(\phi ) c(\psi ) + s(\psi ) c(\theta ) & c(\phi ) c(\psi ) & s(\theta ) s(\psi ) - s(\phi ) c(\theta ) c(\psi )\\- s(\theta ) c(\phi ) & s(\phi ) & c(\theta ) c(\phi )\end{bmatrix}&\text{$s\rightarrow \sin, c \rightarrow \cos$}
-  \end{aligned}
+  <li>计算出4旋翼的作用力在惯性系下的分量</li>
+  <li>无人机在水平状态下，受到向上的推力$F=f_1+f_2+f_3+f_4$和重力$mg$</li>
+  <li>无人机在旋转状态下通过旋转矩阵$R$可以计算出惯性系下3个方向的作用力分量</li>
+  <li>同时由于重力方向不变，可以之间减去，得到</li>
+</ul>
+
+<div class="kdmath">$$
+R_{ZXY}\begin{bmatrix}
+    0\\0\\f_1+f_2+f_3+f_4
+\end{bmatrix}
+-
+\begin{bmatrix}
+    0\\0\\mg
+\end{bmatrix}
 $$</div>
-              </li>
-              <li>初始时，假定$\mathbf{p}$为惯性系坐标，此时惯性系和随体系并未发生变换，因此，$\mathbf{p}$也可以表示随体系坐标，当刚体发生旋转后，随体系下坐标并未发生变化，$\mathbf{q}=R\mathbf{p}$描述了随体系坐标到新的惯性系坐标的变换</li>
-            </ul>
-          </li>
-          <li>速度
-            <ul>
-              <li>
-                <div class="kdmath">$$
-\begin{aligned}
-        \dot \mathbf{q}&=\dot R\mathbf{p} + R\mathbf{\dot p}\\
-        &=\dot R\mathbf{p}&\text{$\mathbf{p}$为常数时,$\dot \mathbf{q}=0$}\\
-    \end{aligned}
+
+<ul>
+  <li>其中$R_{ZXY}$为按照$ZXY$3个轴依次旋转得到的矩阵，如果转轴不同，则可能得到不同的表示</li>
+</ul>
+
+<div class="kdmath">$$
+R_{ZXY} = \begin{bmatrix}- s(\phi ) s(\psi ) s(\theta ) + c(\psi ) c(\theta ) & - s(\psi ) c(\phi ) & s(\phi ) s(\psi ) c(\theta ) + s(\theta ) c(\psi )\\s(\phi ) s(\theta ) c(\psi ) + s(\psi ) c(\theta ) & c(\phi ) c(\psi ) & - s(\phi ) c(\psi ) c(\theta ) + s(\psi ) s(\theta )\\- s(\theta ) c(\phi ) & s(\phi ) & c(\phi ) c(\theta )\end{bmatrix}
 $$</div>
-              </li>
-              <li>此时旋转后的点的速度仅取决于$R$对于时间$t$的导数</li>
-              <li>$R^T\dot \mathbf{q} = R^T\dot R\mathbf{p}$, 两侧同时乘$R^T$, 即旋转矩阵的逆操作</li>
-              <li>$R^T\dot \mathbf{q}$为随体系中的速度</li>
-              <li>$R^T\dot R$为随体系的角速度，记为$\hat \omega^b$
-                <ul>
-                  <li>$b$表示body frame</li>
-                  <li>$\hat \omega$是一种特殊记法，由于角速度中仅有3个独立的量，而$R^T\dot R$表示一个矩阵，为了简便记录，用$\hat \omega$代替</li>
-                  <li>若$\omega = [\omega_1, \omega_2, \omega_3]$
-<span class="kdmath">$\hat \omega = \begin{bmatrix}0&-\omega_3&\omega_2\\\omega_3&0&-\omega_1\\-\omega_2&\omega_1&0\end{bmatrix}$</span></li>
-                </ul>
-              </li>
-              <li>又有
-<span class="kdmath">$\begin{aligned}
-    \dot \mathbf{q} &= \dot R\mathbf{p}\\
-    &=\dot RR^T\mathbf{q}&\text{$\mathbf{p}$为$\mathbf{q}$的逆向旋转}
-\end{aligned}$</span>
-                <ul>
-                  <li>$\dot \mathbf{q}$为惯性系速度</li>
-                  <li>$\dot RR^T$为惯性系角速度，记为$\hat \omega^s$</li>
-                  <li>$s$表示spatial[<strong>空间</strong>]</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>角速度计算
-            <ul>
-              <li>以$z$轴为例子
-                <ul>
-                  <li>
-                    <div class="kdmath">$$
+
+<ul>
+  <li>对应的3个分量为</li>
+</ul>
+
+<div class="kdmath">$$
 \begin{aligned}
-      R_{z(\psi)} &= \begin{bmatrix}
-      \cos{(\psi)} & -\sin{(\psi)} & 0\\
-      \sin{(\psi)} & \cos{(\psi)} & 0\\
-      0 & 0 & 1
-      \end{bmatrix}\\
-      \hat \omega^b
-      &=R^T\dot R\\
-      &= \begin{bmatrix}
-          \cos{(\psi)} & \sin{(\psi)} & 0\\
-          -\sin{(\psi)} & \cos{(\psi)} & 0\\
-          0 & 0 & 1
-      \end{bmatrix}
-      \begin{bmatrix}
-          -\sin{(\psi)} & \cos{(\psi)} & 0\\
-          \cos{(\psi)} & -\sin{(\psi)} & 0\\
-          0 & 0 & 0
-      \end{bmatrix}\dot \psi\\
-      &=\begin{bmatrix}
-          0&-1&0\\
-          1&0&0\\
-          0&0&0
-      \end{bmatrix}\dot \psi\\
-      \hat \omega^s&=\dot RR^T\\
-      &=\dot \psi\begin{bmatrix}
-          -\sin{(\psi)} & \cos{(\psi)} & 0\\
-          \cos{(\psi)} & -\sin{(\psi)} & 0\\
-          0 & 0 & 0
-      \end{bmatrix}
-      \begin{bmatrix}
-          \cos{(\psi)} & \sin{(\psi)} & 0\\
-          -\sin{(\psi)} & \cos{(\psi)} & 0\\
-          0 & 0 & 1
-      \end{bmatrix}\\
-      &=\dot \psi\begin{bmatrix}
-          0&-1&0\\
-          1&0&0\\
-          0&0&0
-      \end{bmatrix}\\
-  \end{aligned}
-$$</div>
-                  </li>
-                  <li>此时因为旋转轴为$z$, 注意向量上方的$\hat {\omega}$
-   <span class="kdmath">$\hat \omega^b=\hat \omega^s=\hat{\begin{bmatrix}0\\0\\1\end{bmatrix}}$</span></li>
-                </ul>
-              </li>
-              <li>多轴例子[由于转轴非常轴，因此两个参考系内的结果并不一样]
-                <ul>
-                  <li>
-                    <div class="kdmath">$$
-\begin{aligned}
-      R&= R_{Z(\psi)}R_{X(\phi)}R_{Y(\theta)}\\
-      \hat \omega^b&=R^T\dot R\\
-      &=(R_ZR_XR_Y)^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
-      &=R_Y^TR_X^TR_Z^T(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)\\
-      &=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
-      \hat \omega^s&=\dot RR^T\\
-      &=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)(R_ZR_XR_Y)^T\\
-      &=(\dot R_ZR_XR_Y + R_Z\dot R_X R_Y + R_ZR_X\dot R_Y)R_Y^TR_X^TR_Z^T\\
-      &=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T
-  \end{aligned}
-$$</div>
-                  </li>
-                </ul>
-              </li>
-              <li>无人机角速度推导
-                <ul>
-                  <li><a href="https://zinghd.gitee.io/kinematics-euler-angle-model/">参考文章 - zinghd.gitee.io</a></li>
-                  <li><a href="https://blog.csdn.net/a735148617/article/details/116740453">欧拉角速度与角速度的关系推导——欧拉运动方程 (存在公式错误)</a></li>
-                  <li><a href="https://zhuanlan.zhihu.com/p/86468301">（番外）姿态与旋转矩阵（II） - Tam Alex的文章 - 知乎</a>
-                    <ul>
-                      <li><strong>使用上述文章的推导</strong>(与文章推导结果不一致，需要取逆或转置)
-                        <ul>
-                          <li>
-                            <div class="kdmath">$$
-\begin{aligned}
-      \begin{bmatrix}
-          p\\
-          q\\
-          r
-      \end{bmatrix}
-      &=
-      (R_XR_Y)^T
-      \begin{bmatrix}
-          0\\0\\\dot \psi
-      \end{bmatrix}
-      +
-      R_Y^T
-      \begin{bmatrix}
-          \dot\phi\\0\\0
-      \end{bmatrix}
-      +
-      \begin{bmatrix}
-          0\\\dot \theta\\0
-      \end{bmatrix}\\
-      &=\begin{bmatrix}
-          c\theta&0&-c\phi s\theta\\
-          0&1&s\phi\\
-          s\theta&0&c\phi c\theta
-      \end{bmatrix}
-      \begin{bmatrix}
-          \dot \phi\\
-          \dot \theta\\
-          \dot \psi\\
-      \end{bmatrix}
-  \end{aligned}
-$$</div>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><strong>直接使用$\hat \omega$公式</strong>
-                        <ul>
-                          <li>
-                            <div class="kdmath">$$
-\begin{aligned}
-      \hat \omega^s&=\dot R_ZR_Z^T + R_Z\dot R_XR_X^TR_Z^T+R_ZR_X\dot R_YR_Y^TR_X^TR_Z^T\\
-      &=\begin{bmatrix}
-          0 & - \dot \psi - \dot \theta s{(\phi )} & \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}\\
-          \dot \psi + \dot \theta s{(\phi )} & 0 & - \dot \phi c{(\psi )} + \dot \theta s{(\psi )} c{(\phi )}\\- \dot \phi s{(\psi )} - \dot \theta c{(\phi )} c{(\psi )} & \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )} & 0
-      \end{bmatrix}\\
-      &=\hat {
-      \begin{bmatrix}
-          \dot \phi c{(\psi )} - \dot \theta s{(\psi )} c{(\phi )}\\
-          \dot \phi s{(\psi )} + \dot \theta c{(\phi )} c{(\psi )}\\
-          \dot \psi + \dot \theta s{(\phi )}
-      \end{bmatrix}}&\text{注意符号}\\
-      &=\hat {
-          \begin{bmatrix}
-              c(\psi)&-s(\psi)c(\phi)&0\\
-              s(\psi)&c(\phi)s(\phi)&0\\
-              0&s(\phi)&1
-          \end{bmatrix}
-          \begin{bmatrix}
-              \dot \phi\\
-              \dot \theta\\
-              \dot \psi
-          \end{bmatrix}
-      }\\
-      \omega^s&=\begin{bmatrix}
-              c(\psi)&-s(\psi)c(\phi)&0\\
-              s(\psi)&c(\phi)s(\phi)&0\\
-              0&s(\phi)&1
-          \end{bmatrix}
-          \begin{bmatrix}
-              \dot \phi\\
-              \dot \theta\\
-              \dot \psi
-          \end{bmatrix}\\
-  \hat \omega^b&=R_Y^TR_X^TR_Z^T\dot R_ZR_XR_Y+R_Y^TR_X^T\dot R_XR_Y + R_Y^T\dot R_Y\\
-  &=\begin{bmatrix}
-  0 & - \dot \phi s{(\theta )} - \dot \psi c{(\phi )} c{(\theta )} & \dot \psi s{(\phi )} + \dot \theta\\
-  \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )} & 0 & - \dot \phi c{(\theta )} + \dot \psi s{(\theta )} c{(\phi )}\\  - \dot \psi s{(\phi )} - \dot \theta & \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )} & 0\end{bmatrix}\\
-  &=\hat {
-  \begin{bmatrix}
-      \dot \phi c{(\theta )} - \dot \psi s{(\theta )} c{(\phi )}\\
-      \dot \psi s{(\phi )} + \dot \theta\\
-      \dot \phi s{(\theta )} + \dot \psi c{(\phi )} c{(\theta )}
-  \end{bmatrix}}&\text{注意符号}\\
-  &=\hat {
-      \begin{bmatrix}
-          c(\theta)&0&-s(\theta)c(\phi)\\
-          0&1&s(\phi)\\
-          s(\theta)&0&c(\phi)c(\theta)
-      \end{bmatrix}
-      \begin{bmatrix}
-          \dot \phi\\
-          \dot \theta\\
-          \dot \psi
-      \end{bmatrix}
-  }\\
-  \omega^b&=\begin{bmatrix}
-          c(\theta)&0&-s(\theta)c(\phi)\\
-          0&1&s(\phi)\\
-          s(\theta)&0&c(\phi)c(\theta)
-      \end{bmatrix}
-      \begin{bmatrix}
-          \dot \phi\\
-          \dot \theta\\
-          \dot \psi
-      \end{bmatrix}
-  \end{aligned}
-$$</div>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>牛顿欧拉方程[Newton-Euler’s Equation]
-        <ul>
-          <li>牛顿方程
-<span class="kdmath">$\mathbf{r}=\begin{bmatrix}
-    x\\y\\z
-  \end{bmatrix}$</span>
-            <ul>
-              <li>
-                <div class="kdmath">$$
-\begin{aligned}
-m\mathbf{\ddot r}
-&= R\begin{bmatrix}
-    0\\0\\F_1+F_2+F_3+F_4
-\end{bmatrix}-\begin{bmatrix}0\\0\\mg\end{bmatrix}\\
-&= R\begin{bmatrix}
-    0\\0\\u_1
-\end{bmatrix}-\begin{bmatrix}0\\0\\mg\end{bmatrix}\\
+m\begin{bmatrix}
+    \ddot x\\
+    \ddot y\\
+    \ddot z
+\end{bmatrix}&=R_{ZXY}\begin{bmatrix}
+    0\\0\\f_1+f_2+f_3+f_4
+\end{bmatrix}
+-
+\begin{bmatrix}
+    0\\0\\mg
+\end{bmatrix}\\
+&=\begin{bmatrix}u_{1} (s(\phi ) s(\psi ) \cos(\theta ) + s(\theta ) \cos(\psi ))\\u_{1} (- s(\phi ) \cos(\psi ) \cos(\theta ) + s(\psi ) s(\theta ))\\u_{1} \cos(\phi ) \cos(\theta ) -mg\end{bmatrix}\\
+u_1 &= f_1+f_2+f_3+f_4
 \end{aligned}
 $$</div>
-              </li>
-            </ul>
-          </li>
-          <li>欧拉方程
-<span class="kdmath">$\begin{aligned}
-    I \begin{bmatrix}
-        \dot p\\
-        \dot q\\
-        \dot r
-    \end{bmatrix}
-    &=\begin{bmatrix}
-        L(F_2-F_4)\\
-        L(F_3-F_1)\\
-        M_1-M_2+M_3-M_4
-    \end{bmatrix}-
-    \begin{bmatrix}
-        p\\
-        q\\
-        r\\
-    \end{bmatrix}
-    \times
-    I
-    \begin{bmatrix}
-        p\\q\\r
-    \end{bmatrix}\\
-    &=\begin{bmatrix}
-        0&L&0&L\\
-        -L&0&L&0\\
-        \gamma&-\gamma&\gamma&-\gamma
-    \end{bmatrix}
-    \begin{bmatrix}
-        F_1\\F_2\\F_3\\F_4
-    \end{bmatrix}
-    -
-    \begin{bmatrix}
-        p\\
-        q\\
-        r\\
-    \end{bmatrix}
-    \times
-    I
-    \begin{bmatrix}
-        p\\q\\r
-    \end{bmatrix}&\text{$\gamma=\frac{k_M}{k_F}$, 无人机的参数，用于计算转动惯量}\\
-    \mathbf{u_2}&=\begin{bmatrix}
-        0&L&0&L\\
-        -L&0&L&0\\
-        \gamma&-\gamma&\gamma&-\gamma
-    \end{bmatrix}
-    \begin{bmatrix}
-        F_1\\F_2\\F_3\\F_4
-    \end{bmatrix}\\
-    I_{xx}\ddot \phi &= L(F_2-F_4)&\text{角加速度}
-  \end{aligned}$</span></li>
+
+<h3 id="euler-equation">Euler Equation</h3>
+
+<ul>
+  <li>旋转过程</li>
+  <li>
+    <p>上面的方程分别对$\phi \theta \psi$求导，即可得到体坐标系下的角速度方程
+<span class="kdmath">$\begin{bmatrix}
+  p\\q\\r
+\end{bmatrix}
+=
+\begin{bmatrix}
+  c(\theta)&0&-c(\phi)s(\theta)\\
+  0&1&s(\phi)\\
+  s(\theta)&0&c(\phi)c(\theta)
+\end{bmatrix}
+\begin{bmatrix}
+  \dot \phi\\
+  \dot \theta\\
+  \dot \psi
+\end{bmatrix}$</span></p>
+  </li>
+  <li>根据欧拉方程
+    <blockquote>
+      <p>后面有推导过程，暂时先直接用
+<span class="kdmath">$M=\begin{bmatrix}
+  L(F_2-F_4)\\
+  L(F_3-F_1)\\
+  M_1-M_2+M_3-M_4
+\end{bmatrix}
+-\begin{bmatrix}
+  p\\q\\r
+\end{bmatrix}
+\times
+I
+\begin{bmatrix}
+  p\\q\\r
+\end{bmatrix}$</span></p>
+    </blockquote>
+  </li>
+  <li>其中
+    <ul>
+      <li>$M$为力矩</li>
+      <li>$L$为马达到质点的距离</li>
+      <li>由于rotor1,3转向相同，和rotor2,4转向相反，根据右手定则，1,3顺时针，力矩向上，2,4逆时针，力矩向下</li>
+      <li>以$b_1$为前进方向，则$F_2,F_4$的大小差决定了无人机的翻转角，$F_1,F_3$同理</li>
+      <li>$I$为转动惯量
+        <ul>
+          <li>一般情况下，转动惯量为质量与质点的长度积分得到，因此可以认为转动惯量通常只跟形状和质量有关，可以按常量计算，对于使用电池作为动力源的无人机来说比较使用，如果存在<strong>油耗</strong>或其他<strong>质量损失</strong>的情况则需要进一步分析</li>
         </ul>
       </li>
     </ul>
   </li>
+  <li>将等号右边梳理成矩阵形式，可以写成
+<span class="kdmath">$M=I\begin{bmatrix}
+  \dot p\\\dot q\\\dot r\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  0&L&0&-L\\
+  -L&0&L&0\\
+  \gamma&-\gamma&\gamma&-\gamma
+\end{bmatrix}
+\begin{bmatrix}
+  F_1\\F_2\\F_3\\F_4
+\end{bmatrix} -
+\begin{bmatrix}
+p\\q\\r
+\end{bmatrix}
+\times
+I
+\begin{bmatrix}
+p\\q\\r
+\end{bmatrix}$</span></li>
+  <li>其中
+    <ul>
+      <li>$\times$为叉乘符号</li>
+      <li>$\gamma$为力与力矩的比例关系(这里依然用到了惯量不变假设)</li>
+      <li>这里的$p,q,r$依然是以无人机为参考系的角速度</li>
+      <li>$I$为转动惯量矩阵
+<span class="kdmath">$\begin{bmatrix}
+    I_{xx}&0&0\\
+    0&I_{yy}&0\\
+    0&0&I_{zz}\\
+\end{bmatrix}$</span></li>
+    </ul>
+  </li>
+  <li>拆成分量形式，可以得到
+<span class="kdmath">$\begin{aligned}
+  M_x&=I_{xx}\dot p&=&qr(J_{yy}-J_{zz})+L(F_2-F_4)\\
+  M_y&=I_{yy}\dot q&=&pr(J_{zz}-J_{xx})+L(F_1-F_3)\\
+  M_z&=I_{zz}\dot r&=&pq(J_{xx}-J_{yy})+L(F_1-F_2+F_3-F_4)\\
+\end{aligned}$</span></li>
+</ul>
+
+<h3 id="牛顿欧拉方程即为">牛顿欧拉方程即为</h3>
+
+<div class="kdmath">$$
+\begin{aligned}
+m\ddot x&=u_{1} (s(\phi ) s(\psi ) \cos(\theta ) + s(\theta ) \cos(\psi ))\\
+m\ddot y&=u_{1} (- s(\phi ) \cos(\psi ) \cos(\theta ) + s(\psi ) s(\theta ))\\
+m\ddot z&=u_{1} \cos(\phi ) \cos(\theta ) -mg\\
+I_{xx}\dot p&=qr(J_{yy}-J_{zz})+L(F_2-F_4)\\
+I_{yy}\dot q&=pr(J_{zz}-J_{xx})+L(F_1-F_3)\\
+I_{zz}\dot r&=pq(J_{xx}-J_{yy})+L(F_1-F_2+F_3-F_4)\\
+\end{aligned}
+$$</div>
+
+<ul>
+  <li>其中对于$p,q,r$的计算，若认为无人机角度变化微小，则可以利用$\sin(\theta)\sim\theta, \cos(\theta)\sim1$进行代换</li>
+</ul>
+
+<h3 id="欧拉方程的推导">欧拉方程的推导</h3>
+
+<ul>
+  <li>为了便于类比，放一个质点平动和刚体转动的公式对比</li>
+  <li>$\dot{}$  都表示对时间的导数</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">质点</th>
+      <th style="text-align: center">刚体</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">速度$v=\dot x$</td>
+      <td style="text-align: center">$\omega=\dot \theta$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">加速度$a=\ddot x$</td>
+      <td style="text-align: center">$\alpha=\ddot \theta$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">力$F$</td>
+      <td style="text-align: center">力矩$M$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">质量$m$</td>
+      <td style="text-align: center">转动惯量$I=\int r^2dm$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">动量$p=mv$</td>
+      <td style="text-align: center">角动量$L=I\omega$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">牛顿定律$F=\dot p$</td>
+      <td style="text-align: center">$M=\dot L$</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>推导
+<span class="kdmath">$\begin{aligned}
+  M&=\dot L\\
+  &=\dot I\omega + I\dot \omega\\
+  &=(\dot{\sum_i\sum_jI_{ij}\mathbf{e_i}\mathbf{e_j}})\omega + I\dot \omega\\
+  &=(\sum_i\sum_j(\dot I_{ij}\mathbf{e_i}\mathbf{e_j}+I_{ij}\mathbf{\dot e_i}\mathbf{e_j}+I_{ij}\mathbf{e_i}\mathbf{\dot e_j}))\omega+I\dot \omega\\
+  &=(\sum_i\sum_j(I_{ij}\mathbf{\dot e_i}\mathbf{e_j}+I_{ij}\mathbf{e_i}\mathbf{\dot e_j}))\omega+I\dot \omega&\text{认为$\dot I_{ij}=0$}\\
+  &=\sum_i\sum_j(I_{ij}(\omega\times \mathbf{e_i})\mathbf{e_j}-I_{ij}\mathbf{e_i}(\mathbf{e_j}\times\omega))\omega+I\dot \omega\\
+  &=(\omega\times I - I\times \omega)\omega+I\dot\omega\\
+  &=(\omega\times I)\omega - (I\times \omega)\omega+I\dot\omega\\
+  &=(\omega\times I)\omega+I\dot\omega&\text{$(I\times \omega)\omega=0$}\\
+\end{aligned}$</span></p>
+  </li>
+  <li>当$I_{i\neq j}=0$时，即非对角元素为0</li>
+  <li>有</li>
+</ul>
+
+<div class="kdmath">$$
+\begin{aligned}
+M_x&=I_{xx}\dot \omega_x+(I_{zz}-I_{yy})\omega_y\omega_z\\
+M_y&=I_{yy}\dot \omega_y+(I_{xx}-I_{zz})\omega_x\omega_z\\
+M_z&=I_{zz}\dot \omega_z+(I_{yy}-I_{xx})\omega_y\omega_x\\
+\end{aligned}
+$$</div>
+
+<h3 id="reference">Reference</h3>
+
+<ul>
+  <li><a href="https://www.zhihu.com/question/327324524/answer/705009156">刚体动力学中的欧拉方程是如何推导出来的？ - Ramune的回答 - 知乎</a></li>
+  <li><a href="https://zh.wikipedia.org/wiki/%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B_(%E5%88%9A%E4%BD%93%E8%BF%90%E5%8A%A8)">Wikipedia</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/47868515">[飞控]从零开始建模(一)-牛顿欧拉方程 - zinghd的文章 - 知乎</a></li>
 </ul>
 
         
@@ -782,8 +641,6 @@ $$</div>
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/coursera" class="page__taxonomy-item" rel="tag">coursera</a><span class="sep">, </span>
-    
       <a href="/categories/zhihu" class="page__taxonomy-item" rel="tag">zhihu</a>
     
     </span>
@@ -792,7 +649,7 @@ $$</div>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-26T11:02:00+08:00">July 26, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-25T14:50:47+08:00">July 25, 2021</time></p>
 
 
       </footer>
@@ -800,22 +657,22 @@ $$</div>
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Coordinate+System+in+Dynamic%20https%3A%2F%2Fucas.io%2Fzhihu%2Fcoursera%2FCoordinate-System-in-Dynamic%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Newton+Euler+Equation%20https%3A%2F%2Fucas.io%2Fzhihu%2FNewton-Euler-Equation%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fzhihu%2Fcoursera%2FCoordinate-System-in-Dynamic%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fzhihu%2FNewton-Euler-Equation%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fzhihu%2Fcoursera%2FCoordinate-System-in-Dynamic%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fzhihu%2FNewton-Euler-Equation%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/zhihu/Newton-Euler-Equation/" class="pagination--pager" title="Newton Euler Equation
+      <a href="/zhihu/E-L-Equation/" class="pagination--pager" title="E-L Equation
 ">Previous</a>
     
     
-      <a href="/coursera/3d/Robotics-Perception-week-1/" class="pagination--pager" title="Robotics Perception week 1
+      <a href="/zhihu/coursera/Coordinate-System-in-Dynamic/" class="pagination--pager" title="Coordinate System in Dynamic
 ">Next</a>
     
   </nav>

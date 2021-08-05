@@ -41,6 +41,12 @@ var store = [{
         "url": "/zhihu/E-L-Equation/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210725184457.png"
       },{
+        "title": "Newton Euler Equation",
+        "excerpt":"牛顿欧拉方程 Newton Equation 计算出4旋翼的作用力在惯性系下的分量 无人机在水平状态下，受到向上的推力$F=f_1+f_2+f_3+f_4$和重力$mg$ 无人机在旋转状态下通过旋转矩阵$R$可以计算出惯性系下3个方向的作用力分量 同时由于重力方向不变，可以之间减去，得到 $$ R_{ZXY}\\begin{bmatrix} 0\\\\0\\\\f_1+f_2+f_3+f_4 \\end{bmatrix} - \\begin{bmatrix} 0\\\\0\\\\mg \\end{bmatrix} $$ 其中$R_{ZXY}$为按照$ZXY$3个轴依次旋转得到的矩阵，如果转轴不同，则可能得到不同的表示 $$ R_{ZXY} = \\begin{bmatrix}- s(\\phi ) s(\\psi ) s(\\theta ) + c(\\psi ) c(\\theta ) & - s(\\psi ) c(\\phi ) & s(\\phi ) s(\\psi ) c(\\theta ) + s(\\theta ) c(\\psi )\\\\s(\\phi...","categories": ["zhihu"],
+        "tags": [],
+        "url": "/zhihu/Newton-Euler-Equation/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png"
+      },{
         "title": "Coordinate System in Dynamic",
         "excerpt":"准备搞明白泛函 无人机的动力学系统 动力系统 惯性系[inertial frame]$\\mathbf{A}$ 3个转轴$a_1, a_2, a_3$ 原点$O$ 随体系[body frame]或固连系[body-fixed frame]或体坐标系[body coordinate]$\\mathbf{B}$ 3个转轴$b_1, b_2, b_3$ 原点$C$ $L$为旋翼到质心的距离 这个体系描述了这样一种运动 刚体从O点移动到C点，并且进行了旋转变换，此时由于随体系与刚体保持不动，因此随体系坐标不变，而随体系相对于惯性系存在变化，因此旋转矩阵是描述刚体旋转后的惯性系坐标变换 旋转矩阵$\\mathbf{R}$[同一个点到两个坐标系的运算] 欧拉角[刚体的转动可以视为绕不同的轴，独立转动3次] 如果不考虑位移[位移可以通过向量加法单独运算]，那么刚体仅存在旋转运动 Z-X-Y顺序旋转[顺序不一定是Z-X-Y，也可能是Z-X-Z或其他，但运算矩阵要一致] 旋转矩阵$R$ $$ \\begin{aligned} R &= R_{Z(\\psi)}R_{X(\\phi)}R_{Y(\\theta)}\\\\ &=\\begin{bmatrix} \\cos{(\\psi)} & -\\sin{(\\psi)} & 0\\\\ \\sin{(\\psi)} & \\cos{(\\psi)} & 0\\\\ 0 & 0 & 1 \\end{bmatrix} \\begin{bmatrix} 1&0&0\\\\ 0&\\cos{(\\phi)}...","categories": ["zhihu","coursera"],
         "tags": [],
