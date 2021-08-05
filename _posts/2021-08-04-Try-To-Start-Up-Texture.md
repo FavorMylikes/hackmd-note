@@ -40,6 +40,64 @@ header:
 - RefineMesh 网格优化
 - TextureMesh 文理贴图
 
+## Code
+
+```bat
+::These parameters are specific to computer
+
+::Store current Directory:
+set currDir=%CD%
+
+::get folder name as variable
+SET "MYDIR=%~p0"
+set MYDIR1=%MYDIR:~0,-1%
+for %%f in (%MYDIR1%) do set myfolder=%%~nxf
+
+set root="\path\to\3DReconstruction_release"
+:: Set SFM directory
+set colDir=%root%\software\SFM
+
+:: Set MVS directory
+set oMVS=%root%\software\MVS
+
+:: Set Working Directory
+set workDir=%root%\temp-workspace\%myfolder%\
+
+:: Set System env path
+set path=%colDir%\lib\;%oMVS%;%path%
+
+mkdir %workDir% 
+copy *.jpg %workDir%\ 
+cd /d %workDir%
+
+%colDir%\bin\feature_extractor --database_path database.db --image_path .
+%colDir%\bin\exhaustive_matcher --database_path database.db
+::%colDir%\exhaustive_matcher --database_path database.db --SiftMatching.max_num_matches 10000
+mkdir sparse
+%colDir%\bin\mapper --database_path %workDir%\database.db --image_path . --export_path %workDir%\sparse
+%colDir%\bin\model_converter --input_path sparse\0 --output_path model.nvm --output_type NVM
+%oMVS%\InterfaceVisualSFM.exe model.nvm
+%oMVS%\DensifyPointCloud.exe model.mvs
+%oMVS%\ReconstructMesh.exe model_dense.mvs
+::%oMVS%\TextureMesh.exe --export-type obj -o %myfolder%.obj model_dense_mesh.mvs
+%oMVS%\RefineMesh.exe --resolution-level 1 model_dense_mesh.mvs
+::%oMVS%\RefineMesh.exe --resolution-level 3 model_dense_mesh.mvs
+%oMVS%\TextureMesh.exe --export-type obj -o %myfolder%.obj model_dense_mesh_refine.mvs
+
+mkdir %currDir%\model\
+copy *.obj %currDir%\model\
+copy *.mtl %currDir%\model\
+copy *Kd.jpg %currDir%\model\
+
+
+::cd %currDir%
+
+::If you want to automate removal of the working folder, use the following line.
+::Don't use it if you want to keep intermediate steps.
+::rmdir /S /Q %workDir%
+
+pause
+```
 ## Reference
 
 [实战 | 手把手教你跑三维重建代码！ - 计算机视觉life的文章 - 知乎](https://zhuanlan.zhihu.com/p/360412732)
