@@ -68,7 +68,3 @@ header:
 - 改变$D$的元素个数，可以更改$A$的秩
 - 使$D$取倒数，则可计算$A^{-1}=VD^{-1}U^T$
 - $D$非负
-
-## RANSAC[Random Sample Consenus]
-
-- 

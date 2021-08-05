@@ -98,6 +98,11 @@ copy *Kd.jpg %currDir%\model\
 
 pause
 ```
+
+## Maya
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805143531.png" alt="20210805143531">
+
 ## Reference
 
 [实战 | 手把手教你跑三维重建代码！ - 计算机视觉life的文章 - 知乎](https://zhuanlan.zhihu.com/p/360412732)
