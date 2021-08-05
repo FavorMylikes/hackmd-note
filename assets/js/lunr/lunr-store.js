@@ -125,9 +125,15 @@ var store = [{
         "url": "/3d/coursera/Robotics-Perception-Week3/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804142207.png"
       },{
-        "title": "Robotics-Perception-Week3",
+        "title": "Try to start up texture",
         "excerpt":"colmap/colmap feature_extractor 特征提取 matcher exhaustive_matcher 特征匹配 vocab_tree_matcher sequential_matcher spatial_matcher transitive_matcher matches_importer mapper Sparse 3D reconstruction / mapping of the dataset using SfM after performing feature extraction and matching model_converter Convert the COLMAP export format to another format, such as PLY or NVM SFM[Structure from Motion] mapillary/OpenSfM - github Open source...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Try-To-Start-Up-Texture/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804193756.png"
+      },{
+        "title": "Robotics-Perception-Week3[2]",
+        "excerpt":"RANSAC[Random Sample Consenus]         该算法其实是一种迭代选过滤outliers的思想，并不局限于对点进行拟合   通常与Linear regressor进行对比用于体现Linear regressor的不足之处   从信息提供的角度来说   Linear regressor认为每个点所在的位置都是有意义的，即便存在outlier，也不应当将其剔除，因此该算法在遇到outlier距离其他数据很远时，则会显现出倾向于outlier结果   而RANSAC则倾向于，多数点同意则完全收敛到点数最多的模型那里，但显然RANSAC在面对两组数据量差不多的模型时，无法单独做出决策，即，在两个模型中反复横跳   Code at ucas  ","categories": ["3d","coursera"],
+        "tags": [],
+        "url": "/3d/coursera/Robotics-Perception-Week3-2/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804142207.png"
       }]

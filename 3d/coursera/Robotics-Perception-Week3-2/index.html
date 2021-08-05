@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Robotics Perception week 1 / Notes B</title>
-<meta name="description" content="准备看点摄像机视觉">
+<!-- begin _includes/seo.html --><title>Robotics-Perception-Week3[2] / Notes B</title>
+<meta name="description" content="RANSAC[Random Sample Consenus]">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Robotics Perception week 1">
-<meta property="og:url" content="https://ucas.io/coursera/3d/Robotics-Perception-week-1/">
+<meta property="og:title" content="Robotics-Perception-Week3[2]">
+<meta property="og:url" content="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/">
 
 
-  <meta property="og:description" content="准备看点摄像机视觉">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727143124.png">
+  <meta property="og:description" content="RANSAC[Random Sample Consenus]">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-07-27T10:38:00+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804142207.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-04T20:13:57+08:00">
 
-<link rel="canonical" href="https://ucas.io/coursera/3d/Robotics-Perception-week-1/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/">
 
 
 
@@ -205,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/coursera" itemprop="item"><span itemprop="name">Coursera</span></a>
+          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -215,7 +215,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
+          <a href="/categories/coursera" itemprop="item"><span itemprop="name">Coursera</span></a>
           <meta itemprop="position" content="3" />
         </li>
         <span class="sep">/</span>
@@ -223,7 +223,7 @@
     
       
       
-        <li class="current">Robotics Perception week 1</li>
+        <li class="current">Robotics-Perception-Week3[2]</li>
       
     
   </ol>
@@ -342,15 +342,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Robotics Perception week 1">
-    <meta itemprop="description" content="准备看点摄像机视觉">
-    <meta itemprop="datePublished" content="2021-07-27T10:38:00+08:00">
+    <meta itemprop="headline" content="Robotics-Perception-Week3[2]">
+    <meta itemprop="description" content="RANSAC[Random Sample Consenus]">
+    <meta itemprop="datePublished" content="2021-08-04T20:13:57+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Robotics Perception week 1
+          <h1 id="page-title" class="page__title" itemprop="headline">Robotics-Perception-Week3[2]
 </h1>
           
 
@@ -360,7 +360,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-07-27T10:38:00+08:00">July 27, 2021</time>
+        <time datetime="2021-08-04T20:13:57+08:00">August 4, 2021</time>
       </span>
     
 
@@ -373,7 +373,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -388,185 +388,22 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#准备看点摄像机视觉">准备看点摄像机视觉</a><ul><li><a href="#week1">Week1</a><ul><li><a href="#camera-modeling">Camera Modeling</a></li><li><a href="#single-view-geometry">Single View Geometry</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#ransacrandom-sample-consenus">RANSAC[Random Sample Consenus]</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="准备看点摄像机视觉">准备看点摄像机视觉</h2>
+        <h2 id="ransacrandom-sample-consenus">RANSAC[Random Sample Consenus]</h2>
 
-<h3 id="week1">Week1</h3>
-
-<ul>
-  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727143124.png" width="400px" alt="20210727143124" /></li>
-</ul>
-
-<h4 id="camera-modeling">Camera Modeling</h4>
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805200032.png" alt="20210805200032" /></p>
 
 <ul>
-  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727113340.png" width="400px" alt="20210727113340" /></li>
-  <li>$\frac{1}{f} = \frac{1}{a} + \frac{1}{b}$
-    <ul>
-      <li>$f$焦距， $a$, 物体到透镜的位置, $b$, 透镜到成像的位置</li>
-    </ul>
-  </li>
-  <li>$\frac{Y}{a}=\frac{y}{b}$
-    <ul>
-      <li>$Y$物体大小, $y$像的大小</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="single-view-geometry">Single View Geometry</h4>
-
-<ul>
-  <li>平面图到透视图
-    <ul>
-      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727142444.png" width="400px" alt="20210727142444" /></li>
-      <li>$o^\star$为眼睛位置</li>
-      <li>$S$为垂足</li>
-      <li>$OS=O^\star$, 因此$\angle{SOO^\star}=45\degree$</li>
-      <li>$P$为平面图上一点</li>
-      <li>连接$P-O$交图像平面$M$</li>
-      <li>连接$P-O^\star$交图像平面$P^\star$</li>
-      <li>$\triangle MLP^\star\sim\triangle OSO^\star$</li>
-      <li>$\angle LMP’$为$45\degree$</li>
-      <li>$\triangle MLP^\star=\triangle MLP’$, 即，将成像面的点$P^\star$映射到平面$P’$变为透视图</li>
-      <li>因此，$P’$是$P$关于$ML$对称的透视图</li>
-    </ul>
-  </li>
-  <li><a href="https://dd.salgoodsam.com/the-walls-bend/">多透视点画法</a><a href="http://kimjunggi.net/">Kim Jung Gi</a>
-    <ul>
-      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727155712.png" width="400px" alt="20210727155712" /></li>
-    </ul>
-  </li>
-  <li>投影面[Projective Plane]
-    <ul>
-      <li>投影面上的点$(x,y)$可以视为，视点向外发出的射线$(s_x, s_y, s)$</li>
-      <li>homogeneous coordinates[齐次坐标]
-        <ul>
-          <li>引入新的维度，表示无限远处的坐标</li>
-          <li>$(x,y)\rightarrow(x,y,1)$, $1$表示投影面距离</li>
-          <li>$(x,y,0)$表示无限远处的点</li>
-          <li>$(0,0,1)$表示无限远处的线</li>
-        </ul>
-      </li>
-      <li>投影面上的直线
-        <ul>
-          <li>$ax+by+c=0$</li>
-          <li>vector notation
-<span class="kdmath">$0=\begin{bmatrix}
-    a&b&c
-\end{bmatrix}\begin{bmatrix}
-    x\\y\\1
-\end{bmatrix}$</span></li>
-          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727205253.png" width="400px" alt="20210727205253" /></li>
-          <li>极坐标$\rho = x\cos\theta + y\sin\theta$
-            <ul>
-              <li>$\rho$原点到直线的距离</li>
-              <li>$\theta$线与x夹角</li>
-              <li>$\cos\theta = \frac{a}{\sqrt{a^2+b^2}}$</li>
-              <li>$\sin\theta = \frac{b}{\sqrt{a^2+b^2}}$</li>
-              <li>$\rho = -\frac{c}{\sqrt{a^2+b^2}}$</li>
-            </ul>
-          </li>
-          <li>叉乘法
-            <ul>
-              <li>点$A=(x_1, y_1, 1)$, 点$B=(x_2, y_2, 1)$</li>
-              <li>想象AB分别为视点发出的两个射线与投影面相交，则$A\times B$为一平面的法向量，法向量与投影面相交即为投影面直线</li>
-              <li>标准化$I=\frac{A\times B}{|A\times B|}$</li>
-              <li>其次化$I=\frac{A\times B}{[A\times B]_{[3]}}$</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>旋转和平移
-    <ul>
-      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727214303.png" width="400px" alt="20210727214303" /></li>
-      <li>$[X_w, Y_w, Z_w]$ 世界坐标系 world coordinate</li>
-      <li>$[X_c, Y_c, Z_c]$ 相机坐标系 camera coordinate</li>
-      <li>$[X_b, Y_b, Z_b]$ 机体坐标系 body coordinate</li>
-      <li>$^cP$ 相机坐标，$^wP$世界坐标</li>
-      <li>${}^cP={}^cP_w{}^wP+{}^cT_w$</li>
-    </ul>
-  </li>
-  <li>Pinhole Camera Model[小孔成像模型]
-    <ul>
-      <li>Dolly room</li>
-      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/1627438658.jpg" width="400px" alt="1627438658" /></li>
-      <li>相机从$O$点向右移动$pos$, 成像面，$h_1=h_1’$</li>
-      <li>$ref$表示移动前的数据</li>
-      <li>物体高度$H_1,H_2$</li>
-      <li>若已知$H_1, pos, d_{1,ref}$ 求 $f$
-        <ul>
-          <li>
-            <div class="kdmath">$$
-\begin{aligned}
-      \frac{h_1}{f_{ref}} = \frac{H_1}{d_{1,ref}}&, \frac{h_1'}{f} = \frac{H_1}{d_{1,ref}-pos}\\
-      \frac{f_{ref}}{d_{1,ref}}&=\frac{f}{d_{1,ref}-pos}\\
-      f &= (d_{1,ref}-pos)\frac{f_{ref}}{d_{1,ref}}
-  \end{aligned}
-$$</div>
-          </li>
-        </ul>
-      </li>
-      <li>若已知$H_1, H_2, d_{1,ref}, d_{2,ref}, r=\frac{h_1’}{h_2’}, f_{ref}$，求$f, pos$, 利用一个像的大小不变，移动相机， 根据另外一个像的比例，计算焦距和移动距离
-        <ul>
-          <li>
-            <div class="kdmath">$$
-\begin{aligned}
-      &\begin{cases}
-          \frac{H_1}{d_{1,ref}}&=\frac{h_1}{f_{ref}}&(1)\\
-          \frac{H_2}{d_{2,ref}}&=\frac{h_2}{f_{ref}}&(2)\\
-          \frac{H_1}{d_{1,ref}-pos}&=\frac{h_1'}{f}&(3)\\
-          \frac{H_2}{d_{2,ref}-pos}&=\frac{h_2'}{f}&(4)\\
-      \end{cases}\\
-      \frac{h_1}{f}&=\frac{H_1}{d_{1,ref}-pos}=r\frac{H_2}{d_{2,ref}-pos}&(3)(4)联立\\
-      pos&=\frac{rH_2d_{1,ref} - H_1d_{2,ref}}{rH_2-H_1}\\
-      h_1&=f_{ref}\frac{H_1}{d_{1,ref}}=rf\frac{H_2}{d_{2,ref} - pos}&(1)(3)联立\\
-      f &= (d_{1,ref}-pos)\frac{f_{ref}}{d_{1,ref}}
-  \end{aligned}
-$$</div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Compute intrinsics from vanishing point
-    <ul>
-      <li>image center
-        <ul>
-          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727234520.png" width="400px" alt="20210727234520" /></li>
-          <li>$A,B,C$, 灭点</li>
-          <li>$AB$, 地平线</li>
-          <li>$C$, 垂线灭点</li>
-          <li>$O$, 相机投影中心</li>
-          <li>$\angle BOC=\angle AOC=\angle AOB=90\degree$</li>
-          <li>$H$为$\triangle ABC$垂心</li>
-          <li>$OH\perp \triangle ABC$</li>
-          <li>$H$为image center</li>
-        </ul>
-      </li>
-      <li>force length
-        <ul>
-          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210728000136.png" alt="20210728000136" /></li>
-          <li>
-            <div class="kdmath">$$
-\begin{aligned}
-      &\because \triangle_{\perp}AOB, OD\perp AB\\
-      &\therefore h^2=d_1d_2\\
-      &\because \triangle_{\perp}DHO\\
-      &\therefore f^2=d_3^2+h^2\\
-      &\therefore f = \sqrt{d_3^2 + d_1d_2}
-  \end{aligned}
-$$</div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li>该算法其实是一种迭代选过滤<code class="language-plaintext highlighter-rouge">outliers</code>的思想，并不局限于对点进行拟合</li>
+  <li>通常与<code class="language-plaintext highlighter-rouge">Linear regressor</code>进行对比用于体现<code class="language-plaintext highlighter-rouge">Linear regressor</code>的不足之处</li>
+  <li>从信息提供的角度来说</li>
+  <li><code class="language-plaintext highlighter-rouge">Linear regressor</code>认为每个点所在的位置都是有意义的，即便存在<code class="language-plaintext highlighter-rouge">outlier</code>，也不应当将其剔除，因此该算法在遇到<code class="language-plaintext highlighter-rouge">outlier</code>距离其他数据很远时，则会显现出倾向于<code class="language-plaintext highlighter-rouge">outlier</code>结果</li>
+  <li>而<code class="language-plaintext highlighter-rouge">RANSAC</code>则倾向于，多数点同意则完全收敛到点数最多的模型那里，但显然<code class="language-plaintext highlighter-rouge">RANSAC</code>在面对两组数据量差不多的模型时，无法单独做出决策，即，在两个模型中反复横跳</li>
+  <li>Code at <a href="http://ucas/jupyter/lab/tree/Ransac.ipynb">ucas</a></li>
 </ul>
 
         
@@ -586,7 +423,7 @@ $$</div>
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3D</a><span class="sep">, </span>
+      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a><span class="sep">, </span>
     
       <a href="/categories/coursera" class="page__taxonomy-item" rel="tag">coursera</a>
     
@@ -596,7 +433,7 @@ $$</div>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-27T10:38:00+08:00">July 27, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-04T20:13:57+08:00">August 4, 2021</time></p>
 
 
       </footer>
@@ -604,23 +441,22 @@ $$</div>
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Robotics+Perception+week+1%20https%3A%2F%2Fucas.io%2Fcoursera%2F3d%2FRobotics-Perception-week-1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Robotics-Perception-Week3%5B2%5D%20https%3A%2F%2Fucas.io%2F3d%2Fcoursera%2FRobotics-Perception-Week3-2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fcoursera%2F3d%2FRobotics-Perception-week-1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2Fcoursera%2FRobotics-Perception-Week3-2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fcoursera%2F3d%2FRobotics-Perception-week-1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2Fcoursera%2FRobotics-Perception-Week3-2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/zhihu/coursera/Coordinate-System-in-Dynamic/" class="pagination--pager" title="Coordinate System in Dynamic
+      <a href="/3d/Try-To-Start-Up-Texture/" class="pagination--pager" title="Try to start up texture
 ">Previous</a>
     
     
-      <a href="/tutorial/Jekyll-Github-page-Gihub-Actions/" class="pagination--pager" title="Jekyll+Github page+Gihub Actions
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -634,57 +470,6 @@ $$</div>
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804142207.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/coursera/Robotics-Perception-Week3-2/" rel="permalink">Robotics-Perception-Week3[2]
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-04T20:13:57+08:00">August 4, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">RANSAC[Random Sample Consenus]
-</p>
-  </article>
-</div>
-
         
           
 
@@ -834,6 +619,57 @@ $$</div>
 
 
     <p class="archive__item-excerpt" itemprop="description">Two Method Of Perception Matrix with 4 points
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802233241.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/coursera/Robotics-Perception-week2/" rel="permalink">Robotics Perception week2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-02T18:49:17+08:00">August 2, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Homogeneous Coordinate[齐次坐标]
 </p>
   </article>
 </div>
