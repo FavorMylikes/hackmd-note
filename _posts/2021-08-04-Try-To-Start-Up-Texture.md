@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Robotics-Perception-Week3"
+title:  "Try to start up texture"
 date:   "2021-8-4 16:28:14 +0800"
 categories: 3d
 header:
