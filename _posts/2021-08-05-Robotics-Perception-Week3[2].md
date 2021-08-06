@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Robotics-Perception-Week3[2]"
-date:   "2021-8-4 20:13:57 +0800"
+date:   "2021-8-5 20:13:57 +0800"
 categories: 3d coursera
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804142207.png

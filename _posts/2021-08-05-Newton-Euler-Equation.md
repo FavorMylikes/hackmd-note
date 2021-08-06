@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Newton Euler Equation"
-date:   2021-07-25 14:50:47 +0800
+date:   2021-08-05 14:50:47 +0800
 categories: zhihu
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png
