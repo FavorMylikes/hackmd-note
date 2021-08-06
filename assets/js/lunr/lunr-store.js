@@ -138,9 +138,9 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804142207.png"
       },{
         "title": "Start up OpenSfm",
-        "excerpt":"Start service with docker mapillary/OpenSfM - github sbstnkll/opensfm -Docker hub How to use docker pull sbstnkll/opensfm:opensfm docker save -o opensfm.docker.docker sbstnkll/opensfm:opensfm docker host docker load -i opensfm.docker docker run -itd -p 8000:8000 \\ --mount type=bind,source=/path/to/OpenSfM/data,target=/source/OpenSfM/data \\ sbstnkll/opensfm:opensfm \\ bash -c 'python3 -m http.server' run compiler command need attach docker attach...","categories": ["3d"],
+        "excerpt":"Start service with docker mapillary/OpenSfM - github sbstnkll/opensfm -Docker hub How to use docker pull sbstnkll/opensfm:opensfm docker save -o opensfm.docker.docker sbstnkll/opensfm:opensfm docker host docker load -i opensfm.docker docker run -itd -p 8000:8000 \\ --mount type=bind,source=/path/to/OpenSfM/data,target=/source/OpenSfM/data \\ sbstnkll/opensfm:opensfm \\ bash -c 'python3 -m http.server' run compiler command need attach docker attach...","categories": ["3d","docker"],
         "tags": [],
-        "url": "/3d/Start-up-OpenSfM/",
+        "url": "/3d/docker/Start-up-OpenSfM/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210806134610.png"
       },{
         "title": "Robotics Perception Week 4",
