@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-05T20:20:36+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics-Perception-Week3[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/" rel="alternate" type="text/html" title="Robotics-Perception-Week3[2]" /><published>2021-08-04T20:13:57+08:00</published><updated>2021-08-04T20:13:57+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week3%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/">&lt;h2 id=&quot;ransacrandom-sample-consenus&quot;&gt;RANSAC[Random Sample Consenus]&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-06T11:22:56+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics-Perception-Week3[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/" rel="alternate" type="text/html" title="Robotics-Perception-Week3[2]" /><published>2021-08-04T20:13:57+08:00</published><updated>2021-08-04T20:13:57+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week3%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/">&lt;h2 id=&quot;ransacrandom-sample-consenus&quot;&gt;RANSAC[Random Sample Consenus]&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805200032.png&quot; alt=&quot;20210805200032&quot; /&gt;&lt;/p&gt;
 
@@ -9,7 +9,47 @@
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Linear regressor&lt;/code&gt;认为每个点所在的位置都是有意义的，即便存在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outlier&lt;/code&gt;，也不应当将其剔除，因此该算法在遇到&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outlier&lt;/code&gt;距离其他数据很远时，则会显现出倾向于&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outlier&lt;/code&gt;结果&lt;/li&gt;
   &lt;li&gt;而&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RANSAC&lt;/code&gt;则倾向于，多数点同意则完全收敛到点数最多的模型那里，但显然&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RANSAC&lt;/code&gt;在面对两组数据量差不多的模型时，无法单独做出决策，即，在两个模型中反复横跳&lt;/li&gt;
   &lt;li&gt;Code at &lt;a href=&quot;http://ucas/jupyter/lab/tree/Ransac.ipynb&quot;&gt;ucas&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">RANSAC[Random Sample Consenus]</summary></entry><entry><title type="html">Try to start up texture</title><link href="https://ucas.io/3d/Try-To-Start-Up-Texture/" rel="alternate" type="text/html" title="Try to start up texture" /><published>2021-08-04T16:28:14+08:00</published><updated>2021-08-04T16:28:14+08:00</updated><id>https://ucas.io/3d/Try-To-Start-Up-Texture</id><content type="html" xml:base="https://ucas.io/3d/Try-To-Start-Up-Texture/">&lt;h2 id=&quot;colmapcolmap&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;colmap/colmap&lt;/a&gt;&lt;/h2&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;orthogonal-procrustes-problem正交普鲁克问题-3d-3d-pose&quot;&gt;Orthogonal Procrustes Problem[正交普鲁克问题, 3D-3D pose]&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一个为了让客人和自己的床一样大小而砍断客人双脚或拉长客人的古希腊故事[普罗克汝斯特斯之床]&lt;/li&gt;
+  &lt;li&gt;给定两个矩阵$A$和$B$并要求找到一个正交矩阵$\Omega$最接近映射$A$到$B$&lt;/li&gt;
+  &lt;li&gt;$R=\underset{\Omega}{\argmin}{\Vert\Omega A-B\Vert}_F\ \ \ \text{subject to}\ \ \ \Omega^T\Omega=I$&lt;/li&gt;
+  &lt;li&gt;其中$\Vert X\Vert_F$为Frobenius 范数&lt;/li&gt;
+  &lt;li&gt;$\Vert X\Vert_F=\sqrt{trace(X^TX)}=\sqrt{\sum_{i,j}x_{ij}^2}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://wikimedia.org/api/rest_v1/media/math/render/svg/536dfe60d018a31363734d748c4a959d91f5c12b&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;当$S$为单位阵时，表达式可以最大化&lt;/li&gt;
+  &lt;li&gt;通常用来解决点云旋转的匹配最优解，(因为旋转变换都是正交阵)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;pose-from-point-correspondences-p3p&quot;&gt;Pose from Point Correspondences P3P&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;当船看到两个灯塔并测得方位角时，可以知道，船在这个圆上&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805235050.png&quot; alt=&quot;20210805235050&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在3D世界中，同样已知2点的位置，相机会被越说在一个曲面内&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805235200.png&quot; alt=&quot;20210805235200&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tienstra公式&lt;/li&gt;
+  &lt;li&gt;已知3点所对应的角度，可以确定观察者的位置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/9/9e/TiestraFormulaDiagram.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805235625.png&quot; alt=&quot;20210805235625&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">RANSAC[Random Sample Consenus]</summary></entry><entry><title type="html">Try to start up texture</title><link href="https://ucas.io/3d/Try-To-Start-Up-Texture/" rel="alternate" type="text/html" title="Try to start up texture" /><published>2021-08-04T16:28:14+08:00</published><updated>2021-08-04T16:28:14+08:00</updated><id>https://ucas.io/3d/Try-To-Start-Up-Texture</id><content type="html" xml:base="https://ucas.io/3d/Try-To-Start-Up-Texture/">&lt;h2 id=&quot;colmapcolmap&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;colmap/colmap&lt;/a&gt;&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;feature_extractor 特征提取&lt;/li&gt;
