@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Try to connect to the internet / Notes B</title>
-<meta name="description" content="尝试解决上网问题">
+<!-- begin _includes/seo.html --><title>Start up OpenSfm / Notes B</title>
+<meta name="description" content="Start service with docker">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Try to connect to the internet">
-<meta property="og:url" content="https://ucas.io/env/system/Try-to-connect-to-the-internet/">
+<meta property="og:title" content="Start up OpenSfm">
+<meta property="og:url" content="https://ucas.io/3d/Start-up-OpenSfM/">
 
 
-  <meta property="og:description" content="尝试解决上网问题">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/3edc8471faea4ec0350dd49526aac66.png">
+  <meta property="og:description" content="Start service with docker">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-07-20T10:37:00+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210806134610.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-06T13:35:30+08:00">
 
-<link rel="canonical" href="https://ucas.io/env/system/Try-to-connect-to-the-internet/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/Start-up-OpenSfM/">
 
 
 
@@ -205,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/env" itemprop="item"><span itemprop="name">Env</span></a>
+          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -213,17 +213,7 @@
     
       
       
-        
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/system" itemprop="item"><span itemprop="name">System</span></a>
-          <meta itemprop="position" content="3" />
-        </li>
-        <span class="sep">/</span>
-      
-    
-      
-      
-        <li class="current">Try to connect to the internet</li>
+        <li class="current">Start up OpenSfm</li>
       
     
   </ol>
@@ -342,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Try to connect to the internet">
-    <meta itemprop="description" content="尝试解决上网问题">
-    <meta itemprop="datePublished" content="2021-07-20T10:37:00+08:00">
+    <meta itemprop="headline" content="Start up OpenSfm">
+    <meta itemprop="description" content="Start service with docker">
+    <meta itemprop="datePublished" content="2021-08-06T13:35:30+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Try to connect to the internet
+          <h1 id="page-title" class="page__title" itemprop="headline">Start up OpenSfm
 </h1>
           
 
@@ -360,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-07-20T10:37:00+08:00">July 20, 2021</time>
+        <time datetime="2021-08-06T13:35:30+08:00">August 6, 2021</time>
       </span>
     
 
@@ -388,52 +378,70 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#尝试解决上网问题">尝试解决上网问题</a></li><li><a href="#装了哪些组件">装了哪些组件</a></li><li><a href="#阅读">阅读</a></li></ul>
+              <ul class="toc__menu"><li><a href="#start-service-with-docker">Start service with docker</a></li><li><a href="#using-opensfm">Using OpenSfm</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="尝试解决上网问题">尝试解决上网问题</h2>
+        <h2 id="start-service-with-docker">Start service with docker</h2>
 
 <ul>
-  <li>笔记本-wifi-暂时走刘浩宇师兄的账号密码</li>
-  <li>台式机还没有办法联网
-    <ul>
-      <li>利用暂时的漏洞</li>
-      <li>通过ipv6搭建ssh信道</li>
-      <li>目前的路由
-        <ul>
-          <li>台式机-&gt;seattle ipv6-&gt;阿里云-&gt;笔记本</li>
-        </ul>
-      </li>
-      <li>由于未联网状态下无法使用openvpn的1194或其他端口，暂时解决访问问题</li>
-    </ul>
-  </li>
-  <li>
-    <p>seattle 到 台式机的root登录</p>
-
-    <div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PermitRootLogin yes
-</code></pre></div>    </div>
-  </li>
-  <li>使用nginx反向代理，将台式机暴露给公网</li>
-  <li>ali-hk -ipv6-&gt; 台式机</li>
-  <li>地址 <a href="http://ucas.lifelab.space">公网地址</a></li>
-  <li><a href="http://ucas.lifelab.space/jupyter">jupyter-lab</a></li>
+  <li><a href="https://github.com/mapillary/OpenSfM/">mapillary/OpenSfM - github</a></li>
+  <li><a href="https://hub.docker.com/r/sbstnkll/opensfm">sbstnkll/opensfm -Docker hub</a></li>
+  <li><a href="https://www.opensfm.org/docs/using.html">How to use</a></li>
 </ul>
 
-<h2 id="装了哪些组件">装了哪些组件</h2>
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull sbstnkll/opensfm:opensfm
+docker save -o opensfm.docker.docker sbstnkll/opensfm:opensfm
+</code></pre></div></div>
 
 <ul>
-  <li>apt install sshpass</li>
-  <li>apt install openvpn</li>
-  <li>apt install unzip</li>
+  <li>docker host</li>
 </ul>
 
-<h2 id="阅读">阅读</h2>
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker load -i opensfm.docker
+docker run -itd -p 8000:8000 \
+--mount type=bind,source=/path/to/OpenSfM/data,target=/source/OpenSfM/data \
+sbstnkll/opensfm:opensfm \
+bash -c 'python3 -m http.server'
+</code></pre></div></div>
 
 <ul>
-  <li>三维重建综述</li>
-  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/3edc8471faea4ec0350dd49526aac66.png" alt="3edc8471faea4ec0350dd49526aac66" /></li>
+  <li>run compiler command need attach</li>
+</ul>
+
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker attach &lt;containerID&gt;
+</code></pre></div></div>
+
+<h2 id="using-opensfm">Using OpenSfm</h2>
+
+<ul>
+  <li>Using two docker container, one of them is the python http server, the second using for opensfm command</li>
+  <li>Building model</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/opensfm_run_all data/project/
+</code></pre></div></div>
+
+<ul>
+  <li>The Poeject Tree like</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>project/
+├── config.yaml
+└── images
+</code></pre></div></div>
+
+<ul>
+  <li>Here <code class="language-plaintext highlighter-rouge">config.yaml</code> has default config</li>
+  <li>Override it by reading this <a href="https://www.opensfm.org/docs/_modules/opensfm/config.html#default_config">doc</a></li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210806153055.png" alt="20210806153055" /></p>
+
+<ul>
+  <li>To check result</li>
+  <li><code class="language-plaintext highlighter-rouge">http://ucas/viewer/reconstruction.html#file=http://path/to/data/project/reconstruction.meshed.json</code></li>
 </ul>
 
         
@@ -453,9 +461,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/env" class="page__taxonomy-item" rel="tag">env</a><span class="sep">, </span>
-    
-      <a href="/categories/system" class="page__taxonomy-item" rel="tag">system</a>
+      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
     
     </span>
   </p>
@@ -463,7 +469,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-20T10:37:00+08:00">July 20, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-06T13:35:30+08:00">August 6, 2021</time></p>
 
 
       </footer>
@@ -471,22 +477,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Try+to+connect+to+the+internet%20https%3A%2F%2Fucas.io%2Fenv%2Fsystem%2FTry-to-connect-to-the-internet%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Start+up+OpenSfm%20https%3A%2F%2Fucas.io%2F3d%2FStart-up-OpenSfM%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fenv%2Fsystem%2FTry-to-connect-to-the-internet%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FStart-up-OpenSfM%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fenv%2Fsystem%2FTry-to-connect-to-the-internet%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FStart-up-OpenSfM%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/env/system/First-Day-install-ubuntu/" class="pagination--pager" title="First Day, install ubuntu
+      <a href="/3d/coursera/Robotics-Perception-Week3-2/" class="pagination--pager" title="Robotics-Perception-Week3[2]
 ">Previous</a>
     
     
-      <a href="/coursera/system/env/Robotics-Flight-week-1-and-2/" class="pagination--pager" title="Robotics-Flight week 1 and 2
+      <a href="/3d/coursera/Robotics-Perception-Week4/" class="pagination--pager" title="Robotics Perception Week 4
 ">Next</a>
     
   </nav>
@@ -548,57 +554,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Epipolar Geometry[对极几何]
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210806134610.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/Start-up-OpenSfM/" rel="permalink">Start up OpenSfm
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-06T13:35:30+08:00">August 6, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Start service with docker
 </p>
   </article>
 </div>
@@ -693,7 +648,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          2 minute read
+          1 minute read
         
       </span>
     
@@ -701,6 +656,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804193756.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Try-To-Start-Up-Texture/" rel="permalink">Try to start up texture
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-04T16:28:14+08:00">August 4, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">colmap/colmap
 </p>
   </article>
 </div>

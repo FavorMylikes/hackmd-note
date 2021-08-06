@@ -41,12 +41,6 @@ var store = [{
         "url": "/zhihu/E-L-Equation/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210725184457.png"
       },{
-        "title": "Newton Euler Equation",
-        "excerpt":"牛顿欧拉方程 Newton Equation 计算出4旋翼的作用力在惯性系下的分量 无人机在水平状态下，受到向上的推力$F=f_1+f_2+f_3+f_4$和重力$mg$ 无人机在旋转状态下通过旋转矩阵$R$可以计算出惯性系下3个方向的作用力分量 同时由于重力方向不变，可以之间减去，得到 $$ R_{ZXY}\\begin{bmatrix} 0\\\\0\\\\f_1+f_2+f_3+f_4 \\end{bmatrix} - \\begin{bmatrix} 0\\\\0\\\\mg \\end{bmatrix} $$ 其中$R_{ZXY}$为按照$ZXY$3个轴依次旋转得到的矩阵，如果转轴不同，则可能得到不同的表示 $$ R_{ZXY} = \\begin{bmatrix}- s(\\phi ) s(\\psi ) s(\\theta ) + c(\\psi ) c(\\theta ) & - s(\\psi ) c(\\phi ) & s(\\phi ) s(\\psi ) c(\\theta ) + s(\\theta ) c(\\psi )\\\\s(\\phi...","categories": ["zhihu"],
-        "tags": [],
-        "url": "/zhihu/Newton-Euler-Equation/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png"
-      },{
         "title": "Coordinate System in Dynamic",
         "excerpt":"准备搞明白泛函 无人机的动力学系统 动力系统 惯性系[inertial frame]$\\mathbf{A}$ 3个转轴$a_1, a_2, a_3$ 原点$O$ 随体系[body frame]或固连系[body-fixed frame]或体坐标系[body coordinate]$\\mathbf{B}$ 3个转轴$b_1, b_2, b_3$ 原点$C$ $L$为旋翼到质心的距离 这个体系描述了这样一种运动 刚体从O点移动到C点，并且进行了旋转变换，此时由于随体系与刚体保持不动，因此随体系坐标不变，而随体系相对于惯性系存在变化，因此旋转矩阵是描述刚体旋转后的惯性系坐标变换 旋转矩阵$\\mathbf{R}$[同一个点到两个坐标系的运算] 欧拉角[刚体的转动可以视为绕不同的轴，独立转动3次] 如果不考虑位移[位移可以通过向量加法单独运算]，那么刚体仅存在旋转运动 Z-X-Y顺序旋转[顺序不一定是Z-X-Y，也可能是Z-X-Z或其他，但运算矩阵要一致] 旋转矩阵$R$ $$ \\begin{aligned} R &= R_{Z(\\psi)}R_{X(\\phi)}R_{Y(\\theta)}\\\\ &=\\begin{bmatrix} \\cos{(\\psi)} & -\\sin{(\\psi)} & 0\\\\ \\sin{(\\psi)} & \\cos{(\\psi)} & 0\\\\ 0 & 0 & 1 \\end{bmatrix} \\begin{bmatrix} 1&0&0\\\\ 0&\\cos{(\\phi)}...","categories": ["zhihu","coursera"],
         "tags": [],
@@ -131,9 +125,27 @@ var store = [{
         "url": "/3d/Try-To-Start-Up-Texture/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804193756.png"
       },{
+        "title": "Newton Euler Equation",
+        "excerpt":"牛顿欧拉方程 Newton Equation 计算出4旋翼的作用力在惯性系下的分量 无人机在水平状态下，受到向上的推力$F=f_1+f_2+f_3+f_4$和重力$mg$ 无人机在旋转状态下通过旋转矩阵$R$可以计算出惯性系下3个方向的作用力分量 同时由于重力方向不变，可以之间减去，得到 $$ R_{ZXY}\\begin{bmatrix} 0\\\\0\\\\f_1+f_2+f_3+f_4 \\end{bmatrix} - \\begin{bmatrix} 0\\\\0\\\\mg \\end{bmatrix} $$ 其中$R_{ZXY}$为按照$ZXY$3个轴依次旋转得到的矩阵，如果转轴不同，则可能得到不同的表示 $$ R_{ZXY} = \\begin{bmatrix}- s(\\phi ) s(\\psi ) s(\\theta ) + c(\\psi ) c(\\theta ) & - s(\\psi ) c(\\phi ) & s(\\phi ) s(\\psi ) c(\\theta ) + s(\\theta ) c(\\psi )\\\\s(\\phi...","categories": ["zhihu"],
+        "tags": [],
+        "url": "/zhihu/Newton-Euler-Equation/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png"
+      },{
         "title": "Robotics-Perception-Week3[2]",
         "excerpt":"RANSAC[Random Sample Consenus]         该算法其实是一种迭代选过滤outliers的思想，并不局限于对点进行拟合   通常与Linear regressor进行对比用于体现Linear regressor的不足之处   从信息提供的角度来说   Linear regressor认为每个点所在的位置都是有意义的，即便存在outlier，也不应当将其剔除，因此该算法在遇到outlier距离其他数据很远时，则会显现出倾向于outlier结果   而RANSAC则倾向于，多数点同意则完全收敛到点数最多的模型那里，但显然RANSAC在面对两组数据量差不多的模型时，无法单独做出决策，即，在两个模型中反复横跳   Code at ucas   Orthogonal Procrustes Problem[正交普鲁克问题, 3D-3D pose]      一个为了让客人和自己的床一样大小而砍断客人双脚或拉长客人的古希腊故事[普罗克汝斯特斯之床]   给定两个矩阵$A$和$B$并要求找到一个正交矩阵$\\Omega$最接近映射$A$到$B$   $R=\\underset{\\Omega}{\\argmin}{\\Vert\\Omega A-B\\Vert}_F\\ \\ \\ \\text{subject to}\\ \\ \\ \\Omega^T\\Omega=I$   其中$\\Vert X\\Vert_F$为Frobenius 范数   $\\Vert X\\Vert_F=\\sqrt{trace(X^TX)}=\\sqrt{\\sum_{i,j}x_{ij}^2}$         当$S$为单位阵时，表达式可以最大化   通常用来解决点云旋转的匹配最优解，(因为旋转变换都是正交阵)   Pose from Point Correspondences P3P      当船看到两个灯塔并测得方位角时，可以知道，船在这个圆上         在3D世界中，同样已知2点的位置，相机会被越说在一个曲面内         Tienstra公式   已知3点所对应的角度，可以确定观察者的位置        ","categories": ["3d","coursera"],
         "tags": [],
         "url": "/3d/coursera/Robotics-Perception-Week3-2/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804142207.png"
+      },{
+        "title": "Start up OpenSfm",
+        "excerpt":"Start service with docker mapillary/OpenSfM - github sbstnkll/opensfm -Docker hub How to use docker pull sbstnkll/opensfm:opensfm docker save -o opensfm.docker.docker sbstnkll/opensfm:opensfm docker host docker load -i opensfm.docker docker run -itd -p 8000:8000 \\ --mount type=bind,source=/path/to/OpenSfM/data,target=/source/OpenSfM/data \\ sbstnkll/opensfm:opensfm \\ bash -c 'python3 -m http.server' run compiler command need attach docker attach...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Start-up-OpenSfM/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210806134610.png"
+      },{
+        "title": "Robotics Perception Week 4",
+        "excerpt":"Epipolar Geometry[对极几何] $O_L$经过旋转和移动之后来到了$O_R$ 其中$X_L,X_R$为$X$在两个相机上的像点 红线为对极线 绿色的面为对极平面 $e_L, e_R$分别为对极点, 即另外一个相机的像点 两个相机的连线$O_LO_R$为基线，当X点移动时，对极平面绕基线旋转 这种几何体系描述了一种相机位置变更后，像点的变化 Essential Matrix[本质矩阵] 本质矩阵的定义 $$ \\begin{aligned} \\mathbf{x}_R&=R\\mathbf{x}_L+\\mathbf{t}\\\\ \\mathbf{t}\\times \\mathbf{x}_R&=\\mathbf{t}\\times R\\mathbf{x}_L + \\mathbf{t}\\times \\mathbf{t}&(1)\\\\ \\mathbf{t}\\times \\mathbf{x}_R&=\\mathbf{t}\\times R\\mathbf{x}_L&(2)\\\\ \\mathbf{x}_R\\cdot (\\mathbf{t}\\times \\mathbf{x}_R)&=\\mathbf{x}_R\\cdot (\\mathbf{t}\\times R\\mathbf{x}_L)\\\\ 0&=\\mathbf{x}_R\\cdot (\\mathbf{t}\\times R\\mathbf{x}_L)&(3)\\\\ \\mathbf{x}_R^T\\mathbf{\\hat t} R\\mathbf{x}_L&=0&(4)\\\\ \\mathbf{x}_R^TE\\mathbf{x}_L&=0\\\\ \\end{aligned} $$ 其中 $E$即为本质矩阵 $R$为旋转矩阵 $\\mathbf{t}$从$O_L$到$O_R$的平移向量 $(1)$表示对极平面的法向量, 这里将$\\mathbf{x}_R$视为$O_R$的一条射线 $(2)$是因为，$t\\times t=0$ $(3)$是因为$\\mathbf{x}_R$与法向量垂直 $(4)$将内积换成矩阵形式...","categories": ["3d","coursera"],
+        "tags": [],
+        "url": "/3d/coursera/Robotics-Perception-Week4/",
+        "teaser": "https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg"
       }]

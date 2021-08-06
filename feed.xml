@@ -1,4 +1,157 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-06T11:22:56+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics-Perception-Week3[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/" rel="alternate" type="text/html" title="Robotics-Perception-Week3[2]" /><published>2021-08-04T20:13:57+08:00</published><updated>2021-08-04T20:13:57+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week3%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/">&lt;h2 id=&quot;ransacrandom-sample-consenus&quot;&gt;RANSAC[Random Sample Consenus]&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-06T22:28:26+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics Perception Week 4</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4/" rel="alternate" type="text/html" title="Robotics Perception Week 4" /><published>2021-08-06T16:06:37+08:00</published><updated>2021-08-06T16:06:37+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4/">&lt;h2 id=&quot;epipolar-geometry对极几何&quot;&gt;Epipolar Geometry[对极几何]&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg&quot; alt=&quot;1628252493(1)&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$O_L$经过旋转和移动之后来到了$O_R$&lt;/li&gt;
+  &lt;li&gt;其中$X_L,X_R$为$X$在两个相机上的像点&lt;/li&gt;
+  &lt;li&gt;红线为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;对极线&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;绿色的面为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;对极平面&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;$e_L, e_R$分别为对极点, 即另外一个相机的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;像点&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;两个相机的连线$O_LO_R$为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;基线&lt;/code&gt;，当X点移动时，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;对极平面&lt;/code&gt;绕&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;基线&lt;/code&gt;旋转&lt;/li&gt;
+  &lt;li&gt;这种几何体系描述了一种相机位置变更后，像点的变化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;essential-matrix本质矩阵&quot;&gt;Essential Matrix[本质矩阵]&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;本质矩阵的定义&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+    \mathbf{x}_R&amp;=R\mathbf{x}_L+\mathbf{t}\\
+    \mathbf{t}\times \mathbf{x}_R&amp;=\mathbf{t}\times R\mathbf{x}_L + \mathbf{t}\times \mathbf{t}&amp;(1)\\
+    \mathbf{t}\times \mathbf{x}_R&amp;=\mathbf{t}\times R\mathbf{x}_L&amp;(2)\\
+    \mathbf{x}_R\cdot (\mathbf{t}\times \mathbf{x}_R)&amp;=\mathbf{x}_R\cdot (\mathbf{t}\times R\mathbf{x}_L)\\
+    0&amp;=\mathbf{x}_R\cdot (\mathbf{t}\times R\mathbf{x}_L)&amp;(3)\\
+    \mathbf{x}_R^T\mathbf{\hat t} R\mathbf{x}_L&amp;=0&amp;(4)\\
+    \mathbf{x}_R^TE\mathbf{x}_L&amp;=0\\
+\end{aligned}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;其中
+    &lt;ul&gt;
+      &lt;li&gt;$E$即为本质矩阵&lt;/li&gt;
+      &lt;li&gt;$R$为旋转矩阵&lt;/li&gt;
+      &lt;li&gt;$\mathbf{t}$从$O_L$到$O_R$的平移向量&lt;/li&gt;
+      &lt;li&gt;$(1)$表示对极平面的法向量, 这里将$\mathbf{x}_R$视为$O_R$的一条射线&lt;/li&gt;
+      &lt;li&gt;$(2)$是因为，$t\times t=0$&lt;/li&gt;
+      &lt;li&gt;$(3)$是因为$\mathbf{x}_R$与法向量垂直&lt;/li&gt;
+      &lt;li&gt;$(4)$将内积换成矩阵形式&lt;/li&gt;
+      &lt;li&gt;$(4)$中的$\hat t$为$\hat{_}$的反对称矩阵形式，我在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Coordinate System in Dynamic&lt;/code&gt;动力学一节已经写过该形式，尽管在统计学上，它又有不同的意义，暂时为了统一，一并写成$\hat{_}$形式&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;这时我们可以用本质矩阵$E$来表示&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;像面上的点&lt;/code&gt;在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;相机移动后&lt;/code&gt;的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;新的像面上的点&lt;/code&gt;的关系了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fundamental-matrix基本矩阵&quot;&gt;Fundamental Matrix[基本矩阵]&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基本矩阵的定义&lt;/li&gt;
+  &lt;li&gt;$\mathbf{q}_i=K_i\mathbf{x}_i$&lt;/li&gt;
+  &lt;li&gt;这里的$\mathbf{q}$为相机像素的点坐标，$K_i$为内参, $\mathbf{p}$为像面坐标&lt;/li&gt;
+  &lt;li&gt;这时我们考虑2个不同相机的拍照结果，因此每个相机都有自己的内参$K_i$&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;我们希望找到一种矩阵$F$使得$\mathbf{q}_L^TF\mathbf{q}_R=0$
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
+  \mathbf{q}_L^TF\mathbf{q}_R&amp;=0\\
+  \mathbf{x}_L^TK_L^TFK_R\mathbf{x}_R&amp;=0\\
+  \mathbf{x}_L^TK_L^TFK_R\mathbf{x}_R&amp;=\mathbf{x}_L^TE\mathbf{x}_R\\
+  K_L^TFK_R&amp;=E\\
+  F&amp;=K_L^{-T}EK_R^{-1}
+\end{aligned}$&lt;/span&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;其中
+    &lt;ul&gt;
+      &lt;li&gt;利用了相机内参可逆&lt;/li&gt;
+      &lt;li&gt;利用了前面的本质矩阵$E$的特性&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-difference-between-of-those-two-matrix&quot;&gt;The Difference between of those two matrix&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;本质矩阵描述了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;两个相同的相机或两个内参一致(标定)&lt;/code&gt;的相机不同角度对一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;像点坐标&lt;/code&gt;的对应关系&lt;/li&gt;
+  &lt;li&gt;基础矩阵描述了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;两个不同的相机(已知内参)&lt;/code&gt;，用不同角度对一个像点的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;像素坐标&lt;/code&gt;的对应关系&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;attention&quot;&gt;Attention&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;由于相机的变换是有方向的， 从左到右或从右到左，因此在描述$E$和$F$时，经常带有下标$E_{LR}$, $F_{LR}$来表示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/33458436&quot;&gt;对极几何与基本矩阵 - 无迹的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/u012936940/article/details/80723609&quot;&gt;对极几何及单应矩阵 - Rap_God - CSDN&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Epipolar_geometry&quot;&gt;Epipolar geometry - Wikipedia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Essential_matrix&quot;&gt;Essential matrix - Wikipedia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/27581884/answer/466669565&quot;&gt;本质矩阵和基础矩阵的区别是什么？ - 「已注销」的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Epipolar Geometry[对极几何]</summary></entry><entry><title type="html">Start up OpenSfm</title><link href="https://ucas.io/3d/Start-up-OpenSfM/" rel="alternate" type="text/html" title="Start up OpenSfm" /><published>2021-08-06T13:35:30+08:00</published><updated>2021-08-06T13:35:30+08:00</updated><id>https://ucas.io/3d/Start-up-OpenSfM</id><content type="html" xml:base="https://ucas.io/3d/Start-up-OpenSfM/">&lt;h2 id=&quot;start-service-with-docker&quot;&gt;Start service with docker&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM/&quot;&gt;mapillary/OpenSfM - github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/sbstnkll/opensfm&quot;&gt;sbstnkll/opensfm -Docker hub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.opensfm.org/docs/using.html&quot;&gt;How to use&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull sbstnkll/opensfm:opensfm
+docker save -o opensfm.docker.docker sbstnkll/opensfm:opensfm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;docker host&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker load -i opensfm.docker
+docker run -itd -p 8000:8000 \
+--mount type=bind,source=/path/to/OpenSfM/data,target=/source/OpenSfM/data \
+sbstnkll/opensfm:opensfm \
+bash -c 'python3 -m http.server'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;run compiler command need attach&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker attach &amp;lt;containerID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;using-opensfm&quot;&gt;Using OpenSfm&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Using two docker container, one of them is the python http server, the second using for opensfm command&lt;/li&gt;
+  &lt;li&gt;Building model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bin/opensfm_run_all data/project/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The Poeject Tree like&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;project/
+├── config.yaml
+└── images
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Here &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config.yaml&lt;/code&gt; has default config&lt;/li&gt;
+  &lt;li&gt;Override it by reading this &lt;a href=&quot;https://www.opensfm.org/docs/_modules/opensfm/config.html#default_config&quot;&gt;doc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210806153055.png&quot; alt=&quot;20210806153055&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To check result&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://ucas/viewer/reconstruction.html#file=http://path/to/data/project/reconstruction.meshed.json&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Start service with docker</summary></entry><entry><title type="html">Robotics-Perception-Week3[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/" rel="alternate" type="text/html" title="Robotics-Perception-Week3[2]" /><published>2021-08-05T20:13:57+08:00</published><updated>2021-08-05T20:13:57+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week3%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/">&lt;h2 id=&quot;ransacrandom-sample-consenus&quot;&gt;RANSAC[Random Sample Consenus]&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805200032.png&quot; alt=&quot;20210805200032&quot; /&gt;&lt;/p&gt;
 
@@ -49,7 +202,246 @@
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/9/9e/TiestraFormulaDiagram.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805235625.png&quot; alt=&quot;20210805235625&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">RANSAC[Random Sample Consenus]</summary></entry><entry><title type="html">Try to start up texture</title><link href="https://ucas.io/3d/Try-To-Start-Up-Texture/" rel="alternate" type="text/html" title="Try to start up texture" /><published>2021-08-04T16:28:14+08:00</published><updated>2021-08-04T16:28:14+08:00</updated><id>https://ucas.io/3d/Try-To-Start-Up-Texture</id><content type="html" xml:base="https://ucas.io/3d/Try-To-Start-Up-Texture/">&lt;h2 id=&quot;colmapcolmap&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;colmap/colmap&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805235625.png&quot; alt=&quot;20210805235625&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">RANSAC[Random Sample Consenus]</summary></entry><entry><title type="html">Newton Euler Equation</title><link href="https://ucas.io/zhihu/Newton-Euler-Equation/" rel="alternate" type="text/html" title="Newton Euler Equation" /><published>2021-08-05T14:50:47+08:00</published><updated>2021-08-05T14:50:47+08:00</updated><id>https://ucas.io/zhihu/Newton-Euler-Equation</id><content type="html" xml:base="https://ucas.io/zhihu/Newton-Euler-Equation/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;牛顿欧拉方程&quot;&gt;牛顿欧拉方程&lt;/h2&gt;
+
+&lt;h3 id=&quot;newton-equation&quot;&gt;Newton Equation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;计算出4旋翼的作用力在惯性系下的分量&lt;/li&gt;
+  &lt;li&gt;无人机在水平状态下，受到向上的推力$F=f_1+f_2+f_3+f_4$和重力$mg$&lt;/li&gt;
+  &lt;li&gt;无人机在旋转状态下通过旋转矩阵$R$可以计算出惯性系下3个方向的作用力分量&lt;/li&gt;
+  &lt;li&gt;同时由于重力方向不变，可以之间减去，得到&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+R_{ZXY}\begin{bmatrix}
+    0\\0\\f_1+f_2+f_3+f_4
+\end{bmatrix}
+-
+\begin{bmatrix}
+    0\\0\\mg
+\end{bmatrix}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;其中$R_{ZXY}$为按照$ZXY$3个轴依次旋转得到的矩阵，如果转轴不同，则可能得到不同的表示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+R_{ZXY} = \begin{bmatrix}- s(\phi ) s(\psi ) s(\theta ) + c(\psi ) c(\theta ) &amp; - s(\psi ) c(\phi ) &amp; s(\phi ) s(\psi ) c(\theta ) + s(\theta ) c(\psi )\\s(\phi ) s(\theta ) c(\psi ) + s(\psi ) c(\theta ) &amp; c(\phi ) c(\psi ) &amp; - s(\phi ) c(\psi ) c(\theta ) + s(\psi ) s(\theta )\\- s(\theta ) c(\phi ) &amp; s(\phi ) &amp; c(\phi ) c(\theta )\end{bmatrix}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对应的3个分量为&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+m\begin{bmatrix}
+    \ddot x\\
+    \ddot y\\
+    \ddot z
+\end{bmatrix}&amp;=R_{ZXY}\begin{bmatrix}
+    0\\0\\f_1+f_2+f_3+f_4
+\end{bmatrix}
+-
+\begin{bmatrix}
+    0\\0\\mg
+\end{bmatrix}\\
+&amp;=\begin{bmatrix}u_{1} (s(\phi ) s(\psi ) \cos(\theta ) + s(\theta ) \cos(\psi ))\\u_{1} (- s(\phi ) \cos(\psi ) \cos(\theta ) + s(\psi ) s(\theta ))\\u_{1} \cos(\phi ) \cos(\theta ) -mg\end{bmatrix}\\
+u_1 &amp;= f_1+f_2+f_3+f_4
+\end{aligned}
+$$&lt;/div&gt;
+
+&lt;h3 id=&quot;euler-equation&quot;&gt;Euler Equation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;旋转过程&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;上面的方程分别对$\phi \theta \psi$求导，即可得到体坐标系下的角速度方程
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{bmatrix}
+  p\\q\\r
+\end{bmatrix}
+=
+\begin{bmatrix}
+  c(\theta)&amp;0&amp;-c(\phi)s(\theta)\\
+  0&amp;1&amp;s(\phi)\\
+  s(\theta)&amp;0&amp;c(\phi)c(\theta)
+\end{bmatrix}
+\begin{bmatrix}
+  \dot \phi\\
+  \dot \theta\\
+  \dot \psi
+\end{bmatrix}$&lt;/span&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;根据欧拉方程
+    &lt;blockquote&gt;
+      &lt;p&gt;后面有推导过程，暂时先直接用
+&lt;span class=&quot;kdmath&quot;&gt;$M=\begin{bmatrix}
+  L(F_2-F_4)\\
+  L(F_3-F_1)\\
+  M_1-M_2+M_3-M_4
+\end{bmatrix}
+-\begin{bmatrix}
+  p\\q\\r
+\end{bmatrix}
+\times
+I
+\begin{bmatrix}
+  p\\q\\r
+\end{bmatrix}$&lt;/span&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;其中
+    &lt;ul&gt;
+      &lt;li&gt;$M$为力矩&lt;/li&gt;
+      &lt;li&gt;$L$为马达到质点的距离&lt;/li&gt;
+      &lt;li&gt;由于rotor1,3转向相同，和rotor2,4转向相反，根据右手定则，1,3顺时针，力矩向上，2,4逆时针，力矩向下&lt;/li&gt;
+      &lt;li&gt;以$b_1$为前进方向，则$F_2,F_4$的大小差决定了无人机的翻转角，$F_1,F_3$同理&lt;/li&gt;
+      &lt;li&gt;$I$为转动惯量
+        &lt;ul&gt;
+          &lt;li&gt;一般情况下，转动惯量为质量与质点的长度积分得到，因此可以认为转动惯量通常只跟形状和质量有关，可以按常量计算，对于使用电池作为动力源的无人机来说比较使用，如果存在&lt;strong&gt;油耗&lt;/strong&gt;或其他&lt;strong&gt;质量损失&lt;/strong&gt;的情况则需要进一步分析&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;将等号右边梳理成矩阵形式，可以写成
+&lt;span class=&quot;kdmath&quot;&gt;$M=I\begin{bmatrix}
+  \dot p\\\dot q\\\dot r\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  0&amp;L&amp;0&amp;-L\\
+  -L&amp;0&amp;L&amp;0\\
+  \gamma&amp;-\gamma&amp;\gamma&amp;-\gamma
+\end{bmatrix}
+\begin{bmatrix}
+  F_1\\F_2\\F_3\\F_4
+\end{bmatrix} -
+\begin{bmatrix}
+p\\q\\r
+\end{bmatrix}
+\times
+I
+\begin{bmatrix}
+p\\q\\r
+\end{bmatrix}$&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;其中
+    &lt;ul&gt;
+      &lt;li&gt;$\times$为叉乘符号&lt;/li&gt;
+      &lt;li&gt;$\gamma$为力与力矩的比例关系(这里依然用到了惯量不变假设)&lt;/li&gt;
+      &lt;li&gt;这里的$p,q,r$依然是以无人机为参考系的角速度&lt;/li&gt;
+      &lt;li&gt;$I$为转动惯量矩阵
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{bmatrix}
+    I_{xx}&amp;0&amp;0\\
+    0&amp;I_{yy}&amp;0\\
+    0&amp;0&amp;I_{zz}\\
+\end{bmatrix}$&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;拆成分量形式，可以得到
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
+  M_x&amp;=I_{xx}\dot p&amp;=&amp;qr(J_{yy}-J_{zz})+L(F_2-F_4)\\
+  M_y&amp;=I_{yy}\dot q&amp;=&amp;pr(J_{zz}-J_{xx})+L(F_1-F_3)\\
+  M_z&amp;=I_{zz}\dot r&amp;=&amp;pq(J_{xx}-J_{yy})+L(F_1-F_2+F_3-F_4)\\
+\end{aligned}$&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;牛顿欧拉方程即为&quot;&gt;牛顿欧拉方程即为&lt;/h3&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+m\ddot x&amp;=u_{1} (s(\phi ) s(\psi ) \cos(\theta ) + s(\theta ) \cos(\psi ))\\
+m\ddot y&amp;=u_{1} (- s(\phi ) \cos(\psi ) \cos(\theta ) + s(\psi ) s(\theta ))\\
+m\ddot z&amp;=u_{1} \cos(\phi ) \cos(\theta ) -mg\\
+I_{xx}\dot p&amp;=qr(J_{yy}-J_{zz})+L(F_2-F_4)\\
+I_{yy}\dot q&amp;=pr(J_{zz}-J_{xx})+L(F_1-F_3)\\
+I_{zz}\dot r&amp;=pq(J_{xx}-J_{yy})+L(F_1-F_2+F_3-F_4)\\
+\end{aligned}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;其中对于$p,q,r$的计算，若认为无人机角度变化微小，则可以利用$\sin(\theta)\sim\theta, \cos(\theta)\sim1$进行代换&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;欧拉方程的推导&quot;&gt;欧拉方程的推导&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;为了便于类比，放一个质点平动和刚体转动的公式对比&lt;/li&gt;
+  &lt;li&gt;$\dot{}$  都表示对时间的导数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;质点&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;刚体&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;速度$v=\dot x$&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$\omega=\dot \theta$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;加速度$a=\ddot x$&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$\alpha=\ddot \theta$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;力$F$&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;力矩$M$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;质量$m$&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;转动惯量$I=\int r^2dm$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;动量$p=mv$&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;角动量$L=I\omega$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;牛顿定律$F=\dot p$&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$M=\dot L$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;推导
+&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
+  M&amp;=\dot L\\
+  &amp;=\dot I\omega + I\dot \omega\\
+  &amp;=(\dot{\sum_i\sum_jI_{ij}\mathbf{e_i}\mathbf{e_j}})\omega + I\dot \omega\\
+  &amp;=(\sum_i\sum_j(\dot I_{ij}\mathbf{e_i}\mathbf{e_j}+I_{ij}\mathbf{\dot e_i}\mathbf{e_j}+I_{ij}\mathbf{e_i}\mathbf{\dot e_j}))\omega+I\dot \omega\\
+  &amp;=(\sum_i\sum_j(I_{ij}\mathbf{\dot e_i}\mathbf{e_j}+I_{ij}\mathbf{e_i}\mathbf{\dot e_j}))\omega+I\dot \omega&amp;\text{认为$\dot I_{ij}=0$}\\
+  &amp;=\sum_i\sum_j(I_{ij}(\omega\times \mathbf{e_i})\mathbf{e_j}-I_{ij}\mathbf{e_i}(\mathbf{e_j}\times\omega))\omega+I\dot \omega\\
+  &amp;=(\omega\times I - I\times \omega)\omega+I\dot\omega\\
+  &amp;=(\omega\times I)\omega - (I\times \omega)\omega+I\dot\omega\\
+  &amp;=(\omega\times I)\omega+I\dot\omega&amp;\text{$(I\times \omega)\omega=0$}\\
+\end{aligned}$&lt;/span&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;当$I_{i\neq j}=0$时，即非对角元素为0&lt;/li&gt;
+  &lt;li&gt;有&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+M_x&amp;=I_{xx}\dot \omega_x+(I_{zz}-I_{yy})\omega_y\omega_z\\
+M_y&amp;=I_{yy}\dot \omega_y+(I_{xx}-I_{zz})\omega_x\omega_z\\
+M_z&amp;=I_{zz}\dot \omega_z+(I_{yy}-I_{xx})\omega_y\omega_x\\
+\end{aligned}
+$$&lt;/div&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/327324524/answer/705009156&quot;&gt;刚体动力学中的欧拉方程是如何推导出来的？ - Ramune的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B_(%E5%88%9A%E4%BD%93%E8%BF%90%E5%8A%A8)&quot;&gt;Wikipedia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/47868515&quot;&gt;[飞控]从零开始建模(一)-牛顿欧拉方程 - zinghd的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html"></summary></entry><entry><title type="html">Try to start up texture</title><link href="https://ucas.io/3d/Try-To-Start-Up-Texture/" rel="alternate" type="text/html" title="Try to start up texture" /><published>2021-08-04T16:28:14+08:00</published><updated>2021-08-04T16:28:14+08:00</updated><id>https://ucas.io/3d/Try-To-Start-Up-Texture</id><content type="html" xml:base="https://ucas.io/3d/Try-To-Start-Up-Texture/">&lt;h2 id=&quot;colmapcolmap&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;colmap/colmap&lt;/a&gt;&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;feature_extractor 特征提取&lt;/li&gt;
@@ -696,296 +1088,4 @@ glew32s&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib         # glew
   &lt;li&gt;同样在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;中实现&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;years.html&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tags.html&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;months.html&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages&lt;/code&gt;中进行相应的调用&lt;/li&gt;
   &lt;li&gt;不过为了和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-archive&lt;/code&gt;配合，将日期连接统一改成了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dates\:year\:month&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">How Jekyll Archive Work</summary></entry><entry><title type="html">Review of Robotics Perception week1</title><link href="https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1/" rel="alternate" type="text/html" title="Review of Robotics Perception week1" /><published>2021-08-01T16:53:36+08:00</published><updated>2021-08-01T16:53:36+08:00</updated><id>https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1</id><content type="html" xml:base="https://ucas.io/3d/coursera/Review-of-Robotics-Perception-week1/">&lt;h2 id=&quot;review-of-week-1&quot;&gt;Review of week 1&lt;/h2&gt;
-
-&lt;h3 id=&quot;first-person-camera-world&quot;&gt;First Person Camera World&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801194917.png&quot; alt=&quot;20210801194917&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$x’, y’$ 为投影面坐标&lt;/li&gt;
-  &lt;li&gt;$X,Y$ 为物体实际坐标&lt;/li&gt;
-  &lt;li&gt;$Z$为物体距离原点距离&lt;/li&gt;
-  &lt;li&gt;$C$为第一视角原点&lt;/li&gt;
-  &lt;li&gt;$f$为焦距&lt;/li&gt;
-  &lt;li&gt;投影面为一个虚像，真实成像是个倒像，但大小一致&lt;/li&gt;
-  &lt;li&gt;$x’=f\frac{X}{Z}, y’=f\frac{Y}{Z}$&lt;/li&gt;
-  &lt;li&gt;矩阵形式&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;kdmath&quot;&gt;$$
-Z_c
-\begin{bmatrix}
-    x'\\y'\\1
-\end{bmatrix}
-=
-\begin{bmatrix}
-    f&amp;0&amp;0&amp;0\\
-    0&amp;f&amp;0&amp;0\\
-    0&amp;0&amp;1&amp;0\\
-\end{bmatrix}
-\begin{bmatrix}
-    X_c\\Y_c\\Z_c\\1
-\end{bmatrix}
-$$&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;这里的1作为3位空间的齐次项&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;conversion-form-mm-to-pixels&quot;&gt;Conversion form mm to pixels&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801201358.png&quot; alt=&quot;20210801201358&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;光学中心$O_C,O_r$&lt;/li&gt;
-  &lt;li&gt;$x’,y’$投影面坐标(像素)&lt;/li&gt;
-  &lt;li&gt;$c,r$为实际距离&lt;/li&gt;
-  &lt;li&gt;缩放加平移之后&lt;/li&gt;
-  &lt;li&gt;$s_x, s_y$为像素宽&lt;/li&gt;
-  &lt;li&gt;$c-O_c=\frac{x’}{s_x}, r-O_r=\frac{y’}{s_y}$&lt;/li&gt;
-  &lt;li&gt;矩阵形式&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{bmatrix}
-    x\\y\\z
-\end{bmatrix}
-=\begin{bmatrix}
-    a_x&amp;s&amp;P_x\\
-    0&amp;a_y&amp;P_y\\
-    0&amp;0&amp;1\\
-\end{bmatrix}
-\begin{bmatrix}
-    x'\\y'\\z'
-\end{bmatrix}
-$$&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Here $a_x, a_y$ is two scala factor, 用于表示像素和米的倍数关系&lt;/li&gt;
-  &lt;li&gt;$P_x, p_y$ is the principle point(where optical axis hits image plane)&lt;/li&gt;
-  &lt;li&gt;$s$ is the slant factor, when the image plane is not normal to the optical axis
-    &lt;ul&gt;
-      &lt;li&gt;就是说，相机的成像面可能和透镜面不平行导致的位差，需要一个参数来纠正&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;comine-the-intrinsic-camera-parameters&quot;&gt;Comine the intrinsic camera parameters&lt;/h3&gt;
-
-&lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-    \begin{bmatrix}
-        x\\y\\z
-    \end{bmatrix}
-    &amp;=
-    \begin{bmatrix}
-        a_x&amp;s&amp;P_x\\
-        0&amp;a_y&amp;P_y\\
-        0&amp;0&amp;1
-    \end{bmatrix}
-    \begin{bmatrix}
-        f&amp;0&amp;0&amp;0\\
-        0&amp;f&amp;0&amp;0\\
-        0&amp;0&amp;1&amp;0\\
-        0&amp;0&amp;0&amp;0\\
-    \end{bmatrix}
-    \begin{bmatrix}
-        x'\\y'\\z'
-    \end{bmatrix}\\
-    &amp;=
-    \begin{bmatrix}
-        a_xf&amp;sf&amp;P_x\\
-        0&amp;a_yf&amp;P_y\\
-        0&amp;0&amp;1
-    \end{bmatrix}
-    \begin{bmatrix}
-        x'\\y'\\z'
-    \end{bmatrix}\\
-\end{aligned}
-$$&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Mark $K$ as &lt;strong&gt;Calibration matrix&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;kdmath&quot;&gt;$$
-K=\begin{bmatrix}
-        a_xf&amp;sf&amp;P_x\\
-        0&amp;a_yf&amp;P_y\\
-        0&amp;0&amp;1
-\end{bmatrix}
-$$&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;From 3D World in first person view to 2D pixel in first persion view&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;kdmath&quot;&gt;$$
-Z\begin{bmatrix}
-    u_{img}\\v_{img}\\1
-\end{bmatrix}
-=
-\begin{bmatrix}
-    f_x&amp;s&amp;p_x\\
-    &amp;f_y&amp;p_y\\
-    &amp;&amp;1
-\end{bmatrix}
-\begin{bmatrix}
-    \mathbf{I_{3*3}}&amp;\mathbf{0}
-\end{bmatrix}
-\begin{bmatrix}
-    X_{cam}\\Y_{cam}\\Z_{cam}\\1
-\end{bmatrix}
-$$&lt;/div&gt;
-
-&lt;h3 id=&quot;third-person-to-first-person-3d-mappgin&quot;&gt;Third Person to First person 3d mappgin&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;旋转加平移
-&lt;span class=&quot;kdmath&quot;&gt;$\mathbf{X_c} = \begin{bmatrix}
-  \mathbf{R_{3*3}}&amp;t_{3*1}\\
-  \mathbf{0}&amp;1
-\end{bmatrix}
-\mathbf{X}$&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;combining-internal-and-external-parameters&quot;&gt;Combining Internal and External parameters&lt;/h3&gt;
-
-&lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-    \mathbf{x} &amp;= \mathbf{K_{3*3}}[\mathbf{I};0]_{3*4}\mathbf{X_c}\\
-    &amp;=\mathbf{K}
-    \begin{bmatrix}
-        \mathbf{R}&amp;t
-    \end{bmatrix}\mathbf{X}
-\end{aligned}
-$$&lt;/div&gt;
-
-&lt;h3 id=&quot;非线性失真&quot;&gt;非线性失真&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;用于处理球面映射出现的偏差
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{bmatrix}
-  \mathbf{x}\\1
-\end{bmatrix}
-=
-L\big (\mathbf{K}\begin{bmatrix}
-  \mathbf{R}&amp;t
-\end{bmatrix} \begin{bmatrix}
-  \mathbf{X}\\1
-\end{bmatrix}\big)$&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Review of week 1</summary></entry><entry><title type="html">Jekyll Search And Logo</title><link href="https://ucas.io/tutorial/Add-Jekyll-Search-And-Logo/" rel="alternate" type="text/html" title="Jekyll Search And Logo" /><published>2021-07-31T20:41:19+08:00</published><updated>2021-07-31T20:41:19+08:00</updated><id>https://ucas.io/tutorial/Add-Jekyll-Search-And-Logo</id><content type="html" xml:base="https://ucas.io/tutorial/Add-Jekyll-Search-And-Logo/">&lt;h2 id=&quot;jekyll-algolia&quot;&gt;Jekyll-Algolia&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/configuration/#algolia&quot;&gt;Jekyll-Algolia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;A search engine to help you get a list of result.&lt;/li&gt;
-  &lt;li&gt;But have some bugs&lt;/li&gt;
-  &lt;li&gt;I have post a new issue at &lt;a href=&quot;https://github.com/algolia/jekyll-algolia/issues/180&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;jekyll-archives&quot;&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll-archives&quot;&gt;jekyll-archives&lt;/a&gt;&lt;/h2&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_pages&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;jekyll-archives&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;categories&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tags&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;layouts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;archive-taxonomy&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;archive-taxonomy&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;permalinks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/categories/:name/&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/:name/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;First, you need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_include&lt;/code&gt; make jekyll find all extension pages.&lt;/li&gt;
-  &lt;li&gt;And, create some &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;md&lt;/code&gt; file with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Front Matter&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Posts&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Tag&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tags&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Then, jekyll will create those pages like
-&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210801015732.png&quot; alt=&quot;20210801015732&quot; width=&quot;400&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;But it just create a single html page&lt;/li&gt;
-  &lt;li&gt;You can check it here &lt;a href=&quot;https://github.com/FavorMylikes/hackmd-note/tree/gh-pages/categories&quot;&gt;categories&lt;/a&gt; that make form &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages/tag-archive.md&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Jekyll-Algolia</summary></entry><entry><title type="html">Initial 3D Builder environment</title><link href="https://ucas.io/3d/Initial-3D-builder-environment/" rel="alternate" type="text/html" title="Initial 3D Builder environment" /><published>2021-07-30T20:41:19+08:00</published><updated>2021-07-30T20:41:19+08:00</updated><id>https://ucas.io/3d/Initial-3D-builder-environment</id><content type="html" xml:base="https://ucas.io/3d/Initial-3D-builder-environment/">&lt;h2 id=&quot;inistall-fltk&quot;&gt;Inistall FLTK&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;FLTK&lt;/strong&gt;(Fast Light Toolkit，读做”fulltick”)&lt;/li&gt;
-  &lt;li&gt;通过OpenGL和内建的GLUT模拟器提供3D图形支持&lt;/li&gt;
-  &lt;li&gt;Download form offical &lt;a href=&quot;https://www.fltk.org/software.php&quot;&gt;site&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/Pinoccio/library-pinoccio&quot;&gt;Pinoccio&lt;/a&gt; recommend for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.1.7&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.1.x&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Flollow This video
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6sNKtyl4hQM?start=195&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Install &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cmake gui&lt;/code&gt; from &lt;a href=&quot;https://cmake.org/download/&quot;&gt;office&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7361062.png&quot; alt=&quot;7361062&quot; width=&quot;400px&quot; /&gt;&lt;/li&gt;
-          &lt;li&gt;Remeber set the correct config, I’m using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VS2017&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x64 system&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;Configure and Generate&lt;/li&gt;
-          &lt;li&gt;Close&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sln&lt;/code&gt; file from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build&lt;/code&gt; dir&lt;/li&gt;
-      &lt;li&gt;Open it in VS20XX.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Open &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Demo.exe&lt;/code&gt; at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fltk-1.3.7\build\bin\test\Release&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7324062.png&quot; alt=&quot;7324062&quot; width=&quot;400px&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;Have fun.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;develop-fltk-project&quot;&gt;Develop FLTK project&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Config for VS2017
-    &lt;ul&gt;
-      &lt;li&gt;choose the right &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;平台&lt;/code&gt; as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x64&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;增加库目录 at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VC++目录&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\path\to\fltk-1.3.7\build\lib\Debug&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C/C++&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;附加包含目录&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\path\to\fltk-1.3.7&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;连接器[linker]&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;输入[input]&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;附加依赖项&lt;/code&gt;&lt;/p&gt;
-
-        &lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fltkd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-wsock32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-comctl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-fltk_jpegd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-fltk_imagesd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Code&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;FL/Fl.H&amp;gt;
-#include&amp;lt;FL/Fl_Box.H&amp;gt;
-#include&amp;lt;FL/Fl_Window.H&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;Fl_Window&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Window title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;Fl_Box&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7405187.png&quot; alt=&quot;7405187&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3D" /><summary type="html">Inistall FLTK</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">How Jekyll Archive Work</summary></entry></feed>
