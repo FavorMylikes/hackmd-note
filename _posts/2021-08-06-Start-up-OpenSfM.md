@@ -2,7 +2,7 @@
 layout: single
 title:  "Start up OpenSfm"
 date:   "2021-8-6 13:35:30 +0800"
-categories: 3d
+categories: 3d docker
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210806134610.png
 ---
