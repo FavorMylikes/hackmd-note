@@ -2,7 +2,7 @@
 layout: single
 title:  "Initial 3D Builder environment"
 date:   "2021-7-30 20:41:19 +0800"
-categories: 3D
+categories: 3d
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7324062.png
 ---
