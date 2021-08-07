@@ -373,7 +373,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -388,7 +388,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#start-service-with-docker">Start service with docker</a></li><li><a href="#using-opensfm">Using OpenSfm</a></li></ul>
+              <ul class="toc__menu"><li><a href="#start-service-with-docker">Start service with docker</a></li><li><a href="#using-opensfm">Using OpenSfm</a></li><li><a href="#running-report">Running Report</a></li></ul>
 
             </nav>
           </aside>
@@ -453,6 +453,160 @@ bash -c 'python3 -m http.server'
   <li>To check result</li>
   <li><code class="language-plaintext highlighter-rouge">http://ucas/viewer/reconstruction.html#file=http://path/to/data/project/reconstruction.meshed.json</code></li>
 </ul>
+
+<h2 id="running-report">Running Report</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">num</th>
+      <th style="text-align: center">extract_metadata</th>
+      <th style="text-align: center">extract_metadata</th>
+      <th style="text-align: center">detect_features</th>
+      <th style="text-align: center">match_features</th>
+      <th style="text-align: center">create_tracks</th>
+      <th style="text-align: center">reconstruct</th>
+      <th style="text-align: center">mesh</th>
+      <th style="text-align: center">undistort</th>
+      <th style="text-align: center">compute_depthmaps</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">berlin</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">0.01</td>
+      <td style="text-align: center">0.01</td>
+      <td style="text-align: center">0.34</td>
+      <td style="text-align: center">0.17</td>
+      <td style="text-align: center">0.03</td>
+      <td style="text-align: center">0.49</td>
+      <td style="text-align: center">0.11</td>
+      <td style="text-align: center">0.53</td>
+      <td>5.71</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">dinosaur</td>
+      <td style="text-align: center">33</td>
+      <td style="text-align: center">0.00</td>
+      <td style="text-align: center">0.00</td>
+      <td style="text-align: center">0.00</td>
+      <td style="text-align: center">0.16</td>
+      <td style="text-align: center">0.03</td>
+      <td style="text-align: center">8.63</td>
+      <td style="text-align: center">0.12</td>
+      <td style="text-align: center">0.19</td>
+      <td>2.60</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">dinosaur_gps</td>
+      <td style="text-align: center">33</td>
+      <td style="text-align: center">0.02</td>
+      <td style="text-align: center">0.02</td>
+      <td style="text-align: center">0.33</td>
+      <td style="text-align: center">0.48</td>
+      <td style="text-align: center">0.04</td>
+      <td style="text-align: center">8.77</td>
+      <td style="text-align: center">0.14</td>
+      <td style="text-align: center">0.19</td>
+      <td>3.64</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">lund</td>
+      <td style="text-align: center">29</td>
+      <td style="text-align: center">0.00</td>
+      <td style="text-align: center">0.00</td>
+      <td style="text-align: center">0.35</td>
+      <td style="text-align: center">0.23</td>
+      <td style="text-align: center">0.02</td>
+      <td style="text-align: center">0.17</td>
+      <td style="text-align: center">0.03</td>
+      <td style="text-align: center">0.03</td>
+      <td>3.01</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">qingdao_48</td>
+      <td style="text-align: center">48</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.68</td>
+      <td style="text-align: center">0.25</td>
+      <td style="text-align: center">0.07</td>
+      <td style="text-align: center">2.29</td>
+      <td style="text-align: center">0.27</td>
+      <td style="text-align: center">0.63</td>
+      <td>4.94</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">qingdao_96</td>
+      <td style="text-align: center">96</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.67</td>
+      <td style="text-align: center">0.25</td>
+      <td style="text-align: center">0.07</td>
+      <td style="text-align: center">2.29</td>
+      <td style="text-align: center">0.27</td>
+      <td style="text-align: center">0.64</td>
+      <td>4.95</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">qingdao_192</td>
+      <td style="text-align: center">192</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.68</td>
+      <td style="text-align: center">0.24</td>
+      <td style="text-align: center">0.07</td>
+      <td style="text-align: center">2.14</td>
+      <td style="text-align: center">0.26</td>
+      <td style="text-align: center">0.63</td>
+      <td>4.92</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">qingdao_384</td>
+      <td style="text-align: center">384</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.67</td>
+      <td style="text-align: center">0.33</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">3.34</td>
+      <td style="text-align: center">0.30</td>
+      <td style="text-align: center">0.64</td>
+      <td>5.19</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">qingdao_448</td>
+      <td style="text-align: center">445</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.67</td>
+      <td style="text-align: center">0.33</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">3.49</td>
+      <td style="text-align: center">0.29</td>
+      <td style="text-align: center">0.63</td>
+      <td>5.25</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">shenzhen_399</td>
+      <td style="text-align: center">394</td>
+      <td style="text-align: center">0.10</td>
+      <td style="text-align: center">0.10</td>
+      <td style="text-align: center">0.69</td>
+      <td style="text-align: center">0.30</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">6.23</td>
+      <td style="text-align: center">0.34</td>
+      <td style="text-align: center">0.76</td>
+      <td>5.16</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210808010053.png" alt="20210808010053" /></p>
 
         
       </section>
