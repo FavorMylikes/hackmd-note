@@ -24,7 +24,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Robotics-Flight week 3 and 4, 3D rebuilding",
-        "excerpt":"准备看点Coursera week 3 2-d-quadrotor-control state-space form[状态空间] Identify the order, n, of the system Define the states, $x=y(t), x_1 = \\dot y(t) \\dotsc$ Create the states vector, $\\mathbf{x} = [x_1, x_2, \\dotsc ]^T = [y, \\dot y, \\dotsc ]^T$ write system of first-order differencial equations as matrix. $$ \\begin{bmatrix} \\dot x_1\\\\...","categories": ["coursera","3D"],
+        "excerpt":"准备看点Coursera week 3 2-d-quadrotor-control state-space form[状态空间] Identify the order, n, of the system Define the states, $x=y(t), x_1 = \\dot y(t) \\dotsc$ Create the states vector, $\\mathbf{x} = [x_1, x_2, \\dotsc ]^T = [y, \\dot y, \\dotsc ]^T$ write system of first-order differencial equations as matrix. $$ \\begin{bmatrix} \\dot x_1\\\\...","categories": ["coursera","3d"],
         "tags": [],
         "url": "/coursera/3d/Robotics-Flight-week-3-and-4/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210723122620.png"
@@ -48,7 +48,7 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png"
       },{
         "title": "Robotics Perception week 1",
-        "excerpt":"准备看点摄像机视觉 Week1 Camera Modeling $\\frac{1}{f} = \\frac{1}{a} + \\frac{1}{b}$ $f$焦距， $a$, 物体到透镜的位置, $b$, 透镜到成像的位置 $\\frac{Y}{a}=\\frac{y}{b}$ $Y$物体大小, $y$像的大小 Single View Geometry 平面图到透视图 $o^\\star$为眼睛位置 $S$为垂足 $OS=O^\\star$, 因此$\\angle{SOO^\\star}=45\\degree$ $P$为平面图上一点 连接$P-O$交图像平面$M$ 连接$P-O^\\star$交图像平面$P^\\star$ $\\triangle MLP^\\star\\sim\\triangle OSO^\\star$ $\\angle LMP’$为$45\\degree$ $\\triangle MLP^\\star=\\triangle MLP’$, 即，将成像面的点$P^\\star$映射到平面$P’$变为透视图 因此，$P’$是$P$关于$ML$对称的透视图 多透视点画法Kim Jung Gi 投影面[Projective Plane] 投影面上的点$(x,y)$可以视为，视点向外发出的射线$(s_x, s_y, s)$ homogeneous coordinates[齐次坐标] 引入新的维度，表示无限远处的坐标 $(x,y)\\rightarrow(x,y,1)$,...","categories": ["coursera","3D"],
+        "excerpt":"准备看点摄像机视觉 Week1 Camera Modeling $\\frac{1}{f} = \\frac{1}{a} + \\frac{1}{b}$ $f$焦距， $a$, 物体到透镜的位置, $b$, 透镜到成像的位置 $\\frac{Y}{a}=\\frac{y}{b}$ $Y$物体大小, $y$像的大小 Single View Geometry 平面图到透视图 $o^\\star$为眼睛位置 $S$为垂足 $OS=O^\\star$, 因此$\\angle{SOO^\\star}=45\\degree$ $P$为平面图上一点 连接$P-O$交图像平面$M$ 连接$P-O^\\star$交图像平面$P^\\star$ $\\triangle MLP^\\star\\sim\\triangle OSO^\\star$ $\\angle LMP’$为$45\\degree$ $\\triangle MLP^\\star=\\triangle MLP’$, 即，将成像面的点$P^\\star$映射到平面$P’$变为透视图 因此，$P’$是$P$关于$ML$对称的透视图 多透视点画法Kim Jung Gi 投影面[Projective Plane] 投影面上的点$(x,y)$可以视为，视点向外发出的射线$(s_x, s_y, s)$ homogeneous coordinates[齐次坐标] 引入新的维度，表示无限远处的坐标 $(x,y)\\rightarrow(x,y,1)$,...","categories": ["coursera","3d"],
         "tags": [],
         "url": "/coursera/3d/Robotics-Perception-week-1/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210727143124.png"
@@ -72,7 +72,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Initial 3D Builder environment",
-        "excerpt":"Inistall FLTK FLTK(Fast Light Toolkit，读做”fulltick”) 通过OpenGL和内建的GLUT模拟器提供3D图形支持 Download form offical site Pinoccio recommend for 1.1.7 or 1.1.x Flollow This video Install Cmake gui from office Remeber set the correct config, I’m using VS2017 and x64 system Configure and Generate Close Select sln file from build dir Open it in VS20XX. Open...","categories": ["3D"],
+        "excerpt":"Inistall FLTK FLTK(Fast Light Toolkit，读做”fulltick”) 通过OpenGL和内建的GLUT模拟器提供3D图形支持 Download form offical site Pinoccio recommend for 1.1.7 or 1.1.x Flollow This video Install Cmake gui from office Remeber set the correct config, I’m using VS2017 and x64 system Configure and Generate Close Select sln file from build dir Open it in VS20XX. Open...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Initial-3D-builder-environment/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img7324062.png"
@@ -147,5 +147,17 @@ var store = [{
         "excerpt":"Epipolar Geometry[对极几何] $O_L$经过旋转和移动之后来到了$O_R$ 其中$X_L,X_R$为$X$在两个相机上的像点 红线为对极线 绿色的面为对极平面 $e_L, e_R$分别为对极点, 即另外一个相机的像点 两个相机的连线$O_LO_R$为基线，当X点移动时，对极平面绕基线旋转 这种几何体系描述了一种相机位置变更后，像点的变化 Essential Matrix[本质矩阵] 本质矩阵的定义 $$ \\begin{aligned} \\mathbf{x}_R&=R\\mathbf{x}_L+\\mathbf{t}\\\\ \\mathbf{t}\\times \\mathbf{x}_R&=\\mathbf{t}\\times R\\mathbf{x}_L + \\mathbf{t}\\times \\mathbf{t}&(1)\\\\ \\mathbf{t}\\times \\mathbf{x}_R&=\\mathbf{t}\\times R\\mathbf{x}_L&(2)\\\\ \\mathbf{x}_R\\cdot (\\mathbf{t}\\times \\mathbf{x}_R)&=\\mathbf{x}_R\\cdot (\\mathbf{t}\\times R\\mathbf{x}_L)\\\\ 0&=\\mathbf{x}_R\\cdot (\\mathbf{t}\\times R\\mathbf{x}_L)&(3)\\\\ \\mathbf{x}_R^T\\mathbf{\\hat t} R\\mathbf{x}_L&=0&(4)\\\\ \\mathbf{x}_R^TE\\mathbf{x}_L&=0\\\\ \\end{aligned} $$ 其中 $E$即为本质矩阵 $R$为旋转矩阵 $\\mathbf{t}$从$O_L$到$O_R$的平移向量 $(1)$表示对极平面的法向量, 这里将$\\mathbf{x}_R$视为$O_R$的一条射线 $(2)$是因为，$t\\times t=0$ $(3)$是因为$\\mathbf{x}_R$与法向量垂直 $(4)$将内积换成矩阵形式...","categories": ["3d","coursera"],
         "tags": [],
         "url": "/3d/coursera/Robotics-Perception-Week4/",
+        "teaser": "https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg"
+      },{
+        "title": "The PID Control",
+        "excerpt":"Reference      如何通俗地解释 PID 参数整定？ - 忘川孤帆的回答 - 知乎   万能算法PID的全面总结 - 「已注销」的文章 - 知乎  ","categories": ["zhihu"],
+        "tags": [],
+        "url": "/zhihu/PID-Control/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210806134610.png"
+      },{
+        "title": "Robotics Perception Week 4[2]",
+        "excerpt":"Nonlinear Least Squares [非线性最小二乘法] Method for non-linear least suqares problems - 2004 Descent method The steepest descent method[最速下降] Newton’s method[牛顿下降] Linear Search[线性搜索] Trust Region and Damped Methods Non-linear least squares problems The Gauss-Newton Method The Levenberg-Marquardt Method Powell’s Dog leg Method A Hybrid Method: L-M and Quasi-Newton A Secant Version...","categories": ["3d","coursera"],
+        "tags": [],
+        "url": "/3d/coursera/Robotics-Perception-Week4-2/",
         "teaser": "https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg"
       }]

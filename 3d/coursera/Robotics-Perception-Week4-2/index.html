@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Robotics Perception week2 / Notes B</title>
-<meta name="description" content="Homogeneous Coordinate[齐次坐标]">
+<!-- begin _includes/seo.html --><title>Robotics Perception Week 4[2] / Notes B</title>
+<meta name="description" content="Nonlinear Least Squares [非线性最小二乘法]">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Robotics Perception week2">
-<meta property="og:url" content="https://ucas.io/3d/coursera/Robotics-Perception-week2/">
+<meta property="og:title" content="Robotics Perception Week 4[2]">
+<meta property="og:url" content="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/">
 
 
-  <meta property="og:description" content="Homogeneous Coordinate[齐次坐标]">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802233241.png">
+  <meta property="og:description" content="Nonlinear Least Squares [非线性最小二乘法]">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-02T18:49:17+08:00">
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-07T19:46:45+08:00">
 
-<link rel="canonical" href="https://ucas.io/3d/coursera/Robotics-Perception-week2/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/">
 
 
 
@@ -223,7 +223,7 @@
     
       
       
-        <li class="current">Robotics Perception week2</li>
+        <li class="current">Robotics Perception Week 4[2]</li>
       
     
   </ol>
@@ -342,15 +342,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Robotics Perception week2">
-    <meta itemprop="description" content="Homogeneous Coordinate[齐次坐标]">
-    <meta itemprop="datePublished" content="2021-08-02T18:49:17+08:00">
+    <meta itemprop="headline" content="Robotics Perception Week 4[2]">
+    <meta itemprop="description" content="Nonlinear Least Squares [非线性最小二乘法]">
+    <meta itemprop="datePublished" content="2021-08-07T19:46:45+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Robotics Perception week2
+          <h1 id="page-title" class="page__title" itemprop="headline">Robotics Perception Week 4[2]
 </h1>
           
 
@@ -360,7 +360,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-02T18:49:17+08:00">August 2, 2021</time>
+        <time datetime="2021-08-07T19:46:45+08:00">August 7, 2021</time>
       </span>
     
 
@@ -388,96 +388,145 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#homogeneous-coordinate齐次坐标">Homogeneous Coordinate[齐次坐标]</a></li><li><a href="#reference参考文章">Reference[参考文章]</a></li><li><a href="#实际问题">实际问题</a></li><li><a href="#齐次坐标的好处">齐次坐标的好处</a></li><li><a href="#perception">Perception</a></li></ul>
+              <ul class="toc__menu"><li><a href="#nonlinear-least-squares-非线性最小二乘法">Nonlinear Least Squares [非线性最小二乘法]</a></li><li><a href="#optical-flow-method光流法">Optical Flow Method[光流法]</a><ul><li><a href="#光流法-不同的约束条件">光流法-不同的约束条件</a><ul><li><a href="#基于梯度的方法">基于梯度的方法</a></li><li><a href="#基于匹配的方法">基于匹配的方法</a></li><li><a href="#基于能量频率的方法">基于能量（频率）的方法</a></li><li><a href="#金字塔方法">金字塔方法</a></li><li><a href="#基于相位的方法">基于相位的方法</a></li><li><a href="#神经动力学方法">神经动力学方法</a></li><li><a href="#深度学习算法">深度学习算法</a></li></ul></li><li><a href="#基于光流法的帧间插值">基于光流法的帧间插值</a></li><li><a href="#reference">Reference</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="homogeneous-coordinate齐次坐标">Homogeneous Coordinate[齐次坐标]</h2>
+        <h2 id="nonlinear-least-squares-非线性最小二乘法">Nonlinear Least Squares [非线性最小二乘法]</h2>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Homo</code> means <a href="https://www.dictionary.com/browse/homo">dictionary.com</a></li>
-</ul>
-
-<blockquote>
-  <p>a combining form appearing in loanwords from Greek, where it meant “<strong>same</strong>” (homology); on this model, used in the formation of compound words (homomorphic).</p>
-</blockquote>
-
-<h2 id="reference参考文章">Reference[参考文章]</h2>
-
-<ul>
-  <li><a href="https://blog.csdn.net/popy007/article/details/1797121">深入探索透视投影变换 - Twinsen[CSDN]</a>
+  <li><a href="https://www.aimsciences.org/article/exportPdf?id=7e25fb2d-b50c-46dd-9be5-23deee2b4242">Method for non-linear least suqares problems - 2004</a></li>
+  <li>Descent method
     <ul>
-      <li><a href="https://www.codenong.com/cs109304516/">内容相同，这里的排版可能更舒服</a></li>
+      <li>The steepest descent method[最速下降]</li>
+      <li>Newton’s method[牛顿下降]</li>
+      <li>Linear Search[线性搜索]</li>
+      <li>Trust Region and Damped Methods</li>
     </ul>
   </li>
-  <li><a href="https://www.cnblogs.com/MorStar/p/14852275.html">齐次坐标的理解 - MorStar[cnblogs]</a>
+  <li>Non-linear least squares problems
     <ul>
-      <li><a href="http://www.songho.ca/math/homogeneous/homogeneous.html">Homogeneous Coordinates - 안성호(Song Ho Ahn) [英文原文]</a></li>
+      <li>The Gauss-Newton Method</li>
+      <li>The Levenberg-Marquardt Method</li>
+      <li>Powell’s Dog leg Method</li>
+      <li>A Hybrid Method: L-M and Quasi-Newton</li>
+      <li>A Secant Version of the L-M Method</li>
+      <li>A Secant Version of the Dog leg Method</li>
+      <li>Final Remarks</li>
     </ul>
   </li>
-  <li><a href="https://zh.wikipedia.org/wiki/%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87">齐次坐标 - Wikipedia</a></li>
-  <li>计算机视觉中的多视图几何 2.2.1</li>
-  <li><a href="https://www.tomdalling.com/blog/modern-opengl/explaining-homogenous-coordinates-and-projective-geometry/">Explaining Homogeneous Coordinates &amp; Projective Geometry</a></li>
 </ul>
 
-<h2 id="实际问题">实际问题</h2>
+<h2 id="optical-flow-method光流法">Optical Flow Method[光流法]</h2>
 
 <ul>
-  <li>对于平面上的两条平行直线
+  <li>基本假设
+    <ul>
+      <li><strong>亮度恒定不变</strong>， 由于需要对比两张连续的照片计算光流场，因此，如果亮度改变的话，图像匹配会存在误差</li>
+      <li><strong>时间连续</strong>，或运动范围比较小，时间连续是为了让图像间的点满足对应关系</li>
+    </ul>
+  </li>
+  <li>同一个点发生了位移，亮度应当是不变的</li>
+  <li>有$I(x,y,t)=I(x+dx, y=dy, t’)$</li>
+  <li>泰勒展开后得到
 <span class="kdmath">$\begin{aligned}
-  l_1 &: AX+BY+C=0\\
-  l_2 &: AX+BY+D=0\\
+I(x,y,t)&=I(x+dx, y+dy, t+dt)\\
+  &=I(x,y,t) + I_xdx+I_ydy+I_tdt + R(x,y,t)&\text{R为高阶余项，当做0处理}\\
+  0&=I_xdx+I_ydy+I_tdt
 \end{aligned}$</span></li>
-  <li>求解时，若$C\neq D$则无解, 若$C=D$, 则$l_1,l_2$重合</li>
-  <li>引入新的维度$w$, 令
-<span class="kdmath">$\begin{aligned}
-  l_1 &: AX+BY+Cw=0\\
-  l_2 &: AX+BY+Dw=0\\
-\end{aligned}$</span></li>
-  <li>此时存在解$(x,y,0)$, 作为两平行线的交点坐标</li>
-  <li>它的本质，是将分母提出来，避免分母为零误解的情况发生</li>
-  <li>对于$w$不为0时的情况</li>
-  <li>齐次坐标$(x,y,w)$等价于笛卡尔坐标$(\frac{x}{w}, \frac{y}{w})$</li>
-  <li>那么反过来，笛卡尔坐标$(x,y)$对应齐次坐标$(\lambda x,\lambda y,\lambda *1)$</li>
-  <li>我们发现新的坐标系下每个点前的系数阶都是一致的，因此我们称之为齐次坐标</li>
-  <li>更一般的，对于一个$k$次多项式$g(x,y)$,可以通过将$x\rightarrow \frac{x}{z}, y\rightarrow \frac{y}{z}$再乘$z^k$的形式变为齐次形式，即</li>
-  <li>$f(x,y,z) = z^kg(\frac{x}{z}, \frac{y}{z})$</li>
-  <li>此时，方程的每一项都已阶数$k$一致的项，这就是<code class="language-plaintext highlighter-rouge">Homo</code>的来源</li>
+  <li>其中
+    <ul>
+      <li>$I_x, I_y, I_t$分别为光强对$x,y,t$的偏导数</li>
+      <li>偏导数的计算可以通过图像数据计算</li>
+      <li>$dx, dy$为我们需要求的光流矢量，在一些教程中也会以$u,v$来表示，即$I_xu+I_yv+I_t=0$</li>
+    </ul>
+  </li>
+  <li>为了求解$dx, dy$我们至少需要2个方程，即2个点，当点的数量超过2时，我们就需要用一些约束来求解最优解</li>
 </ul>
 
-<h2 id="齐次坐标的好处">齐次坐标的好处</h2>
+<h3 id="光流法-不同的约束条件">光流法-不同的约束条件</h3>
 
-<ol>
-  <li>
-    <p>以上可以用$(x,y,0)$表示两个平行线在无穷远处的交点在射影面上的表示
- <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802222042.png" alt="20210802222042" width="400" /></p>
-  </li>
-  <li>直线的齐次表示$(a, b, c)$代表$ax+by+c=0$, 满足所有方程上的点的集合
-    <ol>
-      <li>其几何含义为，以$&lt;a,b,c&gt;$为法向量在3维空间中与投影面($z=Z$)的交线</li>
-      <li>因此，当$&lt;0,0,c&gt;$表示无法与投影面相交的无穷远处的直线</li>
-      <li>而$&lt;0,0,0&gt;$无法表示成射线形式，因此在射影空间$\mathbb{P}^2$为$\mathbb{R}^3-(0,0,0)$，即去掉原点的三维实数空间</li>
-    </ol>
-  </li>
-  <li>点的齐次表示, $\mathbf{x} = [x,y,1]^T$, $\mathbf{x}^T[a,b,c]=0$表示满足在线上的点
-    <ol>
-      <li>有，点$\mathbf{x}$在直线$I$上，当且仅当$\mathbf{x}^T\mathbf{I}=0$</li>
-      <li>直线交点，即，两个直线叉乘后的向量表示</li>
-      <li>即$\mathbf{x}$满足$\mathbf{I_1}^t\mathbf{x}=\mathbf{I_2}^t\mathbf{x}=0$</li>
-      <li>$\mathbf{x}=\mathbf{I_1}\times \mathbf{I_2}$</li>
-    </ol>
-  </li>
-  <li>过两点的直线
-    <ol>
-      <li>$\mathbf{I}=\mathbf{x_1}\times\mathbf{x_2}$</li>
-    </ol>
-  </li>
-</ol>
+<h4 id="基于梯度的方法">基于梯度的方法</h4>
 
-<h2 id="perception">Perception</h2>
+<ul>
+  <li>利用图像的灰度的微分来计算速度矢量
+    <ul>
+      <li>Horn-Schunck</li>
+      <li>Lucas-Kanade(LK)</li>
+    </ul>
+  </li>
+</ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1627922867(1).jpg" alt="1627922867(1)" /></p>
+<h4 id="基于匹配的方法">基于匹配的方法</h4>
+
+<ul>
+  <li>特征匹配
+    <ul>
+      <li>根据目标特征点进行匹配</li>
+    </ul>
+  </li>
+  <li>区域匹配
+    <ul>
+      <li>通过相似区域进行匹配</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="基于能量频率的方法">基于能量（频率）的方法</h4>
+
+<h4 id="金字塔方法">金字塔方法</h4>
+
+<ul>
+  <li>加个降采样</li>
+</ul>
+
+<h4 id="基于相位的方法">基于相位的方法</h4>
+
+<ul>
+  <li>Fleet和Jepson，把光强数据改为相位</li>
+</ul>
+
+<h4 id="神经动力学方法">神经动力学方法</h4>
+
+<ul>
+  <li>利用神经网络建立视觉运动感知模型</li>
+</ul>
+
+<h4 id="深度学习算法">深度学习算法</h4>
+
+<ul>
+  <li><a href="https://www.researchgate.net/figure/Correlated-FlowNet-Architecture-FlowNetCorr-by-10-Creating-two-parallel-processing_fig1_324744691">FlowNet/FlowNet2.0 - researchgate</a>
+    <ul>
+      <li>ICCV2015</li>
+      <li>CVPR2017 FlowNet2.0</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210807224958.png" alt="20210807224958" /></p>
+
+<h3 id="基于光流法的帧间插值">基于光流法的帧间插值</h3>
+
+<ul>
+  <li>线性插值</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgcs131_opticalflow_assignment_crossfade.gif" alt="cs131_opticalflow_assignment_crossfade" /></p>
+
+<ul>
+  <li>光流插值</li>
+</ul>
+
+<p><img src="https://xmfbit.github.io/img/cs131_opticalflow_assignment_forwardwarped.gif" alt="20210807225335" /></p>
+
+<h3 id="reference">Reference</h3>
+
+<ul>
+  <li><a href="https://blog.csdn.net/qq_41368247/article/details/82562165">🤙计算机视觉–光流法(optical flow)简介</a></li>
+  <li><a href="https://xmfbit.github.io/2017/05/03/cs131-opticalflow/">🤙CS131-光流估计 - xmfbit</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/384651830">🤙光流法（optical flow methods） - 飞狗的文章 - 知乎</a></li>
+</ul>
 
         
       </section>
@@ -506,7 +555,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-02T18:49:17+08:00">August 2, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-07T19:46:45+08:00">August 7, 2021</time></p>
 
 
       </footer>
@@ -514,23 +563,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Robotics+Perception+week2%20https%3A%2F%2Fucas.io%2F3d%2Fcoursera%2FRobotics-Perception-week2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Robotics+Perception+Week+4%5B2%5D%20https%3A%2F%2Fucas.io%2F3d%2Fcoursera%2FRobotics-Perception-Week4-2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2Fcoursera%2FRobotics-Perception-week2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2Fcoursera%2FRobotics-Perception-Week4-2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2Fcoursera%2FRobotics-Perception-week2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2Fcoursera%2FRobotics-Perception-Week4-2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/Try-to-startup-Pinocchio/" class="pagination--pager" title="Try To Start Up Pinocchio
+      <a href="/zhihu/PID-Control/" class="pagination--pager" title="The PID Control
 ">Previous</a>
     
     
-      <a href="/3d/coursera/Robotics-Perception-Week2/" class="pagination--pager" title="Robotics-Perception-week2[2]
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -544,57 +592,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/coursera/Robotics-Perception-Week4-2/" rel="permalink">Robotics Perception Week 4[2]
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-07T19:46:45+08:00">August 7, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Nonlinear Least Squares [非线性最小二乘法]
-</p>
-  </article>
-</div>
-
         
           
 
@@ -744,6 +741,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Start service with docker
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804142207.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/coursera/Robotics-Perception-Week3-2/" rel="permalink">Robotics-Perception-Week3[2]
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-05T20:13:57+08:00">August 5, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">RANSAC[Random Sample Consenus]
 </p>
   </article>
 </div>
