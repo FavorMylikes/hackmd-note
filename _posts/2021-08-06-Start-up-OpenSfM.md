@@ -58,3 +58,20 @@ project/
 
 - To check result
 - `http://ucas/viewer/reconstruction.html#file=http://path/to/data/project/reconstruction.meshed.json`
+
+## Running Report
+
+|num|extract_metadata|extract_metadata|detect_features|match_features|create_tracks|reconstruct|mesh|undistort|compute_depthmaps|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|berlin|3|0.01 |0.01 |0.34 |0.17 |0.03 |0.49 |0.11 |0.53 |5.71 |
+|dinosaur|33|0.00 |0.00 |0.00 |0.16 |0.03 |8.63 |0.12 |0.19 |2.60 |
+|dinosaur_gps|33|0.02 |0.02 |0.33 |0.48 |0.04 |8.77 |0.14 |0.19 |3.64 |
+|lund|29|0.00 |0.00 |0.35 |0.23 |0.02 |0.17 |0.03 |0.03 |3.01 |
+|qingdao_48|48|0.08 |0.08 |0.68 |0.25 |0.07 |2.29 |0.27 |0.63 |4.94 |
+|qingdao_96|96|0.08 |0.08 |0.67 |0.25 |0.07 |2.29 |0.27 |0.64 |4.95 |
+|qingdao_192|192|0.08 |0.08 |0.68 |0.24 |0.07 |2.14 |0.26 |0.63 |4.92 |
+|qingdao_384|384|0.08 |0.08 |0.67 |0.33 |0.08 |3.34 |0.30 |0.64 |5.19 |
+|qingdao_448|445|0.08 |0.08 |0.67 |0.33 |0.08 |3.49 |0.29 |0.63 |5.25 |
+|shenzhen_399|394|0.10 |0.10 |0.69 |0.30 |0.08 |6.23 |0.34 |0.76 |5.16 |
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210808010053.png" alt="20210808010053">
