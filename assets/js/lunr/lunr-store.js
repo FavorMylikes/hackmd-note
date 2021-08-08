@@ -156,7 +156,7 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210807224958.png"
       },{
         "title": "Software Report Ranking",
-        "excerpt":"SfM      |Repository|spark|star| |:-:|:-:|:-:| ||| ||| ||| ||| ||| ||| |||   MVS      |Repository|spark|star| |:-:|:-:|:-:| ||| ||| ||| ||| ||| ||| |||   Reference      simov  ","categories": ["3d"],
+        "excerpt":"SfM                     Repository       spark       star                                                                                                                                                                                                                                          MVS                     Repository       spark       star                                                                                                                                                                                                                                          Reference      simov  ","categories": ["3d"],
         "tags": [],
         "url": "/3d/Software-Report-Ranking/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg"
