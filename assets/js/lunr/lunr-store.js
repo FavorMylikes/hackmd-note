@@ -149,15 +149,9 @@ var store = [{
         "url": "/3d/coursera/Robotics-Perception-Week4/",
         "teaser": "https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg"
       },{
-        "title": "The PID Control",
-        "excerpt":"Reference      如何通俗地解释 PID 参数整定？ - 忘川孤帆的回答 - 知乎   万能算法PID的全面总结 - 「已注销」的文章 - 知乎  ","categories": ["zhihu"],
-        "tags": [],
-        "url": "/zhihu/PID-Control/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210806134610.png"
-      },{
         "title": "Robotics Perception Week 4[2]",
         "excerpt":"Nonlinear Least Squares [非线性最小二乘法] Method for non-linear least suqares problems - 2004 Descent method The steepest descent method[最速下降] Newton’s method[牛顿下降] Linear Search[线性搜索] Trust Region and Damped Methods Non-linear least squares problems The Gauss-Newton Method The Levenberg-Marquardt Method Powell’s Dog leg Method A Hybrid Method: L-M and Quasi-Newton A Secant Version...","categories": ["3d","coursera"],
         "tags": [],
         "url": "/3d/coursera/Robotics-Perception-Week4-2/",
-        "teaser": "https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210807224958.png"
       }]

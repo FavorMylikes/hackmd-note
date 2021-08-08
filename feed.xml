@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-08T01:01:46+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics Perception Week 4[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/" rel="alternate" type="text/html" title="Robotics Perception Week 4[2]" /><published>2021-08-07T19:46:45+08:00</published><updated>2021-08-07T19:46:45+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/">&lt;h2 id=&quot;nonlinear-least-squares-非线性最小二乘法&quot;&gt;Nonlinear Least Squares [非线性最小二乘法]&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-08T18:40:30+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics Perception Week 4[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/" rel="alternate" type="text/html" title="Robotics Perception Week 4[2]" /><published>2021-08-07T19:46:45+08:00</published><updated>2021-08-07T19:46:45+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/">&lt;h2 id=&quot;nonlinear-least-squares-非线性最小二乘法&quot;&gt;Nonlinear Least Squares [非线性最小二乘法]&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.aimsciences.org/article/exportPdf?id=7e25fb2d-b50c-46dd-9be5-23deee2b4242&quot;&gt;Method for non-linear least suqares problems - 2004&lt;/a&gt;&lt;/li&gt;
@@ -131,12 +131,7 @@ I(x,y,t)&amp;=I(x+dx, y+dy, t+dt)\\
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/qq_41368247/article/details/82562165&quot;&gt;🤙计算机视觉–光流法(optical flow)简介&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://xmfbit.github.io/2017/05/03/cs131-opticalflow/&quot;&gt;🤙CS131-光流估计 - xmfbit&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/384651830&quot;&gt;🤙光流法（optical flow methods） - 飞狗的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Nonlinear Least Squares [非线性最小二乘法]</summary></entry><entry><title type="html">The PID Control</title><link href="https://ucas.io/zhihu/PID-Control/" rel="alternate" type="text/html" title="The PID Control" /><published>2021-08-07T16:10:18+08:00</published><updated>2021-08-07T16:10:18+08:00</updated><id>https://ucas.io/zhihu/PID-Control</id><content type="html" xml:base="https://ucas.io/zhihu/PID-Control/">&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/23088613/answer/23942834&quot;&gt;如何通俗地解释 PID 参数整定？ - 忘川孤帆的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/162016689&quot;&gt;万能算法PID的全面总结 - 「已注销」的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">Reference</summary></entry><entry><title type="html">Robotics Perception Week 4</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4/" rel="alternate" type="text/html" title="Robotics Perception Week 4" /><published>2021-08-06T16:06:37+08:00</published><updated>2021-08-06T16:06:37+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4/">&lt;h2 id=&quot;epipolar-geometry对极几何&quot;&gt;Epipolar Geometry[对极几何]&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Nonlinear Least Squares [非线性最小二乘法]</summary></entry><entry><title type="html">Robotics Perception Week 4</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4/" rel="alternate" type="text/html" title="Robotics Perception Week 4" /><published>2021-08-06T16:06:37+08:00</published><updated>2021-08-06T16:06:37+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4/">&lt;h2 id=&quot;epipolar-geometry对极几何&quot;&gt;Epipolar Geometry[对极几何]&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg&quot; alt=&quot;1628252493(1)&quot; /&gt;&lt;/p&gt;
 
@@ -1228,4 +1223,133 @@ $$&lt;/div&gt;
 
 &lt;h2 id=&quot;perception&quot;&gt;Perception&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1627922867(1).jpg&quot; alt=&quot;1627922867(1)&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Homogeneous Coordinate[齐次坐标]</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1627922867(1).jpg&quot; alt=&quot;1627922867(1)&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Homogeneous Coordinate[齐次坐标]</summary></entry><entry><title type="html">Try To Start Up Pinocchio</title><link href="https://ucas.io/3d/Try-to-startup-Pinocchio/" rel="alternate" type="text/html" title="Try To Start Up Pinocchio" /><published>2021-08-02T10:32:48+08:00</published><updated>2021-08-02T10:32:48+08:00</updated><id>https://ucas.io/3d/Try-to-startup-Pinocchio</id><content type="html" xml:base="https://ucas.io/3d/Try-to-startup-Pinocchio/">&lt;h2 id=&quot;install-visual-studio-2019&quot;&gt;Install Visual Studio 2019&lt;/h2&gt;
+
+&lt;h3 id=&quot;cmake-generate-x64-and-x32-for-fltk&quot;&gt;Cmake generate x64 and x32 for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Fltk&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Target at&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-32&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-64&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-whole-configuration-for-pinocchio&quot;&gt;The Whole Configuration for Pinocchio&lt;/h3&gt;
+
+&lt;h4 id=&quot;参考文章&quot;&gt;参考文章&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/90857517&quot;&gt;Visual Studio 2019 配置 OpenGL - 「已注销」的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;marco宏全局定义避免hash_map警告&quot;&gt;Marco[宏]，全局定义，避免&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash_map&lt;/code&gt;警告&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AttachWeights&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoUI&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pinocchio&lt;/code&gt;,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PinocchioStatic&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;C/C++&amp;gt;Preprocessor&amp;gt;Preprocessor Definitions&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;lib库&quot;&gt;Lib[库]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;VC++ Directories&amp;gt;Library Directories&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Append
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7\build-2019-32\lib\Debug;&lt;/code&gt; Fltk lib dir&lt;/li&gt;
+      &lt;li&gt;Download at &lt;a href=&quot;https://www.fltk.org/software.php&quot;&gt;www.fltk.org&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Choose a version, For me, v1.3.7 is ok[Now is 2021/08/02]&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glfw-3.3.4.bin.WIN32\lib-vc2019;&lt;/code&gt; glfw
+        &lt;ul&gt;
+          &lt;li&gt;Download at &lt;a href=&quot;https://www.glfw.org/download.html&quot;&gt;www.glfw.org&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;Choose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;32-bit version&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glew-2.1.0.win32\lib\Release\Win32;&lt;/code&gt; glew
+        &lt;ul&gt;
+          &lt;li&gt;Download at &lt;a href=&quot;http://glew.sourceforge.net/&quot;&gt;glew.sourceforge.net&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;Choose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Windows 32-bit and 64-bit&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;include引用header文件索引&quot;&gt;Include[引用Header文件索引]&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;C/C++&amp;gt;General&amp;gt;Addtional Include Directories&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\fltk-1.3.7&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glew-2.1.0.win32\include&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Append &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Path\to\glfw-3.3.4.bin.WIN32\include&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;linker连接器引入需要的lib&quot;&gt;Linker[连接器]，引入需要的lib&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property&amp;gt;Linker&amp;gt;input&amp;gt;Addtional Dependencies&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Append&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fltkd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib           # &lt;span class=&quot;k&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; Debug， fltk&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; Release
+wsock32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+comctl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib
+fltk_zd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib         # fltk
+fltk_gld&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib        # fltk
+fltk_jpegd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib      # fltk
+fltk_imagesd&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib    # fltk
+opengl32&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib  
+glfw3&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib           # glfw
+glew32s&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;lib         # glew
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;set-all-properties-above-with-project-property-sheet&quot;&gt;Set All Properties Above with Project Property Sheet&lt;/h4&gt;
+
+&lt;p&gt;Follow this &lt;a href=&quot;https://sites.google.com/site/pinyotae/Home/visual-studio-visual-c/create-user-defined-environment-variables-macros&quot;&gt;create-user-defined-environment-variables-macros&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tool&amp;gt;Other Windows&amp;gt;Property Manager&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Select a Project&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add New Project Property Sheet&lt;/code&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Choose Project Root Path&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select other project&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add Existing Porperty Sheet&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Double click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Property Sheet&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Add all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lib&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linker.input&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preprocessor&lt;/code&gt;, above talk about&lt;/li&gt;
+  &lt;li&gt;Your project will inherit it like
+&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802174054.png&quot; alt=&quot;20210802174054&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;And make sure the check box &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Inherit from parent or project defaults&lt;/code&gt; has been choosen.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;run-pinocchio&quot;&gt;Run &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pinocchio&lt;/code&gt;&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./Debug&lt;/code&gt; you’ll see &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoUI.exe&lt;/code&gt; after &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Building&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Type run, The usage will display&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Usage:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DemoUI&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filename.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ply&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gts&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-skel&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;skelname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-rot&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;deg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-scale&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-meshonly&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-mo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-circlesonly&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-co&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-motion&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;motionname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-nofit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;But we don’t have any obj file under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; dir as the github &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;README.md&lt;/code&gt; say&lt;/li&gt;
+  &lt;li&gt;I have found another repo is &lt;a href=&quot;https://github.com/stnoh/Pinocchio&quot;&gt;stnoh/Pinocchio&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Move &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoUI\data\test.obj&lt;/code&gt; into oringinal project and run with command below&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;\DemoUI.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\DemoUI\data\test.obj&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-motion&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;\DemoUI\data\walkAndSkip.txt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Install Visual Studio 2019</summary></entry></feed>
