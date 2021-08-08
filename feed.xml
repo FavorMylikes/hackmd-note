@@ -1,4 +1,240 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-08T23:02:59+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics Perception Week 4[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/" rel="alternate" type="text/html" title="Robotics Perception Week 4[2]" /><published>2021-08-07T19:46:45+08:00</published><updated>2021-08-07T19:46:45+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/">&lt;h2 id=&quot;nonlinear-least-squares-非线性最小二乘法&quot;&gt;Nonlinear Least Squares [非线性最小二乘法]&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-09T00:40:34+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">The File Format</title><link href="https://ucas.io/3d/The-file-format/" rel="alternate" type="text/html" title="The File Format" /><published>2021-08-08T23:45:22+08:00</published><updated>2021-08-08T23:45:22+08:00</updated><id>https://ucas.io/3d/The-file-format</id><content type="html" xml:base="https://ucas.io/3d/The-file-format/">&lt;h2 id=&quot;file-format&quot;&gt;File Format&lt;/h2&gt;
+
+&lt;h3 id=&quot;obj&quot;&gt;obj&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;文本格式&lt;/li&gt;
+  &lt;li&gt;Wavefront&lt;/li&gt;
+  &lt;li&gt;基本结构
+|type|name|
+|:-:|:-:|
+||Vertex data|
+|v|vertices[顶点]|
+|vt|Texture vertices|
+|vn|Vertex normals [顶点法线]|
+|vp|Parameter space vertices [参数空格顶点]|
+||表面属性(surface attributes)|
+|deg|Degree[度]|
+|bmat|Basis matrix|
+|step|Step size|
+|cstype|Curve or surface type[曲线或表面类型]|
+||Elements|
+|p|point|
+|l|line|
+|f|face|
+|curv|Curve|
+|curv2|2D curve|
+|surf|Surface|
+||表面主体陈述(surface body statements)|
+|parm|Parameter values [ 参数值]
+|trim|Outer trimming loop[ 外部修剪循环]
+|hole|Inner trimming loop[ 内部整修循环]
+|scrv|Special curve[ 特殊曲线]
+|sp  |Special point[ 特殊的点]
+|end |End statement[ 结束陈述]
+||渲染属性(render attributes)|
+|bevel|Bevel interpolation [导角插值 ]
+|c_interp|Color interpolation [颜色插值 ]
+|d_interp|Dissolve interpolation [溶解插值 ]
+|lod|Level of detail [细节层次 ]
+|usemtl|Material name [材质名称 ]
+|&lt;strong&gt;mtllib&lt;/strong&gt;|&lt;strong&gt;Material library [材质库 ]&lt;/strong&gt;
+|shadow_obj|Shadow casting [投射阴影 ]
+|trace_obj|Ray tracing [光线跟踪 ]
+|ctech|Curve approximation technique [曲线近似技术 ]
+|stech|Surface approximation technique [表面近似技术 ]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3ds&quot;&gt;3ds&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;相对于obj 是一种二进制文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;mtl&quot;&gt;mtl&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Material Library File&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;type&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;usage&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;name&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;ka&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;Ka r g b&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;反射率&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;Kd&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;Kd r g b&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;漫反射&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;Ks&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;Ks r g b&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;镜反射&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;Tf&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;Tf r g b&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;滤光透射率&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;illum&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;illum 0~10&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;光照模型&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;Ns&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;Ns 1.000000&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;反射指数[0~1000]&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;map_Kd&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;map_Kd file.jpg&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;指定颜色纹理文件&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;mvs&quot;&gt;mvs&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;OpenMvs 用&lt;/li&gt;
+  &lt;li&gt;可以使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./Viewer file.mvs&lt;/code&gt; 打开&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;nvm&quot;&gt;nvm&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;colmap 输出类型&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ply&quot;&gt;ply&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/PLY_%28file_format%29&quot;&gt;Wikipedia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/u013467442/article/details/46792495&quot;&gt;.obj文件格式与.mtl文件格式 - jieniyimiao[CSDN]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">File Format</summary></entry><entry><title type="html">Software Report Ranking</title><link href="https://ucas.io/3d/Software-Report-Ranking/" rel="alternate" type="text/html" title="Software Report Ranking" /><published>2021-08-08T13:41:45+08:00</published><updated>2021-08-08T13:41:45+08:00</updated><id>https://ucas.io/3d/Software-Report-Ranking</id><content type="html" xml:base="https://ucas.io/3d/Software-Report-Ranking/">&lt;h2 id=&quot;sfm&quot;&gt;SfM&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/Kitware/TeleSculptor&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=Kitware&amp;amp;repo=TeleSculptor&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/Kitware/TeleSculptor&quot;&gt;&lt;img src=&quot;https://stars.medv.io/Kitware/TeleSculptor.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/Kitware/TeleSculptor.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=colmap&amp;amp;repo=colmap&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://stars.medv.io/colmap/colmap.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/colmap/colmap.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/snavely/bundler_sfm&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=snavely&amp;amp;repo=bundler_sfm&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/snavely/bundler_sfm&quot;&gt;&lt;img src=&quot;https://stars.medv.io/snavely/bundler_sfm.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/snavely/bundler_sfm.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/simonfuhrmann/mve&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=simonfuhrmann&amp;amp;repo=mve&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/simonfuhrmann/mve&quot;&gt;&lt;img src=&quot;https://stars.medv.io/simonfuhrmann/mve.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/simonfuhrmann/mve.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/openMVG/openMVG&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=openMVG&amp;amp;repo=openMVG&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/openMVG/openMVG&quot;&gt;&lt;img src=&quot;https://stars.medv.io/openMVG/openMVG.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/openMVG/openMVG.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=mapillary&amp;amp;repo=OpenSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/mapillary/OpenSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/mapillary/OpenSfM.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/sweeneychris/TheiaSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=sweeneychris&amp;amp;repo=TheiaSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/sweeneychris/TheiaSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/sweeneychris/TheiaSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/sweeneychris/TheiaSfM.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;mvs&quot;&gt;MVS&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210808221458.png&quot; alt=&quot;20210808221458&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=colmap&amp;amp;repo=colmap&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://stars.medv.io/colmap/colmap.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/colmap/colmap.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/gipuma&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=kysucix&amp;amp;repo=gipuma&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/gipuma&quot;&gt;&lt;img src=&quot;https://stars.medv.io/kysucix/gipuma.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/kysucix/gipuma.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/fusibile&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=kysucix&amp;amp;repo=fusibile&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/fusibile&quot;&gt;&lt;img src=&quot;https://stars.medv.io/kysucix/fusibile.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/kysucix/fusibile.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/alexlocher/hpmvs&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=alexlocher&amp;amp;repo=hpmvs&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/alexlocher/hpmvs&quot;&gt;&lt;img src=&quot;https://stars.medv.io/alexlocher/hpmvs.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/alexlocher/hpmvs.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=cdcseacave&amp;amp;repo=openMVS&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;&lt;img src=&quot;https://stars.medv.io/cdcseacave/openMVS.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/cdcseacave/openMVS.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=mapillary&amp;amp;repo=OpenSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/mapillary/OpenSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/mapillary/OpenSfM.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/pmoulon/CMVS-PMVS&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=pmoulon&amp;amp;repo=CMVS-PMVS&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/pmoulon/CMVS-PMVS&quot;&gt;&lt;img src=&quot;https://stars.medv.io/pmoulon/CMVS-PMVS.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/pmoulon/CMVS-PMVS.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://simov.github.io/&quot;&gt;simov&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">SfM</summary></entry><entry><title type="html">Robotics Perception Week 4[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/" rel="alternate" type="text/html" title="Robotics Perception Week 4[2]" /><published>2021-08-07T19:46:45+08:00</published><updated>2021-08-07T19:46:45+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/">&lt;h2 id=&quot;nonlinear-least-squares-非线性最小二乘法&quot;&gt;Nonlinear Least Squares [非线性最小二乘法]&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.aimsciences.org/article/exportPdf?id=7e25fb2d-b50c-46dd-9be5-23deee2b4242&quot;&gt;Method for non-linear least suqares problems - 2004&lt;/a&gt;&lt;/li&gt;
@@ -131,113 +367,7 @@ I(x,y,t)&amp;=I(x+dx, y+dy, t+dt)\\
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/qq_41368247/article/details/82562165&quot;&gt;🤙计算机视觉–光流法(optical flow)简介&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://xmfbit.github.io/2017/05/03/cs131-opticalflow/&quot;&gt;🤙CS131-光流估计 - xmfbit&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/384651830&quot;&gt;🤙光流法（optical flow methods） - 飞狗的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Nonlinear Least Squares [非线性最小二乘法]</summary></entry><entry><title type="html">Software Report Ranking</title><link href="https://ucas.io/3d/Software-Report-Ranking/" rel="alternate" type="text/html" title="Software Report Ranking" /><published>2021-08-07T19:46:45+08:00</published><updated>2021-08-07T19:46:45+08:00</updated><id>https://ucas.io/3d/Software-Report-Ranking</id><content type="html" xml:base="https://ucas.io/3d/Software-Report-Ranking/">&lt;h2 id=&quot;sfm&quot;&gt;SfM&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/Kitware/TeleSculptor&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=Kitware&amp;amp;repo=TeleSculptor&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/Kitware/TeleSculptor&quot;&gt;&lt;img src=&quot;https://stars.medv.io/Kitware/TeleSculptor.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/Kitware/TeleSculptor.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=colmap&amp;amp;repo=colmap&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://stars.medv.io/colmap/colmap.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/colmap/colmap.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/snavely/bundler_sfm&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=snavely&amp;amp;repo=bundler_sfm&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/snavely/bundler_sfm&quot;&gt;&lt;img src=&quot;https://stars.medv.io/snavely/bundler_sfm.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/snavely/bundler_sfm.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/simonfuhrmann/mve&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=simonfuhrmann&amp;amp;repo=mve&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/simonfuhrmann/mve&quot;&gt;&lt;img src=&quot;https://stars.medv.io/simonfuhrmann/mve.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/simonfuhrmann/mve.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/openMVG/openMVG&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=openMVG&amp;amp;repo=openMVG&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/openMVG/openMVG&quot;&gt;&lt;img src=&quot;https://stars.medv.io/openMVG/openMVG.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/openMVG/openMVG.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=mapillary&amp;amp;repo=OpenSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/mapillary/OpenSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/mapillary/OpenSfM.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/sweeneychris/TheiaSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=sweeneychris&amp;amp;repo=TheiaSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/sweeneychris/TheiaSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/sweeneychris/TheiaSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/sweeneychris/TheiaSfM.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;mvs&quot;&gt;MVS&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210808221458.png&quot; alt=&quot;20210808221458&quot; /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=colmap&amp;amp;repo=colmap&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://stars.medv.io/colmap/colmap.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/colmap/colmap.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/gipuma&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=kysucix&amp;amp;repo=gipuma&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/gipuma&quot;&gt;&lt;img src=&quot;https://stars.medv.io/kysucix/gipuma.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/kysucix/gipuma.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/fusibile&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=kysucix&amp;amp;repo=fusibile&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/fusibile&quot;&gt;&lt;img src=&quot;https://stars.medv.io/kysucix/fusibile.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/kysucix/fusibile.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/alexlocher/hpmvs&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=alexlocher&amp;amp;repo=hpmvs&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/alexlocher/hpmvs&quot;&gt;&lt;img src=&quot;https://stars.medv.io/alexlocher/hpmvs.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/alexlocher/hpmvs.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=cdcseacave&amp;amp;repo=openMVS&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;&lt;img src=&quot;https://stars.medv.io/cdcseacave/openMVS.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/cdcseacave/openMVS.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=mapillary&amp;amp;repo=OpenSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/mapillary/OpenSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/mapillary/OpenSfM.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/pmoulon/CMVS-PMVS&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=pmoulon&amp;amp;repo=CMVS-PMVS&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/pmoulon/CMVS-PMVS&quot;&gt;&lt;img src=&quot;https://stars.medv.io/pmoulon/CMVS-PMVS.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/pmoulon/CMVS-PMVS.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://simov.github.io/&quot;&gt;simov&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">SfM</summary></entry><entry><title type="html">Robotics Perception Week 4</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4/" rel="alternate" type="text/html" title="Robotics Perception Week 4" /><published>2021-08-06T16:06:37+08:00</published><updated>2021-08-06T16:06:37+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4/">&lt;h2 id=&quot;epipolar-geometry对极几何&quot;&gt;Epipolar Geometry[对极几何]&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Nonlinear Least Squares [非线性最小二乘法]</summary></entry><entry><title type="html">Robotics Perception Week 4</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4/" rel="alternate" type="text/html" title="Robotics Perception Week 4" /><published>2021-08-06T16:06:37+08:00</published><updated>2021-08-06T16:06:37+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4/">&lt;h2 id=&quot;epipolar-geometry对极几何&quot;&gt;Epipolar Geometry[对极几何]&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg&quot; alt=&quot;1628252493(1)&quot; /&gt;&lt;/p&gt;
 
@@ -1245,88 +1375,4 @@ $$&lt;/div&gt;
   &lt;li&gt;因为是瓷砖&lt;/li&gt;
   &lt;li&gt;所以$\frac{AC}{BC}=2$&lt;/li&gt;
   &lt;li&gt;那么如果已知$A’,C’,D’$的位置，即可计算出$D’$的位置&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Two Method Of Perception Matrix with 4 points</summary></entry><entry><title type="html">Robotics Perception week2</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-week2/" rel="alternate" type="text/html" title="Robotics Perception week2" /><published>2021-08-02T18:49:17+08:00</published><updated>2021-08-02T18:49:17+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-week2</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-week2/">&lt;h2 id=&quot;homogeneous-coordinate齐次坐标&quot;&gt;Homogeneous Coordinate[齐次坐标]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Homo&lt;/code&gt; means &lt;a href=&quot;https://www.dictionary.com/browse/homo&quot;&gt;dictionary.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;a combining form appearing in loanwords from Greek, where it meant “&lt;strong&gt;same&lt;/strong&gt;” (homology); on this model, used in the formation of compound words (homomorphic).&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;reference参考文章&quot;&gt;Reference[参考文章]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/popy007/article/details/1797121&quot;&gt;深入探索透视投影变换 - Twinsen[CSDN]&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.codenong.com/cs109304516/&quot;&gt;内容相同，这里的排版可能更舒服&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/MorStar/p/14852275.html&quot;&gt;齐次坐标的理解 - MorStar[cnblogs]&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://www.songho.ca/math/homogeneous/homogeneous.html&quot;&gt;Homogeneous Coordinates - 안성호(Song Ho Ahn) [英文原文]&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87&quot;&gt;齐次坐标 - Wikipedia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;计算机视觉中的多视图几何 2.2.1&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tomdalling.com/blog/modern-opengl/explaining-homogenous-coordinates-and-projective-geometry/&quot;&gt;Explaining Homogeneous Coordinates &amp;amp; Projective Geometry&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;实际问题&quot;&gt;实际问题&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;对于平面上的两条平行直线
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-  l_1 &amp;: AX+BY+C=0\\
-  l_2 &amp;: AX+BY+D=0\\
-\end{aligned}$&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;求解时，若$C\neq D$则无解, 若$C=D$, 则$l_1,l_2$重合&lt;/li&gt;
-  &lt;li&gt;引入新的维度$w$, 令
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-  l_1 &amp;: AX+BY+Cw=0\\
-  l_2 &amp;: AX+BY+Dw=0\\
-\end{aligned}$&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;此时存在解$(x,y,0)$, 作为两平行线的交点坐标&lt;/li&gt;
-  &lt;li&gt;它的本质，是将分母提出来，避免分母为零误解的情况发生&lt;/li&gt;
-  &lt;li&gt;对于$w$不为0时的情况&lt;/li&gt;
-  &lt;li&gt;齐次坐标$(x,y,w)$等价于笛卡尔坐标$(\frac{x}{w}, \frac{y}{w})$&lt;/li&gt;
-  &lt;li&gt;那么反过来，笛卡尔坐标$(x,y)$对应齐次坐标$(\lambda x,\lambda y,\lambda *1)$&lt;/li&gt;
-  &lt;li&gt;我们发现新的坐标系下每个点前的系数阶都是一致的，因此我们称之为齐次坐标&lt;/li&gt;
-  &lt;li&gt;更一般的，对于一个$k$次多项式$g(x,y)$,可以通过将$x\rightarrow \frac{x}{z}, y\rightarrow \frac{y}{z}$再乘$z^k$的形式变为齐次形式，即&lt;/li&gt;
-  &lt;li&gt;$f(x,y,z) = z^kg(\frac{x}{z}, \frac{y}{z})$&lt;/li&gt;
-  &lt;li&gt;此时，方程的每一项都已阶数$k$一致的项，这就是&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Homo&lt;/code&gt;的来源&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;齐次坐标的好处&quot;&gt;齐次坐标的好处&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;以上可以用$(x,y,0)$表示两个平行线在无穷远处的交点在射影面上的表示
- &lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210802222042.png&quot; alt=&quot;20210802222042&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;直线的齐次表示$(a, b, c)$代表$ax+by+c=0$, 满足所有方程上的点的集合
-    &lt;ol&gt;
-      &lt;li&gt;其几何含义为，以$&amp;lt;a,b,c&amp;gt;$为法向量在3维空间中与投影面($z=Z$)的交线&lt;/li&gt;
-      &lt;li&gt;因此，当$&amp;lt;0,0,c&amp;gt;$表示无法与投影面相交的无穷远处的直线&lt;/li&gt;
-      &lt;li&gt;而$&amp;lt;0,0,0&amp;gt;$无法表示成射线形式，因此在射影空间$\mathbb{P}^2$为$\mathbb{R}^3-(0,0,0)$，即去掉原点的三维实数空间&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;点的齐次表示, $\mathbf{x} = [x,y,1]^T$, $\mathbf{x}^T[a,b,c]=0$表示满足在线上的点
-    &lt;ol&gt;
-      &lt;li&gt;有，点$\mathbf{x}$在直线$I$上，当且仅当$\mathbf{x}^T\mathbf{I}=0$&lt;/li&gt;
-      &lt;li&gt;直线交点，即，两个直线叉乘后的向量表示&lt;/li&gt;
-      &lt;li&gt;即$\mathbf{x}$满足$\mathbf{I_1}^t\mathbf{x}=\mathbf{I_2}^t\mathbf{x}=0$&lt;/li&gt;
-      &lt;li&gt;$\mathbf{x}=\mathbf{I_1}\times \mathbf{I_2}$&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;过两点的直线
-    &lt;ol&gt;
-      &lt;li&gt;$\mathbf{I}=\mathbf{x_1}\times\mathbf{x_2}$&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;perception&quot;&gt;Perception&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1627922867(1).jpg&quot; alt=&quot;1627922867(1)&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Homogeneous Coordinate[齐次坐标]</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Two Method Of Perception Matrix with 4 points</summary></entry></feed>

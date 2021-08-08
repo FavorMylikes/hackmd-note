@@ -160,4 +160,10 @@ var store = [{
         "tags": [],
         "url": "/3d/Software-Report-Ranking/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg"
+      },{
+        "title": "The File Format",
+        "excerpt":"File Format obj 文本格式 Wavefront 基本结构 |type|name| |:-:|:-:| ||Vertex data| |v|vertices[顶点]| |vt|Texture vertices| |vn|Vertex normals [顶点法线]| |vp|Parameter space vertices [参数空格顶点]| ||表面属性(surface attributes)| |deg|Degree[度]| |bmat|Basis matrix| |step|Step size| |cstype|Curve or surface type[曲线或表面类型]| ||Elements| |p|point| |l|line| |f|face| |curv|Curve| |curv2|2D curve| |surf|Surface| ||表面主体陈述(surface body statements)| |parm|Parameter values [ 参数值] |trim|Outer trimming loop[ 外部修剪循环]...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/The-file-format/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg"
       }]
