@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-08T22:16:05+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics Perception Week 4[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/" rel="alternate" type="text/html" title="Robotics Perception Week 4[2]" /><published>2021-08-07T19:46:45+08:00</published><updated>2021-08-07T19:46:45+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/">&lt;h2 id=&quot;nonlinear-least-squares-非线性最小二乘法&quot;&gt;Nonlinear Least Squares [非线性最小二乘法]&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-08T22:18:56+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics Perception Week 4[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/" rel="alternate" type="text/html" title="Robotics Perception Week 4[2]" /><published>2021-08-07T19:46:45+08:00</published><updated>2021-08-07T19:46:45+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/">&lt;h2 id=&quot;nonlinear-least-squares-非线性最小二乘法&quot;&gt;Nonlinear Least Squares [非线性最小二乘法]&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.aimsciences.org/article/exportPdf?id=7e25fb2d-b50c-46dd-9be5-23deee2b4242&quot;&gt;Method for non-linear least suqares problems - 2004&lt;/a&gt;&lt;/li&gt;
@@ -135,29 +135,125 @@ I(x,y,t)&amp;=I(x+dx, y+dy, t+dt)\\
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;|Repository|spark|pin|star|
-|:-:|:-:|:-:|:-:|
-|&lt;a href=&quot;https://github.com/Kitware/TeleSculptor&quot;&gt;Kitware/TeleSculptor&lt;/a&gt;|&lt;a href=&quot;https://github.com/Kitware/TeleSculptor&quot;&gt;&lt;img src=&quot;https://stars.medv.io/Kitware/TeleSculptor.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/Kitware/TeleSculptor&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=Kitware&amp;amp;repo=TeleSculptor&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/Kitware/TeleSculptor.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;colmap/colmap&lt;/a&gt;|&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://stars.medv.io/colmap/colmap.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=colmap&amp;amp;repo=colmap&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/colmap/colmap.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/snavely/bundler_sfm&quot;&gt;snavely/bundler_sfm&lt;/a&gt;|&lt;a href=&quot;https://github.com/snavely/bundler_sfm&quot;&gt;&lt;img src=&quot;https://stars.medv.io/snavely/bundler_sfm.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/snavely/bundler_sfm&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=snavely&amp;amp;repo=bundler_sfm&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/snavely/bundler_sfm.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/simonfuhrmann/mve&quot;&gt;simonfuhrmann/mve&lt;/a&gt;|&lt;a href=&quot;https://github.com/simonfuhrmann/mve&quot;&gt;&lt;img src=&quot;https://stars.medv.io/simonfuhrmann/mve.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/simonfuhrmann/mve&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=simonfuhrmann&amp;amp;repo=mve&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/simonfuhrmann/mve.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/openMVG/openMVG&quot;&gt;openMVG/openMVG&lt;/a&gt;|&lt;a href=&quot;https://github.com/openMVG/openMVG&quot;&gt;&lt;img src=&quot;https://stars.medv.io/openMVG/openMVG.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/openMVG/openMVG&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=openMVG&amp;amp;repo=openMVG&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/openMVG/openMVG.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;mapillary/OpenSfM&lt;/a&gt;|&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/mapillary/OpenSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=mapillary&amp;amp;repo=OpenSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/mapillary/OpenSfM.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/sweeneychris/TheiaSfM&quot;&gt;sweeneychris/TheiaSfM&lt;/a&gt;|&lt;a href=&quot;https://github.com/sweeneychris/TheiaSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/sweeneychris/TheiaSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/sweeneychris/TheiaSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=sweeneychris&amp;amp;repo=TheiaSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/sweeneychris/TheiaSfM.svg&quot; width=&quot;200px&quot; /&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;pin&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/Kitware/TeleSculptor&quot;&gt;Kitware/TeleSculptor&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/Kitware/TeleSculptor&quot;&gt;&lt;img src=&quot;https://stars.medv.io/Kitware/TeleSculptor.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/Kitware/TeleSculptor&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=Kitware&amp;amp;repo=TeleSculptor&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/Kitware/TeleSculptor.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;colmap/colmap&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://stars.medv.io/colmap/colmap.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=colmap&amp;amp;repo=colmap&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/colmap/colmap.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/snavely/bundler_sfm&quot;&gt;snavely/bundler_sfm&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/snavely/bundler_sfm&quot;&gt;&lt;img src=&quot;https://stars.medv.io/snavely/bundler_sfm.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/snavely/bundler_sfm&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=snavely&amp;amp;repo=bundler_sfm&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/snavely/bundler_sfm.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/simonfuhrmann/mve&quot;&gt;simonfuhrmann/mve&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/simonfuhrmann/mve&quot;&gt;&lt;img src=&quot;https://stars.medv.io/simonfuhrmann/mve.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/simonfuhrmann/mve&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=simonfuhrmann&amp;amp;repo=mve&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/simonfuhrmann/mve.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/openMVG/openMVG&quot;&gt;openMVG/openMVG&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/openMVG/openMVG&quot;&gt;&lt;img src=&quot;https://stars.medv.io/openMVG/openMVG.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/openMVG/openMVG&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=openMVG&amp;amp;repo=openMVG&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/openMVG/openMVG.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;mapillary/OpenSfM&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/mapillary/OpenSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=mapillary&amp;amp;repo=OpenSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/mapillary/OpenSfM.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/sweeneychris/TheiaSfM&quot;&gt;sweeneychris/TheiaSfM&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/sweeneychris/TheiaSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/sweeneychris/TheiaSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/sweeneychris/TheiaSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=sweeneychris&amp;amp;repo=TheiaSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/sweeneychris/TheiaSfM.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;h2 id=&quot;mvs&quot;&gt;MVS&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210808221458.png&quot; alt=&quot;20210808221458&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;|Repository|spark|pin|star|
-|:-:|:-:|:-:|:-:|
-|&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;colmap/colmap&lt;/a&gt;|&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://stars.medv.io/colmap/colmap.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=colmap&amp;amp;repo=colmap&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/colmap/colmap.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/kysucix/gipuma&quot;&gt;kysucix/gipuma&lt;/a&gt;|&lt;a href=&quot;https://github.com/kysucix/gipuma&quot;&gt;&lt;img src=&quot;https://stars.medv.io/kysucix/gipuma.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/kysucix/gipuma&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=kysucix&amp;amp;repo=gipuma&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/kysucix/gipuma.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/kysucix/fusibile&quot;&gt;kysucix/fusibile&lt;/a&gt;|&lt;a href=&quot;https://github.com/kysucix/fusibile&quot;&gt;&lt;img src=&quot;https://stars.medv.io/kysucix/fusibile.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/kysucix/fusibile&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=kysucix&amp;amp;repo=fusibile&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/kysucix/fusibile.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/alexlocher/hpmvs&quot;&gt;alexlocher/hpmvs&lt;/a&gt;|&lt;a href=&quot;https://github.com/alexlocher/hpmvs&quot;&gt;&lt;img src=&quot;https://stars.medv.io/alexlocher/hpmvs.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/alexlocher/hpmvs&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=alexlocher&amp;amp;repo=hpmvs&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/alexlocher/hpmvs.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;cdcseacave/openMVS&lt;/a&gt;|&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;&lt;img src=&quot;https://stars.medv.io/cdcseacave/openMVS.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=cdcseacave&amp;amp;repo=openMVS&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/cdcseacave/openMVS.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;mapillary/OpenSfM&lt;/a&gt;|&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/mapillary/OpenSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=mapillary&amp;amp;repo=OpenSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/mapillary/OpenSfM.svg&quot; width=&quot;200px&quot; /&gt;
-|&lt;a href=&quot;https://github.com/pmoulon/CMVS-PMVS&quot;&gt;pmoulon/CMVS-PMVS&lt;/a&gt;|&lt;a href=&quot;https://github.com/pmoulon/CMVS-PMVS&quot;&gt;&lt;img src=&quot;https://stars.medv.io/pmoulon/CMVS-PMVS.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/pmoulon/CMVS-PMVS&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=pmoulon&amp;amp;repo=CMVS-PMVS&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;img src=&quot;https://starchart.cc/pmoulon/CMVS-PMVS.svg&quot; width=&quot;200px&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">SfM</summary></entry><entry><title type="html">Robotics Perception Week 4</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4/" rel="alternate" type="text/html" title="Robotics Perception Week 4" /><published>2021-08-06T16:06:37+08:00</published><updated>2021-08-06T16:06:37+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4/">&lt;h2 id=&quot;epipolar-geometry对极几何&quot;&gt;Epipolar Geometry[对极几何]&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;pin&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;colmap/colmap&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://stars.medv.io/colmap/colmap.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=colmap&amp;amp;repo=colmap&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/colmap/colmap.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/gipuma&quot;&gt;kysucix/gipuma&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/gipuma&quot;&gt;&lt;img src=&quot;https://stars.medv.io/kysucix/gipuma.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/gipuma&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=kysucix&amp;amp;repo=gipuma&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/kysucix/gipuma.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/fusibile&quot;&gt;kysucix/fusibile&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/fusibile&quot;&gt;&lt;img src=&quot;https://stars.medv.io/kysucix/fusibile.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/kysucix/fusibile&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=kysucix&amp;amp;repo=fusibile&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/kysucix/fusibile.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/alexlocher/hpmvs&quot;&gt;alexlocher/hpmvs&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/alexlocher/hpmvs&quot;&gt;&lt;img src=&quot;https://stars.medv.io/alexlocher/hpmvs.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/alexlocher/hpmvs&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=alexlocher&amp;amp;repo=hpmvs&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/alexlocher/hpmvs.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;cdcseacave/openMVS&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;&lt;img src=&quot;https://stars.medv.io/cdcseacave/openMVS.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=cdcseacave&amp;amp;repo=openMVS&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/cdcseacave/openMVS.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;mapillary/OpenSfM&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://stars.medv.io/mapillary/OpenSfM.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=mapillary&amp;amp;repo=OpenSfM&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/mapillary/OpenSfM.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/pmoulon/CMVS-PMVS&quot;&gt;pmoulon/CMVS-PMVS&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/pmoulon/CMVS-PMVS&quot;&gt;&lt;img src=&quot;https://stars.medv.io/pmoulon/CMVS-PMVS.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/pmoulon/CMVS-PMVS&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=pmoulon&amp;amp;repo=CMVS-PMVS&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;https://starchart.cc/pmoulon/CMVS-PMVS.svg&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://simov.github.io/&quot;&gt;simov&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">SfM</summary></entry><entry><title type="html">Robotics Perception Week 4</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4/" rel="alternate" type="text/html" title="Robotics Perception Week 4" /><published>2021-08-06T16:06:37+08:00</published><updated>2021-08-06T16:06:37+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4/">&lt;h2 id=&quot;epipolar-geometry对极几何&quot;&gt;Epipolar Geometry[对极几何]&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg&quot; alt=&quot;1628252493(1)&quot; /&gt;&lt;/p&gt;
 
