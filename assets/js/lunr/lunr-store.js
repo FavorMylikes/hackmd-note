@@ -154,4 +154,10 @@ var store = [{
         "tags": [],
         "url": "/3d/coursera/Robotics-Perception-Week4-2/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210807224958.png"
+      },{
+        "title": "Software Report Ranking",
+        "excerpt":"SfM      |Repository|spark|pin|star| |:-:|:-:|:-:|:-:| |Kitware/TeleSculptor||| |colmap/colmap||| |snavely/bundler_sfm||| |simonfuhrmann/mve||| |openMVG/openMVG||| |mapillary/OpenSfM||| |sweeneychris/TheiaSfM|||   MVS      |Repository|spark|pin|star| |:-:|:-:|:-:|:-:| |colmap/colmap||| |kysucix/gipuma||| |kysucix/fusibile||| |alexlocher/hpmvs||| |cdcseacave/openMVS||| |mapillary/OpenSfM||| |pmoulon/CMVS-PMVS|||  ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Software-Report-Ranking/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg"
       }]
