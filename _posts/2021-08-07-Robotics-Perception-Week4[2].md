@@ -4,7 +4,7 @@ title:  "Robotics Perception Week 4[2]"
 date:   "2021-8-7 19:46:45 +0800"
 categories: 3d coursera
 header:
-  teaser: https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210807224958.png
 ---
 
 ## Nonlinear Least Squares [非线性最小二乘法]
