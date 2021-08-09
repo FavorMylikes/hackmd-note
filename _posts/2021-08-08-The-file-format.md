@@ -4,7 +4,7 @@ title:  "The File Format"
 date:   "2021-8-8 23:45:22 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg
+  teaser: https://i.all3dp.com/cdn-cgi/image/fit=cover,w=1284,h=722,gravity=0.5x0.5,format=auto/wp-content/uploads/2018/05/26152516/obj-lead.jpg
 ---
 
 ## File Format
