@@ -8,7 +8,7 @@ header:
 ---
 
 - [install colmap](https://colmap.github.io/install.html)
-- [install openmvs]()
+- [install openmvs](https://github.com/cdcseacave/openMVS/wiki/Building)
 
 ## Environment
 
@@ -166,4 +166,3 @@ make -j8 && sudo make install
 - [High-Quality Texture Reconstruction from Multiple Scans - IBM T. J. Watson Research Center](http://www.cs.hunter.cuny.edu/~ioannis/3DP_S09/faustobernardini.pdf)
   - [城市三维重建中的自动纹理优化方法 - 武汉大学测绘遥感信息工程国重](http://xb.sinomaps.com/CN/article/downloadArticleFile.do?attachType=PDF&id=6935)
   - [彩色三维扫描中纹理重建技术研究进展 - 激光与光电子学进展](http://www.opticsjournal.net/richHtml/lop/2018/55/11/110004.html)
-
