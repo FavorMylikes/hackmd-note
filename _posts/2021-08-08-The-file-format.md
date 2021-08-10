@@ -14,7 +14,7 @@ header:
 - 文本格式
 - Wavefront
 - 基本结构
-  |type|name|
+- |type|name|
   |:-:|:-:|
   ||Vertex data|
   |v|vertices[顶点]|
