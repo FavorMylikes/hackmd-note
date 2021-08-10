@@ -363,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -378,7 +378,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#environment">Environment</a></li><li><a href="#colmap">Colmap</a><ul><li><a href="#require">Require</a></li><li><a href="#install-qt5">Install Qt5</a></li><li><a href="#install-ceres-solver">Install ceres-solver</a></li><li><a href="#install-colmap">Install COLMAP</a></li><li><a href="#usage">Usage</a></li></ul></li><li><a href="#openmvs">OpenMVS</a></li><li><a href="#reading">Reading</a></li></ul>
+              <ul class="toc__menu"><li><a href="#environment">Environment</a></li><li><a href="#colmap">Colmap</a><ul><li><a href="#require">Require</a></li><li><a href="#install-qt5">Install Qt5</a></li><li><a href="#install-ceres-solver">Install ceres-solver</a></li><li><a href="#install-colmap">Install COLMAP</a></li><li><a href="#usage">Usage</a></li></ul></li><li><a href="#openmvs">OpenMVS</a><ul><li><a href="#compiler">compiler</a></li></ul></li><li><a href="#reading">Reading</a></li></ul>
 
             </nav>
           </aside>
@@ -467,6 +467,94 @@ colmap gui
 </code></pre></div></div>
 
 <h2 id="openmvs">OpenMVS</h2>
+
+<h3 id="compiler">compiler</h3>
+
+<ul>
+  <li>Prepare</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">sudo apt update -qq &amp;&amp; sudo apt install -qq
+sudo apt -y install git cmake libpng-dev libjpeg-dev libtiff-dev libglu1-mesa-dev
+</span></code></pre></div></div>
+
+<ul>
+  <li>Install <a href="https://gitlab.com/libeigen/eigen.git">Eigen</a> (Required)</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git clone https://gitlab.com/libeigen/eigen.git --branch 3.2
+cd eigen &amp;&amp; mkdir eigen_build &amp;&amp; cd eigen_build
+cmake . ..
+make &amp;&amp; sudo make install
+</span></code></pre></div></div>
+
+<ul>
+  <li>Install Boost (Required)</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">sudo apt -y install libboost-iostreams-dev libboost-program-options-dev libboost-system-dev libboost-serialization-dev
+</span></code></pre></div></div>
+
+<ul>
+  <li>Install OpenCV (Required)
+    <ul>
+      <li><strong>Attation</strong>, It will lead to a <code class="language-plaintext highlighter-rouge">undefined reference to symbol</code> when <code class="language-plaintext highlighter-rouge">make</code> for <code class="language-plaintext highlighter-rouge">openmvs</code></li>
+      <li>Look at this <a href="https://github.com/cdcseacave/openMVS/issues/364#issuecomment-499842586">issue</a></li>
+      <li>And for another conflict, make your opencv version is correct, for me, it is <code class="language-plaintext highlighter-rouge">3.2</code>, check it with <code class="language-plaintext highlighter-rouge">dpkg -s libopencv-dev</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">sudo apt -y install libopencv-dev
+</span></code></pre></div></div>
+
+<ul>
+  <li>Install CGAL (Required)
+    <ul>
+      <li><strong>Attation</strong>, please ensure you are <strong>not</strong> under anaconda environment, and rename the anaconda dir name temporary</li>
+      <li>conda will install qt into itself directory, may lead to <code class="language-plaintext highlighter-rouge">can not find qt</code> or <code class="language-plaintext highlighter-rouge">find a wrong qt</code> problem</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">sudo apt -y install libcgal-dev libcgal-qt5-dev
+</span></code></pre></div></div>
+
+<ul>
+  <li>Install <a href="https://github.com/cdcseacave/VCG.git">VCGLib</a> (Required)</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git clone https://github.com/cdcseacave/VCG.git vcglib
+</span></code></pre></div></div>
+
+<ul>
+  <li>Install <a href="https://ceres-solver.googlesource.com/ceres-solver">Ceres</a> (optional)</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">sudo apt -y install libatlas-base-dev libsuitesparse-dev
+git clone https://ceres-solver.googlesource.com/ceres-solver ceres-solver
+cd ceres-solver &amp;&amp; mkdir ceres_build &amp;&amp; cd ceres_build
+cmake . .. -DMINIGLOG=ON -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF
+make -j8 &amp;&amp; sudo make install
+cd ..
+</span></code></pre></div></div>
+
+<ul>
+  <li>Install GLFW3 (Optional)</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">sudo apt -y install freeglut3-dev libglew-dev libglfw3-dev
+</span></code></pre></div></div>
+
+<ul>
+  <li>Install <a href="https://github.com/cdcseacave/openMVS.git">OpenMVS</a></li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git clone https://github.com/cdcseacave/openMVS.git openMVS
+cd openMVS &amp;&amp; mkdir openMVS_build &amp;&amp; cd openMVS_build
+cmake . .. -DCMAKE_BUILD_TYPE=Release -DVCG_ROOT="path/to/VGC" -DBUILD_SHARED_LIBS=ON
+make -j8 &amp;&amp; sudo make install
+</span></code></pre></div></div>
 
 <h2 id="reading">Reading</h2>
 
