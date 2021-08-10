@@ -88,6 +88,79 @@ colmap gui
 
 ## OpenMVS
 
+### compiler
+
+- Prepare
+
+```console
+sudo apt update -qq && sudo apt install -qq
+sudo apt -y install git cmake libpng-dev libjpeg-dev libtiff-dev libglu1-mesa-dev
+```
+
+- Install [Eigen](https://gitlab.com/libeigen/eigen.git) (Required)
+
+```console
+git clone https://gitlab.com/libeigen/eigen.git --branch 3.2
+cd eigen && mkdir eigen_build && cd eigen_build
+cmake . ..
+make && sudo make install
+```
+
+- Install Boost (Required)
+
+```console
+sudo apt -y install libboost-iostreams-dev libboost-program-options-dev libboost-system-dev libboost-serialization-dev
+```
+
+- Install OpenCV (Required)
+  - **Attation**, It will lead to a `undefined reference to symbol` when `make` for `openmvs`
+  - Look at this [issue](https://github.com/cdcseacave/openMVS/issues/364#issuecomment-499842586)
+  - And for another conflict, make your opencv version is correct, for me, it is `3.2`, check it with `dpkg -s libopencv-dev`
+
+```console
+sudo apt -y install libopencv-dev
+```
+
+- Install CGAL (Required)
+  - **Attation**, please ensure you are **not** under anaconda environment, and rename the anaconda dir name temporary
+  - conda will install qt into itself directory, may lead to `can not find qt` or `find a wrong qt` problem
+
+```console
+sudo apt -y install libcgal-dev libcgal-qt5-dev
+```
+
+- Install [VCGLib](https://github.com/cdcseacave/VCG.git) (Required)
+
+```console
+git clone https://github.com/cdcseacave/VCG.git vcglib
+```
+
+- Install [Ceres](https://ceres-solver.googlesource.com/ceres-solver) (optional)
+
+```console
+sudo apt -y install libatlas-base-dev libsuitesparse-dev
+git clone https://ceres-solver.googlesource.com/ceres-solver ceres-solver
+cd ceres-solver && mkdir ceres_build && cd ceres_build
+cmake . .. -DMINIGLOG=ON -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF
+make -j8 && sudo make install
+cd ..
+```
+
+- Install GLFW3 (Optional)
+
+```console
+sudo apt -y install freeglut3-dev libglew-dev libglfw3-dev
+```
+
+- Install [OpenMVS](https://github.com/cdcseacave/openMVS.git)
+
+```console
+git clone https://github.com/cdcseacave/openMVS.git openMVS
+cd openMVS && mkdir openMVS_build && cd openMVS_build
+cmake . .. -DCMAKE_BUILD_TYPE=Release -DVCG_ROOT="path/to/VGC" -DBUILD_SHARED_LIBS=ON
+make -j8 && sudo make install
+```
+
 ## Reading
 
 - [High-Quality Texture Reconstruction from Multiple Scans - IBM T. J. Watson Research Center](http://www.cs.hunter.cuny.edu/~ioannis/3DP_S09/faustobernardini.pdf)
