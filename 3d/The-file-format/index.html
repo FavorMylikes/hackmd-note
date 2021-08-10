@@ -363,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -390,44 +390,159 @@
 <ul>
   <li>文本格式</li>
   <li>Wavefront</li>
-  <li>基本结构
-|type|name|
-|:-:|:-:|
-||Vertex data|
-|v|vertices[顶点]|
-|vt|Texture vertices|
-|vn|Vertex normals [顶点法线]|
-|vp|Parameter space vertices [参数空格顶点]|
-||表面属性(surface attributes)|
-|deg|Degree[度]|
-|bmat|Basis matrix|
-|step|Step size|
-|cstype|Curve or surface type[曲线或表面类型]|
-||Elements|
-|p|point|
-|l|line|
-|f|face|
-|curv|Curve|
-|curv2|2D curve|
-|surf|Surface|
-||表面主体陈述(surface body statements)|
-|parm|Parameter values [ 参数值]
-|trim|Outer trimming loop[ 外部修剪循环]
-|hole|Inner trimming loop[ 内部整修循环]
-|scrv|Special curve[ 特殊曲线]
-|sp  |Special point[ 特殊的点]
-|end |End statement[ 结束陈述]
-||渲染属性(render attributes)|
-|bevel|Bevel interpolation [导角插值 ]
-|c_interp|Color interpolation [颜色插值 ]
-|d_interp|Dissolve interpolation [溶解插值 ]
-|lod|Level of detail [细节层次 ]
-|usemtl|Material name [材质名称 ]
-|<strong>mtllib</strong>|<strong>Material library [材质库 ]</strong>
-|shadow_obj|Shadow casting [投射阴影 ]
-|trace_obj|Ray tracing [光线跟踪 ]
-|ctech|Curve approximation technique [曲线近似技术 ]
-|stech|Surface approximation technique [表面近似技术 ]</li>
+  <li>基本结构</li>
+  <li>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">type</th>
+          <th style="text-align: center">name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center"> </td>
+          <td style="text-align: center">Vertex data</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">v</td>
+          <td style="text-align: center">vertices[顶点]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">vt</td>
+          <td style="text-align: center">Texture vertices</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">vn</td>
+          <td style="text-align: center">Vertex normals [顶点法线]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">vp</td>
+          <td style="text-align: center">Parameter space vertices [参数空格顶点]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"> </td>
+          <td style="text-align: center">表面属性(surface attributes)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">deg</td>
+          <td style="text-align: center">Degree[度]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">bmat</td>
+          <td style="text-align: center">Basis matrix</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">step</td>
+          <td style="text-align: center">Step size</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">cstype</td>
+          <td style="text-align: center">Curve or surface type[曲线或表面类型]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"> </td>
+          <td style="text-align: center">Elements</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">p</td>
+          <td style="text-align: center">point</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">l</td>
+          <td style="text-align: center">line</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">f</td>
+          <td style="text-align: center">face</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">curv</td>
+          <td style="text-align: center">Curve</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">curv2</td>
+          <td style="text-align: center">2D curve</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">surf</td>
+          <td style="text-align: center">Surface</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"> </td>
+          <td style="text-align: center">表面主体陈述(surface body statements)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">parm</td>
+          <td style="text-align: center">Parameter values [ 参数值]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">trim</td>
+          <td style="text-align: center">Outer trimming loop[ 外部修剪循环]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">hole</td>
+          <td style="text-align: center">Inner trimming loop[ 内部整修循环]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">scrv</td>
+          <td style="text-align: center">Special curve[ 特殊曲线]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">sp</td>
+          <td style="text-align: center">Special point[ 特殊的点]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">end</td>
+          <td style="text-align: center">End statement[ 结束陈述]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"> </td>
+          <td style="text-align: center">渲染属性(render attributes)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">bevel</td>
+          <td style="text-align: center">Bevel interpolation [导角插值 ]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">c_interp</td>
+          <td style="text-align: center">Color interpolation [颜色插值 ]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">d_interp</td>
+          <td style="text-align: center">Dissolve interpolation [溶解插值 ]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">lod</td>
+          <td style="text-align: center">Level of detail [细节层次 ]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">usemtl</td>
+          <td style="text-align: center">Material name [材质名称 ]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center"><strong>mtllib</strong></td>
+          <td style="text-align: center"><strong>Material library [材质库 ]</strong></td>
+        </tr>
+        <tr>
+          <td style="text-align: center">shadow_obj</td>
+          <td style="text-align: center">Shadow casting [投射阴影 ]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">trace_obj</td>
+          <td style="text-align: center">Ray tracing [光线跟踪 ]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">ctech</td>
+          <td style="text-align: center">Curve approximation technique [曲线近似技术 ]</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">stech</td>
+          <td style="text-align: center">Surface approximation technique [表面近似技术 ]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
 
 <h3 id="3ds">3ds</h3>
