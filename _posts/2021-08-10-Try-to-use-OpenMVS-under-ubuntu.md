@@ -48,3 +48,6 @@ header:
 - KAZE
   - [一点一滴完全突破KAZE特征检测算法，从各向异性扩散滤波开始(1) - 术之多](https://www.shuzhiduo.com/A/RnJWYE1Bdq/)
   - [Perona-Malik方程（各向同性非线性扩散实现图像滤波） - 查讯纤的文章 - 知乎](https://zhuanlan.zhihu.com/p/304199431)
+  - [各项异性扩散（Anisotropic diffusion）](https://blog.csdn.net/bluecol/article/details/46690985)
+  - [非等向性擴散 - Wikipedia](https://zh.wikipedia.org/wiki/%E9%9D%9E%E7%AD%89%E5%90%91%E6%80%A7%E6%93%B4%E6%95%A3)
+  
