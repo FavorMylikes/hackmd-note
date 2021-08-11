@@ -184,4 +184,10 @@ var store = [{
         "tags": [],
         "url": "/coursera/Try-to-use-OpenMVS-under-ubuntu/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif"
+      },{
+        "title": "Robotics Motion Planning week3 and week4",
+        "excerpt":"week3   Probilalitic Road Map(PRM)      Rapidy Exploring Random Tree(RRT) Method      RRT 2      Week4   Artificial Potential Field[人造势场]         规划路径平滑化   将随机取点改为梯度下降法   Attractive Field[引力场]            将起点放在高处，终点放在低处           Repulsive Field[斥力场]            障碍物提供斥力           Reference      路径规划-人工势场法(Artificial Potential Field) - 半杯茶的小酒杯的文章 - 知乎  ","categories": ["coursera"],
+        "tags": [],
+        "url": "/coursera/Robotics-Motion-Planning-week3-and-week4/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif"
       }]
