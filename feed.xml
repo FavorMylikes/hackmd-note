@@ -1,4 +1,132 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-10T19:31:08+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Deploy Cv environment for ubuntu, colmap, openmvs, e.g.</title><link href="https://ucas.io/3d/Start-Up-Colmap-env/" rel="alternate" type="text/html" title="Deploy Cv environment for ubuntu, colmap, openmvs, e.g." /><published>2021-08-09T16:11:48+08:00</published><updated>2021-08-09T16:11:48+08:00</updated><id>https://ucas.io/3d/Start-Up-Colmap-env</id><content type="html" xml:base="https://ucas.io/3d/Start-Up-Colmap-env/">&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-11T12:21:00+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Try to use OpenMVS under ubuntu</title><link href="https://ucas.io/coursera/Try-to-use-OpenMVS-under-ubuntu/" rel="alternate" type="text/html" title="Try to use OpenMVS under ubuntu" /><published>2021-08-10T22:37:02+08:00</published><updated>2021-08-10T22:37:02+08:00</updated><id>https://ucas.io/coursera/Try-to-use-OpenMVS-under-ubuntu</id><content type="html" xml:base="https://ucas.io/coursera/Try-to-use-OpenMVS-under-ubuntu/">&lt;h2 id=&quot;run-under-jupyter-lab&quot;&gt;Run under jupyter-lab&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628610280(1).jpg&quot; alt=&quot;1628610280(1)&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Open it at &lt;a href=&quot;http://ucas/jupyter/lab/tree/3d/colmap_script.ipynb&quot;&gt;ucas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;opensfm&quot;&gt;OpenSfM&lt;/h2&gt;
+
+&lt;h3 id=&quot;feature_type&quot;&gt;feature_type&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;KAZE[EECV]風
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/pablofdezalc/kaze&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.robesafe.com/personal/pablo.alcantarilla/kaze.html&quot;&gt;KAZE Features. Pablo F. Alcantarilla, Adrien Bartoli and Andrew J. Davison. In European Conference on Computer Vision (ECCV), Fiorenze, Italy, October 2012. bibtex&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Perona-Malik方程&lt;/li&gt;
+      &lt;li&gt;非线性尺度空间&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;AKAZE[Accelerated-KAZE KAZE的加速版]&lt;/li&gt;
+  &lt;li&gt;SIFT
+    &lt;ul&gt;
+      &lt;li&gt;DoG[Difference of Gaussian]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SURF[Speeded up robust features]
+    &lt;ul&gt;
+      &lt;li&gt;Use Box-Filter[盒子滤波器] instead of DoG&lt;/li&gt;
+      &lt;li&gt;Change the size of Box-Filter, to build scala space.&lt;/li&gt;
+      &lt;li&gt;方向定位，haar小波&lt;/li&gt;
+      &lt;li&gt;Integral image[积分图]
+        &lt;ul&gt;
+          &lt;li&gt;递归计算&lt;/li&gt;
+          &lt;li&gt;
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+I(x,y)=i(x,y)+I(x-1,y)+I(x,y-1)+I(x-1,y-1)
+$$&lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;算好之后达到快速计算任意图形区域积分的目的&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/e/ee/Prm_VJ_fig3_computeRectangleWithAlpha.png&quot; width=&quot;40%&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+I_{\square_{ABCD}} = I(C)+I(A)-I(B)-I(D)
+$$&lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Hessian矩阵&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;HAHOG&lt;/li&gt;
+  &lt;li&gt;ORB&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;reference&quot;&gt;Reference&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SURF is faster than SIFT?
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/27398168/5587080&quot;&gt;stackoverflow&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The Difference between of SIFT and SURF
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/gfgwxw/p/9415218.html#&quot;&gt;【CV学习5】SURF算法详解 - 苟富贵&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;KAZE
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.shuzhiduo.com/A/RnJWYE1Bdq/&quot;&gt;一点一滴完全突破KAZE特征检测算法，从各向异性扩散滤波开始(1) - 术之多&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/304199431&quot;&gt;Perona-Malik方程（各向同性非线性扩散实现图像滤波） - 查讯纤的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="coursera" /><summary type="html">Run under jupyter-lab</summary></entry><entry><title type="html">Robotics Motion Planning Week 1 and 2</title><link href="https://ucas.io/coursera/Robotics-Motion-Planning-week1-week2/" rel="alternate" type="text/html" title="Robotics Motion Planning Week 1 and 2" /><published>2021-08-10T19:32:03+08:00</published><updated>2021-08-10T19:32:03+08:00</updated><id>https://ucas.io/coursera/Robotics-Motion-Planning-week1-week2</id><content type="html" xml:base="https://ucas.io/coursera/Robotics-Motion-Planning-week1-week2/">&lt;h2 id=&quot;week-1&quot;&gt;Week 1&lt;/h2&gt;
+
+&lt;h3 id=&quot;grassfire-algorithm&quot;&gt;Grassfire Algorithm&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210810193416.png&quot; alt=&quot;20210810193416&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;From red point to green point, like fire.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dijkstras-algorithm地接丝卡尔&quot;&gt;Dijkstra’s Algorithm[地接丝卡尔]&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;a-star-algorithma&quot;&gt;A star Algorithm[A*]&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;优先搜索距离终点最近的点&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;week-2&quot;&gt;Week 2&lt;/h2&gt;
+
+&lt;h3 id=&quot;configuration-spacec-space-构型空间&quot;&gt;Configuration Space[C-Space 构型空间]&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;与之相对应的还有 Work-Space&lt;/li&gt;
+  &lt;li&gt;对于一个由一个点连接的两段悬臂，他们的旋转角度$\theta_1, $\theta_2$可以表达出悬臂所有能产生的形态&lt;/li&gt;
+  &lt;li&gt;即通过$\theta_1,\theta_2$构成的空间表示为悬臂可能的空间&lt;/li&gt;
+  &lt;li&gt;通过将笛卡尔体系下的Work-Space转化为C-Space，更方便求解规划问题&lt;/li&gt;
+  &lt;li&gt;例如，对于RR arm[2R arm, 二自由度机械臂]&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://skill-lync-portal.nyc3.digitaloceanspaces.com/tinymce/06_20/15934675311611.jpg&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://pic1.zhimg.com/50/v2-284ea537667ae4ccf1db7a46ebd3287d_720w.webp?source=1940ef5c&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;3D 的情形&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif&quot; alt=&quot;bandicam-2021-08-10-20-27-00-953&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;reference&quot;&gt;Reference&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/60108896/answer/224251293&quot;&gt;机器人运动规划中的C space怎样理解？为什么不直接在笛卡尔坐标系下运算呢？ - fly qq的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;visibility-graph&quot;&gt;Visibility Graph&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;将多边形的顶点转化为路径点，转化为路径规划问题&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210810204246.png&quot; alt=&quot;20210810204246&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;但是边缘行走很危险&lt;/li&gt;
+  &lt;li&gt;另一种方案是，根据多边形的顶点在X轴上将其分割为多个三角形或者梯形，在这些多边形内的直线运动是无障碍的，相应的，做出一个辅助路线图，连接两个可达的三角形或梯形的内部点，再进行路径规划&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210810204813.png&quot; alt=&quot;20210810204813&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Piano Mover’s Problem&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="coursera" /><summary type="html">Week 1</summary></entry><entry><title type="html">Deploy Cv environment for ubuntu, colmap, openmvs, e.g.</title><link href="https://ucas.io/3d/Start-Up-Colmap-env/" rel="alternate" type="text/html" title="Deploy Cv environment for ubuntu, colmap, openmvs, e.g." /><published>2021-08-09T16:11:48+08:00</published><updated>2021-08-09T16:11:48+08:00</updated><id>https://ucas.io/3d/Start-Up-Colmap-env</id><content type="html" xml:base="https://ucas.io/3d/Start-Up-Colmap-env/">&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://colmap.github.io/install.html&quot;&gt;install colmap&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS/wiki/Building&quot;&gt;install openmvs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1261,192 +1389,4 @@ $$&lt;/div&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/327324524/answer/705009156&quot;&gt;刚体动力学中的欧拉方程是如何推导出来的？ - Ramune的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B_(%E5%88%9A%E4%BD%93%E8%BF%90%E5%8A%A8)&quot;&gt;Wikipedia&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/47868515&quot;&gt;[飞控]从零开始建模(一)-牛顿欧拉方程 - zinghd的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html"></summary></entry><entry><title type="html">Try to start up texture</title><link href="https://ucas.io/3d/Try-To-Start-Up-Texture/" rel="alternate" type="text/html" title="Try to start up texture" /><published>2021-08-04T16:28:14+08:00</published><updated>2021-08-04T16:28:14+08:00</updated><id>https://ucas.io/3d/Try-To-Start-Up-Texture</id><content type="html" xml:base="https://ucas.io/3d/Try-To-Start-Up-Texture/">&lt;h2 id=&quot;colmapcolmap&quot;&gt;&lt;a href=&quot;https://github.com/colmap/colmap&quot;&gt;colmap/colmap&lt;/a&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;feature_extractor 特征提取&lt;/li&gt;
-  &lt;li&gt;matcher
-    &lt;ul&gt;
-      &lt;li&gt;exhaustive_matcher 特征匹配&lt;/li&gt;
-      &lt;li&gt;vocab_tree_matcher&lt;/li&gt;
-      &lt;li&gt;sequential_matcher&lt;/li&gt;
-      &lt;li&gt;spatial_matcher&lt;/li&gt;
-      &lt;li&gt;transitive_matcher&lt;/li&gt;
-      &lt;li&gt;matches_importer&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;mapper
-    &lt;ul&gt;
-      &lt;li&gt;Sparse 3D reconstruction / mapping of the dataset using SfM after performing feature extraction and matching&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;model_converter
-    &lt;ul&gt;
-      &lt;li&gt;Convert the COLMAP export format to another format, such as PLY or NVM&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;sfmstructure-from-motion&quot;&gt;SFM[Structure from Motion]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM&quot;&gt;mapillary/OpenSfM - github&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Open source Structure-from-Motion pipeline&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://cmsc426.github.io/sfm/&quot;&gt;cmsc426&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.opensfm.org/&quot;&gt;official website&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;feature_extractor&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;mvsmulti-view-stereo&quot;&gt;MVS[Multi View Stereo]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS&quot;&gt;cdcseacave/openMVS - github&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;InterfaceVisualSFM 稠密稀疏化&lt;/li&gt;
-  &lt;li&gt;DensifyPointCloud 稠密重建&lt;/li&gt;
-  &lt;li&gt;ReconstructMesh 重建mesh&lt;/li&gt;
-  &lt;li&gt;RefineMesh 网格优化&lt;/li&gt;
-  &lt;li&gt;TextureMesh 文理贴图&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
-
-&lt;div class=&quot;language-bat highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;::These parameters are specific to computer&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;::Store current Directory:&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;currDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%CD%&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;::get folder name as variable&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;MYDIR=&lt;/span&gt;&lt;span class=&quot;vm&quot;&gt;%~p0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;MYDIR1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;vm&quot;&gt;%MYDIR&lt;/span&gt;:&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;vm&quot;&gt;%%f&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vm&quot;&gt;%MYDIR1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;myfolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;vm&quot;&gt;%%~nxf&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;\path\to\3DReconstruction_release&quot;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;:: Set SFM directory&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;colDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%root%&lt;/span&gt;\software\SFM
-
-&lt;span class=&quot;c&quot;&gt;:: Set MVS directory&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;oMVS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%root%&lt;/span&gt;\software\MVS
-
-&lt;span class=&quot;c&quot;&gt;:: Set Working Directory&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;workDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%root%&lt;/span&gt;\temp&lt;span class=&quot;na&quot;&gt;-workspace&lt;/span&gt;\&lt;span class=&quot;nv&quot;&gt;%myfolder%&lt;/span&gt;\
-
-&lt;span class=&quot;c&quot;&gt;:: Set System env path&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%colDir%&lt;/span&gt;\lib\&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%path%&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;%workDir%&lt;/span&gt; 
-&lt;span class=&quot;nb&quot;&gt;copy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;.jpg &lt;span class=&quot;nv&quot;&gt;%workDir%&lt;/span&gt;\ 
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/d &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%workDir%&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;%colDir%&lt;/span&gt;\bin\feature_extractor &lt;span class=&quot;na&quot;&gt;--database&lt;/span&gt;_path &lt;span class=&quot;kd&quot;&gt;database&lt;/span&gt;.db &lt;span class=&quot;na&quot;&gt;--image&lt;/span&gt;_path .
-&lt;span class=&quot;nv&quot;&gt;%colDir%&lt;/span&gt;\bin\exhaustive_matcher &lt;span class=&quot;na&quot;&gt;--database&lt;/span&gt;_path &lt;span class=&quot;kd&quot;&gt;database&lt;/span&gt;.db
-&lt;span class=&quot;c&quot;&gt;::%colDir%\exhaustive_matcher --database_path database.db --SiftMatching.max_num_matches 10000&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;sparse&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;%colDir%&lt;/span&gt;\bin\mapper &lt;span class=&quot;na&quot;&gt;--database&lt;/span&gt;_path &lt;span class=&quot;nv&quot;&gt;%workDir%&lt;/span&gt;\database.db &lt;span class=&quot;na&quot;&gt;--image&lt;/span&gt;_path . &lt;span class=&quot;na&quot;&gt;--export&lt;/span&gt;_path &lt;span class=&quot;nv&quot;&gt;%workDir%&lt;/span&gt;\sparse
-&lt;span class=&quot;nv&quot;&gt;%colDir%&lt;/span&gt;\bin\model_converter &lt;span class=&quot;na&quot;&gt;--input&lt;/span&gt;_path &lt;span class=&quot;kd&quot;&gt;sparse&lt;/span&gt;\0 &lt;span class=&quot;na&quot;&gt;--output&lt;/span&gt;_path &lt;span class=&quot;kd&quot;&gt;model&lt;/span&gt;.nvm &lt;span class=&quot;na&quot;&gt;--output&lt;/span&gt;_type &lt;span class=&quot;kd&quot;&gt;NVM&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;\InterfaceVisualSFM.exe &lt;span class=&quot;kd&quot;&gt;model&lt;/span&gt;.nvm
-&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;\DensifyPointCloud.exe &lt;span class=&quot;kd&quot;&gt;model&lt;/span&gt;.mvs
-&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;\ReconstructMesh.exe &lt;span class=&quot;kd&quot;&gt;model_dense&lt;/span&gt;.mvs
-&lt;span class=&quot;c&quot;&gt;::%oMVS%\TextureMesh.exe --export-type obj -o %myfolder%.obj model_dense_mesh.mvs&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;\RefineMesh.exe &lt;span class=&quot;na&quot;&gt;--resolution-level &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;model_dense_mesh&lt;/span&gt;.mvs
-&lt;span class=&quot;c&quot;&gt;::%oMVS%\RefineMesh.exe --resolution-level 3 model_dense_mesh.mvs&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;%oMVS%&lt;/span&gt;\TextureMesh.exe &lt;span class=&quot;na&quot;&gt;--export-type &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;-o &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;%myfolder%&lt;/span&gt;.obj &lt;span class=&quot;kd&quot;&gt;model_dense_mesh_refine&lt;/span&gt;.mvs
-
-&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;%currDir%&lt;/span&gt;\model\
-&lt;span class=&quot;nb&quot;&gt;copy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;.obj &lt;span class=&quot;nv&quot;&gt;%currDir%&lt;/span&gt;\model\
-&lt;span class=&quot;nb&quot;&gt;copy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;.mtl &lt;span class=&quot;nv&quot;&gt;%currDir%&lt;/span&gt;\model\
-&lt;span class=&quot;nb&quot;&gt;copy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;Kd&lt;/span&gt;.jpg &lt;span class=&quot;nv&quot;&gt;%currDir%&lt;/span&gt;\model\
-
-
-&lt;span class=&quot;c&quot;&gt;::cd %currDir%&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;::If you want to automate removal of the working folder, use the following line.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;::Don't use it if you want to keep intermediate steps.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;::rmdir /S /Q %workDir%&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;pause&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;maya&quot;&gt;Maya&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805143531.png&quot; alt=&quot;20210805143531&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/360412732&quot;&gt;手把手教你跑三维重建代码！ - 计算机视觉life的文章 - 知乎&lt;/a&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">colmap/colmap</summary></entry><entry><title type="html">Robotics-Perception-Week3</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week3/" rel="alternate" type="text/html" title="Robotics-Perception-Week3" /><published>2021-08-04T10:25:53+08:00</published><updated>2021-08-04T10:25:53+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week3</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week3/">&lt;h2 id=&quot;visual-features视觉特征提取&quot;&gt;Visual Features[视觉特征提取]&lt;/h2&gt;
-
-&lt;h3 id=&quot;sift-scale-invariant-feature-transform-尺度不变特征转换&quot;&gt;SIFT [Scale-invariant feature transform] 尺度不变特征转换&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;大致思想&lt;/li&gt;
-  &lt;li&gt;我们需要同一个相机按不同视角拍摄的同一处的画面&lt;/li&gt;
-  &lt;li&gt;类似于全景图&lt;/li&gt;
-  &lt;li&gt;在拼接全景图时，我们需要找到对应的特征点，才能方便图片对接&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SIFT&lt;/code&gt;即为一种寻找特征点的算法&lt;/li&gt;
-  &lt;li&gt;对于一张图片进行不同$\sigma=1, \sqrt{2}, 2, \dotsc$的二维高斯卷积得到一组(octive)&lt;/li&gt;
-  &lt;li&gt;再将这张图片进行降采样(隔点采样)，拿到缩水的图片&lt;/li&gt;
-  &lt;li&gt;对于缩水的图片再次进行卷积，使用的$2\sigma=2, 2\sqrt{2}, 4 \dotsc$&lt;/li&gt;
-  &lt;li&gt;对于同一组(octive)的图片，相邻两张做差，得到&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DoG&lt;/code&gt; Difference of Gaussian, 其实是一种&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LoG&lt;/code&gt; laplacian of gaussian的近似&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804152043.png&quot; alt=&quot;20210804152043&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;gaussian-pyramid高斯金字塔&quot;&gt;Gaussian pyramid[高斯金字塔]&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;迭代(高斯卷积-&amp;gt;降采样-&amp;gt;得到一个长宽只有$\frac{1}{2}$的图)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;拉普拉斯金字塔&quot;&gt;拉普拉斯金字塔&lt;/h4&gt;
-
-&lt;h4 id=&quot;sift算法中的多尺度金字塔&quot;&gt;Sift算法中的多尺度金字塔&lt;/h4&gt;
-
-&lt;h4 id=&quot;差分金字塔与difference-of-gaussiandog高斯函数的差分&quot;&gt;差分金字塔与Difference of Gaussian(DOG)高斯函数的差分&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804151129.png&quot; alt=&quot;20210804151129&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;同时，需要归一化，以避免信号流式&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210804152921.png&quot; alt=&quot;20210804152921&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;拿到的最大响应点即我们需要的特征点&lt;/p&gt;
-
-&lt;h4 id=&quot;reference&quot;&gt;Reference&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://zhaoxuhui.top/blog/2019/11/12/robotics-perception-assignment-3.html#1visual-features&quot;&gt;zhaoxuhui.top&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/djfjkj52/article/details/104694488&quot;&gt;图像特征尺度不变性-拉普拉斯-高斯差DOG-SIFT特征提取-旋转不变性-SVD分析-齐次坐标的理解-线性的理解-齐次方程的理解 CSDN&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/zddblog/article/details/7521424&quot;&gt;🤙SIFT算法详解 - zddblog[CSDN]&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/Alliswell-WP/p/SIFT.html&quot;&gt;🤙SIFT算法原理详解 - Alliswell-WP[cnblogs]&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=NPcMS49V5hg&quot;&gt;🤙UCF Computer Vision Video Lectures 2012[5] -  Dr. Mubarak Shah[Youtube]&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;svd&quot;&gt;SVD&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805002318.png&quot; alt=&quot;20210805002318&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$A_{m\times n}=U_{m\times m}D_{m\times n}V_{n\times n}^T$&lt;/li&gt;
-  &lt;li&gt;$U$, 每列正交&lt;/li&gt;
-  &lt;li&gt;$V$, 正交&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;平均脸&quot;&gt;平均脸&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;把每张图片按$1\times n$重新排列&lt;/li&gt;
-  &lt;li&gt;组成一个$n\times N$的矩阵&lt;/li&gt;
-  &lt;li&gt;通过SVD分解，拿到前几个特征，进行重构后即可&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805003209.png&quot; alt=&quot;20210805003209&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;改变$D$的元素个数，可以更改$A$的秩&lt;/li&gt;
-  &lt;li&gt;使$D$取倒数，则可计算$A^{-1}=VD^{-1}U^T$&lt;/li&gt;
-  &lt;li&gt;$D$非负&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Visual Features[视觉特征提取]</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html"></summary></entry></feed>

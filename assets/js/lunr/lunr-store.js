@@ -172,4 +172,16 @@ var store = [{
         "tags": [],
         "url": "/3d/Start-Up-Colmap-env/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210810003311.png"
+      },{
+        "title": "Robotics Motion Planning Week 1 and 2",
+        "excerpt":"Week 1 Grassfire Algorithm From red point to green point, like fire. Dijkstra’s Algorithm[地接丝卡尔] A star Algorithm[A*] 优先搜索距离终点最近的点 Week 2 Configuration Space[C-Space 构型空间] 与之相对应的还有 Work-Space 对于一个由一个点连接的两段悬臂，他们的旋转角度$\\theta_1, $\\theta_2$可以表达出悬臂所有能产生的形态 即通过$\\theta_1,\\theta_2$构成的空间表示为悬臂可能的空间 通过将笛卡尔体系下的Work-Space转化为C-Space，更方便求解规划问题 例如，对于RR arm[2R arm, 二自由度机械臂] 3D 的情形 Reference 机器人运动规划中的C space怎样理解？为什么不直接在笛卡尔坐标系下运算呢？ - fly qq的回答 - 知乎 Visibility Graph 将多边形的顶点转化为路径点，转化为路径规划问题 但是边缘行走很危险 另一种方案是，根据多边形的顶点在X轴上将其分割为多个三角形或者梯形，在这些多边形内的直线运动是无障碍的，相应的，做出一个辅助路线图，连接两个可达的三角形或梯形的内部点，再进行路径规划 Piano Mover’s...","categories": ["coursera"],
+        "tags": [],
+        "url": "/coursera/Robotics-Motion-Planning-week1-week2/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif"
+      },{
+        "title": "Try to use OpenMVS under ubuntu",
+        "excerpt":"Run under jupyter-lab Open it at ucas OpenSfM feature_type KAZE[EECV]風 github KAZE Features. Pablo F. Alcantarilla, Adrien Bartoli and Andrew J. Davison. In European Conference on Computer Vision (ECCV), Fiorenze, Italy, October 2012. bibtex Perona-Malik方程 非线性尺度空间 AKAZE[Accelerated-KAZE KAZE的加速版] SIFT DoG[Difference of Gaussian] SURF[Speeded up robust features] Use Box-Filter[盒子滤波器] instead of...","categories": ["coursera"],
+        "tags": [],
+        "url": "/coursera/Try-to-use-OpenMVS-under-ubuntu/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif"
       }]

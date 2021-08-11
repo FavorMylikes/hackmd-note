@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Jekyll Archive / Notes B</title>
-<meta name="description" content="How Jekyll Archive Work">
+<!-- begin _includes/seo.html --><title>Try to use OpenMVS under ubuntu / Notes B</title>
+<meta name="description" content="Run under jupyter-lab">
 
 
   <meta name="author" content="麦丽素">
@@ -22,26 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Jekyll Archive">
-<meta property="og:url" content="https://ucas.io/tutorial/Jekyll-Archive/">
+<meta property="og:title" content="Try to use OpenMVS under ubuntu">
+<meta property="og:url" content="https://ucas.io/coursera/Try-to-use-OpenMVS-under-ubuntu/">
 
 
-  <meta property="og:description" content="How Jekyll Archive Work">
-
-
-
+  <meta property="og:description" content="Run under jupyter-lab">
 
 
 
-
-  <meta property="article:published_time" content="2021-08-01T16:53:36+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-10T22:37:02+08:00">
 
-<link rel="canonical" href="https://ucas.io/tutorial/Jekyll-Archive/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/coursera/Try-to-use-OpenMVS-under-ubuntu/">
 
 
 
@@ -203,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/tutorial" itemprop="item"><span itemprop="name">Tutorial</span></a>
+          <a href="/categories/coursera" itemprop="item"><span itemprop="name">Coursera</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -211,7 +213,7 @@
     
       
       
-        <li class="current">Jekyll Archive</li>
+        <li class="current">Try to use OpenMVS under ubuntu</li>
       
     
   </ol>
@@ -330,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Jekyll Archive">
-    <meta itemprop="description" content="How Jekyll Archive Work">
-    <meta itemprop="datePublished" content="2021-08-01T16:53:36+08:00">
+    <meta itemprop="headline" content="Try to use OpenMVS under ubuntu">
+    <meta itemprop="description" content="Run under jupyter-lab">
+    <meta itemprop="datePublished" content="2021-08-10T22:37:02+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Jekyll Archive
+          <h1 id="page-title" class="page__title" itemprop="headline">Try to use OpenMVS under ubuntu
 </h1>
           
 
@@ -348,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-01T16:53:36+08:00">August 1, 2021</time>
+        <time datetime="2021-08-10T22:37:02+08:00">August 10, 2021</time>
       </span>
     
 
@@ -376,34 +378,86 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#how-jekyll-archive-work">How Jekyll Archive Work</a></li><li><a href="#minimal-mistakes在archive界面上的处理逻辑">Minimal-Mistakes在Archive界面上的处理逻辑</a></li><li><a href="#我的实现逻辑">我的实现逻辑</a></li></ul>
+              <ul class="toc__menu"><li><a href="#run-under-jupyter-lab">Run under jupyter-lab</a></li><li><a href="#opensfm">OpenSfM</a><ul><li><a href="#feature_type">feature_type</a><ul><li><a href="#reference">Reference</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="how-jekyll-archive-work">How Jekyll Archive Work</h2>
+        <h2 id="run-under-jupyter-lab">Run under jupyter-lab</h2>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628610280(1).jpg" alt="1628610280(1)" /></p>
 
 <ul>
-  <li>用<code class="language-plaintext highlighter-rouge">Ruby</code>写的</li>
-  <li>主要作用是将文章按<code class="language-plaintext highlighter-rouge">categories</code>, <code class="language-plaintext highlighter-rouge">tags</code>, <code class="language-plaintext highlighter-rouge">year</code>, <code class="language-plaintext highlighter-rouge">month</code>, <code class="language-plaintext highlighter-rouge">day</code>, 生成新的索引页面</li>
-  <li>但是对于索引页面本身，<code class="language-plaintext highlighter-rouge">jekyll-archive</code>, 并未创建</li>
-  <li>因此需要<code class="language-plaintext highlighter-rouge">_pages</code>中的页面进行辅助</li>
-  <li>在<code class="language-plaintext highlighter-rouge">nav</code>中加入连接，才可以</li>
+  <li>Open it at <a href="http://ucas/jupyter/lab/tree/3d/colmap_script.ipynb">ucas</a></li>
 </ul>
 
-<h2 id="minimal-mistakes在archive界面上的处理逻辑">Minimal-Mistakes在Archive界面上的处理逻辑</h2>
+<h2 id="opensfm">OpenSfM</h2>
+
+<h3 id="feature_type">feature_type</h3>
 
 <ul>
-  <li>它实现了自己的pages</li>
-  <li>但是仅仅使用<code class="language-plaintext highlighter-rouge">#</code>作为业内索引，而并没有生成连接</li>
+  <li>KAZE[EECV]風
+    <ul>
+      <li><a href="https://github.com/pablofdezalc/kaze">github</a></li>
+      <li><a href="http://www.robesafe.com/personal/pablo.alcantarilla/kaze.html">KAZE Features. Pablo F. Alcantarilla, Adrien Bartoli and Andrew J. Davison. In European Conference on Computer Vision (ECCV), Fiorenze, Italy, October 2012. bibtex</a></li>
+      <li>Perona-Malik方程</li>
+      <li>非线性尺度空间</li>
+    </ul>
+  </li>
+  <li>AKAZE[Accelerated-KAZE KAZE的加速版]</li>
+  <li>SIFT
+    <ul>
+      <li>DoG[Difference of Gaussian]</li>
+    </ul>
+  </li>
+  <li>SURF[Speeded up robust features]
+    <ul>
+      <li>Use Box-Filter[盒子滤波器] instead of DoG</li>
+      <li>Change the size of Box-Filter, to build scala space.</li>
+      <li>方向定位，haar小波</li>
+      <li>Integral image[积分图]
+        <ul>
+          <li>递归计算</li>
+          <li>
+            <div class="kdmath">$$
+I(x,y)=i(x,y)+I(x-1,y)+I(x,y-1)+I(x-1,y-1)
+$$</div>
+          </li>
+          <li>算好之后达到快速计算任意图形区域积分的目的</li>
+          <li><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Prm_VJ_fig3_computeRectangleWithAlpha.png" width="40%" /></li>
+          <li>
+            <div class="kdmath">$$
+I_{\square_{ABCD}} = I(C)+I(A)-I(B)-I(D)
+$$</div>
+          </li>
+        </ul>
+      </li>
+      <li>Hessian矩阵</li>
+    </ul>
+  </li>
+  <li>HAHOG</li>
+  <li>ORB</li>
 </ul>
 
-<h2 id="我的实现逻辑">我的实现逻辑</h2>
+<h4 id="reference">Reference</h4>
 
 <ul>
-  <li>同样在<code class="language-plaintext highlighter-rouge">_layouts</code>中实现<code class="language-plaintext highlighter-rouge">years.html</code>, <code class="language-plaintext highlighter-rouge">tags.html</code>, <code class="language-plaintext highlighter-rouge">months.html</code></li>
-  <li>在<code class="language-plaintext highlighter-rouge">_pages</code>中进行相应的调用</li>
-  <li>不过为了和<code class="language-plaintext highlighter-rouge">jekyll-archive</code>配合，将日期连接统一改成了<code class="language-plaintext highlighter-rouge">dates\:year\:month</code></li>
+  <li>SURF is faster than SIFT?
+    <ul>
+      <li><a href="https://stackoverflow.com/a/27398168/5587080">stackoverflow</a></li>
+    </ul>
+  </li>
+  <li>The Difference between of SIFT and SURF
+    <ul>
+      <li><a href="https://www.cnblogs.com/gfgwxw/p/9415218.html#">【CV学习5】SURF算法详解 - 苟富贵</a></li>
+    </ul>
+  </li>
+  <li>KAZE
+    <ul>
+      <li><a href="https://www.shuzhiduo.com/A/RnJWYE1Bdq/">一点一滴完全突破KAZE特征检测算法，从各向异性扩散滤波开始(1) - 术之多</a></li>
+      <li><a href="https://zhuanlan.zhihu.com/p/304199431">Perona-Malik方程（各向同性非线性扩散实现图像滤波） - 查讯纤的文章 - 知乎</a></li>
+    </ul>
+  </li>
 </ul>
 
         
@@ -423,7 +477,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/tutorial" class="page__taxonomy-item" rel="tag">tutorial</a>
+      <a href="/categories/coursera" class="page__taxonomy-item" rel="tag">coursera</a>
     
     </span>
   </p>
@@ -431,7 +485,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-01T16:53:36+08:00">August 1, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-10T22:37:02+08:00">August 10, 2021</time></p>
 
 
       </footer>
@@ -439,23 +493,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Jekyll+Archive%20https%3A%2F%2Fucas.io%2Ftutorial%2FJekyll-Archive%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Try+to+use+OpenMVS+under+ubuntu%20https%3A%2F%2Fucas.io%2Fcoursera%2FTry-to-use-OpenMVS-under-ubuntu%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Ftutorial%2FJekyll-Archive%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fcoursera%2FTry-to-use-OpenMVS-under-ubuntu%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Ftutorial%2FJekyll-Archive%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fcoursera%2FTry-to-use-OpenMVS-under-ubuntu%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/tutorial/Add-Jekyll-Search-And-Logo/" class="pagination--pager" title="Jekyll Search And Logo
+      <a href="/coursera/Robotics-Motion-Planning-week1-week2/" class="pagination--pager" title="Robotics Motion Planning Week 1 and 2
 ">Previous</a>
     
     
-      <a href="/3d/coursera/Review-of-Robotics-Perception-week1/" class="pagination--pager" title="Review of Robotics Perception week1
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -469,57 +522,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/coursera/Try-to-use-OpenMVS-under-ubuntu/" rel="permalink">Try to use OpenMVS under ubuntu
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-10T22:37:02+08:00">August 10, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Run under jupyter-lab
-</p>
-  </article>
-</div>
-
         
           
 
@@ -610,7 +612,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          2 minute read
+          1 minute read
         
       </span>
     
@@ -664,7 +666,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -672,6 +674,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">File Format
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Software-Report-Ranking/" rel="permalink">Software Report Ranking
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-08T13:41:45+08:00">August 8, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">SfM
 </p>
   </article>
 </div>
