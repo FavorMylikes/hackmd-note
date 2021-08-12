@@ -190,4 +190,16 @@ var store = [{
         "tags": [],
         "url": "/coursera/Robotics-Motion-Planning-week3-and-week4/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif"
+      },{
+        "title": "Make OpenMVS work at jupyter",
+        "excerpt":"尝试高清ColMap逻辑 Feature Extractor 特征点提取 --SiftExtraction.use_gpu 0 You cannot use the feature extractor in GPU mode without an attached display issue --ImageReader.camera_model SIMPLE_RADIAL camera model Default is SIMPLE_RADIAL, you can choice one of PINHOLE RADIAL OPENCV SIMPLE_RADIAL_FISHEYE RADIAL_FISHEYE OPENCV_FISHEYE FOV THIN_PRISM_FISHEYE colmap feature_extractor \\ --database_path $DATASET_PATH/database.db \\ --image_path $DATASET_PATH/images\\ --SiftExtraction.use_gpu 0...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Make-OpenMVS-Work-at-Jupyter/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210811172921.png"
+      },{
+        "title": "ColMap OpenMVS workflow",
+        "excerpt":"Through a lot of reading about those doc and issue I wanna write a tutorial for fresh people. This is prepare for linux server (means no desktop) And I have compile the latest version colmap and openmvs Step 1 colmap feature_extractor \\ --SiftExtraction.use_gpu 0 \\ --database_path $PROJECT/database.db\\ --image_path $DATA_ROOT/$PROJECT/images here...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/ColMap-OpenMVS-workflow/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif"
       }]

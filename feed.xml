@@ -1,4 +1,229 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-11T14:02:51+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Robotics Motion Planning week3 and week4</title><link href="https://ucas.io/coursera/Robotics-Motion-Planning-week3-and-week4/" rel="alternate" type="text/html" title="Robotics Motion Planning week3 and week4" /><published>2021-08-11T12:42:35+08:00</published><updated>2021-08-11T12:42:35+08:00</updated><id>https://ucas.io/coursera/Robotics-Motion-Planning-week3-and-week4</id><content type="html" xml:base="https://ucas.io/coursera/Robotics-Motion-Planning-week3-and-week4/">&lt;h2 id=&quot;week3&quot;&gt;week3&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-12T17:07:26+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">ColMap OpenMVS workflow</title><link href="https://ucas.io/3d/ColMap-OpenMVS-workflow/" rel="alternate" type="text/html" title="ColMap OpenMVS workflow" /><published>2021-08-12T16:55:38+08:00</published><updated>2021-08-12T16:55:38+08:00</updated><id>https://ucas.io/3d/ColMap-OpenMVS-workflow</id><content type="html" xml:base="https://ucas.io/3d/ColMap-OpenMVS-workflow/">&lt;h2 id=&quot;through-a-lot-of-reading-about-those-doc-and-issue&quot;&gt;Through a lot of reading about those doc and issue&lt;/h2&gt;
+
+&lt;p&gt;I wanna write a tutorial for fresh people.&lt;/p&gt;
+
+&lt;p&gt;This is prepare for &lt;strong&gt;linux server (means no desktop)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;And I have compile the latest version &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;colmap&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openmvs&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;step-1&quot;&gt;Step 1&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;colmap feature_extractor \
+--SiftExtraction.use_gpu 0 \
+--database_path $&lt;/span&gt;PROJECT/database.db&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--image_path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DATA_ROOT&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/images
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;here &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--SiftExtraction.use_gpu&lt;/code&gt; is using for linux server only, you can comment it out if you have desktop.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--ImageReader.camera_model PINHOLE&lt;/code&gt;, you could choice other one, check the list &lt;a href=&quot;https://colmap.github.io/cameras.html&quot;&gt;camera model&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;For using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;InterfaceCOLMAP&lt;/code&gt;, you must specify &lt;strong&gt;PINHOLE&lt;/strong&gt; model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;step-2&quot;&gt;Step 2&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;colmap exhaustive_matcher\
+--SiftMatching.use_gpu 0\
+--database_path $&lt;/span&gt;PROJECT/database.db
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;here &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--SiftMatching.use_gpu 0&lt;/code&gt;  has same effect with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SiftExtraction.use_gpu&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;step-3&quot;&gt;Step 3&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;colmap mapper\
+--database_path $&lt;/span&gt;PROJECT/database.db &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--image_path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DATA_ROOT&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/images &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output_path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/sparse 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;step-4&quot;&gt;Step 4&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;去除图片的畸变(undistort)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;colmap image_undistorter \
+--image_path $&lt;/span&gt;DATA_ROOT/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/images &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--input_path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/sparse/0 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output_path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/dense &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output_type&lt;/span&gt; COLMAP
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;here &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--output_type&lt;/code&gt;, you could find the usage at &lt;a href=&quot;https://colmap.github.io/cli.html?highlight=undistortion&quot;&gt;colmap&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;把相机内存转化为txt格式方便openmvs读取&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;colmap model_converter \
+--input_path $&lt;/span&gt;PROJECT/dense/sparse &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output_path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/dense/sparse &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output_type&lt;/span&gt; TXT
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;At this step, you will see three &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;txt&lt;/code&gt; file will be created at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sparse&lt;/code&gt; dir.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cameras.txt&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;images.txt&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;point3D.txt&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;And &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PINHOLE&lt;/code&gt; is in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cameras.txt&lt;/code&gt; you will see&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;step-5&quot;&gt;Step 5&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;InterfaceCOLMAP \
+--working-folder $&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--input-file&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output-file&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model_colmap.mvs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;step-6&quot;&gt;Step 6&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;DensifyPointCloud \
+--input-file $&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model_colmap.mvs &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--working-folder&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output-file&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model_dense.mvs &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--archive-type&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-1&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Here &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--archive-type -1&lt;/code&gt; must be set&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;step-7&quot;&gt;Step 7&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;ReconstructMesh --input-file $&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model_dense.mvs &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--working-folder&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output-file&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model_dense_mesh.mvs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;step-8&quot;&gt;Step 8&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;RefineMesh \
+--resolution-level 1 \
+--input-file $&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model_dense_mesh.mvs &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--working-folder&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output-file&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model_dense_mesh_refine.mvs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;step-9&quot;&gt;Step 9&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;TextureMesh \
+--export-type obj \
+--output-file $&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model.obj &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--working-folder&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--input-file&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model_dense_mesh_refine.mvs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;final&quot;&gt;FINAL&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You will get &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;model.mtl&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;model.obj&lt;/code&gt; and the texure &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;model_material_0_map_Kd.jpg&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Open obj with software you like, I’ll recommend &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MAYA&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ucas/jupyter/lab/tree/3d/colmap_script.ipynb&quot;&gt;ucas script - ipynb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Through a lot of reading about those doc and issue</summary></entry><entry><title type="html">Make OpenMVS work at jupyter</title><link href="https://ucas.io/3d/Make-OpenMVS-Work-at-Jupyter/" rel="alternate" type="text/html" title="Make OpenMVS work at jupyter" /><published>2021-08-11T18:04:44+08:00</published><updated>2021-08-11T18:04:44+08:00</updated><id>https://ucas.io/3d/Make-OpenMVS-Work-at-Jupyter</id><content type="html" xml:base="https://ucas.io/3d/Make-OpenMVS-Work-at-Jupyter/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210811172921.png&quot; alt=&quot;20210811172921&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;尝试高清colmap逻辑&quot;&gt;尝试高清ColMap逻辑&lt;/h2&gt;
+
+&lt;h3 id=&quot;feature-extractor-特征点提取&quot;&gt;Feature Extractor 特征点提取&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--SiftExtraction.use_gpu 0&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;You cannot use the feature extractor in GPU mode without an attached display&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/colmap/colmap/issues/45#issuecomment-266373096&quot;&gt;issue&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--ImageReader.camera_model SIMPLE_RADIAL&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://colmap.github.io/cameras.html&quot;&gt;camera model&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Default is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SIMPLE_RADIAL&lt;/code&gt;, you can choice one of
+        &lt;ul&gt;
+          &lt;li&gt;PINHOLE&lt;/li&gt;
+          &lt;li&gt;RADIAL&lt;/li&gt;
+          &lt;li&gt;OPENCV&lt;/li&gt;
+          &lt;li&gt;SIMPLE_RADIAL_FISHEYE&lt;/li&gt;
+          &lt;li&gt;RADIAL_FISHEYE&lt;/li&gt;
+          &lt;li&gt;OPENCV_FISHEYE&lt;/li&gt;
+          &lt;li&gt;FOV&lt;/li&gt;
+          &lt;li&gt;THIN_PRISM_FISHEYE&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;colmap feature_extractor \
+   --database_path $&lt;/span&gt;DATASET_PATH/database.db &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;--image_path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DATASET_PATH&lt;/span&gt;/images&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;--SiftExtraction&lt;/span&gt;.use_gpu 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;特征匹配&quot;&gt;特征匹配&lt;/h2&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;colmap exhaustive_matcher\
+--database_path database.db
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;mapper&quot;&gt;Mapper&lt;/h2&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;sparse
+colmap mapper&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--database_path&lt;/span&gt; database.db &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--image_path&lt;/span&gt; /opt/OpenSfM/data/dinosaur/images &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output_path&lt;/span&gt; ./sparse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;model-coverter&quot;&gt;Model Coverter&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the out put type could be one of &lt;strong&gt;{BIN, TXT, NVM, Bundler, VRML, PLY, R3D, CAM}&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;colmap model_converter &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--input_path&lt;/span&gt; sparse/0 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output_path&lt;/span&gt; model.nvm &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output_type&lt;/span&gt; NVM
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;convert-to-mvs-file&quot;&gt;Convert to mvs file&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;InterfaceCOLMAP
+    &lt;ul&gt;
+      &lt;li&gt;need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cameras.txt&lt;/code&gt; and so on at sparse with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PINHOLD&lt;/code&gt; camera mode&lt;/li&gt;
+      &lt;li&gt;you can set it by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;colmap model_converter --output_type&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;InterfaceCOLMAP &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--input-file&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--image-folder&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/undistorted_images &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output-file&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model_colmap.mvs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;InterfaceCOLMAP&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;InterfaceCOLMAP &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--input-file&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--image-folder&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/undistorted_images &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--output-file&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$PROJECT&lt;/span&gt;/model_colmap.mvs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html"></summary></entry><entry><title type="html">Robotics Motion Planning week3 and week4</title><link href="https://ucas.io/coursera/Robotics-Motion-Planning-week3-and-week4/" rel="alternate" type="text/html" title="Robotics Motion Planning week3 and week4" /><published>2021-08-11T12:42:35+08:00</published><updated>2021-08-11T12:42:35+08:00</updated><id>https://ucas.io/coursera/Robotics-Motion-Planning-week3-and-week4</id><content type="html" xml:base="https://ucas.io/coursera/Robotics-Motion-Planning-week3-and-week4/">&lt;h2 id=&quot;week3&quot;&gt;week3&lt;/h2&gt;
 
 &lt;h3 id=&quot;probilalitic-road-mapprm&quot;&gt;Probilalitic Road Map(PRM)&lt;/h3&gt;
 
@@ -927,268 +1152,4 @@ $$&lt;/div&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Epipolar_geometry&quot;&gt;Epipolar geometry - Wikipedia&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Essential_matrix&quot;&gt;Essential matrix - Wikipedia&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/27581884/answer/466669565&quot;&gt;本质矩阵和基础矩阵的区别是什么？ - 「已注销」的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Epipolar Geometry[对极几何]</summary></entry><entry><title type="html">Start up OpenSfm</title><link href="https://ucas.io/3d/docker/Start-up-OpenSfM/" rel="alternate" type="text/html" title="Start up OpenSfm" /><published>2021-08-06T13:35:30+08:00</published><updated>2021-08-06T13:35:30+08:00</updated><id>https://ucas.io/3d/docker/Start-up-OpenSfM</id><content type="html" xml:base="https://ucas.io/3d/docker/Start-up-OpenSfM/">&lt;h2 id=&quot;start-service-with-docker&quot;&gt;Start service with docker&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mapillary/OpenSfM/&quot;&gt;mapillary/OpenSfM - github&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/sbstnkll/opensfm&quot;&gt;sbstnkll/opensfm -Docker hub&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.opensfm.org/docs/using.html&quot;&gt;How to use&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull sbstnkll/opensfm:opensfm
-docker save -o opensfm.docker.docker sbstnkll/opensfm:opensfm
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;docker host&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker load -i opensfm.docker
-docker run -itd -p 8000:8000 \
---mount type=bind,source=/path/to/OpenSfM/data,target=/source/OpenSfM/data \
-sbstnkll/opensfm:opensfm \
-bash -c 'python3 -m http.server'
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;run compiler command need attach&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker attach &amp;lt;containerID&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;using-opensfm&quot;&gt;Using OpenSfm&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Using two docker container, one of them is the python http server, the second using for opensfm command&lt;/li&gt;
-  &lt;li&gt;Building model&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bin/opensfm_run_all data/project/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The Poeject Tree like&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;project/
-├── config.yaml
-└── images
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Here &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config.yaml&lt;/code&gt; has default config&lt;/li&gt;
-  &lt;li&gt;Override it by reading this &lt;a href=&quot;https://www.opensfm.org/docs/_modules/opensfm/config.html#default_config&quot;&gt;doc&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210806153055.png&quot; alt=&quot;20210806153055&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;To check result&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://ucas/viewer/reconstruction.html#file=http://path/to/data/project/reconstruction.meshed.json&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;running-report&quot;&gt;Running Report&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;num&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;extract_metadata&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;extract_metadata&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;detect_features&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;match_features&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;create_tracks&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;reconstruct&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;mesh&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;undistort&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;compute_depthmaps&lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;berlin&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.01&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.01&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.34&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.17&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.03&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.49&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.11&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.53&lt;/td&gt;
-      &lt;td&gt;5.71&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;dinosaur&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;33&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.00&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.00&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.00&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.16&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.03&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;8.63&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.12&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.19&lt;/td&gt;
-      &lt;td&gt;2.60&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;dinosaur_gps&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;33&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.02&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.02&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.33&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.48&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.04&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;8.77&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.14&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.19&lt;/td&gt;
-      &lt;td&gt;3.64&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;lund&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;29&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.00&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.00&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.35&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.23&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.02&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.17&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.03&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.03&lt;/td&gt;
-      &lt;td&gt;3.01&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;qingdao_48&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;48&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.68&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.25&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.07&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2.29&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.27&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.63&lt;/td&gt;
-      &lt;td&gt;4.94&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;qingdao_96&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;96&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.67&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.25&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.07&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2.29&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.27&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.64&lt;/td&gt;
-      &lt;td&gt;4.95&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;qingdao_192&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;192&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.68&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.24&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.07&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2.14&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.26&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.63&lt;/td&gt;
-      &lt;td&gt;4.92&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;qingdao_384&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;384&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.67&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.33&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3.34&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.30&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.64&lt;/td&gt;
-      &lt;td&gt;5.19&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;qingdao_448&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;445&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.67&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.33&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3.49&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.29&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.63&lt;/td&gt;
-      &lt;td&gt;5.25&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;shenzhen_399&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;394&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.10&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.10&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.69&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.30&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.08&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;6.23&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.34&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.76&lt;/td&gt;
-      &lt;td&gt;5.16&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210808010053.png&quot; alt=&quot;20210808010053&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="docker" /><summary type="html">Start service with docker</summary></entry><entry><title type="html">Robotics-Perception-Week3[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/" rel="alternate" type="text/html" title="Robotics-Perception-Week3[2]" /><published>2021-08-05T20:13:57+08:00</published><updated>2021-08-05T20:13:57+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week3%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week3-2/">&lt;h2 id=&quot;ransacrandom-sample-consenus&quot;&gt;RANSAC[Random Sample Consenus]&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805200032.png&quot; alt=&quot;20210805200032&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;该算法其实是一种迭代选过滤&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outliers&lt;/code&gt;的思想，并不局限于对点进行拟合&lt;/li&gt;
-  &lt;li&gt;通常与&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Linear regressor&lt;/code&gt;进行对比用于体现&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Linear regressor&lt;/code&gt;的不足之处&lt;/li&gt;
-  &lt;li&gt;从信息提供的角度来说&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Linear regressor&lt;/code&gt;认为每个点所在的位置都是有意义的，即便存在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outlier&lt;/code&gt;，也不应当将其剔除，因此该算法在遇到&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outlier&lt;/code&gt;距离其他数据很远时，则会显现出倾向于&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outlier&lt;/code&gt;结果&lt;/li&gt;
-  &lt;li&gt;而&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RANSAC&lt;/code&gt;则倾向于，多数点同意则完全收敛到点数最多的模型那里，但显然&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RANSAC&lt;/code&gt;在面对两组数据量差不多的模型时，无法单独做出决策，即，在两个模型中反复横跳&lt;/li&gt;
-  &lt;li&gt;Code at &lt;a href=&quot;http://ucas/jupyter/lab/tree/Ransac.ipynb&quot;&gt;ucas&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;orthogonal-procrustes-problem正交普鲁克问题-3d-3d-pose&quot;&gt;Orthogonal Procrustes Problem[正交普鲁克问题, 3D-3D pose]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;一个为了让客人和自己的床一样大小而砍断客人双脚或拉长客人的古希腊故事[普罗克汝斯特斯之床]&lt;/li&gt;
-  &lt;li&gt;给定两个矩阵$A$和$B$并要求找到一个正交矩阵$\Omega$最接近映射$A$到$B$&lt;/li&gt;
-  &lt;li&gt;$R=\underset{\Omega}{\argmin}{\Vert\Omega A-B\Vert}_F\ \ \ \text{subject to}\ \ \ \Omega^T\Omega=I$&lt;/li&gt;
-  &lt;li&gt;其中$\Vert X\Vert_F$为Frobenius 范数&lt;/li&gt;
-  &lt;li&gt;$\Vert X\Vert_F=\sqrt{trace(X^TX)}=\sqrt{\sum_{i,j}x_{ij}^2}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://wikimedia.org/api/rest_v1/media/math/render/svg/536dfe60d018a31363734d748c4a959d91f5c12b&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;当$S$为单位阵时，表达式可以最大化&lt;/li&gt;
-  &lt;li&gt;通常用来解决点云旋转的匹配最优解，(因为旋转变换都是正交阵)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;pose-from-point-correspondences-p3p&quot;&gt;Pose from Point Correspondences P3P&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;当船看到两个灯塔并测得方位角时，可以知道，船在这个圆上&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805235050.png&quot; alt=&quot;20210805235050&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;在3D世界中，同样已知2点的位置，相机会被越说在一个曲面内&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805235200.png&quot; alt=&quot;20210805235200&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Tienstra公式&lt;/li&gt;
-  &lt;li&gt;已知3点所对应的角度，可以确定观察者的位置&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/9/9e/TiestraFormulaDiagram.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210805235625.png&quot; alt=&quot;20210805235625&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">RANSAC[Random Sample Consenus]</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Epipolar Geometry[对极几何]</summary></entry></feed>

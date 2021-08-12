@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Install Remote Browser[remoteview], And Coursera Robotics-Flight week 2 / Notes B</title>
-<meta name="description" content="remote chrome debuging">
+<!-- begin _includes/seo.html --><title>ColMap OpenMVS workflow / Notes B</title>
+<meta name="description" content="Through a lot of reading about those doc and issue">
 
 
   <meta name="author" content="麦丽素">
@@ -22,26 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Install Remote Browser[remoteview], And Coursera Robotics-Flight week 2">
-<meta property="og:url" content="https://ucas.io/env/system/coursera/Robotics-Flight-week-2/">
+<meta property="og:title" content="ColMap OpenMVS workflow">
+<meta property="og:url" content="https://ucas.io/3d/ColMap-OpenMVS-workflow/">
 
 
-  <meta property="og:description" content="remote chrome debuging">
-
-
-
+  <meta property="og:description" content="Through a lot of reading about those doc and issue">
 
 
 
-
-  <meta property="article:published_time" content="2021-07-22T11:12:00+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-12T16:55:38+08:00">
 
-<link rel="canonical" href="https://ucas.io/env/system/coursera/Robotics-Flight-week-2/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/ColMap-OpenMVS-workflow/">
 
 
 
@@ -203,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/env" itemprop="item"><span itemprop="name">Env</span></a>
+          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -211,27 +213,7 @@
     
       
       
-        
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/system" itemprop="item"><span itemprop="name">System</span></a>
-          <meta itemprop="position" content="3" />
-        </li>
-        <span class="sep">/</span>
-      
-    
-      
-      
-        
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/coursera" itemprop="item"><span itemprop="name">Coursera</span></a>
-          <meta itemprop="position" content="4" />
-        </li>
-        <span class="sep">/</span>
-      
-    
-      
-      
-        <li class="current">Install Remote Browser[remoteview], And Coursera Robotics-Flight week 2</li>
+        <li class="current">ColMap OpenMVS workflow</li>
       
     
   </ol>
@@ -350,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Install Remote Browser[remoteview], And Coursera Robotics-Flight week 2">
-    <meta itemprop="description" content="remote chrome debuging">
-    <meta itemprop="datePublished" content="2021-07-22T11:12:00+08:00">
+    <meta itemprop="headline" content="ColMap OpenMVS workflow">
+    <meta itemprop="description" content="Through a lot of reading about those doc and issue">
+    <meta itemprop="datePublished" content="2021-08-12T16:55:38+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Install Remote Browser[remoteview], And Coursera Robotics-Flight week 2
+          <h1 id="page-title" class="page__title" itemprop="headline">ColMap OpenMVS workflow
 </h1>
           
 
@@ -368,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-07-22T11:12:00+08:00">July 22, 2021</time>
+        <time datetime="2021-08-12T16:55:38+08:00">August 12, 2021</time>
       </span>
     
 
@@ -396,140 +378,146 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#remote-chrome-debuging">remote chrome debuging</a></li><li><a href="#try-to-use-remoteviewbase-on-npm">Try to use remoteview[base on npm]</a></li><li><a href="#准备看点coursera">准备看点Coursera</a></li></ul>
+              <ul class="toc__menu"><li><a href="#through-a-lot-of-reading-about-those-doc-and-issue">Through a lot of reading about those doc and issue</a><ul><li><a href="#step-1">Step 1</a></li><li><a href="#step-2">Step 2</a></li><li><a href="#step-3">Step 3</a></li><li><a href="#step-4">Step 4</a></li><li><a href="#step-5">Step 5</a></li><li><a href="#step-6">Step 6</a></li><li><a href="#step-7">Step 7</a></li><li><a href="#step-8">Step 8</a></li><li><a href="#step-9">Step 9</a></li><li><a href="#final">FINAL</a></li></ul></li><li><a href="#code">Code</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="remote-chrome-debuging">remote chrome debuging</h2>
+        <h2 id="through-a-lot-of-reading-about-those-doc-and-issue">Through a lot of reading about those doc and issue</h2>
+
+<p>I wanna write a tutorial for fresh people.</p>
+
+<p>This is prepare for <strong>linux server (means no desktop)</strong></p>
+
+<p>And I have compile the latest version <code class="language-plaintext highlighter-rouge">colmap</code> and <code class="language-plaintext highlighter-rouge">openmvs</code></p>
+
+<h3 id="step-1">Step 1</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap feature_extractor \
+--SiftExtraction.use_gpu 0 \
+--database_path $</span>PROJECT/database.db<span class="se">\</span>
+<span class="nt">--image_path</span> <span class="nv">$DATA_ROOT</span>/<span class="nv">$PROJECT</span>/images
+</code></pre></div></div>
 
 <ul>
-  <li>need ws resever proxy to ws</li>
-  <li>trying to use ipv6 access browser directly</li>
-  <li>trying to ssh tunnel mapping 9222 to 9223</li>
-  <li>still can not fix ws problem</li>
+  <li>here <code class="language-plaintext highlighter-rouge">--SiftExtraction.use_gpu</code> is using for linux server only, you can comment it out if you have desktop.</li>
+  <li><code class="language-plaintext highlighter-rouge">--ImageReader.camera_model PINHOLE</code>, you could choice other one, check the list <a href="https://colmap.github.io/cameras.html">camera model</a></li>
+  <li>For using <code class="language-plaintext highlighter-rouge">InterfaceCOLMAP</code>, you must specify <strong>PINHOLE</strong> model</li>
 </ul>
 
-<h2 id="try-to-use-remoteviewbase-on-npm">Try to use remoteview[base on npm]</h2>
+<h3 id="step-2">Step 2</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap exhaustive_matcher\
+--SiftMatching.use_gpu 0\
+--database_path $</span>PROJECT/database.db
+</code></pre></div></div>
 
 <ul>
-  <li>here is the <a href="https://www.jiyiblog.com/archives/011933.html">tutorial</a></li>
-  <li>trying to install remoteview by npm
+  <li>here <code class="language-plaintext highlighter-rouge">--SiftMatching.use_gpu 0</code>  has same effect with <code class="language-plaintext highlighter-rouge">SiftExtraction.use_gpu</code></li>
+</ul>
+
+<h3 id="step-3">Step 3</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap mapper\
+--database_path $</span>PROJECT/database.db <span class="se">\</span>
+<span class="nt">--image_path</span> <span class="nv">$DATA_ROOT</span>/<span class="nv">$PROJECT</span>/images <span class="se">\</span>
+<span class="nt">--output_path</span> <span class="nv">$PROJECT</span>/sparse 
+</code></pre></div></div>
+
+<h3 id="step-4">Step 4</h3>
+
+<ul>
+  <li>去除图片的畸变(undistort)</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap image_undistorter \
+--image_path $</span>DATA_ROOT/<span class="nv">$PROJECT</span>/images <span class="se">\</span>
+<span class="nt">--input_path</span> <span class="nv">$PROJECT</span>/sparse/0 <span class="se">\</span>
+<span class="nt">--output_path</span> <span class="nv">$PROJECT</span>/dense <span class="se">\</span>
+<span class="nt">--output_type</span> COLMAP
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>here <code class="language-plaintext highlighter-rouge">--output_type</code>, you could find the usage at <a href="https://colmap.github.io/cli.html?highlight=undistortion">colmap</a></p>
+  </li>
+  <li>
+    <p>把相机内存转化为txt格式方便openmvs读取</p>
+  </li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap model_converter \
+--input_path $</span>PROJECT/dense/sparse <span class="se">\</span>
+<span class="nt">--output_path</span> <span class="nv">$PROJECT</span>/dense/sparse <span class="se">\</span>
+<span class="nt">--output_type</span> TXT
+</code></pre></div></div>
+
+<ul>
+  <li>At this step, you will see three <code class="language-plaintext highlighter-rouge">txt</code> file will be created at <code class="language-plaintext highlighter-rouge">sparse</code> dir.
     <ul>
-      <li>npm i remoteview
-        <ul>
-          <li>but can not access the npm offical website</li>
-        </ul>
-      </li>
-      <li>trying to <code class="language-plaintext highlighter-rouge">npm pack</code> and npm install, still need web access <code class="language-plaintext highlighter-rouge">permission</code>.</li>
-      <li>trying download all remoteview package [too complex, I give it up]</li>
+      <li><code class="language-plaintext highlighter-rouge">cameras.txt</code>, <code class="language-plaintext highlighter-rouge">images.txt</code>, <code class="language-plaintext highlighter-rouge">point3D.txt</code></li>
+      <li>And <code class="language-plaintext highlighter-rouge">PINHOLE</code> is in <code class="language-plaintext highlighter-rouge">cameras.txt</code> you will see</li>
     </ul>
   </li>
 </ul>
 
-<h2 id="准备看点coursera">准备看点Coursera</h2>
+<h3 id="step-5">Step 5</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">InterfaceCOLMAP \
+--working-folder $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
+<span class="nt">--input-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
+<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_colmap.mvs
+</code></pre></div></div>
+
+<h3 id="step-6">Step 6</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">DensifyPointCloud \
+--input-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model_colmap.mvs <span class="se">\</span>
+<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
+<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense.mvs <span class="se">\</span>
+<span class="nt">--archive-type</span> <span class="nt">-1</span> <span class="se">\</span>
+</code></pre></div></div>
 
 <ul>
-  <li>week 2
-    <ul>
-      <li><a href="https://www.coursera.org/learn/robotics-flight/lecture/4hTtQ/axis-angle-representations-for-rotations">Coursera: robotics-flight</a></li>
-      <li>Euler angle
-        <ul>
-          <li>对于在三维空间里的一个参考系，任何坐标系的取向，都可以用三个欧拉角来表现</li>
-          <li><img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Eulerangles.svg" width="200px" alt="20210722161724" /> <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Euler2a.gif" width="200px" alt="20210722161724" /></li>
-          <li><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f595113fb1de4758a1c61c17fc5b6b9b3a6f5bae" alt="rotation matrix" /></li>
-          <li>从左到右依次代表绕着z轴的旋转、绕着交点线的旋转、绕着Z轴的旋转。</li>
-          <li><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e848138776eedd86b3fff5b2e85337ff7b61e20f" alt="rotation matrix" /></li>
-        </ul>
-      </li>
-      <li>Rodrigues’ formula [罗德里格旋转公式 at 1840]
-        <ul>
-          <li>是在给定转轴和旋转角度后，旋转一个向量的有效算法</li>
-          <li>here’s $\mathbf{k}$  is unit vector</li>
-          <li>$\mathbf{v_{rot}} = \mathbf{v}\cos\theta + (\mathbf{k}\times\mathbf{v})\sin\theta + \mathbf{k}(\mathbf{k}\cdotp\mathbf{v}(1-\cos\theta))$
-            <ul>
-              <li>proof</li>
-              <li><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Orthogonal_decomposition_unit_vector_rodrigues_rotation_formula.svg" width="300px" alt="wiki" />
-<span class="kdmath">$\begin{aligned}
-\mathbf{v_{rot}} &= \mathbf{v_{\parallel rot}} + \mathbf{v_{\perp rot}}\\
-&= \mathbf{v_{\parallel}} + \cos(\theta)\mathbf{v_{\perp}} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-&= \mathbf{v_{\parallel}} + \cos(\theta)(\mathbf{v} - \mathbf{v_{\parallel}}) + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-&= \cos(\theta)\mathbf{v} + (1-\cos(\theta))\mathbf{v_{\parallel}} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-&= \cos(\theta)\mathbf{v} + (1-\cos(\theta))(\mathbf{k}\cdotp\mathbf{v})\mathbf{k} + \sin(\theta)\mathbf{k}\times\mathbf{v} \\
-\end{aligned}$</span></li>
-              <li>calculator the rotation matirx given by $\mathbf{k}$ and $\theta$</li>
-              <li><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fa49bfffbf7815645f831552513cb080d9c5c9f1" alt="wiki" /></li>
-              <li><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/734b982cadf1ec3e27f95a27ffa3f77723897261" alt="wiki" /></li>
-              <li><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/872982cc31c79a7494afacd6f4417cd933a07e4f" alt="wiki" /></li>
-              <li>in term of the matrix exponential
-                <ul>
-                  <li><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0dc4aaf32f2974df3eef77cb9c265b19d09e38e1" alt="wiki" /></li>
-                </ul>
-              </li>
-              <li>python code</li>
-            </ul>
+  <li>Here <code class="language-plaintext highlighter-rouge">--archive-type -1</code> must be set</li>
+</ul>
 
-            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">make_rotation_matrix</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
-  <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">k</span>
-  <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-  <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matrix</span><span class="p">([</span>
-      <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span>
-      <span class="p">[</span><span class="n">z</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span><span class="p">],</span>
-      <span class="p">[</span><span class="o">-</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-  <span class="p">])</span>
-  <span class="n">R</span> <span class="o">=</span> <span class="n">I</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">*</span> <span class="n">K</span> <span class="o">*</span> <span class="n">K</span>
-  <span class="k">return</span> <span class="n">R</span>
-</code></pre></div>            </div>
-          </li>
-        </ul>
-      </li>
-      <li>Matrix exponential[矩阵指数]
-        <ul>
-          <li><a href="https://en.wikipedia.org/wiki/Matrix_exponential">wiki</a></li>
-          <li><a href="https://www.zhihu.com/question/27518189/answer/1471591199">矩阵的指数函数到底说的是个啥？ - TravorLZH的回答 - 知乎</a></li>
-          <li>more about <a href="https://www.math.umd.edu/~immortal/MATH401/ch_exponentials_and_rotations.pdf">pdf</a></li>
-        </ul>
-      </li>
-      <li>Derivative of the rotation matrix
-        <ul>
-          <li>
-            <div class="kdmath">$$
-\begin{aligned}
-  \frac{d}{dt}(A\pm B) &= \dot A \pm \dot B\\
-  \frac{d}{dt}(AB) &= \dot A B + A \dot B\\
-  \frac{d}{dt}(A(\theta(t))) &= \frac{dA}{d\theta}\dot \theta
-  \end{aligned}
-$$</div>
-          </li>
-          <li>Angular velocity
-            <ul>
-              <li>$R^T\dot R = \dot R R^T$</li>
-            </ul>
-          </li>
-          <li>Skew - Symmetric Matrices and the Hat Operator
-            <ul>
-              <li>symmetric matrix: $A^T = A$</li>
-              <li>skey-symmetric matrix: $A^T = -A$</li>
-              <li>
-                <div class="kdmath">$$
-\hat a = \hat{\begin{bmatrix}a_1\\a_2\\a_3\end{bmatrix}} = \begin{bmatrix}0&-a_3&a_2\\a_3&0&-a_1\\-a_2&a_1&0\end{bmatrix}
-$$</div>
-              </li>
-              <li>$\mathbf{u}\times\mathbf{v} = \hat{\mathbf{u}}\mathbf{v}$</li>
-              <li>$\hat\omega^b = R^T\dot R$</li>
-              <li>$\hat\omega^s = \dot RR^T$</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>Newton-Euler Equations
-        <ul>
-          <li><a href="https://zhuanlan.zhihu.com/p/47868515">[飞控]从零开始建模(一)-牛顿欧拉方程 - zinghd的文章 - 知乎</a></li>
-        </ul>
-      </li>
-      <li>Finish week home work</li>
-    </ul>
-  </li>
+<h3 id="step-7">Step 7</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">ReconstructMesh --input-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model_dense.mvs <span class="se">\</span>
+<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
+<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh.mvs
+</code></pre></div></div>
+
+<h3 id="step-8">Step 8</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">RefineMesh \
+--resolution-level 1 \
+--input-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh.mvs <span class="se">\</span>
+<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
+<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh_refine.mvs
+</code></pre></div></div>
+
+<h3 id="step-9">Step 9</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">TextureMesh \
+--export-type obj \
+--output-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model.obj <span class="se">\</span>
+<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
+<span class="nt">--input-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh_refine.mvs
+</code></pre></div></div>
+
+<h3 id="final">FINAL</h3>
+
+<ul>
+  <li>You will get <code class="language-plaintext highlighter-rouge">model.mtl</code> <code class="language-plaintext highlighter-rouge">model.obj</code> and the texure <code class="language-plaintext highlighter-rouge">model_material_0_map_Kd.jpg</code></li>
+  <li>Open obj with software you like, I’ll recommend <code class="language-plaintext highlighter-rouge">MAYA</code></li>
+</ul>
+
+<h2 id="code">Code</h2>
+
+<ul>
+  <li><a href="http://ucas/jupyter/lab/tree/3d/colmap_script.ipynb">ucas script - ipynb</a></li>
 </ul>
 
         
@@ -549,11 +537,7 @@ $$</div>
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/coursera" class="page__taxonomy-item" rel="tag">coursera</a><span class="sep">, </span>
-    
-      <a href="/categories/env" class="page__taxonomy-item" rel="tag">env</a><span class="sep">, </span>
-    
-      <a href="/categories/system" class="page__taxonomy-item" rel="tag">system</a>
+      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
     
     </span>
   </p>
@@ -561,7 +545,7 @@ $$</div>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-22T11:12:00+08:00">July 22, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-12T16:55:38+08:00">August 12, 2021</time></p>
 
 
       </footer>
@@ -569,23 +553,22 @@ $$</div>
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Install+Remote+Browser%5Bremoteview%5D%2C+And+Coursera+Robotics-Flight+week+2%20https%3A%2F%2Fucas.io%2Fenv%2Fsystem%2Fcoursera%2FRobotics-Flight-week-2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=ColMap+OpenMVS+workflow%20https%3A%2F%2Fucas.io%2F3d%2FColMap-OpenMVS-workflow%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fenv%2Fsystem%2Fcoursera%2FRobotics-Flight-week-2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FColMap-OpenMVS-workflow%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fenv%2Fsystem%2Fcoursera%2FRobotics-Flight-week-2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FColMap-OpenMVS-workflow%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/coursera/system/env/Robotics-Flight-week-1-and-2/" class="pagination--pager" title="Robotics-Flight week 1 and 2
+      <a href="/3d/Make-OpenMVS-Work-at-Jupyter/" class="pagination--pager" title="Make OpenMVS work at jupyter
 ">Previous</a>
     
     
-      <a href="/coursera/3d/Robotics-Flight-week-3-and-4/" class="pagination--pager" title="Robotics-Flight week 3 and 4, 3D rebuilding
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -599,57 +582,6 @@ $$</div>
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/ColMap-OpenMVS-workflow/" rel="permalink">ColMap OpenMVS workflow
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-12T16:55:38+08:00">August 12, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Through a lot of reading about those doc and issue
-</p>
-  </article>
-</div>
-
         
           
 
@@ -799,6 +731,57 @@ $$</div>
 
 
     <p class="archive__item-excerpt" itemprop="description">Run under jupyter-lab
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coursera/Robotics-Motion-Planning-week1-week2/" rel="permalink">Robotics Motion Planning Week 1 and 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-10T19:32:03+08:00">August 10, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Week 1
 </p>
   </article>
 </div>
