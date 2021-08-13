@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>ColMap OpenMVS workflow / Notes B</title>
-<meta name="description" content="Through a lot of reading about those doc and issue">
+<!-- begin _includes/seo.html --><title>Problem Analysis About Texture mapping / Notes B</title>
+<meta name="description" content="现象">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="ColMap OpenMVS workflow">
-<meta property="og:url" content="https://ucas.io/3d/ColMap-OpenMVS-workflow/">
+<meta property="og:title" content="Problem Analysis About Texture mapping">
+<meta property="og:url" content="https://ucas.io/3d/Problem-Analysis-About-Texture-mapping/">
 
 
-  <meta property="og:description" content="Through a lot of reading about those doc and issue">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif">
+  <meta property="og:description" content="现象">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-12T16:55:38+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183427.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-12T18:30:21+08:00">
 
-<link rel="canonical" href="https://ucas.io/3d/ColMap-OpenMVS-workflow/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/Problem-Analysis-About-Texture-mapping/">
 
 
 
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">ColMap OpenMVS workflow</li>
+        <li class="current">Problem Analysis About Texture mapping</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="ColMap OpenMVS workflow">
-    <meta itemprop="description" content="Through a lot of reading about those doc and issue">
-    <meta itemprop="datePublished" content="2021-08-12T16:55:38+08:00">
+    <meta itemprop="headline" content="Problem Analysis About Texture mapping">
+    <meta itemprop="description" content="现象">
+    <meta itemprop="datePublished" content="2021-08-12T18:30:21+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">ColMap OpenMVS workflow
+          <h1 id="page-title" class="page__title" itemprop="headline">Problem Analysis About Texture mapping
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-12T16:55:38+08:00">August 12, 2021</time>
+        <time datetime="2021-08-12T18:30:21+08:00">August 12, 2021</time>
       </span>
     
 
@@ -363,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -378,146 +378,35 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#through-a-lot-of-reading-about-those-doc-and-issue">Through a lot of reading about those doc and issue</a><ul><li><a href="#step-1">Step 1</a></li><li><a href="#step-2">Step 2</a></li><li><a href="#step-3">Step 3</a></li><li><a href="#step-4">Step 4</a></li><li><a href="#step-5">Step 5</a></li><li><a href="#step-6">Step 6</a></li><li><a href="#step-7">Step 7</a></li><li><a href="#step-8">Step 8</a></li><li><a href="#step-9">Step 9</a></li><li><a href="#final">FINAL</a></li></ul></li><li><a href="#code">Code</a></li></ul>
+              <ul class="toc__menu"><li><a href="#现象">现象</a></li><li><a href="#原因分析">原因分析</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="through-a-lot-of-reading-about-those-doc-and-issue">Through a lot of reading about those doc and issue</h2>
-
-<p>I wanna write a tutorial for fresh people.</p>
-
-<p>This is prepare for <strong>linux server (means no desktop)</strong></p>
-
-<p>And I have compile the latest version <code class="language-plaintext highlighter-rouge">colmap</code> and <code class="language-plaintext highlighter-rouge">openmvs</code></p>
-
-<h3 id="step-1">Step 1</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap feature_extractor \
---SiftExtraction.use_gpu 0 \
---database_path $</span>PROJECT/database.db<span class="se">\</span>
-<span class="nt">--image_path</span> <span class="nv">$DATA_ROOT</span>/<span class="nv">$PROJECT</span>/images
-</code></pre></div></div>
+        <h2 id="现象">现象</h2>
 
 <ul>
-  <li>here <code class="language-plaintext highlighter-rouge">--SiftExtraction.use_gpu</code> is using for linux server only, you can comment it out if you have desktop.</li>
-  <li><code class="language-plaintext highlighter-rouge">--ImageReader.camera_model PINHOLE</code>, you could choice other one, check the list <a href="https://colmap.github.io/cameras.html">camera model</a></li>
-  <li>For using <code class="language-plaintext highlighter-rouge">InterfaceCOLMAP</code>, you must specify <strong>PINHOLE</strong> model</li>
+  <li>贴图不完整</li>
 </ul>
 
-<h3 id="step-2">Step 2</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap exhaustive_matcher\
---SiftMatching.use_gpu 0\
---database_path $</span>PROJECT/database.db
-</code></pre></div></div>
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183559.png" alt="20210812183559" /></p>
 
 <ul>
-  <li>here <code class="language-plaintext highlighter-rouge">--SiftMatching.use_gpu 0</code>  has same effect with <code class="language-plaintext highlighter-rouge">SiftExtraction.use_gpu</code></li>
+  <li>贴图边缘抖动</li>
 </ul>
 
-<h3 id="step-3">Step 3</h3>
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-12-18-38-00-941.gif" alt="bandicam-2021-08-12-18-38-00-941" /></p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap mapper\
---database_path $</span>PROJECT/database.db <span class="se">\</span>
-<span class="nt">--image_path</span> <span class="nv">$DATA_ROOT</span>/<span class="nv">$PROJECT</span>/images <span class="se">\</span>
-<span class="nt">--output_path</span> <span class="nv">$PROJECT</span>/sparse 
-</code></pre></div></div>
-
-<h3 id="step-4">Step 4</h3>
+<h2 id="原因分析">原因分析</h2>
 
 <ul>
-  <li>去除图片的畸变(undistort)</li>
+  <li>mesh交叉</li>
 </ul>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap image_undistorter \
---image_path $</span>DATA_ROOT/<span class="nv">$PROJECT</span>/images <span class="se">\</span>
-<span class="nt">--input_path</span> <span class="nv">$PROJECT</span>/sparse/0 <span class="se">\</span>
-<span class="nt">--output_path</span> <span class="nv">$PROJECT</span>/dense <span class="se">\</span>
-<span class="nt">--output_type</span> COLMAP
-</code></pre></div></div>
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812184013.png" alt="20210812184013" /></p>
 
 <ul>
-  <li>
-    <p>here <code class="language-plaintext highlighter-rouge">--output_type</code>, you could find the usage at <a href="https://colmap.github.io/cli.html?highlight=undistortion">colmap</a></p>
-  </li>
-  <li>
-    <p>把相机内存转化为txt格式方便openmvs读取</p>
-  </li>
-</ul>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap model_converter \
---input_path $</span>PROJECT/dense/sparse <span class="se">\</span>
-<span class="nt">--output_path</span> <span class="nv">$PROJECT</span>/dense/sparse <span class="se">\</span>
-<span class="nt">--output_type</span> TXT
-</code></pre></div></div>
-
-<ul>
-  <li>At this step, you will see three <code class="language-plaintext highlighter-rouge">txt</code> file will be created at <code class="language-plaintext highlighter-rouge">sparse</code> dir.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">cameras.txt</code>, <code class="language-plaintext highlighter-rouge">images.txt</code>, <code class="language-plaintext highlighter-rouge">point3D.txt</code></li>
-      <li>And <code class="language-plaintext highlighter-rouge">PINHOLE</code> is in <code class="language-plaintext highlighter-rouge">cameras.txt</code> you will see</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="step-5">Step 5</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">InterfaceCOLMAP \
---working-folder $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--input-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_colmap.mvs
-</code></pre></div></div>
-
-<h3 id="step-6">Step 6</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">DensifyPointCloud \
---input-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model_colmap.mvs <span class="se">\</span>
-<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense.mvs <span class="se">\</span>
-<span class="nt">--archive-type</span> <span class="nt">-1</span> <span class="se">\</span>
-</code></pre></div></div>
-
-<ul>
-  <li>Here <code class="language-plaintext highlighter-rouge">--archive-type -1</code> must be set</li>
-</ul>
-
-<h3 id="step-7">Step 7</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">ReconstructMesh --input-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model_dense.mvs <span class="se">\</span>
-<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh.mvs
-</code></pre></div></div>
-
-<h3 id="step-8">Step 8</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">RefineMesh \
---resolution-level 1 \
---input-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh.mvs <span class="se">\</span>
-<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh_refine.mvs
-</code></pre></div></div>
-
-<h3 id="step-9">Step 9</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">TextureMesh \
---export-type obj \
---output-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model.obj <span class="se">\</span>
-<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--input-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh_refine.mvs
-</code></pre></div></div>
-
-<h3 id="final">FINAL</h3>
-
-<ul>
-  <li>You will get <code class="language-plaintext highlighter-rouge">model.mtl</code> <code class="language-plaintext highlighter-rouge">model.obj</code> and the texure <code class="language-plaintext highlighter-rouge">model_material_0_map_Kd.jpg</code></li>
-  <li>Open obj with software you like, I’ll recommend <code class="language-plaintext highlighter-rouge">MAYA</code></li>
-</ul>
-
-<h2 id="code">Code</h2>
-
-<ul>
-  <li><a href="http://ucas/jupyter/lab/tree/3d/colmap_script.ipynb">ucas script - ipynb</a></li>
+  <li>平面过薄</li>
 </ul>
 
         
@@ -545,7 +434,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-12T16:55:38+08:00">August 12, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-12T18:30:21+08:00">August 12, 2021</time></p>
 
 
       </footer>
@@ -553,22 +442,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=ColMap+OpenMVS+workflow%20https%3A%2F%2Fucas.io%2F3d%2FColMap-OpenMVS-workflow%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Problem+Analysis+About+Texture+mapping%20https%3A%2F%2Fucas.io%2F3d%2FProblem-Analysis-About-Texture-mapping%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FColMap-OpenMVS-workflow%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FProblem-Analysis-About-Texture-mapping%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FColMap-OpenMVS-workflow%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FProblem-Analysis-About-Texture-mapping%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/Make-OpenMVS-Work-at-Jupyter/" class="pagination--pager" title="Make OpenMVS work at jupyter
+      <a href="/3d/ColMap-OpenMVS-workflow/" class="pagination--pager" title="ColMap OpenMVS workflow
 ">Previous</a>
     
     
-      <a href="/3d/Problem-Analysis-About-Texture-mapping/" class="pagination--pager" title="Problem Analysis About Texture mapping
+      <a href="/3d/Convert-Camera-Parameters/" class="pagination--pager" title="Convert Camera Parameters
 ">Next</a>
     
   </nav>
@@ -643,12 +532,12 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183427.png" alt="">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/3d/Problem-Analysis-About-Texture-mapping/" rel="permalink">Problem Analysis About Texture mapping
+        <a href="/3d/ColMap-OpenMVS-workflow/" rel="permalink">ColMap OpenMVS workflow
 </a>
       
     </h2>
@@ -660,7 +549,7 @@
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-12T18:30:21+08:00">August 12, 2021</time>
+        <time datetime="2021-08-12T16:55:38+08:00">August 12, 2021</time>
       </span>
     
 
@@ -673,14 +562,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">现象
+    <p class="archive__item-excerpt" itemprop="description">Through a lot of reading about those doc and issue
 </p>
   </article>
 </div>

@@ -202,4 +202,16 @@ var store = [{
         "tags": [],
         "url": "/3d/ColMap-OpenMVS-workflow/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif"
+      },{
+        "title": "Problem Analysis About Texture mapping",
+        "excerpt":"现象      贴图不完整         贴图边缘抖动      原因分析      mesh交叉         平面过薄  ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Problem-Analysis-About-Texture-mapping/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183427.png"
+      },{
+        "title": "Convert Camera Parameters",
+        "excerpt":"Try Colmap with cuda(gpu) enable gpu with args --SiftExtraction.use_gpu 1 but throw qt error, need x display close QT gui by export QT_QPA_PLATFORM=offscreen but throw these error below *** Aborted at 1628840833 (unix time) try \"date -d @1628840833\" if you are using GNU date *** PC: @ 0x7f07a36bbbf8 (unknown) ***...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Convert-Camera-Parameters/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183427.png"
       }]

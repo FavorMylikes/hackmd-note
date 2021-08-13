@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>ColMap OpenMVS workflow / Notes B</title>
-<meta name="description" content="Through a lot of reading about those doc and issue">
+<!-- begin _includes/seo.html --><title>Convert Camera Parameters / Notes B</title>
+<meta name="description" content="Try Colmap with cuda(gpu)">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="ColMap OpenMVS workflow">
-<meta property="og:url" content="https://ucas.io/3d/ColMap-OpenMVS-workflow/">
+<meta property="og:title" content="Convert Camera Parameters">
+<meta property="og:url" content="https://ucas.io/3d/Convert-Camera-Parameters/">
 
 
-  <meta property="og:description" content="Through a lot of reading about those doc and issue">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif">
+  <meta property="og:description" content="Try Colmap with cuda(gpu)">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-12T16:55:38+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183427.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-12T19:21:12+08:00">
 
-<link rel="canonical" href="https://ucas.io/3d/ColMap-OpenMVS-workflow/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/Convert-Camera-Parameters/">
 
 
 
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">ColMap OpenMVS workflow</li>
+        <li class="current">Convert Camera Parameters</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="ColMap OpenMVS workflow">
-    <meta itemprop="description" content="Through a lot of reading about those doc and issue">
-    <meta itemprop="datePublished" content="2021-08-12T16:55:38+08:00">
+    <meta itemprop="headline" content="Convert Camera Parameters">
+    <meta itemprop="description" content="Try Colmap with cuda(gpu)">
+    <meta itemprop="datePublished" content="2021-08-12T19:21:12+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">ColMap OpenMVS workflow
+          <h1 id="page-title" class="page__title" itemprop="headline">Convert Camera Parameters
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-12T16:55:38+08:00">August 12, 2021</time>
+        <time datetime="2021-08-12T19:21:12+08:00">August 12, 2021</time>
       </span>
     
 
@@ -363,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -378,146 +378,104 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#through-a-lot-of-reading-about-those-doc-and-issue">Through a lot of reading about those doc and issue</a><ul><li><a href="#step-1">Step 1</a></li><li><a href="#step-2">Step 2</a></li><li><a href="#step-3">Step 3</a></li><li><a href="#step-4">Step 4</a></li><li><a href="#step-5">Step 5</a></li><li><a href="#step-6">Step 6</a></li><li><a href="#step-7">Step 7</a></li><li><a href="#step-8">Step 8</a></li><li><a href="#step-9">Step 9</a></li><li><a href="#final">FINAL</a></li></ul></li><li><a href="#code">Code</a></li></ul>
+              <ul class="toc__menu"><li><a href="#try-colmap-with-cudagpu">Try Colmap with cuda(gpu)</a></li><li><a href="#convert-camera-parameters-from-opencv-matrix-file-to-other-type">Convert camera parameters from opencv-matrix file to other type</a><ul><li><a href="#attation">Attation</a></li><li><a href="#code">Code</a></li></ul></li><li><a href="#figure-out-the-camera-model-of-colmap">Figure out the camera model of colmap</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="through-a-lot-of-reading-about-those-doc-and-issue">Through a lot of reading about those doc and issue</h2>
-
-<p>I wanna write a tutorial for fresh people.</p>
-
-<p>This is prepare for <strong>linux server (means no desktop)</strong></p>
-
-<p>And I have compile the latest version <code class="language-plaintext highlighter-rouge">colmap</code> and <code class="language-plaintext highlighter-rouge">openmvs</code></p>
-
-<h3 id="step-1">Step 1</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap feature_extractor \
---SiftExtraction.use_gpu 0 \
---database_path $</span>PROJECT/database.db<span class="se">\</span>
-<span class="nt">--image_path</span> <span class="nv">$DATA_ROOT</span>/<span class="nv">$PROJECT</span>/images
-</code></pre></div></div>
+        <h2 id="try-colmap-with-cudagpu">Try Colmap with cuda(gpu)</h2>
 
 <ul>
-  <li>here <code class="language-plaintext highlighter-rouge">--SiftExtraction.use_gpu</code> is using for linux server only, you can comment it out if you have desktop.</li>
-  <li><code class="language-plaintext highlighter-rouge">--ImageReader.camera_model PINHOLE</code>, you could choice other one, check the list <a href="https://colmap.github.io/cameras.html">camera model</a></li>
-  <li>For using <code class="language-plaintext highlighter-rouge">InterfaceCOLMAP</code>, you must specify <strong>PINHOLE</strong> model</li>
-</ul>
-
-<h3 id="step-2">Step 2</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap exhaustive_matcher\
---SiftMatching.use_gpu 0\
---database_path $</span>PROJECT/database.db
-</code></pre></div></div>
-
-<ul>
-  <li>here <code class="language-plaintext highlighter-rouge">--SiftMatching.use_gpu 0</code>  has same effect with <code class="language-plaintext highlighter-rouge">SiftExtraction.use_gpu</code></li>
-</ul>
-
-<h3 id="step-3">Step 3</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap mapper\
---database_path $</span>PROJECT/database.db <span class="se">\</span>
-<span class="nt">--image_path</span> <span class="nv">$DATA_ROOT</span>/<span class="nv">$PROJECT</span>/images <span class="se">\</span>
-<span class="nt">--output_path</span> <span class="nv">$PROJECT</span>/sparse 
-</code></pre></div></div>
-
-<h3 id="step-4">Step 4</h3>
-
-<ul>
-  <li>去除图片的畸变(undistort)</li>
-</ul>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap image_undistorter \
---image_path $</span>DATA_ROOT/<span class="nv">$PROJECT</span>/images <span class="se">\</span>
-<span class="nt">--input_path</span> <span class="nv">$PROJECT</span>/sparse/0 <span class="se">\</span>
-<span class="nt">--output_path</span> <span class="nv">$PROJECT</span>/dense <span class="se">\</span>
-<span class="nt">--output_type</span> COLMAP
-</code></pre></div></div>
-
-<ul>
-  <li>
-    <p>here <code class="language-plaintext highlighter-rouge">--output_type</code>, you could find the usage at <a href="https://colmap.github.io/cli.html?highlight=undistortion">colmap</a></p>
-  </li>
-  <li>
-    <p>把相机内存转化为txt格式方便openmvs读取</p>
-  </li>
-</ul>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">colmap model_converter \
---input_path $</span>PROJECT/dense/sparse <span class="se">\</span>
-<span class="nt">--output_path</span> <span class="nv">$PROJECT</span>/dense/sparse <span class="se">\</span>
-<span class="nt">--output_type</span> TXT
-</code></pre></div></div>
-
-<ul>
-  <li>At this step, you will see three <code class="language-plaintext highlighter-rouge">txt</code> file will be created at <code class="language-plaintext highlighter-rouge">sparse</code> dir.
+  <li>enable gpu with args <code class="language-plaintext highlighter-rouge">--SiftExtraction.use_gpu 1</code>
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">cameras.txt</code>, <code class="language-plaintext highlighter-rouge">images.txt</code>, <code class="language-plaintext highlighter-rouge">point3D.txt</code></li>
-      <li>And <code class="language-plaintext highlighter-rouge">PINHOLE</code> is in <code class="language-plaintext highlighter-rouge">cameras.txt</code> you will see</li>
+      <li>but throw qt error, need x display</li>
     </ul>
   </li>
+  <li>close QT gui by <code class="language-plaintext highlighter-rouge">export QT_QPA_PLATFORM=offscreen</code>
+    <ul>
+      <li>
+        <p>but throw these error below</p>
+
+        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">*** Aborted at 1628840833 (unix time) try "date -d @1628840833" if you are using GNU date ***
+PC: @     0x7f07a36bbbf8 (unknown)
+</span><span class="gp">*** SIGSEGV (@0xe0) received by PID 19386 (TID 0x7f07b1686900) from PID 224;</span><span class="w"> </span>stack trace: <span class="k">***</span>
+<span class="go">    @     0x7f07b0919980 (unknown)
+    @     0x7f07a36bbbf8 (unknown)
+    @     0x7f07a36bbff8 (unknown)
+    @     0x7f07ae65407f QOpenGLContext::create()
+    @     0x5601b94e4b93 (unknown)
+    @     0x5601b9391777 (unknown)
+    @     0x5601b9396eec (unknown)
+    @     0x5601b925b4a7 (unknown)
+    @     0x5601b924c863 (unknown)
+    @     0x7f07ac9edbf7 __libc_start_main
+    @     0x5601b925073a (unknown)
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>wait for <a href="https://github.com/colmap/colmap/issues/1273">issue#1273</a> response</li>
 </ul>
 
-<h3 id="step-5">Step 5</h3>
+<h2 id="convert-camera-parameters-from-opencv-matrix-file-to-other-type">Convert camera parameters from <code class="language-plaintext highlighter-rouge">opencv-matrix</code> file to other type</h2>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">InterfaceCOLMAP \
---working-folder $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--input-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_colmap.mvs
-</code></pre></div></div>
+<p><a href="http://ucas/jupyter/lab/tree/3d/cameras/comera_convert.ipynb">Jupyter Code</a></p>
 
-<h3 id="step-6">Step 6</h3>
+<h3 id="attation">Attation</h3>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">DensifyPointCloud \
---input-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model_colmap.mvs <span class="se">\</span>
-<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense.mvs <span class="se">\</span>
-<span class="nt">--archive-type</span> <span class="nt">-1</span> <span class="se">\</span>
+<ul>
+  <li>This need <code class="language-plaintext highlighter-rouge">pip install opencv-python</code> but <code class="language-plaintext highlighter-rouge">conda install</code></li>
+  <li>For now, the version is <code class="language-plaintext highlighter-rouge">opencv-python==4.5.3.56</code></li>
+</ul>
+
+<h3 id="code">Code</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fs</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">FileStorage</span><span class="p">(</span><span class="s">"camera.xml"</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">FILE_STORAGE_READ</span><span class="p">)</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">fs</span><span class="p">.</span><span class="n">root</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">root</span><span class="p">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">intrinsic</span> <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">getNode</span><span class="p">(</span><span class="n">key</span><span class="p">).</span><span class="n">getNode</span><span class="p">(</span><span class="s">"camIntrinsics"</span><span class="p">).</span><span class="n">mat</span><span class="p">()</span>
+    <span class="n">external</span> <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">getNode</span><span class="p">(</span><span class="n">key</span><span class="p">).</span><span class="n">getNode</span><span class="p">(</span><span class="s">"camExternals"</span><span class="p">).</span><span class="n">mat</span><span class="p">()</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">getNode</span><span class="p">(</span><span class="n">key</span><span class="p">).</span><span class="n">getNode</span><span class="p">(</span><span class="s">"imageSize"</span><span class="p">).</span><span class="n">getNode</span><span class="p">(</span><span class="s">"Width"</span><span class="p">).</span><span class="n">real</span><span class="p">()</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">getNode</span><span class="p">(</span><span class="n">key</span><span class="p">).</span><span class="n">getNode</span><span class="p">(</span><span class="s">"imageSize"</span><span class="p">).</span><span class="n">getNode</span><span class="p">(</span><span class="s">"Width"</span><span class="p">).</span><span class="n">real</span><span class="p">()</span>
 </code></pre></div></div>
 
 <ul>
-  <li>Here <code class="language-plaintext highlighter-rouge">--archive-type -1</code> must be set</li>
+  <li>convert for <code class="language-plaintext highlighter-rouge">空三</code></li>
+  <li><a href="http://ucas/jupyter/lab/tree/3d/cameras/comera_convert.ipynb">jupyter lab</a></li>
 </ul>
 
-<h3 id="step-7">Step 7</h3>
+<h2 id="figure-out-the-camera-model-of-colmap">Figure out the camera model of <code class="language-plaintext highlighter-rouge">colmap</code></h2>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">ReconstructMesh --input-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model_dense.mvs <span class="se">\</span>
-<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh.mvs
-</code></pre></div></div>
-
-<h3 id="step-8">Step 8</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">RefineMesh \
---resolution-level 1 \
---input-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh.mvs <span class="se">\</span>
-<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--output-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh_refine.mvs
-</code></pre></div></div>
-
-<h3 id="step-9">Step 9</h3>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">TextureMesh \
---export-type obj \
---output-file $</span><span class="o">(</span><span class="nb">pwd</span><span class="o">)</span>/<span class="nv">$PROJECT</span>/model.obj <span class="se">\</span>
-<span class="nt">--working-folder</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/ <span class="se">\</span>
-<span class="nt">--input-file</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/<span class="nv">$PROJECT</span>/model_dense_mesh_refine.mvs
-</code></pre></div></div>
-
-<h3 id="final">FINAL</h3>
+<blockquote>
+  <p>Camera model list at <a href="https://colmap.github.io/cameras.html?highlight=undistortion">here</a></p>
+</blockquote>
 
 <ul>
-  <li>You will get <code class="language-plaintext highlighter-rouge">model.mtl</code> <code class="language-plaintext highlighter-rouge">model.obj</code> and the texure <code class="language-plaintext highlighter-rouge">model_material_0_map_Kd.jpg</code></li>
-  <li>Open obj with software you like, I’ll recommend <code class="language-plaintext highlighter-rouge">MAYA</code></li>
-</ul>
-
-<h2 id="code">Code</h2>
-
-<ul>
-  <li><a href="http://ucas/jupyter/lab/tree/3d/colmap_script.ipynb">ucas script - ipynb</a></li>
+  <li>SIMPLE_PINHOLE, PINHOLE
+    <ul>
+      <li>The easiest model, means 相机图片没有任何畸变，主要指内参</li>
+    </ul>
+  </li>
+  <li>SIMPLE_RADIAL, RADIAL
+    <ul>
+      <li>默认选择，这个会自动估算图片畸变并计算相机内参</li>
+    </ul>
+  </li>
+  <li>OPENCV, FULL_OPENCV
+    <ul>
+      <li>引申搜索到了<code class="language-plaintext highlighter-rouge">google nerfies</code></li>
+      <li>一个3D拍照应用</li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgogjbzom3fyingbqavx06.gif" alt="ogjbzom3fyingbqavx06" /></li>
+      <li><a href="https://github.com/google/nerfies"><img src="https://github-readme-stats.vercel.app/api/pin/?username=google&amp;repo=nerfies&amp;show_owner=true" alt="Readme Card" /></a></li>
+      <li><a href="https://colab.research.google.com/github/google/nerfies/blob/main/notebooks/Nerfies_Capture_Processing.ipynb">prepare training data - colab</a></li>
+      <li><a href="https://colab.sandbox.google.com/github/google/nerfies/blob/main/notebooks/Nerfies_Training.ipynb">training data - colab</a></li>
+    </ul>
+  </li>
+  <li>SIMPLE_RADIAL_FISHEYE, RADIAL_FISHEYE, OPENCV_FISHEYE, FOV, THIN_PRISM_FISHEYE
+    <ul>
+      <li>用于鱼眼镜头</li>
+    </ul>
+  </li>
 </ul>
 
         
@@ -545,7 +503,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-12T16:55:38+08:00">August 12, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-12T19:21:12+08:00">August 12, 2021</time></p>
 
 
       </footer>
@@ -553,23 +511,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=ColMap+OpenMVS+workflow%20https%3A%2F%2Fucas.io%2F3d%2FColMap-OpenMVS-workflow%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Convert+Camera+Parameters%20https%3A%2F%2Fucas.io%2F3d%2FConvert-Camera-Parameters%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FColMap-OpenMVS-workflow%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FConvert-Camera-Parameters%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FColMap-OpenMVS-workflow%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FConvert-Camera-Parameters%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/Make-OpenMVS-Work-at-Jupyter/" class="pagination--pager" title="Make OpenMVS work at jupyter
+      <a href="/3d/Problem-Analysis-About-Texture-mapping/" class="pagination--pager" title="Problem Analysis About Texture mapping
 ">Previous</a>
     
     
-      <a href="/3d/Problem-Analysis-About-Texture-mapping/" class="pagination--pager" title="Problem Analysis About Texture mapping
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -583,57 +540,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183427.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/Convert-Camera-Parameters/" rel="permalink">Convert Camera Parameters
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-12T19:21:12+08:00">August 12, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Try Colmap with cuda(gpu)
-</p>
-  </article>
-</div>
-
         
           
 
@@ -681,6 +587,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">现象
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/ColMap-OpenMVS-workflow/" rel="permalink">ColMap OpenMVS workflow
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-12T16:55:38+08:00">August 12, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Through a lot of reading about those doc and issue
 </p>
   </article>
 </div>

@@ -1,4 +1,121 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-12T17:07:26+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">ColMap OpenMVS workflow</title><link href="https://ucas.io/3d/ColMap-OpenMVS-workflow/" rel="alternate" type="text/html" title="ColMap OpenMVS workflow" /><published>2021-08-12T16:55:38+08:00</published><updated>2021-08-12T16:55:38+08:00</updated><id>https://ucas.io/3d/ColMap-OpenMVS-workflow</id><content type="html" xml:base="https://ucas.io/3d/ColMap-OpenMVS-workflow/">&lt;h2 id=&quot;through-a-lot-of-reading-about-those-doc-and-issue&quot;&gt;Through a lot of reading about those doc and issue&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-14T00:33:19+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters</title><link href="https://ucas.io/3d/Convert-Camera-Parameters/" rel="alternate" type="text/html" title="Convert Camera Parameters" /><published>2021-08-12T19:21:12+08:00</published><updated>2021-08-12T19:21:12+08:00</updated><id>https://ucas.io/3d/Convert-Camera-Parameters</id><content type="html" xml:base="https://ucas.io/3d/Convert-Camera-Parameters/">&lt;h2 id=&quot;try-colmap-with-cudagpu&quot;&gt;Try Colmap with cuda(gpu)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;enable gpu with args &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--SiftExtraction.use_gpu 1&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;but throw qt error, need x display&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;close QT gui by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;export QT_QPA_PLATFORM=offscreen&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;but throw these error below&lt;/p&gt;
+
+        &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;*** Aborted at 1628840833 (unix time) try &quot;date -d @1628840833&quot; if you are using GNU date ***
+PC: @     0x7f07a36bbbf8 (unknown)
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;*** SIGSEGV (@0xe0) received by PID 19386 (TID 0x7f07b1686900) from PID 224;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;stack trace: &lt;span class=&quot;k&quot;&gt;***&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;    @     0x7f07b0919980 (unknown)
+    @     0x7f07a36bbbf8 (unknown)
+    @     0x7f07a36bbff8 (unknown)
+    @     0x7f07ae65407f QOpenGLContext::create()
+    @     0x5601b94e4b93 (unknown)
+    @     0x5601b9391777 (unknown)
+    @     0x5601b9396eec (unknown)
+    @     0x5601b925b4a7 (unknown)
+    @     0x5601b924c863 (unknown)
+    @     0x7f07ac9edbf7 __libc_start_main
+    @     0x5601b925073a (unknown)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;wait for &lt;a href=&quot;https://github.com/colmap/colmap/issues/1273&quot;&gt;issue#1273&lt;/a&gt; response&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;convert-camera-parameters-from-opencv-matrix-file-to-other-type&quot;&gt;Convert camera parameters from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;opencv-matrix&lt;/code&gt; file to other type&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ucas/jupyter/lab/tree/3d/cameras/comera_convert.ipynb&quot;&gt;Jupyter Code&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;attation&quot;&gt;Attation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;This need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install opencv-python&lt;/code&gt; but &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;conda install&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;For now, the version is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;opencv-python==4.5.3.56&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;fs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FileStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;camera.xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FILE_STORAGE_READ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;intrinsic&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;camIntrinsics&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;external&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;camExternals&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imageSize&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Width&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imageSize&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Width&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;convert for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;空三&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ucas/jupyter/lab/tree/3d/cameras/comera_convert.ipynb&quot;&gt;jupyter lab&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;figure-out-the-camera-model-of-colmap&quot;&gt;Figure out the camera model of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;colmap&lt;/code&gt;&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Camera model list at &lt;a href=&quot;https://colmap.github.io/cameras.html?highlight=undistortion&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SIMPLE_PINHOLE, PINHOLE
+    &lt;ul&gt;
+      &lt;li&gt;The easiest model, means 相机图片没有任何畸变，主要指内参&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SIMPLE_RADIAL, RADIAL
+    &lt;ul&gt;
+      &lt;li&gt;默认选择，这个会自动估算图片畸变并计算相机内参&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;OPENCV, FULL_OPENCV
+    &lt;ul&gt;
+      &lt;li&gt;引申搜索到了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;google nerfies&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;一个3D拍照应用&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgogjbzom3fyingbqavx06.gif&quot; alt=&quot;ogjbzom3fyingbqavx06&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/google/nerfies&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=google&amp;amp;repo=nerfies&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://colab.research.google.com/github/google/nerfies/blob/main/notebooks/Nerfies_Capture_Processing.ipynb&quot;&gt;prepare training data - colab&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://colab.sandbox.google.com/github/google/nerfies/blob/main/notebooks/Nerfies_Training.ipynb&quot;&gt;training data - colab&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SIMPLE_RADIAL_FISHEYE, RADIAL_FISHEYE, OPENCV_FISHEYE, FOV, THIN_PRISM_FISHEYE
+    &lt;ul&gt;
+      &lt;li&gt;用于鱼眼镜头&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Try Colmap with cuda(gpu)</summary></entry><entry><title type="html">Problem Analysis About Texture mapping</title><link href="https://ucas.io/3d/Problem-Analysis-About-Texture-mapping/" rel="alternate" type="text/html" title="Problem Analysis About Texture mapping" /><published>2021-08-12T18:30:21+08:00</published><updated>2021-08-12T18:30:21+08:00</updated><id>https://ucas.io/3d/Problem-Analysis-About-Texture-mapping</id><content type="html" xml:base="https://ucas.io/3d/Problem-Analysis-About-Texture-mapping/">&lt;h2 id=&quot;现象&quot;&gt;现象&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;贴图不完整&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183559.png&quot; alt=&quot;20210812183559&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;贴图边缘抖动&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-12-18-38-00-941.gif&quot; alt=&quot;bandicam-2021-08-12-18-38-00-941&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;原因分析&quot;&gt;原因分析&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;mesh交叉&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812184013.png&quot; alt=&quot;20210812184013&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;平面过薄&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">现象</summary></entry><entry><title type="html">ColMap OpenMVS workflow</title><link href="https://ucas.io/3d/ColMap-OpenMVS-workflow/" rel="alternate" type="text/html" title="ColMap OpenMVS workflow" /><published>2021-08-12T16:55:38+08:00</published><updated>2021-08-12T16:55:38+08:00</updated><id>https://ucas.io/3d/ColMap-OpenMVS-workflow</id><content type="html" xml:base="https://ucas.io/3d/ColMap-OpenMVS-workflow/">&lt;h2 id=&quot;through-a-lot-of-reading-about-those-doc-and-issue&quot;&gt;Through a lot of reading about those doc and issue&lt;/h2&gt;
 
 &lt;p&gt;I wanna write a tutorial for fresh people.&lt;/p&gt;
 
@@ -925,231 +1042,4 @@ make -j8 &amp;amp;&amp;amp; sudo make install
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://simov.github.io/&quot;&gt;simov&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">SfM</summary></entry><entry><title type="html">Robotics Perception Week 4[2]</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/" rel="alternate" type="text/html" title="Robotics Perception Week 4[2]" /><published>2021-08-07T19:46:45+08:00</published><updated>2021-08-07T19:46:45+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4-2/">&lt;h2 id=&quot;nonlinear-least-squares-非线性最小二乘法&quot;&gt;Nonlinear Least Squares [非线性最小二乘法]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.aimsciences.org/article/exportPdf?id=7e25fb2d-b50c-46dd-9be5-23deee2b4242&quot;&gt;Method for non-linear least suqares problems - 2004&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Descent method
-    &lt;ul&gt;
-      &lt;li&gt;The steepest descent method[最速下降]&lt;/li&gt;
-      &lt;li&gt;Newton’s method[牛顿下降]&lt;/li&gt;
-      &lt;li&gt;Linear Search[线性搜索]&lt;/li&gt;
-      &lt;li&gt;Trust Region and Damped Methods&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Non-linear least squares problems
-    &lt;ul&gt;
-      &lt;li&gt;The Gauss-Newton Method&lt;/li&gt;
-      &lt;li&gt;The Levenberg-Marquardt Method&lt;/li&gt;
-      &lt;li&gt;Powell’s Dog leg Method&lt;/li&gt;
-      &lt;li&gt;A Hybrid Method: L-M and Quasi-Newton&lt;/li&gt;
-      &lt;li&gt;A Secant Version of the L-M Method&lt;/li&gt;
-      &lt;li&gt;A Secant Version of the Dog leg Method&lt;/li&gt;
-      &lt;li&gt;Final Remarks&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;optical-flow-method光流法&quot;&gt;Optical Flow Method[光流法]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;基本假设
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;亮度恒定不变&lt;/strong&gt;， 由于需要对比两张连续的照片计算光流场，因此，如果亮度改变的话，图像匹配会存在误差&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;时间连续&lt;/strong&gt;，或运动范围比较小，时间连续是为了让图像间的点满足对应关系&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;同一个点发生了位移，亮度应当是不变的&lt;/li&gt;
-  &lt;li&gt;有$I(x,y,t)=I(x+dx, y=dy, t’)$&lt;/li&gt;
-  &lt;li&gt;泰勒展开后得到
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-I(x,y,t)&amp;=I(x+dx, y+dy, t+dt)\\
-  &amp;=I(x,y,t) + I_xdx+I_ydy+I_tdt + R(x,y,t)&amp;\text{R为高阶余项，当做0处理}\\
-  0&amp;=I_xdx+I_ydy+I_tdt
-\end{aligned}$&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;其中
-    &lt;ul&gt;
-      &lt;li&gt;$I_x, I_y, I_t$分别为光强对$x,y,t$的偏导数&lt;/li&gt;
-      &lt;li&gt;偏导数的计算可以通过图像数据计算&lt;/li&gt;
-      &lt;li&gt;$dx, dy$为我们需要求的光流矢量，在一些教程中也会以$u,v$来表示，即$I_xu+I_yv+I_t=0$&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;为了求解$dx, dy$我们至少需要2个方程，即2个点，当点的数量超过2时，我们就需要用一些约束来求解最优解&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;光流法-不同的约束条件&quot;&gt;光流法-不同的约束条件&lt;/h3&gt;
-
-&lt;h4 id=&quot;基于梯度的方法&quot;&gt;基于梯度的方法&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;利用图像的灰度的微分来计算速度矢量
-    &lt;ul&gt;
-      &lt;li&gt;Horn-Schunck&lt;/li&gt;
-      &lt;li&gt;Lucas-Kanade(LK)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;基于匹配的方法&quot;&gt;基于匹配的方法&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;特征匹配
-    &lt;ul&gt;
-      &lt;li&gt;根据目标特征点进行匹配&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;区域匹配
-    &lt;ul&gt;
-      &lt;li&gt;通过相似区域进行匹配&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;基于能量频率的方法&quot;&gt;基于能量（频率）的方法&lt;/h4&gt;
-
-&lt;h4 id=&quot;金字塔方法&quot;&gt;金字塔方法&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;加个降采样&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;基于相位的方法&quot;&gt;基于相位的方法&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Fleet和Jepson，把光强数据改为相位&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;神经动力学方法&quot;&gt;神经动力学方法&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;利用神经网络建立视觉运动感知模型&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;深度学习算法&quot;&gt;深度学习算法&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.researchgate.net/figure/Correlated-FlowNet-Architecture-FlowNetCorr-by-10-Creating-two-parallel-processing_fig1_324744691&quot;&gt;FlowNet/FlowNet2.0 - researchgate&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;ICCV2015&lt;/li&gt;
-      &lt;li&gt;CVPR2017 FlowNet2.0&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210807224958.png&quot; alt=&quot;20210807224958&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;基于光流法的帧间插值&quot;&gt;基于光流法的帧间插值&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;线性插值&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgcs131_opticalflow_assignment_crossfade.gif&quot; alt=&quot;cs131_opticalflow_assignment_crossfade&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;光流插值&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://xmfbit.github.io/img/cs131_opticalflow_assignment_forwardwarped.gif&quot; alt=&quot;20210807225335&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/qq_41368247/article/details/82562165&quot;&gt;🤙计算机视觉–光流法(optical flow)简介&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://xmfbit.github.io/2017/05/03/cs131-opticalflow/&quot;&gt;🤙CS131-光流估计 - xmfbit&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/384651830&quot;&gt;🤙光流法（optical flow methods） - 飞狗的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Nonlinear Least Squares [非线性最小二乘法]</summary></entry><entry><title type="html">Robotics Perception Week 4</title><link href="https://ucas.io/3d/coursera/Robotics-Perception-Week4/" rel="alternate" type="text/html" title="Robotics Perception Week 4" /><published>2021-08-06T16:06:37+08:00</published><updated>2021-08-06T16:06:37+08:00</updated><id>https://ucas.io/3d/coursera/Robotics-Perception-Week4</id><content type="html" xml:base="https://ucas.io/3d/coursera/Robotics-Perception-Week4/">&lt;h2 id=&quot;epipolar-geometry对极几何&quot;&gt;Epipolar Geometry[对极几何]&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/1/14/Epipolar_geometry.svg&quot; alt=&quot;1628252493(1)&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$O_L$经过旋转和移动之后来到了$O_R$&lt;/li&gt;
-  &lt;li&gt;其中$X_L,X_R$为$X$在两个相机上的像点&lt;/li&gt;
-  &lt;li&gt;红线为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;对极线&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;绿色的面为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;对极平面&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;$e_L, e_R$分别为对极点, 即另外一个相机的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;像点&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;两个相机的连线$O_LO_R$为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;基线&lt;/code&gt;，当X点移动时，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;对极平面&lt;/code&gt;绕&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;基线&lt;/code&gt;旋转&lt;/li&gt;
-  &lt;li&gt;这种几何体系描述了一种相机位置变更后，像点的变化&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;essential-matrix本质矩阵&quot;&gt;Essential Matrix[本质矩阵]&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;本质矩阵的定义&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-    \mathbf{x}_R&amp;=R\mathbf{x}_L+\mathbf{t}\\
-    \mathbf{t}\times \mathbf{x}_R&amp;=\mathbf{t}\times R\mathbf{x}_L + \mathbf{t}\times \mathbf{t}&amp;(1)\\
-    \mathbf{t}\times \mathbf{x}_R&amp;=\mathbf{t}\times R\mathbf{x}_L&amp;(2)\\
-    \mathbf{x}_R\cdot (\mathbf{t}\times \mathbf{x}_R)&amp;=\mathbf{x}_R\cdot (\mathbf{t}\times R\mathbf{x}_L)\\
-    0&amp;=\mathbf{x}_R\cdot (\mathbf{t}\times R\mathbf{x}_L)&amp;(3)\\
-    \mathbf{x}_R^T\mathbf{\hat t} R\mathbf{x}_L&amp;=0&amp;(4)\\
-    \mathbf{x}_R^TE\mathbf{x}_L&amp;=0\\
-\end{aligned}
-$$&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;其中
-    &lt;ul&gt;
-      &lt;li&gt;$E$即为本质矩阵&lt;/li&gt;
-      &lt;li&gt;$R$为旋转矩阵&lt;/li&gt;
-      &lt;li&gt;$\mathbf{t}$从$O_L$到$O_R$的平移向量&lt;/li&gt;
-      &lt;li&gt;$(1)$表示对极平面的法向量, 这里将$\mathbf{x}_R$视为$O_R$的一条射线&lt;/li&gt;
-      &lt;li&gt;$(2)$是因为，$t\times t=0$&lt;/li&gt;
-      &lt;li&gt;$(3)$是因为$\mathbf{x}_R$与法向量垂直&lt;/li&gt;
-      &lt;li&gt;$(4)$将内积换成矩阵形式&lt;/li&gt;
-      &lt;li&gt;$(4)$中的$\hat t$为$\hat{\cdot}$的反对称矩阵形式，我在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Coordinate System in Dynamic&lt;/code&gt;动力学一节已经写过该形式，尽管在统计学上，它又有不同的意义，暂时为了统一，一并写成$\hat{\cdot}$形式, 不过在一些教程中，也会将其标注为$[t_{\times}]$&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;这时我们可以用本质矩阵$E$来表示&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;像面上的点&lt;/code&gt;在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;相机移动后&lt;/code&gt;的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;新的像面上的点&lt;/code&gt;的关系了&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;fundamental-matrix基本矩阵&quot;&gt;Fundamental Matrix[基本矩阵]&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;基本矩阵的定义&lt;/li&gt;
-  &lt;li&gt;$\mathbf{q}_i=K_i\mathbf{x}_i$&lt;/li&gt;
-  &lt;li&gt;这里的$\mathbf{q}$为相机像素的点坐标，$K_i$为内参, $\mathbf{p}$为像面坐标&lt;/li&gt;
-  &lt;li&gt;这时我们考虑2个不同相机的拍照结果，因此每个相机都有自己的内参$K_i$&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;我们希望找到一种矩阵$F$使得$\mathbf{q}_L^TF\mathbf{q}_R=0$
-&lt;span class=&quot;kdmath&quot;&gt;$\begin{aligned}
-  \mathbf{q}_L^TF\mathbf{q}_R&amp;=0\\
-  \mathbf{x}_L^TK_L^TFK_R\mathbf{x}_R&amp;=0\\
-  \mathbf{x}_L^TK_L^TFK_R\mathbf{x}_R&amp;=\mathbf{x}_L^TE\mathbf{x}_R\\
-  K_L^TFK_R&amp;=E\\
-  F&amp;=K_L^{-T}EK_R^{-1}
-\end{aligned}$&lt;/span&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;其中
-    &lt;ul&gt;
-      &lt;li&gt;利用了相机内参可逆&lt;/li&gt;
-      &lt;li&gt;利用了前面的本质矩阵$E$的特性&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-difference-between-of-those-two-matrix&quot;&gt;The Difference between of those two matrix&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;本质矩阵描述了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;两个相同的相机或两个内参一致(标定)&lt;/code&gt;的相机不同角度对一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;像点坐标&lt;/code&gt;的对应关系&lt;/li&gt;
-  &lt;li&gt;基础矩阵描述了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;两个不同的相机(已知内参)&lt;/code&gt;，用不同角度对一个像点的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;像素坐标&lt;/code&gt;的对应关系&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;attention&quot;&gt;Attention&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;由于相机的变换是有方向的， 从左到右或从右到左，因此在描述$E$和$F$时，经常带有下标$E_{LR}$, $F_{LR}$来表示&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/33458436&quot;&gt;对极几何与基本矩阵 - 无迹的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/u012936940/article/details/80723609&quot;&gt;对极几何及单应矩阵 - Rap_God - CSDN&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Epipolar_geometry&quot;&gt;Epipolar geometry - Wikipedia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Essential_matrix&quot;&gt;Essential matrix - Wikipedia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/27581884/answer/466669565&quot;&gt;本质矩阵和基础矩阵的区别是什么？ - 「已注销」的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="coursera" /><summary type="html">Epipolar Geometry[对极几何]</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">SfM</summary></entry></feed>
