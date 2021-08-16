@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-16T20:26:31+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-16T20:33:21+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;拿到&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;空三&lt;/code&gt;的参数文件，发现是&lt;strong&gt;Smart3D(soarscape.com)&lt;/strong&gt;的软件导出的，尝试下载，发现需要申请&lt;/li&gt;
@@ -86,9 +86,18 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://ucas/jupyter/lab/tree/3d/cameras/comera_convert.ipynb&quot;&gt;comera_convert&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;转换公式，参考&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Context capture master&lt;/code&gt;， &lt;a href=&quot;https://docs.bentley.com/LiveContent/web/ContextCapture%20Help-v10/en/GUID-2D452A8A-A4FE-450D-A0CA-9336DCF1238A.html&quot;&gt;文档&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xml&lt;/code&gt;&lt;a href=&quot;https://docs.bentley.com/LiveContent/web/ContextCapture%20Help-v10/en/GUID-59E6CC36-F349-4DE0-A563-FFC47296A624.html&quot;&gt;文件含义&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816202517.png&quot; alt=&quot;20210816202517&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Convert parameters</summary></entry><entry><title type="html">Convert Camera Parameters</title><link href="https://ucas.io/zhihu/PID-and-laplace-transform/" rel="alternate" type="text/html" title="Convert Camera Parameters" /><published>2021-08-14T23:00:46+08:00</published><updated>2021-08-14T23:00:46+08:00</updated><id>https://ucas.io/zhihu/PID-and-laplace-transform</id><content type="html" xml:base="https://ucas.io/zhihu/PID-and-laplace-transform/">&lt;h2 id=&quot;pid-contorl&quot;&gt;PID Contorl&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816202517.png&quot; alt=&quot;20210816202517&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/fb_help/article/details/84142580&quot;&gt;PhotoScan与smart3d的Omega,phi,kappa和R - fb_help[CSDN]&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/94244568&quot;&gt;相机标定之张正友标定法数学原理详解（含python源码） - 1335的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/35287729&quot;&gt;相机模型&amp;amp;相机标定 - WwPpCc的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Convert parameters</summary></entry><entry><title type="html">Convert Camera Parameters</title><link href="https://ucas.io/zhihu/PID-and-laplace-transform/" rel="alternate" type="text/html" title="Convert Camera Parameters" /><published>2021-08-14T23:00:46+08:00</published><updated>2021-08-14T23:00:46+08:00</updated><id>https://ucas.io/zhihu/PID-and-laplace-transform</id><content type="html" xml:base="https://ucas.io/zhihu/PID-and-laplace-transform/">&lt;h2 id=&quot;pid-contorl&quot;&gt;PID Contorl&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;最常见的形式&lt;/li&gt;
