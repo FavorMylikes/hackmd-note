@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-16T20:33:21+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-16T23:45:18+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;拿到&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;空三&lt;/code&gt;的参数文件，发现是&lt;strong&gt;Smart3D(soarscape.com)&lt;/strong&gt;的软件导出的，尝试下载，发现需要申请&lt;/li&gt;
@@ -157,20 +157,40 @@
           &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method&quot;&gt;Ziegler–Nichols_method - Wikipedia&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/s/video/BV1ay4y117Bj&quot;&gt;使用Z-N方法调节气压 - Bilibili&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;将ID项置0，调节P使得达到恒定震荡，再根据震荡周期和震荡值计算PID参数&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;，想要在P控制下得到稳定震荡，要有超调现象，如果通过计算机模拟，而时间单位又很小，那么无论用多大的$K_P$你都看不到超调现象，可以理解为，系统刚刚输入一点点就被感知到了，而上面视频里从气流输入到输出存在一定的缓冲，因此可以使用改方法&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;，想要在P控制下得到稳定震荡，要有超调现象，如果通过计算机模拟，而时间单位又很小，那么无论用多大的$K_P$你都看不到超调现象，可以理解为，系统刚刚输入一点点就被感知到了，而上面视频里从气流输入到输出存在一定的延迟，因此可以使用该方法&lt;/li&gt;
           &lt;li&gt;反馈较慢
             &lt;ul&gt;
-              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210815014305.png&quot; alt=&quot;20210815014305&quot; /&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png&quot; alt=&quot;20210816231759&quot; /&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
           &lt;li&gt;快速反馈
             &lt;ul&gt;
-              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210815014334.png&quot; alt=&quot;20210815014334&quot; /&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231835.png&quot; alt=&quot;20210816231835&quot; /&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;Tyreus Luyben[]&lt;/li&gt;
+      &lt;li&gt;机器学习[反向传播]
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/111592279&quot;&gt;今天聊聊PID - zzzSid的文章 - 知乎&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;目标函数$cost = \frac{1}{2}(position_t-target_t)^2$&lt;/li&gt;
+              &lt;li&gt;不过我并不是很赞同他使用动态参数的做法&lt;/li&gt;
+              &lt;li&gt;目标函数也未考虑收敛速度和周期&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://hjhyxb.ijournals.cn/ch/reader/create_pdf.aspx?file_no=20150402&amp;amp;year_id=2015&amp;amp;quarter_id=4&amp;amp;falg=1&quot;&gt;基于支持向量机回归和RBF神经网络的PID整定 - 海军航空工程学院&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;原理跟上面一样&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;理论分析
+    &lt;ul&gt;
+      &lt;li&gt;传递函数&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">PID Contorl</summary></entry><entry><title type="html">Convert Camera Parameters</title><link href="https://ucas.io/3d/Convert-Camera-Parameters/" rel="alternate" type="text/html" title="Convert Camera Parameters" /><published>2021-08-12T19:21:12+08:00</published><updated>2021-08-12T19:21:12+08:00</updated><id>https://ucas.io/3d/Convert-Camera-Parameters</id><content type="html" xml:base="https://ucas.io/3d/Convert-Camera-Parameters/">&lt;h2 id=&quot;try-colmap-with-cudagpu&quot;&gt;Try Colmap with cuda(gpu)&lt;/h2&gt;
