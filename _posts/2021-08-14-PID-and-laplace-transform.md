@@ -46,9 +46,17 @@ header:
     - [Ziegler–Nichols_method - Wikipedia](https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method)
     - [使用Z-N方法调节气压 - Bilibili](https://www.bilibili.com/s/video/BV1ay4y117Bj)
     - 将ID项置0，调节P使得达到恒定震荡，再根据震荡周期和震荡值计算PID参数
-    - **注意**，想要在P控制下得到稳定震荡，要有超调现象，如果通过计算机模拟，而时间单位又很小，那么无论用多大的$K_P$你都看不到超调现象，可以理解为，系统刚刚输入一点点就被感知到了，而上面视频里从气流输入到输出存在一定的缓冲，因此可以使用改方法
+    - **注意**，想要在P控制下得到稳定震荡，要有超调现象，如果通过计算机模拟，而时间单位又很小，那么无论用多大的$K_P$你都看不到超调现象，可以理解为，系统刚刚输入一点点就被感知到了，而上面视频里从气流输入到输出存在一定的延迟，因此可以使用该方法
     - 反馈较慢
-      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210815014305.png" alt="20210815014305">
+      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png" alt="20210816231759"/>
     - 快速反馈
-      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210815014334.png" alt="20210815014334">
-  - Tyreus Luyben[]
+      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231835.png" alt="20210816231835"/>
+  - 机器学习[反向传播]
+    - [今天聊聊PID - zzzSid的文章 - 知乎](https://zhuanlan.zhihu.com/p/111592279)
+      - 目标函数$cost = \frac{1}{2}(position_t-target_t)^2$
+      - 不过我并不是很赞同他使用动态参数的做法
+      - 目标函数也未考虑收敛速度和周期
+    - [基于支持向量机回归和RBF神经网络的PID整定 - 海军航空工程学院](http://hjhyxb.ijournals.cn/ch/reader/create_pdf.aspx?file_no=20150402&year_id=2015&quarter_id=4&falg=1)
+      - 原理跟上面一样
+- 理论分析
+  - 传递函数
