@@ -71,5 +71,12 @@ header:
 
 - [comera_convert](http://ucas/jupyter/lab/tree/3d/cameras/comera_convert.ipynb)
 - 转换公式，参考`Context capture master`， [文档](https://docs.bentley.com/LiveContent/web/ContextCapture%20Help-v10/en/GUID-2D452A8A-A4FE-450D-A0CA-9336DCF1238A.html)
+- `xml`[文件含义](https://docs.bentley.com/LiveContent/web/ContextCapture%20Help-v10/en/GUID-59E6CC36-F349-4DE0-A563-FFC47296A624.html)
 
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816202517.png" alt="20210816202517"/>
+
+### Reference
+
+- [PhotoScan与smart3d的Omega,phi,kappa和R - fb_help[CSDN]](https://blog.csdn.net/fb_help/article/details/84142580)
+- [相机标定之张正友标定法数学原理详解（含python源码） - 1335的文章 - 知乎](https://zhuanlan.zhihu.com/p/94244568)
+- [相机模型&相机标定 - WwPpCc的文章 - 知乎](https://zhuanlan.zhihu.com/p/35287729)
