@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Problem Analysis About Texture mapping / Notes B</title>
-<meta name="description" content="现象">
+<!-- begin _includes/seo.html --><title>Convert Camera Parameters / Notes B</title>
+<meta name="description" content="PID Contorl">
 
 
   <meta name="author" content="麦丽素">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Problem Analysis About Texture mapping">
-<meta property="og:url" content="https://ucas.io/3d/Problem-Analysis-About-Texture-mapping/">
+<meta property="og:title" content="Convert Camera Parameters">
+<meta property="og:url" content="https://ucas.io/zhihu/PID-and-laplace-transform/">
 
 
-  <meta property="og:description" content="现象">
+  <meta property="og:description" content="PID Contorl">
 
 
 
@@ -36,14 +36,14 @@
 
 
 
-  <meta property="article:published_time" content="2021-08-12T18:30:21+08:00">
+  <meta property="article:published_time" content="2021-08-14T23:00:46+08:00">
 
 
 
 
 
 
-<link rel="canonical" href="https://ucas.io/3d/Problem-Analysis-About-Texture-mapping/">
+<link rel="canonical" href="https://ucas.io/zhihu/PID-and-laplace-transform/">
 
 
 
@@ -205,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
+          <a href="/categories/zhihu" itemprop="item"><span itemprop="name">Zhihu</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">Problem Analysis About Texture mapping</li>
+        <li class="current">Convert Camera Parameters</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Problem Analysis About Texture mapping">
-    <meta itemprop="description" content="现象">
-    <meta itemprop="datePublished" content="2021-08-12T18:30:21+08:00">
+    <meta itemprop="headline" content="Convert Camera Parameters">
+    <meta itemprop="description" content="PID Contorl">
+    <meta itemprop="datePublished" content="2021-08-14T23:00:46+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Problem Analysis About Texture mapping
+          <h1 id="page-title" class="page__title" itemprop="headline">Convert Camera Parameters
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-12T18:30:21+08:00">August 12, 2021</time>
+        <time datetime="2021-08-14T23:00:46+08:00">August 14, 2021</time>
       </span>
     
 
@@ -378,35 +378,87 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#现象">现象</a></li><li><a href="#原因分析">原因分析</a></li></ul>
+              <ul class="toc__menu"><li><a href="#pid-contorl">PID Contorl</a><ul><li><a href="#比较常见的解释和应用">比较常见的解释和应用</a></li><li><a href="#pid">PID</a></li><li><a href="#pid调参">PID调参</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="现象">现象</h2>
+        <h2 id="pid-contorl">PID Contorl</h2>
 
 <ul>
-  <li>贴图不完整</li>
+  <li>最常见的形式</li>
+  <li>$u(t)=K_pe(t)+K_i\int_0^te(\tau)d\tau+K_d\frac{d}{dt}e(t)$</li>
+  <li>其中
+    <ul>
+      <li>$K_p$为比例(proportional)增益</li>
+      <li>$K_i$为积分(integral)增益</li>
+      <li>$K_d$为微分(derivative)增益</li>
+      <li>$e=SP-PV$为误差，设定值(setpoint)$SP$与过程值(process variable)$PV$的差</li>
+      <li>$t$为时间</li>
+      <li>$\tau$积分变数，因为是历史状态的积分，因此要与$t$区分开来</li>
+    </ul>
+  </li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183559.png" alt="20210812183559" /></p>
+<h3 id="比较常见的解释和应用">比较常见的解释和应用</h3>
 
 <ul>
-  <li>贴图边缘抖动</li>
+  <li>通过控制<strong>水箱</strong>的流入速度，使得水箱内的高度或体积保持不变的一种过程</li>
+  <li>汽车定速巡航，遇到上坡如何设计动力</li>
+  <li>无人机的悬停和应激相应(推一下回到原来的位置，或者前往目标点)</li>
+  <li>解决电路问题</li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-12-18-38-00-941.gif" alt="bandicam-2021-08-12-18-38-00-941" /></p>
-
-<h2 id="原因分析">原因分析</h2>
+<h3 id="pid">PID</h3>
 
 <ul>
-  <li>mesh交叉</li>
+  <li>通常学习PID控制时，往往不太懂得3个变量的实际作用，又有计算机作为辅助进行模拟，那么就会导致盲目调参，而书中提到的调参方法又只讲参数含义，将调参性质描述一遍，这样完全不得法门，最后只能得到一个差不多的结果</li>
+  <li>历史上
+    <ul>
+      <li>惠更斯17世纪改造了风车，使得磨盘转速和磨盘间隙可以根据谷物数量变化
+        <ul>
+          <li>Power From the Wind , Cambridge University Press</li>
+        </ul>
+      </li>
+      <li>瓦特使用圆锥摆以解决蒸汽机的速度输出
+        <ul>
+          <li><a href="https://web.archive.org/web/20160809050823/http://ieeecss.org/CSM/library/1996/june1996/02-HistoryofAutoCtrl.pdf">History of AutoCtrl</a></li>
+        </ul>
+      </li>
+      <li>1868年，为了更好的保持鱼雷的深度，引入了微分控制</li>
+      <li>直到1922年，才有了完整的3项控制率</li>
+    </ul>
+  </li>
+  <li>因此，大多数书籍往往会根据每项变量引入时发挥的作用加以解释，但是又与纯PI控制，PD控制，甚至单纯的P控制应用相违背，除了硬件或成本上的限制，更需要思考的是，每一项为整个系统的稳定性到底提供了多大的好处</li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812184013.png" alt="20210812184013" /></p>
+<h3 id="pid调参">PID调参</h3>
 
 <ul>
-  <li>平面过薄</li>
+  <li>为了获得更好的参数，有如下几种方法
+    <ul>
+      <li>手动</li>
+      <li>Ziegler–Nichols[齐格勒－尼科尔斯方法]
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method">Ziegler–Nichols_method - Wikipedia</a></li>
+          <li><a href="https://www.bilibili.com/s/video/BV1ay4y117Bj">使用Z-N方法调节气压 - Bilibili</a></li>
+          <li>将ID项置0，调节P使得达到恒定震荡，再根据震荡周期和震荡值计算PID参数</li>
+          <li><strong>注意</strong>，想要在P控制下得到稳定震荡，要有超调现象，如果通过计算机模拟，而时间单位又很小，那么无论用多大的$K_P$你都看不到超调现象，可以理解为，系统刚刚输入一点点就被感知到了，而上面视频里从气流输入到输出存在一定的缓冲，因此可以使用改方法</li>
+          <li>反馈较慢
+            <ul>
+              <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210815014305.png" alt="20210815014305" /></li>
+            </ul>
+          </li>
+          <li>快速反馈
+            <ul>
+              <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210815014334.png" alt="20210815014334" /></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Tyreus Luyben[]</li>
+    </ul>
+  </li>
 </ul>
 
         
@@ -426,7 +478,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
+      <a href="/categories/zhihu" class="page__taxonomy-item" rel="tag">zhihu</a>
     
     </span>
   </p>
@@ -434,7 +486,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-12T18:30:21+08:00">August 12, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-14T23:00:46+08:00">August 14, 2021</time></p>
 
 
       </footer>
@@ -442,22 +494,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Problem+Analysis+About+Texture+mapping%20https%3A%2F%2Fucas.io%2F3d%2FProblem-Analysis-About-Texture-mapping%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Convert+Camera+Parameters%20https%3A%2F%2Fucas.io%2Fzhihu%2FPID-and-laplace-transform%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FProblem-Analysis-About-Texture-mapping%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fzhihu%2FPID-and-laplace-transform%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FProblem-Analysis-About-Texture-mapping%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fzhihu%2FPID-and-laplace-transform%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/ColMap-OpenMVS-workflow/" class="pagination--pager" title="ColMap OpenMVS workflow
+      <a href="/3d/Convert-Camera-Parameters/" class="pagination--pager" title="Convert Camera Parameters
 ">Previous</a>
     
     
-      <a href="/3d/Convert-Camera-Parameters/" class="pagination--pager" title="Convert Camera Parameters
+      <a href="/3d/Camera-parameters-convert/" class="pagination--pager" title="Convert Camera Parameters
 ">Next</a>
     
   </nav>
@@ -537,57 +589,6 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/zhihu/PID-and-laplace-transform/" rel="permalink">Convert Camera Parameters
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-14T23:00:46+08:00">August 14, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">PID Contorl
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183427.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/3d/Convert-Camera-Parameters/" rel="permalink">Convert Camera Parameters
 </a>
       
@@ -613,7 +614,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -621,6 +622,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Try Colmap with cuda(gpu)
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183427.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Problem-Analysis-About-Texture-mapping/" rel="permalink">Problem Analysis About Texture mapping
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-12T18:30:21+08:00">August 12, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">现象
 </p>
   </article>
 </div>
