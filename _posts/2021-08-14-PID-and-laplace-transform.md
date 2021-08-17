@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Convert Camera Parameters"
+title:  "PID and laplace transform"
 date:   "2021-8-14 23:00:46 +0800"
 categories: zhihu
 header:
@@ -50,6 +50,7 @@ header:
     - 反馈较慢
       - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png" alt="20210816231759"/>
     - 快速反馈
+      - 两处代码只更改了延迟
       - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231835.png" alt="20210816231835"/>
   - 机器学习[反向传播]
     - [今天聊聊PID - zzzSid的文章 - 知乎](https://zhuanlan.zhihu.com/p/111592279)
@@ -58,5 +59,12 @@ header:
       - 目标函数也未考虑收敛速度和周期
     - [基于支持向量机回归和RBF神经网络的PID整定 - 海军航空工程学院](http://hjhyxb.ijournals.cn/ch/reader/create_pdf.aspx?file_no=20150402&year_id=2015&quarter_id=4&falg=1)
       - 原理跟上面一样
-- 理论分析
-  - 传递函数
+
+### 理论分析
+
+- **Laplace Transform**[拉普拉斯变换]
+- $L(s) = \int_0^{\infty}f(t)e^{-st}dt$
+  - 其中$s$是个复数
+- 为了更好的理解**Laplace Transform**
+- 回想一下**Fourier transform**[傅里叶变换]
+- $F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$

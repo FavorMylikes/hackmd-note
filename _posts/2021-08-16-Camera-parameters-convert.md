@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Convert Camera Parameters"
+title:  "Convert Camera Parameters [usage of ContextCapture Master]"
 date:   "2021-8-16 19:06:13 +0800"
 categories: 3d
 header:

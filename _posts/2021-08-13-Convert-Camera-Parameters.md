@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Convert Camera Parameters"
+title:  "Convert Camera Parameters [model of colmap]"
 date:   "2021-8-12 19:21:12 +0800"
 categories: 3d
 header:
