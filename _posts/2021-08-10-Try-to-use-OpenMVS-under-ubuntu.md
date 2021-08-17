@@ -39,7 +39,7 @@ header:
 - HAHOG
 - ORB
 
-#### Reference
+### Reference
 
 - SURF is faster than SIFT?
   - [stackoverflow](https://stackoverflow.com/a/27398168/5587080)

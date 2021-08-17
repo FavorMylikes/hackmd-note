@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Convert Camera Parameters [model of colmap]"
-date:   "2021-8-12 19:21:12 +0800"
+date:   "2021-8-13 19:21:12 +0800"
 categories: 3d
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgogjbzom3fyingbqavx06.gif
