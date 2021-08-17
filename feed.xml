@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-17T23:27:35+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters [usage of ContextCapture Master]</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters [usage of ContextCapture Master]" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-18T00:04:31+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters [usage of ContextCapture Master]</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters [usage of ContextCapture Master]" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;拿到&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;空三&lt;/code&gt;的参数文件，发现是&lt;strong&gt;Smart3D(soarscape.com)&lt;/strong&gt;的软件导出的，尝试下载，发现需要申请&lt;/li&gt;
@@ -292,15 +292,59 @@
 &lt;h3 id=&quot;理论分析&quot;&gt;理论分析&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Laplace Transform&lt;/strong&gt;[拉普拉斯变换]&lt;/li&gt;
-  &lt;li&gt;$L(s) = \int_0^{\infty}f(t)e^{-st}dt$
+  &lt;li&gt;&lt;strong&gt;Laplace Transform&lt;/strong&gt;[拉普拉斯变换]
     &lt;ul&gt;
+      &lt;li&gt;$L(s) = \int_0^{\infty}f(t)e^{-st}dt$&lt;/li&gt;
       &lt;li&gt;其中$s$是个复数&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;为了更好的理解&lt;strong&gt;Laplace Transform&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;回想一下&lt;strong&gt;Fourier transform&lt;/strong&gt;[傅里叶变换]&lt;/li&gt;
-  &lt;li&gt;$F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$&lt;/li&gt;
+  &lt;li&gt;为了更好的理解&lt;strong&gt;Laplace Transform&lt;/strong&gt;, 回想一下&lt;strong&gt;Fourier transform&lt;/strong&gt;[傅里叶变换]
+    &lt;ul&gt;
+      &lt;li&gt;$F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$, $i$是虚数单位&lt;/li&gt;
+      &lt;li&gt;同时它也有另外一种表示&lt;/li&gt;
+      &lt;li&gt;$F(\omega) = \int_{-\infty}^{\infty}f(t)*\sin(\omega t)dt$&lt;/li&gt;
+      &lt;li&gt;这是因为欧拉公式可以建立起复数和三角函数之间的关系&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;傅里叶变换和拉普拉斯变换的主要区别
+    &lt;ul&gt;
+      &lt;li&gt;傅里叶变换的积分域为$(-\infty,+\infty)$, 而拉普拉斯变换的积分区间为$(0, +\infty)$
+        &lt;ul&gt;
+          &lt;li&gt;由于傅里叶变换主要关心函数的周期性，频率性质，而这些性质需要假设函数拥有周期或者周期无限长，对于一些01信号也需要利用周期函数的性质再将其进行延拓&lt;/li&gt;
+          &lt;li&gt;而拉普拉斯变换主要解决应用问题，$t$常常作为时间表示，而时间没有负值，因此拉普拉斯变换常常不考虑负值的情况，不过依然存在双边拉普拉斯变换的情形&lt;strong&gt;bilateral Laplace transform&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://qr.ae/pGOVS9&quot;&gt;Why does Laplace transform take the integral with limit beginning at zero - Quora&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;傅里叶变换使用纯虚数，而拉普拉斯变换将其扩大到了整个复数域
+        &lt;ul&gt;
+          &lt;li&gt;这里有三种理解方式
+            &lt;ul&gt;
+              &lt;li&gt;将$s$分离成实数和虚数两个部分
+                &lt;ul&gt;
+                  &lt;li&gt;$L(s)=\int_0^{\infty}f(t)e^{-i\omega t}e^{-\sigma t}dt$&lt;/li&gt;
+                  &lt;li&gt;其中$\omega, \sigma$都为实数&lt;/li&gt;
+                  &lt;li&gt;这样拉普拉斯变换就只是在傅里叶的基础上乘了$e^{-\sigma t}$&lt;/li&gt;
+                  &lt;li&gt;这样就解决了一些非周期的以及$f\to\infty$区域无穷的函数&lt;strong&gt;利用傅里叶不可积的问题&lt;/strong&gt;&lt;/li&gt;
+                  &lt;li&gt;当然如果存在$f$比$e^{\sigma t}$的增长速度还要快的函数，那么拉普拉斯变换也依然存在不可积的问题&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;将这两种变换理解为函数值之间的内积或者卷积
+                &lt;ul&gt;
+                  &lt;li&gt;为了得到一些频率的信号量，我们选择一组正交基，比如一些三角函数，我们用$f(t)·e^{-i\omega t}$(它是傅里叶变换的内积形式)，找到在该周期内最大的响应，然后依次求出各个周期的信号大小，这就是傅里叶级数的求法&lt;/li&gt;
+                  &lt;li&gt;同时，为了解决傅里叶级数需要周期无限长的问题，也有&lt;strong&gt;Wavelet transform&lt;/strong&gt;[小波变换], 等&lt;/li&gt;
+                  &lt;li&gt;如果不考虑基的正交性，你还可以自己设计一个新的函数&lt;/li&gt;
+                  &lt;li&gt;例如在图像领域的&lt;strong&gt;Box-Filter&lt;/strong&gt;[盒子滤波器], 它仅仅是二维高斯函数的离散化点阵而已，用以加快计算速度，或者其他&lt;strong&gt;CNN&lt;/strong&gt;中所用的&lt;strong&gt;filter&lt;/strong&gt;，也是同样的作用&lt;/li&gt;
+                  &lt;li&gt;那么这时，拉普拉斯变换中$e^{-i\omega t}e^{-\sigma t}$就变成了一个&lt;strong&gt;幅度不断增长或下降的三角函数&lt;/strong&gt;，我们通过它就可以知道一个函数的指数收敛性，或者发散速度&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;第三种将其理解为一种在复数空间中的投影&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/23617272&quot;&gt;【自动控制原理】1.传递函数 - 李寒潭的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">PID Contorl</summary></entry><entry><title type="html">Convert Camera Parameters [model of colmap]</title><link href="https://ucas.io/3d/Convert-Camera-Parameters/" rel="alternate" type="text/html" title="Convert Camera Parameters [model of colmap]" /><published>2021-08-13T19:21:12+08:00</published><updated>2021-08-13T19:21:12+08:00</updated><id>https://ucas.io/3d/Convert-Camera-Parameters</id><content type="html" xml:base="https://ucas.io/3d/Convert-Camera-Parameters/">&lt;h2 id=&quot;try-colmap-with-cudagpu&quot;&gt;Try Colmap with cuda(gpu)&lt;/h2&gt;
 
 &lt;ul&gt;
