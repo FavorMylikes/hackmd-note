@@ -63,8 +63,31 @@ header:
 ### 理论分析
 
 - **Laplace Transform**[拉普拉斯变换]
-- $L(s) = \int_0^{\infty}f(t)e^{-st}dt$
+  - $L(s) = \int_0^{\infty}f(t)e^{-st}dt$
   - 其中$s$是个复数
-- 为了更好的理解**Laplace Transform**
-- 回想一下**Fourier transform**[傅里叶变换]
-- $F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$
+- 为了更好的理解**Laplace Transform**, 回想一下**Fourier transform**[傅里叶变换]
+  - $F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$, $i$是虚数单位
+  - 同时它也有另外一种表示
+  - $F(\omega) = \int_{-\infty}^{\infty}f(t)*\sin(\omega t)dt$
+  - 这是因为欧拉公式可以建立起复数和三角函数之间的关系
+- 傅里叶变换和拉普拉斯变换的主要区别
+  - 傅里叶变换的积分域为$(-\infty,+\infty)$, 而拉普拉斯变换的积分区间为$(0, +\infty)$
+    - 由于傅里叶变换主要关心函数的周期性，频率性质，而这些性质需要假设函数拥有周期或者周期无限长，对于一些01信号也需要利用周期函数的性质再将其进行延拓
+    - 而拉普拉斯变换主要解决应用问题，$t$常常作为时间表示，而时间没有负值，因此拉普拉斯变换常常不考虑负值的情况，不过依然存在双边拉普拉斯变换的情形**bilateral Laplace transform**
+    - [Why does Laplace transform take the integral with limit beginning at zero - Quora](https://qr.ae/pGOVS9)
+  - 傅里叶变换使用纯虚数，而拉普拉斯变换将其扩大到了整个复数域
+    - 这里有三种理解方式
+      - 将$s$分离成实数和虚数两个部分
+        - $L(s)=\int_0^{\infty}f(t)e^{-i\omega t}e^{-\sigma t}dt$
+        - 其中$\omega, \sigma$都为实数
+        - 这样拉普拉斯变换就只是在傅里叶的基础上乘了$e^{-\sigma t}$
+        - 这样就解决了一些非周期的以及$f\to\infty$区域无穷的函数**利用傅里叶不可积的问题**
+        - 当然如果存在$f$比$e^{\sigma t}$的增长速度还要快的函数，那么拉普拉斯变换也依然存在不可积的问题
+      - 将这两种变换理解为函数值之间的内积或者卷积
+        - 为了得到一些频率的信号量，我们选择一组正交基，比如一些三角函数，我们用$f(t)·e^{-i\omega t}$(它是傅里叶变换的内积形式)，找到在该周期内最大的响应，然后依次求出各个周期的信号大小，这就是傅里叶级数的求法
+        - 同时，为了解决傅里叶级数需要周期无限长的问题，也有**Wavelet transform**[小波变换], 等
+        - 如果不考虑基的正交性，你还可以自己设计一个新的函数
+        - 例如在图像领域的**Box-Filter**[盒子滤波器], 它仅仅是二维高斯函数的离散化点阵而已，用以加快计算速度，或者其他**CNN**中所用的**filter**，也是同样的作用
+        - 那么这时，拉普拉斯变换中$e^{-i\omega t}e^{-\sigma t}$就变成了一个**幅度不断增长或下降的三角函数**，我们通过它就可以知道一个函数的指数收敛性，或者发散速度
+      - 第三种将其理解为一种在复数空间中的投影
+      - [【自动控制原理】1.传递函数 - 李寒潭的文章 - 知乎](https://zhuanlan.zhihu.com/p/23617272)
