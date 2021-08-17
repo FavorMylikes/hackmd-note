@@ -4,7 +4,7 @@ title:  "Problem Analysis About Texture mapping"
 date:   "2021-8-12 18:30:21 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183427.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812184013.png
 ---
 
 ## 现象

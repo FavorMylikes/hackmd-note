@@ -4,7 +4,7 @@ title:  "PID and laplace transform"
 date:   "2021-8-14 23:00:46 +0800"
 categories: zhihu
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812183427.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png
 ---
 
 ## PID Contorl
