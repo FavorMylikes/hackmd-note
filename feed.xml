@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-17T10:28:21+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters [usage of ContextCapture Master]</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters [usage of ContextCapture Master]" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-17T10:39:03+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters [usage of ContextCapture Master]</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters [usage of ContextCapture Master]" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;拿到&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;空三&lt;/code&gt;的参数文件，发现是&lt;strong&gt;Smart3D(soarscape.com)&lt;/strong&gt;的软件导出的，尝试下载，发现需要申请&lt;/li&gt;
@@ -203,7 +203,7 @@
   &lt;li&gt;为了更好的理解&lt;strong&gt;Laplace Transform&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;回想一下&lt;strong&gt;Fourier transform&lt;/strong&gt;[傅里叶变换]&lt;/li&gt;
   &lt;li&gt;$F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">PID Contorl</summary></entry><entry><title type="html">Convert Camera Parameters [model of colmap]</title><link href="https://ucas.io/3d/Convert-Camera-Parameters/" rel="alternate" type="text/html" title="Convert Camera Parameters [model of colmap]" /><published>2021-08-12T19:21:12+08:00</published><updated>2021-08-12T19:21:12+08:00</updated><id>https://ucas.io/3d/Convert-Camera-Parameters</id><content type="html" xml:base="https://ucas.io/3d/Convert-Camera-Parameters/">&lt;h2 id=&quot;try-colmap-with-cudagpu&quot;&gt;Try Colmap with cuda(gpu)&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">PID Contorl</summary></entry><entry><title type="html">Convert Camera Parameters [model of colmap]</title><link href="https://ucas.io/3d/Convert-Camera-Parameters/" rel="alternate" type="text/html" title="Convert Camera Parameters [model of colmap]" /><published>2021-08-13T19:21:12+08:00</published><updated>2021-08-13T19:21:12+08:00</updated><id>https://ucas.io/3d/Convert-Camera-Parameters</id><content type="html" xml:base="https://ucas.io/3d/Convert-Camera-Parameters/">&lt;h2 id=&quot;try-colmap-with-cudagpu&quot;&gt;Try Colmap with cuda(gpu)&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;enable gpu with args &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--SiftExtraction.use_gpu 1&lt;/code&gt;
@@ -640,7 +640,7 @@ $$&lt;/div&gt;
   &lt;li&gt;ORB&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;reference&quot;&gt;Reference&lt;/h4&gt;
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;SURF is faster than SIFT?
