@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-17T10:39:03+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters [usage of ContextCapture Master]</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters [usage of ContextCapture Master]" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-17T23:27:35+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters [usage of ContextCapture Master]</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters [usage of ContextCapture Master]" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;拿到&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;空三&lt;/code&gt;的参数文件，发现是&lt;strong&gt;Smart3D(soarscape.com)&lt;/strong&gt;的软件导出的，尝试下载，发现需要申请&lt;/li&gt;
@@ -97,7 +97,105 @@
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/fb_help/article/details/84142580&quot;&gt;PhotoScan与smart3d的Omega,phi,kappa和R - fb_help[CSDN]&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/94244568&quot;&gt;相机标定之张正友标定法数学原理详解（含python源码） - 1335的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/35287729&quot;&gt;相机模型&amp;amp;相机标定 - WwPpCc的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Convert parameters</summary></entry><entry><title type="html">PID and laplace transform</title><link href="https://ucas.io/zhihu/PID-and-laplace-transform/" rel="alternate" type="text/html" title="PID and laplace transform" /><published>2021-08-14T23:00:46+08:00</published><updated>2021-08-14T23:00:46+08:00</updated><id>https://ucas.io/zhihu/PID-and-laplace-transform</id><content type="html" xml:base="https://ucas.io/zhihu/PID-and-laplace-transform/">&lt;h2 id=&quot;pid-contorl&quot;&gt;PID Contorl&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Convert parameters</summary></entry><entry><title type="html">Reading Texure paper</title><link href="https://ucas.io/3d/Reading-Texture-paper/" rel="alternate" type="text/html" title="Reading Texure paper" /><published>2021-08-16T14:55:52+08:00</published><updated>2021-08-16T14:55:52+08:00</updated><id>https://ucas.io/3d/Reading-Texture-paper</id><content type="html" xml:base="https://ucas.io/3d/Reading-Texture-paper/">&lt;h2 id=&quot;reconstructing-textured-meshes-from-multiple-rangergb-maps&quot;&gt;Reconstructing textured meshes from multiple range+rgb maps&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ISTI-CNR&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Minimizing redundancy and optimizing the color attribute represendtation&lt;/li&gt;
+  &lt;li&gt;Eliminate most of the color difference or discontinuity which exist in input images
+    &lt;ul&gt;
+      &lt;li&gt;cross-correlation&lt;/li&gt;
+      &lt;li&gt;interpolation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;work-flow&quot;&gt;Work flow&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;visibility calculation
+    &lt;ul&gt;
+      &lt;li&gt;get a set of valid cameras/images for the face
+        &lt;ul&gt;
+          &lt;li&gt;ray-tracing calculation[耗时]&lt;/li&gt;
+          &lt;li&gt;hardware-accelerated OpenGL
+            &lt;ul&gt;
+              &lt;li&gt;每个面一个颜色，用OpenGL直接渲染，选择相机能看到的颜色作为可观测颜色&lt;/li&gt;
+              &lt;li&gt;但如果多个面都投影到同一个像素的话，太小的面就会被判定为不可见&lt;/li&gt;
+              &lt;li&gt;优化
+                &lt;ul&gt;
+                  &lt;li&gt;通过迭代，每次迭代哪些尚未观测到的面&lt;/li&gt;
+                  &lt;li&gt;随机抖动相机，或微调景深z-index，使得小面被观测到&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;patches generation
+    &lt;ul&gt;
+      &lt;li&gt;reduce the number of patch&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;sub-texture packing
+    &lt;ul&gt;
+      &lt;li&gt;locally-optimum greedy process&lt;/li&gt;
+      &lt;li&gt;continuous texture but generally presents insufficient color continuity&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817225945.png&quot; alt=&quot;20210817225945&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;imporving color matching and continuity
+    &lt;ul&gt;
+      &lt;li&gt;difference of color[iterate on vertices]
+        &lt;ul&gt;
+          &lt;li&gt;面$f$点$v$，$image_1\to patch_1$ has color $c_1$&lt;/li&gt;
+          &lt;li&gt;$image_2\to patch_2$ has color $c_2$&lt;/li&gt;
+          &lt;li&gt;$\bar image_{1,2}-c_1$意味着，$patch_1$到$patch_2$需要改变的颜色&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817230948.png&quot; alt=&quot;20210817230948&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;pull-push interpolation method&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;state-of-the-art&quot;&gt;state of the art&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;texture mapping
+    &lt;ul&gt;
+      &lt;li&gt;image registration
+        &lt;ul&gt;
+          &lt;li&gt;point pair[点对]&lt;/li&gt;
+          &lt;li&gt;integrate geometric- and image-based alignment[几何对齐]&lt;/li&gt;
+          &lt;li&gt;silhouette-based registration[轮廓匹配]&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Tsai algorithm&lt;/strong&gt;啥玩意&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;texture image is reconstructed from input image
+        &lt;ul&gt;
+          &lt;li&gt;map to mesh, sample color with &lt;strong&gt;non-redundant manner and optimizing&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;weight blend&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;texture-for-9-9-file&quot;&gt;Texture for 9-9 file&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817164050.png&quot; alt=&quot;20210817164050&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817192738.png&quot; alt=&quot;20210817192738&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imga409b4eb5add76d66a1a713df1e5114.png&quot; alt=&quot;a409b4eb5add76d66a1a713df1e5114&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Reconstructing textured meshes from multiple range+rgb maps</summary></entry><entry><title type="html">PID and laplace transform</title><link href="https://ucas.io/zhihu/PID-and-laplace-transform/" rel="alternate" type="text/html" title="PID and laplace transform" /><published>2021-08-14T23:00:46+08:00</published><updated>2021-08-14T23:00:46+08:00</updated><id>https://ucas.io/zhihu/PID-and-laplace-transform</id><content type="html" xml:base="https://ucas.io/zhihu/PID-and-laplace-transform/">&lt;h2 id=&quot;pid-contorl&quot;&gt;PID Contorl&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;最常见的形式&lt;/li&gt;
@@ -714,186 +812,4 @@ $$&lt;/div&gt;
   &lt;li&gt;另一种方案是，根据多边形的顶点在X轴上将其分割为多个三角形或者梯形，在这些多边形内的直线运动是无障碍的，相应的，做出一个辅助路线图，连接两个可达的三角形或梯形的内部点，再进行路径规划&lt;/li&gt;
   &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210810204813.png&quot; alt=&quot;20210810204813&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;Piano Mover’s Problem&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="coursera" /><summary type="html">Week 1</summary></entry><entry><title type="html">Deploy Cv environment for ubuntu, colmap, openmvs, e.g.</title><link href="https://ucas.io/3d/Start-Up-Colmap-env/" rel="alternate" type="text/html" title="Deploy Cv environment for ubuntu, colmap, openmvs, e.g." /><published>2021-08-09T16:11:48+08:00</published><updated>2021-08-09T16:11:48+08:00</updated><id>https://ucas.io/3d/Start-Up-Colmap-env</id><content type="html" xml:base="https://ucas.io/3d/Start-Up-Colmap-env/">&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://colmap.github.io/install.html&quot;&gt;install colmap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS/wiki/Building&quot;&gt;install openmvs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;environment&quot;&gt;Environment&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Ubuntu 18.04.5 LTS&lt;/li&gt;
-  &lt;li&gt;x86_64&lt;/li&gt;
-  &lt;li&gt;gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;colmap&quot;&gt;Colmap&lt;/h2&gt;
-
-&lt;h3 id=&quot;require&quot;&gt;Require&lt;/h3&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    git &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    cmake &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    build-essential &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libboost-program-options-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libboost-filesystem-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libboost-graph-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libboost-system-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libboost-test-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libeigen3-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libsuitesparse-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libfreeimage-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libgoogle-glog-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libgflags-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libglew-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    qtbase5-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libqt5opengl5-dev &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    libcgal-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;install-qt5&quot;&gt;Install Qt5&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Attation&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;If you have install conda or anconda&lt;/li&gt;
-      &lt;li&gt;Remeber &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;conda deactivate&lt;/code&gt; untile you dont in any conda environment&lt;/li&gt;
-      &lt;li&gt;And remeber rename &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;anaconda3&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;anaconda3temp&lt;/code&gt; for temporary, and rename it back after install.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libcgal-qt5-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;install-ceres-solver&quot;&gt;Install ceres-solver&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libatlas-base-dev libsuitesparse-dev
-git clone https://ceres-solver.googlesource.com/ceres-solver
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;ceres-solver
-git checkout &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;git describe &lt;span class=&quot;nt&quot;&gt;--tags&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Checkout the latest release&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;build
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;build
-cmake .. &lt;span class=&quot;nt&quot;&gt;-DBUILD_TESTING&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;OFF &lt;span class=&quot;nt&quot;&gt;-DBUILD_EXAMPLES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;OFF
-make &lt;span class=&quot;nt&quot;&gt;-j&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;install-colmap&quot;&gt;Install COLMAP&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/colmap/colmap.git
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;colmap
-git checkout dev
-&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;build
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;build
-cmake ..
-make &lt;span class=&quot;nt&quot;&gt;-j&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;colmap &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt;
-colmap gui
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;openmvs&quot;&gt;OpenMVS&lt;/h2&gt;
-
-&lt;h3 id=&quot;compiler&quot;&gt;compiler&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Prepare&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo apt update -qq &amp;amp;&amp;amp; sudo apt install -qq
-sudo apt -y install git cmake libpng-dev libjpeg-dev libtiff-dev libglu1-mesa-dev
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Install &lt;a href=&quot;https://gitlab.com/libeigen/eigen.git&quot;&gt;Eigen&lt;/a&gt; (Required)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;git clone https://gitlab.com/libeigen/eigen.git --branch 3.2
-cd eigen &amp;amp;&amp;amp; mkdir eigen_build &amp;amp;&amp;amp; cd eigen_build
-cmake . ..
-make &amp;amp;&amp;amp; sudo make install
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Install Boost (Required)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo apt -y install libboost-iostreams-dev libboost-program-options-dev libboost-system-dev libboost-serialization-dev
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Install OpenCV (Required)
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;Attation&lt;/strong&gt;, It will lead to a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined reference to symbol&lt;/code&gt; when &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;make&lt;/code&gt; for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openmvs&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Look at this &lt;a href=&quot;https://github.com/cdcseacave/openMVS/issues/364#issuecomment-499842586&quot;&gt;issue&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;And for another conflict, make your opencv version is correct, for me, it is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3.2&lt;/code&gt;, check it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dpkg -s libopencv-dev&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo apt -y install libopencv-dev
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Install CGAL (Required)
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;Attation&lt;/strong&gt;, please ensure you are &lt;strong&gt;not&lt;/strong&gt; under anaconda environment, and rename the anaconda dir name temporary&lt;/li&gt;
-      &lt;li&gt;conda will install qt into itself directory, may lead to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;can not find qt&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find a wrong qt&lt;/code&gt; problem&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo apt -y install libcgal-dev libcgal-qt5-dev
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Install &lt;a href=&quot;https://github.com/cdcseacave/VCG.git&quot;&gt;VCGLib&lt;/a&gt; (Required)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;git clone https://github.com/cdcseacave/VCG.git vcglib
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Install &lt;a href=&quot;https://ceres-solver.googlesource.com/ceres-solver&quot;&gt;Ceres&lt;/a&gt; (optional)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo apt -y install libatlas-base-dev libsuitesparse-dev
-git clone https://ceres-solver.googlesource.com/ceres-solver ceres-solver
-cd ceres-solver &amp;amp;&amp;amp; mkdir ceres_build &amp;amp;&amp;amp; cd ceres_build
-cmake . .. -DMINIGLOG=ON -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF
-make -j8 &amp;amp;&amp;amp; sudo make install
-cd ..
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Install GLFW3 (Optional)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo apt -y install freeglut3-dev libglew-dev libglfw3-dev
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Install &lt;a href=&quot;https://github.com/cdcseacave/openMVS.git&quot;&gt;OpenMVS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;git clone https://github.com/cdcseacave/openMVS.git openMVS
-cd openMVS &amp;amp;&amp;amp; mkdir openMVS_build &amp;amp;&amp;amp; cd openMVS_build
-cmake . .. -DCMAKE_BUILD_TYPE=Release -DVCG_ROOT=&quot;path/to/VGC&quot; -DBUILD_SHARED_LIBS=ON
-make -j8 &amp;amp;&amp;amp; sudo make install
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;reading&quot;&gt;Reading&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.cs.hunter.cuny.edu/~ioannis/3DP_S09/faustobernardini.pdf&quot;&gt;High-Quality Texture Reconstruction from Multiple Scans - IBM T. J. Watson Research Center&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://xb.sinomaps.com/CN/article/downloadArticleFile.do?attachType=PDF&amp;amp;id=6935&quot;&gt;城市三维重建中的自动纹理优化方法 - 武汉大学测绘遥感信息工程国重&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://www.opticsjournal.net/richHtml/lop/2018/55/11/110004.html&quot;&gt;彩色三维扫描中纹理重建技术研究进展 - 激光与光电子学进展&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">install colmap install openmvs</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="coursera" /><summary type="html">Week 1</summary></entry></feed>

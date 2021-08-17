@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Software Report Ranking / Notes B</title>
-<meta name="description" content="SfM">
+<!-- begin _includes/seo.html --><title>Reading Texure paper / Notes B</title>
+<meta name="description" content="Reconstructing textured meshes from multiple range+rgb maps">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Software Report Ranking">
-<meta property="og:url" content="https://ucas.io/3d/Software-Report-Ranking/">
+<meta property="og:title" content="Reading Texure paper">
+<meta property="og:url" content="https://ucas.io/3d/Reading-Texture-paper/">
 
 
-  <meta property="og:description" content="SfM">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg">
+  <meta property="og:description" content="Reconstructing textured meshes from multiple range+rgb maps">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-08T13:41:45+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-16T14:55:52+08:00">
 
-<link rel="canonical" href="https://ucas.io/3d/Software-Report-Ranking/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/Reading-Texture-paper/">
 
 
 
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">Software Report Ranking</li>
+        <li class="current">Reading Texure paper</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Software Report Ranking">
-    <meta itemprop="description" content="SfM">
-    <meta itemprop="datePublished" content="2021-08-08T13:41:45+08:00">
+    <meta itemprop="headline" content="Reading Texure paper">
+    <meta itemprop="description" content="Reconstructing textured meshes from multiple range+rgb maps">
+    <meta itemprop="datePublished" content="2021-08-16T14:55:52+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Software Report Ranking
+          <h1 id="page-title" class="page__title" itemprop="headline">Reading Texure paper
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-08T13:41:45+08:00">August 8, 2021</time>
+        <time datetime="2021-08-16T14:55:52+08:00">August 16, 2021</time>
       </span>
     
 
@@ -378,118 +378,110 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#sfm">SfM</a></li><li><a href="#mvs">MVS</a></li><li><a href="#reference">Reference</a></li></ul>
+              <ul class="toc__menu"><li><a href="#reconstructing-textured-meshes-from-multiple-rangergb-maps">Reconstructing textured meshes from multiple range+rgb maps</a><ul><li><a href="#summary">summary</a></li><li><a href="#work-flow">Work flow</a></li><li><a href="#state-of-the-art">state of the art</a></li></ul></li><li><a href="#texture-for-9-9-file">Texture for 9-9 file</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="sfm">SfM</h2>
+        <h2 id="reconstructing-textured-meshes-from-multiple-rangergb-maps">Reconstructing textured meshes from multiple range+rgb maps</h2>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628431917(1).jpg" /></p>
+<blockquote>
+  <p>ISTI-CNR</p>
+</blockquote>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Repository</th>
-      <th style="text-align: center">spark</th>
-      <th style="text-align: center">star</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/Kitware/TeleSculptor"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Kitware&amp;repo=TeleSculptor&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/Kitware/TeleSculptor"><img src="https://stars.medv.io/Kitware/TeleSculptor.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/Kitware/TeleSculptor"><img src="https://starchart.cc/Kitware/TeleSculptor.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/colmap/colmap"><img src="https://github-readme-stats.vercel.app/api/pin/?username=colmap&amp;repo=colmap&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/colmap/colmap"><img src="https://stars.medv.io/colmap/colmap.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/colmap/colmap"><img src="https://starchart.cc/colmap/colmap.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/snavely/bundler_sfm"><img src="https://github-readme-stats.vercel.app/api/pin/?username=snavely&amp;repo=bundler_sfm&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/snavely/bundler_sfm"><img src="https://stars.medv.io/snavely/bundler_sfm.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/snavely/bundler_sfm"><img src="https://starchart.cc/snavely/bundler_sfm.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/simonfuhrmann/mve"><img src="https://github-readme-stats.vercel.app/api/pin/?username=simonfuhrmann&amp;repo=mve&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/simonfuhrmann/mve"><img src="https://stars.medv.io/simonfuhrmann/mve.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/simonfuhrmann/mve"><img src="https://starchart.cc/simonfuhrmann/mve.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/openMVG/openMVG"><img src="https://github-readme-stats.vercel.app/api/pin/?username=openMVG&amp;repo=openMVG&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/openMVG/openMVG"><img src="https://stars.medv.io/openMVG/openMVG.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/openMVG/openMVG"><img src="https://starchart.cc/openMVG/openMVG.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/mapillary/OpenSfM"><img src="https://github-readme-stats.vercel.app/api/pin/?username=mapillary&amp;repo=OpenSfM&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/mapillary/OpenSfM"><img src="https://stars.medv.io/mapillary/OpenSfM.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/mapillary/OpenSfM"><img src="https://starchart.cc/mapillary/OpenSfM.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/sweeneychris/TheiaSfM"><img src="https://github-readme-stats.vercel.app/api/pin/?username=sweeneychris&amp;repo=TheiaSfM&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/sweeneychris/TheiaSfM"><img src="https://stars.medv.io/sweeneychris/TheiaSfM.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/sweeneychris/TheiaSfM"><img src="https://starchart.cc/sweeneychris/TheiaSfM.svg" width="200px" /></a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="mvs">MVS</h2>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210808221458.png" alt="20210808221458" /></p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Repository</th>
-      <th style="text-align: center">spark</th>
-      <th style="text-align: center">star</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/colmap/colmap"><img src="https://github-readme-stats.vercel.app/api/pin/?username=colmap&amp;repo=colmap&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/colmap/colmap"><img src="https://stars.medv.io/colmap/colmap.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/colmap/colmap"><img src="https://starchart.cc/colmap/colmap.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/kysucix/gipuma"><img src="https://github-readme-stats.vercel.app/api/pin/?username=kysucix&amp;repo=gipuma&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/kysucix/gipuma"><img src="https://stars.medv.io/kysucix/gipuma.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/kysucix/gipuma"><img src="https://starchart.cc/kysucix/gipuma.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/kysucix/fusibile"><img src="https://github-readme-stats.vercel.app/api/pin/?username=kysucix&amp;repo=fusibile&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/kysucix/fusibile"><img src="https://stars.medv.io/kysucix/fusibile.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/kysucix/fusibile"><img src="https://starchart.cc/kysucix/fusibile.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/alexlocher/hpmvs"><img src="https://github-readme-stats.vercel.app/api/pin/?username=alexlocher&amp;repo=hpmvs&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/alexlocher/hpmvs"><img src="https://stars.medv.io/alexlocher/hpmvs.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/alexlocher/hpmvs"><img src="https://starchart.cc/alexlocher/hpmvs.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/cdcseacave/openMVS"><img src="https://github-readme-stats.vercel.app/api/pin/?username=cdcseacave&amp;repo=openMVS&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/cdcseacave/openMVS"><img src="https://stars.medv.io/cdcseacave/openMVS.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/cdcseacave/openMVS"><img src="https://starchart.cc/cdcseacave/openMVS.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/mapillary/OpenSfM"><img src="https://github-readme-stats.vercel.app/api/pin/?username=mapillary&amp;repo=OpenSfM&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/mapillary/OpenSfM"><img src="https://stars.medv.io/mapillary/OpenSfM.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/mapillary/OpenSfM"><img src="https://starchart.cc/mapillary/OpenSfM.svg" width="200px" /></a></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><a href="https://github.com/pmoulon/CMVS-PMVS"><img src="https://github-readme-stats.vercel.app/api/pin/?username=pmoulon&amp;repo=CMVS-PMVS&amp;show_owner=true" alt="Readme Card" /></a></td>
-      <td style="text-align: center"><a href="https://github.com/pmoulon/CMVS-PMVS"><img src="https://stars.medv.io/pmoulon/CMVS-PMVS.svg" alt="Sparkline" /></a></td>
-      <td style="text-align: center"><a href="https://starchart.cc/pmoulon/CMVS-PMVS"><img src="https://starchart.cc/pmoulon/CMVS-PMVS.svg" width="200px" /></a></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="reference">Reference</h2>
+<h3 id="summary">summary</h3>
 
 <ul>
-  <li><a href="https://simov.github.io/">simov</a></li>
+  <li>Minimizing redundancy and optimizing the color attribute represendtation</li>
+  <li>Eliminate most of the color difference or discontinuity which exist in input images
+    <ul>
+      <li>cross-correlation</li>
+      <li>interpolation</li>
+    </ul>
+  </li>
 </ul>
+
+<h3 id="work-flow">Work flow</h3>
+
+<ul>
+  <li>visibility calculation
+    <ul>
+      <li>get a set of valid cameras/images for the face
+        <ul>
+          <li>ray-tracing calculation[耗时]</li>
+          <li>hardware-accelerated OpenGL
+            <ul>
+              <li>每个面一个颜色，用OpenGL直接渲染，选择相机能看到的颜色作为可观测颜色</li>
+              <li>但如果多个面都投影到同一个像素的话，太小的面就会被判定为不可见</li>
+              <li>优化
+                <ul>
+                  <li>通过迭代，每次迭代哪些尚未观测到的面</li>
+                  <li>随机抖动相机，或微调景深z-index，使得小面被观测到</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>patches generation
+    <ul>
+      <li>reduce the number of patch</li>
+    </ul>
+  </li>
+  <li>sub-texture packing
+    <ul>
+      <li>locally-optimum greedy process</li>
+      <li>continuous texture but generally presents insufficient color continuity</li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817225945.png" alt="20210817225945" /></li>
+    </ul>
+  </li>
+  <li>imporving color matching and continuity
+    <ul>
+      <li>difference of color[iterate on vertices]
+        <ul>
+          <li>面$f$点$v$，$image_1\to patch_1$ has color $c_1$</li>
+          <li>$image_2\to patch_2$ has color $c_2$</li>
+          <li>$\bar image_{1,2}-c_1$意味着，$patch_1$到$patch_2$需要改变的颜色</li>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817230948.png" alt="20210817230948" /></li>
+        </ul>
+      </li>
+      <li>pull-push interpolation method</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="state-of-the-art">state of the art</h3>
+
+<ul>
+  <li>texture mapping
+    <ul>
+      <li>image registration
+        <ul>
+          <li>point pair[点对]</li>
+          <li>integrate geometric- and image-based alignment[几何对齐]</li>
+          <li>silhouette-based registration[轮廓匹配]</li>
+          <li><strong>Tsai algorithm</strong>啥玩意</li>
+        </ul>
+      </li>
+      <li>texture image is reconstructed from input image
+        <ul>
+          <li>map to mesh, sample color with <strong>non-redundant manner and optimizing</strong></li>
+          <li>weight blend</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="texture-for-9-9-file">Texture for 9-9 file</h2>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817164050.png" alt="20210817164050" /></p>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817192738.png" alt="20210817192738" /></p>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imga409b4eb5add76d66a1a713df1e5114.png" alt="a409b4eb5add76d66a1a713df1e5114" /></p>
 
         
       </section>
@@ -516,7 +508,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-08T13:41:45+08:00">August 8, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-16T14:55:52+08:00">August 16, 2021</time></p>
 
 
       </footer>
@@ -524,22 +516,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Software+Report+Ranking%20https%3A%2F%2Fucas.io%2F3d%2FSoftware-Report-Ranking%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Reading+Texure+paper%20https%3A%2F%2Fucas.io%2F3d%2FReading-Texture-paper%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FSoftware-Report-Ranking%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FReading-Texture-paper%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FSoftware-Report-Ranking%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FReading-Texture-paper%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/coursera/Robotics-Perception-Week4-2/" class="pagination--pager" title="Robotics Perception Week 4[2]
+      <a href="/zhihu/PID-and-laplace-transform/" class="pagination--pager" title="PID and laplace transform
 ">Previous</a>
     
     
-      <a href="/3d/The-file-format/" class="pagination--pager" title="The File Format
+      <a href="/3d/Camera-parameters-convert/" class="pagination--pager" title="Convert Camera Parameters [usage of ContextCapture Master]
 ">Next</a>
     
   </nav>
@@ -601,57 +593,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Convert parameters
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/Reading-Texture-paper/" rel="permalink">Reading Texure paper
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-16T14:55:52+08:00">August 16, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Reconstructing textured meshes from multiple range+rgb maps
 </p>
   </article>
 </div>
@@ -746,7 +687,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -754,6 +695,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Try Colmap with cuda(gpu)
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210812184013.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Problem-Analysis-About-Texture-mapping/" rel="permalink">Problem Analysis About Texture mapping
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-12T18:30:21+08:00">August 12, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">现象
 </p>
   </article>
 </div>

@@ -221,6 +221,12 @@ var store = [{
         "url": "/zhihu/PID-and-laplace-transform/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png"
       },{
+        "title": "Reading Texure paper",
+        "excerpt":"Reconstructing textured meshes from multiple range+rgb maps ISTI-CNR summary Minimizing redundancy and optimizing the color attribute represendtation Eliminate most of the color difference or discontinuity which exist in input images cross-correlation interpolation Work flow visibility calculation get a set of valid cameras/images for the face ray-tracing calculation[耗时] hardware-accelerated OpenGL 每个面一个颜色，用OpenGL直接渲染，选择相机能看到的颜色作为可观测颜色...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Reading-Texture-paper/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png"
+      },{
         "title": "Convert Camera Parameters [usage of ContextCapture Master]",
         "excerpt":"Convert parameters 拿到空三的参数文件，发现是Smart3D(soarscape.com)的软件导出的，尝试下载，发现需要申请 根据关键字查找，找到ContextCapture Master 下载安装 Model generate Add photos click submit aerotriangulation at general tab. start ContextCapture Engine wait job complish Reconstruction&gt;new Reconstruction click submit new production wait for job complish check production 3D view output Model ├── Model.mtl ├── Model.obj ├── Model_0.jpg ├── Model_1.jpg ├── Model_2.jpg └── Model_3.jpg...","categories": ["3d"],
         "tags": [],
