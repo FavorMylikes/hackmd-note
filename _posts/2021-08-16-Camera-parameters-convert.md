@@ -9,7 +9,7 @@ header:
 
 ## Convert parameters
 
-- 拿到`空三`的参数文件，发现是**Smart3D(soarscape.com)**的软件导出的，尝试下载，发现需要申请
+- 拿到`空三`的参数文件，发现是 **Smart3D(soarscape.com)** 的软件导出的，尝试下载，发现需要申请
 - 根据关键字查找，找到`ContextCapture Master`
 - 下载安装
 

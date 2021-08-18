@@ -90,4 +90,8 @@ header:
         - 例如在图像领域的**Box-Filter**[盒子滤波器], 它仅仅是二维高斯函数的离散化点阵而已，用以加快计算速度，或者其他**CNN**中所用的**filter**，也是同样的作用
         - 那么这时，拉普拉斯变换中$e^{-i\omega t}e^{-\sigma t}$就变成了一个**幅度不断增长或下降的三角函数**，我们通过它就可以知道一个函数的指数收敛性，或者发散速度
       - 第三种将其理解为一种在复数空间中的投影
-      - [【自动控制原理】1.传递函数 - 李寒潭的文章 - 知乎](https://zhuanlan.zhihu.com/p/23617272)
+        - [【自动控制原理】1.传递函数 - 李寒潭的文章 - 知乎](https://zhuanlan.zhihu.com/p/23617272)
+    - Reference
+      - [如何理解拉普拉斯变换 - 马同学](https://www.matongxue.com/madocs/723/)
+      - [拉普拉斯变换 - Wikipedia](https://zh.wikipedia.org/wiki/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2)
+      - [🤙What does the Laplace Transform really tell us - Youtube](https://youtu.be/n2y7n6jw5d0)
