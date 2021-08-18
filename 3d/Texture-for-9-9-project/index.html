@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>PID and laplace transform / Notes B</title>
-<meta name="description" content="PID Contorl">
+<!-- begin _includes/seo.html --><title>Reading Texure paper / Notes B</title>
+<meta name="description" content="Try difference combination">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="PID and laplace transform">
-<meta property="og:url" content="https://ucas.io/zhihu/PID-and-laplace-transform/">
+<meta property="og:title" content="Reading Texure paper">
+<meta property="og:url" content="https://ucas.io/3d/Texture-for-9-9-project/">
 
 
-  <meta property="og:description" content="PID Contorl">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png">
+  <meta property="og:description" content="Try difference combination">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-14T23:00:46+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-16T14:55:52+08:00">
 
-<link rel="canonical" href="https://ucas.io/zhihu/PID-and-laplace-transform/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/Texture-for-9-9-project/">
 
 
 
@@ -205,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/zhihu" itemprop="item"><span itemprop="name">Zhihu</span></a>
+          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">PID and laplace transform</li>
+        <li class="current">Reading Texure paper</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="PID and laplace transform">
-    <meta itemprop="description" content="PID Contorl">
-    <meta itemprop="datePublished" content="2021-08-14T23:00:46+08:00">
+    <meta itemprop="headline" content="Reading Texure paper">
+    <meta itemprop="description" content="Try difference combination">
+    <meta itemprop="datePublished" content="2021-08-16T14:55:52+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">PID and laplace transform
+          <h1 id="page-title" class="page__title" itemprop="headline">Reading Texure paper
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-14T23:00:46+08:00">August 14, 2021</time>
+        <time datetime="2021-08-16T14:55:52+08:00">August 16, 2021</time>
       </span>
     
 
@@ -378,172 +378,81 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#pid-contorl">PID Contorl</a><ul><li><a href="#比较常见的解释和应用">比较常见的解释和应用</a></li><li><a href="#pid">PID</a></li><li><a href="#pid调参">PID调参</a></li><li><a href="#理论分析">理论分析</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#try-difference-combination">Try difference combination</a><ul><li><a href="#original">original</a><ul><li><a href="#case-1">case 1</a></li><li><a href="#case-2">case 2</a></li></ul></li><li><a href="#export-from-ccm">export from ccm</a></li></ul></li><li><a href="#create-orthogonal-obj-and-plant-obj">create orthogonal obj and plant obj</a></li><li><a href="#single-pic-with-created-model">single pic with created model</a></li><li><a href="#block-3-plant-xy-height-less-tri">block 3 plant xy height less tri</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="pid-contorl">PID Contorl</h2>
+        <h2 id="try-difference-combination">Try difference combination</h2>
+
+<h3 id="original">original</h3>
+
+<h4 id="case-1">case 1</h4>
 
 <ul>
-  <li>最常见的形式</li>
-  <li>$u(t)=K_pe(t)+K_i\int_0^te(\tau)d\tau+K_d\frac{d}{dt}e(t)$</li>
-  <li>其中
-    <ul>
-      <li>$K_p$为比例(proportional)增益</li>
-      <li>$K_i$为积分(integral)增益</li>
-      <li>$K_d$为微分(derivative)增益</li>
-      <li>$e=SP-PV$为误差，设定值(setpoint)$SP$与过程值(process variable)$PV$的差</li>
-      <li>$t$为时间</li>
-      <li>$\tau$积分变数，因为是历史状态的积分，因此要与$t$区分开来</li>
-    </ul>
-  </li>
+  <li>srs: original, EPSG:4490</li>
+  <li>rotation: M_00 to M_22</li>
+  <li>t: x,y,z in metadata&gt;center</li>
+  <li>xml: original</li>
+  <li>data: 1-1</li>
 </ul>
 
-<h3 id="比较常见的解释和应用">比较常见的解释和应用</h3>
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818191406.png" alt="20210818191406" />
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818191835.png" alt="20210818191835" /></p>
+
+<h4 id="case-2">case 2</h4>
 
 <ul>
-  <li>通过控制<strong>水箱</strong>的流入速度，使得水箱内的高度或体积保持不变的一种过程</li>
-  <li>汽车定速巡航，遇到上坡如何设计动力</li>
-  <li>无人机的悬停和应激相应(推一下回到原来的位置，或者前往目标点)</li>
-  <li>解决电路问题</li>
+  <li>srs: original, EPSG:4490</li>
+  <li>rotation: M_00 to M_22</li>
+  <li>t: x,y,z in center</li>
+  <li>xml: original</li>
+  <li>data: 1-1</li>
 </ul>
 
-<h3 id="pid">PID</h3>
+<p><strong>NOTHING</strong> output</p>
+
+<h3 id="export-from-ccm">export from ccm</h3>
 
 <ul>
-  <li>通常学习PID控制时，往往不太懂得3个变量的实际作用，又有计算机作为辅助进行模拟，那么就会导致盲目调参，而书中提到的调参方法又只讲参数含义，将调参性质描述一遍，这样完全不得法门，最后只能得到一个差不多的结果</li>
-  <li>历史上
-    <ul>
-      <li>惠更斯17世纪改造了风车，使得磨盘转速和磨盘间隙可以根据谷物数量变化
-        <ul>
-          <li>Power From the Wind , Cambridge University Press</li>
-        </ul>
-      </li>
-      <li>瓦特使用圆锥摆以解决蒸汽机的速度输出
-        <ul>
-          <li><a href="https://web.archive.org/web/20160809050823/http://ieeecss.org/CSM/library/1996/june1996/02-HistoryofAutoCtrl.pdf">History of AutoCtrl</a></li>
-        </ul>
-      </li>
-      <li>1868年，为了更好的保持鱼雷的深度，引入了微分控制</li>
-      <li>直到1922年，才有了完整的3项控制率</li>
-    </ul>
-  </li>
-  <li>因此，大多数书籍往往会根据每项变量引入时发挥的作用加以解释，但是又与纯PI控制，PD控制，甚至单纯的P控制应用相违背，除了硬件或成本上的限制，更需要思考的是，每一项为整个系统的稳定性到底提供了多大的好处</li>
+  <li>srs: 4490</li>
+  <li>rotation: M_00 to M_22</li>
+  <li>t: x,y,z in center</li>
+  <li>xml: original</li>
+  <li>data: 1-1</li>
 </ul>
 
-<h3 id="pid调参">PID调参</h3>
+<p><strong>NOTHING</strong> output</p>
+
+<h2 id="create-orthogonal-obj-and-plant-obj">create orthogonal obj and plant obj</h2>
 
 <ul>
-  <li>为了获得更好的参数，有如下几种方法
-    <ul>
-      <li>手动</li>
-      <li>Ziegler–Nichols[齐格勒－尼科尔斯方法]
-        <ul>
-          <li><a href="https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method">Ziegler–Nichols_method - Wikipedia</a></li>
-          <li><a href="https://www.bilibili.com/s/video/BV1ay4y117Bj">使用Z-N方法调节气压 - Bilibili</a></li>
-          <li>将ID项置0，调节P使得达到恒定震荡，再根据震荡周期和震荡值计算PID参数</li>
-          <li><strong>注意</strong>，想要在P控制下得到稳定震荡，要有超调现象，如果通过计算机模拟，而时间单位又很小，那么无论用多大的$K_P$你都看不到超调现象，可以理解为，系统刚刚输入一点点就被感知到了，而上面视频里从气流输入到输出存在一定的延迟，因此可以使用该方法</li>
-          <li>反馈较慢
-            <ul>
-              <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png" alt="20210816231759" /></li>
-            </ul>
-          </li>
-          <li>快速反馈
-            <ul>
-              <li>两处代码只更改了延迟</li>
-              <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231835.png" alt="20210816231835" /></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>机器学习[反向传播]
-        <ul>
-          <li><a href="https://zhuanlan.zhihu.com/p/111592279">今天聊聊PID - zzzSid的文章 - 知乎</a>
-            <ul>
-              <li>目标函数$cost = \frac{1}{2}(position_t-target_t)^2$</li>
-              <li>不过我并不是很赞同他使用动态参数的做法</li>
-              <li>目标函数也未考虑收敛速度和周期</li>
-            </ul>
-          </li>
-          <li><a href="http://hjhyxb.ijournals.cn/ch/reader/create_pdf.aspx?file_no=20150402&amp;year_id=2015&amp;quarter_id=4&amp;falg=1">基于支持向量机回归和RBF神经网络的PID整定 - 海军航空工程学院</a>
-            <ul>
-              <li>原理跟上面一样</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li>orthogonal</li>
 </ul>
 
-<h3 id="理论分析">理论分析</h3>
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818233612.png" alt="20210818233612" /></p>
 
 <ul>
-  <li><strong>Laplace Transform</strong>[拉普拉斯变换]
-    <ul>
-      <li>$L(s) = \int_0^{\infty}f(t)e^{-st}dt$</li>
-      <li>其中$s$是个复数</li>
-    </ul>
-  </li>
-  <li>为了更好的理解<strong>Laplace Transform</strong>, 回想一下<strong>Fourier transform</strong>[傅里叶变换]
-    <ul>
-      <li>$F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$, $i$是虚数单位</li>
-      <li>同时它也有另外一种表示</li>
-      <li>$F(\omega) = \int_{-\infty}^{\infty}f(t)*\sin(\omega t)dt$</li>
-      <li>这是因为欧拉公式可以建立起复数和三角函数之间的关系</li>
-    </ul>
-  </li>
-  <li>傅里叶变换和拉普拉斯变换的主要区别
-    <ul>
-      <li>傅里叶变换的积分域为$(-\infty,+\infty)$, 而拉普拉斯变换的积分区间为$(0, +\infty)$
-        <ul>
-          <li>由于傅里叶变换主要关心函数的周期性，频率性质，而这些性质需要假设函数拥有周期或者周期无限长，对于一些01信号也需要利用周期函数的性质再将其进行延拓</li>
-          <li>而拉普拉斯变换主要解决应用问题，$t$常常作为时间表示，而时间没有负值，因此拉普拉斯变换常常不考虑负值的情况，不过依然存在双边拉普拉斯变换的情形<strong>bilateral Laplace transform</strong></li>
-          <li><a href="https://qr.ae/pGOVS9">Why does Laplace transform take the integral with limit beginning at zero - Quora</a></li>
-        </ul>
-      </li>
-      <li>傅里叶变换使用纯虚数，而拉普拉斯变换将其扩大到了整个复数域
-        <ul>
-          <li>这里有三种理解方式
-            <ul>
-              <li>将$s$分离成实数和虚数两个部分
-                <ul>
-                  <li>$L(s)=\int_0^{\infty}f(t)e^{-i\omega t}e^{-\sigma t}dt$</li>
-                  <li>其中$\omega, \sigma$都为实数</li>
-                  <li>这样拉普拉斯变换就只是在傅里叶的基础上乘了$e^{-\sigma t}$</li>
-                  <li>这样就解决了一些非周期的以及$f\to\infty$区域无穷的函数<strong>利用傅里叶不可积的问题</strong></li>
-                  <li>当然如果存在$f$比$e^{\sigma t}$的增长速度还要快的函数，那么拉普拉斯变换也依然存在不可积的问题</li>
-                </ul>
-              </li>
-              <li>将这两种变换理解为函数值之间的内积或者卷积
-                <ul>
-                  <li>为了得到一些频率的信号量，我们选择一组正交基，比如一些三角函数，我们用$f(t)·e^{-i\omega t}$(它是傅里叶变换的内积形式)，找到在该周期内最大的响应，然后依次求出各个周期的信号大小，这就是傅里叶级数的求法</li>
-                  <li>同时，为了解决傅里叶级数需要周期无限长的问题，也有<strong>Wavelet transform</strong>[小波变换], 等</li>
-                  <li>如果不考虑基的正交性，你还可以自己设计一个新的函数</li>
-                  <li>例如在图像领域的<strong>Box-Filter</strong>[盒子滤波器], 它仅仅是二维高斯函数的离散化点阵而已，用以加快计算速度，或者其他<strong>CNN</strong>中所用的<strong>filter</strong>，也是同样的作用</li>
-                  <li>那么这时，拉普拉斯变换中$e^{-i\omega t}e^{-\sigma t}$就变成了一个<strong>幅度不断增长或下降的三角函数</strong>，我们通过它就可以知道一个函数的指数收敛性，或者发散速度</li>
-                </ul>
-              </li>
-              <li>第三种将其理解为一种在复数空间中的投影
-                <ul>
-                  <li><a href="https://zhuanlan.zhihu.com/p/23617272">【自动控制原理】1.传递函数 - 李寒潭的文章 - 知乎</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>Reference
-            <ul>
-              <li><a href="https://www.matongxue.com/madocs/723/">如何理解拉普拉斯变换 - 马同学</a></li>
-              <li><a href="https://zh.wikipedia.org/wiki/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2">拉普拉斯变换 - Wikipedia</a></li>
-              <li><a href="https://youtu.be/n2y7n6jw5d0">🤙What does the Laplace Transform really tell us - Youtube</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li>plant</li>
 </ul>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235011.png" alt="20210818235011" /></p>
+
+<ul>
+  <li>sphere</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235000.png" alt="20210818235000" /></p>
+
+<p><strong>Nothing</strong> output</p>
+
+<h2 id="single-pic-with-created-model">single pic with created model</h2>
+
+<p><code class="language-plaintext highlighter-rouge">error: invalid project</code></p>
+
+<h2 id="block-3-plant-xy-height-less-tri">block 3 plant xy height less tri</h2>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819010552.png" alt="20210819010552" /></p>
 
         
       </section>
@@ -562,7 +471,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/zhihu" class="page__taxonomy-item" rel="tag">zhihu</a>
+      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
     
     </span>
   </p>
@@ -570,7 +479,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-14T23:00:46+08:00">August 14, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-16T14:55:52+08:00">August 16, 2021</time></p>
 
 
       </footer>
@@ -578,22 +487,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=PID+and+laplace+transform%20https%3A%2F%2Fucas.io%2Fzhihu%2FPID-and-laplace-transform%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Reading+Texure+paper%20https%3A%2F%2Fucas.io%2F3d%2FTexture-for-9-9-project%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fzhihu%2FPID-and-laplace-transform%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FTexture-for-9-9-project%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fzhihu%2FPID-and-laplace-transform%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FTexture-for-9-9-project%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/Convert-Camera-Parameters/" class="pagination--pager" title="Convert Camera Parameters [model of colmap]
+      <a href="/3d/Reading-Texture-paper/" class="pagination--pager" title="Reading Texure paper
 ">Previous</a>
     
     
-      <a href="/3d/Reading-Texture-paper/" class="pagination--pager" title="Reading Texure paper
+      <a href="/3d/Camera-parameters-convert/" class="pagination--pager" title="Convert Camera Parameters [usage of ContextCapture Master]
 ">Next</a>
     
   </nav>
@@ -668,57 +577,6 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/Texture-for-9-9-project/" rel="permalink">Reading Texure paper
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-16T14:55:52+08:00">August 16, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Try difference combination
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
         <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817225945.png" alt="">
       </div>
     
@@ -757,6 +615,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Reconstructing textured meshes from multiple range+rgb maps
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/zhihu/PID-and-laplace-transform/" rel="permalink">PID and laplace transform
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-14T23:00:46+08:00">August 14, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">PID Contorl
 </p>
   </article>
 </div>
