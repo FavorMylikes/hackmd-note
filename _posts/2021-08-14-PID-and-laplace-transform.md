@@ -62,9 +62,11 @@ header:
 
 ### 理论分析
 
-- **Laplace Transform**[拉普拉斯变换]
-  - $L(s) = \int_0^{\infty}f(t)e^{-st}dt$
-  - 其中$s$是个复数
+#### **Laplace Transform**[拉普拉斯变换]
+
+$$L(s) = \int_0^{\infty}f(t)e^{-st}dt$$
+
+- 其中$s$是个复数
 - 为了更好的理解**Laplace Transform**, 回想一下**Fourier transform**[傅里叶变换]
   - $F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$, $i$是虚数单位
   - 同时它也有另外一种表示
@@ -95,3 +97,22 @@ header:
       - [如何理解拉普拉斯变换 - 马同学](https://www.matongxue.com/madocs/723/)
       - [拉普拉斯变换 - Wikipedia](https://zh.wikipedia.org/wiki/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2)
       - [🤙What does the Laplace Transform really tell us - Youtube](https://youtu.be/n2y7n6jw5d0)
+- 计算例子
+  - $$
+    \begin{aligned}
+    L(s)=\mathcal{L\{f(t)\}} &= \int_{0^{-}}^\infty f(t)e^{-st}dt\\
+      &=\left[\frac{f(t)e^{-st}}{-s}\right]_{0^{-}}^\infty-\int_{0^{-}}^\infty\frac{e^{-st}}{-s}f'(t)dt&(1)\\
+      &=\left[0-\frac{f(0^{-})}{-s}\right] + \frac{1}{s}\mathcal{L\{f'(t)\}}\\
+      \mathcal{L\{f'(t)\}}&=s\mathcal{L\{f(t)\}}-f'(0^{-})
+    \end{aligned}
+  $$
+    - 其中$(1)$使用了分部积分法，同时使用了隐含条件$\lim\limits_{t\to \infty} f(x)e^{-st} = 0$, **即前文提到的，$f(t)$的增长速度没有$e^{st}$快**，因此作为分母时才可以使得$f(x)e^{-st}|_{t=\infty}=0$
+  - $$
+      \int_{0}^{\infty}tf(t)e^{-st}dt=-F'(s)
+    $$
+- 比较常用的其他例子
+- $$
+    \begin{aligned}
+      
+    \end{aligned}
+  $$

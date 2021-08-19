@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Reading Texure paper"
-date:   "2021-8-16 14:55:52 +0800"
+date:   "2021-8-17 14:55:52 +0800"
 categories: 3d
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817225945.png

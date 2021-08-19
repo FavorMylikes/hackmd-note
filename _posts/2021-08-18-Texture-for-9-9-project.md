@@ -1,7 +1,7 @@
 ---
 layout: single
-title:  "Reading Texure paper"
-date:   "2021-8-16 14:55:52 +0800"
+title:  "Texture for 9-9 project"
+date:   "2021-8-18 14:55:52 +0800"
 categories: 3d
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png
@@ -65,3 +65,15 @@ header:
 ## block 3 plant xy height less tri
 
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819010552.png" alt="20210819010552"/>
+
+## block 3 sphere block 3 small tri
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819131819.png" alt="20210819131819"/>
+
+## block 3 sphere block 3 large tri
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819140206.png" alt="20210819140206"/>
+
+## block 3 sphere block 3 single 10 tiny tri
+
+**Nothing** output
