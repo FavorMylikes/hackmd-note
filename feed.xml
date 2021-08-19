@@ -1,4 +1,453 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-19T01:08:17+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Convert Camera Parameters [usage of ContextCapture Master]</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters [usage of ContextCapture Master]" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-20T00:37:56+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Texture for 9-9 project[2]</title><link href="https://ucas.io/3d/Texture-for-9-9-project-2/" rel="alternate" type="text/html" title="Texture for 9-9 project[2]" /><published>2021-08-19T22:50:45+08:00</published><updated>2021-08-19T22:50:45+08:00</updated><id>https://ucas.io/3d/Texture-for-9-9-project%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-9-9-project-2/">&lt;h2 id=&quot;intrinsics-matrix&quot;&gt;Intrinsics matrix&lt;/h2&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{bmatrix}\frac{f s_{w}}{w} &amp; 0 &amp; p_{x}\\0 &amp; \frac{f s_{h}}{h} &amp; p_{y}\\0 &amp; 0 &amp; 1\end{bmatrix}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$f$: focal&lt;/li&gt;
+  &lt;li&gt;$w,h$: 图片像素大小&lt;/li&gt;
+  &lt;li&gt;$s_w,s_h$: 感光元件大小&lt;/li&gt;
+  &lt;li&gt;$p_x,p_y$: 光心位置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;externals-matrix&quot;&gt;Externals matrix&lt;/h2&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+R=\begin{bmatrix}\cos{\left(\psi \right)} \cos{\left(\theta \right)} &amp; \sin{\left(\phi \right)} \sin{\left(\theta \right)} \cos{\left(\psi \right)} + \sin{\left(\psi \right)} \cos{\left(\phi \right)} &amp; \sin{\left(\phi \right)} \sin{\left(\psi \right)} - \sin{\left(\theta \right)} \cos{\left(\phi \right)} \cos{\left(\psi \right)}\\- \sin{\left(\psi \right)} \cos{\left(\theta \right)} &amp; - \sin{\left(\phi \right)} \sin{\left(\psi \right)} \sin{\left(\theta \right)} + \cos{\left(\phi \right)} \cos{\left(\psi \right)} &amp; \sin{\left(\phi \right)} \cos{\left(\psi \right)} + \sin{\left(\psi \right)} \sin{\left(\theta \right)} \cos{\left(\phi \right)}\\\sin{\left(\theta \right)} &amp; - \sin{\left(\phi \right)} \cos{\left(\theta \right)} &amp; \cos{\left(\phi \right)} \cos{\left(\theta \right)}\end{bmatrix}
+$$&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\psi$: z : yaw: $\Omega$&lt;/li&gt;
+  &lt;li&gt;$\phi$: x : pitch: $\Phi$&lt;/li&gt;
+  &lt;li&gt;$\theta$: y : roll: $\Kappa$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;shape&quot;&gt;Shape&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;original: obj 对象&lt;/li&gt;
+  &lt;li&gt;ccm-export: ccm 导出结果&lt;/li&gt;
+  &lt;li&gt;orthogonal: 正交面&lt;/li&gt;
+  &lt;li&gt;plant: 平面&lt;/li&gt;
+  &lt;li&gt;plant_xy_height: xy面，同时拥有一定高度，高度淹没车辆&lt;/li&gt;
+  &lt;li&gt;plant_xy_height_less: xy面，同时拥有一定高度，高度淹没公路&lt;/li&gt;
+  &lt;li&gt;sphere: 球&lt;/li&gt;
+  &lt;li&gt;-tri: 三角化后缀&lt;/li&gt;
+  &lt;li&gt;_large: 可以囊括obj对象，可以拿到内视贴图&lt;/li&gt;
+  &lt;li&gt;_small: 和obj对象相交，可以参考相机方向&lt;/li&gt;
+  &lt;li&gt;_tiny: small直径的一半大&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;id&lt;/th&gt;
+      &lt;th&gt;shape&lt;/th&gt;
+      &lt;th&gt;block&lt;/th&gt;
+      &lt;th&gt;size&lt;/th&gt;
+      &lt;th&gt;parameter&lt;/th&gt;
+      &lt;th&gt;srs&lt;/th&gt;
+      &lt;th&gt;output&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;original&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;💩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;original&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;✔️&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;original&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;✔️&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;ccm-export&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;💩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;orthogonal&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;💩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;orthogonal&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;💩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;orthogonal-tri&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;✔️&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;orthogonal-tri&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;✔️&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;plant&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;💩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;plant&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;💩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;plant_xy_height&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;💩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;plant_xy_height_less&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;💩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;plant_xy_height_less_tri&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;✔️&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;sphere&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;💩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;sphere_large_tri&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;✔️&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;14&lt;/td&gt;
+      &lt;td&gt;sphere_large_tri&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;✔️&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;sphere_small_tri&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;✔️&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;sphere_tiny_tri&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;✔️&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;17&lt;/td&gt;
+      &lt;td&gt;sphere_tiny_tri&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;✔️&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;change-intrinsics-matrix&quot;&gt;Change Intrinsics matrix&lt;/h2&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{bmatrix}\frac{f w}{s_{w}} &amp; 0 &amp; p_{x}\\0 &amp; \frac{f h}{s_{h}} &amp; p_{y}\\0 &amp; 0 &amp; 1\end{bmatrix}
+$$&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;id&lt;/th&gt;
+      &lt;th&gt;shape&lt;/th&gt;
+      &lt;th&gt;block&lt;/th&gt;
+      &lt;th&gt;size&lt;/th&gt;
+      &lt;th&gt;parameter&lt;/th&gt;
+      &lt;th&gt;srs&lt;/th&gt;
+      &lt;th&gt;output&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;original&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;🤙&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;plant_xy_height_less_tri&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;meta&amp;gt;center&lt;/td&gt;
+      &lt;td&gt;4490&lt;/td&gt;
+      &lt;td&gt;🤙&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003537.png&quot; alt=&quot;20210820003537&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003550.png&quot; alt=&quot;20210820003550&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Intrinsics matrix</summary></entry><entry><title type="html">Texture for 9-9 project</title><link href="https://ucas.io/3d/Texture-for-9-9-project/" rel="alternate" type="text/html" title="Texture for 9-9 project" /><published>2021-08-18T14:55:52+08:00</published><updated>2021-08-18T14:55:52+08:00</updated><id>https://ucas.io/3d/Texture-for-9-9-project</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-9-9-project/">&lt;h2 id=&quot;try-difference-combination&quot;&gt;Try difference combination&lt;/h2&gt;
+
+&lt;h3 id=&quot;original&quot;&gt;original&lt;/h3&gt;
+
+&lt;h4 id=&quot;case-1&quot;&gt;case 1&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;srs: original, EPSG:4490&lt;/li&gt;
+  &lt;li&gt;rotation: M_00 to M_22&lt;/li&gt;
+  &lt;li&gt;t: x,y,z in metadata&amp;gt;center&lt;/li&gt;
+  &lt;li&gt;xml: original&lt;/li&gt;
+  &lt;li&gt;data: 1-1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818191406.png&quot; alt=&quot;20210818191406&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818191835.png&quot; alt=&quot;20210818191835&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;case-2&quot;&gt;case 2&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;srs: original, EPSG:4490&lt;/li&gt;
+  &lt;li&gt;rotation: M_00 to M_22&lt;/li&gt;
+  &lt;li&gt;t: x,y,z in center&lt;/li&gt;
+  &lt;li&gt;xml: original&lt;/li&gt;
+  &lt;li&gt;data: 1-1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTHING&lt;/strong&gt; output&lt;/p&gt;
+
+&lt;h3 id=&quot;export-from-ccm&quot;&gt;export from ccm&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;srs: 4490&lt;/li&gt;
+  &lt;li&gt;rotation: M_00 to M_22&lt;/li&gt;
+  &lt;li&gt;t: x,y,z in center&lt;/li&gt;
+  &lt;li&gt;xml: original&lt;/li&gt;
+  &lt;li&gt;data: 1-1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTHING&lt;/strong&gt; output&lt;/p&gt;
+
+&lt;h2 id=&quot;create-orthogonal-obj-and-plant-obj&quot;&gt;create orthogonal obj and plant obj&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;orthogonal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818233612.png&quot; alt=&quot;20210818233612&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;plant&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235011.png&quot; alt=&quot;20210818235011&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sphere&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235000.png&quot; alt=&quot;20210818235000&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Nothing&lt;/strong&gt; output&lt;/p&gt;
+
+&lt;h2 id=&quot;single-pic-with-created-model&quot;&gt;single pic with created model&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;error: invalid project&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;block-3-plant-xy-height-less-tri&quot;&gt;block 3 plant xy height less tri&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819010552.png&quot; alt=&quot;20210819010552&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;block-3-sphere-block-3-small-tri&quot;&gt;block 3 sphere block 3 small tri&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819131819.png&quot; alt=&quot;20210819131819&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;block-3-sphere-block-3-large-tri&quot;&gt;block 3 sphere block 3 large tri&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819140206.png&quot; alt=&quot;20210819140206&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;block-3-sphere-block-3-single-10-tiny-tri&quot;&gt;block 3 sphere block 3 single 10 tiny tri&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Nothing&lt;/strong&gt; output&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Try difference combination</summary></entry><entry><title type="html">Reading Texure paper</title><link href="https://ucas.io/3d/Reading-Texture-paper/" rel="alternate" type="text/html" title="Reading Texure paper" /><published>2021-08-17T14:55:52+08:00</published><updated>2021-08-17T14:55:52+08:00</updated><id>https://ucas.io/3d/Reading-Texture-paper</id><content type="html" xml:base="https://ucas.io/3d/Reading-Texture-paper/">&lt;h2 id=&quot;reconstructing-textured-meshes-from-multiple-rangergb-maps&quot;&gt;Reconstructing textured meshes from multiple range+rgb maps&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ISTI-CNR&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Minimizing redundancy and optimizing the color attribute represendtation&lt;/li&gt;
+  &lt;li&gt;Eliminate most of the color difference or discontinuity which exist in input images
+    &lt;ul&gt;
+      &lt;li&gt;cross-correlation&lt;/li&gt;
+      &lt;li&gt;interpolation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;work-flow&quot;&gt;Work flow&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;visibility calculation
+    &lt;ul&gt;
+      &lt;li&gt;get a set of valid cameras/images for the face
+        &lt;ul&gt;
+          &lt;li&gt;ray-tracing calculation[耗时]&lt;/li&gt;
+          &lt;li&gt;hardware-accelerated OpenGL
+            &lt;ul&gt;
+              &lt;li&gt;每个面一个颜色，用OpenGL直接渲染，选择相机能看到的颜色作为可观测颜色&lt;/li&gt;
+              &lt;li&gt;但如果多个面都投影到同一个像素的话，太小的面就会被判定为不可见&lt;/li&gt;
+              &lt;li&gt;优化
+                &lt;ul&gt;
+                  &lt;li&gt;通过迭代，每次迭代哪些尚未观测到的面&lt;/li&gt;
+                  &lt;li&gt;随机抖动相机，或微调景深z-index，使得小面被观测到&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;patches generation
+    &lt;ul&gt;
+      &lt;li&gt;reduce the number of patch&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;sub-texture packing
+    &lt;ul&gt;
+      &lt;li&gt;locally-optimum greedy process&lt;/li&gt;
+      &lt;li&gt;continuous texture but generally presents insufficient color continuity&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817225945.png&quot; alt=&quot;20210817225945&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;imporving color matching and continuity
+    &lt;ul&gt;
+      &lt;li&gt;difference of color[iterate on vertices]
+        &lt;ul&gt;
+          &lt;li&gt;面$f$点$v$，$image_1\to patch_1$ has color $c_1$&lt;/li&gt;
+          &lt;li&gt;$image_2\to patch_2$ has color $c_2$&lt;/li&gt;
+          &lt;li&gt;$\bar image_{1,2}-c_1$意味着，$patch_1$到$patch_2$需要改变的颜色&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817230948.png&quot; alt=&quot;20210817230948&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;pull-push interpolation method&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;state-of-the-art&quot;&gt;state of the art&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;texture mapping
+    &lt;ul&gt;
+      &lt;li&gt;image registration
+        &lt;ul&gt;
+          &lt;li&gt;point pair[点对]&lt;/li&gt;
+          &lt;li&gt;integrate geometric- and image-based alignment[几何对齐]&lt;/li&gt;
+          &lt;li&gt;silhouette-based registration[轮廓匹配]&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Tsai algorithm&lt;/strong&gt;啥玩意&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;texture image is reconstructed from input image
+        &lt;ul&gt;
+          &lt;li&gt;map to mesh, sample color with &lt;strong&gt;non-redundant manner and optimizing&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;weight blend&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;texture-for-9-9-file&quot;&gt;Texture for 9-9 file&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817164050.png&quot; alt=&quot;20210817164050&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817192738.png&quot; alt=&quot;20210817192738&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imga409b4eb5add76d66a1a713df1e5114.png&quot; alt=&quot;a409b4eb5add76d66a1a713df1e5114&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Reconstructing textured meshes from multiple range+rgb maps</summary></entry><entry><title type="html">Convert Camera Parameters [usage of ContextCapture Master]</title><link href="https://ucas.io/3d/Camera-parameters-convert/" rel="alternate" type="text/html" title="Convert Camera Parameters [usage of ContextCapture Master]" /><published>2021-08-16T19:06:13+08:00</published><updated>2021-08-16T19:06:13+08:00</updated><id>https://ucas.io/3d/Camera-parameters-convert</id><content type="html" xml:base="https://ucas.io/3d/Camera-parameters-convert/">&lt;h2 id=&quot;convert-parameters&quot;&gt;Convert parameters&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;拿到&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;空三&lt;/code&gt;的参数文件，发现是 &lt;strong&gt;Smart3D(soarscape.com)&lt;/strong&gt; 的软件导出的，尝试下载，发现需要申请&lt;/li&gt;
@@ -97,174 +546,7 @@
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/fb_help/article/details/84142580&quot;&gt;PhotoScan与smart3d的Omega,phi,kappa和R - fb_help[CSDN]&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/94244568&quot;&gt;相机标定之张正友标定法数学原理详解（含python源码） - 1335的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/35287729&quot;&gt;相机模型&amp;amp;相机标定 - WwPpCc的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Convert parameters</summary></entry><entry><title type="html">Reading Texure paper</title><link href="https://ucas.io/3d/Reading-Texture-paper/" rel="alternate" type="text/html" title="Reading Texure paper" /><published>2021-08-16T14:55:52+08:00</published><updated>2021-08-16T14:55:52+08:00</updated><id>https://ucas.io/3d/Reading-Texture-paper</id><content type="html" xml:base="https://ucas.io/3d/Reading-Texture-paper/">&lt;h2 id=&quot;reconstructing-textured-meshes-from-multiple-rangergb-maps&quot;&gt;Reconstructing textured meshes from multiple range+rgb maps&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;ISTI-CNR&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;summary&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Minimizing redundancy and optimizing the color attribute represendtation&lt;/li&gt;
-  &lt;li&gt;Eliminate most of the color difference or discontinuity which exist in input images
-    &lt;ul&gt;
-      &lt;li&gt;cross-correlation&lt;/li&gt;
-      &lt;li&gt;interpolation&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;work-flow&quot;&gt;Work flow&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;visibility calculation
-    &lt;ul&gt;
-      &lt;li&gt;get a set of valid cameras/images for the face
-        &lt;ul&gt;
-          &lt;li&gt;ray-tracing calculation[耗时]&lt;/li&gt;
-          &lt;li&gt;hardware-accelerated OpenGL
-            &lt;ul&gt;
-              &lt;li&gt;每个面一个颜色，用OpenGL直接渲染，选择相机能看到的颜色作为可观测颜色&lt;/li&gt;
-              &lt;li&gt;但如果多个面都投影到同一个像素的话，太小的面就会被判定为不可见&lt;/li&gt;
-              &lt;li&gt;优化
-                &lt;ul&gt;
-                  &lt;li&gt;通过迭代，每次迭代哪些尚未观测到的面&lt;/li&gt;
-                  &lt;li&gt;随机抖动相机，或微调景深z-index，使得小面被观测到&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;patches generation
-    &lt;ul&gt;
-      &lt;li&gt;reduce the number of patch&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;sub-texture packing
-    &lt;ul&gt;
-      &lt;li&gt;locally-optimum greedy process&lt;/li&gt;
-      &lt;li&gt;continuous texture but generally presents insufficient color continuity&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817225945.png&quot; alt=&quot;20210817225945&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;imporving color matching and continuity
-    &lt;ul&gt;
-      &lt;li&gt;difference of color[iterate on vertices]
-        &lt;ul&gt;
-          &lt;li&gt;面$f$点$v$，$image_1\to patch_1$ has color $c_1$&lt;/li&gt;
-          &lt;li&gt;$image_2\to patch_2$ has color $c_2$&lt;/li&gt;
-          &lt;li&gt;$\bar image_{1,2}-c_1$意味着，$patch_1$到$patch_2$需要改变的颜色&lt;/li&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817230948.png&quot; alt=&quot;20210817230948&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;pull-push interpolation method&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;state-of-the-art&quot;&gt;state of the art&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;texture mapping
-    &lt;ul&gt;
-      &lt;li&gt;image registration
-        &lt;ul&gt;
-          &lt;li&gt;point pair[点对]&lt;/li&gt;
-          &lt;li&gt;integrate geometric- and image-based alignment[几何对齐]&lt;/li&gt;
-          &lt;li&gt;silhouette-based registration[轮廓匹配]&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Tsai algorithm&lt;/strong&gt;啥玩意&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;texture image is reconstructed from input image
-        &lt;ul&gt;
-          &lt;li&gt;map to mesh, sample color with &lt;strong&gt;non-redundant manner and optimizing&lt;/strong&gt;&lt;/li&gt;
-          &lt;li&gt;weight blend&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;texture-for-9-9-file&quot;&gt;Texture for 9-9 file&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817164050.png&quot; alt=&quot;20210817164050&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817192738.png&quot; alt=&quot;20210817192738&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imga409b4eb5add76d66a1a713df1e5114.png&quot; alt=&quot;a409b4eb5add76d66a1a713df1e5114&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Reconstructing textured meshes from multiple range+rgb maps</summary></entry><entry><title type="html">Reading Texure paper</title><link href="https://ucas.io/3d/Texture-for-9-9-project/" rel="alternate" type="text/html" title="Reading Texure paper" /><published>2021-08-16T14:55:52+08:00</published><updated>2021-08-16T14:55:52+08:00</updated><id>https://ucas.io/3d/Texture-for-9-9-project</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-9-9-project/">&lt;h2 id=&quot;try-difference-combination&quot;&gt;Try difference combination&lt;/h2&gt;
-
-&lt;h3 id=&quot;original&quot;&gt;original&lt;/h3&gt;
-
-&lt;h4 id=&quot;case-1&quot;&gt;case 1&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;srs: original, EPSG:4490&lt;/li&gt;
-  &lt;li&gt;rotation: M_00 to M_22&lt;/li&gt;
-  &lt;li&gt;t: x,y,z in metadata&amp;gt;center&lt;/li&gt;
-  &lt;li&gt;xml: original&lt;/li&gt;
-  &lt;li&gt;data: 1-1&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818191406.png&quot; alt=&quot;20210818191406&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818191835.png&quot; alt=&quot;20210818191835&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;case-2&quot;&gt;case 2&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;srs: original, EPSG:4490&lt;/li&gt;
-  &lt;li&gt;rotation: M_00 to M_22&lt;/li&gt;
-  &lt;li&gt;t: x,y,z in center&lt;/li&gt;
-  &lt;li&gt;xml: original&lt;/li&gt;
-  &lt;li&gt;data: 1-1&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTHING&lt;/strong&gt; output&lt;/p&gt;
-
-&lt;h3 id=&quot;export-from-ccm&quot;&gt;export from ccm&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;srs: 4490&lt;/li&gt;
-  &lt;li&gt;rotation: M_00 to M_22&lt;/li&gt;
-  &lt;li&gt;t: x,y,z in center&lt;/li&gt;
-  &lt;li&gt;xml: original&lt;/li&gt;
-  &lt;li&gt;data: 1-1&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTHING&lt;/strong&gt; output&lt;/p&gt;
-
-&lt;h2 id=&quot;create-orthogonal-obj-and-plant-obj&quot;&gt;create orthogonal obj and plant obj&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;orthogonal&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818233612.png&quot; alt=&quot;20210818233612&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;plant&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235011.png&quot; alt=&quot;20210818235011&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;sphere&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235000.png&quot; alt=&quot;20210818235000&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Nothing&lt;/strong&gt; output&lt;/p&gt;
-
-&lt;h2 id=&quot;single-pic-with-created-model&quot;&gt;single pic with created model&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;error: invalid project&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;block-3-plant-xy-height-less-tri&quot;&gt;block 3 plant xy height less tri&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819010552.png&quot; alt=&quot;20210819010552&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Try difference combination</summary></entry><entry><title type="html">PID and laplace transform</title><link href="https://ucas.io/zhihu/PID-and-laplace-transform/" rel="alternate" type="text/html" title="PID and laplace transform" /><published>2021-08-14T23:00:46+08:00</published><updated>2021-08-14T23:00:46+08:00</updated><id>https://ucas.io/zhihu/PID-and-laplace-transform</id><content type="html" xml:base="https://ucas.io/zhihu/PID-and-laplace-transform/">&lt;h2 id=&quot;pid-contorl&quot;&gt;PID Contorl&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Convert parameters</summary></entry><entry><title type="html">PID and laplace transform</title><link href="https://ucas.io/zhihu/PID-and-laplace-transform/" rel="alternate" type="text/html" title="PID and laplace transform" /><published>2021-08-14T23:00:46+08:00</published><updated>2021-08-14T23:00:46+08:00</updated><id>https://ucas.io/zhihu/PID-and-laplace-transform</id><content type="html" xml:base="https://ucas.io/zhihu/PID-and-laplace-transform/">&lt;h2 id=&quot;pid-contorl&quot;&gt;PID Contorl&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;最常见的形式&lt;/li&gt;
@@ -360,13 +642,14 @@
 
 &lt;h3 id=&quot;理论分析&quot;&gt;理论分析&lt;/h3&gt;
 
+&lt;h4 id=&quot;laplace-transform拉普拉斯变换&quot;&gt;&lt;strong&gt;Laplace Transform&lt;/strong&gt;[拉普拉斯变换]&lt;/h4&gt;
+
+&lt;div class=&quot;kdmath&quot;&gt;$$
+L(s) = \int_0^{\infty}f(t)e^{-st}dt
+$$&lt;/div&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Laplace Transform&lt;/strong&gt;[拉普拉斯变换]
-    &lt;ul&gt;
-      &lt;li&gt;$L(s) = \int_0^{\infty}f(t)e^{-st}dt$&lt;/li&gt;
-      &lt;li&gt;其中$s$是个复数&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;其中$s$是个复数&lt;/li&gt;
   &lt;li&gt;为了更好的理解&lt;strong&gt;Laplace Transform&lt;/strong&gt;, 回想一下&lt;strong&gt;Fourier transform&lt;/strong&gt;[傅里叶变换]
     &lt;ul&gt;
       &lt;li&gt;$F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$, $i$是虚数单位&lt;/li&gt;
@@ -423,6 +706,45 @@
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;计算例子
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+L(s)=\mathcal{L\{f(t)\}} &amp;= \int_{0^{-}}^\infty f(t)e^{-st}dt\\
+  &amp;=\left[\frac{f(t)e^{-st}}{-s}\right]_{0^{-}}^\infty-\int_{0^{-}}^\infty\frac{e^{-st}}{-s}f'(t)dt&amp;(1)\\
+  &amp;=\left[0-\frac{f(0^{-})}{-s}\right] + \frac{1}{s}\mathcal{L\{f'(t)\}}\\
+  \mathcal{L\{f'(t)\}}&amp;=s\mathcal{L\{f(t)\}}-f'(0^{-})
+\end{aligned}
+$$&lt;/div&gt;
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;其中$(1)$使用了分部积分法，同时使用了隐含条件$\lim\limits_{t\to \infty} f(x)e^{-st} = 0$, &lt;strong&gt;即前文提到的，$f(t)$的增长速度没有$e^{st}$快&lt;/strong&gt;，因此作为分母时才可以使得$f(x)e^{-st}&lt;/td&gt;
+                  &lt;td&gt;_{t=\infty}=0$&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;div class=&quot;kdmath&quot;&gt;$$
+\int_{0}^{\infty}tf(t)e^{-st}dt=-F'(s)
+$$&lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;比较常用的其他例子&lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+      
+  \end{aligned}
+$$&lt;/div&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">PID Contorl</summary></entry><entry><title type="html">Convert Camera Parameters [model of colmap]</title><link href="https://ucas.io/3d/Convert-Camera-Parameters/" rel="alternate" type="text/html" title="Convert Camera Parameters [model of colmap]" /><published>2021-08-13T19:21:12+08:00</published><updated>2021-08-13T19:21:12+08:00</updated><id>https://ucas.io/3d/Convert-Camera-Parameters</id><content type="html" xml:base="https://ucas.io/3d/Convert-Camera-Parameters/">&lt;h2 id=&quot;try-colmap-with-cudagpu&quot;&gt;Try Colmap with cuda(gpu)&lt;/h2&gt;
 
@@ -805,81 +1127,4 @@ colmap mapper&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/144816424&quot;&gt;路径规划-人工势场法(Artificial Potential Field) - 半杯茶的小酒杯的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="coursera" /><summary type="html">week3</summary></entry><entry><title type="html">Try to use OpenMVS under ubuntu</title><link href="https://ucas.io/coursera/Try-to-use-OpenMVS-under-ubuntu/" rel="alternate" type="text/html" title="Try to use OpenMVS under ubuntu" /><published>2021-08-10T22:37:02+08:00</published><updated>2021-08-10T22:37:02+08:00</updated><id>https://ucas.io/coursera/Try-to-use-OpenMVS-under-ubuntu</id><content type="html" xml:base="https://ucas.io/coursera/Try-to-use-OpenMVS-under-ubuntu/">&lt;h2 id=&quot;run-under-jupyter-lab&quot;&gt;Run under jupyter-lab&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628610280(1).jpg&quot; alt=&quot;1628610280(1)&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Open it at &lt;a href=&quot;http://ucas/jupyter/lab/tree/3d/colmap_script.ipynb&quot;&gt;ucas&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;opensfm&quot;&gt;OpenSfM&lt;/h2&gt;
-
-&lt;h3 id=&quot;feature_type&quot;&gt;feature_type&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;KAZE[EECV]風
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/pablofdezalc/kaze&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://www.robesafe.com/personal/pablo.alcantarilla/kaze.html&quot;&gt;KAZE Features. Pablo F. Alcantarilla, Adrien Bartoli and Andrew J. Davison. In European Conference on Computer Vision (ECCV), Fiorenze, Italy, October 2012. bibtex&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Perona-Malik方程&lt;/li&gt;
-      &lt;li&gt;非线性尺度空间&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;AKAZE[Accelerated-KAZE KAZE的加速版]&lt;/li&gt;
-  &lt;li&gt;SIFT
-    &lt;ul&gt;
-      &lt;li&gt;DoG[Difference of Gaussian]&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;SURF[Speeded up robust features]
-    &lt;ul&gt;
-      &lt;li&gt;Use Box-Filter[盒子滤波器] instead of DoG&lt;/li&gt;
-      &lt;li&gt;Change the size of Box-Filter, to build scala space.&lt;/li&gt;
-      &lt;li&gt;方向定位，haar小波&lt;/li&gt;
-      &lt;li&gt;Integral image[积分图]
-        &lt;ul&gt;
-          &lt;li&gt;递归计算&lt;/li&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-I(x,y)=i(x,y)+I(x-1,y)+I(x,y-1)+I(x-1,y-1)
-$$&lt;/div&gt;
-          &lt;/li&gt;
-          &lt;li&gt;算好之后达到快速计算任意图形区域积分的目的&lt;/li&gt;
-          &lt;li&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/e/ee/Prm_VJ_fig3_computeRectangleWithAlpha.png&quot; width=&quot;40%&quot; /&gt;&lt;/li&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-I_{\square_{ABCD}} = I(C)+I(A)-I(B)-I(D)
-$$&lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Hessian矩阵&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;HAHOG&lt;/li&gt;
-  &lt;li&gt;ORB&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SURF is faster than SIFT?
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/27398168/5587080&quot;&gt;stackoverflow&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;The Difference between of SIFT and SURF
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/gfgwxw/p/9415218.html#&quot;&gt;【CV学习5】SURF算法详解 - 苟富贵&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;KAZE
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.shuzhiduo.com/A/RnJWYE1Bdq/&quot;&gt;一点一滴完全突破KAZE特征检测算法，从各向异性扩散滤波开始(1) - 术之多&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/304199431&quot;&gt;Perona-Malik方程（各向同性非线性扩散实现图像滤波） - 查讯纤的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/bluecol/article/details/46690985&quot;&gt;各项异性扩散（Anisotropic diffusion）&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%9D%9E%E7%AD%89%E5%90%91%E6%80%A7%E6%93%B4%E6%95%A3&quot;&gt;非等向性擴散 - Wikipedia&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="coursera" /><summary type="html">Run under jupyter-lab</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="coursera" /><summary type="html">week3</summary></entry></feed>

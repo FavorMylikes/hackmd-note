@@ -221,21 +221,27 @@ var store = [{
         "url": "/zhihu/PID-and-laplace-transform/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png"
       },{
+        "title": "Convert Camera Parameters [usage of ContextCapture Master]",
+        "excerpt":"Convert parameters 拿到空三的参数文件，发现是 Smart3D(soarscape.com) 的软件导出的，尝试下载，发现需要申请 根据关键字查找，找到ContextCapture Master 下载安装 Model generate Add photos click submit aerotriangulation at general tab. start ContextCapture Engine wait job complish Reconstruction&gt;new Reconstruction click submit new production wait for job complish check production 3D view output Model ├── Model.mtl ├── Model.obj ├── Model_0.jpg ├── Model_1.jpg ├── Model_2.jpg...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Camera-parameters-convert/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png"
+      },{
         "title": "Reading Texure paper",
         "excerpt":"Reconstructing textured meshes from multiple range+rgb maps ISTI-CNR summary Minimizing redundancy and optimizing the color attribute represendtation Eliminate most of the color difference or discontinuity which exist in input images cross-correlation interpolation Work flow visibility calculation get a set of valid cameras/images for the face ray-tracing calculation[耗时] hardware-accelerated OpenGL 每个面一个颜色，用OpenGL直接渲染，选择相机能看到的颜色作为可观测颜色...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Reading-Texture-paper/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210817225945.png"
       },{
-        "title": "Reading Texure paper",
+        "title": "Texture for 9-9 project",
         "excerpt":"Try difference combination original case 1 srs: original, EPSG:4490 rotation: M_00 to M_22 t: x,y,z in metadata&gt;center xml: original data: 1-1 case 2 srs: original, EPSG:4490 rotation: M_00 to M_22 t: x,y,z in center xml: original data: 1-1 NOTHING output export from ccm srs: 4490 rotation: M_00 to M_22 t:...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Texture-for-9-9-project/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png"
       },{
-        "title": "Convert Camera Parameters [usage of ContextCapture Master]",
-        "excerpt":"Convert parameters 拿到空三的参数文件，发现是 Smart3D(soarscape.com) 的软件导出的，尝试下载，发现需要申请 根据关键字查找，找到ContextCapture Master 下载安装 Model generate Add photos click submit aerotriangulation at general tab. start ContextCapture Engine wait job complish Reconstruction&gt;new Reconstruction click submit new production wait for job complish check production 3D view output Model ├── Model.mtl ├── Model.obj ├── Model_0.jpg ├── Model_1.jpg ├── Model_2.jpg...","categories": ["3d"],
+        "title": "Texture for 9-9 project[2]",
+        "excerpt":"Intrinsics matrix $$ \\begin{bmatrix}\\frac{f s_{w}}{w} & 0 & p_{x}\\\\0 & \\frac{f s_{h}}{h} & p_{y}\\\\0 & 0 & 1\\end{bmatrix} $$ $f$: focal $w,h$: 图片像素大小 $s_w,s_h$: 感光元件大小 $p_x,p_y$: 光心位置 Externals matrix $$ R=\\begin{bmatrix}\\cos{\\left(\\psi \\right)} \\cos{\\left(\\theta \\right)} & \\sin{\\left(\\phi \\right)} \\sin{\\left(\\theta \\right)} \\cos{\\left(\\psi \\right)} + \\sin{\\left(\\psi \\right)} \\cos{\\left(\\phi \\right)} & \\sin{\\left(\\phi \\right)} \\sin{\\left(\\psi...","categories": ["3d"],
         "tags": [],
-        "url": "/3d/Camera-parameters-convert/",
+        "url": "/3d/Texture-for-9-9-project-2/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png"
       }]

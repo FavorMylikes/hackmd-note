@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Newton Euler Equation / Notes B</title>
-<meta name="description" content="">
+<!-- begin _includes/seo.html --><title>Texture for 9-9 project[2] / Notes B</title>
+<meta name="description" content="Intrinsics matrix">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Newton Euler Equation">
-<meta property="og:url" content="https://ucas.io/zhihu/Newton-Euler-Equation/">
+<meta property="og:title" content="Texture for 9-9 project[2]">
+<meta property="og:url" content="https://ucas.io/3d/Texture-for-9-9-project-2/">
 
 
-  <meta property="og:description" content="">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png">
+  <meta property="og:description" content="Intrinsics matrix">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-05T14:50:47+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-19T22:50:45+08:00">
 
-<link rel="canonical" href="https://ucas.io/zhihu/Newton-Euler-Equation/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/Texture-for-9-9-project-2/">
 
 
 
@@ -205,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/zhihu" itemprop="item"><span itemprop="name">Zhihu</span></a>
+          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">Newton Euler Equation</li>
+        <li class="current">Texture for 9-9 project[2]</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Newton Euler Equation">
-    <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2021-08-05T14:50:47+08:00">
+    <meta itemprop="headline" content="Texture for 9-9 project[2]">
+    <meta itemprop="description" content="Intrinsics matrix">
+    <meta itemprop="datePublished" content="2021-08-19T22:50:45+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Newton Euler Equation
+          <h1 id="page-title" class="page__title" itemprop="headline">Texture for 9-9 project[2]
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-05T14:50:47+08:00">August 5, 2021</time>
+        <time datetime="2021-08-19T22:50:45+08:00">August 19, 2021</time>
       </span>
     
 
@@ -378,251 +378,282 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#牛顿欧拉方程">牛顿欧拉方程</a><ul><li><a href="#newton-equation">Newton Equation</a></li><li><a href="#euler-equation">Euler Equation</a></li><li><a href="#牛顿欧拉方程即为">牛顿欧拉方程即为</a></li><li><a href="#欧拉方程的推导">欧拉方程的推导</a></li><li><a href="#reference">Reference</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#intrinsics-matrix">Intrinsics matrix</a></li><li><a href="#externals-matrix">Externals matrix</a></li><li><a href="#shape">Shape</a></li><li><a href="#change-intrinsics-matrix">Change Intrinsics matrix</a></li></ul>
 
             </nav>
           </aside>
         
-        <p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img/20210726104110.png" /></p>
-
-<h2 id="牛顿欧拉方程">牛顿欧拉方程</h2>
-
-<h3 id="newton-equation">Newton Equation</h3>
-
-<ul>
-  <li>计算出4旋翼的作用力在惯性系下的分量</li>
-  <li>无人机在水平状态下，受到向上的推力$F=f_1+f_2+f_3+f_4$和重力$mg$</li>
-  <li>无人机在旋转状态下通过旋转矩阵$R$可以计算出惯性系下3个方向的作用力分量</li>
-  <li>同时由于重力方向不变，可以之间减去，得到</li>
-</ul>
+        <h2 id="intrinsics-matrix">Intrinsics matrix</h2>
 
 <div class="kdmath">$$
-R_{ZXY}\begin{bmatrix}
-    0\\0\\f_1+f_2+f_3+f_4
-\end{bmatrix}
--
-\begin{bmatrix}
-    0\\0\\mg
-\end{bmatrix}
+\begin{bmatrix}\frac{f s_{w}}{w} & 0 & p_{x}\\0 & \frac{f s_{h}}{h} & p_{y}\\0 & 0 & 1\end{bmatrix}
 $$</div>
 
 <ul>
-  <li>其中$R_{ZXY}$为按照$ZXY$3个轴依次旋转得到的矩阵，如果转轴不同，则可能得到不同的表示</li>
+  <li>$f$: focal</li>
+  <li>$w,h$: 图片像素大小</li>
+  <li>$s_w,s_h$: 感光元件大小</li>
+  <li>$p_x,p_y$: 光心位置</li>
 </ul>
 
+<h2 id="externals-matrix">Externals matrix</h2>
+
 <div class="kdmath">$$
-R_{ZXY} = \begin{bmatrix}- s(\phi ) s(\psi ) s(\theta ) + c(\psi ) c(\theta ) & - s(\psi ) c(\phi ) & s(\phi ) s(\psi ) c(\theta ) + s(\theta ) c(\psi )\\s(\phi ) s(\theta ) c(\psi ) + s(\psi ) c(\theta ) & c(\phi ) c(\psi ) & - s(\phi ) c(\psi ) c(\theta ) + s(\psi ) s(\theta )\\- s(\theta ) c(\phi ) & s(\phi ) & c(\phi ) c(\theta )\end{bmatrix}
+R=\begin{bmatrix}\cos{\left(\psi \right)} \cos{\left(\theta \right)} & \sin{\left(\phi \right)} \sin{\left(\theta \right)} \cos{\left(\psi \right)} + \sin{\left(\psi \right)} \cos{\left(\phi \right)} & \sin{\left(\phi \right)} \sin{\left(\psi \right)} - \sin{\left(\theta \right)} \cos{\left(\phi \right)} \cos{\left(\psi \right)}\\- \sin{\left(\psi \right)} \cos{\left(\theta \right)} & - \sin{\left(\phi \right)} \sin{\left(\psi \right)} \sin{\left(\theta \right)} + \cos{\left(\phi \right)} \cos{\left(\psi \right)} & \sin{\left(\phi \right)} \cos{\left(\psi \right)} + \sin{\left(\psi \right)} \sin{\left(\theta \right)} \cos{\left(\phi \right)}\\\sin{\left(\theta \right)} & - \sin{\left(\phi \right)} \cos{\left(\theta \right)} & \cos{\left(\phi \right)} \cos{\left(\theta \right)}\end{bmatrix}
 $$</div>
 
 <ul>
-  <li>对应的3个分量为</li>
+  <li>$\psi$: z : yaw: $\Omega$</li>
+  <li>$\phi$: x : pitch: $\Phi$</li>
+  <li>$\theta$: y : roll: $\Kappa$</li>
 </ul>
 
-<div class="kdmath">$$
-\begin{aligned}
-m\begin{bmatrix}
-    \ddot x\\
-    \ddot y\\
-    \ddot z
-\end{bmatrix}&=R_{ZXY}\begin{bmatrix}
-    0\\0\\f_1+f_2+f_3+f_4
-\end{bmatrix}
--
-\begin{bmatrix}
-    0\\0\\mg
-\end{bmatrix}\\
-&=\begin{bmatrix}u_{1} (s(\phi ) s(\psi ) \cos(\theta ) + s(\theta ) \cos(\psi ))\\u_{1} (- s(\phi ) \cos(\psi ) \cos(\theta ) + s(\psi ) s(\theta ))\\u_{1} \cos(\phi ) \cos(\theta ) -mg\end{bmatrix}\\
-u_1 &= f_1+f_2+f_3+f_4
-\end{aligned}
-$$</div>
-
-<h3 id="euler-equation">Euler Equation</h3>
+<h2 id="shape">Shape</h2>
 
 <ul>
-  <li>旋转过程</li>
-  <li>
-    <p>上面的方程分别对$\phi \theta \psi$求导，即可得到体坐标系下的角速度方程
-<span class="kdmath">$\begin{bmatrix}
-  p\\q\\r
-\end{bmatrix}
-=
-\begin{bmatrix}
-  c(\theta)&0&-c(\phi)s(\theta)\\
-  0&1&s(\phi)\\
-  s(\theta)&0&c(\phi)c(\theta)
-\end{bmatrix}
-\begin{bmatrix}
-  \dot \phi\\
-  \dot \theta\\
-  \dot \psi
-\end{bmatrix}$</span></p>
-  </li>
-  <li>根据欧拉方程
-    <blockquote>
-      <p>后面有推导过程，暂时先直接用
-<span class="kdmath">$M=\begin{bmatrix}
-  L(F_2-F_4)\\
-  L(F_3-F_1)\\
-  M_1-M_2+M_3-M_4
-\end{bmatrix}
--\begin{bmatrix}
-  p\\q\\r
-\end{bmatrix}
-\times
-I
-\begin{bmatrix}
-  p\\q\\r
-\end{bmatrix}$</span></p>
-    </blockquote>
-  </li>
-  <li>其中
-    <ul>
-      <li>$M$为力矩</li>
-      <li>$L$为马达到质点的距离</li>
-      <li>由于rotor1,3转向相同，和rotor2,4转向相反，根据右手定则，1,3顺时针，力矩向上，2,4逆时针，力矩向下</li>
-      <li>以$b_1$为前进方向，则$F_2,F_4$的大小差决定了无人机的翻转角，$F_1,F_3$同理</li>
-      <li>$I$为转动惯量
-        <ul>
-          <li>一般情况下，转动惯量为质量与质点的长度积分得到，因此可以认为转动惯量通常只跟形状和质量有关，可以按常量计算，对于使用电池作为动力源的无人机来说比较使用，如果存在<strong>油耗</strong>或其他<strong>质量损失</strong>的情况则需要进一步分析</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>将等号右边梳理成矩阵形式，可以写成
-<span class="kdmath">$M=I\begin{bmatrix}
-  \dot p\\\dot q\\\dot r\\
-\end{bmatrix}
-=
-\begin{bmatrix}
-  0&L&0&-L\\
-  -L&0&L&0\\
-  \gamma&-\gamma&\gamma&-\gamma
-\end{bmatrix}
-\begin{bmatrix}
-  F_1\\F_2\\F_3\\F_4
-\end{bmatrix} -
-\begin{bmatrix}
-p\\q\\r
-\end{bmatrix}
-\times
-I
-\begin{bmatrix}
-p\\q\\r
-\end{bmatrix}$</span></li>
-  <li>其中
-    <ul>
-      <li>$\times$为叉乘符号</li>
-      <li>$\gamma$为力与力矩的比例关系(这里依然用到了惯量不变假设)</li>
-      <li>这里的$p,q,r$依然是以无人机为参考系的角速度</li>
-      <li>$I$为转动惯量矩阵
-<span class="kdmath">$\begin{bmatrix}
-    I_{xx}&0&0\\
-    0&I_{yy}&0\\
-    0&0&I_{zz}\\
-\end{bmatrix}$</span></li>
-    </ul>
-  </li>
-  <li>拆成分量形式，可以得到
-<span class="kdmath">$\begin{aligned}
-  M_x&=I_{xx}\dot p&=&qr(J_{yy}-J_{zz})+L(F_2-F_4)\\
-  M_y&=I_{yy}\dot q&=&pr(J_{zz}-J_{xx})+L(F_1-F_3)\\
-  M_z&=I_{zz}\dot r&=&pq(J_{xx}-J_{yy})+L(F_1-F_2+F_3-F_4)\\
-\end{aligned}$</span></li>
-</ul>
-
-<h3 id="牛顿欧拉方程即为">牛顿欧拉方程即为</h3>
-
-<div class="kdmath">$$
-\begin{aligned}
-m\ddot x&=u_{1} (s(\phi ) s(\psi ) \cos(\theta ) + s(\theta ) \cos(\psi ))\\
-m\ddot y&=u_{1} (- s(\phi ) \cos(\psi ) \cos(\theta ) + s(\psi ) s(\theta ))\\
-m\ddot z&=u_{1} \cos(\phi ) \cos(\theta ) -mg\\
-I_{xx}\dot p&=qr(J_{yy}-J_{zz})+L(F_2-F_4)\\
-I_{yy}\dot q&=pr(J_{zz}-J_{xx})+L(F_1-F_3)\\
-I_{zz}\dot r&=pq(J_{xx}-J_{yy})+L(F_1-F_2+F_3-F_4)\\
-\end{aligned}
-$$</div>
-
-<ul>
-  <li>其中对于$p,q,r$的计算，若认为无人机角度变化微小，则可以利用$\sin(\theta)\sim\theta, \cos(\theta)\sim1$进行代换</li>
-</ul>
-
-<h3 id="欧拉方程的推导">欧拉方程的推导</h3>
-
-<ul>
-  <li>为了便于类比，放一个质点平动和刚体转动的公式对比</li>
-  <li>$\dot{}$  都表示对时间的导数</li>
+  <li>original: obj 对象</li>
+  <li>ccm-export: ccm 导出结果</li>
+  <li>orthogonal: 正交面</li>
+  <li>plant: 平面</li>
+  <li>plant_xy_height: xy面，同时拥有一定高度，高度淹没车辆</li>
+  <li>plant_xy_height_less: xy面，同时拥有一定高度，高度淹没公路</li>
+  <li>sphere: 球</li>
+  <li>-tri: 三角化后缀</li>
+  <li>_large: 可以囊括obj对象，可以拿到内视贴图</li>
+  <li>_small: 和obj对象相交，可以参考相机方向</li>
+  <li>_tiny: small直径的一半大</li>
 </ul>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">质点</th>
-      <th style="text-align: center">刚体</th>
+      <th>id</th>
+      <th>shape</th>
+      <th>block</th>
+      <th>size</th>
+      <th>parameter</th>
+      <th>srs</th>
+      <th>output</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">速度$v=\dot x$</td>
-      <td style="text-align: center">$\omega=\dot \theta$</td>
+      <td>1</td>
+      <td>original</td>
+      <td>1</td>
+      <td> </td>
+      <td>center</td>
+      <td>4490</td>
+      <td>💩</td>
     </tr>
     <tr>
-      <td style="text-align: center">加速度$a=\ddot x$</td>
-      <td style="text-align: center">$\alpha=\ddot \theta$</td>
+      <td>2</td>
+      <td>original</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>✔️</td>
     </tr>
     <tr>
-      <td style="text-align: center">力$F$</td>
-      <td style="text-align: center">力矩$M$</td>
+      <td>3</td>
+      <td>original</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>✔️</td>
     </tr>
     <tr>
-      <td style="text-align: center">质量$m$</td>
-      <td style="text-align: center">转动惯量$I=\int r^2dm$</td>
+      <td>4</td>
+      <td>ccm-export</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>💩</td>
     </tr>
     <tr>
-      <td style="text-align: center">动量$p=mv$</td>
-      <td style="text-align: center">角动量$L=I\omega$</td>
+      <td>5</td>
+      <td>orthogonal</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>💩</td>
     </tr>
     <tr>
-      <td style="text-align: center">牛顿定律$F=\dot p$</td>
-      <td style="text-align: center">$M=\dot L$</td>
+      <td>6</td>
+      <td>orthogonal</td>
+      <td>1</td>
+      <td>10</td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>💩</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>orthogonal-tri</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>orthogonal-tri</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>plant</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>💩</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>plant</td>
+      <td>1</td>
+      <td>10</td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>💩</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>plant_xy_height</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>💩</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>plant_xy_height_less</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>💩</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>plant_xy_height_less_tri</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>sphere</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>💩</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>sphere_large_tri</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>sphere_large_tri</td>
+      <td>1</td>
+      <td>10</td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>sphere_small_tri</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>sphere_tiny_tri</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>sphere_tiny_tri</td>
+      <td>1</td>
+      <td>10</td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>✔️</td>
     </tr>
   </tbody>
 </table>
 
-<ul>
-  <li>
-    <p>推导
-<span class="kdmath">$\begin{aligned}
-  M&=\dot L\\
-  &=\dot I\omega + I\dot \omega\\
-  &=(\dot{\sum_i\sum_jI_{ij}\mathbf{e_i}\mathbf{e_j}})\omega + I\dot \omega\\
-  &=(\sum_i\sum_j(\dot I_{ij}\mathbf{e_i}\mathbf{e_j}+I_{ij}\mathbf{\dot e_i}\mathbf{e_j}+I_{ij}\mathbf{e_i}\mathbf{\dot e_j}))\omega+I\dot \omega\\
-  &=(\sum_i\sum_j(I_{ij}\mathbf{\dot e_i}\mathbf{e_j}+I_{ij}\mathbf{e_i}\mathbf{\dot e_j}))\omega+I\dot \omega&\text{认为$\dot I_{ij}=0$}\\
-  &=\sum_i\sum_j(I_{ij}(\omega\times \mathbf{e_i})\mathbf{e_j}-I_{ij}\mathbf{e_i}(\mathbf{e_j}\times\omega))\omega+I\dot \omega\\
-  &=(\omega\times I - I\times \omega)\omega+I\dot\omega\\
-  &=(\omega\times I)\omega - (I\times \omega)\omega+I\dot\omega\\
-  &=(\omega\times I)\omega+I\dot\omega&\text{$(I\times \omega)\omega=0$}\\
-\end{aligned}$</span></p>
-  </li>
-  <li>当$I_{i\neq j}=0$时，即非对角元素为0</li>
-  <li>有</li>
-</ul>
+<h2 id="change-intrinsics-matrix">Change Intrinsics matrix</h2>
 
 <div class="kdmath">$$
-\begin{aligned}
-M_x&=I_{xx}\dot \omega_x+(I_{zz}-I_{yy})\omega_y\omega_z\\
-M_y&=I_{yy}\dot \omega_y+(I_{xx}-I_{zz})\omega_x\omega_z\\
-M_z&=I_{zz}\dot \omega_z+(I_{yy}-I_{xx})\omega_y\omega_x\\
-\end{aligned}
+\begin{bmatrix}\frac{f w}{s_{w}} & 0 & p_{x}\\0 & \frac{f h}{s_{h}} & p_{y}\\0 & 0 & 1\end{bmatrix}
 $$</div>
 
-<h3 id="reference">Reference</h3>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>shape</th>
+      <th>block</th>
+      <th>size</th>
+      <th>parameter</th>
+      <th>srs</th>
+      <th>output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>original</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>🤙</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>plant_xy_height_less_tri</td>
+      <td>1</td>
+      <td> </td>
+      <td>meta&gt;center</td>
+      <td>4490</td>
+      <td>🤙</td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-  <li><a href="https://www.zhihu.com/question/327324524/answer/705009156">刚体动力学中的欧拉方程是如何推导出来的？ - Ramune的回答 - 知乎</a></li>
-  <li><a href="https://zh.wikipedia.org/wiki/%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B_(%E5%88%9A%E4%BD%93%E8%BF%90%E5%8A%A8)">Wikipedia</a></li>
-  <li><a href="https://zhuanlan.zhihu.com/p/47868515">[飞控]从零开始建模(一)-牛顿欧拉方程 - zinghd的文章 - 知乎</a></li>
-</ul>
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003537.png" alt="20210820003537" /></p>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003550.png" alt="20210820003550" /></p>
 
         
       </section>
@@ -641,7 +672,7 @@ $$</div>
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/zhihu" class="page__taxonomy-item" rel="tag">zhihu</a>
+      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
     
     </span>
   </p>
@@ -649,7 +680,7 @@ $$</div>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-05T14:50:47+08:00">August 5, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-19T22:50:45+08:00">August 19, 2021</time></p>
 
 
       </footer>
@@ -657,23 +688,22 @@ $$</div>
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Newton+Euler+Equation%20https%3A%2F%2Fucas.io%2Fzhihu%2FNewton-Euler-Equation%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Texture+for+9-9+project%5B2%5D%20https%3A%2F%2Fucas.io%2F3d%2FTexture-for-9-9-project-2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fzhihu%2FNewton-Euler-Equation%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FTexture-for-9-9-project-2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fzhihu%2FNewton-Euler-Equation%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FTexture-for-9-9-project-2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/Try-To-Start-Up-Texture/" class="pagination--pager" title="Try to start up texture
+      <a href="/3d/Texture-for-9-9-project/" class="pagination--pager" title="Texture for 9-9 project
 ">Previous</a>
     
     
-      <a href="/3d/coursera/Robotics-Perception-Week3-2/" class="pagination--pager" title="Robotics-Perception-Week3[2]
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -687,57 +717,6 @@ $$</div>
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/Texture-for-9-9-project-2/" rel="permalink">Texture for 9-9 project[2]
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-19T22:50:45+08:00">August 19, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Intrinsics matrix
-</p>
-  </article>
-</div>
-
         
           
 
@@ -887,6 +866,57 @@ $$</div>
 
 
     <p class="archive__item-excerpt" itemprop="description">Convert parameters
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/zhihu/PID-and-laplace-transform/" rel="permalink">PID and laplace transform
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-14T23:00:46+08:00">August 14, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">PID Contorl
 </p>
   </article>
 </div>

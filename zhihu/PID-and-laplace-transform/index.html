@@ -378,7 +378,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#pid-contorl">PID Contorl</a><ul><li><a href="#比较常见的解释和应用">比较常见的解释和应用</a></li><li><a href="#pid">PID</a></li><li><a href="#pid调参">PID调参</a></li><li><a href="#理论分析">理论分析</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#pid-contorl">PID Contorl</a><ul><li><a href="#比较常见的解释和应用">比较常见的解释和应用</a></li><li><a href="#pid">PID</a></li><li><a href="#pid调参">PID调参</a></li><li><a href="#理论分析">理论分析</a><ul><li><a href="#laplace-transform拉普拉斯变换">Laplace Transform[拉普拉斯变换]</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -479,13 +479,14 @@
 
 <h3 id="理论分析">理论分析</h3>
 
+<h4 id="laplace-transform拉普拉斯变换"><strong>Laplace Transform</strong>[拉普拉斯变换]</h4>
+
+<div class="kdmath">$$
+L(s) = \int_0^{\infty}f(t)e^{-st}dt
+$$</div>
+
 <ul>
-  <li><strong>Laplace Transform</strong>[拉普拉斯变换]
-    <ul>
-      <li>$L(s) = \int_0^{\infty}f(t)e^{-st}dt$</li>
-      <li>其中$s$是个复数</li>
-    </ul>
-  </li>
+  <li>其中$s$是个复数</li>
   <li>为了更好的理解<strong>Laplace Transform</strong>, 回想一下<strong>Fourier transform</strong>[傅里叶变换]
     <ul>
       <li>$F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$, $i$是虚数单位</li>
@@ -543,6 +544,45 @@
       </li>
     </ul>
   </li>
+  <li>计算例子
+    <ul>
+      <li>
+        <div class="kdmath">$$
+\begin{aligned}
+L(s)=\mathcal{L\{f(t)\}} &= \int_{0^{-}}^\infty f(t)e^{-st}dt\\
+  &=\left[\frac{f(t)e^{-st}}{-s}\right]_{0^{-}}^\infty-\int_{0^{-}}^\infty\frac{e^{-st}}{-s}f'(t)dt&(1)\\
+  &=\left[0-\frac{f(0^{-})}{-s}\right] + \frac{1}{s}\mathcal{L\{f'(t)\}}\\
+  \mathcal{L\{f'(t)\}}&=s\mathcal{L\{f(t)\}}-f'(0^{-})
+\end{aligned}
+$$</div>
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>其中$(1)$使用了分部积分法，同时使用了隐含条件$\lim\limits_{t\to \infty} f(x)e^{-st} = 0$, <strong>即前文提到的，$f(t)$的增长速度没有$e^{st}$快</strong>，因此作为分母时才可以使得$f(x)e^{-st}</td>
+                  <td>_{t=\infty}=0$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div class="kdmath">$$
+\int_{0}^{\infty}tf(t)e^{-st}dt=-F'(s)
+$$</div>
+      </li>
+    </ul>
+  </li>
+  <li>比较常用的其他例子</li>
+  <li>
+    <div class="kdmath">$$
+\begin{aligned}
+      
+  \end{aligned}
+$$</div>
+  </li>
 </ul>
 
         
@@ -593,7 +633,7 @@
 ">Previous</a>
     
     
-      <a href="/3d/Reading-Texture-paper/" class="pagination--pager" title="Reading Texure paper
+      <a href="/3d/Camera-parameters-convert/" class="pagination--pager" title="Convert Camera Parameters [usage of ContextCapture Master]
 ">Next</a>
     
   </nav>
@@ -622,7 +662,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/3d/Camera-parameters-convert/" rel="permalink">Convert Camera Parameters [usage of ContextCapture Master]
+        <a href="/3d/Texture-for-9-9-project-2/" rel="permalink">Texture for 9-9 project[2]
 </a>
       
     </h2>
@@ -634,7 +674,7 @@
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-16T19:06:13+08:00">August 16, 2021</time>
+        <time datetime="2021-08-19T22:50:45+08:00">August 19, 2021</time>
       </span>
     
 
@@ -647,14 +687,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Convert parameters
+    <p class="archive__item-excerpt" itemprop="description">Intrinsics matrix
 </p>
   </article>
 </div>
@@ -673,7 +713,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/3d/Texture-for-9-9-project/" rel="permalink">Reading Texure paper
+        <a href="/3d/Texture-for-9-9-project/" rel="permalink">Texture for 9-9 project
 </a>
       
     </h2>
@@ -685,7 +725,7 @@
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-16T14:55:52+08:00">August 16, 2021</time>
+        <time datetime="2021-08-18T14:55:52+08:00">August 18, 2021</time>
       </span>
     
 
@@ -736,7 +776,7 @@
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-16T14:55:52+08:00">August 16, 2021</time>
+        <time datetime="2021-08-17T14:55:52+08:00">August 17, 2021</time>
       </span>
     
 
@@ -770,12 +810,12 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgogjbzom3fyingbqavx06.gif" alt="">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/3d/Convert-Camera-Parameters/" rel="permalink">Convert Camera Parameters [model of colmap]
+        <a href="/3d/Camera-parameters-convert/" rel="permalink">Convert Camera Parameters [usage of ContextCapture Master]
 </a>
       
     </h2>
@@ -787,7 +827,7 @@
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-13T19:21:12+08:00">August 13, 2021</time>
+        <time datetime="2021-08-16T19:06:13+08:00">August 16, 2021</time>
       </span>
     
 
@@ -807,7 +847,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Try Colmap with cuda(gpu)
+    <p class="archive__item-excerpt" itemprop="description">Convert parameters
 </p>
   </article>
 </div>
