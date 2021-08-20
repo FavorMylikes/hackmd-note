@@ -237,11 +237,17 @@ var store = [{
         "excerpt":"Try difference combination original case 1 srs: original, EPSG:4490 rotation: M_00 to M_22 t: x,y,z in metadata&gt;center xml: original data: 1-1 case 2 srs: original, EPSG:4490 rotation: M_00 to M_22 t: x,y,z in center xml: original data: 1-1 NOTHING output export from ccm srs: 4490 rotation: M_00 to M_22 t:...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Texture-for-9-9-project/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235000.png"
+      },{
+        "title": "Texture for 9-9 project[3]",
+        "excerpt":"Change Externals matrix 相机中心点 9-9/1-3/ $A_{amap}=(120.394685,36.06414)$ $A_{cams}=(120.389564,36.063963)$ $A_{model}=(79.1888,45.546)$meter 模型原点 O $O_{amap}=(120.394637,36.064383)$ $O_{cams}=o_{amap} + (A_{cams} - A_{amap})$ $$ \\mathbf{T} = \\begin{bmatrix} 111320&&\\\\ &7156&\\\\ &&1 \\end{bmatrix}\\left( \\begin{bmatrix} x\\\\y\\\\z \\end{bmatrix} - \\begin{bmatrix} 120.388816\\\\ 36.064206\\\\ 0 \\end{bmatrix} \\right) $$ 其中 经纬转换 Formula 1how-to-convert-latitude-or-longitude-to-meters Stackoverflow $$ \\begin{aligned} \\frac{latitude}{degree}&=111320m/\\degree\\\\ \\frac{longitude}{degree}&=40075km\\frac{\\cos(lat)}{360}=40075km\\frac{\\cos(36.064)}{360}\\\\ &=7156m/\\degree \\end{aligned} $$ Formula 2Geographic coordinate...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Texture-for-9-9-project-3/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img6b7c545c0dfcde72831729be9319e32.png"
       },{
         "title": "Texture for 9-9 project[2]",
         "excerpt":"Intrinsics matrix $$ \\begin{bmatrix}\\frac{f s_{w}}{w} & 0 & p_{x}\\\\0 & \\frac{f s_{h}}{h} & p_{y}\\\\0 & 0 & 1\\end{bmatrix} $$ $f$: focal $w,h$: 图片像素大小 $s_w,s_h$: 感光元件大小 $p_x,p_y$: 光心位置 Externals matrix $$ R=\\begin{bmatrix}\\cos{\\left(\\psi \\right)} \\cos{\\left(\\theta \\right)} & \\sin{\\left(\\phi \\right)} \\sin{\\left(\\theta \\right)} \\cos{\\left(\\psi \\right)} + \\sin{\\left(\\psi \\right)} \\cos{\\left(\\phi \\right)} & \\sin{\\left(\\phi \\right)} \\sin{\\left(\\psi...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Texture-for-9-9-project-2/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003537.png"
       }]
