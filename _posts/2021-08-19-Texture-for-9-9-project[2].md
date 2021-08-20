@@ -4,7 +4,7 @@ title:  "Texture for 9-9 project[2]"
 date:   "2021-8-19 22:50:45 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003537.png
 ---
 
 
@@ -74,7 +74,9 @@ $$
 |id|shape|block|size|parameter|srs|output|
 |-|-|-|-|-|-|-|
 |2|original|1||meta>center|4490|🤙|
+|2|original|1|10|meta>center|4490|🤙|
 |11|plant_xy_height_less_tri|1||meta>center|4490|🤙|
+|9|plant|1|10|meta>center|4490|💩|
 
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003537.png" alt="20210820003537"/>
 

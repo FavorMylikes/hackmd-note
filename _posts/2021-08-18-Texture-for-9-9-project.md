@@ -4,7 +4,7 @@ title:  "Texture for 9-9 project"
 date:   "2021-8-18 14:55:52 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235000.png
 ---
 
 ## Try difference combination
