@@ -431,30 +431,84 @@ $$</div>
     <ul>
       <li>经纬转换
         <ul>
-          <li>Formula 1<a href="https://stackoverflow.com/a/39540339/5587080">how-to-convert-latitude-or-longitude-to-meters Stackoverflow</a>
+          <li>Formula 1
             <ul>
+              <li><a href="https://stackoverflow.com/a/39540339/5587080">how-to-convert-latitude-or-longitude-to-meters Stackoverflow</a></li>
               <li>
                 <div class="kdmath">$$
 \begin{aligned}
     \frac{latitude}{degree}&=111320m/\degree\\
-    \frac{longitude}{degree}&=40075km\frac{\cos(lat)}{360}=40075km\frac{\cos(36.064)}{360}\\
-    &=7156m/\degree
+    \frac{longitude}{degree}&=40075km\frac{\cos(lat)}{360}=40075km\frac{\cos(36.064\frac{\pi}{180})}{360}\\
+    &=90013.62031373613m/\degree
     \end{aligned}
 $$</div>
+
+                <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">f_lai</span> <span class="o">=</span> <span class="mi">111320</span>
+  <span class="n">f_lon</span> <span class="o">=</span> <span class="mi">40075</span><span class="o">*</span><span class="n">math</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">36.04</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span><span class="o">/</span><span class="mi">360</span>
+</code></pre></div>                </div>
               </li>
             </ul>
           </li>
-          <li>Formula 2<a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system#Length_of_a_degree">Geographic coordinate system - Wikipedia</a>
+          <li>Formula 2
             <ul>
+              <li>SSR WGS84</li>
+              <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/GRAVIMETRIC_DATUM_ORIENTATION.SVG/1024px-GRAVIMETRIC_DATUM_ORIENTATION.SVG.png" /></li>
+              <li><a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system#Length_of_a_degree">Geographic coordinate system - Wikipedia</a></li>
               <li>
                 <div class="kdmath">$$
 \begin{aligned}
        \frac{latitude}{degree}&=111132.92-559.82\cos(2lat)+1.175\cos(4lat) - 0.0023\cos(6lat)\\
-        &=111685.13432969594m/\degree\\
+        &=110959.719m/\degree\\
        \frac{longitude}{degree}&=111412.84\cos(lat)-93.5\cos(3lat)+0.118\cos(5lat)\\
-       &=9851.230873715574m/\degree\\
+       &=90118.10182968706m/\degree\\
    \end{aligned}
 $$</div>
+              </li>
+            </ul>
+
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">math</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">f_lai</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span><span class="mf">111132.92</span><span class="o">-</span><span class="mf">559.82</span><span class="o">*</span><span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.175</span><span class="o">*</span><span class="n">c</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">l</span><span class="p">)</span><span class="o">-</span><span class="mf">0.0023</span><span class="o">*</span><span class="n">c</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">l</span><span class="p">)</span>
+<span class="n">f_lon</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span><span class="mf">111412.84</span><span class="o">-</span><span class="mf">93.5</span><span class="o">*</span><span class="n">c</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">l</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.118</span><span class="o">*</span><span class="n">c</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">l</span><span class="p">)</span>
+</code></pre></div>            </div>
+
+            <ul>
+              <li>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>laititude</th>
+                      <th>laititude_meter_per_degree</th>
+                      <th>longitude_meter_per_degree</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>0$\degree$</td>
+                      <td>110574.2727</td>
+                      <td>111319.458</td>
+                    </tr>
+                    <tr>
+                      <td>36.04$\degree$</td>
+                      <td>110959.71900894716</td>
+                      <td>90118.10182968706</td>
+                    </tr>
+                    <tr>
+                      <td>45$\degree$</td>
+                      <td>111131.745</td>
+                      <td>78846.80572069259</td>
+                    </tr>
+                    <tr>
+                      <td>60$\degree$</td>
+                      <td>111412.24020000001</td>
+                      <td>55799.979000000014</td>
+                    </tr>
+                    <tr>
+                      <td>90$\degree$</td>
+                      <td>111693.9173</td>
+                      <td>0</td>
+                    </tr>
+                  </tbody>
+                </table>
               </li>
             </ul>
           </li>
@@ -480,34 +534,79 @@ $$</div>
     <tr>
       <td>2</td>
       <td>original</td>
-      <td>1</td>
+      <td>3</td>
       <td> </td>
-      <td>ox3902</td>
-      <td>🤙</td>
+      <td>wrong f ox3902 oy0642</td>
+      <td>🤨</td>
       <td>误差大概80m</td>
     </tr>
     <tr>
       <td>2</td>
       <td>original</td>
-      <td>1</td>
+      <td>3</td>
       <td> </td>
-      <td>ox3895</td>
-      <td>🤙</td>
+      <td>wrong f ox3895</td>
+      <td>🤨</td>
       <td>误差大概160m</td>
     </tr>
     <tr>
       <td>2</td>
       <td>original</td>
-      <td>1</td>
+      <td>3</td>
       <td> </td>
-      <td>ox3888</td>
-      <td>✔️</td>
+      <td>wrong f ox3888</td>
+      <td>🤨</td>
       <td>误差大概10m</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>original</td>
+      <td>3</td>
+      <td> </td>
+      <td>f1 ox3895</td>
+      <td>🤨</td>
+      <td>误差大概80m</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>original</td>
+      <td>3</td>
+      <td> </td>
+      <td>f2 ox3895</td>
+      <td>🤨</td>
+      <td>误差大概80m</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>original</td>
+      <td>3</td>
+      <td> </td>
+      <td>f2 ox3888 oy0640</td>
+      <td>🤨</td>
+      <td>误差大概80m</td>
     </tr>
   </tbody>
 </table>
 
+<ul>
+  <li>wrong f ox3888(x+3,y+20)</li>
+  <li>$(111320,71546)$</li>
+</ul>
+
 <p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img6b7c545c0dfcde72831729be9319e32.png" alt="6b7c545c0dfcde72831729be9319e32" /></p>
+
+<ul>
+  <li>f1 ox3895(x+90,y+10)</li>
+  <li>$(111320,90013.62031373613)$</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210821145746.png" alt="20210821145746" /></p>
+
+<ul>
+  <li>f2 ox3895(x+80-0.18,y+6)</li>
+  <li>系数变更对精度影响不是很大，f2比f1在80米尺度上精确0.18米</li>
+  <li>$(110959.71900894716,90118.10182968706)$</li>
+</ul>
 
         
       </section>

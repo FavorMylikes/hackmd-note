@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-20T22:44:52+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Texture for 9-9 project[2]</title><link href="https://ucas.io/3d/Texture-for-9-9-project-2/" rel="alternate" type="text/html" title="Texture for 9-9 project[2]" /><published>2021-08-19T22:50:45+08:00</published><updated>2021-08-19T22:50:45+08:00</updated><id>https://ucas.io/3d/Texture-for-9-9-project%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-9-9-project-2/">&lt;h2 id=&quot;intrinsics-matrix&quot;&gt;Intrinsics matrix&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-21T15:19:19+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Texture for 9-9 project[2]</title><link href="https://ucas.io/3d/Texture-for-9-9-project-2/" rel="alternate" type="text/html" title="Texture for 9-9 project[2]" /><published>2021-08-19T22:50:45+08:00</published><updated>2021-08-19T22:50:45+08:00</updated><id>https://ucas.io/3d/Texture-for-9-9-project%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-9-9-project-2/">&lt;h2 id=&quot;intrinsics-matrix&quot;&gt;Intrinsics matrix&lt;/h2&gt;
 
 &lt;div class=&quot;kdmath&quot;&gt;$$
 \begin{bmatrix}\frac{f s_{w}}{w} &amp; 0 &amp; p_{x}\\0 &amp; \frac{f s_{h}}{h} &amp; p_{y}\\0 &amp; 0 &amp; 1\end{bmatrix}
@@ -334,30 +334,84 @@ $$&lt;/div&gt;
     &lt;ul&gt;
       &lt;li&gt;经纬转换
         &lt;ul&gt;
-          &lt;li&gt;Formula 1&lt;a href=&quot;https://stackoverflow.com/a/39540339/5587080&quot;&gt;how-to-convert-latitude-or-longitude-to-meters Stackoverflow&lt;/a&gt;
+          &lt;li&gt;Formula 1
             &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/39540339/5587080&quot;&gt;how-to-convert-latitude-or-longitude-to-meters Stackoverflow&lt;/a&gt;&lt;/li&gt;
               &lt;li&gt;
                 &lt;div class=&quot;kdmath&quot;&gt;$$
 \begin{aligned}
     \frac{latitude}{degree}&amp;=111320m/\degree\\
-    \frac{longitude}{degree}&amp;=40075km\frac{\cos(lat)}{360}=40075km\frac{\cos(36.064)}{360}\\
-    &amp;=7156m/\degree
+    \frac{longitude}{degree}&amp;=40075km\frac{\cos(lat)}{360}=40075km\frac{\cos(36.064\frac{\pi}{180})}{360}\\
+    &amp;=90013.62031373613m/\degree
     \end{aligned}
 $$&lt;/div&gt;
+
+                &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;f_lai&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;111320&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;f_lon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40075&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;36.04&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;360&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;Formula 2&lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_coordinate_system#Length_of_a_degree&quot;&gt;Geographic coordinate system - Wikipedia&lt;/a&gt;
+          &lt;li&gt;Formula 2
             &lt;ul&gt;
+              &lt;li&gt;SSR WGS84&lt;/li&gt;
+              &lt;li&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/GRAVIMETRIC_DATUM_ORIENTATION.SVG/1024px-GRAVIMETRIC_DATUM_ORIENTATION.SVG.png&quot; /&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_coordinate_system#Length_of_a_degree&quot;&gt;Geographic coordinate system - Wikipedia&lt;/a&gt;&lt;/li&gt;
               &lt;li&gt;
                 &lt;div class=&quot;kdmath&quot;&gt;$$
 \begin{aligned}
        \frac{latitude}{degree}&amp;=111132.92-559.82\cos(2lat)+1.175\cos(4lat) - 0.0023\cos(6lat)\\
-        &amp;=111685.13432969594m/\degree\\
+        &amp;=110959.719m/\degree\\
        \frac{longitude}{degree}&amp;=111412.84\cos(lat)-93.5\cos(3lat)+0.118\cos(5lat)\\
-       &amp;=9851.230873715574m/\degree\\
+       &amp;=90118.10182968706m/\degree\\
    \end{aligned}
 $$&lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;f_lai&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;111132.92&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;559.82&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.175&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0023&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;f_lon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;111412.84&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;93.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.118&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;table&gt;
+                  &lt;thead&gt;
+                    &lt;tr&gt;
+                      &lt;th&gt;laititude&lt;/th&gt;
+                      &lt;th&gt;laititude_meter_per_degree&lt;/th&gt;
+                      &lt;th&gt;longitude_meter_per_degree&lt;/th&gt;
+                    &lt;/tr&gt;
+                  &lt;/thead&gt;
+                  &lt;tbody&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;0$\degree$&lt;/td&gt;
+                      &lt;td&gt;110574.2727&lt;/td&gt;
+                      &lt;td&gt;111319.458&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;36.04$\degree$&lt;/td&gt;
+                      &lt;td&gt;110959.71900894716&lt;/td&gt;
+                      &lt;td&gt;90118.10182968706&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;45$\degree$&lt;/td&gt;
+                      &lt;td&gt;111131.745&lt;/td&gt;
+                      &lt;td&gt;78846.80572069259&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;60$\degree$&lt;/td&gt;
+                      &lt;td&gt;111412.24020000001&lt;/td&gt;
+                      &lt;td&gt;55799.979000000014&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;90$\degree$&lt;/td&gt;
+                      &lt;td&gt;111693.9173&lt;/td&gt;
+                      &lt;td&gt;0&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
@@ -383,34 +437,79 @@ $$&lt;/div&gt;
     &lt;tr&gt;
       &lt;td&gt;2&lt;/td&gt;
       &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;ox3902&lt;/td&gt;
-      &lt;td&gt;🤙&lt;/td&gt;
+      &lt;td&gt;wrong f ox3902 oy0642&lt;/td&gt;
+      &lt;td&gt;🤨&lt;/td&gt;
       &lt;td&gt;误差大概80m&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;2&lt;/td&gt;
       &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;ox3895&lt;/td&gt;
-      &lt;td&gt;🤙&lt;/td&gt;
+      &lt;td&gt;wrong f ox3895&lt;/td&gt;
+      &lt;td&gt;🤨&lt;/td&gt;
       &lt;td&gt;误差大概160m&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;2&lt;/td&gt;
       &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;ox3888&lt;/td&gt;
-      &lt;td&gt;✔️&lt;/td&gt;
+      &lt;td&gt;wrong f ox3888&lt;/td&gt;
+      &lt;td&gt;🤨&lt;/td&gt;
       &lt;td&gt;误差大概10m&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;original&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;f1 ox3895&lt;/td&gt;
+      &lt;td&gt;🤨&lt;/td&gt;
+      &lt;td&gt;误差大概80m&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;original&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;f2 ox3895&lt;/td&gt;
+      &lt;td&gt;🤨&lt;/td&gt;
+      &lt;td&gt;误差大概80m&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;original&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;f2 ox3888 oy0640&lt;/td&gt;
+      &lt;td&gt;🤨&lt;/td&gt;
+      &lt;td&gt;误差大概80m&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img6b7c545c0dfcde72831729be9319e32.png&quot; alt=&quot;6b7c545c0dfcde72831729be9319e32&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Change Externals matrix</summary></entry><entry><title type="html">Texture for 9-9 project</title><link href="https://ucas.io/3d/Texture-for-9-9-project/" rel="alternate" type="text/html" title="Texture for 9-9 project" /><published>2021-08-18T14:55:52+08:00</published><updated>2021-08-18T14:55:52+08:00</updated><id>https://ucas.io/3d/Texture-for-9-9-project</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-9-9-project/">&lt;h2 id=&quot;try-difference-combination&quot;&gt;Try difference combination&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;wrong f ox3888(x+3,y+20)&lt;/li&gt;
+  &lt;li&gt;$(111320,71546)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img6b7c545c0dfcde72831729be9319e32.png&quot; alt=&quot;6b7c545c0dfcde72831729be9319e32&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;f1 ox3895(x+90,y+10)&lt;/li&gt;
+  &lt;li&gt;$(111320,90013.62031373613)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210821145746.png&quot; alt=&quot;20210821145746&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;f2 ox3895(x+80-0.18,y+6)&lt;/li&gt;
+  &lt;li&gt;系数变更对精度影响不是很大，f2比f1在80米尺度上精确0.18米&lt;/li&gt;
+  &lt;li&gt;$(110959.71900894716,90118.10182968706)$&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Change Externals matrix</summary></entry><entry><title type="html">Texture for 9-9 project</title><link href="https://ucas.io/3d/Texture-for-9-9-project/" rel="alternate" type="text/html" title="Texture for 9-9 project" /><published>2021-08-18T14:55:52+08:00</published><updated>2021-08-18T14:55:52+08:00</updated><id>https://ucas.io/3d/Texture-for-9-9-project</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-9-9-project/">&lt;h2 id=&quot;try-difference-combination&quot;&gt;Try difference combination&lt;/h2&gt;
 
 &lt;h3 id=&quot;original&quot;&gt;original&lt;/h3&gt;
 
