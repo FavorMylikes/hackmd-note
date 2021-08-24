@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Texture for 9-9 project[3]"
-date:   "2021-8-19 21:06:00 +0800"
+date:   "2021-8-20 21:06:00 +0800"
 categories: 3d
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img6b7c545c0dfcde72831729be9319e32.png
@@ -86,7 +86,9 @@ $$
 |2|original|3||wrong f ox3888|🤨|误差大概10m|
 |2|original|3||f1 ox3895|🤨|误差大概80m|
 |2|original|3||f2 ox3895|🤨|误差大概80m|
-|2|original|3||f2 ox3888 oy0640|🤨|误差大概80m|
+|2|original|3||f2 ox3888 oy0640|🤨|y 方向误差30米|
+|2|original|3||f2 ox3888 oy0643|🥵|y 方向误差150m|
+|2|original|3|10|f2 ox3888 oy0637|🥵|y 方向误差看不出来|
 
 - wrong f ox3888(x+3,y+20)
 - $(111320,71546)$
