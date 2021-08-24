@@ -239,15 +239,27 @@ var store = [{
         "url": "/3d/Texture-for-9-9-project/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235000.png"
       },{
+        "title": "Texture for 9-9 project[2]",
+        "excerpt":"Intrinsics matrix $$ \\begin{bmatrix}\\frac{f s_{w}}{w} & 0 & p_{x}\\\\0 & \\frac{f s_{h}}{h} & p_{y}\\\\0 & 0 & 1\\end{bmatrix} $$ $f$: focal $w,h$: 图片像素大小 $s_w,s_h$: 感光元件大小 $p_x,p_y$: 光心位置 Externals matrix $$ R=\\begin{bmatrix}\\cos{\\left(\\psi \\right)} \\cos{\\left(\\theta \\right)} & \\sin{\\left(\\phi \\right)} \\sin{\\left(\\theta \\right)} \\cos{\\left(\\psi \\right)} + \\sin{\\left(\\psi \\right)} \\cos{\\left(\\phi \\right)} & \\sin{\\left(\\phi \\right)} \\sin{\\left(\\psi...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Texture-for-9-9-project-2/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003537.png"
+      },{
         "title": "Texture for 9-9 project[3]",
         "excerpt":"Change Externals matrix 相机中心点 9-9/1-3/ $A_{amap}=(120.394685,36.06414)$ $A_{cams}=(120.389564,36.063963)$ $A_{model}=(79.1888,45.546)$meter 模型原点 O $O_{amap}=(120.394637,36.064383)$ $O_{cams}=o_{amap} + (A_{cams} - A_{amap})$ $$ \\mathbf{T} = \\begin{bmatrix} 111320&&\\\\ &7156&\\\\ &&1 \\end{bmatrix}\\left( \\begin{bmatrix} x\\\\y\\\\z \\end{bmatrix} - \\begin{bmatrix} 120.388816\\\\ 36.064206\\\\ 0 \\end{bmatrix} \\right) $$ 其中 经纬转换 Formula 1 how-to-convert-latitude-or-longitude-to-meters Stackoverflow $$ \\begin{aligned} \\frac{latitude}{degree}&=111320m/\\degree\\\\ \\frac{longitude}{degree}&=40075km\\frac{\\cos(lat)}{360}=40075km\\frac{\\cos(36.064\\frac{\\pi}{180})}{360}\\\\ &=90013.62031373613m/\\degree \\end{aligned} $$ f_lai =...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Texture-for-9-9-project-3/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img6b7c545c0dfcde72831729be9319e32.png"
       },{
-        "title": "Texture for 9-9 project[2]",
-        "excerpt":"Intrinsics matrix $$ \\begin{bmatrix}\\frac{f s_{w}}{w} & 0 & p_{x}\\\\0 & \\frac{f s_{h}}{h} & p_{y}\\\\0 & 0 & 1\\end{bmatrix} $$ $f$: focal $w,h$: 图片像素大小 $s_w,s_h$: 感光元件大小 $p_x,p_y$: 光心位置 Externals matrix $$ R=\\begin{bmatrix}\\cos{\\left(\\psi \\right)} \\cos{\\left(\\theta \\right)} & \\sin{\\left(\\phi \\right)} \\sin{\\left(\\theta \\right)} \\cos{\\left(\\psi \\right)} + \\sin{\\left(\\psi \\right)} \\cos{\\left(\\phi \\right)} & \\sin{\\left(\\phi \\right)} \\sin{\\left(\\psi...","categories": ["3d"],
+        "title": "Point Cloud Match",
+        "excerpt":"script Cloud point match for greeb x 高斯分布得到子集 for red dot 随机抽样得到的子集 other is total tie point Block 3 tie point 尝试多对多ICP def match(pc_gps, pc_model, t): scala = np.array([110959.71900894716, 90118.10182968706, 1]) target_pair = [] def distance(source, target): return np.linalg.norm(scala * (source - t) - target, axis=1) for i in tqdm(range(len(pc_gps)),...","categories": ["3d"],
         "tags": [],
-        "url": "/3d/Texture-for-9-9-project-2/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003537.png"
+        "url": "/3d/Point-Cloud-Match/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210823123247.png"
+      },{
+        "title": "ICP Match SVD",
+        "excerpt":"Point Cloud Registration[点云配准]      Coarse Registration            粗配准           Fine Registration            精配准                    Iterative Closest Point, ICP                           ICP  ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/ICP-Match-SVD/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210823123247.png"
       }]
