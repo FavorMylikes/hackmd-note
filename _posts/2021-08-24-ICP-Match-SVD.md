@@ -4,7 +4,7 @@ title:  "ICP Match SVD"
 date:   "2021-8-23 14:21:56 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210823123247.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825142134.png
 ---
 
 ## Point Cloud Registration[点云配准]
@@ -15,4 +15,95 @@ header:
   - 精配准
     - Iterative Closest Point, ICP
 
-## ICP 
+## ICP
+
+### OpenCV [doc](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga396afb6411b30770e56ab69548724715)
+
+### 2D ICP
+
+#### 2D Rotation Matrix
+
+$$
+M(\theta) = \begin{bmatrix}
+    \cos(\theta)&-\sin(\theta)\\
+    \sin(\theta)&\cos(\theta)\\
+\end{bmatrix}
+= exp\bigg(\begin{bmatrix}
+    0&-\theta\\
+    \theta&0
+\end{bmatrix}\bigg)
+$$
+
+#### [Code](http://ucas/jupyter/lab/tree/3d/model/icp/icp_2d.ipynb)
+
+```python
+def icp(a, b, init_pose=(0,0,0), no_iterations = 13):
+
+    src = np.array([a.T], copy=True).astype(np.float32)
+    dst = np.array([b.T], copy=True).astype(np.float32)
+
+    #初始化变换矩阵
+    #Tr[3*3] = [R[2*2], t[2*1]]
+    Tr = np.array([[np.cos(init_pose[2]),-np.sin(init_pose[2]),init_pose[0]],
+                   [np.sin(init_pose[2]), np.cos(init_pose[2]),init_pose[1]],
+                   [0,                    0,                   1          ]])
+
+    src = cv2.transform(src, Tr[0:2])
+
+    for i in range(no_iterations):
+        # 计算src到dst的最近点
+        nbrs = NearestNeighbors(n_neighbors=1, algorithm='auto').fit(dst[0])
+        distances, indices = nbrs.kneighbors(src[0])
+        # 用于估计变换矩阵
+        # For opencv>4.0.0
+        # estimateAffinePartial2D, 4 degrees of freedom
+        # estimateAffine2D, 6 degrees of freedom
+        T1, T2 = cv2.estimateAffinePartial2D(src, dst[0, indices.T])
+        # 利用估算矩阵进行变换
+        src = cv2.transform(src, T1)
+        Tr = np.dot(Tr, np.vstack((T1, [0,0,1])))
+    return Tr[0:2]
+```
+
+### 3D ICP
+
+#### 3D Rotation Matrix
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825150924.png" alt="20210825150924"/>
+
+#### [Code](http://ucas/jupyter/lab/tree/3d/model/icp/icp_3d.ipynb)
+
+```python
+def icp(a, b, init_ang=(0,0,0), init_t=(0,0,0), no_iterations = 13):
+
+    src = np.array([a], copy=True).astype(np.float32)  # n*3
+    dst = np.array([b], copy=True).astype(np.float32)  # n*3
+    init_x, init_y, init_z = init_t
+    init_psi, init_phi, init_theta = init_ang
+    
+    #Initialise with the initial pose estimation
+    Tr = np.array(externals.subs({
+        x: init_x,
+        y: init_y,
+        z: init_z,
+        psi: init_psi,
+        phi: init_phi,
+        theta: init_theta
+    }))
+    
+    Tr = Tr.astype("float32")
+    
+    src = cv2.transform(src, Tr[0:3])
+
+    for i in range(no_iterations):
+        nbrs = NearestNeighbors(n_neighbors=1, algorithm='auto').fit(dst[0])
+        distances, indices = nbrs.kneighbors(src[0])
+        # retval, out, inliers
+        T1,T2,T3 = cv2.estimateAffine3D(src, dst[0, indices.T])
+        src = cv2.transform(src, T2)
+        Tr = np.dot(Tr, np.vstack((T2,[0,0,0,1])))
+        print(np.linalg.norm(T2))
+    return Tr[0:3]
+```
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825151010.png" alt="20210825151010"/>
