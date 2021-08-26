@@ -40,6 +40,19 @@ header:
   - ![j](https://img.shields.io/badge/ivc-2003-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-1050-blue?style=flat-square)
   - [Fitzgibbon A W. Robust registration of 2D and 3D point sets. Image Vision Comput 2003;21:1145-1153.](https://www.sciencedirect.com/science/article/pii/S0262885603001835)
   - Levenberg-Marquardt
+    - ![j](https://img.shields.io/badge/ieee_nn-2010-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-494-blue?style=flat-square)
+    - [Improved computation for Levenberg–Marquardt training. IEEE transactions on neural networks](https://ieeexplore.ieee.org/abstract/document/5451114)
+    - [如何用LM算法求解目标函数最小值？ - Sixiang的回答 - 知乎](https://www.zhihu.com/question/269579938/answer/349205519)
+    - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826215640.png" alt="20210826215640"/>
+    - [Table 12.1](https://www.eng.auburn.edu/~wilambm/pap/2011/K10149_C012.pdf)
+    - $$
+        H\approx J^TJ+\mu I
+      $$
+    - $J$: Jacobian matrix
+    - $I$: Identity matrix
+    - $\mu$
+      - $\mu\to0$:Gauss-Newton
+      - $\mu\gg J$:最速下降法
   - DT（Distance-Transform）替代KD-tree搜索最近邻点
 - Trimmed ICP
   - ![j](https://img.shields.io/badge/ieee-2002-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-570-blue?style=flat-square)
