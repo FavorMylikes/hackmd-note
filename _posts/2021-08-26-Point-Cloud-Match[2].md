@@ -164,6 +164,22 @@ header:
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826193228.png" alt="20210826193228"/>
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826193322.png" alt="20210826193322"/>
 
+### Coherent Point Drift
+
+- Paper
+  - ![j](https://img.shields.io/badge/ieee-2010-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-2173-blue?style=flat-square)
+  - [Point Set Registration: Coherent Point Drift](https://ieeexplore.ieee.org/abstract/document/5432191)
+
+[pycpd_repo]: https://github.com/siavashk/pycpd
+[pycpd_fork]: https://img.shields.io/github/forks/siavashk/pycpd.svg?style=social&label=Fork&maxAge=2592000
+[pycpd_star]: https://stars.medv.io/siavashk/pycpd.svg
+
+|Repository|spark|star|
+|:-:|:-:|:-:|
+|[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=siavashk&repo=pycpd&show_owner=true)][pycpd_repo]|[![Sparkline](https://stars.medv.io/siavashk/pycpd.svg)][pycpd_repo]|<a href='https://starchart.cc/siavashk/pycpd'><img src='https://starchart.cc/siavashk/pycpd.svg' width='200px'/></a>
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826194302.png" alt="20210826194302"/>
+
 ## 变换层次
 
 - 关于自由度
