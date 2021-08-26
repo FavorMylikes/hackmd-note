@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-26T19:45:02+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Point Cloud Match[2]</title><link href="https://ucas.io/3d/Point-Cloud-Match-2/" rel="alternate" type="text/html" title="Point Cloud Match[2]" /><published>2021-08-26T11:11:35+08:00</published><updated>2021-08-26T11:11:35+08:00</updated><id>https://ucas.io/3d/Point-Cloud-Match%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Point-Cloud-Match-2/">&lt;h2 id=&quot;类局部的配准算法&quot;&gt;类局部的配准算法&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-26T22:07:00+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Point Cloud Match[2]</title><link href="https://ucas.io/3d/Point-Cloud-Match-2/" rel="alternate" type="text/html" title="Point Cloud Match[2]" /><published>2021-08-26T11:11:35+08:00</published><updated>2021-08-26T11:11:35+08:00</updated><id>https://ucas.io/3d/Point-Cloud-Match%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Point-Cloud-Match-2/">&lt;h2 id=&quot;类局部的配准算法&quot;&gt;类局部的配准算法&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;受限于点云初始位置&lt;/li&gt;
@@ -47,7 +47,28 @@ $$&lt;/div&gt;
       &lt;li&gt;&lt;a href=&quot;https://link.springer.com/content/pdf/10.1007/BFb0067700.pdf&quot;&gt;Moré J J. The Levenberg-Marquardt algorithm: Implementation and theory[J]. Lecture Notes in Mathematics, 1978, 630: 105-116.&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ivc-2003-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-1050-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0262885603001835&quot;&gt;Fitzgibbon A W. Robust registration of 2D and 3D point sets. Image Vision Comput 2003;21:1145-1153.&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Levenberg-Marquardt&lt;/li&gt;
+      &lt;li&gt;Levenberg-Marquardt
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee_nn-2010-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-494-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/5451114&quot;&gt;Improved computation for Levenberg–Marquardt training. IEEE transactions on neural networks&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/269579938/answer/349205519&quot;&gt;如何用LM算法求解目标函数最小值？ - Sixiang的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826215640.png&quot; alt=&quot;20210826215640&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://www.eng.auburn.edu/~wilambm/pap/2011/K10149_C012.pdf&quot;&gt;Table 12.1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+H\approx J^TJ+\mu I
+$$&lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;$J$: Jacobian matrix&lt;/li&gt;
+          &lt;li&gt;$I$: Identity matrix&lt;/li&gt;
+          &lt;li&gt;$\mu$
+            &lt;ul&gt;
+              &lt;li&gt;$\mu\to0$:Gauss-Newton&lt;/li&gt;
+              &lt;li&gt;$\mu\gg J$:最速下降法&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
       &lt;li&gt;DT（Distance-Transform）替代KD-tree搜索最近邻点&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
