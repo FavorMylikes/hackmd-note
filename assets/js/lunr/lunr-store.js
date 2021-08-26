@@ -257,9 +257,15 @@ var store = [{
         "url": "/3d/Point-Cloud-Match/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210823123247.png"
       },{
-        "title": "ICP Match SVD",
-        "excerpt":"Point Cloud Registration[点云配准]      Coarse Registration            粗配准           Fine Registration            精配准                    Iterative Closest Point, ICP                           ICP  ","categories": ["3d"],
+        "title": "ICP 2D and 3D",
+        "excerpt":"Point Cloud Registration[点云配准] Coarse Registration 粗配准 Fine Registration 精配准 Iterative Closest Point, ICP ICP OpenCV doc 2D ICP 2D Rotation Matrix $$ M(\\theta) = \\begin{bmatrix} \\cos(\\theta)&-\\sin(\\theta)\\\\ \\sin(\\theta)&\\cos(\\theta)\\\\ \\end{bmatrix} = exp\\bigg(\\begin{bmatrix} 0&-\\theta\\\\ \\theta&0 \\end{bmatrix}\\bigg) $$ Code def icp(a, b, init_pose=(0,0,0), no_iterations = 13): src = np.array([a.T], copy=True).astype(np.float32) dst = np.array([b.T], copy=True).astype(np.float32)...","categories": ["3d"],
         "tags": [],
-        "url": "/3d/ICP-Match-SVD/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210823123247.png"
+        "url": "/3d/ICP-2D-and-3D/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825142134.png"
+      },{
+        "title": "ICP Benchmark",
+        "excerpt":"ICP 2D 收敛域检测 数据集 ang = np.linspace(-np.pi/2, np.pi/2, 320) originate_point = np.array([ang, np.sin(ang)]).T th = np.pi/2 rot = np.array([[np.cos(th), -np.sin(th)],[np.sin(th), np.cos(th)]]) # 旋转后的点 rotated_point = cv2.transform(originate_point[None, :], np.append(rot, np.array([[0.2], [0.3]]), axis=1))[0] # 采样 sample_rotated_point = rotated_point[sorted(np.random.choice(b.shape[0], 10, replace=False)), :] 其中 rot为旋转矩阵 $M(\\theta) = \\begin{bmatrix} \\cos(\\theta)&-\\sin(\\theta)\\\\ \\sin(\\theta)&\\cos(\\theta)\\\\ \\end{bmatrix} = exp\\bigg(\\begin{bmatrix} 0&-\\theta\\\\...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/ICP-benchmark/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825222557.png"
       }]

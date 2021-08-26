@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>ICP Match SVD / Notes B</title>
-<meta name="description" content="Point Cloud Registration[点云配准]">
+<!-- begin _includes/seo.html --><title>ICP Benchmark / Notes B</title>
+<meta name="description" content="ICP 2D 收敛域检测">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="ICP Match SVD">
-<meta property="og:url" content="https://ucas.io/3d/ICP-Match-SVD/">
+<meta property="og:title" content="ICP Benchmark">
+<meta property="og:url" content="https://ucas.io/3d/ICP-benchmark/">
 
 
-  <meta property="og:description" content="Point Cloud Registration[点云配准]">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210823123247.png">
+  <meta property="og:description" content="ICP 2D 收敛域检测">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-23T14:21:56+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825222557.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-25T15:22:03+08:00">
 
-<link rel="canonical" href="https://ucas.io/3d/ICP-Match-SVD/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/ICP-benchmark/">
 
 
 
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">ICP Match SVD</li>
+        <li class="current">ICP Benchmark</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="ICP Match SVD">
-    <meta itemprop="description" content="Point Cloud Registration[点云配准]">
-    <meta itemprop="datePublished" content="2021-08-23T14:21:56+08:00">
+    <meta itemprop="headline" content="ICP Benchmark">
+    <meta itemprop="description" content="ICP 2D 收敛域检测">
+    <meta itemprop="datePublished" content="2021-08-25T15:22:03+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">ICP Match SVD
+          <h1 id="page-title" class="page__title" itemprop="headline">ICP Benchmark
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-23T14:21:56+08:00">August 23, 2021</time>
+        <time datetime="2021-08-25T15:22:03+08:00">August 25, 2021</time>
       </span>
     
 
@@ -378,31 +378,87 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#point-cloud-registration点云配准">Point Cloud Registration[点云配准]</a></li><li><a href="#icp">ICP</a></li></ul>
+              <ul class="toc__menu"><li><a href="#icp-2d-收敛域检测">ICP 2D 收敛域检测</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="point-cloud-registration点云配准">Point Cloud Registration[点云配准]</h2>
+        <h2 id="icp-2d-收敛域检测">ICP 2D 收敛域检测</h2>
 
 <ul>
-  <li>Coarse Registration
+  <li>数据集</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ang</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
+<span class="n">originate_point</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">ang</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang</span><span class="p">)]).</span><span class="n">T</span>
+<span class="n">th</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">rot</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">th</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)],[</span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">th</span><span class="p">)]])</span>
+<span class="c1"># 旋转后的点
+</span><span class="n">rotated_point</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">originate_point</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">np</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">rot</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># 采样
+</span><span class="n">sample_rotated_point</span> <span class="o">=</span> <span class="n">rotated_point</span><span class="p">[</span><span class="nb">sorted</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">)),</span> <span class="p">:]</span>
+</code></pre></div></div>
+
+<ul>
+  <li>其中
     <ul>
-      <li>粗配准</li>
+      <li><code class="language-plaintext highlighter-rouge">rot</code>为旋转矩阵
+<span class="kdmath">$M(\theta) = \begin{bmatrix}
+    \cos(\theta)&-\sin(\theta)\\
+    \sin(\theta)&\cos(\theta)\\
+\end{bmatrix}
+= exp\bigg(\begin{bmatrix}
+    0&-\theta\\
+    \theta&0
+\end{bmatrix}\bigg)$</span></li>
+      <li><code class="language-plaintext highlighter-rouge">0.2, 0.3</code>为平移向量</li>
     </ul>
   </li>
-  <li>Fine Registration
+  <li>较差的结果
     <ul>
-      <li>精配准
+      <li>param
         <ul>
-          <li>Iterative Closest Point, ICP</li>
+          <li><code class="language-plaintext highlighter-rouge">sample_size=10, init_pose_x=-1, init_pose_y=-0.9, init_pose_theta=0</code></li>
+        </ul>
+      </li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020451.png" alt="20210826020451" /></li>
+    </ul>
+  </li>
+  <li>较好的结果
+    <ul>
+      <li>param
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">sample_size=10, init_pose_x=-1, init_pose_y=-0.9, init_pose_theta=0</code></li>
+        </ul>
+      </li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020423.png" alt="20210826020423" /></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020617.png" alt="20210826020617" /></li>
+      <li>尺度效应明显</li>
+    </ul>
+  </li>
+  <li>收敛场
+    <ul>
+      <li>未归一化
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">cost = norm(b, res)</code></li>
+          <li><code class="language-plaintext highlighter-rouge">color=cost/cost.max()</code></li>
+          <li><code class="language-plaintext highlighter-rouge">sample_size=10</code></li>
+          <li><code class="language-plaintext highlighter-rouge">init_pose_x=-1:0.1:1, init_pose_y=-1:0.1:1, init_pose_theta=0:0.1:pi</code></li>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825225405.png" alt="20210825225405" height="200px" /><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825225537.png" alt="20210825225446" height="200px" /></li>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826000825.png" alt="20210826000825" width="450px" /></li>
+        </ul>
+      </li>
+      <li>Difference of sample size
+        <ul>
+          <li>avg</li>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826110115.png" alt="20210826110115" /></li>
+          <li>std</li>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826110047.png" alt="20210826110047" /></li>
         </ul>
       </li>
     </ul>
   </li>
 </ul>
-
-<h2 id="icp">ICP</h2>
 
         
       </section>
@@ -429,7 +485,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-23T14:21:56+08:00">August 23, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-25T15:22:03+08:00">August 25, 2021</time></p>
 
 
       </footer>
@@ -437,18 +493,18 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=ICP+Match+SVD%20https%3A%2F%2Fucas.io%2F3d%2FICP-Match-SVD%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=ICP+Benchmark%20https%3A%2F%2Fucas.io%2F3d%2FICP-benchmark%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FICP-Match-SVD%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FICP-benchmark%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FICP-Match-SVD%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FICP-benchmark%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/Point-Cloud-Match/" class="pagination--pager" title="Point Cloud Match
+      <a href="/3d/ICP-2D-and-3D/" class="pagination--pager" title="ICP 2D and 3D
 ">Previous</a>
     
     
@@ -466,6 +522,57 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825142134.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/ICP-2D-and-3D/" rel="permalink">ICP 2D and 3D
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-24T14:21:56+08:00">August 24, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Point Cloud Registration[点云配准]
+</p>
+  </article>
+</div>
+
         
           
 
@@ -615,57 +722,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Intrinsics matrix
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235000.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/Texture-for-9-9-project/" rel="permalink">Texture for 9-9 project
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-18T14:55:52+08:00">August 18, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Try difference combination
 </p>
   </article>
 </div>
