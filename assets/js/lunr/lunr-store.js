@@ -268,4 +268,10 @@ var store = [{
         "tags": [],
         "url": "/3d/ICP-benchmark/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825222557.png"
+      },{
+        "title": "Point Cloud Match[2]",
+        "excerpt":"类局部的配准算法 受限于点云初始位置 仅适用于小角度错开的点云配准问题 受限于主成分分析、奇异值分解算法 迭代次数较多，后期收敛缓慢 最近邻点的成本较高，KD-tree虽然搜索效率较高，但仍无法满足于解决大规模点云的配准问题 ICP(Iterative Closest Point) 不断迭代原始点云的变换矩阵，直到RMSE收敛域局部最优解 迭代过程 搜索最近点集 构造协方差矩阵 奇异值分解 求解旋转矩阵 OpenCv cv2.estimateAffinePartial2D(src, dst[0, indices.T]), 4自由度 cv2.estimateAffine2D(src, dst[0, indices.T]),6自由度 $$ \\begin{cases} E(R,T)=\\sum_{i=1}^N\\Vert Rp_i+T-p_{closest}\\Vert_2^2\\\\ P_{closest}=\\underset{q_j}{\\argmin}\\Vert p_i-Q\\Vert_2^2 \\end{cases} $$ ICP 变种 LM-ICP Moré J J. The Levenberg-Marquardt algorithm: Implementation and theory[J]. Lecture Notes in Mathematics, 1978, 630: 105-116....","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Point-Cloud-Match-2/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826160724.png"
       }]

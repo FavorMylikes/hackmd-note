@@ -1,4 +1,296 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-26T11:06:02+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">ICP Benchmark</title><link href="https://ucas.io/3d/ICP-benchmark/" rel="alternate" type="text/html" title="ICP Benchmark" /><published>2021-08-25T15:22:03+08:00</published><updated>2021-08-25T15:22:03+08:00</updated><id>https://ucas.io/3d/ICP-benchmark</id><content type="html" xml:base="https://ucas.io/3d/ICP-benchmark/">&lt;h2 id=&quot;icp-2d-收敛域检测&quot;&gt;ICP 2D 收敛域检测&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-26T19:38:09+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Point Cloud Match[2]</title><link href="https://ucas.io/3d/Point-Cloud-Match-2/" rel="alternate" type="text/html" title="Point Cloud Match[2]" /><published>2021-08-26T11:11:35+08:00</published><updated>2021-08-26T11:11:35+08:00</updated><id>https://ucas.io/3d/Point-Cloud-Match%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Point-Cloud-Match-2/">&lt;h2 id=&quot;类局部的配准算法&quot;&gt;类局部的配准算法&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;受限于点云初始位置&lt;/li&gt;
+  &lt;li&gt;仅适用于小角度错开的点云配准问题&lt;/li&gt;
+  &lt;li&gt;受限于主成分分析、奇异值分解算法&lt;/li&gt;
+  &lt;li&gt;迭代次数较多，后期收敛缓慢&lt;/li&gt;
+  &lt;li&gt;最近邻点的成本较高，KD-tree虽然搜索效率较高，但仍无法满足于解决大规模点云的配准问题&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;icpiterative-closest-point&quot;&gt;ICP(Iterative Closest Point)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;不断迭代原始点云的变换矩阵，直到RMSE收敛域局部最优解
+    &lt;ul&gt;
+      &lt;li&gt;迭代过程
+        &lt;ol&gt;
+          &lt;li&gt;搜索最近点集&lt;/li&gt;
+          &lt;li&gt;构造协方差矩阵&lt;/li&gt;
+          &lt;li&gt;奇异值分解&lt;/li&gt;
+          &lt;li&gt;求解旋转矩阵&lt;/li&gt;
+          &lt;li&gt;OpenCv
+            &lt;ol&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cv2.estimateAffinePartial2D(src, dst[0, indices.T])&lt;/code&gt;, 4自由度&lt;/li&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cv2.estimateAffine2D(src, dst[0, indices.T])&lt;/code&gt;,6自由度&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{cases}
+        E(R,T)=\sum_{i=1}^N\Vert Rp_i+T-p_{closest}\Vert_2^2\\
+        P_{closest}=\underset{q_j}{\argmin}\Vert p_i-Q\Vert_2^2
+    \end{cases}
+$$&lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;icp-变种&quot;&gt;ICP 变种&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;LM-ICP
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://link.springer.com/content/pdf/10.1007/BFb0067700.pdf&quot;&gt;Moré J J. The Levenberg-Marquardt algorithm: Implementation and theory[J]. Lecture Notes in Mathematics, 1978, 630: 105-116.&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ivc-2003-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-1050-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0262885603001835&quot;&gt;Fitzgibbon A W. Robust registration of 2D and 3D point sets. Image Vision Comput 2003;21:1145-1153.&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Levenberg-Marquardt&lt;/li&gt;
+      &lt;li&gt;DT（Distance-Transform）替代KD-tree搜索最近邻点&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Trimmed ICP
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee-2002-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-570-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/1047997/&quot;&gt;Chetverikov D, Svirko D, Stepanov D, et al. The Trimmed Iterative Closest Point algorithm[J], 2002.&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;筛选最近邻点&lt;/li&gt;
+      &lt;li&gt;用欧式距离进行排序，去掉其中距离较大的点集&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sparse ICP
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Computer_Graphics-2013-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-350-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.12178&quot;&gt;Bouaziz S, Tagliasacchi A, Pauly M. Sparse iterative closest point[C]. Eleventh Eurographics/acmsiggraph Symposium on Geometry Processing, 2013.&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;稀疏表示理论&lt;/li&gt;
+      &lt;li&gt;范数配准模型上增加p范数的惩罚项&lt;/li&gt;
+      &lt;li&gt;增广拉格朗日求解(效率较差)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Efficient Sparse ICP
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Geometric_Modeling_and_Processing-2015-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-52-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0167839615000552&quot;&gt;Mavridis P, Andreadis A, Papaioannou G. Efficient Sparse ICP[J]. Computer Aided Geometric Design, 2015, 35-36(C): 16-26.&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;退火算法&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Normal Distribute Transform（NDT）
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee-2003-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-989-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/1249285&quot;&gt;Biber P, Strasser W. The normal distributions transform: a new approach to laser scan matching[J]. Proc.of IEEE/RSJ Intl Conf.on Intelligent Robots &amp;amp; Systems, 2003, 3: 2743-2748 vol.3.&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;使用D维的高斯函数作为配准模型&lt;/li&gt;
+      &lt;li&gt;源点云Q进行体素划分&lt;/li&gt;
+      &lt;li&gt;求解点云Q的包围盒&lt;/li&gt;
+      &lt;li&gt;包围盒进行细分&lt;/li&gt;
+      &lt;li&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;Magnusson&lt;/p&gt;
+
+          &lt;p&gt;NDT算法较ICP算法能更好地避免点云初始位置对配准结果的影响&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{cases}
+    E(R,T)&amp;=\frac{1}{(2\pi)^\frac{D}{2}\sqrt{\vert\Sigma\vert}}exp((Rp+T-u)^T\Sigma^{-1}(Rp+T-u))\\
+    u&amp;=\frac{1}{M}\sum_{j=1}^Mq_j\\
+    \Sigma&amp;=\frac{1}{M-1}\sum_{j=1}^M(q_j-u)(q_j-u)^T
+  \end{cases}
+$$&lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;全局的3d点云配准算法&quot;&gt;全局的3D点云配准算法&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;启发式算法
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;需多次调用配准模型进行优化求解，在处理大规模点云配准问题时效率较低，且其全局解并未有严格的证明&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;遗传算法求解出全局优化的变换矩阵&lt;/li&gt;
+      &lt;li&gt;粒子群算法&lt;/li&gt;
+      &lt;li&gt;模拟退火&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;构造几何不变量匹配对应点对
+    &lt;ul&gt;
+      &lt;li&gt;曲率特征求解对应点对&lt;/li&gt;
+      &lt;li&gt;构造积分体积特征计算匹配点对&lt;/li&gt;
+      &lt;li&gt;构造点特征直方图作为局部描述符&lt;/li&gt;
+      &lt;li&gt;4点法构造几何特征进而提取稀疏的匹配点对&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Go-ICP
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee-2016-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-437-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/7368945&quot;&gt;Yang J, Li H, Campbell D, et al. Go-ICP: A Globally Optimal Solution to 3D ICP Point-Set Registration[J]. IEEE Transactions on Pattern Analysis &amp;amp; Machine Intelligence, 2016, 38(11): 2241-2254.&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;范数配准模型首次推导出了关于六维变换域的上下界函数&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;AMP
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-37-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/7555337&quot;&gt;Lian W, Zhang L, Yang M H. An Efficient Globally Optimal Algorithm for Asymmetric Point Matching[J]. IEEE Transactions on Pattern Analysis &amp;amp; Machine Intelligence, 2017, 39(7): 1281-1293.&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;主要适用于图像处理领域&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Glob-GM-ML
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/cvpr-2014-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-69-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.cv-foundation.org/openaccess/content_cvpr_2014/html/Bustos_Fast_Rotation_Search_2014_CVPR_paper.html&quot;&gt;Chin T J, Suter D. Fast Rotation Search with Stereographic Projections for 3D Registration[C]. IEEE Conference on Computer Vision and Pattern Recognition, 2014: 3930-3937.&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;两个独立的三维平移、旋转问题&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;TEASER
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Robot_Sci_Syst-2019-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-39-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1903.08588&quot;&gt;Yang H, Carlone L. A Polynomial-time Solution for Robust Registration with Extreme Outlier Rates[J]. Robotics: Science and Systems (RSS), 2019&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;多项式时间&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826160724.png&quot; alt=&quot;20210826160724&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;GOGMA
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/cvpr-2016-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-63-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content_cvpr_2016/html/Campbell_GOGMA_Globally-Optimal_Gaussian_CVPR_2016_paper.html&quot;&gt;Campbell D, Petersson L. GOGMA: Globally-Optimal Gaussian Mixture Alignment[J].&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;混合高斯模型&lt;/li&gt;
+      &lt;li&gt;GPU框架&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;deeplearning-net&quot;&gt;DeepLearning Net&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基于相似性测度研究的点云匹配&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3dmatch&quot;&gt;3DMatch&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Paper
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/cvpr-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-367-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1603.08182&quot;&gt;3DMatch: Learning Local Geometric Descriptors from RGB-D Reconstructions&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;HomePage
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://3dmatch.cs.princeton.edu/&quot;&gt;3DMatch: Learning Local Geometric Descriptors from RGB-D Reconstructions - Princeton&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/andyzeng/3dmatch-toolbox&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=andyzeng&amp;amp;repo=3dmatch-toolbox&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/andyzeng/3dmatch-toolbox&quot;&gt;&lt;img src=&quot;https://stars.medv.io/andyzeng/3dmatch-toolbox.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/andyzeng/3dmatch-toolbox&quot;&gt;&lt;img src=&quot;https://starchart.cc/andyzeng/3dmatch-toolbox.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826164757.png&quot; alt=&quot;20210826164757&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3dfeat-net&quot;&gt;3DFeat-Net&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Paper
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/eccv-2018-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-138-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1807.09413&quot;&gt;3DFeat-Net: Weakly Supervised Local 3D Features for Point Cloud Registration&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/yewzijian/3DFeatNet&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=yewzijian&amp;amp;repo=3DFeatNet&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/yewzijian/3DFeatNet&quot;&gt;&lt;img src=&quot;https://stars.medv.io/yewzijian/3DFeatNet.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/yewzijian/3DFeatNet&quot;&gt;&lt;img src=&quot;https://starchart.cc/yewzijian/3DFeatNet.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826193422.png&quot; alt=&quot;20210826193422&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;deep-neural-network-auto-encoder&quot;&gt;Deep Neural Network Auto-Encoder&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Paper
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/cvpr-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-151-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content_cvpr_2017/html/Elbaz_3D_Point_Cloud_CVPR_2017_paper.html&quot;&gt;3D Point Cloud Registration for Localization using a Deep Neural Network Auto-Encoder&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/gilbaz/LORAX&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=gilbaz&amp;amp;repo=LORAX&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/gilbaz/LORAX&quot;&gt;&lt;img src=&quot;https://stars.medv.io/gilbaz/LORAX.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/gilbaz/LORAX&quot;&gt;&lt;img src=&quot;https://starchart.cc/gilbaz/LORAX.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826193228.png&quot; alt=&quot;20210826193228&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826193322.png&quot; alt=&quot;20210826193322&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;变换层次&quot;&gt;变换层次&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;关于自由度&lt;/li&gt;
+  &lt;li&gt;与泛函无关的不变量数等于或大于配置的自由度数减去变换的自由度数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2d&quot;&gt;2D&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;《Multiple View Geometry in Computer Vision》2.4.7&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826155257.png&quot; alt=&quot;20210826155257&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3d&quot;&gt;3D&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826155827.png&quot; alt=&quot;20210826155827&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/143164736&quot;&gt;图像变换的层次 - Shine的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/louisanu/p/12341140.html&quot;&gt;3D点云配准算法简述&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://yilingui.xyz/2019/11/20/191120_point_cloud_registration_icp/&quot;&gt;三维点云配准 – ICP 算法 - Yilin’s Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/104735380&quot;&gt;三维点云配准 – ICP 算法原理及推导 - InsaneGuy的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">类局部的配准算法</summary></entry><entry><title type="html">ICP Benchmark</title><link href="https://ucas.io/3d/ICP-benchmark/" rel="alternate" type="text/html" title="ICP Benchmark" /><published>2021-08-25T15:22:03+08:00</published><updated>2021-08-25T15:22:03+08:00</updated><id>https://ucas.io/3d/ICP-benchmark</id><content type="html" xml:base="https://ucas.io/3d/ICP-benchmark/">&lt;h2 id=&quot;icp-2d-收敛域检测&quot;&gt;ICP 2D 收敛域检测&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;数据集&lt;/li&gt;
@@ -1241,97 +1533,4 @@ $$&lt;/div&gt;
   \end{aligned}
 $$&lt;/div&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">PID Contorl</summary></entry><entry><title type="html">Convert Camera Parameters [model of colmap]</title><link href="https://ucas.io/3d/Convert-Camera-Parameters/" rel="alternate" type="text/html" title="Convert Camera Parameters [model of colmap]" /><published>2021-08-13T19:21:12+08:00</published><updated>2021-08-13T19:21:12+08:00</updated><id>https://ucas.io/3d/Convert-Camera-Parameters</id><content type="html" xml:base="https://ucas.io/3d/Convert-Camera-Parameters/">&lt;h2 id=&quot;try-colmap-with-cudagpu&quot;&gt;Try Colmap with cuda(gpu)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;enable gpu with args &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--SiftExtraction.use_gpu 1&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;but throw qt error, need x display&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;close QT gui by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;export QT_QPA_PLATFORM=offscreen&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;but throw these error below&lt;/p&gt;
-
-        &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;*** Aborted at 1628840833 (unix time) try &quot;date -d @1628840833&quot; if you are using GNU date ***
-PC: @     0x7f07a36bbbf8 (unknown)
-&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;*** SIGSEGV (@0xe0) received by PID 19386 (TID 0x7f07b1686900) from PID 224;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;stack trace: &lt;span class=&quot;k&quot;&gt;***&lt;/span&gt;
-&lt;span class=&quot;go&quot;&gt;    @     0x7f07b0919980 (unknown)
-    @     0x7f07a36bbbf8 (unknown)
-    @     0x7f07a36bbff8 (unknown)
-    @     0x7f07ae65407f QOpenGLContext::create()
-    @     0x5601b94e4b93 (unknown)
-    @     0x5601b9391777 (unknown)
-    @     0x5601b9396eec (unknown)
-    @     0x5601b925b4a7 (unknown)
-    @     0x5601b924c863 (unknown)
-    @     0x7f07ac9edbf7 __libc_start_main
-    @     0x5601b925073a (unknown)
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;wait for &lt;a href=&quot;https://github.com/colmap/colmap/issues/1273&quot;&gt;issue#1273&lt;/a&gt; response&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;convert-camera-parameters-from-opencv-matrix-file-to-other-type&quot;&gt;Convert camera parameters from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;opencv-matrix&lt;/code&gt; file to other type&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://ucas/jupyter/lab/tree/3d/cameras/comera_convert.ipynb&quot;&gt;Jupyter Code&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;attation&quot;&gt;Attation&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;This need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install opencv-python&lt;/code&gt; but &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;conda install&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;For now, the version is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;opencv-python==4.5.3.56&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;fs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FileStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;camera.xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FILE_STORAGE_READ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;intrinsic&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;camIntrinsics&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;external&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;camExternals&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imageSize&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Width&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imageSize&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Width&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;convert for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;空三&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://ucas/jupyter/lab/tree/3d/cameras/comera_convert.ipynb&quot;&gt;jupyter lab&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;figure-out-the-camera-model-of-colmap&quot;&gt;Figure out the camera model of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;colmap&lt;/code&gt;&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Camera model list at &lt;a href=&quot;https://colmap.github.io/cameras.html?highlight=undistortion&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SIMPLE_PINHOLE, PINHOLE
-    &lt;ul&gt;
-      &lt;li&gt;The easiest model, means 相机图片没有任何畸变，主要指内参&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;SIMPLE_RADIAL, RADIAL
-    &lt;ul&gt;
-      &lt;li&gt;默认选择，这个会自动估算图片畸变并计算相机内参&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;OPENCV, FULL_OPENCV
-    &lt;ul&gt;
-      &lt;li&gt;引申搜索到了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;google nerfies&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;一个3D拍照应用&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgogjbzom3fyingbqavx06.gif&quot; alt=&quot;ogjbzom3fyingbqavx06&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/google/nerfies&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=google&amp;amp;repo=nerfies&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://colab.research.google.com/github/google/nerfies/blob/main/notebooks/Nerfies_Capture_Processing.ipynb&quot;&gt;prepare training data - colab&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://colab.sandbox.google.com/github/google/nerfies/blob/main/notebooks/Nerfies_Training.ipynb&quot;&gt;training data - colab&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;SIMPLE_RADIAL_FISHEYE, RADIAL_FISHEYE, OPENCV_FISHEYE, FOV, THIN_PRISM_FISHEYE
-    &lt;ul&gt;
-      &lt;li&gt;用于鱼眼镜头&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Try Colmap with cuda(gpu)</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">PID Contorl</summary></entry></feed>
