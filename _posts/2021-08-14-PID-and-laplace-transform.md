@@ -7,7 +7,7 @@ header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png
 ---
 
-## PID Contorl
+## PID Control
 
 - 最常见的形式
 - $u(t)=K_pe(t)+K_i\int_0^te(\tau)d\tau+K_d\frac{d}{dt}e(t)$
@@ -103,19 +103,37 @@ $$L(s) = \int_0^{\infty}f(t)e^{-st}dt$$
     L(s)=\mathcal{L\{f(t)\}} &= \int_{0^{-}}^\infty f(t)e^{-st}dt\\
       &=\left[\frac{f(t)e^{-st}}{-s}\right]_{0^{-}}^\infty-\int_{0^{-}}^\infty\frac{e^{-st}}{-s}f'(t)dt&(1)\\
       &=\left[0-\frac{f(0^{-})}{-s}\right] + \frac{1}{s}\mathcal{L\{f'(t)\}}\\
-      \mathcal{L\{f'(t)\}}&=s\mathcal{L\{f(t)\}}-f'(0^{-})
+      \mathcal{L\{f'(t)\}}&=s\mathcal{L\{f(t)\}}-f'(0^{-})\\
+      \mathcal{L\{f'(t)\}}&=sL(s)-f'(0^{-})\\
     \end{aligned}
     $$
     - 其中
       - $(1)$使用了分部积分法，同时使用了隐含条件$\lim\limits_{t\to \infty} f(x)e^{-st} = 0$, **即前文提到的，$f(t)$的增长速度没有$e^{st}$快**，因此作为分母时才可以使得$f(x)e^{-st}|_{t=\infty}=0$
       - $0^{-}$的解释
-      - > 这个极限强调任何位于 0 的质点都被拉普拉斯变换完全捕获。虽然在使用勒贝格积分时，我们没有必要取这个极限，但它让我们更自然地与拉普拉斯–斯蒂尔吉斯变换建立联系。
-  - $$
-      \int_{0}^{\infty}tf(t)e^{-st}dt=-F'(s)
-    $$
+      - > [Wikipedia](https://zh.wikipedia.org/wiki/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2#.E6.AD.A3.E5.BC.8F.E5.AE.9A.E4.B9.89)
+        > 这个极限强调任何位于 0 的质点都被拉普拉斯变换完全捕获。**虽然在使用勒贝格积分时，我们没有必要取这个极限**，但它让我们更自然地与拉普拉斯–斯蒂尔吉斯变换建立联系。
 - 比较常用的其他例子
-- $$
+  - $$
     \begin{aligned}
-      
+      \mathcal{L\{tf(t)\}}&= \int_{0}^\infty tf(t)e^{-st}dt\\
+      &=\int_{0}^\infty [te^{-st}]f(t)dt\\
+      &=\int_{0}^\infty -[-te^{-st}]f(t)dt\\
+      &=\int_{0}^\infty -[\frac{d}{ds}e^{-st}]f(t)dt\\
+      &=-\frac{d}{ds}\int_{0}^\infty f(t)e^{-st}dt&(1)\\
+      &=-L'(s)
     \end{aligned}
-  $$
+    $$
+    - 其中
+      - $(1)$利用了积分和求导的顺序交换不变性
+    - 延伸阅读
+      - [什么情况下，积分和求导可以交换顺序？ - dhchen的回答 - 知乎](https://www.zhihu.com/question/27311619/answer/149379832)
+  - 二阶导
+    - $$
+        \mathcal{L\{f''(t)\}}=s^2L(s)-sf(0^{-})-f'(0^{-})
+      $$
+  - 积分
+    - $$
+        \int_0^tf(\tau)d\tau=\frac{1}{s}L(s)
+      $$
+  - [MIT—微分方程笔记20 拉氏变换求解线性常微分方程 - 三少爷的键的文章 - 知乎](https://zhuanlan.zhihu.com/p/107466016)
+  - [拉普拉斯(Laplace)变换在广义积分求值中的应用 - fell的文章 - 知乎](https://zhuanlan.zhihu.com/p/343298799)
