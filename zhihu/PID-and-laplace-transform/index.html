@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>PID and laplace transform / Notes B</title>
-<meta name="description" content="PID Contorl">
+<meta name="description" content="PID Control">
 
 
   <meta name="author" content="麦丽素">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://ucas.io/zhihu/PID-and-laplace-transform/">
 
 
-  <meta property="og:description" content="PID Contorl">
+  <meta property="og:description" content="PID Control">
 
 
 
@@ -333,7 +333,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="PID and laplace transform">
-    <meta itemprop="description" content="PID Contorl">
+    <meta itemprop="description" content="PID Control">
     <meta itemprop="datePublished" content="2021-08-14T23:00:46+08:00">
     
 
@@ -363,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -378,12 +378,12 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#pid-contorl">PID Contorl</a><ul><li><a href="#比较常见的解释和应用">比较常见的解释和应用</a></li><li><a href="#pid">PID</a></li><li><a href="#pid调参">PID调参</a></li><li><a href="#理论分析">理论分析</a><ul><li><a href="#laplace-transform拉普拉斯变换">Laplace Transform[拉普拉斯变换]</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#pid-control">PID Control</a><ul><li><a href="#比较常见的解释和应用">比较常见的解释和应用</a></li><li><a href="#pid">PID</a></li><li><a href="#pid调参">PID调参</a></li><li><a href="#理论分析">理论分析</a><ul><li><a href="#laplace-transform拉普拉斯变换">Laplace Transform[拉普拉斯变换]</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="pid-contorl">PID Contorl</h2>
+        <h2 id="pid-control">PID Control</h2>
 
 <ul>
   <li>最常见的形式</li>
@@ -552,7 +552,8 @@ $$</div>
 L(s)=\mathcal{L\{f(t)\}} &= \int_{0^{-}}^\infty f(t)e^{-st}dt\\
   &=\left[\frac{f(t)e^{-st}}{-s}\right]_{0^{-}}^\infty-\int_{0^{-}}^\infty\frac{e^{-st}}{-s}f'(t)dt&(1)\\
   &=\left[0-\frac{f(0^{-})}{-s}\right] + \frac{1}{s}\mathcal{L\{f'(t)\}}\\
-  \mathcal{L\{f'(t)\}}&=s\mathcal{L\{f(t)\}}-f'(0^{-})
+  \mathcal{L\{f'(t)\}}&=s\mathcal{L\{f(t)\}}-f'(0^{-})\\
+  \mathcal{L\{f'(t)\}}&=sL(s)-f'(0^{-})\\
 \end{aligned}
 $$</div>
         <ul>
@@ -571,27 +572,63 @@ $$</div>
               <li>$0^{-}$的解释</li>
               <li>
                 <blockquote>
-                  <p>这个极限强调任何位于 0 的质点都被拉普拉斯变换完全捕获。虽然在使用勒贝格积分时，我们没有必要取这个极限，但它让我们更自然地与拉普拉斯–斯蒂尔吉斯变换建立联系。</p>
+                  <p><a href="https://zh.wikipedia.org/wiki/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2#.E6.AD.A3.E5.BC.8F.E5.AE.9A.E4.B9.89">Wikipedia</a>
+这个极限强调任何位于 0 的质点都被拉普拉斯变换完全捕获。<strong>虽然在使用勒贝格积分时，我们没有必要取这个极限</strong>，但它让我们更自然地与拉普拉斯–斯蒂尔吉斯变换建立联系。</p>
                 </blockquote>
               </li>
             </ul>
           </li>
         </ul>
       </li>
-      <li>
-        <div class="kdmath">$$
-\int_{0}^{\infty}tf(t)e^{-st}dt=-F'(s)
-$$</div>
-      </li>
     </ul>
   </li>
-  <li>比较常用的其他例子</li>
-  <li>
-    <div class="kdmath">$$
+  <li>比较常用的其他例子
+    <ul>
+      <li>
+        <div class="kdmath">$$
 \begin{aligned}
-      
-  \end{aligned}
+  \mathcal{L\{tf(t)\}}&= \int_{0}^\infty tf(t)e^{-st}dt\\
+  &=\int_{0}^\infty [te^{-st}]f(t)dt\\
+  &=\int_{0}^\infty -[-te^{-st}]f(t)dt\\
+  &=\int_{0}^\infty -[\frac{d}{ds}e^{-st}]f(t)dt\\
+  &=-\frac{d}{ds}\int_{0}^\infty f(t)e^{-st}dt&(1)\\
+  &=-L'(s)
+\end{aligned}
 $$</div>
+        <ul>
+          <li>其中
+            <ul>
+              <li>$(1)$利用了积分和求导的顺序交换不变性</li>
+            </ul>
+          </li>
+          <li>延伸阅读
+            <ul>
+              <li><a href="https://www.zhihu.com/question/27311619/answer/149379832">什么情况下，积分和求导可以交换顺序？ - dhchen的回答 - 知乎</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>二阶导
+        <ul>
+          <li>
+            <div class="kdmath">$$
+\mathcal{L\{f''(t)\}}=s^2L(s)-sf(0^{-})-f'(0^{-})
+$$</div>
+          </li>
+        </ul>
+      </li>
+      <li>积分
+        <ul>
+          <li>
+            <div class="kdmath">$$
+\int_0^tf(\tau)d\tau=\frac{1}{s}L(s)
+$$</div>
+          </li>
+        </ul>
+      </li>
+      <li><a href="https://zhuanlan.zhihu.com/p/107466016">MIT—微分方程笔记20 拉氏变换求解线性常微分方程 - 三少爷的键的文章 - 知乎</a></li>
+      <li><a href="https://zhuanlan.zhihu.com/p/343298799">拉普拉斯(Laplace)变换在广义积分求值中的应用 - fell的文章 - 知乎</a></li>
+    </ul>
   </li>
 </ul>
 

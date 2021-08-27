@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-26T22:07:00+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Point Cloud Match[2]</title><link href="https://ucas.io/3d/Point-Cloud-Match-2/" rel="alternate" type="text/html" title="Point Cloud Match[2]" /><published>2021-08-26T11:11:35+08:00</published><updated>2021-08-26T11:11:35+08:00</updated><id>https://ucas.io/3d/Point-Cloud-Match%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Point-Cloud-Match-2/">&lt;h2 id=&quot;类局部的配准算法&quot;&gt;类局部的配准算法&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-27T17:00:48+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Point Cloud Match[2]</title><link href="https://ucas.io/3d/Point-Cloud-Match-2/" rel="alternate" type="text/html" title="Point Cloud Match[2]" /><published>2021-08-26T11:11:35+08:00</published><updated>2021-08-26T11:11:35+08:00</updated><id>https://ucas.io/3d/Point-Cloud-Match%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Point-Cloud-Match-2/">&lt;h2 id=&quot;类局部的配准算法&quot;&gt;类局部的配准算法&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;受限于点云初始位置&lt;/li&gt;
@@ -1374,7 +1374,7 @@ $$&lt;/div&gt;
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/fb_help/article/details/84142580&quot;&gt;PhotoScan与smart3d的Omega,phi,kappa和R - fb_help[CSDN]&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/94244568&quot;&gt;相机标定之张正友标定法数学原理详解（含python源码） - 1335的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/35287729&quot;&gt;相机模型&amp;amp;相机标定 - WwPpCc的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Convert parameters</summary></entry><entry><title type="html">PID and laplace transform</title><link href="https://ucas.io/zhihu/PID-and-laplace-transform/" rel="alternate" type="text/html" title="PID and laplace transform" /><published>2021-08-14T23:00:46+08:00</published><updated>2021-08-14T23:00:46+08:00</updated><id>https://ucas.io/zhihu/PID-and-laplace-transform</id><content type="html" xml:base="https://ucas.io/zhihu/PID-and-laplace-transform/">&lt;h2 id=&quot;pid-contorl&quot;&gt;PID Contorl&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Convert parameters</summary></entry><entry><title type="html">PID and laplace transform</title><link href="https://ucas.io/zhihu/PID-and-laplace-transform/" rel="alternate" type="text/html" title="PID and laplace transform" /><published>2021-08-14T23:00:46+08:00</published><updated>2021-08-14T23:00:46+08:00</updated><id>https://ucas.io/zhihu/PID-and-laplace-transform</id><content type="html" xml:base="https://ucas.io/zhihu/PID-and-laplace-transform/">&lt;h2 id=&quot;pid-control&quot;&gt;PID Control&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;最常见的形式&lt;/li&gt;
@@ -1543,7 +1543,8 @@ $$&lt;/div&gt;
 L(s)=\mathcal{L\{f(t)\}} &amp;= \int_{0^{-}}^\infty f(t)e^{-st}dt\\
   &amp;=\left[\frac{f(t)e^{-st}}{-s}\right]_{0^{-}}^\infty-\int_{0^{-}}^\infty\frac{e^{-st}}{-s}f'(t)dt&amp;(1)\\
   &amp;=\left[0-\frac{f(0^{-})}{-s}\right] + \frac{1}{s}\mathcal{L\{f'(t)\}}\\
-  \mathcal{L\{f'(t)\}}&amp;=s\mathcal{L\{f(t)\}}-f'(0^{-})
+  \mathcal{L\{f'(t)\}}&amp;=s\mathcal{L\{f(t)\}}-f'(0^{-})\\
+  \mathcal{L\{f'(t)\}}&amp;=sL(s)-f'(0^{-})\\
 \end{aligned}
 $$&lt;/div&gt;
         &lt;ul&gt;
@@ -1562,26 +1563,62 @@ $$&lt;/div&gt;
               &lt;li&gt;$0^{-}$的解释&lt;/li&gt;
               &lt;li&gt;
                 &lt;blockquote&gt;
-                  &lt;p&gt;这个极限强调任何位于 0 的质点都被拉普拉斯变换完全捕获。虽然在使用勒贝格积分时，我们没有必要取这个极限，但它让我们更自然地与拉普拉斯–斯蒂尔吉斯变换建立联系。&lt;/p&gt;
+                  &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2#.E6.AD.A3.E5.BC.8F.E5.AE.9A.E4.B9.89&quot;&gt;Wikipedia&lt;/a&gt;
+这个极限强调任何位于 0 的质点都被拉普拉斯变换完全捕获。&lt;strong&gt;虽然在使用勒贝格积分时，我们没有必要取这个极限&lt;/strong&gt;，但它让我们更自然地与拉普拉斯–斯蒂尔吉斯变换建立联系。&lt;/p&gt;
                 &lt;/blockquote&gt;
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\int_{0}^{\infty}tf(t)e^{-st}dt=-F'(s)
-$$&lt;/div&gt;
-      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;比较常用的其他例子&lt;/li&gt;
-  &lt;li&gt;
-    &lt;div class=&quot;kdmath&quot;&gt;$$
+  &lt;li&gt;比较常用的其他例子
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;div class=&quot;kdmath&quot;&gt;$$
 \begin{aligned}
-      
-  \end{aligned}
+  \mathcal{L\{tf(t)\}}&amp;= \int_{0}^\infty tf(t)e^{-st}dt\\
+  &amp;=\int_{0}^\infty [te^{-st}]f(t)dt\\
+  &amp;=\int_{0}^\infty -[-te^{-st}]f(t)dt\\
+  &amp;=\int_{0}^\infty -[\frac{d}{ds}e^{-st}]f(t)dt\\
+  &amp;=-\frac{d}{ds}\int_{0}^\infty f(t)e^{-st}dt&amp;(1)\\
+  &amp;=-L'(s)
+\end{aligned}
 $$&lt;/div&gt;
+        &lt;ul&gt;
+          &lt;li&gt;其中
+            &lt;ul&gt;
+              &lt;li&gt;$(1)$利用了积分和求导的顺序交换不变性&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;延伸阅读
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/27311619/answer/149379832&quot;&gt;什么情况下，积分和求导可以交换顺序？ - dhchen的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;二阶导
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+\mathcal{L\{f''(t)\}}=s^2L(s)-sf(0^{-})-f'(0^{-})
+$$&lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;积分
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;div class=&quot;kdmath&quot;&gt;$$
+\int_0^tf(\tau)d\tau=\frac{1}{s}L(s)
+$$&lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/107466016&quot;&gt;MIT—微分方程笔记20 拉氏变换求解线性常微分方程 - 三少爷的键的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/343298799&quot;&gt;拉普拉斯(Laplace)变换在广义积分求值中的应用 - fell的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">PID Contorl</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">PID Control</summary></entry></feed>
