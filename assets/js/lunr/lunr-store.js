@@ -274,4 +274,10 @@ var store = [{
         "tags": [],
         "url": "/3d/Point-Cloud-Match-2/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826160724.png"
+      },{
+        "title": "ICP Gradient descent",
+        "excerpt":"solver def fun(x): return x**2 - 16 def double_fun(x): return 3*np.exp(x[0]) + x[1]**2 - 16 sample_point = rotated_point[sorted(np.random.choice(rotated_point.shape[0], 20, replace=False)), :] def icp_fun(x): R = icp(originate_point, sample_point, x, 2) rotated_fit_point = cv2.transform(originate_point[None, :], R)[0] return cost(rotated_fit_point, rotated_point) def derivative(f, x): delta = 1E-6 * np.eye(len(x)) de = [] for i...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/ICP-Gradient-descent/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210828004409.png"
       }]

@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-27T17:00:48+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Point Cloud Match[2]</title><link href="https://ucas.io/3d/Point-Cloud-Match-2/" rel="alternate" type="text/html" title="Point Cloud Match[2]" /><published>2021-08-26T11:11:35+08:00</published><updated>2021-08-26T11:11:35+08:00</updated><id>https://ucas.io/3d/Point-Cloud-Match%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Point-Cloud-Match-2/">&lt;h2 id=&quot;类局部的配准算法&quot;&gt;类局部的配准算法&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-28T01:09:45+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">ICP Gradient descent</title><link href="https://ucas.io/3d/ICP-Gradient-descent/" rel="alternate" type="text/html" title="ICP Gradient descent" /><published>2021-08-27T00:42:17+08:00</published><updated>2021-08-27T00:42:17+08:00</updated><id>https://ucas.io/3d/ICP-Gradient-descent</id><content type="html" xml:base="https://ucas.io/3d/ICP-Gradient-descent/">&lt;h2 id=&quot;solver&quot;&gt;solver&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fun&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;double_fun&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;sample_point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rotated_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rotated_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;icp_fun&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;icp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;originate_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sample_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rotated_fit_point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;originate_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rotated_fit_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rotated_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;derivative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;delta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1E-6&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eye&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;de&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;de&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;delta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;delta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1E-6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;de&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;history&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1E6&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;param&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tqdm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;postfix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cost&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;postfix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cost&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_postfix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;postfix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;f_p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;derivative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;param&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.005&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f_p&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1E-6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;history&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ucas/jupyter/lab/tree/3d/model/icp/icp_2d.ipynb&quot;&gt;jupyter&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;traning&quot;&gt;Traning&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210828004409.png&quot; alt=&quot;20210828004409&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;animation&quot;&gt;Animation&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgicp_2d_sample_20_iter_2.mp4&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">solver</summary></entry><entry><title type="html">Point Cloud Match[2]</title><link href="https://ucas.io/3d/Point-Cloud-Match-2/" rel="alternate" type="text/html" title="Point Cloud Match[2]" /><published>2021-08-26T11:11:35+08:00</published><updated>2021-08-26T11:11:35+08:00</updated><id>https://ucas.io/3d/Point-Cloud-Match%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Point-Cloud-Match-2/">&lt;h2 id=&quot;类局部的配准算法&quot;&gt;类局部的配准算法&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;受限于点云初始位置&lt;/li&gt;
@@ -1374,251 +1428,4 @@ $$&lt;/div&gt;
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/fb_help/article/details/84142580&quot;&gt;PhotoScan与smart3d的Omega,phi,kappa和R - fb_help[CSDN]&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/94244568&quot;&gt;相机标定之张正友标定法数学原理详解（含python源码） - 1335的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/35287729&quot;&gt;相机模型&amp;amp;相机标定 - WwPpCc的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Convert parameters</summary></entry><entry><title type="html">PID and laplace transform</title><link href="https://ucas.io/zhihu/PID-and-laplace-transform/" rel="alternate" type="text/html" title="PID and laplace transform" /><published>2021-08-14T23:00:46+08:00</published><updated>2021-08-14T23:00:46+08:00</updated><id>https://ucas.io/zhihu/PID-and-laplace-transform</id><content type="html" xml:base="https://ucas.io/zhihu/PID-and-laplace-transform/">&lt;h2 id=&quot;pid-control&quot;&gt;PID Control&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;最常见的形式&lt;/li&gt;
-  &lt;li&gt;$u(t)=K_pe(t)+K_i\int_0^te(\tau)d\tau+K_d\frac{d}{dt}e(t)$&lt;/li&gt;
-  &lt;li&gt;其中
-    &lt;ul&gt;
-      &lt;li&gt;$K_p$为比例(proportional)增益&lt;/li&gt;
-      &lt;li&gt;$K_i$为积分(integral)增益&lt;/li&gt;
-      &lt;li&gt;$K_d$为微分(derivative)增益&lt;/li&gt;
-      &lt;li&gt;$e=SP-PV$为误差，设定值(setpoint)$SP$与过程值(process variable)$PV$的差&lt;/li&gt;
-      &lt;li&gt;$t$为时间&lt;/li&gt;
-      &lt;li&gt;$\tau$积分变数，因为是历史状态的积分，因此要与$t$区分开来&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;比较常见的解释和应用&quot;&gt;比较常见的解释和应用&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;通过控制&lt;strong&gt;水箱&lt;/strong&gt;的流入速度，使得水箱内的高度或体积保持不变的一种过程&lt;/li&gt;
-  &lt;li&gt;汽车定速巡航，遇到上坡如何设计动力&lt;/li&gt;
-  &lt;li&gt;无人机的悬停和应激相应(推一下回到原来的位置，或者前往目标点)&lt;/li&gt;
-  &lt;li&gt;解决电路问题&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;pid&quot;&gt;PID&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;通常学习PID控制时，往往不太懂得3个变量的实际作用，又有计算机作为辅助进行模拟，那么就会导致盲目调参，而书中提到的调参方法又只讲参数含义，将调参性质描述一遍，这样完全不得法门，最后只能得到一个差不多的结果&lt;/li&gt;
-  &lt;li&gt;历史上
-    &lt;ul&gt;
-      &lt;li&gt;惠更斯17世纪改造了风车，使得磨盘转速和磨盘间隙可以根据谷物数量变化
-        &lt;ul&gt;
-          &lt;li&gt;Power From the Wind , Cambridge University Press&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;瓦特使用圆锥摆以解决蒸汽机的速度输出
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://web.archive.org/web/20160809050823/http://ieeecss.org/CSM/library/1996/june1996/02-HistoryofAutoCtrl.pdf&quot;&gt;History of AutoCtrl&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;1868年，为了更好的保持鱼雷的深度，引入了微分控制&lt;/li&gt;
-      &lt;li&gt;直到1922年，才有了完整的3项控制率&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;因此，大多数书籍往往会根据每项变量引入时发挥的作用加以解释，但是又与纯PI控制，PD控制，甚至单纯的P控制应用相违背，除了硬件或成本上的限制，更需要思考的是，每一项为整个系统的稳定性到底提供了多大的好处&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;pid调参&quot;&gt;PID调参&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;为了获得更好的参数，有如下几种方法
-    &lt;ul&gt;
-      &lt;li&gt;手动&lt;/li&gt;
-      &lt;li&gt;Ziegler–Nichols[齐格勒－尼科尔斯方法]
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method&quot;&gt;Ziegler–Nichols_method - Wikipedia&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/s/video/BV1ay4y117Bj&quot;&gt;使用Z-N方法调节气压 - Bilibili&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;将ID项置0，调节P使得达到恒定震荡，再根据震荡周期和震荡值计算PID参数&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;，想要在P控制下得到稳定震荡，要有超调现象，如果通过计算机模拟，而时间单位又很小，那么无论用多大的$K_P$你都看不到超调现象，可以理解为，系统刚刚输入一点点就被感知到了，而上面视频里从气流输入到输出存在一定的延迟，因此可以使用该方法&lt;/li&gt;
-          &lt;li&gt;反馈较慢
-            &lt;ul&gt;
-              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231759.png&quot; alt=&quot;20210816231759&quot; /&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;快速反馈
-            &lt;ul&gt;
-              &lt;li&gt;两处代码只更改了延迟&lt;/li&gt;
-              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816231835.png&quot; alt=&quot;20210816231835&quot; /&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;机器学习[反向传播]
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/111592279&quot;&gt;今天聊聊PID - zzzSid的文章 - 知乎&lt;/a&gt;
-            &lt;ul&gt;
-              &lt;li&gt;目标函数$cost = \frac{1}{2}(position_t-target_t)^2$&lt;/li&gt;
-              &lt;li&gt;不过我并不是很赞同他使用动态参数的做法&lt;/li&gt;
-              &lt;li&gt;目标函数也未考虑收敛速度和周期&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;http://hjhyxb.ijournals.cn/ch/reader/create_pdf.aspx?file_no=20150402&amp;amp;year_id=2015&amp;amp;quarter_id=4&amp;amp;falg=1&quot;&gt;基于支持向量机回归和RBF神经网络的PID整定 - 海军航空工程学院&lt;/a&gt;
-            &lt;ul&gt;
-              &lt;li&gt;原理跟上面一样&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;理论分析&quot;&gt;理论分析&lt;/h3&gt;
-
-&lt;h4 id=&quot;laplace-transform拉普拉斯变换&quot;&gt;&lt;strong&gt;Laplace Transform&lt;/strong&gt;[拉普拉斯变换]&lt;/h4&gt;
-
-&lt;div class=&quot;kdmath&quot;&gt;$$
-L(s) = \int_0^{\infty}f(t)e^{-st}dt
-$$&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;其中$s$是个复数&lt;/li&gt;
-  &lt;li&gt;为了更好的理解&lt;strong&gt;Laplace Transform&lt;/strong&gt;, 回想一下&lt;strong&gt;Fourier transform&lt;/strong&gt;[傅里叶变换]
-    &lt;ul&gt;
-      &lt;li&gt;$F(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$, $i$是虚数单位&lt;/li&gt;
-      &lt;li&gt;同时它也有另外一种表示&lt;/li&gt;
-      &lt;li&gt;$F(\omega) = \int_{-\infty}^{\infty}f(t)*\sin(\omega t)dt$&lt;/li&gt;
-      &lt;li&gt;这是因为欧拉公式可以建立起复数和三角函数之间的关系&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;傅里叶变换和拉普拉斯变换的主要区别
-    &lt;ul&gt;
-      &lt;li&gt;傅里叶变换的积分域为$(-\infty,+\infty)$, 而拉普拉斯变换的积分区间为$(0, +\infty)$
-        &lt;ul&gt;
-          &lt;li&gt;由于傅里叶变换主要关心函数的周期性，频率性质，而这些性质需要假设函数拥有周期或者周期无限长，对于一些01信号也需要利用周期函数的性质再将其进行延拓&lt;/li&gt;
-          &lt;li&gt;而拉普拉斯变换主要解决应用问题，$t$常常作为时间表示，而时间没有负值，因此拉普拉斯变换常常不考虑负值的情况，不过依然存在双边拉普拉斯变换的情形&lt;strong&gt;bilateral Laplace transform&lt;/strong&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://qr.ae/pGOVS9&quot;&gt;Why does Laplace transform take the integral with limit beginning at zero - Quora&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;傅里叶变换使用纯虚数，而拉普拉斯变换将其扩大到了整个复数域
-        &lt;ul&gt;
-          &lt;li&gt;这里有三种理解方式
-            &lt;ul&gt;
-              &lt;li&gt;将$s$分离成实数和虚数两个部分
-                &lt;ul&gt;
-                  &lt;li&gt;$L(s)=\int_0^{\infty}f(t)e^{-i\omega t}e^{-\sigma t}dt$&lt;/li&gt;
-                  &lt;li&gt;其中$\omega, \sigma$都为实数&lt;/li&gt;
-                  &lt;li&gt;这样拉普拉斯变换就只是在傅里叶的基础上乘了$e^{-\sigma t}$&lt;/li&gt;
-                  &lt;li&gt;这样就解决了一些非周期的以及$f\to\infty$区域无穷的函数&lt;strong&gt;利用傅里叶不可积的问题&lt;/strong&gt;&lt;/li&gt;
-                  &lt;li&gt;当然如果存在$f$比$e^{\sigma t}$的增长速度还要快的函数，那么拉普拉斯变换也依然存在不可积的问题&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;将这两种变换理解为函数值之间的内积或者卷积
-                &lt;ul&gt;
-                  &lt;li&gt;为了得到一些频率的信号量，我们选择一组正交基，比如一些三角函数，我们用$f(t)·e^{-i\omega t}$(它是傅里叶变换的内积形式)，找到在该周期内最大的响应，然后依次求出各个周期的信号大小，这就是傅里叶级数的求法&lt;/li&gt;
-                  &lt;li&gt;同时，为了解决傅里叶级数需要周期无限长的问题，也有&lt;strong&gt;Wavelet transform&lt;/strong&gt;[小波变换], 等&lt;/li&gt;
-                  &lt;li&gt;如果不考虑基的正交性，你还可以自己设计一个新的函数&lt;/li&gt;
-                  &lt;li&gt;例如在图像领域的&lt;strong&gt;Box-Filter&lt;/strong&gt;[盒子滤波器], 它仅仅是二维高斯函数的离散化点阵而已，用以加快计算速度，或者其他&lt;strong&gt;CNN&lt;/strong&gt;中所用的&lt;strong&gt;filter&lt;/strong&gt;，也是同样的作用&lt;/li&gt;
-                  &lt;li&gt;那么这时，拉普拉斯变换中$e^{-i\omega t}e^{-\sigma t}$就变成了一个&lt;strong&gt;幅度不断增长或下降的三角函数&lt;/strong&gt;，我们通过它就可以知道一个函数的指数收敛性，或者发散速度&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;第三种将其理解为一种在复数空间中的投影
-                &lt;ul&gt;
-                  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/23617272&quot;&gt;【自动控制原理】1.传递函数 - 李寒潭的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Reference
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.matongxue.com/madocs/723/&quot;&gt;如何理解拉普拉斯变换 - 马同学&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2&quot;&gt;拉普拉斯变换 - Wikipedia&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://youtu.be/n2y7n6jw5d0&quot;&gt;🤙What does the Laplace Transform really tell us - Youtube&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;计算例子
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-L(s)=\mathcal{L\{f(t)\}} &amp;= \int_{0^{-}}^\infty f(t)e^{-st}dt\\
-  &amp;=\left[\frac{f(t)e^{-st}}{-s}\right]_{0^{-}}^\infty-\int_{0^{-}}^\infty\frac{e^{-st}}{-s}f'(t)dt&amp;(1)\\
-  &amp;=\left[0-\frac{f(0^{-})}{-s}\right] + \frac{1}{s}\mathcal{L\{f'(t)\}}\\
-  \mathcal{L\{f'(t)\}}&amp;=s\mathcal{L\{f(t)\}}-f'(0^{-})\\
-  \mathcal{L\{f'(t)\}}&amp;=sL(s)-f'(0^{-})\\
-\end{aligned}
-$$&lt;/div&gt;
-        &lt;ul&gt;
-          &lt;li&gt;其中
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;table&gt;
-                  &lt;tbody&gt;
-                    &lt;tr&gt;
-                      &lt;td&gt;$(1)$使用了分部积分法，同时使用了隐含条件$\lim\limits_{t\to \infty} f(x)e^{-st} = 0$, &lt;strong&gt;即前文提到的，$f(t)$的增长速度没有$e^{st}$快&lt;/strong&gt;，因此作为分母时才可以使得$f(x)e^{-st}&lt;/td&gt;
-                      &lt;td&gt;_{t=\infty}=0$&lt;/td&gt;
-                    &lt;/tr&gt;
-                  &lt;/tbody&gt;
-                &lt;/table&gt;
-              &lt;/li&gt;
-              &lt;li&gt;$0^{-}$的解释&lt;/li&gt;
-              &lt;li&gt;
-                &lt;blockquote&gt;
-                  &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2#.E6.AD.A3.E5.BC.8F.E5.AE.9A.E4.B9.89&quot;&gt;Wikipedia&lt;/a&gt;
-这个极限强调任何位于 0 的质点都被拉普拉斯变换完全捕获。&lt;strong&gt;虽然在使用勒贝格积分时，我们没有必要取这个极限&lt;/strong&gt;，但它让我们更自然地与拉普拉斯–斯蒂尔吉斯变换建立联系。&lt;/p&gt;
-                &lt;/blockquote&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;比较常用的其他例子
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-  \mathcal{L\{tf(t)\}}&amp;= \int_{0}^\infty tf(t)e^{-st}dt\\
-  &amp;=\int_{0}^\infty [te^{-st}]f(t)dt\\
-  &amp;=\int_{0}^\infty -[-te^{-st}]f(t)dt\\
-  &amp;=\int_{0}^\infty -[\frac{d}{ds}e^{-st}]f(t)dt\\
-  &amp;=-\frac{d}{ds}\int_{0}^\infty f(t)e^{-st}dt&amp;(1)\\
-  &amp;=-L'(s)
-\end{aligned}
-$$&lt;/div&gt;
-        &lt;ul&gt;
-          &lt;li&gt;其中
-            &lt;ul&gt;
-              &lt;li&gt;$(1)$利用了积分和求导的顺序交换不变性&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;延伸阅读
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/27311619/answer/149379832&quot;&gt;什么情况下，积分和求导可以交换顺序？ - dhchen的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;二阶导
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-\mathcal{L\{f''(t)\}}=s^2L(s)-sf(0^{-})-f'(0^{-})
-$$&lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;积分
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-\int_0^tf(\tau)d\tau=\frac{1}{s}L(s)
-$$&lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/107466016&quot;&gt;MIT—微分方程笔记20 拉氏变换求解线性常微分方程 - 三少爷的键的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/343298799&quot;&gt;拉普拉斯(Laplace)变换在广义积分求值中的应用 - fell的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="zhihu" /><summary type="html">PID Control</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Convert parameters</summary></entry></feed>
