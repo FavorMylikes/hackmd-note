@@ -292,4 +292,10 @@ var store = [{
         "tags": [],
         "url": "/3d/ICP-Back-Propagate-fix/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830190751.png"
+      },{
+        "title": "ICP Back Propagate fix",
+        "excerpt":" ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/ICP-Training-With-Difference-Minimize-Method/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830190751.png"
       }]

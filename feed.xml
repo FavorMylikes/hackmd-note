@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-30T23:28:13+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">ICP Back Propagate fix</title><link href="https://ucas.io/3d/ICP-Back-Propagate-fix/" rel="alternate" type="text/html" title="ICP Back Propagate fix" /><published>2021-08-29T13:52:11+08:00</published><updated>2021-08-29T13:52:11+08:00</updated><id>https://ucas.io/3d/ICP-Back-Propagate-fix</id><content type="html" xml:base="https://ucas.io/3d/ICP-Back-Propagate-fix/">&lt;h2 id=&quot;a-error-at-icp-iterations&quot;&gt;A Error at ICP iterations&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-31T00:53:38+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">ICP Back Propagate fix</title><link href="https://ucas.io/3d/ICP-Back-Propagate-fix/" rel="alternate" type="text/html" title="ICP Back Propagate fix" /><published>2021-08-29T13:52:11+08:00</published><updated>2021-08-29T13:52:11+08:00</updated><id>https://ucas.io/3d/ICP-Back-Propagate-fix</id><content type="html" xml:base="https://ucas.io/3d/ICP-Back-Propagate-fix/">&lt;h2 id=&quot;a-error-at-icp-iterations&quot;&gt;A Error at ICP iterations&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/20146045/5587080&quot;&gt;Iterative Closest Point (ICP) implementation on python - stack&lt;/a&gt;&lt;/li&gt;
@@ -188,7 +188,19 @@
       &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830224404.png&quot; alt=&quot;20210830224404&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">A Error at ICP iterations</summary></entry><entry><title type="html">ICP Gradient descent</title><link href="https://ucas.io/3d/Matplotlib-animation-bliting/" rel="alternate" type="text/html" title="ICP Gradient descent" /><published>2021-08-28T00:42:17+08:00</published><updated>2021-08-28T00:42:17+08:00</updated><id>https://ucas.io/3d/Matplotlib-animation-bliting</id><content type="html" xml:base="https://ucas.io/3d/Matplotlib-animation-bliting/">&lt;h2 id=&quot;prerequisite&quot;&gt;prerequisite&lt;/h2&gt;
+  &lt;li&gt;case6
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sample_size=10&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Nelder-Mead&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iter_num=0&lt;/code&gt;， no affine&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;init_x=[10, -10, 2]&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830224404.png&quot; alt=&quot;20210830224404&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/RoxIEuDhUA8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">A Error at ICP iterations</summary></entry><entry><title type="html">ICP Back Propagate fix</title><link href="https://ucas.io/3d/ICP-Training-With-Difference-Minimize-Method/" rel="alternate" type="text/html" title="ICP Back Propagate fix" /><published>2021-08-29T13:52:11+08:00</published><updated>2021-08-29T13:52:11+08:00</updated><id>https://ucas.io/3d/ICP-Training-With-Difference-Minimize-Method</id><content type="html" xml:base="https://ucas.io/3d/ICP-Training-With-Difference-Minimize-Method/"></content><author><name>麦丽素</name></author><category term="3d" /><summary type="html"></summary></entry><entry><title type="html">ICP Gradient descent</title><link href="https://ucas.io/3d/Matplotlib-animation-bliting/" rel="alternate" type="text/html" title="ICP Gradient descent" /><published>2021-08-28T00:42:17+08:00</published><updated>2021-08-28T00:42:17+08:00</updated><id>https://ucas.io/3d/Matplotlib-animation-bliting</id><content type="html" xml:base="https://ucas.io/3d/Matplotlib-animation-bliting/">&lt;h2 id=&quot;prerequisite&quot;&gt;prerequisite&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;matplotlib==3.2.2&lt;/code&gt;, cause this &lt;a href=&quot;https://github.com/matplotlib/matplotlib/issues/19040&quot;&gt;issue&lt;/a&gt;&lt;/li&gt;
@@ -1531,85 +1543,4 @@ $$&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003537.png&quot; alt=&quot;20210820003537&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003550.png&quot; alt=&quot;20210820003550&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Intrinsics matrix</summary></entry><entry><title type="html">Texture for 9-9 project</title><link href="https://ucas.io/3d/Texture-for-9-9-project/" rel="alternate" type="text/html" title="Texture for 9-9 project" /><published>2021-08-18T14:55:52+08:00</published><updated>2021-08-18T14:55:52+08:00</updated><id>https://ucas.io/3d/Texture-for-9-9-project</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-9-9-project/">&lt;h2 id=&quot;try-difference-combination&quot;&gt;Try difference combination&lt;/h2&gt;
-
-&lt;h3 id=&quot;original&quot;&gt;original&lt;/h3&gt;
-
-&lt;h4 id=&quot;case-1&quot;&gt;case 1&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;srs: original, EPSG:4490&lt;/li&gt;
-  &lt;li&gt;rotation: M_00 to M_22&lt;/li&gt;
-  &lt;li&gt;t: x,y,z in metadata&amp;gt;center&lt;/li&gt;
-  &lt;li&gt;xml: original&lt;/li&gt;
-  &lt;li&gt;data: 1-1&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818191406.png&quot; alt=&quot;20210818191406&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818191835.png&quot; alt=&quot;20210818191835&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;case-2&quot;&gt;case 2&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;srs: original, EPSG:4490&lt;/li&gt;
-  &lt;li&gt;rotation: M_00 to M_22&lt;/li&gt;
-  &lt;li&gt;t: x,y,z in center&lt;/li&gt;
-  &lt;li&gt;xml: original&lt;/li&gt;
-  &lt;li&gt;data: 1-1&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTHING&lt;/strong&gt; output&lt;/p&gt;
-
-&lt;h3 id=&quot;export-from-ccm&quot;&gt;export from ccm&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;srs: 4490&lt;/li&gt;
-  &lt;li&gt;rotation: M_00 to M_22&lt;/li&gt;
-  &lt;li&gt;t: x,y,z in center&lt;/li&gt;
-  &lt;li&gt;xml: original&lt;/li&gt;
-  &lt;li&gt;data: 1-1&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTHING&lt;/strong&gt; output&lt;/p&gt;
-
-&lt;h2 id=&quot;create-orthogonal-obj-and-plant-obj&quot;&gt;create orthogonal obj and plant obj&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;orthogonal&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818233612.png&quot; alt=&quot;20210818233612&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;plant&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235011.png&quot; alt=&quot;20210818235011&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;sphere&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210818235000.png&quot; alt=&quot;20210818235000&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Nothing&lt;/strong&gt; output&lt;/p&gt;
-
-&lt;h2 id=&quot;single-pic-with-created-model&quot;&gt;single pic with created model&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;error: invalid project&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;block-3-plant-xy-height-less-tri&quot;&gt;block 3 plant xy height less tri&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819010552.png&quot; alt=&quot;20210819010552&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;block-3-sphere-block-3-small-tri&quot;&gt;block 3 sphere block 3 small tri&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819131819.png&quot; alt=&quot;20210819131819&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;block-3-sphere-block-3-large-tri&quot;&gt;block 3 sphere block 3 large tri&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210819140206.png&quot; alt=&quot;20210819140206&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;block-3-sphere-block-3-single-10-tiny-tri&quot;&gt;block 3 sphere block 3 single 10 tiny tri&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Nothing&lt;/strong&gt; output&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Try difference combination</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210820003550.png&quot; alt=&quot;20210820003550&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Intrinsics matrix</summary></entry></feed>
