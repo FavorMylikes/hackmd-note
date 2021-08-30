@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>ICP 2D and 3D / Notes B</title>
-<meta name="description" content="Point Cloud Registration[点云配准]">
+<!-- begin _includes/seo.html --><title>ICP Back Propagate fix / Notes B</title>
+<meta name="description" content="A Error at ICP iterations">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="ICP 2D and 3D">
-<meta property="og:url" content="https://ucas.io/3d/ICP-2D-and-3D/">
+<meta property="og:title" content="ICP Back Propagate fix">
+<meta property="og:url" content="https://ucas.io/3d/ICP-Back-Propagate-fix/">
 
 
-  <meta property="og:description" content="Point Cloud Registration[点云配准]">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825142134.png">
+  <meta property="og:description" content="A Error at ICP iterations">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-24T14:21:56+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210828004409.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-29T13:52:11+08:00">
 
-<link rel="canonical" href="https://ucas.io/3d/ICP-2D-and-3D/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/ICP-Back-Propagate-fix/">
 
 
 
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">ICP 2D and 3D</li>
+        <li class="current">ICP Back Propagate fix</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="ICP 2D and 3D">
-    <meta itemprop="description" content="Point Cloud Registration[点云配准]">
-    <meta itemprop="datePublished" content="2021-08-24T14:21:56+08:00">
+    <meta itemprop="headline" content="ICP Back Propagate fix">
+    <meta itemprop="description" content="A Error at ICP iterations">
+    <meta itemprop="datePublished" content="2021-08-29T13:52:11+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">ICP 2D and 3D
+          <h1 id="page-title" class="page__title" itemprop="headline">ICP Back Propagate fix
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-24T14:21:56+08:00">August 24, 2021</time>
+        <time datetime="2021-08-29T13:52:11+08:00">August 29, 2021</time>
       </span>
     
 
@@ -363,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -378,120 +378,202 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#point-cloud-registration点云配准">Point Cloud Registration[点云配准]</a></li><li><a href="#icp">ICP</a><ul><li><a href="#opencv-doc">OpenCV doc</a></li><li><a href="#2d-icp">2D ICP</a><ul><li><a href="#2d-rotation-matrix">2D Rotation Matrix</a></li><li><a href="#code">Code</a></li></ul></li><li><a href="#3d-icp">3D ICP</a><ul><li><a href="#3d-rotation-matrix">3D Rotation Matrix</a></li><li><a href="#code-1">Code</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#a-error-at-icp-iterations">A Error at ICP iterations</a></li><li><a href="#how-to-fix-that-shit">How to fix that shit</a></li><li><a href="#fitting">Fitting</a></li><li><a href="#training">Training</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="point-cloud-registration点云配准">Point Cloud Registration[点云配准]</h2>
+        <h2 id="a-error-at-icp-iterations">A Error at ICP iterations</h2>
 
 <ul>
-  <li>Coarse Registration
-    <ul>
-      <li>粗配准</li>
-    </ul>
-  </li>
-  <li>Fine Registration
-    <ul>
-      <li>精配准
-        <ul>
-          <li>Iterative Closest Point, ICP</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li><a href="https://stackoverflow.com/a/20146045/5587080">Iterative Closest Point (ICP) implementation on python - stack</a></li>
 </ul>
 
-<h2 id="icp">ICP</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kn">import</span> <span class="nn">cv2</span>
+ <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+ <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+ <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
 
-<h3 id="opencv-doc">OpenCV <a href="https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga396afb6411b30770e56ab69548724715">doc</a></h3>
 
-<h3 id="2d-icp">2D ICP</h3>
-
-<h4 id="2d-rotation-matrix">2D Rotation Matrix</h4>
-
-<div class="kdmath">$$
-M(\theta) = \begin{bmatrix}
-    \cos(\theta)&-\sin(\theta)\\
-    \sin(\theta)&\cos(\theta)\\
-\end{bmatrix}
-= exp\bigg(\begin{bmatrix}
-    0&-\theta\\
-    \theta&0
-\end{bmatrix}\bigg)
-$$</div>
-
-<h4 id="code"><a href="http://ucas/jupyter/lab/tree/3d/model/icp/icp_2d.ipynb">Code</a></h4>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">icp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">init_pose</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">no_iterations</span> <span class="o">=</span> <span class="mi">13</span><span class="p">):</span>
-
+<span class="k">def</span> <span class="nf">icp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">init_pose</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">no_iterations</span> <span class="o">=</span> <span class="mi">13</span><span class="p">):</span>
     <span class="n">src</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">a</span><span class="p">.</span><span class="n">T</span><span class="p">],</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="n">dst</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">b</span><span class="p">.</span><span class="n">T</span><span class="p">],</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
 
-    <span class="c1">#初始化变换矩阵
-</span>    <span class="c1">#Tr[3*3] = [R[2*2], t[2*1]]
-</span>    <span class="n">Tr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">init_pose</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span><span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">init_pose</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span><span class="n">init_pose</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+    <span class="n">Tr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">init_pose</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span><span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">init_pose</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span><span class="n">init_pose</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
                    <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">init_pose</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">np</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">init_pose</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span><span class="n">init_pose</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
                    <span class="p">[</span><span class="mi">0</span><span class="p">,</span>                    <span class="mi">0</span><span class="p">,</span>                   <span class="mi">1</span>          <span class="p">]])</span>
 
     <span class="n">src</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">Tr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">no_iterations</span><span class="p">):</span>
-        <span class="c1"># 计算src到dst的最近点
-</span>        <span class="n">nbrs</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s">'auto'</span><span class="p">).</span><span class="n">fit</span><span class="p">(</span><span class="n">dst</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">nbrs</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s">'auto'</span><span class="p">,</span>
+                                <span class="n">warn_on_equidistant</span><span class="o">=</span><span class="bp">False</span><span class="p">).</span><span class="n">fit</span><span class="p">(</span><span class="n">dst</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">distances</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">nbrs</span><span class="p">.</span><span class="n">kneighbors</span><span class="p">(</span><span class="n">src</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="c1"># 用于估计变换矩阵
-</span>        <span class="c1"># For opencv&gt;4.0.0
-</span>        <span class="c1"># estimateAffinePartial2D, 4 degrees of freedom
-</span>        <span class="c1"># estimateAffine2D, 6 degrees of freedom
-</span>        <span class="n">T1</span><span class="p">,</span> <span class="n">T2</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">estimateAffinePartial2D</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">indices</span><span class="p">.</span><span class="n">T</span><span class="p">])</span>
-        <span class="c1"># 利用估算矩阵进行变换
-</span>        <span class="n">src</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">T1</span><span class="p">)</span>
-        <span class="n">Tr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">T1</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])))</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">estimateRigidTransform</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">indices</span><span class="p">.</span><span class="n">T</span><span class="p">],</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="n">src</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+        <span class="c1"># Here is the main wrong code
+</span>        <span class="n">Tr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">T</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])))</span>
     <span class="k">return</span> <span class="n">Tr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </code></pre></div></div>
 
-<h3 id="3d-icp">3D ICP</h3>
+<ul>
+  <li>Wrong phenomenon
+    <ul>
+      <li>Deception estimate[有偏估计]
+        <ul>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020617.png" alt="20210826020617" /></li>
+          <li>Difference of sample size</li>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826110115.png" alt="20210826110115" /></li>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826110047.png" alt="20210826110047" /></li>
+          <li>Cost field</li>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825225405.png" alt="20210825225405" /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-<h4 id="3d-rotation-matrix">3D Rotation Matrix</h4>
+<h2 id="how-to-fix-that-shit">How to fix that shit</h2>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825150924.png" alt="20210825150924" /></p>
-
-<h4 id="code-1"><a href="http://ucas/jupyter/lab/tree/3d/model/icp/icp_3d.ipynb">Code</a></h4>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">icp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">init_ang</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">init_t</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">no_iterations</span> <span class="o">=</span> <span class="mi">13</span><span class="p">):</span>
-
-    <span class="n">src</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">a</span><span class="p">],</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>  <span class="c1"># n*3
-</span>    <span class="n">dst</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">b</span><span class="p">],</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>  <span class="c1"># n*3
-</span>    <span class="n">init_x</span><span class="p">,</span> <span class="n">init_y</span><span class="p">,</span> <span class="n">init_z</span> <span class="o">=</span> <span class="n">init_t</span>
-    <span class="n">init_psi</span><span class="p">,</span> <span class="n">init_phi</span><span class="p">,</span> <span class="n">init_theta</span> <span class="o">=</span> <span class="n">init_ang</span>
-    
-    <span class="c1">#Initialise with the initial pose estimation
-</span>    <span class="n">Tr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">externals</span><span class="p">.</span><span class="n">subs</span><span class="p">({</span>
-        <span class="n">x</span><span class="p">:</span> <span class="n">init_x</span><span class="p">,</span>
-        <span class="n">y</span><span class="p">:</span> <span class="n">init_y</span><span class="p">,</span>
-        <span class="n">z</span><span class="p">:</span> <span class="n">init_z</span><span class="p">,</span>
-        <span class="n">psi</span><span class="p">:</span> <span class="n">init_psi</span><span class="p">,</span>
-        <span class="n">phi</span><span class="p">:</span> <span class="n">init_phi</span><span class="p">,</span>
-        <span class="n">theta</span><span class="p">:</span> <span class="n">init_theta</span>
-    <span class="p">}))</span>
-    
-    <span class="n">Tr</span> <span class="o">=</span> <span class="n">Tr</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="s">"float32"</span><span class="p">)</span>
-    
-    <span class="n">src</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">Tr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">no_iterations</span><span class="p">):</span>
-        <span class="n">nbrs</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s">'auto'</span><span class="p">).</span><span class="n">fit</span><span class="p">(</span><span class="n">dst</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="n">distances</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">nbrs</span><span class="p">.</span><span class="n">kneighbors</span><span class="p">(</span><span class="n">src</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="c1"># retval, out, inliers
-</span>        <span class="n">T1</span><span class="p">,</span><span class="n">T2</span><span class="p">,</span><span class="n">T3</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">estimateAffine3D</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">indices</span><span class="p">.</span><span class="n">T</span><span class="p">])</span>
-        <span class="n">src</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">T2</span><span class="p">)</span>
-        <span class="n">Tr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">T2</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])))</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">T2</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">Tr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Tr = np.dot(Tr, np.vstack((T,[0,0,1])))
+</span><span class="n">Tr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">T1</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])),</span> <span class="n">Tr</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825151010.png" alt="20210825151010" /></p>
+<ul>
+  <li>After fixed
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sample_size: [2,5,10,20,40,80,160]</code></li>
+      <li><code class="language-plaintext highlighter-rouge">iter_num: 20</code></li>
+      <li>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ka1lyimsf5g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+      </li>
+      <li>reduce the estimated bias
+        <ul>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210829153235.png" alt="20210829153235" /></li>
+        </ul>
+      </li>
+      <li>Difference of sample size
+        <ul>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830190751.png" alt="20210830190751" /></li>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830185245.png" alt="20210830185245" /></li>
+          <li>Cost field
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">Sample size=2</code>
+                <ul>
+                  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830184835.png" alt="20210830184835" /></li>
+                </ul>
+              </li>
+              <li><code class="language-plaintext highlighter-rouge">Sample size=5</code>
+                <ul>
+                  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830184902.png" alt="20210830184902" /></li>
+                </ul>
+              </li>
+              <li><code class="language-plaintext highlighter-rouge">Sample size=10</code>
+                <ul>
+                  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830184925.png" alt="20210830184925" /></li>
+                </ul>
+              </li>
+              <li><code class="language-plaintext highlighter-rouge">Sample size=20</code>
+                <ul>
+                  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830185000.png" alt="20210830185000" /></li>
+                </ul>
+              </li>
+              <li><code class="language-plaintext highlighter-rouge">Sample size=160</code>
+                <ul>
+                  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830185032.png" alt="20210830185032" /></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="fitting">Fitting</h2>
+
+<ul>
+  <li>case 1
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sample_size=2</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Nelder-Mead</code></li>
+      <li><code class="language-plaintext highlighter-rouge">iter_num=120</code></li>
+      <li><code class="language-plaintext highlighter-rouge">p=[0.1,  0.3, np.pi/2.2]</code></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830000857.png" alt="20210830000857" /></li>
+    </ul>
+  </li>
+  <li>case2
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sample_size=10</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Nelder-Mead</code></li>
+      <li><code class="language-plaintext highlighter-rouge">iter_num=120</code></li>
+      <li><code class="language-plaintext highlighter-rouge">p=[-1,  -0.9, 0]</code></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830001101.png" alt="20210830001101" /></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="training">Training</h2>
+
+<ul>
+  <li>case1
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sample_size=10</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Nelder-Mead</code></li>
+      <li><code class="language-plaintext highlighter-rouge">iter_num=20</code></li>
+      <li><code class="language-plaintext highlighter-rouge">init_x=[0,0,0]</code></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830224511.png" alt="20210830224511" /></li>
+    </ul>
+  </li>
+  <li>case2
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sample_size=10</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Nelder-Mead</code></li>
+      <li><code class="language-plaintext highlighter-rouge">iter_num=20</code></li>
+      <li><code class="language-plaintext highlighter-rouge">init_x=[1,1,1]</code></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830224548.png" alt="20210830224548" /></li>
+    </ul>
+  </li>
+  <li>case3
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sample_size=10</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Nelder-Mead</code></li>
+      <li><code class="language-plaintext highlighter-rouge">iter_num=20</code></li>
+      <li><code class="language-plaintext highlighter-rouge">init_x=[2,2,2]</code></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830224611.png" alt="20210830224611" /></li>
+    </ul>
+  </li>
+  <li>case4
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sample_size=10</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Nelder-Mead</code></li>
+      <li><code class="language-plaintext highlighter-rouge">iter_num=1</code></li>
+      <li><code class="language-plaintext highlighter-rouge">init_x=[1, -1, 2]</code></li>
+      <li>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VDpLtrB1iIk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+      </li>
+    </ul>
+  </li>
+  <li>case5
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sample_size=10</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Nelder-Mead</code></li>
+      <li><code class="language-plaintext highlighter-rouge">iter_num=2</code></li>
+      <li><code class="language-plaintext highlighter-rouge">init_x=[-1, 1, 1]</code></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830224404.png" alt="20210830224404" /></li>
+    </ul>
+  </li>
+  <li>case6
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sample_size=10</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Nelder-Mead</code></li>
+      <li><code class="language-plaintext highlighter-rouge">iter_num=1</code></li>
+      <li><code class="language-plaintext highlighter-rouge">init_x=[1, -1, 2]</code></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830224404.png" alt="20210830224404" /></li>
+    </ul>
+  </li>
+</ul>
 
         
       </section>
@@ -518,7 +600,7 @@ $$</div>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-24T14:21:56+08:00">August 24, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-29T13:52:11+08:00">August 29, 2021</time></p>
 
 
       </footer>
@@ -526,23 +608,22 @@ $$</div>
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=ICP+2D+and+3D%20https%3A%2F%2Fucas.io%2F3d%2FICP-2D-and-3D%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=ICP+Back+Propagate+fix%20https%3A%2F%2Fucas.io%2F3d%2FICP-Back-Propagate-fix%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FICP-2D-and-3D%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FICP-Back-Propagate-fix%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FICP-2D-and-3D%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FICP-Back-Propagate-fix%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/Point-Cloud-Match/" class="pagination--pager" title="Point Cloud Match
+      <a href="/3d/Matplotlib-animation-bliting/" class="pagination--pager" title="ICP Gradient descent
 ">Previous</a>
     
     
-      <a href="/3d/ICP-benchmark/" class="pagination--pager" title="ICP Benchmark
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -556,57 +637,6 @@ $$</div>
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210828004409.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/ICP-Back-Propagate-fix/" rel="permalink">ICP Back Propagate fix
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-29T13:52:11+08:00">August 29, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">A Error at ICP iterations
-</p>
-  </article>
-</div>
-
         
           
 
@@ -748,7 +778,7 @@ $$</div>
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          2 minute read
         
       </span>
     
@@ -756,6 +786,57 @@ $$</div>
 
 
     <p class="archive__item-excerpt" itemprop="description">类局部的配准算法
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210825222557.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/ICP-benchmark/" rel="permalink">ICP Benchmark
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-25T15:22:03+08:00">August 25, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">ICP 2D 收敛域检测
 </p>
   </article>
 </div>

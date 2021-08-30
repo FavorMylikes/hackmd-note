@@ -280,4 +280,16 @@ var store = [{
         "tags": [],
         "url": "/3d/ICP-Gradient-descent/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210828004409.png"
+      },{
+        "title": "ICP Gradient descent",
+        "excerpt":"prerequisite matplotlib==3.2.2, cause this issue Using blitting method to speed up animation rendering Method 1, using method Follow this link Making Animations Quickly with Matplotlib Blitting - alexgude.com def init_fig(fig, ax, artists): \"\"\"Initialize the figure, used to draw the first frame for the animation. \"\"\" ax.set_title(\"Supernova 2011fe Spectrum\", fontsize=22) ax.set_xlabel(\"Wavelength...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Matplotlib-animation-bliting/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210828004409.png"
+      },{
+        "title": "ICP Back Propagate fix",
+        "excerpt":"A Error at ICP iterations Iterative Closest Point (ICP) implementation on python - stack import cv2 import numpy as np import matplotlib.pyplot as plt from sklearn.neighbors import NearestNeighbors def icp(a, b, init_pose=(0,0,0), no_iterations = 13): src = np.array([a.T], copy=True).astype(np.float32) dst = np.array([b.T], copy=True).astype(np.float32) Tr = np.array([[np.cos(init_pose[2]),-np.sin(init_pose[2]),init_pose[0]], [np.sin(init_pose[2]), np.cos(init_pose[2]),init_pose[1]], [0, 0,...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/ICP-Back-Propagate-fix/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210828004409.png"
       }]
