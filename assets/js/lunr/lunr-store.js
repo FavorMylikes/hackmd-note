@@ -293,9 +293,9 @@ var store = [{
         "url": "/3d/ICP-Back-Propagate-fix/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830190751.png"
       },{
-        "title": "ICP Back Propagate fix",
-        "excerpt":" ","categories": ["3d"],
+        "title": "ICP 3D With Standard Scalar",
+        "excerpt":"      9 自由度最小化优化         4x4 矩阵改为     ","categories": ["3d"],
         "tags": [],
-        "url": "/3d/ICP-Training-With-Difference-Minimize-Method/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830190751.png"
+        "url": "/3d/ICP-3D-with-standard-scalar/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831005957.png"
       }]
