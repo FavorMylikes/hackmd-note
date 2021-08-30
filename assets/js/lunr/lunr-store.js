@@ -291,5 +291,5 @@ var store = [{
         "excerpt":"A Error at ICP iterations Iterative Closest Point (ICP) implementation on python - stack import cv2 import numpy as np import matplotlib.pyplot as plt from sklearn.neighbors import NearestNeighbors def icp(a, b, init_pose=(0,0,0), no_iterations = 13): src = np.array([a.T], copy=True).astype(np.float32) dst = np.array([b.T], copy=True).astype(np.float32) Tr = np.array([[np.cos(init_pose[2]),-np.sin(init_pose[2]),init_pose[0]], [np.sin(init_pose[2]), np.cos(init_pose[2]),init_pose[1]], [0, 0,...","categories": ["3d"],
         "tags": [],
         "url": "/3d/ICP-Back-Propagate-fix/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210828004409.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830190751.png"
       }]
