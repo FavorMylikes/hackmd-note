@@ -129,3 +129,10 @@ Tr = np.matmul(np.vstack((T1, [0,0,1])), Tr)
   - `iter_num=1`
   - `init_x=[1, -1, 2]`
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830224404.png" alt="20210830224404"/>
+- case6
+  - `sample_size=10`
+  - `Nelder-Mead`
+  - `iter_num=0`， no affine
+  - `init_x=[10, -10, 2]`
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210830224404.png" alt="20210830224404"/>
+  - <iframe width="560" height="315" src="https://www.youtube.com/embed/RoxIEuDhUA8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
