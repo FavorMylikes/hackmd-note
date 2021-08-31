@@ -47,7 +47,7 @@ def update_artists(frames, artists):
 
 ```
 
-```ipynb
+```python
 %matplotlib agg
 fig, ax = plt.subplots(figsize=(12, 6), dpi=80)
 sns.set_theme()
@@ -78,7 +78,7 @@ HTML(anim.to_html5_video())
 
 - 其中`matplotlib agg`用于关闭jupyter中的plot输出
 
-```ipynb
+```python
 %matplotlib agg
 AnimatedScatter().show()
 ```
@@ -140,7 +140,7 @@ class AnimatedScatter(object):
         return self.scat,
 ```
 
-```jupyter
+```python
 %matplotlib agg
 AnimatedScatter().show()
 ```

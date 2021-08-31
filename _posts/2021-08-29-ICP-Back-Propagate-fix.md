@@ -79,7 +79,7 @@ Tr = np.matmul(np.vstack((T1, [0,0,1])), Tr)
 ## Fitting
 
 - case 1
-  - `sample_size=2`
+  - `sample_size=10`
   - `Nelder-Mead`
   - `iter_num=120`
   - `p=[0.1,  0.3, np.pi/2.2]`
