@@ -41,7 +41,7 @@ sample_rotated_point = rotated_point[sorted(np.random.choice(b.shape[0], 10, rep
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831134030.png" alt="20210831134030"/>
 - 较好的结果
   - param
-    - `sample_size=10, init_pose_x=-1, init_pose_y=-0.9, init_pose_theta=0`
+    - `sample_size=10, init_pose_x=.1, init_pose_y=.3, init_pose_theta=np.pi/2.2`
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020423.png" alt="20210826020423"/>
   - 尺度效应明显
 - 收敛场
