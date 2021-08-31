@@ -37,13 +37,12 @@ sample_rotated_point = rotated_point[sorted(np.random.choice(b.shape[0], 10, rep
   - `0.2, 0.3`为平移向量
 - 较差的结果
   - param
-    - `sample_size=10, init_pose_x=-1, init_pose_y=-0.9, init_pose_theta=0`
-  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020451.png" alt="20210826020451"/>
+    - `sample_size=10, init_pose_x=.9, init_pose_y=0.9, init_pose_theta=1.7`
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831134030.png" alt="20210831134030"/>
 - 较好的结果
   - param
     - `sample_size=10, init_pose_x=-1, init_pose_y=-0.9, init_pose_theta=0`
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020423.png" alt="20210826020423"/>
-  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020617.png" alt="20210826020617"/>
   - 尺度效应明显
 - 收敛场
   - 未归一化

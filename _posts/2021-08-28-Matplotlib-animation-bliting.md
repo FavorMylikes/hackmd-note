@@ -4,7 +4,7 @@ title:  "Matplotlib animation bliting"
 date:   "2021-8-28 00:42:17 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210828004409.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210829022917.png
 ---
 
 ## prerequisite
