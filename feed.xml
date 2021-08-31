@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-31T12:55:09+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">ICP 3D With Standard Scalar</title><link href="https://ucas.io/3d/ICP-3D-with-standard-scalar/" rel="alternate" type="text/html" title="ICP 3D With Standard Scalar" /><published>2021-08-30T01:00:31+08:00</published><updated>2021-08-30T01:00:31+08:00</updated><id>https://ucas.io/3d/ICP-3D-with-standard-scalar</id><content type="html" xml:base="https://ucas.io/3d/ICP-3D-with-standard-scalar/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831005957.png&quot; alt=&quot;20210831005957&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-08-31T13:47:58+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">ICP 3D With Standard Scalar</title><link href="https://ucas.io/3d/ICP-3D-with-standard-scalar/" rel="alternate" type="text/html" title="ICP 3D With Standard Scalar" /><published>2021-08-30T01:00:31+08:00</published><updated>2021-08-30T01:00:31+08:00</updated><id>https://ucas.io/3d/ICP-3D-with-standard-scalar</id><content type="html" xml:base="https://ucas.io/3d/ICP-3D-with-standard-scalar/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831005957.png&quot; alt=&quot;20210831005957&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;9 自由度最小化优化&lt;/li&gt;
@@ -835,10 +835,10 @@ $$&lt;/div&gt;
     &lt;ul&gt;
       &lt;li&gt;param
         &lt;ul&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sample_size=10, init_pose_x=-1, init_pose_y=-0.9, init_pose_theta=0&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sample_size=10, init_pose_x=.9, init_pose_y=0.9, init_pose_theta=1.7&lt;/code&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020451.png&quot; alt=&quot;20210826020451&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831134030.png&quot; alt=&quot;20210831134030&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;较好的结果
@@ -849,7 +849,6 @@ $$&lt;/div&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020423.png&quot; alt=&quot;20210826020423&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826020617.png&quot; alt=&quot;20210826020617&quot; /&gt;&lt;/li&gt;
       &lt;li&gt;尺度效应明显&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
