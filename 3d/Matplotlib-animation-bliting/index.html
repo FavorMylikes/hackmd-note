@@ -429,41 +429,41 @@
 
 </code></pre></div></div>
 
-<pre><code class="language-ipynb">%matplotlib agg
-fig, ax = plt.subplots(figsize=(12, 6), dpi=80)
-sns.set_theme()
-sns.set_color_codes()
-# 2. Initialize the artists with empty data
-Artists = namedtuple("Artists", ("widget", "day"))
-artists = Artists(
-    plt.scatter([], [], animated=True),
-    ax.text(x=0.987, y=0.955, s=""),
-)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">agg</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">set_theme</span><span class="p">()</span>
+<span class="n">sns</span><span class="p">.</span><span class="n">set_color_codes</span><span class="p">()</span>
+<span class="c1"># 2. Initialize the artists with empty data
+</span><span class="n">Artists</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">"Artists"</span><span class="p">,</span> <span class="p">(</span><span class="s">"widget"</span><span class="p">,</span> <span class="s">"day"</span><span class="p">))</span>
+<span class="n">artists</span> <span class="o">=</span> <span class="n">Artists</span><span class="p">(</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">animated</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.987</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.955</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="s">""</span><span class="p">),</span>
+<span class="p">)</span>
 
-# 3. Apply the three plotting functions written above
-init = partial(init_fig, fig=fig, ax=ax, artists=artists)
-step = partial(frame_iter, start=-15, end=25)
-update = partial(update_artists, artists=artists)
+<span class="c1"># 3. Apply the three plotting functions written above
+</span><span class="n">init</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">init_fig</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">artists</span><span class="o">=</span><span class="n">artists</span><span class="p">)</span>
+<span class="n">step</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">frame_iter</span><span class="p">,</span> <span class="n">start</span><span class="o">=-</span><span class="mi">15</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">update</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">update_artists</span><span class="p">,</span> <span class="n">artists</span><span class="o">=</span><span class="n">artists</span><span class="p">)</span>
 
-#4. Generate the animation
-anim = animation.FuncAnimation(
-    fig=fig,
-    func=update,
-    frames=step,
-    init_func=init,
-    save_count=len(list(step())),
-    repeat_delay=5000,
-)
-HTML(anim.to_html5_video())
-</code></pre>
+<span class="c1">#4. Generate the animation
+</span><span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="p">.</span><span class="n">FuncAnimation</span><span class="p">(</span>
+    <span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span>
+    <span class="n">func</span><span class="o">=</span><span class="n">update</span><span class="p">,</span>
+    <span class="n">frames</span><span class="o">=</span><span class="n">step</span><span class="p">,</span>
+    <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">,</span>
+    <span class="n">save_count</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">step</span><span class="p">())),</span>
+    <span class="n">repeat_delay</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">anim</span><span class="p">.</span><span class="n">to_html5_video</span><span class="p">())</span>
+</code></pre></div></div>
 
 <ul>
   <li>其中<code class="language-plaintext highlighter-rouge">matplotlib agg</code>用于关闭jupyter中的plot输出</li>
 </ul>
 
-<pre><code class="language-ipynb">%matplotlib agg
-AnimatedScatter().show()
-</code></pre>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">agg</span>
+<span class="n">AnimatedScatter</span><span class="p">().</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210829022646.png" alt="20210829022646" /></p>
 
@@ -521,9 +521,9 @@ AnimatedScatter().show()
 </span>        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">scat</span><span class="p">,</span>
 </code></pre></div></div>
 
-<pre><code class="language-jupyter">%matplotlib agg
-AnimatedScatter().show()
-</code></pre>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">agg</span>
+<span class="n">AnimatedScatter</span><span class="p">().</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210829022917.png" alt="20210829022917" /></p>
 
