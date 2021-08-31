@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "ICP Gradient descent"
+title:  "Matplotlib animation bliting"
 date:   "2021-8-28 00:42:17 +0800"
 categories: 3d
 header:
