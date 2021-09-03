@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Convert Camera Parameters [usage of ContextCapture Master] / Notes B</title>
-<meta name="description" content="Convert parameters">
+<!-- begin _includes/seo.html --><title>Using vcpkg and cmake with Visual studio 2019 / Notes B</title>
+<meta name="description" content="C++ project package manager">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Convert Camera Parameters [usage of ContextCapture Master]">
-<meta property="og:url" content="https://ucas.io/3d/Camera-parameters-convert/">
+<meta property="og:title" content="Using vcpkg and cmake with Visual studio 2019">
+<meta property="og:url" content="https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/">
 
 
-  <meta property="og:description" content="Convert parameters">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png">
+  <meta property="og:description" content="C++ project package manager">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-16T19:06:13+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210903234604.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-08-30T01:00:31+08:00">
 
-<link rel="canonical" href="https://ucas.io/3d/Camera-parameters-convert/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/">
 
 
 
@@ -205,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
+          <a href="/categories/tutorial" itemprop="item"><span itemprop="name">Tutorial</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">Convert Camera Parameters [usage of ContextCapture Master]</li>
+        <li class="current">Using vcpkg and cmake with Visual studio 2019</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Convert Camera Parameters [usage of ContextCapture Master]">
-    <meta itemprop="description" content="Convert parameters">
-    <meta itemprop="datePublished" content="2021-08-16T19:06:13+08:00">
+    <meta itemprop="headline" content="Using vcpkg and cmake with Visual studio 2019">
+    <meta itemprop="description" content="C++ project package manager">
+    <meta itemprop="datePublished" content="2021-08-30T01:00:31+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Convert Camera Parameters [usage of ContextCapture Master]
+          <h1 id="page-title" class="page__title" itemprop="headline">Using vcpkg and cmake with Visual studio 2019
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-16T19:06:13+08:00">August 16, 2021</time>
+        <time datetime="2021-08-30T01:00:31+08:00">August 30, 2021</time>
       </span>
     
 
@@ -378,110 +378,165 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#convert-parameters">Convert parameters</a><ul><li><a href="#model-generate">Model generate</a><ul><li><a href="#优点">优点</a></li><li><a href="#缺点">缺点</a></li></ul></li><li><a href="#code">Code</a></li><li><a href="#reference">Reference</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#c-project-package-manager">C++ project package manager</a><ul><li><a href="#comparison">Comparison</a></li></ul></li><li><a href="#install-vcpkg">Install vcpkg</a><ul><li><a href="#install-windows">Install Windows</a></li><li><a href="#install-package">install package</a></li><li><a href="#check-support-platform">Check support platform</a></li><li><a href="#check-installed-package">Check Installed package</a></li></ul></li><li><a href="#using-vcpkg-with-cmake-under-visual-studio-2019">Using vcpkg with cmake under Visual studio 2019</a><ul><li><a href="#add-cmake-tool-chain">add Cmake Tool chain</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="convert-parameters">Convert parameters</h2>
+        <h2 id="c-project-package-manager">C++ project package manager</h2>
+
+<h3 id="comparison">Comparison</h3>
 
 <ul>
-  <li>拿到<code class="language-plaintext highlighter-rouge">空三</code>的参数文件，发现是 <strong>Smart3D(soarscape.com)</strong> 的软件导出的，尝试下载，发现需要申请</li>
-  <li>根据关键字查找，找到<code class="language-plaintext highlighter-rouge">ContextCapture Master</code></li>
-  <li>下载安装</li>
-</ul>
-
-<h3 id="model-generate">Model generate</h3>
-
-<ul>
-  <li>Add photos</li>
-</ul>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816192250.png" alt="20210816192250" /></p>
-
-<ul>
-  <li>click submit aerotriangulation at general tab.
+  <li>Read thoes detail at <a href="https://www.reddit.com/r/cpp/comments/9m4l0p/conan_vcpkg_or_build2/">Reddit</a></li>
+  <li>vcpkg
     <ul>
-      <li>start <code class="language-plaintext highlighter-rouge">ContextCapture Engine</code>
-<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816193823.png" alt="20210816193823" /></li>
-      <li>wait job complish</li>
+      <li>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center">Repository</th>
+              <th style="text-align: center">spark</th>
+              <th style="text-align: center">star</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center"><a href="https://github.com/microsoft/vcpkg"><img src="https://github-readme-stats.vercel.app/api/pin/?username=microsoft&amp;repo=vcpkg&amp;show_owner=true" alt="Readme Card" /></a></td>
+              <td style="text-align: center"><a href="https://github.com/microsoft/vcpkg"><img src="https://stars.medv.io/microsoft/vcpkg.svg" alt="Sparkline" /></a></td>
+              <td style="text-align: center"><a href="https://starchart.cc/microsoft/vcpkg"><img src="https://starchart.cc/microsoft/vcpkg.svg" width="200px" /></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
     </ul>
   </li>
-  <li>Reconstruction&gt;new Reconstruction</li>
-  <li>click <code class="language-plaintext highlighter-rouge">submit new production</code>
+  <li>Conan
     <ul>
-      <li>wait for job complish</li>
-      <li>check production <code class="language-plaintext highlighter-rouge">3D view</code></li>
+      <li>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center">Repository</th>
+              <th style="text-align: center">spark</th>
+              <th style="text-align: center">star</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center"><a href="https://github.com/conan-io/conan"><img src="https://github-readme-stats.vercel.app/api/pin/?username=conan-io&amp;repo=conan&amp;show_owner=true" alt="Readme Card" /></a></td>
+              <td style="text-align: center"><a href="https://github.com/conan-io/conan"><img src="https://stars.medv.io/conan-io/conan.svg" alt="Sparkline" /></a></td>
+              <td style="text-align: center"><a href="https://starchart.cc/conan-io/conan"><img src="https://starchart.cc/conan-io/conan.svg" width="200px" /></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>build2
+    <ul>
+      <li>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center">Repository</th>
+              <th style="text-align: center">spark</th>
+              <th style="text-align: center">star</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center"><a href="https://github.com/build2/build2"><img src="https://github-readme-stats.vercel.app/api/pin/?username=build2&amp;repo=build2&amp;show_owner=true" alt="Readme Card" /></a></td>
+              <td style="text-align: center"><a href="https://github.com/build2/build2"><img src="https://stars.medv.io/build2/build2.svg" alt="Sparkline" /></a></td>
+              <td style="text-align: center"><a href="https://starchart.cc/build2/build2"><img src="https://starchart.cc/build2/build2.svg" width="200px" /></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
     </ul>
   </li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816194645.png" alt="20210816194645" /></p>
+<h2 id="install-vcpkg">Install vcpkg</h2>
 
-<ul>
-  <li>output</li>
-</ul>
+<h3 id="install-windows">Install Windows</h3>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go"> Model
-├── Model.mtl
-├── Model.obj
-├── Model_0.jpg
-├── Model_1.jpg
-├── Model_2.jpg
-└── Model_3.jpg
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git clone https://github.com/microsoft/vcpkg
+cd vcpkg
+bootstrap-vcpkg.bat
 </span></code></pre></div></div>
 
-<h4 id="优点">优点</h4>
+<h3 id="install-package">install package</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">vcpkg install eigen3
+</span></code></pre></div></div>
+
+<h3 id="check-support-platform">Check support platform</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">vcpkg help triplets
+</span></code></pre></div></div>
+
+<h3 id="check-installed-package">Check Installed package</h3>
+
+<pre><code class="language-power">vcpkg list
+</code></pre>
+
+<h2 id="using-vcpkg-with-cmake-under-visual-studio-2019">Using vcpkg with cmake under Visual studio 2019</h2>
 
 <ul>
-  <li>纹理贴图压缩, 避免占用无效面积</li>
+  <li>For windows Visual studio 2019</li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816200325.png" alt="20210816200325" /></p>
+<pre><code class="language-power">vcpkg install sqlite3:x64-windows
+</code></pre>
+
 <ul>
-  <li>非矩形纹理</li>
+  <li>允许全局引用</li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816200429.png" alt="20210816200429" /></p>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816200450.png" alt="20210816200450" /></p>
+<pre><code class="language-power">vcpkg integrate install
+</code></pre>
 
 <ul>
-  <li>图片畸变处理， 直接在贴图中使用Undistort的图片</li>
+  <li>Change <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code></li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816200728.png" alt="20210816200728" /></p>
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cmake_minimum_required</span> <span class="p">(</span>VERSION 3.8<span class="p">)</span>
 
-<h4 id="缺点">缺点</h4>
+<span class="nb">project</span> <span class="p">(</span>vs_cmake CXX<span class="p">)</span>
+
+<span class="nb">find_package</span><span class="p">(</span>unofficial-sqlite3 CONFIG REQUIRED<span class="p">)</span>
+<span class="nb">find_package</span><span class="p">(</span>fmt REQUIRED<span class="p">)</span>
+<span class="nb">find_package</span><span class="p">(</span>range-v3 REQUIRED<span class="p">)</span>
+<span class="nb">find_package</span><span class="p">(</span>cxxopts REQUIRED<span class="p">)</span>
+
+
+<span class="nb">add_executable</span> <span class="p">(</span>vs_cmake <span class="s2">"vs_cmake.cpp"</span> <span class="s2">"vs_cmake.h"</span><span class="p">)</span>
+<span class="nb">target_compile_features</span><span class="p">(</span>vs_cmake PRIVATE cxx_std_20<span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span>vs_cmake
+  PRIVATE
+    fmt::fmt
+    range-v3::range-v3
+    cxxopts::cxxopts
+    unofficial::sqlite3::sqlite3<span class="p">)</span>
+</code></pre></div></div>
 
 <ul>
-  <li>阴影被识别为特征点</li>
+  <li><code class="language-plaintext highlighter-rouge">project</code> 指定项目名</li>
+  <li><code class="language-plaintext highlighter-rouge">find_package</code> 指定项目依赖</li>
+  <li><code class="language-plaintext highlighter-rouge">add_executable</code> 指定编译后的可执行程序</li>
+  <li><code class="language-plaintext highlighter-rouge">target_compile_features</code> 指定编译版本<code class="language-plaintext highlighter-rouge">cxx_std_20</code>, 使用<code class="language-plaintext highlighter-rouge">/std:c++20</code>作为编译版本</li>
+  <li><code class="language-plaintext highlighter-rouge">target_link_libraries</code> 为项目指定链接库</li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816201323.png" alt="20210816201323" /></p>
+<h3 id="add-cmake-tool-chain">add Cmake Tool chain</h3>
 
 <ul>
-  <li>纹理畸变过度</li>
-</ul>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816201525.png" alt="20210816201525" /></p>
-
-<h3 id="code">Code</h3>
-
-<ul>
-  <li><a href="http://ucas/jupyter/lab/tree/3d/cameras/comera_convert.ipynb">comera_convert</a></li>
-  <li>转换公式，参考<code class="language-plaintext highlighter-rouge">Context capture master</code>， <a href="https://docs.bentley.com/LiveContent/web/ContextCapture%20Help-v10/en/GUID-2D452A8A-A4FE-450D-A0CA-9336DCF1238A.html">文档</a></li>
-  <li><code class="language-plaintext highlighter-rouge">xml</code><a href="https://docs.bentley.com/LiveContent/web/ContextCapture%20Help-v10/en/GUID-59E6CC36-F349-4DE0-A563-FFC47296A624.html">文件含义</a></li>
-</ul>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210816202517.png" alt="20210816202517" /></p>
-
-<h3 id="reference">Reference</h3>
-
-<ul>
-  <li><a href="https://blog.csdn.net/fb_help/article/details/84142580">PhotoScan与smart3d的Omega,phi,kappa和R - fb_help[CSDN]</a></li>
-  <li><a href="https://zhuanlan.zhihu.com/p/94244568">相机标定之张正友标定法数学原理详解（含python源码） - 1335的文章 - 知乎</a></li>
-  <li><a href="https://zhuanlan.zhihu.com/p/35287729">相机模型&amp;相机标定 - WwPpCc的文章 - 知乎</a></li>
+  <li>add <code class="language-plaintext highlighter-rouge">"cmakeToolchain": "\path\to\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"</code> at <code class="language-plaintext highlighter-rouge">CMakeSettings.json</code></li>
+  <li>or use <code class="language-plaintext highlighter-rouge">-DCMAKE_TOOL_CHAIN=</code> at command line</li>
 </ul>
 
         
@@ -501,7 +556,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
+      <a href="/categories/tutorial" class="page__taxonomy-item" rel="tag">tutorial</a>
     
     </span>
   </p>
@@ -509,7 +564,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-16T19:06:13+08:00">August 16, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-30T01:00:31+08:00">August 30, 2021</time></p>
 
 
       </footer>
@@ -517,23 +572,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Convert+Camera+Parameters+%5Busage+of+ContextCapture+Master%5D%20https%3A%2F%2Fucas.io%2F3d%2FCamera-parameters-convert%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Using+vcpkg+and+cmake+with+Visual+studio+2019%20https%3A%2F%2Fucas.io%2Ftutorial%2FUsing-vcpkg-and-cmake-with-Visual-studio-2019%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FCamera-parameters-convert%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Ftutorial%2FUsing-vcpkg-and-cmake-with-Visual-studio-2019%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FCamera-parameters-convert%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Ftutorial%2FUsing-vcpkg-and-cmake-with-Visual-studio-2019%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/zhihu/PID-and-laplace-transform/" class="pagination--pager" title="PID and laplace transform
+      <a href="/3d/ICP-3D-with-standard-scalar/" class="pagination--pager" title="ICP 3D With Standard Scalar
 ">Previous</a>
     
     
-      <a href="/3d/Reading-Texture-paper/" class="pagination--pager" title="Reading Texure paper
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -547,57 +601,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210903234604.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/" rel="permalink">Using vcpkg and cmake with Visual studio 2019
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-08-30T01:00:31+08:00">August 30, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">C++ project package manager
-</p>
-  </article>
-</div>
-
         
           
 
@@ -747,6 +750,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">prerequisite
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210828004409.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/ICP-Gradient-descent/" rel="permalink">ICP Gradient descent
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-27T00:42:17+08:00">August 27, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">solver
 </p>
   </article>
 </div>

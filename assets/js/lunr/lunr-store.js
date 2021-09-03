@@ -298,4 +298,10 @@ var store = [{
         "tags": [],
         "url": "/3d/ICP-3D-with-standard-scalar/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831005957.png"
+      },{
+        "title": "Using vcpkg and cmake with Visual studio 2019",
+        "excerpt":"C++ project package manager Comparison Read thoes detail at Reddit vcpkg Repository spark star Conan Repository spark star build2 Repository spark star Install vcpkg Install Windows git clone https://github.com/microsoft/vcpkg cd vcpkg bootstrap-vcpkg.bat install package vcpkg install eigen3 Check support platform vcpkg help triplets Check Installed package vcpkg list Using vcpkg...","categories": ["tutorial"],
+        "tags": [],
+        "url": "/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210903234604.png"
       }]
