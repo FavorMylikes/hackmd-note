@@ -1,16 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-03T23:47:06+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">ICP 3D With Standard Scalar</title><link href="https://ucas.io/3d/ICP-3D-with-standard-scalar/" rel="alternate" type="text/html" title="ICP 3D With Standard Scalar" /><published>2021-08-30T01:00:31+08:00</published><updated>2021-08-30T01:00:31+08:00</updated><id>https://ucas.io/3d/ICP-3D-with-standard-scalar</id><content type="html" xml:base="https://ucas.io/3d/ICP-3D-with-standard-scalar/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831005957.png&quot; alt=&quot;20210831005957&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-06T21:47:01+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Cmake Texture project</title><link href="https://ucas.io/tutorial/Cmake-Texture-project/" rel="alternate" type="text/html" title="Cmake Texture project" /><published>2021-09-04T14:11:16+08:00</published><updated>2021-09-04T14:11:16+08:00</updated><id>https://ucas.io/tutorial/Cmake-Texture-project</id><content type="html" xml:base="https://ucas.io/tutorial/Cmake-Texture-project/">&lt;h2 id=&quot;vcpkg-install&quot;&gt;vcpkg install&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;9 自由度最小化优化&lt;/li&gt;
+  &lt;li&gt;set proxy&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831012329.png&quot; alt=&quot;20210831012329&quot; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-power&quot;&gt;$env:HTTP_PROXY=&quot;localhost:4780&quot;
+$env:HTTPS_PROXY=&quot;localhost:4780&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;camke-generator&quot;&gt;Camke generator&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210906214320.png&quot; alt=&quot;20210906214320&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;warning&quot;&gt;Warning&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;4x4 矩阵改为&lt;/li&gt;
+  &lt;li&gt;CMP0074
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;log&lt;/p&gt;
+
+        &lt;pre&gt;&lt;code class=&quot;language-log&quot;&gt;Policy CMP0074 is not set: find_package uses &amp;lt;PackageName&amp;gt;_ROOT variables.
+Run &quot;cmake --help-policy CMP0074&quot; for policy details.  Use the cmake_policy
+command to set the policy and suppress this warning.
+
+Environment variable Eigen3_ROOT is set to:
+...
+For compatibility, CMake is ignoring the variable.
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://cmake.org/cmake/help/latest/policy/CMP0074.html&quot;&gt;CMP0074 explain - cmake.org&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Fix
+        &lt;ul&gt;
+          &lt;li&gt;add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmake_policy(SET CMP0074 NEW)&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmake_policy(SET CMP0074 OLD)&lt;/code&gt; before &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;project&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831012354.png&quot; alt=&quot;20210831012354&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html"></summary></entry><entry><title type="html">Using vcpkg and cmake with Visual studio 2019</title><link href="https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/" rel="alternate" type="text/html" title="Using vcpkg and cmake with Visual studio 2019" /><published>2021-08-30T01:00:31+08:00</published><updated>2021-08-30T01:00:31+08:00</updated><id>https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019</id><content type="html" xml:base="https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/">&lt;h2 id=&quot;c-project-package-manager&quot;&gt;C++ project package manager&lt;/h2&gt;
+&lt;h2 id=&quot;inheritenvironments&quot;&gt;inheritEnvironments&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linux_arm&lt;/code&gt;: Target ARM Linux remotely.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linux_x64&lt;/code&gt;: Target x64 Linux remotely.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linux_x86&lt;/code&gt;: Target x86 Linux remotely.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_arm&lt;/code&gt;: Target ARM Windows with the MSVC compiler.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_arm_x64&lt;/code&gt;: Target ARM Windows with the 64-bit MSVC compiler.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_arm64&lt;/code&gt;: Target ARM64 Windows with the MSVC compiler.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_arm64_x64&lt;/code&gt;: Target ARM64 Windows with the 64-bit MSVC compiler.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_x64&lt;/code&gt;: Target x64 Windows with the MSVC compiler.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_x64_x64&lt;/code&gt;: Target x64 Windows with the 64-bit MSVC compiler.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_x86&lt;/code&gt;: Target x86 Windows with the MSVC compiler.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_x86_x64&lt;/code&gt;: Target x86 Windows with the 64-bit MSVC compiler.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/fcab912ab357&quot;&gt;CMake-02:核心概念&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">vcpkg install</summary></entry><entry><title type="html">Using vcpkg and cmake with Visual studio 2019</title><link href="https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/" rel="alternate" type="text/html" title="Using vcpkg and cmake with Visual studio 2019" /><published>2021-09-03T01:00:31+08:00</published><updated>2021-09-03T01:00:31+08:00</updated><id>https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019</id><content type="html" xml:base="https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/">&lt;h2 id=&quot;c-project-package-manager&quot;&gt;C++ project package manager&lt;/h2&gt;
 
 &lt;h3 id=&quot;comparison&quot;&gt;Comparison&lt;/h3&gt;
 
@@ -164,7 +213,19 @@ bootstrap-vcpkg.bat
 &lt;ul&gt;
   &lt;li&gt;add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;cmakeToolchain&quot;: &quot;\path\to\vcpkg\\scripts\\buildsystems\\vcpkg.cmake&quot;&lt;/code&gt; at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CMakeSettings.json&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;or use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-DCMAKE_TOOL_CHAIN=&lt;/code&gt; at command line&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">C++ project package manager</summary></entry><entry><title type="html">ICP Back Propagate fix</title><link href="https://ucas.io/3d/ICP-Back-Propagate-fix/" rel="alternate" type="text/html" title="ICP Back Propagate fix" /><published>2021-08-29T13:52:11+08:00</published><updated>2021-08-29T13:52:11+08:00</updated><id>https://ucas.io/3d/ICP-Back-Propagate-fix</id><content type="html" xml:base="https://ucas.io/3d/ICP-Back-Propagate-fix/">&lt;h2 id=&quot;a-error-at-icp-iterations&quot;&gt;A Error at ICP iterations&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">C++ project package manager</summary></entry><entry><title type="html">ICP 3D With Standard Scalar</title><link href="https://ucas.io/3d/ICP-3D-with-standard-scalar/" rel="alternate" type="text/html" title="ICP 3D With Standard Scalar" /><published>2021-08-30T01:00:31+08:00</published><updated>2021-08-30T01:00:31+08:00</updated><id>https://ucas.io/3d/ICP-3D-with-standard-scalar</id><content type="html" xml:base="https://ucas.io/3d/ICP-3D-with-standard-scalar/">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831005957.png&quot; alt=&quot;20210831005957&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;9 自由度最小化优化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831012329.png&quot; alt=&quot;20210831012329&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;4x4 矩阵改为&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210831012354.png&quot; alt=&quot;20210831012354&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html"></summary></entry><entry><title type="html">ICP Back Propagate fix</title><link href="https://ucas.io/3d/ICP-Back-Propagate-fix/" rel="alternate" type="text/html" title="ICP Back Propagate fix" /><published>2021-08-29T13:52:11+08:00</published><updated>2021-08-29T13:52:11+08:00</updated><id>https://ucas.io/3d/ICP-Back-Propagate-fix</id><content type="html" xml:base="https://ucas.io/3d/ICP-Back-Propagate-fix/">&lt;h2 id=&quot;a-error-at-icp-iterations&quot;&gt;A Error at ICP iterations&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/20146045/5587080&quot;&gt;Iterative Closest Point (ICP) implementation on python - stack&lt;/a&gt;&lt;/li&gt;
@@ -1179,245 +1240,4 @@ $$&lt;/div&gt;
         &lt;span class=&quot;n&quot;&gt;closest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argmin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;target_pair&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pc_model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;closest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pc_gps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scala&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target_pair&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scala&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">script</summary></entry><entry><title type="html">Texture for 9-9 project[3]</title><link href="https://ucas.io/3d/Texture-for-9-9-project-3/" rel="alternate" type="text/html" title="Texture for 9-9 project[3]" /><published>2021-08-20T21:06:00+08:00</published><updated>2021-08-20T21:06:00+08:00</updated><id>https://ucas.io/3d/Texture-for-9-9-project%5B3%5D</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-9-9-project-3/">&lt;h2 id=&quot;change-externals-matrix&quot;&gt;Change Externals matrix&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;相机中心点
-    &lt;ul&gt;
-      &lt;li&gt;9-9/1-3/
-        &lt;ul&gt;
-          &lt;li&gt;$A_{amap}=(120.394685,36.06414)$&lt;/li&gt;
-          &lt;li&gt;$A_{cams}=(120.389564,36.063963)$&lt;/li&gt;
-          &lt;li&gt;$A_{model}=(79.1888,45.546)$meter&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;模型原点
-    &lt;ul&gt;
-      &lt;li&gt;O
-        &lt;ul&gt;
-          &lt;li&gt;$O_{amap}=(120.394637,36.064383)$&lt;/li&gt;
-          &lt;li&gt;$O_{cams}=o_{amap} + (A_{cams} - A_{amap})$&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;kdmath&quot;&gt;$$
-\mathbf{T} = \begin{bmatrix}
-    111320&amp;&amp;\\
-    &amp;7156&amp;\\
-    &amp;&amp;1
-\end{bmatrix}\left(
-\begin{bmatrix}
-    x\\y\\z
-\end{bmatrix} -
-\begin{bmatrix}
-    120.388816\\
-    36.064206\\
-    0
-\end{bmatrix}
-\right)
-$$&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;其中
-    &lt;ul&gt;
-      &lt;li&gt;经纬转换
-        &lt;ul&gt;
-          &lt;li&gt;Formula 1
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/39540339/5587080&quot;&gt;how-to-convert-latitude-or-longitude-to-meters Stackoverflow&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;
-                &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-    \frac{latitude}{degree}&amp;=111320m/\degree\\
-    \frac{longitude}{degree}&amp;=40075km\frac{\cos(lat)}{360}=40075km\frac{\cos(36.064\frac{\pi}{180})}{360}\\
-    &amp;=90013.62031373613m/\degree
-    \end{aligned}
-$$&lt;/div&gt;
-
-                &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;f_lai&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;111320&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;f_lon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40075&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;36.04&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;360&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Formula 2
-            &lt;ul&gt;
-              &lt;li&gt;SSR WGS84&lt;/li&gt;
-              &lt;li&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/GRAVIMETRIC_DATUM_ORIENTATION.SVG/1024px-GRAVIMETRIC_DATUM_ORIENTATION.SVG.png&quot; /&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Geographic_coordinate_system#Length_of_a_degree&quot;&gt;Geographic coordinate system - Wikipedia&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;
-                &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-       \frac{latitude}{degree}&amp;=111132.92-559.82\cos(2lat)+1.175\cos(4lat) - 0.0023\cos(6lat)\\
-        &amp;=110959.719m/\degree\\
-       \frac{longitude}{degree}&amp;=111412.84\cos(lat)-93.5\cos(3lat)+0.118\cos(5lat)\\
-       &amp;=90118.10182968706m/\degree\\
-   \end{aligned}
-$$&lt;/div&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-
-            &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;f_lai&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;111132.92&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;559.82&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.175&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0023&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;f_lon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;111412.84&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;93.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.118&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
-
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;table&gt;
-                  &lt;thead&gt;
-                    &lt;tr&gt;
-                      &lt;th&gt;laititude&lt;/th&gt;
-                      &lt;th&gt;laititude_meter_per_degree&lt;/th&gt;
-                      &lt;th&gt;longitude_meter_per_degree&lt;/th&gt;
-                    &lt;/tr&gt;
-                  &lt;/thead&gt;
-                  &lt;tbody&gt;
-                    &lt;tr&gt;
-                      &lt;td&gt;0$\degree$&lt;/td&gt;
-                      &lt;td&gt;110574.2727&lt;/td&gt;
-                      &lt;td&gt;111319.458&lt;/td&gt;
-                    &lt;/tr&gt;
-                    &lt;tr&gt;
-                      &lt;td&gt;36.04$\degree$&lt;/td&gt;
-                      &lt;td&gt;110959.71900894716&lt;/td&gt;
-                      &lt;td&gt;90118.10182968706&lt;/td&gt;
-                    &lt;/tr&gt;
-                    &lt;tr&gt;
-                      &lt;td&gt;45$\degree$&lt;/td&gt;
-                      &lt;td&gt;111131.745&lt;/td&gt;
-                      &lt;td&gt;78846.80572069259&lt;/td&gt;
-                    &lt;/tr&gt;
-                    &lt;tr&gt;
-                      &lt;td&gt;60$\degree$&lt;/td&gt;
-                      &lt;td&gt;111412.24020000001&lt;/td&gt;
-                      &lt;td&gt;55799.979000000014&lt;/td&gt;
-                    &lt;/tr&gt;
-                    &lt;tr&gt;
-                      &lt;td&gt;90$\degree$&lt;/td&gt;
-                      &lt;td&gt;111693.9173&lt;/td&gt;
-                      &lt;td&gt;0&lt;/td&gt;
-                    &lt;/tr&gt;
-                  &lt;/tbody&gt;
-                &lt;/table&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;id&lt;/th&gt;
-      &lt;th&gt;shape&lt;/th&gt;
-      &lt;th&gt;block&lt;/th&gt;
-      &lt;th&gt;size&lt;/th&gt;
-      &lt;th&gt;parameter&lt;/th&gt;
-      &lt;th&gt;output&lt;/th&gt;
-      &lt;th&gt;❓&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;wrong f ox3902 oy0642&lt;/td&gt;
-      &lt;td&gt;🤨&lt;/td&gt;
-      &lt;td&gt;误差大概80m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;wrong f ox3895&lt;/td&gt;
-      &lt;td&gt;🤨&lt;/td&gt;
-      &lt;td&gt;误差大概160m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;wrong f ox3888&lt;/td&gt;
-      &lt;td&gt;🤨&lt;/td&gt;
-      &lt;td&gt;误差大概10m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;f1 ox3895&lt;/td&gt;
-      &lt;td&gt;🤨&lt;/td&gt;
-      &lt;td&gt;误差大概80m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;f2 ox3895&lt;/td&gt;
-      &lt;td&gt;🤨&lt;/td&gt;
-      &lt;td&gt;误差大概80m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;f2 ox3888 oy0640&lt;/td&gt;
-      &lt;td&gt;🤨&lt;/td&gt;
-      &lt;td&gt;y 方向误差30米&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;f2 ox3888 oy0643&lt;/td&gt;
-      &lt;td&gt;🥵&lt;/td&gt;
-      &lt;td&gt;y 方向误差150m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;original&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-      &lt;td&gt;f2 ox3888 oy0637&lt;/td&gt;
-      &lt;td&gt;🥵&lt;/td&gt;
-      &lt;td&gt;y 方向误差看不出来&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;wrong f ox3888(x+3,y+20)&lt;/li&gt;
-  &lt;li&gt;$(111320,71546)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img6b7c545c0dfcde72831729be9319e32.png&quot; alt=&quot;6b7c545c0dfcde72831729be9319e32&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;f1 ox3895(x+90,y+10)&lt;/li&gt;
-  &lt;li&gt;$(111320,90013.62031373613)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210821145746.png&quot; alt=&quot;20210821145746&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;f2 ox3895(x+80-0.18,y+6)&lt;/li&gt;
-  &lt;li&gt;系数变更对精度影响不是很大，f2比f1在80米尺度上精确0.18米&lt;/li&gt;
-  &lt;li&gt;$(110959.71900894716,90118.10182968706)$&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Change Externals matrix</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">script</summary></entry></feed>

@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Try to use OpenMVS under ubuntu / Notes B</title>
-<meta name="description" content="Run under jupyter-lab">
+<!-- begin _includes/seo.html --><title>Cmake Texture project / Notes B</title>
+<meta name="description" content="vcpkg install">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Try to use OpenMVS under ubuntu">
-<meta property="og:url" content="https://ucas.io/coursera/Try-to-use-OpenMVS-under-ubuntu/">
+<meta property="og:title" content="Cmake Texture project">
+<meta property="og:url" content="https://ucas.io/tutorial/Cmake-Texture-project/">
 
 
-  <meta property="og:description" content="Run under jupyter-lab">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgbandicam-2021-08-10-20-27-00-953.gif">
+  <meta property="og:description" content="vcpkg install">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-10T22:37:02+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210903234604.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-09-04T14:11:16+08:00">
 
-<link rel="canonical" href="https://ucas.io/coursera/Try-to-use-OpenMVS-under-ubuntu/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/tutorial/Cmake-Texture-project/">
 
 
 
@@ -205,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/coursera" itemprop="item"><span itemprop="name">Coursera</span></a>
+          <a href="/categories/tutorial" itemprop="item"><span itemprop="name">Tutorial</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">Try to use OpenMVS under ubuntu</li>
+        <li class="current">Cmake Texture project</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Try to use OpenMVS under ubuntu">
-    <meta itemprop="description" content="Run under jupyter-lab">
-    <meta itemprop="datePublished" content="2021-08-10T22:37:02+08:00">
+    <meta itemprop="headline" content="Cmake Texture project">
+    <meta itemprop="description" content="vcpkg install">
+    <meta itemprop="datePublished" content="2021-09-04T14:11:16+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Try to use OpenMVS under ubuntu
+          <h1 id="page-title" class="page__title" itemprop="headline">Cmake Texture project
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-10T22:37:02+08:00">August 10, 2021</time>
+        <time datetime="2021-09-04T14:11:16+08:00">September 4, 2021</time>
       </span>
     
 
@@ -378,90 +378,73 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#run-under-jupyter-lab">Run under jupyter-lab</a></li><li><a href="#opensfm">OpenSfM</a><ul><li><a href="#feature_type">feature_type</a></li><li><a href="#reference">Reference</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#vcpkg-install">vcpkg install</a></li><li><a href="#camke-generator">Camke generator</a></li><li><a href="#warning">Warning</a></li><li><a href="#inheritenvironments">inheritEnvironments</a></li><li><a href="#reference">Reference</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="run-under-jupyter-lab">Run under jupyter-lab</h2>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1628610280(1).jpg" alt="1628610280(1)" /></p>
+        <h2 id="vcpkg-install">vcpkg install</h2>
 
 <ul>
-  <li>Open it at <a href="http://ucas/jupyter/lab/tree/3d/colmap_script.ipynb">ucas</a></li>
+  <li>set proxy</li>
 </ul>
 
-<h2 id="opensfm">OpenSfM</h2>
+<pre><code class="language-power">$env:HTTP_PROXY="localhost:4780"
+$env:HTTPS_PROXY="localhost:4780"
+</code></pre>
 
-<h3 id="feature_type">feature_type</h3>
+<h2 id="camke-generator">Camke generator</h2>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210906214320.png" alt="20210906214320" /></p>
+
+<h2 id="warning">Warning</h2>
 
 <ul>
-  <li>KAZE[EECV]風
+  <li>CMP0074
     <ul>
-      <li><a href="https://github.com/pablofdezalc/kaze">github</a></li>
-      <li><a href="http://www.robesafe.com/personal/pablo.alcantarilla/kaze.html">KAZE Features. Pablo F. Alcantarilla, Adrien Bartoli and Andrew J. Davison. In European Conference on Computer Vision (ECCV), Fiorenze, Italy, October 2012. bibtex</a></li>
-      <li>Perona-Malik方程</li>
-      <li>非线性尺度空间</li>
-    </ul>
-  </li>
-  <li>AKAZE[Accelerated-KAZE KAZE的加速版]</li>
-  <li>SIFT
-    <ul>
-      <li>DoG[Difference of Gaussian]</li>
-    </ul>
-  </li>
-  <li>SURF[Speeded up robust features]
-    <ul>
-      <li>Use Box-Filter[盒子滤波器] instead of DoG</li>
-      <li>Change the size of Box-Filter, to build scala space.</li>
-      <li>方向定位，haar小波</li>
-      <li>Integral image[积分图]
+      <li>
+        <p>log</p>
+
+        <pre><code class="language-log">Policy CMP0074 is not set: find_package uses &lt;PackageName&gt;_ROOT variables.
+Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+command to set the policy and suppress this warning.
+
+Environment variable Eigen3_ROOT is set to:
+...
+For compatibility, CMake is ignoring the variable.
+</code></pre>
+      </li>
+      <li><a href="https://cmake.org/cmake/help/latest/policy/CMP0074.html">CMP0074 explain - cmake.org</a></li>
+      <li>Fix
         <ul>
-          <li>递归计算</li>
-          <li>
-            <div class="kdmath">$$
-I(x,y)=i(x,y)+I(x-1,y)+I(x,y-1)+I(x-1,y-1)
-$$</div>
-          </li>
-          <li>算好之后达到快速计算任意图形区域积分的目的</li>
-          <li><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Prm_VJ_fig3_computeRectangleWithAlpha.png" width="40%" /></li>
-          <li>
-            <div class="kdmath">$$
-I_{\square_{ABCD}} = I(C)+I(A)-I(B)-I(D)
-$$</div>
-          </li>
+          <li>add <code class="language-plaintext highlighter-rouge">cmake_policy(SET CMP0074 NEW)</code> or <code class="language-plaintext highlighter-rouge">cmake_policy(SET CMP0074 OLD)</code> before <code class="language-plaintext highlighter-rouge">project</code></li>
         </ul>
       </li>
-      <li>Hessian矩阵</li>
     </ul>
   </li>
-  <li>HAHOG</li>
-  <li>ORB</li>
 </ul>
 
-<h3 id="reference">Reference</h3>
+<h2 id="inheritenvironments">inheritEnvironments</h2>
 
 <ul>
-  <li>SURF is faster than SIFT?
-    <ul>
-      <li><a href="https://stackoverflow.com/a/27398168/5587080">stackoverflow</a></li>
-    </ul>
-  </li>
-  <li>The Difference between of SIFT and SURF
-    <ul>
-      <li><a href="https://www.cnblogs.com/gfgwxw/p/9415218.html#">【CV学习5】SURF算法详解 - 苟富贵</a></li>
-    </ul>
-  </li>
-  <li>KAZE
-    <ul>
-      <li><a href="https://www.shuzhiduo.com/A/RnJWYE1Bdq/">一点一滴完全突破KAZE特征检测算法，从各向异性扩散滤波开始(1) - 术之多</a></li>
-      <li><a href="https://zhuanlan.zhihu.com/p/304199431">Perona-Malik方程（各向同性非线性扩散实现图像滤波） - 查讯纤的文章 - 知乎</a></li>
-      <li><a href="https://blog.csdn.net/bluecol/article/details/46690985">各项异性扩散（Anisotropic diffusion）</a></li>
-      <li><a href="https://zh.wikipedia.org/wiki/%E9%9D%9E%E7%AD%89%E5%90%91%E6%80%A7%E6%93%B4%E6%95%A3">非等向性擴散 - Wikipedia</a></li>
-    </ul>
-  </li>
+  <li><code class="language-plaintext highlighter-rouge">linux_arm</code>: Target ARM Linux remotely.</li>
+  <li><code class="language-plaintext highlighter-rouge">linux_x64</code>: Target x64 Linux remotely.</li>
+  <li><code class="language-plaintext highlighter-rouge">linux_x86</code>: Target x86 Linux remotely.</li>
+  <li><code class="language-plaintext highlighter-rouge">msvc_arm</code>: Target ARM Windows with the MSVC compiler.</li>
+  <li><code class="language-plaintext highlighter-rouge">msvc_arm_x64</code>: Target ARM Windows with the 64-bit MSVC compiler.</li>
+  <li><code class="language-plaintext highlighter-rouge">msvc_arm64</code>: Target ARM64 Windows with the MSVC compiler.</li>
+  <li><code class="language-plaintext highlighter-rouge">msvc_arm64_x64</code>: Target ARM64 Windows with the 64-bit MSVC compiler.</li>
+  <li><code class="language-plaintext highlighter-rouge">msvc_x64</code>: Target x64 Windows with the MSVC compiler.</li>
+  <li><code class="language-plaintext highlighter-rouge">msvc_x64_x64</code>: Target x64 Windows with the 64-bit MSVC compiler.</li>
+  <li><code class="language-plaintext highlighter-rouge">msvc_x86</code>: Target x86 Windows with the MSVC compiler.</li>
+  <li><code class="language-plaintext highlighter-rouge">msvc_x86_x64</code>: Target x86 Windows with the 64-bit MSVC compiler.</li>
 </ul>
 
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li><a href="https://www.jianshu.com/p/fcab912ab357">CMake-02:核心概念</a></li>
+</ul>
 
         
       </section>
@@ -480,7 +463,7 @@ $$</div>
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/coursera" class="page__taxonomy-item" rel="tag">coursera</a>
+      <a href="/categories/tutorial" class="page__taxonomy-item" rel="tag">tutorial</a>
     
     </span>
   </p>
@@ -488,7 +471,7 @@ $$</div>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-10T22:37:02+08:00">August 10, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-04T14:11:16+08:00">September 4, 2021</time></p>
 
 
       </footer>
@@ -496,23 +479,22 @@ $$</div>
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Try+to+use+OpenMVS+under+ubuntu%20https%3A%2F%2Fucas.io%2Fcoursera%2FTry-to-use-OpenMVS-under-ubuntu%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Cmake+Texture+project%20https%3A%2F%2Fucas.io%2Ftutorial%2FCmake-Texture-project%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fcoursera%2FTry-to-use-OpenMVS-under-ubuntu%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Ftutorial%2FCmake-Texture-project%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fcoursera%2FTry-to-use-OpenMVS-under-ubuntu%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Ftutorial%2FCmake-Texture-project%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/coursera/Robotics-Motion-Planning-week1-week2/" class="pagination--pager" title="Robotics Motion Planning Week 1 and 2
+      <a href="/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/" class="pagination--pager" title="Using vcpkg and cmake with Visual studio 2019
 ">Previous</a>
     
     
-      <a href="/coursera/Robotics-Motion-Planning-week3-and-week4/" class="pagination--pager" title="Robotics Motion Planning week3 and week4
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -526,57 +508,6 @@ $$</div>
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210903234604.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/tutorial/Cmake-Texture-project/" rel="permalink">Cmake Texture project
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-09-04T14:11:16+08:00">September 4, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">vcpkg install
-</p>
-  </article>
-</div>
-
         
           
 
@@ -726,6 +657,57 @@ $$</div>
 
 
     <p class="archive__item-excerpt" itemprop="description">A Error at ICP iterations
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210829022917.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Matplotlib-animation-bliting/" rel="permalink">Matplotlib animation bliting
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-28T00:42:17+08:00">August 28, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">prerequisite
 </p>
   </article>
 </div>

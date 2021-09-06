@@ -304,4 +304,10 @@ var store = [{
         "tags": [],
         "url": "/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210903234604.png"
+      },{
+        "title": "Cmake Texture project",
+        "excerpt":"vcpkg install set proxy $env:HTTP_PROXY=\"localhost:4780\" $env:HTTPS_PROXY=\"localhost:4780\" Camke generator Warning CMP0074 log Policy CMP0074 is not set: find_package uses &lt;PackageName&gt;_ROOT variables. Run \"cmake --help-policy CMP0074\" for policy details. Use the cmake_policy command to set the policy and suppress this warning. Environment variable Eigen3_ROOT is set to: ... For compatibility, CMake is...","categories": ["tutorial"],
+        "tags": [],
+        "url": "/tutorial/Cmake-Texture-project/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210903234604.png"
       }]
