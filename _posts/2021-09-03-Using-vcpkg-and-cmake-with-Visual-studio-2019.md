@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Using vcpkg and cmake with Visual studio 2019"
-date:   "2021-8-30 01:00:31 +0800"
+date:   "2021-09-03 01:00:31 +0800"
 categories: tutorial
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210903234604.png
