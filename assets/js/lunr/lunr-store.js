@@ -310,4 +310,10 @@ var store = [{
         "tags": [],
         "url": "/tutorial/Cmake-Texture-project/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210903234604.png"
+      },{
+        "title": "Texture for original model And Cmake on OpenMVS",
+        "excerpt":"Texture at original mesh name size comment vertices faces mesh-original 2.1G Original Block Merge     mesh-original-building 2.1G Building only     mesh-original-plant 429M Plant only     mesh-original-reduce-50p 1.0G maya reduce 50%     mesh-original-reduce-50p-50p 529M maya reduce 25%     mesh-original-reduce-50p-50p-50p 265M maya reduce 12.5% 694001 1361715 case1...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Texture-For-Original-Model/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221533.png"
       }]
