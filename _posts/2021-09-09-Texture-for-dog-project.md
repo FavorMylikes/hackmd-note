@@ -98,3 +98,23 @@ header:
 ## Mapple Remesh
 
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210909002430.png" alt="20210909002430"/>
+
+## Make Builder under linux
+
+- Ninja vs Makefile
+- [make-vs-ninja-performance-comparison](https://hamelot.io/programming/make-vs-ninja-performance-comparison/)
+
+## Install Nvidia dirver
+
+- [ubuntu-16-04-gpu-setup-for-pytorch-with-conda](https://medium.com/momo%E7%9A%84%E6%A9%9F%E5%99%A8%E4%BA%BA%E7%95%99%E5%AD%B8%E5%A4%A2/ubuntu-16-04-gpu-setup-for-pytorch-with-conda-d308238b4dc5)
+  - choose
+    - [Nvidia driver version with cuda version](https://docs.nvidia.com/deploy/cuda-compatibility/index.html#deployment-consideration-forward)
+  - `apt install nvidia-driver-450`
+  - `conda install cudatoolkit` > 11.2.2
+- set proxy for conda
+
+```conda
+proxy_servers:
+    http: http://user:pass@corp.com:8080
+    https: https://user:pass@corp.com:8080
+```
