@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Texture for dog project"
-date:   "2021-09-09 16:28:42 +0800"
+date:   "2021-09-08 16:28:42 +0800"
 categories: 3d
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png
@@ -103,6 +103,7 @@ header:
 
 - Ninja vs Makefile
 - [make-vs-ninja-performance-comparison](https://hamelot.io/programming/make-vs-ninja-performance-comparison/)
+- [使用 Ninja 代替 make](https://www.jianshu.com/p/d118615c1943)
 
 ## Install Nvidia dirver
 
