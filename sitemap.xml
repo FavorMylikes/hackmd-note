@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://ucas.io/env/system/test/</loc>
+<lastmod>2021-06-19T10:32:00+08:00</lastmod>
+</url>
+<url>
 <loc>https://ucas.io/env/system/First-Day-install-ubuntu/</loc>
 <lastmod>2021-07-19T10:32:00+08:00</lastmod>
 </url>
@@ -213,6 +217,10 @@
 <lastmod>2021-09-07T22:21:17+08:00</lastmod>
 </url>
 <url>
+<loc>https://ucas.io/3d/Texture-for-dog-project/</loc>
+<lastmod>2021-09-08T16:28:42+08:00</lastmod>
+</url>
+<url>
 <loc>https://ucas.io/README/</loc>
 </url>
 <url>
@@ -253,6 +261,9 @@
 </url>
 <url>
 <loc>https://ucas.io/dates/2021/09/</loc>
+</url>
+<url>
+<loc>https://ucas.io/dates/2021/09/08/</loc>
 </url>
 <url>
 <loc>https://ucas.io/dates/2021/09/07/</loc>
@@ -388,5 +399,11 @@
 </url>
 <url>
 <loc>https://ucas.io/dates/2021/07/19/</loc>
+</url>
+<url>
+<loc>https://ucas.io/dates/2021/06/</loc>
+</url>
+<url>
+<loc>https://ucas.io/dates/2021/06/19/</loc>
 </url>
 </urlset>
