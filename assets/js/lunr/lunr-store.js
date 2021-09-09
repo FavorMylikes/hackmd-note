@@ -322,4 +322,10 @@ var store = [{
         "tags": [],
         "url": "/3d/Texture-for-dog-project/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
+      },{
+        "title": "Texture Paper Reading",
+        "excerpt":"Let There Be Color! - Large-Scale Texturing of 3D Reconstructions In this paper we therefore present the first unified texturing approach that handles large, realistic datasets reconstructed from images with a structure-from-motion plus multi-view stereo pipeline. millions of triangles within less than two hours. Related view selection blend multiple views...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Texture-Paper-Reading/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
       }]
