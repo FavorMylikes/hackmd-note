@@ -1,4 +1,238 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-10T01:54:57+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Texture for dog project</title><link href="https://ucas.io/3d/Texture-for-dog-project/" rel="alternate" type="text/html" title="Texture for dog project" /><published>2021-09-08T16:28:42+08:00</published><updated>2021-09-08T16:28:42+08:00</updated><id>https://ucas.io/3d/Texture-for-dog-project</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-dog-project/">&lt;h2 id=&quot;original-texture&quot;&gt;Original Texture&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-10T15:44:24+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Possion Image Edit</title><link href="https://ucas.io/3d/Possion-Image-Edit/" rel="alternate" type="text/html" title="Possion Image Edit" /><published>2021-09-10T15:43:34+08:00</published><updated>2021-09-10T15:43:34+08:00</updated><id>https://ucas.io/3d/Possion-Image-Edit</id><content type="html" xml:base="https://ucas.io/3d/Possion-Image-Edit/">&lt;h2 id=&quot;possion-image-edit&quot;&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/1201775.882269&quot;&gt;Possion Image Edit&lt;/a&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/sig_graph-2003-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-2953-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://graphics.cs.cmu.edu/courses/15-463/2017_fall/lectures/lecture7.pptx&quot;&gt;PPT&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.cs.jhu.edu/~misha/Fall07/Papers/Perez03.pdf&quot;&gt;Paper.pdf - Microsoft Research UK&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;definitions&quot;&gt;Definitions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910131356.png&quot; alt=&quot;20210910131356&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;$g$: 原始图像，左图企鹅&lt;/li&gt;
+      &lt;li&gt;$f$: 插值函数&lt;/li&gt;
+      &lt;li&gt;$f^*$: 目标图像&lt;/li&gt;
+      &lt;li&gt;$\Omega$: 目标域&lt;/li&gt;
+      &lt;li&gt;$\partial\Omega$: 目标域边缘，边界&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;basic-idea&quot;&gt;Basic idea&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;期望的结果
+    &lt;ol&gt;
+      &lt;li&gt;填补内容要尽可以平滑&lt;/li&gt;
+      &lt;li&gt;填补内容的边界像素值和现有的$S$一致，即要无缝过度&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;变分方程
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;$\underset{f}{\min}\iint_\Omega\vert\nabla f\vert^2$ with $f&lt;/td&gt;
+              &lt;td&gt;_{\partial\Omega}=f^*&lt;/td&gt;
+              &lt;td&gt;_{\partial\Omega}$&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;E-L Equation
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;$\Delta f=0$ over $\Omega$ with $f&lt;/td&gt;
+              &lt;td&gt;_{\partial\Omega}=f^*&lt;/td&gt;
+              &lt;td&gt;_{\partial\Omega}$&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;ul&gt;
+          &lt;li&gt;$\Delta$: 二阶微分， 散度divergence&lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;$f&lt;/td&gt;
+                  &lt;td&gt;_{\partial\Omega}=f^*&lt;/td&gt;
+                  &lt;td&gt;_{\partial\Omega}$: Dirichlet  boundary: 给出边界处函数在边界处的实际值.&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+            &lt;ul&gt;
+              &lt;li&gt;Neumann boundary: 给出函数在边界处的二阶导数值&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;guidance-vector-field引导向量场&quot;&gt;guidance vector field[引导向量场]&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;期望的结果
+    &lt;ol&gt;
+      &lt;li&gt;填补内容的梯度要尽可以与$\mathbf{v}$接近&lt;/li&gt;
+      &lt;li&gt;填补内容的边界像素值和现有的$S$一致，即要无缝过度&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;变分方程
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;$\underset{f}{\min}\iint_\Omega\vert\nabla f-\mathbf{v}\vert^2$ with $f&lt;/td&gt;
+              &lt;td&gt;_{\partial\Omega}=f^*&lt;/td&gt;
+              &lt;td&gt;_{\partial\Omega}$&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;ul&gt;
+          &lt;li&gt;$\mathbf{v}=\nabla g$&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;E-L Equation
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;$\Delta f=div(\mathbf{v})$ over $\Omega$ with $f&lt;/td&gt;
+              &lt;td&gt;_{\partial\Omega}=f^*&lt;/td&gt;
+              &lt;td&gt;_{\partial\Omega}$&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;ul&gt;
+          &lt;li&gt;$\Delta f=\frac{\partial^2f}{\partial x^2} + \frac{\partial^2f}{\partial y^2}$: Laplacian&lt;/li&gt;
+          &lt;li&gt;$div(\mathbf{v}) = \frac{\partial u}{\partial x} + \frac{\partial u}{\partial y}=\frac{\partial^2g}{\partial x^2}+\frac{\partial^2g}{\partial y^2} = \Delta g$: Divergence[散度]&lt;/li&gt;
+          &lt;li&gt;$\mathbf{v}=\nabla g$: Gradient[梯度]&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;discrete-algorithm&quot;&gt;discrete algorithm&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910144107.png&quot; alt=&quot;20210910144107&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910144310.png&quot; alt=&quot;20210910144310&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;算法变种&quot;&gt;算法变种&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Seamless Cloning[无缝克隆]， 泊松编辑
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910152017.png&quot; alt=&quot;20210910152017&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mixing Gradients Seamless Cloning
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;for all $x\in \Omega$, $\mathbf{v(x)}=\begin{cases}\nabla f^*(\mathbf{x})&amp;amp;&lt;/td&gt;
+              &lt;td&gt;\nabla f^*(\mathbf{x})&lt;/td&gt;
+              &lt;td&gt;&amp;gt;&lt;/td&gt;
+              &lt;td&gt;\nabla g(\mathbf{x})&lt;/td&gt;
+              &lt;td&gt;\\nabla g(\mathbf{x})&amp;amp;otherwise\end{cases}$&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Seamless Cloning
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910152937.png&quot; alt=&quot;20210910152937&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Mixing Gradients Seamless Cloning
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910152450.png&quot; alt=&quot;20210910152450&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Texture flattening
+        &lt;ul&gt;
+          &lt;li&gt;for all $x\in \Omega$,$\mathbf{v(x)}=M(\mathbf{x})\nabla f^*(\mathbf{x})$&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grad(abs(grad)&amp;lt;0.08)=0;&lt;/code&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910153207.png&quot; alt=&quot;20210910153207&quot; /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grad(abs(grad)&amp;lt;0.02)=0;&lt;/code&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910153236.png&quot; alt=&quot;20210910153236&quot; /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Local illumination changes
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/566570.566573&quot;&gt;Gradient Domain High Dynamic Range Compression&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/sig_graph-2002-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-1753-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910153754.png&quot; alt=&quot;20210910153754&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Local color changes
+        &lt;ul&gt;
+          &lt;li&gt;Using three channel&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910153824.png&quot; alt=&quot;20210910153824&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Seamless tiling
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910153904.png&quot; alt=&quot;20210910153904&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;additional-reading&quot;&gt;Additional reading&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://link.springer.com/chapter/10.1007/11744085_5&quot;&gt;Covariant Derivatives and Vision&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/eccv-2006-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-52-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/698633/&quot;&gt;Image editing in the contour domain&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/TPAMI-2006-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-174-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://grail.cs.washington.edu/projects/gradientshop/demos/gs_paper_TOG_2009.pdf&quot;&gt;GradientShop: A Gradient-Domain Optimization Framework for Image and Video Filtering&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ToG-2010-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-255-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_43194305/article/details/104928378&quot;&gt;泊松图像编辑(Possion Image Edit)原理、实现与应用 - CSDN&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/58867397&quot;&gt;泊松图像编辑 - Wang Hawk的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Possion Image Edit</summary></entry><entry><title type="html">Texture for dog project</title><link href="https://ucas.io/3d/Texture-for-dog-project/" rel="alternate" type="text/html" title="Texture for dog project" /><published>2021-09-08T16:28:42+08:00</published><updated>2021-09-08T16:28:42+08:00</updated><id>https://ucas.io/3d/Texture-for-dog-project</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-dog-project/">&lt;h2 id=&quot;original-texture&quot;&gt;Original Texture&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png&quot; alt=&quot;20210908163150&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
 
@@ -301,12 +535,12 @@ $$&lt;/div&gt;
               &lt;li&gt;graph cuts and alpha expansion[3]&lt;/li&gt;
               &lt;li&gt;replace[9] the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Data term&lt;/code&gt; to
                 &lt;ul&gt;
-                  &lt;li&gt;$E_{data} = -\int_{\phi(F_i,l_i)}\Vert\triangledown(I_{l_i}(p))\Vert_2dp$💩
+                  &lt;li&gt;$E_{data} = -\int_{\phi(F_i,l_i)}\Vert\nabla(I_{l_i}(p))\Vert_2dp$💩
                     &lt;ul&gt;
                       &lt;li&gt;$F_i$: face&lt;/li&gt;
                       &lt;li&gt;$\phi(F_i,l_i)$: $F_i$’s projection&lt;/li&gt;
                       &lt;li&gt;$I_{l_i}$: Sobel operator&lt;/li&gt;
-                      &lt;li&gt;$\Vert\triangledown(I_{l_i})\Vert_2$: gradient magnitude&lt;/li&gt;
+                      &lt;li&gt;$\Vert\nabla(I_{l_i})\Vert_2$: gradient magnitude&lt;/li&gt;
                       &lt;li&gt;大概意思就是，面投影到图片，计算投影区的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sobel operator&lt;/code&gt;, 如果投影区太小没有像素，就&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gradient magnitude at the projection's centroid and multiply it with the projection area.&lt;/code&gt;, 最后把它们加一块&lt;/li&gt;
                     &lt;/ul&gt;
                   &lt;/li&gt;
@@ -409,7 +643,7 @@ $$&lt;/div&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Let There Be Color! - Large-Scale Texturing of 3D Reconstructions In this paper we therefore present the first unified texturing approach that handles large, realistic datasets reconstructed from images with a structure-from-motion plus multi-view stereo pipeline. millions of triangles within less than two hours. Related view selection blend multiple views per face[5,13] one view per face[9,10,15,23] one view per texel[19] one view per face but blend close to texture patch borders[2,6] single view per face based on a pairwise Markov random field[15] smoothness term models view blend weight blending[5] masks indicating angle to weight suggest the use of vertex colors in combination with mesh subdivision blending in frequency space[2,6] blend pixels based on angle and proximity to the model[13] view-dependent texturing— Lumigraph[4] Color Adjustment local seam's mean[23] heat diffusion global globally optimal luminance correction terms[15] After adjustment luminance differences at seams should be small and the derivative of adjustments within a texture patch should be small Assumptions and Base Method Pairwise Markov random field energy formulation[15] $$ \begin{aligned} E(l)&amp;=\sum_{F_i\in Faces}E_{data}(F_i, l_i)+\sum_{F_i\in Faces}E_{smooth}(F_i, F_j, l_i, l_j)&amp;(1) \end{aligned} $$ $l$: labeling of views $F$: mesh face $E_{data}$: good views for texturing a face base method: the angle between viewing direction and project a face into a view and use the projection’s size as data term[2] Lumigraph’s view blending weights face normal[4] 💩 the gradient magnitude of the image integrated over the face’s projection[9] to solve close-up the faces closest to the camera that not be in focus and lead to a blurry texture. $x,y \pm64pixel$ $E_{smooth}$: minimizes seam (i.e., edges between faces textured with differentimages) visibility. $E(l)$minimized with graph cuts and alpha expansion[3] This Paper We found, that computation of the seam error integrals is a computational bottleneck and cannot be precomputed due to the prohibitively large number of combinations. Furthermore, it favors distant or low-resolution views since a blurry texture produces smaller seam errors, an issue that does not occur in their datasets. Add a additive correction $g$ $$ \begin{aligned} &amp;\underset{\mathbf{g}}{\argmin}\sum_v \big(f_{v_{left}} + g_{v_{left}} - (f_{v_{right}}+g_{v_{right}})\big)^2 + \frac{1}{\lambda}\sum_{v_i,v_j}(g_{v_i}-g_{v_j})^2&amp;(2) \end{aligned} $$ $v$: vexel $v_{left}$: vexel at left of seam $v_{right}$: vexel at left of seam $v_i,v_j$: vexel at same seam and adjacent $f_{v*}$: color of vexel $g$: additive correction Large-Scale Texturing Approach Preprocessing check face visibility by ColNet[11] precompute the data terms for Equation $(1)$ View Selection graph cuts and alpha expansion[3] replace[9] the Data term to $E_{data} = -\int_{\phi(F_i,l_i)}\Vert\triangledown(I_{l_i}(p))\Vert_2dp$💩 $F_i$: face $\phi(F_i,l_i)$: $F_i$’s projection $I_{l_i}$: Sobel operator $\Vert\triangledown(I_{l_i})\Vert_2$: gradient magnitude 大概意思就是，面投影到图片，计算投影区的Sobel operator, 如果投影区太小没有像素，就gradient magnitude at the projection's centroid and multiply it with the projection area., 最后把它们加一块 有行人的图梯度容易很大 introduce an additional step to ensure photo-consistency of the texture. assuming the majority of views see the correct color. A minority may see wrong colors reject inconsistent views mean[19] median[13] mean-shift algorithm[this] Compute the face projection’s mean color $c_i$ for each view $i$ in which the face is visible. Declare all views seeing the face as inliers. Compute mean $\mu$ and covariance matrix $\Sigma$ of all inliers’ mean color $c_i$. Evaluate a multi-variate Gaussian function $exp(-\frac{1}{2}(c_i-\mu)^T\Sigma^{-1}(c_i-\mu))$ each view in which the face is visible. Clear the inlier list and insert all views whose function value is above a threshold $6E-3$ as default Repeat 3.-5. for 10 iterations or until all entries of $\Sigma$ drop below $10E-5$, the inversion of $\Sigma$ becomes unstable, or the number of inliers drops below 4 replace the Smoothness Term based on the Potts model $E_{smooth} = [l_i\neq l_j]$💩 $[\cdot]$: is the Iverson bracket, 满足条件就是1，不满足就是0. Color Adjustment local adjustment with Poisson editing[16] why? global adjustment[15] problem the vertex v’s projection into the two images adjacent to the seam. If there are even small registration errors (which there always are), both projections do not correspond to exactly the same spot on the real object. Also, if both images have a different scale the looked up pixels span a different footprint in 3D. This may be irrelevant in controlled lab datasets, but in realistic multi-view stereo datasets the lookups from effectively different points or footprints mislead the global adjustment and produce artifacts. Color Lookup Support Region $v_1$点的颜色等于两条边的颜色*距离权重 Equation 2 matrix form $$ \mathbf{\Vert Ag-f\Vert_2^2+\Vert\Gamma g\Vert_2^2=g^T(A^TA+\Gamma^T\Gamma)g-f^TAg+f^Tf} $$ $\mathbf{f}$: vector, stacked $f_{v_{left}} - f_{v_{right}}$ $\mathbf{A}$: sparse matrix with $\pm 1$ $\mathbf{\Gamma}$: sparse matrix with $\pm 1$ minimize it with conjugate gradient when $\frac{\Vert r\Vert_2}{\Vert\mathbf{A^Tf}\Vert_2}&amp;lt;10^{-5}$ $r$: the residual Poisson Editing TODO</summary></entry><entry><title type="html">Texture for original model And Cmake on OpenMVS</title><link href="https://ucas.io/3d/Texture-For-Original-Model/" rel="alternate" type="text/html" title="Texture for original model And Cmake on OpenMVS" /><published>2021-09-07T22:21:17+08:00</published><updated>2021-09-07T22:21:17+08:00</updated><id>https://ucas.io/3d/Texture-For-Original-Model</id><content type="html" xml:base="https://ucas.io/3d/Texture-For-Original-Model/">&lt;h2 id=&quot;texture-at-original-mesh&quot;&gt;Texture at original mesh&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Let There Be Color! - Large-Scale Texturing of 3D Reconstructions In this paper we therefore present the first unified texturing approach that handles large, realistic datasets reconstructed from images with a structure-from-motion plus multi-view stereo pipeline. millions of triangles within less than two hours. Related view selection blend multiple views per face[5,13] one view per face[9,10,15,23] one view per texel[19] one view per face but blend close to texture patch borders[2,6] single view per face based on a pairwise Markov random field[15] smoothness term models view blend weight blending[5] masks indicating angle to weight suggest the use of vertex colors in combination with mesh subdivision blending in frequency space[2,6] blend pixels based on angle and proximity to the model[13] view-dependent texturing— Lumigraph[4] Color Adjustment local seam's mean[23] heat diffusion global globally optimal luminance correction terms[15] After adjustment luminance differences at seams should be small and the derivative of adjustments within a texture patch should be small Assumptions and Base Method Pairwise Markov random field energy formulation[15] $$ \begin{aligned} E(l)&amp;=\sum_{F_i\in Faces}E_{data}(F_i, l_i)+\sum_{F_i\in Faces}E_{smooth}(F_i, F_j, l_i, l_j)&amp;(1) \end{aligned} $$ $l$: labeling of views $F$: mesh face $E_{data}$: good views for texturing a face base method: the angle between viewing direction and project a face into a view and use the projection’s size as data term[2] Lumigraph’s view blending weights face normal[4] 💩 the gradient magnitude of the image integrated over the face’s projection[9] to solve close-up the faces closest to the camera that not be in focus and lead to a blurry texture. $x,y \pm64pixel$ $E_{smooth}$: minimizes seam (i.e., edges between faces textured with differentimages) visibility. $E(l)$minimized with graph cuts and alpha expansion[3] This Paper We found, that computation of the seam error integrals is a computational bottleneck and cannot be precomputed due to the prohibitively large number of combinations. Furthermore, it favors distant or low-resolution views since a blurry texture produces smaller seam errors, an issue that does not occur in their datasets. Add a additive correction $g$ $$ \begin{aligned} &amp;\underset{\mathbf{g}}{\argmin}\sum_v \big(f_{v_{left}} + g_{v_{left}} - (f_{v_{right}}+g_{v_{right}})\big)^2 + \frac{1}{\lambda}\sum_{v_i,v_j}(g_{v_i}-g_{v_j})^2&amp;(2) \end{aligned} $$ $v$: vexel $v_{left}$: vexel at left of seam $v_{right}$: vexel at left of seam $v_i,v_j$: vexel at same seam and adjacent $f_{v*}$: color of vexel $g$: additive correction Large-Scale Texturing Approach Preprocessing check face visibility by ColNet[11] precompute the data terms for Equation $(1)$ View Selection graph cuts and alpha expansion[3] replace[9] the Data term to $E_{data} = -\int_{\phi(F_i,l_i)}\Vert\nabla(I_{l_i}(p))\Vert_2dp$💩 $F_i$: face $\phi(F_i,l_i)$: $F_i$’s projection $I_{l_i}$: Sobel operator $\Vert\nabla(I_{l_i})\Vert_2$: gradient magnitude 大概意思就是，面投影到图片，计算投影区的Sobel operator, 如果投影区太小没有像素，就gradient magnitude at the projection's centroid and multiply it with the projection area., 最后把它们加一块 有行人的图梯度容易很大 introduce an additional step to ensure photo-consistency of the texture. assuming the majority of views see the correct color. A minority may see wrong colors reject inconsistent views mean[19] median[13] mean-shift algorithm[this] Compute the face projection’s mean color $c_i$ for each view $i$ in which the face is visible. Declare all views seeing the face as inliers. Compute mean $\mu$ and covariance matrix $\Sigma$ of all inliers’ mean color $c_i$. Evaluate a multi-variate Gaussian function $exp(-\frac{1}{2}(c_i-\mu)^T\Sigma^{-1}(c_i-\mu))$ each view in which the face is visible. Clear the inlier list and insert all views whose function value is above a threshold $6E-3$ as default Repeat 3.-5. for 10 iterations or until all entries of $\Sigma$ drop below $10E-5$, the inversion of $\Sigma$ becomes unstable, or the number of inliers drops below 4 replace the Smoothness Term based on the Potts model $E_{smooth} = [l_i\neq l_j]$💩 $[\cdot]$: is the Iverson bracket, 满足条件就是1，不满足就是0. Color Adjustment local adjustment with Poisson editing[16] why? global adjustment[15] problem the vertex v’s projection into the two images adjacent to the seam. If there are even small registration errors (which there always are), both projections do not correspond to exactly the same spot on the real object. Also, if both images have a different scale the looked up pixels span a different footprint in 3D. This may be irrelevant in controlled lab datasets, but in realistic multi-view stereo datasets the lookups from effectively different points or footprints mislead the global adjustment and produce artifacts. Color Lookup Support Region $v_1$点的颜色等于两条边的颜色*距离权重 Equation 2 matrix form $$ \mathbf{\Vert Ag-f\Vert_2^2+\Vert\Gamma g\Vert_2^2=g^T(A^TA+\Gamma^T\Gamma)g-f^TAg+f^Tf} $$ $\mathbf{f}$: vector, stacked $f_{v_{left}} - f_{v_{right}}$ $\mathbf{A}$: sparse matrix with $\pm 1$ $\mathbf{\Gamma}$: sparse matrix with $\pm 1$ minimize it with conjugate gradient when $\frac{\Vert r\Vert_2}{\Vert\mathbf{A^Tf}\Vert_2}&amp;lt;10^{-5}$ $r$: the residual Poisson Editing TODO</summary></entry><entry><title type="html">Texture for original model And Cmake on OpenMVS</title><link href="https://ucas.io/3d/Texture-For-Original-Model/" rel="alternate" type="text/html" title="Texture for original model And Cmake on OpenMVS" /><published>2021-09-07T22:21:17+08:00</published><updated>2021-09-07T22:21:17+08:00</updated><id>https://ucas.io/3d/Texture-For-Original-Model</id><content type="html" xml:base="https://ucas.io/3d/Texture-For-Original-Model/">&lt;h2 id=&quot;texture-at-original-mesh&quot;&gt;Texture at original mesh&lt;/h2&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -1190,347 +1424,4 @@ bootstrap-vcpkg.bat
   &lt;li&gt;
     &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://youtube.com/embed/4lmQZMWoWog&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">solver</summary></entry><entry><title type="html">Point Cloud Match[2]</title><link href="https://ucas.io/3d/Point-Cloud-Match-2/" rel="alternate" type="text/html" title="Point Cloud Match[2]" /><published>2021-08-26T11:11:35+08:00</published><updated>2021-08-26T11:11:35+08:00</updated><id>https://ucas.io/3d/Point-Cloud-Match%5B2%5D</id><content type="html" xml:base="https://ucas.io/3d/Point-Cloud-Match-2/">&lt;h2 id=&quot;类局部的配准算法&quot;&gt;类局部的配准算法&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;受限于点云初始位置&lt;/li&gt;
-  &lt;li&gt;仅适用于小角度错开的点云配准问题&lt;/li&gt;
-  &lt;li&gt;受限于主成分分析、奇异值分解算法&lt;/li&gt;
-  &lt;li&gt;迭代次数较多，后期收敛缓慢&lt;/li&gt;
-  &lt;li&gt;最近邻点的成本较高，KD-tree虽然搜索效率较高，但仍无法满足于解决大规模点云的配准问题&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;icpiterative-closest-point&quot;&gt;ICP(Iterative Closest Point)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;不断迭代原始点云的变换矩阵，直到RMSE收敛域局部最优解
-    &lt;ul&gt;
-      &lt;li&gt;迭代过程
-        &lt;ol&gt;
-          &lt;li&gt;搜索最近点集&lt;/li&gt;
-          &lt;li&gt;构造协方差矩阵&lt;/li&gt;
-          &lt;li&gt;奇异值分解&lt;/li&gt;
-          &lt;li&gt;求解旋转矩阵&lt;/li&gt;
-          &lt;li&gt;OpenCv
-            &lt;ol&gt;
-              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cv2.estimateAffinePartial2D(src, dst[0, indices.T])&lt;/code&gt;, 4自由度&lt;/li&gt;
-              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cv2.estimateAffine2D(src, dst[0, indices.T])&lt;/code&gt;,6自由度&lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{cases}
-        E(R,T)=\sum_{i=1}^N\Vert Rp_i+T-p_{closest}\Vert_2^2\\
-        P_{closest}=\underset{q_j}{\argmin}\Vert p_i-Q\Vert_2^2
-    \end{cases}
-$$&lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;icp-变种&quot;&gt;ICP 变种&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;LM-ICP
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://link.springer.com/content/pdf/10.1007/BFb0067700.pdf&quot;&gt;Moré J J. The Levenberg-Marquardt algorithm: Implementation and theory[J]. Lecture Notes in Mathematics, 1978, 630: 105-116.&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ivc-2003-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-1050-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0262885603001835&quot;&gt;Fitzgibbon A W. Robust registration of 2D and 3D point sets. Image Vision Comput 2003;21:1145-1153.&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Levenberg-Marquardt
-        &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee_nn-2010-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-494-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/5451114&quot;&gt;Improved computation for Levenberg–Marquardt training. IEEE transactions on neural networks&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/269579938/answer/349205519&quot;&gt;如何用LM算法求解目标函数最小值？ - Sixiang的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826215640.png&quot; alt=&quot;20210826215640&quot; /&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://www.eng.auburn.edu/~wilambm/pap/2011/K10149_C012.pdf&quot;&gt;Table 12.1&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-H\approx J^TJ+\mu I
-$$&lt;/div&gt;
-          &lt;/li&gt;
-          &lt;li&gt;$J$: Jacobian matrix&lt;/li&gt;
-          &lt;li&gt;$I$: Identity matrix&lt;/li&gt;
-          &lt;li&gt;$\mu$
-            &lt;ul&gt;
-              &lt;li&gt;$\mu\to0$:Gauss-Newton&lt;/li&gt;
-              &lt;li&gt;$\mu\gg J$:最速下降法&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;DT（Distance-Transform）替代KD-tree搜索最近邻点&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Trimmed ICP
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee-2002-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-570-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/1047997/&quot;&gt;Chetverikov D, Svirko D, Stepanov D, et al. The Trimmed Iterative Closest Point algorithm[J], 2002.&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;筛选最近邻点&lt;/li&gt;
-      &lt;li&gt;用欧式距离进行排序，去掉其中距离较大的点集&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Sparse ICP
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Computer_Graphics-2013-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-350-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.12178&quot;&gt;Bouaziz S, Tagliasacchi A, Pauly M. Sparse iterative closest point[C]. Eleventh Eurographics/acmsiggraph Symposium on Geometry Processing, 2013.&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;稀疏表示理论&lt;/li&gt;
-      &lt;li&gt;范数配准模型上增加p范数的惩罚项&lt;/li&gt;
-      &lt;li&gt;增广拉格朗日求解(效率较差)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Efficient Sparse ICP
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Geometric_Modeling_and_Processing-2015-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-52-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0167839615000552&quot;&gt;Mavridis P, Andreadis A, Papaioannou G. Efficient Sparse ICP[J]. Computer Aided Geometric Design, 2015, 35-36(C): 16-26.&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;退火算法&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Normal Distribute Transform（NDT）
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee-2003-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-989-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/1249285&quot;&gt;Biber P, Strasser W. The normal distributions transform: a new approach to laser scan matching[J]. Proc.of IEEE/RSJ Intl Conf.on Intelligent Robots &amp;amp; Systems, 2003, 3: 2743-2748 vol.3.&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;使用D维的高斯函数作为配准模型&lt;/li&gt;
-      &lt;li&gt;源点云Q进行体素划分&lt;/li&gt;
-      &lt;li&gt;求解点云Q的包围盒&lt;/li&gt;
-      &lt;li&gt;包围盒进行细分&lt;/li&gt;
-      &lt;li&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;Magnusson&lt;/p&gt;
-
-          &lt;p&gt;NDT算法较ICP算法能更好地避免点云初始位置对配准结果的影响&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{cases}
-    E(R,T)&amp;=\frac{1}{(2\pi)^\frac{D}{2}\sqrt{\vert\Sigma\vert}}exp((Rp+T-u)^T\Sigma^{-1}(Rp+T-u))\\
-    u&amp;=\frac{1}{M}\sum_{j=1}^Mq_j\\
-    \Sigma&amp;=\frac{1}{M-1}\sum_{j=1}^M(q_j-u)(q_j-u)^T
-  \end{cases}
-$$&lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;全局的3d点云配准算法&quot;&gt;全局的3D点云配准算法&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;启发式算法
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;需多次调用配准模型进行优化求解，在处理大规模点云配准问题时效率较低，且其全局解并未有严格的证明&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;遗传算法求解出全局优化的变换矩阵&lt;/li&gt;
-      &lt;li&gt;粒子群算法&lt;/li&gt;
-      &lt;li&gt;模拟退火&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;构造几何不变量匹配对应点对
-    &lt;ul&gt;
-      &lt;li&gt;曲率特征求解对应点对&lt;/li&gt;
-      &lt;li&gt;构造积分体积特征计算匹配点对&lt;/li&gt;
-      &lt;li&gt;构造点特征直方图作为局部描述符&lt;/li&gt;
-      &lt;li&gt;4点法构造几何特征进而提取稀疏的匹配点对&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Go-ICP
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee-2016-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-437-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/7368945&quot;&gt;Yang J, Li H, Campbell D, et al. Go-ICP: A Globally Optimal Solution to 3D ICP Point-Set Registration[J]. IEEE Transactions on Pattern Analysis &amp;amp; Machine Intelligence, 2016, 38(11): 2241-2254.&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;范数配准模型首次推导出了关于六维变换域的上下界函数&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;AMP
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-37-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/7555337&quot;&gt;Lian W, Zhang L, Yang M H. An Efficient Globally Optimal Algorithm for Asymmetric Point Matching[J]. IEEE Transactions on Pattern Analysis &amp;amp; Machine Intelligence, 2017, 39(7): 1281-1293.&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;主要适用于图像处理领域&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Glob-GM-ML
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/cvpr-2014-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-69-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.cv-foundation.org/openaccess/content_cvpr_2014/html/Bustos_Fast_Rotation_Search_2014_CVPR_paper.html&quot;&gt;Chin T J, Suter D. Fast Rotation Search with Stereographic Projections for 3D Registration[C]. IEEE Conference on Computer Vision and Pattern Recognition, 2014: 3930-3937.&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;两个独立的三维平移、旋转问题&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;TEASER
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Robot_Sci_Syst-2019-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-39-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1903.08588&quot;&gt;Yang H, Carlone L. A Polynomial-time Solution for Robust Registration with Extreme Outlier Rates[J]. Robotics: Science and Systems (RSS), 2019&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;多项式时间&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826160724.png&quot; alt=&quot;20210826160724&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;GOGMA
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/cvpr-2016-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-63-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content_cvpr_2016/html/Campbell_GOGMA_Globally-Optimal_Gaussian_CVPR_2016_paper.html&quot;&gt;Campbell D, Petersson L. GOGMA: Globally-Optimal Gaussian Mixture Alignment[J].&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;混合高斯模型&lt;/li&gt;
-      &lt;li&gt;GPU框架&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;deeplearning-net&quot;&gt;DeepLearning Net&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;基于相似性测度研究的点云匹配&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3dmatch&quot;&gt;3DMatch&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Paper
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/cvpr-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-367-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1603.08182&quot;&gt;3DMatch: Learning Local Geometric Descriptors from RGB-D Reconstructions&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;HomePage
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://3dmatch.cs.princeton.edu/&quot;&gt;3DMatch: Learning Local Geometric Descriptors from RGB-D Reconstructions - Princeton&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/andyzeng/3dmatch-toolbox&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=andyzeng&amp;amp;repo=3dmatch-toolbox&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/andyzeng/3dmatch-toolbox&quot;&gt;&lt;img src=&quot;https://stars.medv.io/andyzeng/3dmatch-toolbox.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/andyzeng/3dmatch-toolbox&quot;&gt;&lt;img src=&quot;https://starchart.cc/andyzeng/3dmatch-toolbox.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826164757.png&quot; alt=&quot;20210826164757&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3dfeat-net&quot;&gt;3DFeat-Net&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Paper
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/eccv-2018-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-138-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1807.09413&quot;&gt;3DFeat-Net: Weakly Supervised Local 3D Features for Point Cloud Registration&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/yewzijian/3DFeatNet&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=yewzijian&amp;amp;repo=3DFeatNet&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/yewzijian/3DFeatNet&quot;&gt;&lt;img src=&quot;https://stars.medv.io/yewzijian/3DFeatNet.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/yewzijian/3DFeatNet&quot;&gt;&lt;img src=&quot;https://starchart.cc/yewzijian/3DFeatNet.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826193422.png&quot; alt=&quot;20210826193422&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;deep-neural-network-auto-encoder&quot;&gt;Deep Neural Network Auto-Encoder&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Paper
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/cvpr-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-151-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content_cvpr_2017/html/Elbaz_3D_Point_Cloud_CVPR_2017_paper.html&quot;&gt;3D Point Cloud Registration for Localization using a Deep Neural Network Auto-Encoder&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/gilbaz/LORAX&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=gilbaz&amp;amp;repo=LORAX&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/gilbaz/LORAX&quot;&gt;&lt;img src=&quot;https://stars.medv.io/gilbaz/LORAX.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/gilbaz/LORAX&quot;&gt;&lt;img src=&quot;https://starchart.cc/gilbaz/LORAX.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826193228.png&quot; alt=&quot;20210826193228&quot; /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826193322.png&quot; alt=&quot;20210826193322&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;coherent-point-drift&quot;&gt;Coherent Point Drift&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Paper
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ieee-2010-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-2173-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/5432191&quot;&gt;Point Set Registration: Coherent Point Drift&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/siavashk/pycpd&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=siavashk&amp;amp;repo=pycpd&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/siavashk/pycpd&quot;&gt;&lt;img src=&quot;https://stars.medv.io/siavashk/pycpd.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/siavashk/pycpd&quot;&gt;&lt;img src=&quot;https://starchart.cc/siavashk/pycpd.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826194302.png&quot; alt=&quot;20210826194302&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;变换层次&quot;&gt;变换层次&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;关于自由度&lt;/li&gt;
-  &lt;li&gt;与泛函无关的不变量数等于或大于配置的自由度数减去变换的自由度数&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2d&quot;&gt;2D&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;《Multiple View Geometry in Computer Vision》2.4.7&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826155257.png&quot; alt=&quot;20210826155257&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3d&quot;&gt;3D&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210826155827.png&quot; alt=&quot;20210826155827&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/143164736&quot;&gt;图像变换的层次 - Shine的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/louisanu/p/12341140.html&quot;&gt;3D点云配准算法简述&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://yilingui.xyz/2019/11/20/191120_point_cloud_registration_icp/&quot;&gt;三维点云配准 – ICP 算法 - Yilin’s Blog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/104735380&quot;&gt;三维点云配准 – ICP 算法原理及推导 - InsaneGuy的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">类局部的配准算法</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">solver</summary></entry></feed>
