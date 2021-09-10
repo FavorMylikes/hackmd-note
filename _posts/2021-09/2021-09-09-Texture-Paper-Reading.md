@@ -76,11 +76,11 @@ present the first unified texturing approach that handles large, realistic datas
     - View Selection
       - graph cuts and alpha expansion[3]
       - replace[9] the `Data term` to
-        - $E_{data} = -\int_{\phi(F_i,l_i)}\Vert\triangledown(I_{l_i}(p))\Vert_2dp$💩
+        - $E_{data} = -\int_{\phi(F_i,l_i)}\Vert\nabla(I_{l_i}(p))\Vert_2dp$💩
           - $F_i$: face
           - $\phi(F_i,l_i)$: $F_i$'s projection
           - $I_{l_i}$: Sobel operator
-          - $\Vert\triangledown(I_{l_i})\Vert_2$: gradient magnitude
+          - $\Vert\nabla(I_{l_i})\Vert_2$: gradient magnitude
           - 大概意思就是，面投影到图片，计算投影区的`Sobel operator`, 如果投影区太小没有像素，就`gradient magnitude at the projection's centroid and multiply it with the projection area.`, 最后把它们加一块
         - 有行人的图梯度容易很大
           - > introduce an additional step to ensure photo-consistency of the texture.
