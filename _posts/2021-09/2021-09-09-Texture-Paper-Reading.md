@@ -120,3 +120,4 @@ present the first unified texturing approach that handles large, realistic datas
           - $r$: the residual
     - Poisson Editing
       - Have a look at [UCAS.IO/Possion-Image-Edit](https://ucas.io/3d/Possion-Image-Edit/)
+      - 
