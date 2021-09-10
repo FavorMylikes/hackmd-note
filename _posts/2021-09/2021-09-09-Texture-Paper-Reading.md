@@ -119,4 +119,4 @@ present the first unified texturing approach that handles large, realistic datas
         - minimize it with `conjugate gradient` when $\frac{\Vert r\Vert_2}{\Vert\mathbf{A^Tf}\Vert_2}<10^{-5}$
           - $r$: the residual
     - Poisson Editing
-      - TODO
+      - Have a look at [UCAS.IO/Possion-Image-Edit](https://ucas.io/3d/Possion-Image-Edit/)

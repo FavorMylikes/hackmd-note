@@ -13,6 +13,12 @@ header:
   - [PPT](http://graphics.cs.cmu.edu/courses/15-463/2017_fall/lectures/lecture7.pptx)
   - [Paper.pdf - Microsoft Research UK](https://www.cs.jhu.edu/~misha/Fall07/Papers/Perez03.pdf)
 
+### Python
+
+```python
+output = cv2.seamlessClone(src, dst, mask, center, flags)
+```
+
 ### Definitions
 
 - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910131356.png" alt="20210910131356"/>
