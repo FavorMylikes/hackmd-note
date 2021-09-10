@@ -330,7 +330,7 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
       },{
         "title": "Possion Image Edit",
-        "excerpt":"Possion Image Edit PPT Paper.pdf - Microsoft Research UK Definitions $g$: 原始图像，左图企鹅 $f$: 插值函数 $f^*$: 目标图像 $\\Omega$: 目标域 $\\partial\\Omega$: 目标域边缘，边界 Basic idea 期望的结果 填补内容要尽可以平滑 填补内容的边界像素值和现有的$S$一致，即要无缝过度 变分方程 $\\underset{f}{\\min}\\iint_\\Omega\\vert\\nabla f\\vert^2$ with $f _{\\partial\\Omega}=f^* _{\\partial\\Omega}$ E-L Equation $\\Delta f=0$ over $\\Omega$ with $f _{\\partial\\Omega}=f^* _{\\partial\\Omega}$ $\\Delta$: 二阶微分， 散度divergence $f _{\\partial\\Omega}=f^* _{\\partial\\Omega}$: Dirichlet boundary:...","categories": ["3d"],
+        "excerpt":"Possion Image Edit PPT Paper.pdf - Microsoft Research UK Python output = cv2.seamlessClone(src, dst, mask, center, flags) Definitions $g$: 原始图像，左图企鹅 $f$: 插值函数 $f^*$: 目标图像 $\\Omega$: 目标域 $\\partial\\Omega$: 目标域边缘，边界 Basic idea 期望的结果 填补内容要尽可以平滑 填补内容的边界像素值和现有的$S$一致，即要无缝过度 变分方程 $\\underset{f}{\\min}\\iint_\\Omega\\vert\\nabla f\\vert^2$ with $f _{\\partial\\Omega}=f^* _{\\partial\\Omega}$ E-L Equation $\\Delta f=0$ over $\\Omega$ with $f _{\\partial\\Omega}=f^* _{\\partial\\Omega}$...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Possion-Image-Edit/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
