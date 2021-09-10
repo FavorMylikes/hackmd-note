@@ -324,10 +324,10 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
       },{
         "title": "Texture Paper Reading",
-        "excerpt":"Let There Be Color! - Large-Scale Texturing of 3D Reconstructions In this paper we therefore present the first unified texturing approach that handles large, realistic datasets reconstructed from images with a structure-from-motion plus multi-view stereo pipeline. millions of triangles within less than two hours. Related view selection blend multiple views...","categories": ["3d"],
+        "excerpt":"Let There Be Color! - Large-Scale Texturing of 3D Reconstructions Paper.pdf In this paper we therefore present the first unified texturing approach that handles large, realistic datasets reconstructed from images with a structure-from-motion plus multi-view stereo pipeline. millions of triangles within less than two hours. Related view selection blend multiple...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Texture-Paper-Reading/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910164754.png"
       },{
         "title": "Possion Image Edit",
         "excerpt":"Possion Image Edit PPT Paper.pdf - Microsoft Research UK Python output = cv2.seamlessClone(src, dst, mask, center, flags) Definitions $g$: 原始图像，左图企鹅 $f$: 插值函数 $f^*$: 目标图像 $\\Omega$: 目标域 $\\partial\\Omega$: 目标域边缘，边界 Basic idea 期望的结果 填补内容要尽可以平滑 填补内容的边界像素值和现有的$S$一致，即要无缝过度 变分方程 $\\underset{f}{\\min}\\iint_\\Omega\\vert\\nabla f\\vert^2$ with $f _{\\partial\\Omega}=f^* _{\\partial\\Omega}$ E-L Equation $\\Delta f=0$ over $\\Omega$ with $f _{\\partial\\Omega}=f^* _{\\partial\\Omega}$...","categories": ["3d"],
