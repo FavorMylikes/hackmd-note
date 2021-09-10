@@ -1,14 +1,15 @@
 ---
 layout: single
 title:  "Texture Paper Reading"
-date:   "2021-09-08 16:28:42 +0800"
+date:   "2021-09-09 16:28:42 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910164754.png
 ---
 
 - [Let There Be Color! - Large-Scale Texturing of 3D Reconstructions](https://link.springer.com/chapter/10.1007/978-3-319-10602-1_54)
   - ![j](https://img.shields.io/badge/eccv-2014-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-229-blue?style=flat-square)
+  - [Paper.pdf](https://www.gcc.tu-darmstadt.de/media/gcc/papers/Waechter-2014-LTB.pdf)
   - > In this paper we therefore
 present the first unified texturing approach that handles large, realistic datasets reconstructed from images with a structure-from-motion plus multi-view stereo pipeline.
   - > **millions of triangles** within less **than two hours**.
@@ -120,4 +121,16 @@ present the first unified texturing approach that handles large, realistic datas
           - $r$: the residual
     - Poisson Editing
       - Have a look at [UCAS.IO/Possion-Image-Edit](https://ucas.io/3d/Possion-Image-Edit/)
-      - 
+      - seams adjustment
+        - > perform local Poisson image editing[9, 16]
+        - > Poisson editing of a patch to a 20 pixel wide border strip[this]
+        - > <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910163143.png" alt="20210910163143" height="100px"/>
+  - Evaluation
+    - Data Term and Photo-Consistency Check
+      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910171331.png" alt="20210910171331"/>
+      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910171511.png" alt="20210910171511"/>
+    - Smoothness Term
+      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910171606.png" alt="20210910171606"/>
+    - Color Adjustment
+      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910172145.png" alt="20210910172145"/>
+      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910172445.png" alt="20210910172445"/>
