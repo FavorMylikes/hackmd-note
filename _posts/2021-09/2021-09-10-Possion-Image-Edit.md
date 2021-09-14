@@ -65,7 +65,7 @@ output = cv2.seamlessClone(src, dst, mask, center, flags)
 - Seamless Cloning[无缝克隆]， 泊松编辑
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910152017.png" alt="20210910152017"/>
 - Mixing Gradients Seamless Cloning
-  - for all $x\in \Omega$, $\mathbf{v(x)}=\begin{cases}\nabla f^*(\mathbf{x})&\vert\nabla f^*(\mathbf{x})\vert>\vert\nabla g(\mathbf{x})\vert\\\nabla g(\mathbf{x})&otherwise\end{cases}$
+  - for all $x\in \Omega$, $\mathbf{v(x)}=\begin{cases}\nabla f^*(\mathbf{x})&\vert\nabla f^*(\mathbf{x})\vert\gt\vert\nabla g(\mathbf{x})\vert\\\nabla g(\mathbf{x})&otherwise\end{cases}$
   - Seamless Cloning
     - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910152937.png" alt="20210910152937"/>
   - Mixing Gradients Seamless Cloning
