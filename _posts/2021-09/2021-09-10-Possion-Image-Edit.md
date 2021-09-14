@@ -71,7 +71,7 @@ output = cv2.seamlessClone(src, dst, mask, center, flags)
   - Mixing Gradients Seamless Cloning
     - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910152450.png" alt="20210910152450"/>
   - Texture flattening
-    - for all $x\in \Omega$,$\mathbf{v(x)}=M(\mathbf{x})\nabla f^*(\mathbf{x})$
+    - for all $x\in \Omega , \mathbf{v(x)}=M(\mathbf{x})\nabla f^*(\mathbf{x})$
     - `grad(abs(grad)<0.08)=0;`
       - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910153207.png" alt="20210910153207"/>
     - `grad(abs(grad)<0.02)=0;`
