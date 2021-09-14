@@ -34,11 +34,11 @@ output = cv2.seamlessClone(src, dst, mask, center, flags)
   1. 填补内容要尽可以平滑
   2. 填补内容的边界像素值和现有的$S$一致，即要无缝过度
 - 变分方程
-  - $\underset{f}{\min}\iint_\Omega\vert\nabla f\vert^2$ with $f|_{\partial\Omega}=f^*|_{\partial\Omega}$
+  - $\underset{f}{\min}\iint_\Omega\vert\nabla f\vert^2$ with $f\vert_{\partial\Omega}=f^*\vert_{\partial\Omega}$
 - E-L Equation
-  - $\Delta f=0$ over $\Omega$ with $f|_{\partial\Omega}=f^*|_{\partial\Omega}$
+  - $\Delta f=0$ over $\Omega$ with $f\vert_{\partial\Omega}=f^*\vert_{\partial\Omega}$
     - $\Delta$: 二阶微分， 散度divergence
-    - $f|_{\partial\Omega}=f^*|_{\partial\Omega}$: Dirichlet  boundary: 给出边界处函数在边界处的实际值.
+    - $f\vert_{\partial\Omega}=f^*\vert_{\partial\Omega}$: Dirichlet  boundary: 给出边界处函数在边界处的实际值.
       - Neumann boundary: 给出函数在边界处的二阶导数值
 
 ### guidance vector field[引导向量场]
@@ -47,10 +47,10 @@ output = cv2.seamlessClone(src, dst, mask, center, flags)
   1. 填补内容的梯度要尽可以与$\mathbf{v}$接近
   2. 填补内容的边界像素值和现有的$S$一致，即要无缝过度
 - 变分方程
-  - $\underset{f}{\min}\iint_\Omega\vert\nabla f-\mathbf{v}\vert^2$ with $f|_{\partial\Omega}=f^*|_{\partial\Omega}$
+  - $\underset{f}{\min}\iint_\Omega\vert\nabla f-\mathbf{v}\vert^2$ with $f\vert_{\partial\Omega}=f^*\vert_{\partial\Omega}$
     - $\mathbf{v}=\nabla g$
 - E-L Equation
-  - $\Delta f=div(\mathbf{v})$ over $\Omega$ with $f|_{\partial\Omega}=f^*|_{\partial\Omega}$
+  - $\Delta f=div(\mathbf{v})$ over $\Omega$ with $f\vert_{\partial\Omega}=f^*\vert_{\partial\Omega}$
     - $\Delta f=\frac{\partial^2f}{\partial x^2} + \frac{\partial^2f}{\partial y^2}$: Laplacian
     - $div(\mathbf{v}) = \frac{\partial u}{\partial x} + \frac{\partial u}{\partial y}=\frac{\partial^2g}{\partial x^2}+\frac{\partial^2g}{\partial y^2} = \Delta g$: Divergence[散度]
     - $\mathbf{v}=\nabla g$: Gradient[梯度]
