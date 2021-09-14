@@ -363,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -424,43 +424,15 @@
   </li>
   <li>变分方程
     <ul>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>$\underset{f}{\min}\iint_\Omega\vert\nabla f\vert^2$ with $f</td>
-              <td>_{\partial\Omega}=f^*</td>
-              <td>_{\partial\Omega}$</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
+      <li>$\underset{f}{\min}\iint_\Omega\vert\nabla f\vert^2$ with $f\vert_{\partial\Omega}=f^*\vert_{\partial\Omega}$</li>
     </ul>
   </li>
   <li>E-L Equation
     <ul>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>$\Delta f=0$ over $\Omega$ with $f</td>
-              <td>_{\partial\Omega}=f^*</td>
-              <td>_{\partial\Omega}$</td>
-            </tr>
-          </tbody>
-        </table>
+      <li>$\Delta f=0$ over $\Omega$ with $f\vert_{\partial\Omega}=f^*\vert_{\partial\Omega}$
         <ul>
           <li>$\Delta$: 二阶微分， 散度divergence</li>
-          <li>
-            <table>
-              <tbody>
-                <tr>
-                  <td>$f</td>
-                  <td>_{\partial\Omega}=f^*</td>
-                  <td>_{\partial\Omega}$: Dirichlet  boundary: 给出边界处函数在边界处的实际值.</td>
-                </tr>
-              </tbody>
-            </table>
+          <li>$f\vert_{\partial\Omega}=f^*\vert_{\partial\Omega}$: Dirichlet  boundary: 给出边界处函数在边界处的实际值.
             <ul>
               <li>Neumann boundary: 给出函数在边界处的二阶导数值</li>
             </ul>
@@ -482,16 +454,7 @@
   </li>
   <li>变分方程
     <ul>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>$\underset{f}{\min}\iint_\Omega\vert\nabla f-\mathbf{v}\vert^2$ with $f</td>
-              <td>_{\partial\Omega}=f^*</td>
-              <td>_{\partial\Omega}$</td>
-            </tr>
-          </tbody>
-        </table>
+      <li>$\underset{f}{\min}\iint_\Omega\vert\nabla f-\mathbf{v}\vert^2$ with $f\vert_{\partial\Omega}=f^*\vert_{\partial\Omega}$
         <ul>
           <li>$\mathbf{v}=\nabla g$</li>
         </ul>
@@ -500,16 +463,7 @@
   </li>
   <li>E-L Equation
     <ul>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>$\Delta f=div(\mathbf{v})$ over $\Omega$ with $f</td>
-              <td>_{\partial\Omega}=f^*</td>
-              <td>_{\partial\Omega}$</td>
-            </tr>
-          </tbody>
-        </table>
+      <li>$\Delta f=div(\mathbf{v})$ over $\Omega$ with $f\vert_{\partial\Omega}=f^*\vert_{\partial\Omega}$
         <ul>
           <li>$\Delta f=\frac{\partial^2f}{\partial x^2} + \frac{\partial^2f}{\partial y^2}$: Laplacian</li>
           <li>$div(\mathbf{v}) = \frac{\partial u}{\partial x} + \frac{\partial u}{\partial y}=\frac{\partial^2g}{\partial x^2}+\frac{\partial^2g}{\partial y^2} = \Delta g$: Divergence[散度]</li>
