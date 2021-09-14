@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-14T13:57:30+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Possion Image Edit</title><link href="https://ucas.io/3d/Possion-Image-Edit/" rel="alternate" type="text/html" title="Possion Image Edit" /><published>2021-09-10T15:43:34+08:00</published><updated>2021-09-10T15:43:34+08:00</updated><id>https://ucas.io/3d/Possion-Image-Edit</id><content type="html" xml:base="https://ucas.io/3d/Possion-Image-Edit/">&lt;h2 id=&quot;possion-image-edit&quot;&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/1201775.882269&quot;&gt;Possion Image Edit&lt;/a&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-14T14:00:33+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Possion Image Edit</title><link href="https://ucas.io/3d/Possion-Image-Edit/" rel="alternate" type="text/html" title="Possion Image Edit" /><published>2021-09-10T15:43:34+08:00</published><updated>2021-09-10T15:43:34+08:00</updated><id>https://ucas.io/3d/Possion-Image-Edit</id><content type="html" xml:base="https://ucas.io/3d/Possion-Image-Edit/">&lt;h2 id=&quot;possion-image-edit&quot;&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/1201775.882269&quot;&gt;Possion Image Edit&lt;/a&gt;&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/sig_graph-2003-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-2953-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;
@@ -119,7 +119,7 @@
       &lt;/li&gt;
       &lt;li&gt;Texture flattening
         &lt;ul&gt;
-          &lt;li&gt;for all $x\in \Omega$,$\mathbf{v(x)}=M(\mathbf{x})\nabla f^*(\mathbf{x})$&lt;/li&gt;
+          &lt;li&gt;for all $x\in \Omega , \mathbf{v(x)}=M(\mathbf{x})\nabla f^*(\mathbf{x})$&lt;/li&gt;
           &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grad(abs(grad)&amp;lt;0.08)=0;&lt;/code&gt;
             &lt;ul&gt;
               &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910153207.png&quot; alt=&quot;20210910153207&quot; /&gt;&lt;/li&gt;
