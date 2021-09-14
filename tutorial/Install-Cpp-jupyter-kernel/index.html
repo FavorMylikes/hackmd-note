@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Point Cloud Match / Notes B</title>
-<meta name="description" content="script">
+<!-- begin _includes/seo.html --><title>Install Cpp jupyter kernel / Notes B</title>
+<meta name="description" content="Install Cpp kernel">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Point Cloud Match">
-<meta property="og:url" content="https://ucas.io/3d/Point-Cloud-Match/">
+<meta property="og:title" content="Install Cpp jupyter kernel">
+<meta property="og:url" content="https://ucas.io/tutorial/Install-Cpp-jupyter-kernel/">
 
 
-  <meta property="og:description" content="script">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210823123247.png">
+  <meta property="og:description" content="Install Cpp kernel">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-08-23T12:26:00+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-09-10T15:43:34+08:00">
 
-<link rel="canonical" href="https://ucas.io/3d/Point-Cloud-Match/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/tutorial/Install-Cpp-jupyter-kernel/">
 
 
 
@@ -205,7 +205,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
+          <a href="/categories/tutorial" itemprop="item"><span itemprop="name">Tutorial</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">Point Cloud Match</li>
+        <li class="current">Install Cpp jupyter kernel</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Point Cloud Match">
-    <meta itemprop="description" content="script">
-    <meta itemprop="datePublished" content="2021-08-23T12:26:00+08:00">
+    <meta itemprop="headline" content="Install Cpp jupyter kernel">
+    <meta itemprop="description" content="Install Cpp kernel">
+    <meta itemprop="datePublished" content="2021-09-10T15:43:34+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Point Cloud Match
+          <h1 id="page-title" class="page__title" itemprop="headline">Install Cpp jupyter kernel
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-08-23T12:26:00+08:00">August 23, 2021</time>
+        <time datetime="2021-09-10T15:43:34+08:00">September 10, 2021</time>
       </span>
     
 
@@ -378,55 +378,122 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#script">script</a></li></ul>
+              <ul class="toc__menu"><li><a href="#install-cpp-kernel">Install Cpp kernel</a></li><li><a href="#guided-image-filtering">Guided Image Filtering</a><ul><li><a href="#image-filtering">Image Filtering</a></li><li><a href="#related">Related</a></li><li><a href="#reference">Reference</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="script"><a href="http://ucas/jupyter/lab/tree/3d/model/wavefront_obj/analysis.ipynb">script</a></h2>
+        <h2 id="install-cpp-kernel">Install Cpp kernel</h2>
 
 <ul>
-  <li>
-    <p>Cloud point match
-<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210823123247.png" alt="20210823123247" /></p>
-  </li>
-  <li>for greeb <code class="language-plaintext highlighter-rouge">x</code>
+  <li><a href="https://zhuanlan.zhihu.com/p/82025119">jupyter notebook 安装 C/C++ kernel - KEN的文章 - 知乎</a></li>
+  <li><code class="language-plaintext highlighter-rouge">conda install xeus-cling -c conda-forge</code></li>
+  <li>after install
     <ul>
-      <li>高斯分布得到子集</li>
+      <li><code class="language-plaintext highlighter-rouge">jupyter kernelspec list</code></li>
+      <li>fix <a href="https://stackoverflow.com/questions/68261254/conda-error-sysconfigdata-x86-64-conda-linux-gnu"><strong>issue</strong></a></li>
+      <li>
+        <p>by</p>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> /opt/anaconda3/envs/gpu/lib/python3.8/_sysconfigdata_x86_64_conda_cos6_linux_gnu.py /opt/anaconda3/envs/gpu/lib/python3.8/_sysconfigdata_x86_64_conda_linux_gnu.py
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>check installation</p>
+
+        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">python3    /opt/anaconda3/envs/gpu/share/jupyter/kernels/python3
+xcpp11     /opt/anaconda3/envs/gpu/share/jupyter/kernels/xcpp11
+xcpp14     /opt/anaconda3/envs/gpu/share/jupyter/kernels/xcpp14
+xcpp17     /opt/anaconda3/envs/gpu/share/jupyter/kernels/xcpp17
+</span></code></pre></div>        </div>
+      </li>
     </ul>
   </li>
-  <li>for red dot
+</ul>
+
+<h2 id="guided-image-filtering"><a href="http://kaiminghe.com/eccv10/">Guided Image Filtering</a></h2>
+
+<ul>
+  <li><img src="https://img.shields.io/badge/ECCV-2010-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/TPAMI-2013-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-3985-blue?style=flat-square" alt="cite" />
     <ul>
-      <li>随机抽样得到的子集</li>
+      <li><a href="http://kaiminghe.com/eccv10/eccv10ppt.pdf">PPT eccv 2010</a></li>
+      <li><a href="https://www.cs.jhu.edu/~misha/Fall07/Papers/Perez03.pdf">Paper.pdf - Microsoft Research</a></li>
     </ul>
   </li>
-  <li>other is total tie point</li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210823161830.png" alt="20210823161830" /></p>
+<h3 id="image-filtering">Image Filtering</h3>
 
 <ul>
-  <li>Block 3 tie point</li>
+  <li>Explicit LTI [linear translation-invariant, Linear time-invariant]</li>
+  <li>Explicit Weighted-Average Filters
+    <ul>
+      <li>Gaussian filter</li>
+      <li>Laplacian filter</li>
+      <li>Sobel filter</li>
+    </ul>
+  </li>
+  <li>the process of solving a Poisson Equation
+    <ul>
+      <li>HDR compression[high dynamic range][4]</li>
+      <li>image stitching[5]</li>
+      <li>image matting[6]</li>
+    </ul>
+  </li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210823164038.png" alt="20210823164038" /></p>
+<h3 id="related">Related</h3>
 
 <ul>
-  <li>尝试多对多ICP</li>
+  <li>Explicit Weighted-Average Filters
+    <ul>
+      <li><a href="https://zh.wikipedia.org/wiki/%E9%9B%99%E9%82%8A%E6%BF%BE%E6%B3%A2%E5%99%A8">Bilateral Filter</a>
+        <ul>
+          <li>距离参数*差异参数，作为权重</li>
+          <li>
+            <blockquote>
+              <p>The bilateral filter computes the filter output at a pixel as a weighted average of neighboring pixels</p>
+            </blockquote>
+          </li>
+          <li>看起来像是二阶过滤？</li>
+          <li>time cost
+            <ul>
+              <li>brute-force, $O(Nr^2)$</li>
+              <li>[15,16], $O(N)$</li>
+              <li>[17]Adams et al. color image</li>
+              <li>$r$: <code class="language-plaintext highlighter-rouge">kernel radius</code></li>
+              <li>
+                <blockquote>
+                  <p>All the abovemethods require a high quantization degree to achieve satisfactory speed, but at the expense of quality degradation</p>
+                </blockquote>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Optimization-based Image Filtering
+    <ul>
+      <li>
+        <blockquote>
+          <p>generate high quality results, solving the corresponding linear system is time-consuming.</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li>Nonaverage Filters, 非均质滤波, 非线性滤波
+    <ul>
+      <li>中值滤波</li>
+      <li>Total-Variation filter</li>
+    </ul>
+  </li>
+  <li>Guided Filter</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">match</span><span class="p">(</span><span class="n">pc_gps</span><span class="p">,</span> <span class="n">pc_model</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-    <span class="n">scala</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mf">110959.71900894716</span><span class="p">,</span> <span class="mf">90118.10182968706</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-    <span class="n">target_pair</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">scala</span> <span class="o">*</span> <span class="p">(</span><span class="n">source</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">target</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pc_gps</span><span class="p">)),</span> <span class="n">desc</span><span class="o">=</span><span class="s">"inner"</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-        <span class="n">dis</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">source</span> <span class="o">=</span> <span class="n">pc_gps</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:],</span> 
-                       <span class="n">target</span> <span class="o">=</span> <span class="n">pc_model</span><span class="p">[:,</span> <span class="p">:])</span>
-        <span class="n">closest</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dis</span><span class="p">)</span>
-        <span class="n">target_pair</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">pc_model</span><span class="p">[</span><span class="n">closest</span><span class="p">,</span> <span class="p">:])</span>
-    <span class="k">return</span> <span class="p">(((</span><span class="n">pc_gps</span><span class="p">[:,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">scala</span><span class="p">)</span> <span class="o">-</span> <span class="n">target_pair</span><span class="p">)</span><span class="o">/</span><span class="n">scala</span><span class="p">).</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</code></pre></div></div>
+<h3 id="reference">Reference</h3>
+
+<p><a href="https://blog.csdn.net/edogawachia/article/details/78872932">导向滤波原理（Guided Filter）</a></p>
 
         
       </section>
@@ -445,7 +512,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
+      <a href="/categories/tutorial" class="page__taxonomy-item" rel="tag">tutorial</a>
     
     </span>
   </p>
@@ -453,7 +520,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-23T12:26:00+08:00">August 23, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-10T15:43:34+08:00">September 10, 2021</time></p>
 
 
       </footer>
@@ -461,23 +528,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Point+Cloud+Match%20https%3A%2F%2Fucas.io%2F3d%2FPoint-Cloud-Match%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Install+Cpp+jupyter+kernel%20https%3A%2F%2Fucas.io%2Ftutorial%2FInstall-Cpp-jupyter-kernel%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FPoint-Cloud-Match%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Ftutorial%2FInstall-Cpp-jupyter-kernel%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FPoint-Cloud-Match%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Ftutorial%2FInstall-Cpp-jupyter-kernel%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/Texture-for-9-9-project-3/" class="pagination--pager" title="Texture for 9-9 project[3]
+      <a href="/3d/Possion-Image-Edit/" class="pagination--pager" title="Possion Image Edit
 ">Previous</a>
     
     
-      <a href="/3d/ICP-2D-and-3D/" class="pagination--pager" title="ICP 2D and 3D
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -491,57 +557,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/tutorial/Install-Cpp-jupyter-kernel/" rel="permalink">Install Cpp jupyter kernel
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-09-10T15:43:34+08:00">September 10, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Install Cpp kernel
-</p>
-  </article>
-</div>
-
         
           
 
@@ -581,7 +596,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -632,7 +647,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          3 minute read
         
       </span>
     
@@ -698,6 +713,57 @@ present...</p>
 
 
     <p class="archive__item-excerpt" itemprop="description">Original Texture
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221533.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Texture-For-Original-Model/" rel="permalink">Texture for original model And Cmake on OpenMVS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-07T22:21:17+08:00">September 7, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Texture at original mesh
 </p>
   </article>
 </div>

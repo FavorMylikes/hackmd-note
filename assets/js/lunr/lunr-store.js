@@ -334,4 +334,10 @@ var store = [{
         "tags": [],
         "url": "/3d/Possion-Image-Edit/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
+      },{
+        "title": "Install Cpp jupyter kernel",
+        "excerpt":"Install Cpp kernel jupyter notebook 安装 C/C++ kernel - KEN的文章 - 知乎 conda install xeus-cling -c conda-forge after install jupyter kernelspec list fix issue by cp /opt/anaconda3/envs/gpu/lib/python3.8/_sysconfigdata_x86_64_conda_cos6_linux_gnu.py /opt/anaconda3/envs/gpu/lib/python3.8/_sysconfigdata_x86_64_conda_linux_gnu.py check installation python3 /opt/anaconda3/envs/gpu/share/jupyter/kernels/python3 xcpp11 /opt/anaconda3/envs/gpu/share/jupyter/kernels/xcpp11 xcpp14 /opt/anaconda3/envs/gpu/share/jupyter/kernels/xcpp14 xcpp17 /opt/anaconda3/envs/gpu/share/jupyter/kernels/xcpp17 Guided Image Filtering PPT eccv 2010 Paper.pdf - Microsoft Research Image Filtering...","categories": ["tutorial"],
+        "tags": [],
+        "url": "/tutorial/Install-Cpp-jupyter-kernel/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
       }]
