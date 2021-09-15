@@ -60,13 +60,53 @@ header:
       - [17]Adams et al. color image
       - $r$: `kernel radius`
       - > All the abovemethods require a high quantization degree to achieve satisfactory speed, but at the expense of quality degradation
+    - problem
+      - gradient reversal
+      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210915133213.png" alt="20210915133213"/>
 - Optimization-based Image Filtering
   - > generate high quality results, solving the corresponding linear system is time-consuming.
 - Nonaverage Filters, 非均质滤波, 非线性滤波
   - 中值滤波
   - Total-Variation filter
 - Guided Filter
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210915133254.png" alt="20210915133254"/>
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210915133324.png" alt="20210915133324"/>
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210915133339.png" alt="20210915133339"/>
+  - term
+    - $q$: output Image
+    - $p$: input Image
+    - $I$: guide Image
+    - $w$: window
+    - $k$: the k_th windows
+    - $a,b$: linear model params
+    - $n$: noise or texture information
+  - principle
+    - $$
+        \begin{aligned}
+            q_i &= a_kI_i + b_k, \forall i \in w_k&(1)\\
+            q_i & = p_i - n_i&(2)\\
+            E(a_k,b_k) &=\sum_{i\in w_k}\big((a_k I_i + b_k - p_i)^2\big)+\epsilon a_k^2&(3)\\
+            a_k&=\frac{\frac{1}{\vert w\vert}\sum_{i \in w_k }I_i p_i - \mu_k\bar{p_k}}{\sigma_k^2+\epsilon}&(4)\\
+            b_k&=\bar{p_k}-a_k\mu_k&(5)\\
+            q_i&=\frac{1}{\vert w\vert}\sum_{i \in w_k }a_k I_i+b_k&(6)\\
+        \end{aligned}
+      $$
+    - 其中
+      - $(1)$: 期望的引导图和输入图的线性关系
+      - $(2)$: 输入和输出之间差一个噪声或纹理
+      - $(3)$: **领回归**计算$a,b$的值
+      - $(4,5,6)$: 参数和输出图片计算
+  - evaluation
+    - PSNR [Peak signal-to-noise ratio]
+      - $$
+        \begin{aligned}
+            PSNR&=10\log_{10}\frac{MAX_I^2}{MSE}\\
+            &=20\log_{10}\frac{MAX_I}{\sqrt{MSE}}\\
+            &=20\log_{10}MAX_I-10\log_{10}{MSE}\\
+        \end{aligned}
+        $$
 
 ### Reference
 
-[导向滤波原理（Guided Filter）](https://blog.csdn.net/edogawachia/article/details/78872932)
+- [导向滤波原理（Guided Filter）- CSDN - [江户川柯壮]](https://blog.csdn.net/edogawachia/article/details/78872932)
+- [导向滤波(Guided Filter)公式详解 - CSDN - [lsflll]](https://blog.csdn.net/weixin_43194305/article/details/88959183)
