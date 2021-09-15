@@ -1,8 +1,8 @@
 ---
 layout: single
-title:  "Install Cpp jupyter kernel"
+title:  "Install Cpp jupyter kernel, Image Guied Filter"
 date:   "2021-09-10 15:43:34 +0800"
-categories: tutorial
+categories: tutorial 3d
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png
 ---
