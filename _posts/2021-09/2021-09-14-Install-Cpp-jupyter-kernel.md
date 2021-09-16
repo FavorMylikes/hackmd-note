@@ -106,6 +106,44 @@ header:
         \end{aligned}
         $$
 
+### Code
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210916140309.png" alt="20210916140309"/>
+
+```python
+def guider_filter_image(image_name:str):
+    img = cv2.imread(image_name)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    radius = [2**x for x in range(5)]
+    epsilon = [.1**x for x in range(5)]
+    row = len(radius)
+    col = len(epsilon)
+    guided = []
+    titles = []
+    for p in tqdm(cartesian_product([radius, epsilon])):
+        r, e = p
+        title = f"r:{r}_e:{e:.0e}"
+        guided.append(guidedFilter(guide=img, src=img, radius=int(r), eps=e))
+        titles.append(title)
+
+    fig = px.imshow(
+        np.array(guided),  
+        facet_col_wrap = col,
+        facet_col = 0,
+    )
+
+    for i, label in enumerate(titles[::-1]):
+        fig.layout.annotations[i]['text'] = label
+
+    fig.update_xaxes(showticklabels=False).update_yaxes(showticklabels=False)
+    fig.update_layout(
+        autosize=False,
+        width=720,
+        height=720,
+        margin=dict(l=0,r=0,b=0,t=0, pad=0,autoexpand=False))
+    fig.show()
+```
+
 ### Reference
 
 - [导向滤波原理（Guided Filter）- CSDN - [江户川柯壮]](https://blog.csdn.net/edogawachia/article/details/78872932)
