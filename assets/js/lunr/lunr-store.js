@@ -340,4 +340,10 @@ var store = [{
         "tags": [],
         "url": "/tutorial/3d/Install-Cpp-jupyter-kernel/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
+      },{
+        "title": "Texture for color lion",
+        "excerpt":"Texture for colorful lion Params List and annotation params st comment decimate d decimation factor in range [0..1] to be applied to the input surface before refinement (0 - auto, 1 - disabled) close-holes ch try to close small holes in the input surface (0 - disabled) resolution-level rl how...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Texture-for-color-lion/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
       }]
