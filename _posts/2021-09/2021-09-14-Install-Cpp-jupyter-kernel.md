@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Install Cpp jupyter kernel, Image Guied Filter"
-date:   "2021-09-10 15:43:34 +0800"
+date:   "2021-09-14 15:43:34 +0800"
 categories: tutorial 3d
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png
@@ -108,7 +108,13 @@ header:
 
 ### Code
 
-<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210916140309.png" alt="20210916140309"/>
+- mylikes
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210916140309.png" alt="20210916140309"/>
+- cat guide filter
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210916152038.png" alt="20210916152038"/>4
+- cat bi filter
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210916152131.png" alt="20210916152131"/>
+- <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgcat_bf.gif" alt="cat_bf"/>
 
 ```python
 def guider_filter_image(image_name:str):
