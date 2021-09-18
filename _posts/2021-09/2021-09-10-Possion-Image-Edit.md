@@ -4,7 +4,7 @@ title:  "Possion Image Edit"
 date:   "2021-09-10 15:43:34 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910131356.png
 ---
 
 ## [Possion Image Edit](https://dl.acm.org/doi/abs/10.1145/1201775.882269)

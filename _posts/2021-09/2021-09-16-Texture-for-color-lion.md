@@ -4,7 +4,7 @@ title:  "Texture for color lion"
 date:   "2021-09-16 21:46:52 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210916224127.png
 ---
 
 ## Texture for colorful lion
