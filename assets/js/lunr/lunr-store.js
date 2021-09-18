@@ -333,7 +333,7 @@ var store = [{
         "excerpt":"Possion Image Edit PPT Paper.pdf - Microsoft Research UK Python output = cv2.seamlessClone(src, dst, mask, center, flags) Definitions $g$: 原始图像，左图企鹅 $f$: 插值函数 $f^*$: 目标图像 $\\Omega$: 目标域 $\\partial\\Omega$: 目标域边缘，边界 Basic idea 期望的结果 填补内容要尽可以平滑 填补内容的边界像素值和现有的$S$一致，即要无缝过度 变分方程 $\\underset{f}{\\min}\\iint_\\Omega\\vert\\nabla f\\vert^2$ with $f\\vert_{\\partial\\Omega}=f^*\\vert_{\\partial\\Omega}$ E-L Equation $\\Delta f=0$ over $\\Omega$ with $f\\vert_{\\partial\\Omega}=f^*\\vert_{\\partial\\Omega}$ $\\Delta$: 二阶微分， 散度divergence $f\\vert_{\\partial\\Omega}=f^*\\vert_{\\partial\\Omega}$:...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Possion-Image-Edit/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910131356.png"
       },{
         "title": "Install Cpp jupyter kernel, Image Guied Filter",
         "excerpt":"Install Cpp kernel jupyter notebook 安装 C/C++ kernel - KEN的文章 - 知乎 conda install xeus-cling -c conda-forge after install jupyter kernelspec list fix issue by cp /opt/anaconda3/envs/gpu/lib/python3.8/_sysconfigdata_x86_64_conda_cos6_linux_gnu.py /opt/anaconda3/envs/gpu/lib/python3.8/_sysconfigdata_x86_64_conda_linux_gnu.py check installation python3 /opt/anaconda3/envs/gpu/share/jupyter/kernels/python3 xcpp11 /opt/anaconda3/envs/gpu/share/jupyter/kernels/xcpp11 xcpp14 /opt/anaconda3/envs/gpu/share/jupyter/kernels/xcpp14 xcpp17 /opt/anaconda3/envs/gpu/share/jupyter/kernels/xcpp17 Guided Image Filtering PPT eccv 2010 Paper.pdf - Microsoft Research Image Filtering...","categories": ["tutorial","3d"],
@@ -345,7 +345,7 @@ var store = [{
         "excerpt":"Texture for colorful lion Params List and annotation params st comment decimate d decimation factor in range [0..1] to be applied to the input surface before refinement (0 - auto, 1 - disabled) close-holes ch try to close small holes in the input surface (0 - disabled) resolution-level rl how...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Texture-for-color-lion/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210916224127.png"
       },{
         "title": "Texture for smooth",
         "excerpt":"Run Data set id obj image ot mr csr gsl lsl ec result 1 12w pure-color 0 0 1 false false ⬛ 💩 2 meshlab_lap-smooth_12w pure-color 0 0 1 false false ⬛ 💩 3 meshlab_HC-lap-smooth_12w pure-color 0 0 1 false false ⬛ 💩 4 meshlab_normal-smooth_12w pure-color 0 0 1 false...","categories": ["3d"],
