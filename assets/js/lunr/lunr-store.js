@@ -346,4 +346,16 @@ var store = [{
         "tags": [],
         "url": "/3d/Texture-for-color-lion/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
+      },{
+        "title": "Texture for smooth",
+        "excerpt":"Run Data set id obj image ot mr csr gsl lsl ec result 1 12w pure-color 0 0 1 false false ⬛ 💩 2 meshlab_lap-smooth_12w pure-color 0 0 1 false false ⬛ 💩 3 meshlab_HC-lap-smooth_12w pure-color 0 0 1 false false ⬛ 💩 4 meshlab_normal-smooth_12w pure-color 0 0 1 false...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Texture-for-smooth/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210917172233.png"
+      },{
+        "title": "Texture for smooth 2",
+        "excerpt":"More Smooth case id obj image ot mr csr gsl lsl ec result 1 12w pure-color 0 0 1 false false ⬛ 💩 2 12w-5w pure-color 0 0 1 false false ⬛ 💩 3 mapple_gussian-0.1_12w pure-color 0 0 1 false false ⬛ 💩 4 mapple_sm-remesh_12w-5w pure-color 0 0 1 false...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Texture-for-smooth2/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918235717.png"
       }]
