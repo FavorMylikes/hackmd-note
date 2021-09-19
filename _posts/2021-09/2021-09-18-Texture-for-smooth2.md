@@ -17,14 +17,14 @@ header:
 |4|mapple_sm-remesh_12w-5w|pure-color|0|0|1|false|false|⬛|💩|
 |5|mapple_sm-remesh_12w-8w|pure-color|0|0|1|false|false|⬛|💩|
 |6|mapple_sm-remesh_12w-12w|pure-color|0|0|1|false|false|⬛|💩|
-|7|mapple_sm-remesh_12w-3k|gird-color|0|0|1|false|false|⬛|💩|
-|8|mapple_sm-remesh_12w-5w|gird-color|0|0|1|false|false|⬛|💩|
-|9|mapple_sm-remesh_12w-8w|gird-color|0|0|1|false|false|⬛|💩|
-|10|mapple_sm-remesh_12w-12w|gird-color|0|0|1|false|false|⬛|💩|
+|7|mapple_sm-remesh_12w-3k|lion||||||⬛|💩|
+|8|mapple_sm-remesh_12w-5w|lion||||||⬛|💩|
+|9|mapple_sm-remesh_12w-8w|lion||||||⬛|💩|
+|10|mapple_sm-remesh_12w-12w|lion||||||⬛|💩|
 
 ## Texture Result
 
-|kind|sm-remesh-3k|sm-remesh-5w|sm-remesh-8w|sm-remesh-12w|12w|
+|kind|sm-remesh-3k|sm-remesh-5w|sm-remesh-8w|sm-remesh-12w|no-remesh-12w|
 |-|-|-|-|-|-|
 |pure-color|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234813.png" alt="20210918234813" height="100px"/>|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234735.png" alt="20210918234735" height="100px"/>|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234647.png" alt="20210918234647" height="100px"/>|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234540.png" alt="20210918234540" height="100px"/>|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234052.png" alt="20210918234052" height="100px"/>|
 |lion||<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234946.png" alt="20210918234946" height="100px"/>|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918235040.png" alt="20210918235040" height="100px"/>|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918235116.png" alt="20210918235116" height="100px"/>|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918235327.png" alt="20210918235327" height="100px"/>
