@@ -1,4 +1,472 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-19T11:24:03+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Texture for smooth 2</title><link href="https://ucas.io/3d/Texture-for-smooth2/" rel="alternate" type="text/html" title="Texture for smooth 2" /><published>2021-09-18T23:18:09+08:00</published><updated>2021-09-18T23:18:09+08:00</updated><id>https://ucas.io/3d/Texture-for-smooth2</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-smooth2/">&lt;h2 id=&quot;more-smooth-case&quot;&gt;More Smooth case&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-21T19:04:21+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Texture Paper Reading - [Rethinking Texture Mapping]</title><link href="https://ucas.io/3d/Texture-Paper-Reading/" rel="alternate" type="text/html" title="Texture Paper Reading - [Rethinking Texture Mapping]" /><published>2021-09-21T19:03:21+08:00</published><updated>2021-09-21T19:03:21+08:00</updated><id>https://ucas.io/3d/Texture-Paper-Reading</id><content type="html" xml:base="https://ucas.io/3d/Texture-Paper-Reading/">&lt;h2 id=&quot;rethinking-texture-mapping---state-of-the-art-report&quot;&gt;&lt;a href=&quot;https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13656&quot;&gt;Rethinking Texture Mapping - State of The Art Report&lt;/a&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/sig_graph-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/EG-2019-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-26-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cemyuksel.com/courses/conferences/siggraph2017-rethinking_texture_mapping/rethinking_texture_mapping_course_notes.pdf&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;11-scope&quot;&gt;1.1 Scope&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Perfecting the Traditional Texture Mapping
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-8659.2010.01746.x&quot;&gt;RNLL10 - Invisible Seams&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CGF-2010-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-53-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://hal.inria.fr/inria-00547713/PDF/seamless.pdf&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;LFJG17 - Seam Erasure
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.cs.toronto.edu/~jacobson/images/seamless-seam-erasure-and-seam-aware-decoupling-of-shape-from-mesh-resolution-siggraph-asia-2017-compressed-liu-et-al.pdf&quot;&gt;Seamless: seam erasure and seam-aware decoupling of shape from mesh resolution.&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ToG-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH_Asia-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-24-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.cs.toronto.edu/~jacobson/images/seamless-seam-erasure-and-seam-aware-decoupling-of-shape-from-mesh-resolution-siggraph-asia-2017-compressed-liu-et-al.pdf&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.tandfonline.com/doi/abs/10.1080/2151237X.2012.654054&quot;&gt;Tar12 - Seamless Toroidal/Cylindrical Textures&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Journal_of_Graphics_Tools-2012-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-9-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://www.tandfonline.com/doi/abs/10.1080/2151237X.2012.654054&quot;&gt;Cylindrical and toroidal parameterizations without vertex seams - Paper.pdf&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/1057432.1057441&quot;&gt;PCK04 - Seamless Texture Atlases&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SGP-2004-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-98-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://pages.jh.edu/dighamm/research/2004_01_sta.pdf&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Connectivity-based Representations
+    &lt;ul&gt;
+      &lt;li&gt;BL08 - Ptex
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://www.disneyanimation.com/publications/ptex-per-face-texture-mapping-for-production-rendering/&quot;&gt;Ptex: Per‐face texture mapping for production rendering&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CGF-2008-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-104-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/1731047.1731053&quot;&gt;YKH10 - Mesh Colors&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ToG-2010-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-67-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/3105762.3105780&quot;&gt;Yuk16 - Mesh Color Textures&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/HPG-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-10-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sparse Volumetric Textures
+    &lt;ul&gt;
+      &lt;li&gt;KE02 - Adaptive Texture Maps
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-2002-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/EG-2002-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-160-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/pdf/10.5555/569046.569048&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/566654.566652&quot;&gt;BD02,LHN05 - Octree Textures&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ToG-2002-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-160-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=802C3674FAE16C6BB6DCD5200731CE5C?doi=10.1.1.300.6755&amp;amp;rep=rep1&amp;amp;type=pdf&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;CB04 - Brick Maps
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.91.6683&amp;amp;rep=rep1&amp;amp;type=pdf&quot;&gt;An irradiance atlas for global illumination in complex production scene.pdf&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/EGSR-2004-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-99-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Perfect Spatial Hashing
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ToG-2006-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-243-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.453.2027&amp;amp;rep=rep1&amp;amp;type=pdf&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Volume-based Parameterizations
+    &lt;ul&gt;
+      &lt;li&gt;LD07 - TileTrees
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SI3D-2007-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-48-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://hal.inria.fr/inria-00606799/document&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;THCM04 - PolyCube-Maps
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ToG-2004-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-305-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://irinsubria.uninsubria.it/retrieve/handle/11383/1492755/599/pcm_da_acm.pdf&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Tar16 - Volume-Encoded UV-Maps
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ToG-2016-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-17-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://vcg.isti.cnr.it/volume-encoded-uv-maps/volume-encoded-uv-maps.pdf&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;12-evaluation-criteria&quot;&gt;1.2 Evaluation Criteria&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Applicability.&lt;/li&gt;
+  &lt;li&gt;Usability.&lt;/li&gt;
+  &lt;li&gt;Filtering Quality.
+    &lt;ul&gt;
+      &lt;li&gt;magnification filtering
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;on-the-fly bilinear interpolation&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;minification filtering&lt;/li&gt;
+      &lt;li&gt;anisotropic filtering[各向异性过滤]
+        &lt;ul&gt;
+          &lt;li&gt;allows skewed filter shapes&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Performance.&lt;/li&gt;
+  &lt;li&gt;Implementation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;traditional-2d-texture-mapping&quot;&gt;Traditional 2D Texture Mapping&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;assigning uv coordinates to mesh vertices&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;perfecting-traditional-texture-mapping&quot;&gt;Perfecting Traditional Texture Mapping&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/3197517.3201317&quot;&gt;PKCH18 - Gradient-domain Processing Within a Texture Atlas&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ToG-2018-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-12-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/pdf/10.1145/3197517.3201317&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;texture seams and texture distortions&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://patents.google.com/patent/US10192346B2/en&quot;&gt;DGM18 - Generating uv maps for modified meshes - US10192346B2&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/patent-2019-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-2-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;automatize the adaptations of the uv map&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/383259.383307&quot;&gt;SSGH01 - Texture mapping progressive meshes&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIG_GRAPH-2001-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-900-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;the poor interoperability of LoD-pyramids and atlas-based textures&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;invisible-seams&quot;&gt;Invisible Seams&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921101757.png&quot; alt=&quot;20210921101757&quot; height=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Traditional Texture Mapping
+    &lt;ul&gt;
+      &lt;li&gt;inconsistent &lt;strong&gt;bilinear filtering&lt;/strong&gt; performed on either side of the seams
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bilinear Filtering&lt;/code&gt;
+            &lt;ul&gt;
+              &lt;li&gt;alias: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bilinear Interpolation&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bilinear texture mapping&lt;/code&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/e/ea/BilinearInterpolation.svg&quot; alt=&quot;wiki&quot; /&gt;&lt;/li&gt;
+              &lt;li&gt;
+                &lt;div class=&quot;kdmath&quot;&gt;$$
+\begin{aligned}
+      f(x, y_1) &amp;= \frac{x_2-x}{x_2-x_1}f(Q_{11}) + \frac{x-x_1}{x_2-x_1}f(Q_{21})\\
+      f(x, y_2) &amp;= \frac{x_2-x}{x_2-x_1}f(Q_{12}) + \frac{x-x_1}{x_2-x_1}f(Q_{22})\\
+      f(x, y) &amp;= \frac{y_2-y}{y_2-y_1}f(x, y_1) + \frac{y-y_1}{y_2-y_1}f(x, y_2)\\
+        &amp;=\frac{1}{(x_2-x_1)(y_2-y_1)}\begin{bmatrix}
+            x_2-x&amp;x-x_1
+        \end{bmatrix}\begin{bmatrix}
+            f(Q_{11})&amp;f(Q_{12})\\f(Q_{21})&amp;f(Q_{22})
+        \end{bmatrix}\begin{bmatrix}
+        y_2-y\\y-y_1
+        \end{bmatrix}
+  \end{aligned}
+$$&lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;extension: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Trilinear interpolation&lt;/code&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;placing both sides of the seams axis-aligned in uv space (either horizontally or vertically) with matching lengths, and assigning texels values that are exactly replicated along the seam.&lt;/p&gt;
+    &lt;/blockquote&gt;
+    &lt;ul&gt;
+      &lt;li&gt;cylindrical/toroidal mappings
+        &lt;ul&gt;
+          &lt;li&gt;[Tar12], [THCM04]&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[RNLL10]
+    &lt;ul&gt;
+      &lt;li&gt;introduces some constraints
+        &lt;ol&gt;
+          &lt;li&gt;integer resolution jumps across seams
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;blockquote&gt;
+                  &lt;p&gt;one side of the seam to be &lt;strong&gt;n times&lt;/strong&gt; the other, here $n \ge 1, n \in \mathbb{Z}$, longer side are &lt;strong&gt;linear interpolations&lt;/strong&gt; of the values on the shorter side&lt;/p&gt;
+                &lt;/blockquote&gt;
+              &lt;/li&gt;
+              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921143206.png&quot; alt=&quot;20210921143206&quot; /&gt;&lt;/li&gt;
+              &lt;li&gt;generating uv layouts with motorcycle graphs[SPGT18]
+                &lt;ul&gt;
+                  &lt;li&gt;motorcycle graphs
+                    &lt;ul&gt;
+                      &lt;li&gt;&lt;a href=&quot;https://www.imdb.com/video/vi4228627993?playlistId=tt0084827&amp;amp;ref_=tt_ov_vi&quot;&gt;Tron 1982 movie - imdb&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a href=&quot;https://jeffe.cs.illinois.edu/open/cycles.html&quot;&gt;Crashing Motorcycles Efficiently&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a href=&quot;https://www.wolframcloud.com/objects/demonstrations/MotorcycleGraphs-source.nb&quot;&gt;wolfram&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;https://www.ics.uci.edu/~goodrich/pubs/geomproc.pdf&quot;&gt;Motorcycle Graphs: Canonical Quad Mesh Partitioning&lt;/a&gt;
+                    &lt;ul&gt;
+                      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CGF-2008-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-65-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;oblique placement of seams in the 2D texture space
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;blockquote&gt;
+                  &lt;p&gt;two sides of the seams are constrained to be matching in parametric space up to an integer translation and rotations by an integer multiple of $\frac{\pi}{2}$&lt;/p&gt;
+                &lt;/blockquote&gt;
+              &lt;/li&gt;
+              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921143339.png&quot; alt=&quot;20210921143339&quot; /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[LFJG17] &lt;strong&gt;seamless cuts&lt;/strong&gt; or &lt;strong&gt;erased seam&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;&lt;strong&gt;no constraint&lt;/strong&gt; is explicitly imposed a priori on uv assignment&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;minimizes the discrepancy from the initial configuration&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;$\underset{\min p}{E_{lerp}(e_i,x_0,x_1)}=\int_0^1&lt;/td&gt;
+              &lt;td&gt;B(e_i(\gamma), p)-(\gamma x_0+(1-\gamma)x_1)&lt;/td&gt;
+              &lt;td&gt;^2d\gamma$&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;minor technical note, making seams invisible (with any method) may require using texture resolutions that are &lt;strong&gt;powers of 2&lt;/strong&gt;, seams can &lt;strong&gt;still be visible&lt;/strong&gt; when using &lt;strong&gt;arbitrary texture resolutions&lt;/strong&gt;&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;seamless-toroidalcylindrical-textures&quot;&gt;Seamless Toroidal/Cylindrical Textures&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ignore the restriction for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;only allows seams at mesh edges&lt;/code&gt; when Toroidal/Cylindrical [Tar12] 💩
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921152148.png&quot; alt=&quot;20210921152148&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;Cylindrical -&amp;gt; rectangular&lt;/li&gt;
+      &lt;li&gt;Toroidal -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;two orthogonal&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;seamless-texture-atlases&quot;&gt;Seamless Texture Atlases&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;[PCK04]Mip-mapping: Texture resolutions may be selected or
+blended on a per-fragment basis&lt;/p&gt;
+    &lt;/blockquote&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Mip: multum in parvo,[放置很多东西的小空间]&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Mipmap&quot;&gt;Mipmap - wiki&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://paroj.github.io/gltut/Texturing/Tut15%20Magnification.html&quot;&gt;Paroj - Linear Filtering&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921163401.png&quot; alt=&quot;20210921163401&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921161916.png&quot; alt=&quot;20210921161916&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921161952.png&quot; alt=&quot;20210921161952&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921162041.png&quot; alt=&quot;20210921162041&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;connectivity-based-representations&quot;&gt;Connectivity-based Representations&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[BL08] Ptex, Disney Animation and Pixar studios
+    &lt;ul&gt;
+      &lt;li&gt;How to
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;Since each face effectively gets its own texture, it is not affected by geometrical deformations of the model.&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;Ptex stores &lt;strong&gt;four face indices per face&lt;/strong&gt;, indicating the four neighbors of each quad face&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;our edge indices are stored per face to represent which edge of each neighboring face is the shared edge&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;resolution adjusted
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;texture resolution of each face can be adjusted independently&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;setting the texture resolution of a face based on its size.&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;texture filtering near edges becomes &lt;strong&gt;difficult&lt;/strong&gt;&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[YKH10] Mesh colors
+    &lt;ul&gt;
+      &lt;li&gt;Indeed, the lowest-resolution mesh colors are vertex colors, &lt;strong&gt;which store a single texture value per vertex&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921170909.png&quot; alt=&quot;20210921170909&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[Yuk16] Mesh Color Textures
+    &lt;ul&gt;
+      &lt;li&gt;GPU-friendly&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921171800.png&quot; alt=&quot;20210921171800&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sparse-volumetric-representations&quot;&gt;Sparse Volumetric Representations&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;store &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;texture data&lt;/code&gt; in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;voxel&lt;/code&gt; grid covering the object&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Issue list
+    &lt;ol&gt;
+      &lt;li&gt;thin surfaces get the same color on both sides
+        &lt;ul&gt;
+          &lt;li&gt;can be alleviated by storing normals alongside colors [BD02], at the expense of a further increase in storage and lookup cost&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;cost of trilinear interpolation.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[KE02] Adaptive Texture Maps
+    &lt;ul&gt;
+      &lt;li&gt;With traditional texture mapping, the entire texture is encoded using the same resolution, thus wasting memory where the content has low frequency.&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921180729.png&quot; alt=&quot;20210921180729&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[BD02,DGPR02, LHN05,KLS05] Octree Textures
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921180814.png&quot; alt=&quot;20210921180814&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[CB04] Brick Maps
+    &lt;ul&gt;
+      &lt;li&gt;RenderMan&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921181538.png&quot; alt=&quot;20210921181538&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[LH06]Perfect Spatial Hashing
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;This results in a very efficient method where the sparse data is accessed through only two texture lookups (a single indirection). However, the loss of cache coherency, due to the randomization of the access by the hash, penalizes access performance.&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921181648.png&quot; alt=&quot;20210921181648&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;volume-based-parametrizations&quot;&gt;Volume-based Parametrizations&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;how to encode the mapping efficiently and how to precompute it robustly&lt;/li&gt;
+  &lt;li&gt;[LD07]TileTrees
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921182759.png&quot; alt=&quot;20210921182759&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;The entire process is automatic, robust, and fast&lt;/li&gt;
+      &lt;li&gt;Tiletrees suffer from the same &lt;strong&gt;distortions&lt;/strong&gt; as cube-maps&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[THCM04]PolyCube - Maps
+    &lt;ul&gt;
+      &lt;li&gt;extension of cube-maps[Gre86]&lt;/li&gt;
+      &lt;li&gt;by substituting the cube the with an arbitrary polycube&lt;/li&gt;
+      &lt;li&gt;they replace the problem of defining a uv mapping with the problem of constructing a polycube&lt;/li&gt;
+      &lt;li&gt;The task of automatically or semi-automatically constructing a polycube-map
+        &lt;ul&gt;
+          &lt;li&gt;[LJFW08,WJH&lt;em&gt;08, HWFQ09, WYZ&lt;/em&gt;11, YZWL14, HJS*14, HZ16]
+            &lt;ul&gt;
+              &lt;li&gt;limiting the number of cubes&lt;/li&gt;
+              &lt;li&gt;limiting the number of irregular vertices&lt;/li&gt;
+              &lt;li&gt;matching the topology of the input surface&lt;/li&gt;
+              &lt;li&gt;maximizing shape similarity between the two shapes&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921185711.png&quot; alt=&quot;20210921185711&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[Tar16]Volume-Encoded UV-Maps
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;volume-encoded uv-maps replace the problem of defining a uv mapping with the problem of defining a volume-encoded parameterization&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921185835.png&quot; alt=&quot;20210921185835&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921190203.png&quot; alt=&quot;20210921190203&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Rethinking Texture Mapping - State of The Art Report</summary></entry><entry><title type="html">Texture Paper Reading Todo</title><link href="https://ucas.io/Texture-Paper-Reading-TODO/" rel="alternate" type="text/html" title="Texture Paper Reading Todo" /><published>2021-09-20T00:00:00+08:00</published><updated>2021-09-20T00:00:00+08:00</updated><id>https://ucas.io/Texture-Paper-Reading-TODO</id><content type="html" xml:base="https://ucas.io/Texture-Paper-Reading-TODO/"></content><author><name>麦丽素</name></author><summary type="html"></summary></entry><entry><title type="html">Texture for smooth 2</title><link href="https://ucas.io/3d/Texture-for-smooth2/" rel="alternate" type="text/html" title="Texture for smooth 2" /><published>2021-09-18T23:18:09+08:00</published><updated>2021-09-18T23:18:09+08:00</updated><id>https://ucas.io/3d/Texture-for-smooth2</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-smooth2/">&lt;h2 id=&quot;more-smooth-case&quot;&gt;More Smooth case&lt;/h2&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -1492,219 +1960,4 @@ $$&lt;/div&gt;
       &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907230743.png&quot; alt=&quot;20210907230743&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Texture at original mesh</summary></entry><entry><title type="html">Cmake Texture project</title><link href="https://ucas.io/tutorial/Cmake-Texture-project/" rel="alternate" type="text/html" title="Cmake Texture project" /><published>2021-09-04T14:11:16+08:00</published><updated>2021-09-04T14:11:16+08:00</updated><id>https://ucas.io/tutorial/Cmake-Texture-project</id><content type="html" xml:base="https://ucas.io/tutorial/Cmake-Texture-project/">&lt;h2 id=&quot;vcpkg-install&quot;&gt;vcpkg install&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;set proxy&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-power&quot;&gt;$env:HTTP_PROXY=&quot;localhost:4780&quot;
-$env:HTTPS_PROXY=&quot;localhost:4780&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;camke-generator&quot;&gt;Camke generator&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210906214320.png&quot; alt=&quot;20210906214320&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;warning&quot;&gt;Warning&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CMP0074
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;log&lt;/p&gt;
-
-        &lt;pre&gt;&lt;code class=&quot;language-log&quot;&gt;Policy CMP0074 is not set: find_package uses &amp;lt;PackageName&amp;gt;_ROOT variables.
-Run &quot;cmake --help-policy CMP0074&quot; for policy details.  Use the cmake_policy
-command to set the policy and suppress this warning.
-
-Environment variable Eigen3_ROOT is set to:
-...
-For compatibility, CMake is ignoring the variable.
-&lt;/code&gt;&lt;/pre&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://cmake.org/cmake/help/latest/policy/CMP0074.html&quot;&gt;CMP0074 explain - cmake.org&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Fix
-        &lt;ul&gt;
-          &lt;li&gt;add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmake_policy(SET CMP0074 NEW)&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmake_policy(SET CMP0074 OLD)&lt;/code&gt; before &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;project&lt;/code&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;inheritenvironments&quot;&gt;inheritEnvironments&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linux_arm&lt;/code&gt;: Target ARM Linux remotely.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linux_x64&lt;/code&gt;: Target x64 Linux remotely.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;linux_x86&lt;/code&gt;: Target x86 Linux remotely.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_arm&lt;/code&gt;: Target ARM Windows with the MSVC compiler.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_arm_x64&lt;/code&gt;: Target ARM Windows with the 64-bit MSVC compiler.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_arm64&lt;/code&gt;: Target ARM64 Windows with the MSVC compiler.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_arm64_x64&lt;/code&gt;: Target ARM64 Windows with the 64-bit MSVC compiler.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_x64&lt;/code&gt;: Target x64 Windows with the MSVC compiler.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_x64_x64&lt;/code&gt;: Target x64 Windows with the 64-bit MSVC compiler.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_x86&lt;/code&gt;: Target x86 Windows with the MSVC compiler.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msvc_x86_x64&lt;/code&gt;: Target x86 Windows with the 64-bit MSVC compiler.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/fcab912ab357&quot;&gt;CMake-02:核心概念&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">vcpkg install</summary></entry><entry><title type="html">Using vcpkg and cmake with Visual studio 2019</title><link href="https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/" rel="alternate" type="text/html" title="Using vcpkg and cmake with Visual studio 2019" /><published>2021-09-03T01:00:31+08:00</published><updated>2021-09-03T01:00:31+08:00</updated><id>https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019</id><content type="html" xml:base="https://ucas.io/tutorial/Using-vcpkg-and-cmake-with-Visual-studio-2019/">&lt;h2 id=&quot;c-project-package-manager&quot;&gt;C++ project package manager&lt;/h2&gt;
-
-&lt;h3 id=&quot;comparison&quot;&gt;Comparison&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Read thoes detail at &lt;a href=&quot;https://www.reddit.com/r/cpp/comments/9m4l0p/conan_vcpkg_or_build2/&quot;&gt;Reddit&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;vcpkg
-    &lt;ul&gt;
-      &lt;li&gt;
-
-        &lt;table&gt;
-          &lt;thead&gt;
-            &lt;tr&gt;
-              &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
-              &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
-              &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
-            &lt;/tr&gt;
-          &lt;/thead&gt;
-          &lt;tbody&gt;
-            &lt;tr&gt;
-              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/microsoft/vcpkg&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=microsoft&amp;amp;repo=vcpkg&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/microsoft/vcpkg&quot;&gt;&lt;img src=&quot;https://stars.medv.io/microsoft/vcpkg.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/microsoft/vcpkg&quot;&gt;&lt;img src=&quot;https://starchart.cc/microsoft/vcpkg.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-          &lt;/tbody&gt;
-        &lt;/table&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Conan
-    &lt;ul&gt;
-      &lt;li&gt;
-
-        &lt;table&gt;
-          &lt;thead&gt;
-            &lt;tr&gt;
-              &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
-              &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
-              &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
-            &lt;/tr&gt;
-          &lt;/thead&gt;
-          &lt;tbody&gt;
-            &lt;tr&gt;
-              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/conan-io/conan&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=conan-io&amp;amp;repo=conan&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/conan-io/conan&quot;&gt;&lt;img src=&quot;https://stars.medv.io/conan-io/conan.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/conan-io/conan&quot;&gt;&lt;img src=&quot;https://starchart.cc/conan-io/conan.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-          &lt;/tbody&gt;
-        &lt;/table&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;build2
-    &lt;ul&gt;
-      &lt;li&gt;
-
-        &lt;table&gt;
-          &lt;thead&gt;
-            &lt;tr&gt;
-              &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
-              &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
-              &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
-            &lt;/tr&gt;
-          &lt;/thead&gt;
-          &lt;tbody&gt;
-            &lt;tr&gt;
-              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/build2/build2&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=build2&amp;amp;repo=build2&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/build2/build2&quot;&gt;&lt;img src=&quot;https://stars.medv.io/build2/build2.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/build2/build2&quot;&gt;&lt;img src=&quot;https://starchart.cc/build2/build2.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-          &lt;/tbody&gt;
-        &lt;/table&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;install-vcpkg&quot;&gt;Install vcpkg&lt;/h2&gt;
-
-&lt;h3 id=&quot;install-windows&quot;&gt;Install Windows&lt;/h3&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;git clone https://github.com/microsoft/vcpkg
-cd vcpkg
-bootstrap-vcpkg.bat
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;install-package&quot;&gt;install package&lt;/h3&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;vcpkg install eigen3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;check-support-platform&quot;&gt;Check support platform&lt;/h3&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;vcpkg help triplets
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;check-installed-package&quot;&gt;Check Installed package&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-power&quot;&gt;vcpkg list
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;using-vcpkg-with-cmake-under-visual-studio-2019&quot;&gt;Using vcpkg with cmake under Visual studio 2019&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;For windows Visual studio 2019&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-power&quot;&gt;vcpkg install sqlite3:x64-windows
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;允许全局引用&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-power&quot;&gt;vcpkg integrate install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CMakeLists.txt&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-cmake highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cmake_minimum_required&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;VERSION 3.8&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;project&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;vs_cmake CXX&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;find_package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;unofficial-sqlite3 CONFIG REQUIRED&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;find_package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;fmt REQUIRED&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;find_package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;range-v3 REQUIRED&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;find_package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cxxopts REQUIRED&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;nb&quot;&gt;add_executable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;vs_cmake &lt;span class=&quot;s2&quot;&gt;&quot;vs_cmake.cpp&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;vs_cmake.h&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;target_compile_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;vs_cmake PRIVATE cxx_std_20&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;target_link_libraries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;vs_cmake
-  PRIVATE
-    fmt::fmt
-    range-v3::range-v3
-    cxxopts::cxxopts
-    unofficial::sqlite3::sqlite3&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;project&lt;/code&gt; 指定项目名&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find_package&lt;/code&gt; 指定项目依赖&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;add_executable&lt;/code&gt; 指定编译后的可执行程序&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target_compile_features&lt;/code&gt; 指定编译版本&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cxx_std_20&lt;/code&gt;, 使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/std:c++20&lt;/code&gt;作为编译版本&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target_link_libraries&lt;/code&gt; 为项目指定链接库&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;add-cmake-tool-chain&quot;&gt;add Cmake Tool chain&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;cmakeToolchain&quot;: &quot;\path\to\vcpkg\\scripts\\buildsystems\\vcpkg.cmake&quot;&lt;/code&gt; at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CMakeSettings.json&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;or use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-DCMAKE_TOOL_CHAIN=&lt;/code&gt; at command line&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">C++ project package manager</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Texture at original mesh</summary></entry></feed>

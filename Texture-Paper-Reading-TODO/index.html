@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Texture for original model And Cmake on OpenMVS / Notes B</title>
-<meta name="description" content="Texture at original mesh">
+<!-- begin _includes/seo.html --><title>Texture Paper Reading Todo / Notes B</title>
+<meta name="description" content="">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,26 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Texture for original model And Cmake on OpenMVS">
-<meta property="og:url" content="https://ucas.io/3d/Texture-For-Original-Model/">
+<meta property="og:title" content="Texture Paper Reading Todo">
+<meta property="og:url" content="https://ucas.io/Texture-Paper-Reading-TODO/">
 
 
-  <meta property="og:description" content="Texture at original mesh">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221533.png">
-
-
-
-
-
-  <meta property="article:published_time" content="2021-09-07T22:21:17+08:00">
+  <meta property="og:description" content="">
 
 
 
 
 
 
-<link rel="canonical" href="https://ucas.io/3d/Texture-For-Original-Model/">
+
+  <meta property="article:published_time" content="2021-09-20T00:00:00+08:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/Texture-Paper-Reading-TODO/">
 
 
 
@@ -203,17 +201,7 @@
         <span class="sep">/</span>
       
       
-        
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
-          <meta itemprop="position" content="2" />
-        </li>
-        <span class="sep">/</span>
-      
-    
-      
-      
-        <li class="current">Texture for original model And Cmake on OpenMVS</li>
+        <li class="current">Texture Paper Reading Todo</li>
       
     
   </ol>
@@ -332,15 +320,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Texture for original model And Cmake on OpenMVS">
-    <meta itemprop="description" content="Texture at original mesh">
-    <meta itemprop="datePublished" content="2021-09-07T22:21:17+08:00">
+    <meta itemprop="headline" content="Texture Paper Reading Todo">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2021-09-20T00:00:00+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Texture for original model And Cmake on OpenMVS
+          <h1 id="page-title" class="page__title" itemprop="headline">Texture Paper Reading Todo
 </h1>
           
 
@@ -350,7 +338,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-09-07T22:21:17+08:00">September 7, 2021</time>
+        <time datetime="2021-09-20T00:00:00+08:00">September 20, 2021</time>
       </span>
     
 
@@ -378,119 +366,12 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#texture-at-original-mesh">Texture at original mesh</a></li><li><a href="#prepare-requirement-of-openmvs">Prepare Requirement of OpenMVS</a></li></ul>
+              
 
             </nav>
           </aside>
         
-        <h2 id="texture-at-original-mesh">Texture at original mesh</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>size</th>
-      <th>comment</th>
-      <th>vertices</th>
-      <th>faces</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>mesh-original</td>
-      <td>2.1G</td>
-      <td>Original Block Merge</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>mesh-original-building</td>
-      <td>2.1G</td>
-      <td>Building only</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>mesh-original-plant</td>
-      <td>429M</td>
-      <td>Plant only</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>mesh-original-reduce-50p</td>
-      <td>1.0G</td>
-      <td>maya reduce 50%</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>mesh-original-reduce-50p-50p</td>
-      <td>529M</td>
-      <td>maya reduce 25%</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>mesh-original-reduce-50p-50p-50p</td>
-      <td>265M</td>
-      <td>maya reduce 12.5%</td>
-      <td>694001</td>
-      <td>1361715</td>
-    </tr>
-  </tbody>
-</table>
-
-<ul>
-  <li>case1
-    <ul>
-      <li>params
-        <ul>
-          <li><code class="language-plaintext highlighter-rouge">block[0:4]</code></li>
-          <li><code class="language-plaintext highlighter-rouge">model = mesh-original-reduce-50p-50p-50p</code></li>
-        </ul>
-      </li>
-      <li>cost
-        <ul>
-          <li><code class="language-plaintext highlighter-rouge">memory=12G</code></li>
-          <li><code class="language-plaintext highlighter-rouge">load_image=16m42s</code></li>
-          <li><code class="language-plaintext highlighter-rouge">assigning=33m56s</code></li>
-          <li><code class="language-plaintext highlighter-rouge">generating texture atlas=1h52m15s</code></li>
-          <li><code class="language-plaintext highlighter-rouge">mesh texturing=2h26m13s</code></li>
-          <li><code class="language-plaintext highlighter-rouge">save=34s</code></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221449.png" alt="20210907221449" height="200" /><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221533.png" alt="20210907221533" height="200" /><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221635.png" alt="20210907221635" height="200" /></li>
-  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221731.png" alt="20210907221731" height="200" /><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221825.png" alt="20210907221825" height="200" /><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221916.png" alt="20210907221916" height="200" /></li>
-</ul>
-
-<h2 id="prepare-requirement-of-openmvs">Prepare Requirement of OpenMVS</h2>
-
-<ul>
-  <li>vcpkg install
-    <ul>
-      <li>make sure you have specift args <code class="language-plaintext highlighter-rouge">--triplet x64-windows</code></li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vcpkg</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">zlib</span><span class="w"> </span><span class="nx">boost-iostreams</span><span class="w"> </span><span class="nx">boost-program-options</span><span class="w"> </span><span class="nx">boost-system</span><span class="w"> </span><span class="nx">boost-serialization</span><span class="w"> </span><span class="nx">eigen3</span><span class="w"> </span><span class="nx">cgal</span><span class="p">[</span><span class="n">core</span><span class="p">]</span><span class="w"> </span><span class="nx">opencv</span><span class="w"> </span><span class="nx">glew</span><span class="w"> </span><span class="nx">glfw3</span><span class="w"> </span><span class="nt">--triplet</span><span class="w"> </span><span class="nx">x64-windows</span><span class="w">
-</span></code></pre></div></div>
-
-<ul>
-  <li>add <code class="language-plaintext highlighter-rouge">CMAKE_TOOLCHAIN_FILE</code>
-    <ul>
-      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907230631.png" alt="20210907230631" height="200" /></li>
-    </ul>
-  </li>
-  <li>build with vs 2019
-    <ul>
-      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907230743.png" alt="20210907230743" /></li>
-    </ul>
-  </li>
-</ul>
+        
 
         
       </section>
@@ -500,24 +381,9 @@
         
 
 
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
-    
-    </span>
-  </p>
-
-
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-07T22:21:17+08:00">September 7, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-20T00:00:00+08:00">September 20, 2021</time></p>
 
 
       </footer>
@@ -525,22 +391,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Texture+for+original+model+And+Cmake+on+OpenMVS%20https%3A%2F%2Fucas.io%2F3d%2FTexture-For-Original-Model%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Texture+Paper+Reading+Todo%20https%3A%2F%2Fucas.io%2FTexture-Paper-Reading-TODO%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FTexture-For-Original-Model%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2FTexture-Paper-Reading-TODO%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FTexture-For-Original-Model%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2FTexture-Paper-Reading-TODO%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/tutorial/Cmake-Texture-project/" class="pagination--pager" title="Cmake Texture project
+      <a href="/3d/Texture-for-smooth2/" class="pagination--pager" title="Texture for smooth 2
 ">Previous</a>
     
     
-      <a href="/3d/Texture-for-dog-project/" class="pagination--pager" title="Texture for dog project
+      <a href="/3d/Texture-Paper-Reading/" class="pagination--pager" title="Texture Paper Reading - [Rethinking Texture Mapping]
 ">Next</a>
     
   </nav>
@@ -602,53 +468,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Rethinking Texture Mapping - State of The Art Report
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/Texture-Paper-Reading-TODO/" rel="permalink">Texture Paper Reading Todo
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-09-20T00:00:00+08:00">September 20, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -751,6 +570,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Run Data set
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210916224127.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Texture-for-color-lion/" rel="permalink">Texture for color lion
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-16T21:46:52+08:00">September 16, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Texture for colorful lion
 </p>
   </article>
 </div>
