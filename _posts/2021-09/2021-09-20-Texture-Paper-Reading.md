@@ -136,7 +136,7 @@ header:
 - [LFJG17] **seamless cuts** or **erased seam**
   - > **no constraint** is explicitly imposed a priori on uv assignment
   - > minimizes the discrepancy from the initial configuration
-  - $\underset{\min p}{E_{lerp}(e_i,x_0,x_1)}=\int_0^1\vertB(e_i(\gamma), p)-(\gamma x_0+(1-\gamma)x_1)\vert^2d\gamma$
+  - $\underset{\min p}{E_{lerp}(e_i,x_0,x_1)}=\int_0^1\vert B(e_i(\gamma), p)-(\gamma x_0+(1-\gamma)x_1)\vert^2d\gamma$
   - > minor technical note, making seams invisible (with any method) may require using texture resolutions that are **powers of 2**, seams can **still be visible** when using **arbitrary texture resolutions**
 
 ### Seamless Toroidal/Cylindrical Textures
