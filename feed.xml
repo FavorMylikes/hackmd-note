@@ -1,4 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-21T19:16:38+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Texture Paper Reading - [Rethinking Texture Mapping]</title><link href="https://ucas.io/3d/Texture-Paper-Reading/" rel="alternate" type="text/html" title="Texture Paper Reading - [Rethinking Texture Mapping]" /><published>2021-09-21T19:03:21+08:00</published><updated>2021-09-21T19:03:21+08:00</updated><id>https://ucas.io/3d/Texture-Paper-Reading</id><content type="html" xml:base="https://ucas.io/3d/Texture-Paper-Reading/">&lt;h2 id=&quot;rethinking-texture-mapping---state-of-the-art-report&quot;&gt;&lt;a href=&quot;https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13656&quot;&gt;Rethinking Texture Mapping - State of The Art Report&lt;/a&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-23T17:00:50+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Clion Debug</title><link href="https://ucas.io/3d/Clion-Debug/" rel="alternate" type="text/html" title="Clion Debug" /><published>2021-09-23T16:24:52+08:00</published><updated>2021-09-23T16:24:52+08:00</updated><id>https://ucas.io/3d/Clion-Debug</id><content type="html" xml:base="https://ucas.io/3d/Clion-Debug/">&lt;h2 id=&quot;problem-list&quot;&gt;Problem List&lt;/h2&gt;
+
+&lt;h3 id=&quot;windows-xps-build&quot;&gt;windows [xps] build&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;...
+&lt;/span&gt;&lt;span class=&quot;go&quot;&gt;[ 75%] Linking CXX executable ..\..\bin\x86\InterfaceVisualSFM.exe
+LINK: command &quot;... C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib\Win32\cuda.lib ...&quot; failed (exit code 1120) with the following output:
+MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuGetErrorString
+MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuGetErrorName
+MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuParamSetSize
+MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuFuncSetBlockShape
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;...
+&lt;/span&gt;&lt;span class=&quot;go&quot;&gt;Common.lib(CUDA.cpp.obj) : error LNK2001: 无法解析的外部符号 cuStreamWaitEvent
+Common.lib(CUDA.cpp.obj) : error LNK2001: 无法解析的外部符号 cuModuleUnload
+..\..\bin\x86\InterfaceVisualSFM.exe : fatal error LNK1120: 33 个无法解析的外部命令
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;consider it about cuda version
+    &lt;ul&gt;
+      &lt;li&gt;Download &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CUDA Driver api&lt;/code&gt; &lt;a href=&quot;https://docs.nvidia.com/cuda/pdf/CUDA_Driver_API.pdf&quot;&gt;file.pdf&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923163138.png&quot; alt=&quot;20210923163138&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dumpbin.exe&lt;/code&gt;&lt;/p&gt;
+
+        &lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;\dumpbin.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib\Win32\cuda.lib&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/symbols&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/exports&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;get list of function that exported by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cuda.lib&lt;/code&gt; file&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923163629.png&quot; alt=&quot;20210923163629&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923163648.png&quot; alt=&quot;20210923163648&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;Dont how to fix it.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Here a list about this issue
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS/issues/147#issuecomment-263116200&quot;&gt;https://github.com/cdcseacave/openMVS/issues/147&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-lcuda&lt;/code&gt; at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openMVS/libs/MVS/CMakeLists.txt&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;have tried, does not work, cause &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-lcuda&lt;/code&gt; will by ignore under windows system&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/19981506/5587080&quot;&gt;how-to-let-cmake-find-cuda&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-DCUDA_TOOLKIT_ROOT_DIR=cuda_path_the_version_you_want&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;ATTATION&lt;/strong&gt;: for example &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-DCUDA_TOOLKIT_ROOT_DIR=&quot;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.4&quot;&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;You need double slash &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\\&lt;/code&gt; at path&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;change-to-other-machineworkstation&quot;&gt;change to other machine[workstation]&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Fixed&lt;/strong&gt;????!!!
+    &lt;ul&gt;
+      &lt;li&gt;Mayby too many difference cuda version at xps?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;By the way
+    &lt;ul&gt;
+      &lt;li&gt;need use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--use-cuda=0&lt;/code&gt; to disable gpu at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RefineMesh&lt;/code&gt; step&lt;/li&gt;
+      &lt;li&gt;otherwise a gpu error message will by throw, but obviously, there is very enough memory at here.&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165608.png&quot; alt=&quot;20210923165608&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CUDA error: cuMemFree(pData) (CUDA_ERROR_ILLEGAL_ADDRESS (code 700) - an illegal memory access was encountered)&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Problem List</summary></entry><entry><title type="html">Texture Paper Reading - [Rethinking Texture Mapping]</title><link href="https://ucas.io/3d/Texture-Paper-Reading/" rel="alternate" type="text/html" title="Texture Paper Reading - [Rethinking Texture Mapping]" /><published>2021-09-21T19:03:21+08:00</published><updated>2021-09-21T19:03:21+08:00</updated><id>https://ucas.io/3d/Texture-Paper-Reading</id><content type="html" xml:base="https://ucas.io/3d/Texture-Paper-Reading/">&lt;h2 id=&quot;rethinking-texture-mapping---state-of-the-art-report&quot;&gt;&lt;a href=&quot;https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13656&quot;&gt;Rethinking Texture Mapping - State of The Art Report&lt;/a&gt;&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/sig_graph-2017-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/EG-2019-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-26-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
@@ -1843,111 +1915,4 @@ $$&lt;/div&gt;
 &lt;pre&gt;&lt;code class=&quot;language-conda&quot;&gt;proxy_servers:
     http: http://user:pass@corp.com:8080
     https: https://user:pass@corp.com:8080
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Original Texture</summary></entry><entry><title type="html">Texture for original model And Cmake on OpenMVS</title><link href="https://ucas.io/3d/Texture-For-Original-Model/" rel="alternate" type="text/html" title="Texture for original model And Cmake on OpenMVS" /><published>2021-09-07T22:21:17+08:00</published><updated>2021-09-07T22:21:17+08:00</updated><id>https://ucas.io/3d/Texture-For-Original-Model</id><content type="html" xml:base="https://ucas.io/3d/Texture-For-Original-Model/">&lt;h2 id=&quot;texture-at-original-mesh&quot;&gt;Texture at original mesh&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;name&lt;/th&gt;
-      &lt;th&gt;size&lt;/th&gt;
-      &lt;th&gt;comment&lt;/th&gt;
-      &lt;th&gt;vertices&lt;/th&gt;
-      &lt;th&gt;faces&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mesh-original&lt;/td&gt;
-      &lt;td&gt;2.1G&lt;/td&gt;
-      &lt;td&gt;Original Block Merge&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mesh-original-building&lt;/td&gt;
-      &lt;td&gt;2.1G&lt;/td&gt;
-      &lt;td&gt;Building only&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mesh-original-plant&lt;/td&gt;
-      &lt;td&gt;429M&lt;/td&gt;
-      &lt;td&gt;Plant only&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mesh-original-reduce-50p&lt;/td&gt;
-      &lt;td&gt;1.0G&lt;/td&gt;
-      &lt;td&gt;maya reduce 50%&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mesh-original-reduce-50p-50p&lt;/td&gt;
-      &lt;td&gt;529M&lt;/td&gt;
-      &lt;td&gt;maya reduce 25%&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mesh-original-reduce-50p-50p-50p&lt;/td&gt;
-      &lt;td&gt;265M&lt;/td&gt;
-      &lt;td&gt;maya reduce 12.5%&lt;/td&gt;
-      &lt;td&gt;694001&lt;/td&gt;
-      &lt;td&gt;1361715&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;case1
-    &lt;ul&gt;
-      &lt;li&gt;params
-        &lt;ul&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;block[0:4]&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;model = mesh-original-reduce-50p-50p-50p&lt;/code&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;cost
-        &lt;ul&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;memory=12G&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;load_image=16m42s&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assigning=33m56s&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;generating texture atlas=1h52m15s&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mesh texturing=2h26m13s&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;save=34s&lt;/code&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221449.png&quot; alt=&quot;20210907221449&quot; height=&quot;200&quot; /&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221533.png&quot; alt=&quot;20210907221533&quot; height=&quot;200&quot; /&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221635.png&quot; alt=&quot;20210907221635&quot; height=&quot;200&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221731.png&quot; alt=&quot;20210907221731&quot; height=&quot;200&quot; /&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221825.png&quot; alt=&quot;20210907221825&quot; height=&quot;200&quot; /&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907221916.png&quot; alt=&quot;20210907221916&quot; height=&quot;200&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;prepare-requirement-of-openmvs&quot;&gt;Prepare Requirement of OpenMVS&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;vcpkg install
-    &lt;ul&gt;
-      &lt;li&gt;make sure you have specift args &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--triplet x64-windows&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;vcpkg&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zlib&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;boost-iostreams&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;boost-program-options&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;boost-system&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;boost-serialization&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;eigen3&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cgal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opencv&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;glew&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;glfw3&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--triplet&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x64-windows&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CMAKE_TOOLCHAIN_FILE&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907230631.png&quot; alt=&quot;20210907230631&quot; height=&quot;200&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;build with vs 2019
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210907230743.png&quot; alt=&quot;20210907230743&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Texture at original mesh</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Original Texture</summary></entry></feed>
