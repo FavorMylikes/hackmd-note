@@ -375,5 +375,5 @@ var store = [{
         "excerpt":"Problem List windows [xps] build ... [ 75%] Linking CXX executable ..\\..\\bin\\x86\\InterfaceVisualSFM.exe LINK: command \"... C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.4\\lib\\Win32\\cuda.lib ...\" failed (exit code 1120) with the following output: MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuGetErrorString MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuGetErrorName MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuParamSetSize MVS.lib(Mesh.cpp.obj) : error...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Clion-Debug/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910164754.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png"
       }]

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-23T17:00:50+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Clion Debug</title><link href="https://ucas.io/3d/Clion-Debug/" rel="alternate" type="text/html" title="Clion Debug" /><published>2021-09-23T16:24:52+08:00</published><updated>2021-09-23T16:24:52+08:00</updated><id>https://ucas.io/3d/Clion-Debug</id><content type="html" xml:base="https://ucas.io/3d/Clion-Debug/">&lt;h2 id=&quot;problem-list&quot;&gt;Problem List&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-24T18:20:59+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Clion Debug</title><link href="https://ucas.io/3d/Clion-Debug/" rel="alternate" type="text/html" title="Clion Debug" /><published>2021-09-23T16:24:52+08:00</published><updated>2021-09-23T16:24:52+08:00</updated><id>https://ucas.io/3d/Clion-Debug</id><content type="html" xml:base="https://ucas.io/3d/Clion-Debug/">&lt;h2 id=&quot;problem-list&quot;&gt;Problem List&lt;/h2&gt;
 
 &lt;h3 id=&quot;windows-xps-build&quot;&gt;windows [xps] build&lt;/h3&gt;
 
@@ -70,6 +70,107 @@ Common.lib(CUDA.cpp.obj) : error LNK2001: 无法解析的外部符号 cuModuleUn
       &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CUDA error: cuMemFree(pData) (CUDA_ERROR_ILLEGAL_ADDRESS (code 700) - an illegal memory access was encountered)&lt;/code&gt;.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;A very shity result be generated here
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png&quot; alt=&quot;20210923165954&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;set--dcmake_verbose_makefileboolon-at-cmake-config-at-clion&quot;&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON&lt;/code&gt; at cmake config at Clion&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Here the ucas machine looks like&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;C:\PROGRA~2\MICROS~3\2019\ENTERP~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe @CMakeFiles\DensifyPointCloud.dir\objects1.rsp /out:..\..\bin\x64\DensifyPointCloud.exe /implib:..\..\bin\x64\DensifyPointCloud.lib /pdb:
+C:\workspace\workspace_3d\openMVS\cmake-build-release-visual-studio\bin\x64\DensifyPointCloud.pdb /version:0.0 /machine:x64 /INCREMENTAL:NO /LTCG /subsystem:console -LIBPATH:
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib -LIBPATH:
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\debug\lib ..\..\lib\x64\MVS.lib ..\..\lib\x64\Math.lib ..\..\lib\x64\IO.lib ..\..\lib\x64\Common.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_iostreams-vc140-mt.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_program_options-vc140-mt.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_system-vc140-mt.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_serialization-vc140-mt.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_regex-vc140-mt.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_highgui.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_ml.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_objdetect.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_photo.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_stitching.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_video.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_calib3d.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_dnn.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_features2d.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_flann.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_videoio.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_imgcodecs.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_imgproc.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_core.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\libpng16.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\zlib.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\jpeg.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\tiff.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\lzma.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\zlib.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\jpeg.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\tiff.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\lzma.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\mpfr.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\gmp.lib 
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib\x64\cuda.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:..\..\bin\x64\DensifyPointCloud.exe.manifest
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;and here is the xps machine&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;C:\PROGRA~2\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\DensifyPointCloud.dir\objects1.rsp /out:..\..\bin\x86\DensifyPointCloud.exe /implib:..\..\bin\x86\DensifyPointCloud.lib /pdb:
+C:\workspace\workspace_3d\openMVS\cmake-build-release-visual-studio\bin\x86\DensifyPointCloud.pdb /version:0.0 /machine:x64 /INCREMENTAL:NO /LTCG /subsystem:console -LIBPATH:
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib -LIBPATH:
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\debug\lib ..\..\lib\x86\MVS.lib ..\..\lib\x86\Math.lib ..\..\lib\x86\IO.lib ..\..\lib\x86\Common.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_iostreams-vc140-mt.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_program_options-vc140-mt.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_system-vc140-mt.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_serialization-vc140-mt.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_regex-vc140-mt.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_highgui.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_ml.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_objdetect.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_photo.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_stitching.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_video.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_calib3d.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_dnn.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_features2d.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_flann.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_videoio.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_imgcodecs.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_imgproc.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_core.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\libpng16.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\zlib.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\jpeg.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\tiff.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\lzma.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\zlib.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\jpeg.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\tiff.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\lzma.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\mpfr.lib 
+C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\gmp.lib 
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib\Win32\cuda.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:..\..\bin\x86\DensifyPointCloud.exe.manifest
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;After file compare&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923184051.png&quot; alt=&quot;20210923184051&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;xps has a wrong target triplet&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;todo&quot;&gt;TODO&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;still not figure it out how it happen, reinstalling vcpkg, wish it be helpful.&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Problem List</summary></entry><entry><title type="html">Texture Paper Reading - [Rethinking Texture Mapping]</title><link href="https://ucas.io/3d/Texture-Paper-Reading/" rel="alternate" type="text/html" title="Texture Paper Reading - [Rethinking Texture Mapping]" /><published>2021-09-21T19:03:21+08:00</published><updated>2021-09-21T19:03:21+08:00</updated><id>https://ucas.io/3d/Texture-Paper-Reading</id><content type="html" xml:base="https://ucas.io/3d/Texture-Paper-Reading/">&lt;h2 id=&quot;rethinking-texture-mapping---state-of-the-art-report&quot;&gt;&lt;a href=&quot;https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13656&quot;&gt;Rethinking Texture Mapping - State of The Art Report&lt;/a&gt;&lt;/h2&gt;
 
 &lt;ul&gt;
