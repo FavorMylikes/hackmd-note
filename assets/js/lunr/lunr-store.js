@@ -389,6 +389,12 @@ var store = [{
         "url": "/Code-Reading/",
         "teaser": null
       },{
+        "title": "Minimum bounding box [MBB]",
+        "excerpt":"MBB 最小包围盒 [Minimum bounding box] AABB 轴对齐包围盒 [Axis-aligned minimum bounding box] when the model is rotated they cannot be simply rotated with it, but need to be recomputed. $$ \\begin{aligned} P_{min} &= [x_{min},y_{min},z_{min}]\\\\ P_{max} &= [x_{max},y_{max},z_{max}] \\end{aligned} $$ OBB 有向围盒 [Oriented minimum bounding box] 其中 $C$: Center Point $\\mathbf{u, v,...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Minimum-bounding-box-MBB/",
+        "teaser": "https://upload.wikimedia.org/wikipedia/commons/7/7e/BoundingBox.jpg"
+      },{
         "title": "Operator For Image",
         "excerpt":"Sobel Operator - 1968 [索伯算子, 索贝尔算子] Paper - An Isotropic 3x3 Image Gradient Operator Paper.pdf Formula $$ \\begin{aligned} G_x &= \\begin{bmatrix} +1&0&-1\\\\+2&0&-2\\\\+1&0&-1\\\\ \\end{bmatrix} * IMG\\\\ G_y &= \\begin{bmatrix} +1&+2&+1\\\\0&0&0\\\\-1&-2&-1\\\\ \\end{bmatrix} * IMG\\\\ G &= \\sqrt{G_x^2 + G_y^2}\\\\ \\Theta &= \\arctan(\\frac{G_y}{G_x})=atan2(G_x, G_y) \\end{aligned} $$ OpenMvs Related Digital step edges from zero...","categories": ["3d"],
         "tags": [],

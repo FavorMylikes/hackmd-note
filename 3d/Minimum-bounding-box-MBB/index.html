@@ -1,0 +1,980 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Minimum bounding box [MBB] / Notes B</title>
+<meta name="description" content="MBB 最小包围盒 [Minimum bounding box]">
+
+
+  <meta name="author" content="麦丽素">
+  
+  <meta property="article:author" content="麦丽素">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Notes B">
+<meta property="og:title" content="Minimum bounding box [MBB]">
+<meta property="og:url" content="https://ucas.io/3d/Minimum-bounding-box-MBB/">
+
+
+  <meta property="og:description" content="MBB 最小包围盒 [Minimum bounding box]">
+
+
+
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/7/7e/BoundingBox.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-09-27T14:57:40+08:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/Minimum-bounding-box-MBB/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://ucas.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Notes B Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Favicon generate from realfavicongenerator.net-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ff0000">
+
+  <!--KaTeX-->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+      });
+    });
+  </script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgucas_logo.png" alt="Notes B"></a>
+        
+        <a class="site-title" href="/">
+          Notes B
+          <span class="site-subtitle">麦丽素的日常</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/years/">Years</a>
+            </li><li class="masthead__menu-item">
+              <a href="/months/">Months</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://ucas.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Minimum bounding box [MBB]</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://www.gravatar.com/avatar/7ac850b26f9a21a153f8f581964e22cd?s=200" alt="麦丽素" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">麦丽素</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>My life is getting better</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:l786112323@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/FavorMylikes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Minimum bounding box [MBB]">
+    <meta itemprop="description" content="MBB 最小包围盒 [Minimum bounding box]">
+    <meta itemprop="datePublished" content="2021-09-27T14:57:40+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Minimum bounding box [MBB]
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-27T14:57:40+08:00">September 27, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#mbb-最小包围盒-minimum-bounding-box">MBB 最小包围盒 [Minimum bounding box]</a><ul><li><a href="#aabb-轴对齐包围盒-axis-aligned-minimum-bounding-box">AABB 轴对齐包围盒 [Axis-aligned minimum bounding box]</a></li><li><a href="#obb-有向围盒-oriented-minimum-bounding-box">OBB 有向围盒 [Oriented minimum bounding box]</a></li><li><a href="#dop-离散定向多面体-discrete-oriented-polyhedra">DOP 离散定向多面体 [Discrete Oriented Polyhedra]</a></li></ul></li><li><a href="#intersection-checks">Intersection checks</a><ul><li><a href="#oriented-bounding-box-and-orthogonal-frustum-obb-和-方平截头体-正交平截头体">Oriented Bounding Box and Orthogonal Frustum [OBB 和 方平截头体, 正交平截头体]</a></li></ul></li><li><a href="#平面与包围盒的相交测试">平面与包围盒的相交测试</a></li><li><a href="#射线与包围盒的相交测试">射线与包围盒的相交测试</a></li><li><a href="#openmvs距离判定法">OpenMVS[距离判定法?]</a></li><li><a href="#reference">Reference</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="mbb-最小包围盒-minimum-bounding-box">MBB 最小包围盒 [Minimum bounding box]</h2>
+
+<h3 id="aabb-轴对齐包围盒-axis-aligned-minimum-bounding-box">AABB 轴对齐包围盒 [Axis-aligned minimum bounding box]</h3>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>when the model is rotated they cannot be simply rotated with it, but need to be recomputed.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927212832.png" alt="20210927212832" /></p>
+  </li>
+  <li>
+    <div class="kdmath">$$
+\begin{aligned}
+  P_{min} &= [x_{min},y_{min},z_{min}]\\
+  P_{max} &= [x_{max},y_{max},z_{max}]
+\end{aligned}
+$$</div>
+  </li>
+</ul>
+
+<h3 id="obb-有向围盒-oriented-minimum-bounding-box">OBB 有向围盒 [Oriented minimum bounding box]</h3>
+
+<ul>
+  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927215723.png" alt="20210927215723" /></li>
+  <li>其中
+    <ul>
+      <li>$C$: Center Point</li>
+      <li>$\mathbf{u, v, w}$: three unit vectors orthornormal basis</li>
+      <li>$h_u, h_v, h_w$: three scalars representing half the dimension in each directions</li>
+    </ul>
+  </li>
+  <li>Arbitrarily oriented minimum bounding box</li>
+  <li>Object-oriented minimum bounding box</li>
+</ul>
+
+<h3 id="dop-离散定向多面体-discrete-oriented-polyhedra">DOP 离散定向多面体 [Discrete Oriented Polyhedra]</h3>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>A k-DOP is the Boolean intersection of extents along k directions. Thus, a k-DOP is the Boolean intersection of k bounding slabs and is a convex polytope containing the object</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="intersection-checks">Intersection checks</h2>
+
+<h3 id="oriented-bounding-box-and-orthogonal-frustum-obb-和-方平截头体-正交平截头体">Oriented Bounding Box and Orthogonal Frustum [OBB 和 方平截头体, 正交平截头体]</h3>
+
+<ul>
+  <li>Orthogonal Frustum, usually is the viewing frustum[视体]
+    <ul>
+      <li><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/ViewFrustum.svg" height="200px" /></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927230250.png" alt="20210927230250" height="400px" /></li>
+    </ul>
+  </li>
+  <li>The Method of Separating Axes [分离轴定理]
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Hyperplane_separation_theorem">Hyperplane separation theorem - Wikipidea</a></li>
+      <li><a href="https://www.sevenson.com.au/programming/sat/">Separating Axis Theorem (SAT) Explanation</a>
+        <ul>
+          <li><a href="https://blog.csdn.net/yorhomwang/article/details/54869018">碰撞检测之分离轴定理算法讲解 - CSDN</a></li>
+        </ul>
+      </li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927222129.png" alt="20210927222129" /></li>
+      <li>取一条边，做每个点在其法向上的投影，对每个形状取最大值和最小值作为投影范围，判断投影是否相交即可，如果投影不想交，则两个图形必然不想交，否则继续迭代下一个边，如果所有的边都相交，则物体相交</li>
+      <li><strong>本方法只适用于凸多面体</strong></li>
+      <li>
+        <blockquote>
+          <p>difficult problem is selecting a finite set of line directions such that the intersection/nonintersection can be determined by separating axis tests using only vectors in that set</p>
+        </blockquote>
+        <ul>
+          <li>减少需要迭代的边可以提高运行速度</li>
+        </ul>
+      </li>
+      <li>
+        <blockquote>
+          <p>For <strong>convex polyhedra</strong> it turns out that the set consisting of face normals for the two polyhedra and vectors that are the <strong>cross product of edges</strong>, one edge from each polyhedron, is sufficient for the intersection testing.</p>
+        </blockquote>
+      </li>
+      <li>对于一个多面体$i$，有$F_i, E_i$个面和边，需要检测的直线总量为$F_0+F_1+E_0E_1$</li>
+      <li>
+        <blockquote>
+          <p>It is possible that some of the vectors formed by cross products
+of edges are zero, in which case they <strong>do not need to be tested</strong></p>
+        </blockquote>
+        <ul>
+          <li>For <code class="language-plaintext highlighter-rouge">OBB</code> and <code class="language-plaintext highlighter-rouge">OF</code>
+            <ul>
+              <li>OBB: $F=3, E=3$</li>
+              <li>OF: $F=5, E=6$</li>
+              <li>The total number of vectors to test is $26$</li>
+              <li><strong>Caching Intermediate Results to make an optimized implementation</strong></li>
+              <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927230617.png" alt="20210927230617" /></li>
+            </ul>
+          </li>
+          <li>For <code class="language-plaintext highlighter-rouge">AABB</code> and <code class="language-plaintext highlighter-rouge">AABB</code>
+            <ul>
+              <li>AABB: $F=3, E=3$</li>
+              <li>The total number of vectors to test is $3+3+3*3=15$</li>
+              <li>The set has only <strong>three nonzero vectors</strong>.</li>
+            </ul>
+          </li>
+          <li>For <code class="language-plaintext highlighter-rouge">OBB</code> and <code class="language-plaintext highlighter-rouge">OBB</code>
+            <ul>
+              <li>OBB: $F=3, E=3$</li>
+              <li>Total: $3 + 3+ 3*3=15$</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="平面与包围盒的相交测试">平面与包围盒的相交测试</h2>
+
+<ul>
+  <li>对角线判定法
+    <ul>
+      <li>利用了平面与包围盒相交，则它必定与包围盒的一条对角线相交这个性质，所以只要找到那条对角线，把它的两个顶点代入平面的方程中，判断求解的结果的符号即可</li>
+    </ul>
+  </li>
+  <li>距离判定法
+    <ul>
+      <li>是通过对比投影半长与包围盒中心到平面的距离来判定是否相交</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="射线与包围盒的相交测试">射线与包围盒的相交测试</h2>
+
+<h2 id="openmvs距离判定法">OpenMVS[距离判定法?]</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Culls AABB to n sided frustum. Normals pointing outwards.
+ * -&gt; IN:  AABB    - bounding box to be tested
+ *    OUT: VISIBLE - aabb totally inside frustum
+ *         CLIPPED - aabb clipped by frustum
+ *         CULLED  - aabb totally outside frustum
+ */</span>
+<span class="n">GCLASS</span> <span class="n">TFrustum</span><span class="o">&lt;</span><span class="n">TYPE</span><span class="p">,</span><span class="n">DIMS</span><span class="o">&gt;::</span><span class="n">Classify</span><span class="p">(</span><span class="k">const</span> <span class="n">AABB</span><span class="o">&amp;</span> <span class="n">aabb</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+  <span class="kt">bool</span> <span class="n">bIntersects</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+  <span class="c1">// find and test extreme points</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">DIMS</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="n">PLANE</span><span class="o">&amp;</span> <span class="n">plane</span> <span class="o">=</span> <span class="n">m_planes</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">POINT</span> <span class="n">ptPlaneMin</span><span class="p">,</span> <span class="n">ptPlaneMax</span><span class="p">;</span>
+
+    <span class="c1">// x coordinate</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">plane</span><span class="p">.</span><span class="n">m_vN</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">TYPE</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">ptPlaneMin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMin</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+      <span class="n">ptPlaneMax</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMax</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">ptPlaneMin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMax</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+      <span class="n">ptPlaneMax</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMin</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// y coordinate</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">plane</span><span class="p">.</span><span class="n">m_vN</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">TYPE</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">ptPlaneMin</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMin</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+      <span class="n">ptPlaneMax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMax</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">ptPlaneMin</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMax</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+      <span class="n">ptPlaneMax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMin</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// z coordinate</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">plane</span><span class="p">.</span><span class="n">m_vN</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">TYPE</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">ptPlaneMin</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMin</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+      <span class="n">ptPlaneMax</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMax</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">ptPlaneMin</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMax</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+      <span class="n">ptPlaneMax</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">aabb</span><span class="p">.</span><span class="n">ptMin</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">plane</span><span class="p">.</span><span class="n">m_vN</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">ptPlaneMin</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="n">plane</span><span class="p">.</span><span class="n">m_fD</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">CULLED</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">plane</span><span class="p">.</span><span class="n">m_vN</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">ptPlaneMax</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="n">plane</span><span class="p">.</span><span class="n">m_fD</span><span class="p">)</span>
+      <span class="n">bIntersects</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span> <span class="c1">// for</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">bIntersects</span><span class="p">)</span> <span class="k">return</span> <span class="n">CLIPPED</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">VISIBLE</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li><a href="https://www.sciencedirect.com/book/9781558605947/geometric-tools-for-computer-graphics">Geometric Tools for Computer Graphics</a>
+    <ul>
+      <li><img src="https://img.shields.io/badge/Book-2002-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-880-blue?style=flat-square" alt="cite" /></li>
+    </ul>
+  </li>
+  <li><a href="https://zhuanlan.zhihu.com/p/156750299">平面与包围盒的相交测试 - chopper的文章 - 知乎</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/138259656">射线与包围盒的相交测试 - chopper的文章 - 知乎</a></li>
+  <li><a href="https://www.taylorfrancis.com/books/mono/10.1201/b22086/real-time-rendering-fourth-edition-tomas-akenine-mo%C2%A8ller-eric-haines-naty-hoffman?context=ubx&amp;refId=579e65e7-e3e8-45ea-b45b-317d05c7fb79">Real-time rendering 1999[1],2002[2],2008[3],2018[4]</a>
+    <ul>
+      <li><img src="https://img.shields.io/badge/Book-2018-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-2782-blue?style=flat-square" alt="cite" /></li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-27T14:57:40+08:00">September 27, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Minimum+bounding+box+%5BMBB%5D%20https%3A%2F%2Fucas.io%2F3d%2FMinimum-bounding-box-MBB%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FMinimum-bounding-box-MBB%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FMinimum-bounding-box-MBB%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/Code-Reading/" class="pagination--pager" title="Code Reading
+">Previous</a>
+    
+    
+      <a href="/3d/Operator-For-Image/" class="pagination--pager" title="Operator For Image
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Operator-For-Image/" rel="permalink">Operator For Image
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-27T14:57:40+08:00">September 27, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Sobel Operator - 1968 [索伯算子, 索贝尔算子]
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Code-Reading/" rel="permalink">Code Reading
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-26T00:00:00+08:00">September 26, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Build-And-Run-TextureMesh-at-UCAS-machine/" rel="permalink">Build And Run Texturemesh At Ucas Machine
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-24T00:00:00+08:00">September 24, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Clion-Debug/" rel="permalink">Clion Debug
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-23T16:24:52+08:00">September 23, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Problem List
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '7UHEFEG9HB',
+  apiKey: 'b1cdde9827760050f51383c6c78127bf',
+  indexName: 'prod_UCAS_IO',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const hightlight = hit._highlightResult;
+  const title = hightlight.title && hightlight.title.value  || "";
+  const content = hightlight.html && hightlight.html.value  || "";
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN8PZ697F8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QN8PZ697F8', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
