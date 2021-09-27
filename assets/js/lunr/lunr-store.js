@@ -376,4 +376,22 @@ var store = [{
         "tags": [],
         "url": "/3d/Clion-Debug/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png"
+      },{
+        "title": "Build And Run Texturemesh At Ucas Machine",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/Build-And-Run-TextureMesh-at-UCAS-machine/",
+        "teaser": null
+      },{
+        "title": "Code Reading",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/Code-Reading/",
+        "teaser": null
+      },{
+        "title": "Operator For Image",
+        "excerpt":"Sobel Operator - 1968 [索伯算子, 索贝尔算子] Paper - An Isotropic 3x3 Image Gradient Operator Paper.pdf Formula $$ \\begin{aligned} G_x &= \\begin{bmatrix} +1&0&-1\\\\+2&0&-2\\\\+1&0&-1\\\\ \\end{bmatrix} * IMG\\\\ G_y &= \\begin{bmatrix} +1&+2&+1\\\\0&0&0\\\\-1&-2&-1\\\\ \\end{bmatrix} * IMG\\\\ G &= \\sqrt{G_x^2 + G_y^2}\\\\ \\Theta &= \\arctan(\\frac{G_y}{G_x})=atan2(G_x, G_y) \\end{aligned} $$ OpenMvs Related Digital step edges from zero...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Operator-For-Image/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png"
       }]
