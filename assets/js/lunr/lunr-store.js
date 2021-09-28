@@ -359,11 +359,11 @@ var store = [{
         "url": "/3d/Texture-for-smooth2/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918235717.png"
       },{
-        "title": "Texture Paper Reading Todo",
-        "excerpt":" ","categories": [],
+        "title": "Texture Paper Reading TODO",
+        "excerpt":"Texture Mapping Progressive Meshes - Microsoft Research         Paper.pdf   Abstract      goal            minimizes texture stretch (small texture distances mapped onto large surface distances) to balance sampling rates over all locations and directions on the surface       minimizes texture deviation (“slippage” error based on parametric correspondence) to obtain accurate textured mesh approximations          ","categories": ["3d"],
         "tags": [],
-        "url": "/Texture-Paper-Reading-TODO/",
-        "teaser": null
+        "url": "/3d/Texture-Paper-Reading-TODO/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910164754.png"
       },{
         "title": "Texture Paper Reading - [Rethinking Texture Mapping]",
         "excerpt":"Rethinking Texture Mapping - State of The Art Report Paper.pdf 1.1 Scope Perfecting the Traditional Texture Mapping RNLL10 - Invisible Seams Paper.pdf LFJG17 - Seam Erasure Seamless: seam erasure and seam-aware decoupling of shape from mesh resolution. Paper.pdf Tar12 - Seamless Toroidal/Cylindrical Textures Cylindrical and toroidal parameterizations without vertex seams...","categories": ["3d"],
@@ -377,11 +377,11 @@ var store = [{
         "url": "/3d/Clion-Debug/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png"
       },{
-        "title": "Build And Run Texturemesh At Ucas Machine",
-        "excerpt":" ","categories": [],
+        "title": "Build and run TextureMesh at UCAS machine",
+        "excerpt":"Reinstall vcpkg at xps Just remove vcpkg directory. Compile and Build Texture_extract at xps machine The files need change Copy CMakeLists.txt from TextureMesh to TextureMesh_extract, change TextureMesh to TextureMesh_extract at the same time Change include at TextureMesh_extract.cpp and interfaceCamera.hpp Build with x64 Same example after texture original HC-lap-smooth gussian Detail...","categories": ["3d"],
         "tags": [],
-        "url": "/Build-And-Run-TextureMesh-at-UCAS-machine/",
-        "teaser": null
+        "url": "/3d/Build-And-Run-TextureMesh-at-UCAS-machine/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png"
       },{
         "title": "Texture code reading",
         "excerpt":"TextureMesh FaceViewSelection ListVertexFaces✔️ // extract array of triangles incident to each vertex EmptyExtra✔️ ListIncidenteFaces✔️ ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用 // create texture patches ListCameraFaces // list all views for each face //create vertices octree of vertices✔️ //extract array of faces viewed by each image✔️ //compute gradient magnitude✔️ //select faces inside view frustum✔️...","categories": ["3d"],
@@ -399,5 +399,5 @@ var store = [{
         "excerpt":"Sobel Operator - 1968 [索伯算子, 索贝尔算子] Paper - An Isotropic 3x3 Image Gradient Operator Paper.pdf Formula $$ \\begin{aligned} G_x &= \\begin{bmatrix} +1&0&-1\\\\+2&0&-2\\\\+1&0&-1\\\\ \\end{bmatrix} * IMG\\\\ G_y &= \\begin{bmatrix} +1&+2&+1\\\\0&0&0\\\\-1&-2&-1\\\\ \\end{bmatrix} * IMG\\\\ G &= \\sqrt{G_x^2 + G_y^2}\\\\ \\Theta &= \\arctan(\\frac{G_y}{G_x})=atan2(G_x, G_y) \\end{aligned} $$ OpenMvs Related Digital step edges from zero...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Operator-For-Image/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png"
       }]

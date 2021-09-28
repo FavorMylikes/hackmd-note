@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Texture Paper Reading Todo / Notes B</title>
-<meta name="description" content="">
+<!-- begin _includes/seo.html --><title>Build and run TextureMesh at UCAS machine / Notes B</title>
+<meta name="description" content="Reinstall vcpkg at xps">
 
 
   <meta name="author" content="麦丽素">
@@ -22,26 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Texture Paper Reading Todo">
-<meta property="og:url" content="https://ucas.io/Texture-Paper-Reading-TODO/">
+<meta property="og:title" content="Build and run TextureMesh at UCAS machine">
+<meta property="og:url" content="https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine/">
 
 
-  <meta property="og:description" content="">
-
-
-
+  <meta property="og:description" content="Reinstall vcpkg at xps">
 
 
 
-
-  <meta property="article:published_time" content="2021-09-20T00:00:00+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-09-24T18:23:30+08:00">
 
-<link rel="canonical" href="https://ucas.io/Texture-Paper-Reading-TODO/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine/">
 
 
 
@@ -201,7 +203,17 @@
         <span class="sep">/</span>
       
       
-        <li class="current">Texture Paper Reading Todo</li>
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Build and run TextureMesh at UCAS machine</li>
       
     
   </ol>
@@ -320,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Texture Paper Reading Todo">
-    <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2021-09-20T00:00:00+08:00">
+    <meta itemprop="headline" content="Build and run TextureMesh at UCAS machine">
+    <meta itemprop="description" content="Reinstall vcpkg at xps">
+    <meta itemprop="datePublished" content="2021-09-24T18:23:30+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Texture Paper Reading Todo
+          <h1 id="page-title" class="page__title" itemprop="headline">Build and run TextureMesh at UCAS machine
 </h1>
           
 
@@ -338,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-09-20T00:00:00+08:00">September 20, 2021</time>
+        <time datetime="2021-09-24T18:23:30+08:00">September 24, 2021</time>
       </span>
     
 
@@ -366,12 +378,81 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#reinstall-vcpkg-at-xps">Reinstall vcpkg at xps</a></li><li><a href="#compile-and-build-texture_extract-at-xps-machine">Compile and Build Texture_extract at xps machine</a></li><li><a href="#same-example-after-texture">Same example after texture</a></li><li><a href="#detail">Detail</a></li></ul>
 
             </nav>
           </aside>
         
-        
+        <h2 id="reinstall-vcpkg-at-xps">Reinstall vcpkg at xps</h2>
+
+<ul>
+  <li>Just remove vcpkg directory.</li>
+</ul>
+
+<h2 id="compile-and-build-texture_extract-at-xps-machine">Compile and Build Texture_extract at xps machine</h2>
+
+<ul>
+  <li>The files need change</li>
+  <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924182630.png" alt="20210924182630" />
+    <ul>
+      <li>Copy <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> from <code class="language-plaintext highlighter-rouge">TextureMesh</code> to <code class="language-plaintext highlighter-rouge">TextureMesh_extract</code>, change <code class="language-plaintext highlighter-rouge">TextureMesh</code> to <code class="language-plaintext highlighter-rouge">TextureMesh_extract</code> at the same time
+        <ul>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924182810.png" alt="20210924182810" /></li>
+        </ul>
+      </li>
+      <li>Change <code class="language-plaintext highlighter-rouge">include</code> at <code class="language-plaintext highlighter-rouge">TextureMesh_extract.cpp</code> and <code class="language-plaintext highlighter-rouge">interfaceCamera.hpp</code>
+        <ul>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924182913.png" alt="20210924182913" /></li>
+          <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924182926.png" alt="20210924182926" /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Build with <code class="language-plaintext highlighter-rouge">x64</code></li>
+</ul>
+
+<h2 id="same-example-after-texture">Same example after texture</h2>
+
+<ul>
+  <li>original
+    <ul>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924184348.png" alt="20210924184348" /></li>
+    </ul>
+  </li>
+  <li>HC-lap-smooth
+    <ul>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924184427.png" alt="20210924184427" /></li>
+    </ul>
+  </li>
+  <li>gussian
+    <ul>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924184454.png" alt="20210924184454" /></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="detail">Detail</h2>
+
+<ul>
+  <li>xps result
+    <ul>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210916232251.png" alt="20210916232251" height="100px" /></li>
+    </ul>
+  </li>
+  <li>ucas machine result
+    <ul>
+      <li>the blue mesh has gone</li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191016.png" alt="20210924191016" /></li>
+    </ul>
+  </li>
+  <li>code compare of <code class="language-plaintext highlighter-rouge">SceneTexture.cpp</code>
+    <ul>
+      <li>Left is the code from <code class="language-plaintext highlighter-rouge">liuchao</code></li>
+      <li>Right is the newest from <code class="language-plaintext highlighter-rouge">OpenMVS.git</code></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191117.png" alt="20210924191117" /></li>
+    </ul>
+  </li>
+</ul>
 
         
       </section>
@@ -381,9 +462,24 @@
         
 
 
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
+    
+    </span>
+  </p>
+
+
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-20T00:00:00+08:00">September 20, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-24T18:23:30+08:00">September 24, 2021</time></p>
 
 
       </footer>
@@ -391,22 +487,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Texture+Paper+Reading+Todo%20https%3A%2F%2Fucas.io%2FTexture-Paper-Reading-TODO%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Build+and+run+TextureMesh+at+UCAS+machine%20https%3A%2F%2Fucas.io%2F3d%2FBuild-And-Run-TextureMesh-at-UCAS-machine%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2FTexture-Paper-Reading-TODO%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FBuild-And-Run-TextureMesh-at-UCAS-machine%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2FTexture-Paper-Reading-TODO%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FBuild-And-Run-TextureMesh-at-UCAS-machine%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/Texture-for-smooth2/" class="pagination--pager" title="Texture for smooth 2
+      <a href="/3d/Clion-Debug/" class="pagination--pager" title="Clion Debug
 ">Previous</a>
     
     
-      <a href="/3d/Texture-Paper-Reading-Rethinking-Texture-Mapping/" class="pagination--pager" title="Texture Paper Reading - [Rethinking Texture Mapping]
+      <a href="/3d/Code-Reading/" class="pagination--pager" title="Texture code reading
 ">Next</a>
     
   </nav>
@@ -430,7 +526,7 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png" alt="">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -588,9 +684,13 @@
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png" alt="">
+      </div>
+    
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/Build-And-Run-TextureMesh-at-UCAS-machine/" rel="permalink">Build And Run Texturemesh At Ucas Machine
+        <a href="/3d/Clion-Debug/" rel="permalink">Clion Debug
 </a>
       
     </h2>
@@ -602,7 +702,7 @@
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-09-24T00:00:00+08:00">September 24, 2021</time>
+        <time datetime="2021-09-23T16:24:52+08:00">September 23, 2021</time>
       </span>
     
 
@@ -615,14 +715,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">
+    <p class="archive__item-excerpt" itemprop="description">Problem List
 </p>
   </article>
 </div>
