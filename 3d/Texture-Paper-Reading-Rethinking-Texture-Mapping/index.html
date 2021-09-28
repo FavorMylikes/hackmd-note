@@ -1,0 +1,1243 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Texture Paper Reading - [Rethinking Texture Mapping] / Notes B</title>
+<meta name="description" content="Rethinking Texture Mapping - State of The Art Report">
+
+
+  <meta name="author" content="麦丽素">
+  
+  <meta property="article:author" content="麦丽素">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Notes B">
+<meta property="og:title" content="Texture Paper Reading - [Rethinking Texture Mapping]">
+<meta property="og:url" content="https://ucas.io/3d/Texture-Paper-Reading-Rethinking-Texture-Mapping/">
+
+
+  <meta property="og:description" content="Rethinking Texture Mapping - State of The Art Report">
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921190258.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-09-21T19:03:21+08:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/Texture-Paper-Reading-Rethinking-Texture-Mapping/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://ucas.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Notes B Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Favicon generate from realfavicongenerator.net-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ff0000">
+
+  <!--KaTeX-->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+      });
+    });
+  </script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgucas_logo.png" alt="Notes B"></a>
+        
+        <a class="site-title" href="/">
+          Notes B
+          <span class="site-subtitle">麦丽素的日常</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/years/">Years</a>
+            </li><li class="masthead__menu-item">
+              <a href="/months/">Months</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://ucas.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Texture Paper Reading - [Rethinking Texture Mapping]</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://www.gravatar.com/avatar/7ac850b26f9a21a153f8f581964e22cd?s=200" alt="麦丽素" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">麦丽素</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>My life is getting better</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:l786112323@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/FavorMylikes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Texture Paper Reading - [Rethinking Texture Mapping]">
+    <meta itemprop="description" content="Rethinking Texture Mapping - State of The Art Report">
+    <meta itemprop="datePublished" content="2021-09-21T19:03:21+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Texture Paper Reading - [Rethinking Texture Mapping]
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-21T19:03:21+08:00">September 21, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#rethinking-texture-mapping---state-of-the-art-report">Rethinking Texture Mapping - State of The Art Report</a><ul><li><a href="#11-scope">1.1 Scope</a></li><li><a href="#12-evaluation-criteria">1.2 Evaluation Criteria</a></li></ul></li><li><a href="#traditional-2d-texture-mapping">Traditional 2D Texture Mapping</a></li><li><a href="#perfecting-traditional-texture-mapping">Perfecting Traditional Texture Mapping</a><ul><li><a href="#invisible-seams">Invisible Seams</a></li><li><a href="#seamless-toroidalcylindrical-textures">Seamless Toroidal/Cylindrical Textures</a></li><li><a href="#seamless-texture-atlases">Seamless Texture Atlases</a></li></ul></li><li><a href="#connectivity-based-representations">Connectivity-based Representations</a></li><li><a href="#sparse-volumetric-representations">Sparse Volumetric Representations</a></li><li><a href="#volume-based-parametrizations">Volume-based Parametrizations</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="rethinking-texture-mapping---state-of-the-art-report"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13656">Rethinking Texture Mapping - State of The Art Report</a></h2>
+
+<ul>
+  <li><img src="https://img.shields.io/badge/sig_graph-2017-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/EG-2019-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-26-blue?style=flat-square" alt="cite" /></li>
+  <li><a href="http://www.cemyuksel.com/courses/conferences/siggraph2017-rethinking_texture_mapping/rethinking_texture_mapping_course_notes.pdf">Paper.pdf</a></li>
+</ul>
+
+<h3 id="11-scope">1.1 Scope</h3>
+
+<ul>
+  <li>Perfecting the Traditional Texture Mapping
+    <ul>
+      <li><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-8659.2010.01746.x">RNLL10 - Invisible Seams</a>
+        <ul>
+          <li><img src="https://img.shields.io/badge/CGF-2010-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-53-blue?style=flat-square" alt="cite" /></li>
+          <li><a href="https://hal.inria.fr/inria-00547713/PDF/seamless.pdf">Paper.pdf</a></li>
+        </ul>
+      </li>
+      <li>LFJG17 - Seam Erasure
+        <ul>
+          <li><a href="http://www.cs.toronto.edu/~jacobson/images/seamless-seam-erasure-and-seam-aware-decoupling-of-shape-from-mesh-resolution-siggraph-asia-2017-compressed-liu-et-al.pdf">Seamless: seam erasure and seam-aware decoupling of shape from mesh resolution.</a></li>
+          <li><img src="https://img.shields.io/badge/ToG-2017-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/SIGGRAPH_Asia-2017-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-24-blue?style=flat-square" alt="cite" /></li>
+          <li><a href="http://www.cs.toronto.edu/~jacobson/images/seamless-seam-erasure-and-seam-aware-decoupling-of-shape-from-mesh-resolution-siggraph-asia-2017-compressed-liu-et-al.pdf">Paper.pdf</a></li>
+        </ul>
+      </li>
+      <li><a href="https://www.tandfonline.com/doi/abs/10.1080/2151237X.2012.654054">Tar12 - Seamless Toroidal/Cylindrical Textures</a>
+        <ul>
+          <li><img src="https://img.shields.io/badge/Journal_of_Graphics_Tools-2012-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-9-blue?style=flat-square" alt="cite" /></li>
+          <li><a href="https://www.tandfonline.com/doi/abs/10.1080/2151237X.2012.654054">Cylindrical and toroidal parameterizations without vertex seams - Paper.pdf</a></li>
+        </ul>
+      </li>
+      <li><a href="https://dl.acm.org/doi/abs/10.1145/1057432.1057441">PCK04 - Seamless Texture Atlases</a>
+        <ul>
+          <li><img src="https://img.shields.io/badge/SGP-2004-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-98-blue?style=flat-square" alt="cite" /></li>
+          <li><a href="https://pages.jh.edu/dighamm/research/2004_01_sta.pdf">Paper.pdf</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Connectivity-based Representations
+    <ul>
+      <li>BL08 - Ptex
+        <ul>
+          <li><a href="https://www.disneyanimation.com/publications/ptex-per-face-texture-mapping-for-production-rendering/">Ptex: Per‐face texture mapping for production rendering</a></li>
+          <li><img src="https://img.shields.io/badge/CGF-2008-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-104-blue?style=flat-square" alt="cite" /></li>
+        </ul>
+      </li>
+      <li><a href="https://dl.acm.org/doi/abs/10.1145/1731047.1731053">YKH10 - Mesh Colors</a>
+        <ul>
+          <li><img src="https://img.shields.io/badge/ToG-2010-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-67-blue?style=flat-square" alt="cite" /></li>
+        </ul>
+      </li>
+      <li><a href="https://dl.acm.org/doi/abs/10.1145/3105762.3105780">Yuk16 - Mesh Color Textures</a>
+        <ul>
+          <li><img src="https://img.shields.io/badge/HPG-2017-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-10-blue?style=flat-square" alt="cite" /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Sparse Volumetric Textures
+    <ul>
+      <li>KE02 - Adaptive Texture Maps
+        <ul>
+          <li><img src="https://img.shields.io/badge/SIGGRAPH-2002-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/EG-2002-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-160-blue?style=flat-square" alt="cite" /></li>
+          <li><a href="https://dl.acm.org/doi/pdf/10.5555/569046.569048">Paper.pdf</a></li>
+        </ul>
+      </li>
+      <li><a href="https://dl.acm.org/doi/abs/10.1145/566654.566652">BD02,LHN05 - Octree Textures</a>
+        <ul>
+          <li><img src="https://img.shields.io/badge/ToG-2002-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-160-blue?style=flat-square" alt="cite" /></li>
+          <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=802C3674FAE16C6BB6DCD5200731CE5C?doi=10.1.1.300.6755&amp;rep=rep1&amp;type=pdf">Paper.pdf</a></li>
+        </ul>
+      </li>
+      <li>CB04 - Brick Maps
+        <ul>
+          <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.91.6683&amp;rep=rep1&amp;type=pdf">An irradiance atlas for global illumination in complex production scene.pdf</a></li>
+          <li><img src="https://img.shields.io/badge/EGSR-2004-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-99-blue?style=flat-square" alt="cite" /></li>
+        </ul>
+      </li>
+      <li>Perfect Spatial Hashing
+        <ul>
+          <li><img src="https://img.shields.io/badge/ToG-2006-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-243-blue?style=flat-square" alt="cite" /></li>
+          <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.453.2027&amp;rep=rep1&amp;type=pdf">Paper.pdf</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Volume-based Parameterizations
+    <ul>
+      <li>LD07 - TileTrees
+        <ul>
+          <li><img src="https://img.shields.io/badge/SI3D-2007-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-48-blue?style=flat-square" alt="cite" /></li>
+          <li><a href="https://hal.inria.fr/inria-00606799/document">Paper.pdf</a></li>
+        </ul>
+      </li>
+      <li>THCM04 - PolyCube-Maps
+        <ul>
+          <li><img src="https://img.shields.io/badge/ToG-2004-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-305-blue?style=flat-square" alt="cite" /></li>
+          <li><a href="https://irinsubria.uninsubria.it/retrieve/handle/11383/1492755/599/pcm_da_acm.pdf">Paper.pdf</a></li>
+        </ul>
+      </li>
+      <li>Tar16 - Volume-Encoded UV-Maps
+        <ul>
+          <li><img src="https://img.shields.io/badge/ToG-2016-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-17-blue?style=flat-square" alt="cite" /></li>
+          <li><a href="http://vcg.isti.cnr.it/volume-encoded-uv-maps/volume-encoded-uv-maps.pdf">Paper.pdf</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="12-evaluation-criteria">1.2 Evaluation Criteria</h3>
+
+<ul>
+  <li>Applicability.</li>
+  <li>Usability.</li>
+  <li>Filtering Quality.
+    <ul>
+      <li>magnification filtering
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">on-the-fly bilinear interpolation</code></li>
+        </ul>
+      </li>
+      <li>minification filtering</li>
+      <li>anisotropic filtering[各向异性过滤]
+        <ul>
+          <li>allows skewed filter shapes</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Performance.</li>
+  <li>Implementation.</li>
+</ul>
+
+<h2 id="traditional-2d-texture-mapping">Traditional 2D Texture Mapping</h2>
+
+<blockquote>
+  <p>assigning uv coordinates to mesh vertices</p>
+</blockquote>
+
+<h2 id="perfecting-traditional-texture-mapping">Perfecting Traditional Texture Mapping</h2>
+
+<ul>
+  <li><a href="https://dl.acm.org/doi/abs/10.1145/3197517.3201317">PKCH18 - Gradient-domain Processing Within a Texture Atlas</a>
+    <ul>
+      <li><img src="https://img.shields.io/badge/ToG-2018-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-12-blue?style=flat-square" alt="cite" /></li>
+      <li><a href="https://dl.acm.org/doi/pdf/10.1145/3197517.3201317">Paper.pdf</a></li>
+      <li><strong>texture seams and texture distortions</strong></li>
+    </ul>
+  </li>
+  <li><a href="https://patents.google.com/patent/US10192346B2/en">DGM18 - Generating uv maps for modified meshes - US10192346B2</a>
+    <ul>
+      <li><img src="https://img.shields.io/badge/patent-2019-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-2-blue?style=flat-square" alt="cite" /></li>
+      <li><strong>automatize the adaptations of the uv map</strong></li>
+    </ul>
+  </li>
+  <li><a href="https://dl.acm.org/doi/abs/10.1145/383259.383307">SSGH01 - Texture mapping progressive meshes</a>
+    <ul>
+      <li><img src="https://img.shields.io/badge/SIG_GRAPH-2001-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-900-blue?style=flat-square" alt="cite" /></li>
+      <li><strong>the poor interoperability of LoD-pyramids and atlas-based textures</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="invisible-seams">Invisible Seams</h3>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921101757.png" alt="20210921101757" height="400px" /></p>
+
+<ul>
+  <li>Traditional Texture Mapping
+    <ul>
+      <li>inconsistent <strong>bilinear filtering</strong> performed on either side of the seams
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">Bilinear Filtering</code>
+            <ul>
+              <li>alias: <code class="language-plaintext highlighter-rouge">Bilinear Interpolation</code>, <code class="language-plaintext highlighter-rouge">Bilinear texture mapping</code></li>
+              <li><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/BilinearInterpolation.svg" alt="wiki" /></li>
+              <li>
+                <div class="kdmath">$$
+\begin{aligned}
+      f(x, y_1) &= \frac{x_2-x}{x_2-x_1}f(Q_{11}) + \frac{x-x_1}{x_2-x_1}f(Q_{21})\\
+      f(x, y_2) &= \frac{x_2-x}{x_2-x_1}f(Q_{12}) + \frac{x-x_1}{x_2-x_1}f(Q_{22})\\
+      f(x, y) &= \frac{y_2-y}{y_2-y_1}f(x, y_1) + \frac{y-y_1}{y_2-y_1}f(x, y_2)\\
+        &=\frac{1}{(x_2-x_1)(y_2-y_1)}\begin{bmatrix}
+            x_2-x&x-x_1
+        \end{bmatrix}\begin{bmatrix}
+            f(Q_{11})&f(Q_{12})\\f(Q_{21})&f(Q_{22})
+        \end{bmatrix}\begin{bmatrix}
+        y_2-y\\y-y_1
+        \end{bmatrix}
+  \end{aligned}
+$$</div>
+              </li>
+              <li>extension: <code class="language-plaintext highlighter-rouge">Trilinear interpolation</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <blockquote>
+      <p>placing both sides of the seams axis-aligned in uv space (either horizontally or vertically) with matching lengths, and assigning texels values that are exactly replicated along the seam.</p>
+    </blockquote>
+    <ul>
+      <li>cylindrical/toroidal mappings
+        <ul>
+          <li>[Tar12], [THCM04]</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>[RNLL10]
+    <ul>
+      <li>introduces some constraints
+        <ol>
+          <li>integer resolution jumps across seams
+            <ul>
+              <li>
+                <blockquote>
+                  <p>one side of the seam to be <strong>n times</strong> the other, here $n \ge 1, n \in \mathbb{Z}$, longer side are <strong>linear interpolations</strong> of the values on the shorter side</p>
+                </blockquote>
+              </li>
+              <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921143206.png" alt="20210921143206" /></li>
+              <li>generating uv layouts with motorcycle graphs[SPGT18]
+                <ul>
+                  <li>motorcycle graphs
+                    <ul>
+                      <li><a href="https://www.imdb.com/video/vi4228627993?playlistId=tt0084827&amp;ref_=tt_ov_vi">Tron 1982 movie - imdb</a></li>
+                      <li><a href="https://jeffe.cs.illinois.edu/open/cycles.html">Crashing Motorcycles Efficiently</a></li>
+                      <li><a href="https://www.wolframcloud.com/objects/demonstrations/MotorcycleGraphs-source.nb">wolfram</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="https://www.ics.uci.edu/~goodrich/pubs/geomproc.pdf">Motorcycle Graphs: Canonical Quad Mesh Partitioning</a>
+                    <ul>
+                      <li><img src="https://img.shields.io/badge/CGF-2008-blue?style=flat-square" alt="j" /><img src="https://img.shields.io/badge/cite-65-blue?style=flat-square" alt="cite" /></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>oblique placement of seams in the 2D texture space
+            <ul>
+              <li>
+                <blockquote>
+                  <p>two sides of the seams are constrained to be matching in parametric space up to an integer translation and rotations by an integer multiple of $\frac{\pi}{2}$</p>
+                </blockquote>
+              </li>
+              <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921143339.png" alt="20210921143339" /></li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>[LFJG17] <strong>seamless cuts</strong> or <strong>erased seam</strong>
+    <ul>
+      <li>
+        <blockquote>
+          <p><strong>no constraint</strong> is explicitly imposed a priori on uv assignment</p>
+        </blockquote>
+      </li>
+      <li>
+        <blockquote>
+          <p>minimizes the discrepancy from the initial configuration</p>
+        </blockquote>
+      </li>
+      <li>$\underset{\min p}{E_{lerp}(e_i,x_0,x_1)}=\int_0^1\vert B(e_i(\gamma), p)-(\gamma x_0+(1-\gamma)x_1)\vert^2d\gamma$</li>
+      <li>
+        <blockquote>
+          <p>minor technical note, making seams invisible (with any method) may require using texture resolutions that are <strong>powers of 2</strong>, seams can <strong>still be visible</strong> when using <strong>arbitrary texture resolutions</strong></p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="seamless-toroidalcylindrical-textures">Seamless Toroidal/Cylindrical Textures</h3>
+
+<ul>
+  <li>Ignore the restriction for <code class="language-plaintext highlighter-rouge">only allows seams at mesh edges</code> when Toroidal/Cylindrical [Tar12] 💩
+    <ul>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921152148.png" alt="20210921152148" /></li>
+      <li>Cylindrical -&gt; rectangular</li>
+      <li>Toroidal -&gt; <code class="language-plaintext highlighter-rouge">two orthogonal</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="seamless-texture-atlases">Seamless Texture Atlases</h3>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>[PCK04]Mip-mapping: Texture resolutions may be selected or
+blended on a per-fragment basis</p>
+    </blockquote>
+    <ul>
+      <li>Mip: multum in parvo,[放置很多东西的小空间]</li>
+      <li><a href="https://en.wikipedia.org/wiki/Mipmap">Mipmap - wiki</a></li>
+      <li><a href="https://paroj.github.io/gltut/Texturing/Tut15%20Magnification.html">Paroj - Linear Filtering</a></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921163401.png" alt="20210921163401" /></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921161916.png" alt="20210921161916" /></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921161952.png" alt="20210921161952" /></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921162041.png" alt="20210921162041" /></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="connectivity-based-representations">Connectivity-based Representations</h2>
+
+<ul>
+  <li>[BL08] Ptex, Disney Animation and Pixar studios
+    <ul>
+      <li>How to
+        <ul>
+          <li>
+            <blockquote>
+              <p>Since each face effectively gets its own texture, it is not affected by geometrical deformations of the model.</p>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>Ptex stores <strong>four face indices per face</strong>, indicating the four neighbors of each quad face</p>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>our edge indices are stored per face to represent which edge of each neighboring face is the shared edge</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+      <li>resolution adjusted
+        <ul>
+          <li>
+            <blockquote>
+              <p>texture resolution of each face can be adjusted independently</p>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>setting the texture resolution of a face based on its size.</p>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>texture filtering near edges becomes <strong>difficult</strong></p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>[YKH10] Mesh colors
+    <ul>
+      <li>Indeed, the lowest-resolution mesh colors are vertex colors, <strong>which store a single texture value per vertex</strong></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921170909.png" alt="20210921170909" /></li>
+    </ul>
+  </li>
+  <li>[Yuk16] Mesh Color Textures
+    <ul>
+      <li>GPU-friendly</li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921171800.png" alt="20210921171800" /></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="sparse-volumetric-representations">Sparse Volumetric Representations</h2>
+
+<blockquote>
+  <p>store <code class="language-plaintext highlighter-rouge">texture data</code> in a <code class="language-plaintext highlighter-rouge">voxel</code> grid covering the object</p>
+</blockquote>
+
+<ul>
+  <li>Issue list
+    <ol>
+      <li>thin surfaces get the same color on both sides
+        <ul>
+          <li>can be alleviated by storing normals alongside colors [BD02], at the expense of a further increase in storage and lookup cost</li>
+        </ul>
+      </li>
+      <li>cost of trilinear interpolation.</li>
+    </ol>
+  </li>
+  <li>[KE02] Adaptive Texture Maps
+    <ul>
+      <li>With traditional texture mapping, the entire texture is encoded using the same resolution, thus wasting memory where the content has low frequency.</li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921180729.png" alt="20210921180729" /></li>
+    </ul>
+  </li>
+  <li>[BD02,DGPR02, LHN05,KLS05] Octree Textures
+    <ul>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921180814.png" alt="20210921180814" /></li>
+    </ul>
+  </li>
+  <li>[CB04] Brick Maps
+    <ul>
+      <li>RenderMan</li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921181538.png" alt="20210921181538" /></li>
+    </ul>
+  </li>
+  <li>[LH06]Perfect Spatial Hashing
+    <ul>
+      <li>
+        <blockquote>
+          <p>This results in a very efficient method where the sparse data is accessed through only two texture lookups (a single indirection). However, the loss of cache coherency, due to the randomization of the access by the hash, penalizes access performance.</p>
+        </blockquote>
+      </li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921181648.png" alt="20210921181648" /></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="volume-based-parametrizations">Volume-based Parametrizations</h2>
+
+<ul>
+  <li>how to encode the mapping efficiently and how to precompute it robustly</li>
+  <li>[LD07]TileTrees
+    <ul>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921182759.png" alt="20210921182759" /></li>
+      <li>The entire process is automatic, robust, and fast</li>
+      <li>Tiletrees suffer from the same <strong>distortions</strong> as cube-maps</li>
+    </ul>
+  </li>
+  <li>[THCM04]PolyCube - Maps
+    <ul>
+      <li>extension of cube-maps[Gre86]</li>
+      <li>by substituting the cube the with an arbitrary polycube</li>
+      <li>they replace the problem of defining a uv mapping with the problem of constructing a polycube</li>
+      <li>The task of automatically or semi-automatically constructing a polycube-map
+        <ul>
+          <li>[LJFW08,WJH<em>08, HWFQ09, WYZ</em>11, YZWL14, HJS*14, HZ16]
+            <ul>
+              <li>limiting the number of cubes</li>
+              <li>limiting the number of irregular vertices</li>
+              <li>matching the topology of the input surface</li>
+              <li>maximizing shape similarity between the two shapes</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921185711.png" alt="20210921185711" /></li>
+    </ul>
+  </li>
+  <li>[Tar16]Volume-Encoded UV-Maps
+    <ul>
+      <li>
+        <blockquote>
+          <p>volume-encoded uv-maps replace the problem of defining a uv mapping with the problem of defining a volume-encoded parameterization</p>
+        </blockquote>
+      </li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921185835.png" alt="20210921185835" /></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921190203.png" alt="20210921190203" /></li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-21T19:03:21+08:00">September 21, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Texture+Paper+Reading+-+%5BRethinking+Texture+Mapping%5D%20https%3A%2F%2Fucas.io%2F3d%2FTexture-Paper-Reading-Rethinking-Texture-Mapping%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FTexture-Paper-Reading-Rethinking-Texture-Mapping%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FTexture-Paper-Reading-Rethinking-Texture-Mapping%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/Texture-Paper-Reading-TODO/" class="pagination--pager" title="Texture Paper Reading Todo
+">Previous</a>
+    
+    
+      <a href="/3d/Clion-Debug/" class="pagination--pager" title="Clion Debug
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Operator-For-Image/" rel="permalink">Operator For Image
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-27T14:57:40+08:00">September 27, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Sobel Operator - 1968 [索伯算子, 索贝尔算子]
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/BoundingBox.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Minimum-bounding-box-MBB/" rel="permalink">Minimum bounding box [MBB]
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-27T14:57:40+08:00">September 27, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">MBB 最小包围盒 [Minimum bounding box]
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Code-Reading/" rel="permalink">Texture code reading
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-26T19:51:42+08:00">September 26, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  TextureMesh
+    
+      FaceViewSelection
+        
+          ListVertexFaces✔️ // extract array of triangles incident to each vertex
+            
+         ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Build-And-Run-TextureMesh-at-UCAS-machine/" rel="permalink">Build And Run Texturemesh At Ucas Machine
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-24T00:00:00+08:00">September 24, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '7UHEFEG9HB',
+  apiKey: 'b1cdde9827760050f51383c6c78127bf',
+  indexName: 'prod_UCAS_IO',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const hightlight = hit._highlightResult;
+  const title = hightlight.title && hightlight.title.value  || "";
+  const content = hightlight.html && hightlight.html.value  || "";
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN8PZ697F8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QN8PZ697F8', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -368,7 +368,7 @@ var store = [{
         "title": "Texture Paper Reading - [Rethinking Texture Mapping]",
         "excerpt":"Rethinking Texture Mapping - State of The Art Report Paper.pdf 1.1 Scope Perfecting the Traditional Texture Mapping RNLL10 - Invisible Seams Paper.pdf LFJG17 - Seam Erasure Seamless: seam erasure and seam-aware decoupling of shape from mesh resolution. Paper.pdf Tar12 - Seamless Toroidal/Cylindrical Textures Cylindrical and toroidal parameterizations without vertex seams...","categories": ["3d"],
         "tags": [],
-        "url": "/3d/Texture-Paper-Reading/",
+        "url": "/3d/Texture-Paper-Reading-Rethinking-Texture-Mapping/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210921190258.png"
       },{
         "title": "Clion Debug",
