@@ -4,7 +4,7 @@ title:  "Operator For Image"
 date:   "2021-09-27 14:57:40 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png
 ---
 
 ## Sobel Operator - 1968 [索伯算子, 索贝尔算子]
@@ -25,7 +25,7 @@ header:
         \end{aligned}
     $$
 - OpenMvs
-  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927161159.png" alt="20210927161159"/>
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927200240.png" alt="20210927200240"/>
 - Related
   - [Digital step edges from zero crossing of second directional derivatives](https://www.sciencedirect.com/science/article/pii/B9780080515816500271)
   - [Paper.pdf](https://www.sciencedirect.com/science/article/pii/B9780080515816500271?via%3Dihub)
