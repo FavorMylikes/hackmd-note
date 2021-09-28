@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-27T23:58:29+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Minimum bounding box [MBB]</title><link href="https://ucas.io/3d/Minimum-bounding-box-MBB/" rel="alternate" type="text/html" title="Minimum bounding box [MBB]" /><published>2021-09-27T14:57:40+08:00</published><updated>2021-09-27T14:57:40+08:00</updated><id>https://ucas.io/3d/Minimum-bounding-box-%5BMBB%5D</id><content type="html" xml:base="https://ucas.io/3d/Minimum-bounding-box-MBB/">&lt;h2 id=&quot;mbb-最小包围盒-minimum-bounding-box&quot;&gt;MBB 最小包围盒 [Minimum bounding box]&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-28T12:31:25+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Minimum bounding box [MBB]</title><link href="https://ucas.io/3d/Minimum-bounding-box-MBB/" rel="alternate" type="text/html" title="Minimum bounding box [MBB]" /><published>2021-09-27T14:57:40+08:00</published><updated>2021-09-27T14:57:40+08:00</updated><id>https://ucas.io/3d/Minimum-bounding-box-%5BMBB%5D</id><content type="html" xml:base="https://ucas.io/3d/Minimum-bounding-box-MBB/">&lt;h2 id=&quot;mbb-最小包围盒-minimum-bounding-box&quot;&gt;MBB 最小包围盒 [Minimum bounding box]&lt;/h2&gt;
 
 &lt;h3 id=&quot;aabb-轴对齐包围盒-axis-aligned-minimum-bounding-box&quot;&gt;AABB 轴对齐包围盒 [Axis-aligned minimum bounding box]&lt;/h3&gt;
 
@@ -353,7 +353,74 @@ $$&lt;/div&gt;
 
 &lt;h2 id=&quot;compare-of-them&quot;&gt;Compare of them&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927195227.png&quot; alt=&quot;20210927195227&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Sobel Operator - 1968 [索伯算子, 索贝尔算子]</summary></entry><entry><title type="html">Code Reading</title><link href="https://ucas.io/Code-Reading/" rel="alternate" type="text/html" title="Code Reading" /><published>2021-09-26T00:00:00+08:00</published><updated>2021-09-26T00:00:00+08:00</updated><id>https://ucas.io/Code-Reading</id><content type="html" xml:base="https://ucas.io/Code-Reading/"></content><author><name>麦丽素</name></author><summary type="html"></summary></entry><entry><title type="html">Build And Run Texturemesh At Ucas Machine</title><link href="https://ucas.io/Build-And-Run-TextureMesh-at-UCAS-machine/" rel="alternate" type="text/html" title="Build And Run Texturemesh At Ucas Machine" /><published>2021-09-24T00:00:00+08:00</published><updated>2021-09-24T00:00:00+08:00</updated><id>https://ucas.io/Build-And-Run-TextureMesh-at-UCAS-machine</id><content type="html" xml:base="https://ucas.io/Build-And-Run-TextureMesh-at-UCAS-machine/"></content><author><name>麦丽素</name></author><summary type="html"></summary></entry><entry><title type="html">Clion Debug</title><link href="https://ucas.io/3d/Clion-Debug/" rel="alternate" type="text/html" title="Clion Debug" /><published>2021-09-23T16:24:52+08:00</published><updated>2021-09-23T16:24:52+08:00</updated><id>https://ucas.io/3d/Clion-Debug</id><content type="html" xml:base="https://ucas.io/3d/Clion-Debug/">&lt;h2 id=&quot;problem-list&quot;&gt;Problem List&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927195227.png&quot; alt=&quot;20210927195227&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Sobel Operator - 1968 [索伯算子, 索贝尔算子]</summary></entry><entry><title type="html">Texture code reading</title><link href="https://ucas.io/3d/Code-Reading/" rel="alternate" type="text/html" title="Texture code reading" /><published>2021-09-26T19:51:42+08:00</published><updated>2021-09-26T19:51:42+08:00</updated><id>https://ucas.io/3d/Code-Reading</id><content type="html" xml:base="https://ucas.io/3d/Code-Reading/">&lt;ul&gt;
+  &lt;li&gt;TextureMesh
+    &lt;ul&gt;
+      &lt;li&gt;FaceViewSelection
+        &lt;ul&gt;
+          &lt;li&gt;ListVertexFaces✔️ // extract array of triangles incident to each vertex
+            &lt;ul&gt;
+              &lt;li&gt;EmptyExtra✔️&lt;/li&gt;
+              &lt;li&gt;ListIncidenteFaces✔️&lt;/li&gt;
+              &lt;li&gt;ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210926235332.png&quot; alt=&quot;20210926235332&quot; /&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;// create texture patches
+            &lt;ul&gt;
+              &lt;li&gt;ListCameraFaces // list all views for each face
+                &lt;ul&gt;
+                  &lt;li&gt;//create vertices &lt;strong&gt;octree&lt;/strong&gt; of vertices✔️&lt;/li&gt;
+                  &lt;li&gt;//extract array of faces viewed by each image✔️
+                    &lt;ul&gt;
+                      &lt;li&gt;//compute gradient magnitude✔️&lt;/li&gt;
+                      &lt;li&gt;//select faces inside view frustum✔️
+                        &lt;ul&gt;
+                          &lt;li&gt;plane with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AABB&lt;/code&gt;✔️&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;//project all triangles in this view and keep the closest ones&lt;/li&gt;
+                      &lt;li&gt;//compute the projection area of visible faces&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;// create faces graph&lt;/li&gt;
+          &lt;li&gt;// assign the best view to each face
+            &lt;ul&gt;
+              &lt;li&gt;// find connected components&lt;/li&gt;
+              &lt;li&gt;// map face ID from global to component space&lt;/li&gt;
+              &lt;li&gt;// normalize quality values&lt;/li&gt;
+              &lt;li&gt;// initialize inference structures&lt;/li&gt;
+              &lt;li&gt;// set data costs
+                &lt;ul&gt;
+                  &lt;li&gt;// set costs for label 0 (undefined)&lt;/li&gt;
+                  &lt;li&gt;// set data costs for all labels (except label 0 - undefined)&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// assign the optimal view (label) to each face&lt;/li&gt;
+              &lt;li&gt;// extract resulting labeling&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;// create texture patches
+            &lt;ul&gt;
+              &lt;li&gt;// divide graph in sub-graphs of connected faces having the same label&lt;/li&gt;
+              &lt;li&gt;// find connected components: texture patches&lt;/li&gt;
+              &lt;li&gt;// last texture patch contains all faces with no texture&lt;/li&gt;
+              &lt;li&gt;// remove all patches with invalid label (except the last one) and create the map from the old index to the new one&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;GenerateTexture&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">TextureMesh FaceViewSelection ListVertexFaces✔️ // extract array of triangles incident to each vertex EmptyExtra✔️ ListIncidenteFaces✔️ ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用 // create texture patches ListCameraFaces // list all views for each face //create vertices octree of vertices✔️ //extract array of faces viewed by each image✔️ //compute gradient magnitude✔️ //select faces inside view frustum✔️ plane with AABB✔️ //project all triangles in this view and keep the closest ones //compute the projection area of visible faces // create faces graph // assign the best view to each face // find connected components // map face ID from global to component space // normalize quality values // initialize inference structures // set data costs // set costs for label 0 (undefined) // set data costs for all labels (except label 0 - undefined) // assign the optimal view (label) to each face // extract resulting labeling // create texture patches // divide graph in sub-graphs of connected faces having the same label // find connected components: texture patches // last texture patch contains all faces with no texture // remove all patches with invalid label (except the last one) and create the map from the old index to the new one GenerateTexture</summary></entry><entry><title type="html">Build And Run Texturemesh At Ucas Machine</title><link href="https://ucas.io/Build-And-Run-TextureMesh-at-UCAS-machine/" rel="alternate" type="text/html" title="Build And Run Texturemesh At Ucas Machine" /><published>2021-09-24T00:00:00+08:00</published><updated>2021-09-24T00:00:00+08:00</updated><id>https://ucas.io/Build-And-Run-TextureMesh-at-UCAS-machine</id><content type="html" xml:base="https://ucas.io/Build-And-Run-TextureMesh-at-UCAS-machine/"></content><author><name>麦丽素</name></author><summary type="html"></summary></entry><entry><title type="html">Clion Debug</title><link href="https://ucas.io/3d/Clion-Debug/" rel="alternate" type="text/html" title="Clion Debug" /><published>2021-09-23T16:24:52+08:00</published><updated>2021-09-23T16:24:52+08:00</updated><id>https://ucas.io/3d/Clion-Debug</id><content type="html" xml:base="https://ucas.io/3d/Clion-Debug/">&lt;h2 id=&quot;problem-list&quot;&gt;Problem List&lt;/h2&gt;
 
 &lt;h3 id=&quot;windows-xps-build&quot;&gt;windows [xps] build&lt;/h3&gt;
 

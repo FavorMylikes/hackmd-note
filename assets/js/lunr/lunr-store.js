@@ -383,11 +383,11 @@ var store = [{
         "url": "/Build-And-Run-TextureMesh-at-UCAS-machine/",
         "teaser": null
       },{
-        "title": "Code Reading",
-        "excerpt":" ","categories": [],
+        "title": "Texture code reading",
+        "excerpt":"TextureMesh FaceViewSelection ListVertexFaces✔️ // extract array of triangles incident to each vertex EmptyExtra✔️ ListIncidenteFaces✔️ ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用 // create texture patches ListCameraFaces // list all views for each face //create vertices octree of vertices✔️ //extract array of faces viewed by each image✔️ //compute gradient magnitude✔️ //select faces inside view frustum✔️...","categories": ["3d"],
         "tags": [],
-        "url": "/Code-Reading/",
-        "teaser": null
+        "url": "/3d/Code-Reading/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png"
       },{
         "title": "Minimum bounding box [MBB]",
         "excerpt":"MBB 最小包围盒 [Minimum bounding box] AABB 轴对齐包围盒 [Axis-aligned minimum bounding box] when the model is rotated they cannot be simply rotated with it, but need to be recomputed. $$ \\begin{aligned} P_{min} &= [x_{min},y_{min},z_{min}]\\\\ P_{max} &= [x_{max},y_{max},z_{max}] \\end{aligned} $$ OBB 有向围盒 [Oriented minimum bounding box] 其中 $C$: Center Point $\\mathbf{u, v,...","categories": ["3d"],
