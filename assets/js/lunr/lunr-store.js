@@ -381,7 +381,7 @@ var store = [{
         "excerpt":"Reinstall vcpkg at xps Just remove vcpkg directory. Compile and Build Texture_extract at xps machine The files need change Copy CMakeLists.txt from TextureMesh to TextureMesh_extract, change TextureMesh to TextureMesh_extract at the same time Change include at TextureMesh_extract.cpp and interfaceCamera.hpp Build with x64 Same example after texture original HC-lap-smooth gussian Detail...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Build-And-Run-TextureMesh-at-UCAS-machine/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191117.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191016.png"
       },{
         "title": "OpenMVS Texture code reading",
         "excerpt":"TextureMesh FaceViewSelection ListVertexFaces✔️ // extract array of triangles incident to each vertex EmptyExtra✔️ ListIncidenteFaces✔️ ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用 // create texture patches ListCameraFaces // list all views for each face //create vertices octree of vertices✔️ //extract array of faces viewed by each image✔️ //compute gradient magnitude✔️ //select faces inside view frustum✔️...","categories": ["3d"],
@@ -399,5 +399,11 @@ var store = [{
         "excerpt":"Sobel Operator - 1968 [索伯算子, 索贝尔算子] Paper - An Isotropic 3x3 Image Gradient Operator Paper.pdf Formula $$ \\begin{aligned} G_x &= \\begin{bmatrix} +1&0&-1\\\\+2&0&-2\\\\+1&0&-1\\\\ \\end{bmatrix} * IMG\\\\ G_y &= \\begin{bmatrix} +1&+2&+1\\\\0&0&0\\\\-1&-2&-1\\\\ \\end{bmatrix} * IMG\\\\ G &= \\sqrt{G_x^2 + G_y^2}\\\\ \\Theta &= \\arctan(\\frac{G_y}{G_x})=atan2(G_x, G_y) \\end{aligned} $$ OpenMvs Related Digital step edges from zero...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Operator-For-Image/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png"
+      },{
+        "title": "Trangle Rasterization",
+        "excerpt":"OpenMVS Advanced Rasterization - Nick 2004 Triangle Scan Conversion using 2D Homogeneous Coordinates - CMU Line sweeping[线扫法] Triangle-rasterization-and-back-face-culling 对y排序，从左向右设置像素 分两段画完 Barycentric Coordinates[重心坐标系判定法 - 并行计算中的判定] 遍历AABB内的所有点的重心坐标 For Convex 重心坐标具有仿射不变性 As Area coordinates in trangle 对于三点$A,B,C$的坐标分别为$\\mathbf{a,b,c}$ 对于任意点$P$的坐标$p$ 设$S_{\\triangle{PBC}}:S_{\\triangle{PBC}}:S_{\\triangle{PBC}}=\\lambda_1:\\lambda_2:\\lambda_3$ $\\lambda_1+\\lambda_2+\\lambda_3=1$ 延长$AP$交$BC$于$D$ $$ \\begin{aligned} &\\because&BD:DC&=\\lambda_3:\\lambda_2\\\\ &\\therefore& \\mathbf{d}&=\\frac{\\lambda_2\\mathbf{b}+\\lambda_3\\mathbf{c}}{\\lambda_2+\\lambda_3}\\\\ &\\because&AP:PD&=(\\lambda_2+\\lambda_3):\\lambda_1\\\\ &\\therefore&\\mathbf{p}&=\\frac{(\\lambda_2+\\lambda_3)\\mathbf{d}+\\lambda_1\\mathbf{a}}{\\lambda_1+\\lambda_2+\\lambda_3}\\\\ &\\therefore&\\mathbf{p}&=\\lambda_1\\mathbf{a}+\\lambda_2\\mathbf{b}+\\lambda_3\\mathbf{c} \\end{aligned} $$ 因此，重心坐标， 也是面积坐标...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Trangle-Rasterization/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png"
       }]

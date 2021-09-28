@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>OpenMVS Texture code reading / Notes B</title>
-<meta name="description" content="TextureMesh            FaceViewSelection                    ListVertexFaces✔️ // extract array of triangles incident to each vertex                            EmptyExtra✔️               ListIncidenteFaces✔️               ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                       // create texture patches                            ListCameraFaces // list all views for each face                                    //create vertices octree of vertices✔️                   //extract array of faces viewed by each image✔️                                            //compute gradient magnitude✔️                       //select faces inside view frustum✔️                                                    plane with AABB✔️                                                                       //project all triangles in this view and keep the closest ones                       //compute the projection area of visible faces                                                                                                           // create faces graph           // assign the best view to each face                            // find connected components               // map face ID from global to component space               // normalize quality values               // initialize inference structures               // set data costs                                    // set costs for label 0 (undefined)                   // set data costs for all labels (except label 0 - undefined)                                               // assign the optimal view (label) to each face               // extract resulting labeling                                   // create texture patches                            // divide graph in sub-graphs of connected faces having the same label               // find connected components: texture patches               // last texture patch contains all faces with no texture               // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                               GenerateTexture">
+<meta name="description" content="TextureMesh            FaceViewSelection                    ListVertexFaces✔️ // extract array of triangles incident to each vertex                            EmptyExtra✔️               ListIncidenteFaces✔️               ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                       // create texture patches                            ListCameraFaces // list all views for each face                                    //create vertices octree of vertices✔️                   //extract array of faces viewed by each image✔️                                            //compute gradient magnitude✔️                       //select faces inside view frustum✔️                                                    plane with AABB✔️                                                                       //project all triangles in this view and keep the closest ones                                                    // skip face if not completely inside                                                            using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️                                                                                   // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️                                                            (faceCenter.z &lt;= REAL(0))                               faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()                                                                                   // draw triangle and for each pixel compute depth as the ray intersection with the plane                                                            Advanced Rasterization by Nick (Nicolas Capens) 2004                               Advanced Rasterization                                                                                                                               // compute the projection area of visible faces                                                                                                           // create faces graph           // assign the best view to each face                            // find connected components               // map face ID from global to component space               // normalize quality values               // initialize inference structures               // set data costs                                    // set costs for label 0 (undefined)                   // set data costs for all labels (except label 0 - undefined)                                               // assign the optimal view (label) to each face               // extract resulting labeling                                   // create texture patches                            // divide graph in sub-graphs of connected faces having the same label               // find connected components: texture patches               // last texture patch contains all faces with no texture               // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                               GenerateTexture">
 
 
   <meta name="author" content="麦丽素">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://ucas.io/3d/OpenMVS-Texture-Code-Reading/">
 
 
-  <meta property="og:description" content="TextureMesh            FaceViewSelection                    ListVertexFaces✔️ // extract array of triangles incident to each vertex                            EmptyExtra✔️               ListIncidenteFaces✔️               ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                       // create texture patches                            ListCameraFaces // list all views for each face                                    //create vertices octree of vertices✔️                   //extract array of faces viewed by each image✔️                                            //compute gradient magnitude✔️                       //select faces inside view frustum✔️                                                    plane with AABB✔️                                                                       //project all triangles in this view and keep the closest ones                       //compute the projection area of visible faces                                                                                                           // create faces graph           // assign the best view to each face                            // find connected components               // map face ID from global to component space               // normalize quality values               // initialize inference structures               // set data costs                                    // set costs for label 0 (undefined)                   // set data costs for all labels (except label 0 - undefined)                                               // assign the optimal view (label) to each face               // extract resulting labeling                                   // create texture patches                            // divide graph in sub-graphs of connected faces having the same label               // find connected components: texture patches               // last texture patch contains all faces with no texture               // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                               GenerateTexture">
+  <meta property="og:description" content="TextureMesh            FaceViewSelection                    ListVertexFaces✔️ // extract array of triangles incident to each vertex                            EmptyExtra✔️               ListIncidenteFaces✔️               ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                       // create texture patches                            ListCameraFaces // list all views for each face                                    //create vertices octree of vertices✔️                   //extract array of faces viewed by each image✔️                                            //compute gradient magnitude✔️                       //select faces inside view frustum✔️                                                    plane with AABB✔️                                                                       //project all triangles in this view and keep the closest ones                                                    // skip face if not completely inside                                                            using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️                                                                                   // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️                                                            (faceCenter.z &lt;= REAL(0))                               faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()                                                                                   // draw triangle and for each pixel compute depth as the ray intersection with the plane                                                            Advanced Rasterization by Nick (Nicolas Capens) 2004                               Advanced Rasterization                                                                                                                               // compute the projection area of visible faces                                                                                                           // create faces graph           // assign the best view to each face                            // find connected components               // map face ID from global to component space               // normalize quality values               // initialize inference structures               // set data costs                                    // set costs for label 0 (undefined)                   // set data costs for all labels (except label 0 - undefined)                                               // assign the optimal view (label) to each face               // extract resulting labeling                                   // create texture patches                            // divide graph in sub-graphs of connected faces having the same label               // find connected components: texture patches               // last texture patch contains all faces with no texture               // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                               GenerateTexture">
 
 
 
@@ -333,7 +333,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="OpenMVS Texture code reading">
-    <meta itemprop="description" content="  TextureMesh          FaceViewSelection                  ListVertexFaces✔️ // extract array of triangles incident to each vertex                          EmptyExtra✔️              ListIncidenteFaces✔️              ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                // create texture patches                          ListCameraFaces // list all views for each face                                  //create vertices octree of vertices✔️                  //extract array of faces viewed by each image✔️                                          //compute gradient magnitude✔️                      //select faces inside view frustum✔️                                                  plane with AABB✔️                                                                    //project all triangles in this view and keep the closest ones                      //compute the projection area of visible faces                                                                                                    // create faces graph          // assign the best view to each face                          // find connected components              // map face ID from global to component space              // normalize quality values              // initialize inference structures              // set data costs                                  // set costs for label 0 (undefined)                  // set data costs for all labels (except label 0 - undefined)                                            // assign the optimal view (label) to each face              // extract resulting labeling                                // create texture patches                          // divide graph in sub-graphs of connected faces having the same label              // find connected components: texture patches              // last texture patch contains all faces with no texture              // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                          GenerateTexture      ">
+    <meta itemprop="description" content="  TextureMesh          FaceViewSelection                  ListVertexFaces✔️ // extract array of triangles incident to each vertex                          EmptyExtra✔️              ListIncidenteFaces✔️              ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                // create texture patches                          ListCameraFaces // list all views for each face                                  //create vertices octree of vertices✔️                  //extract array of faces viewed by each image✔️                                          //compute gradient magnitude✔️                      //select faces inside view frustum✔️                                                  plane with AABB✔️                                                                    //project all triangles in this view and keep the closest ones                                                  // skip face if not completely inside                                                          using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️                                                                                // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️                                                          (faceCenter.z &lt;= REAL(0))                              faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()                                                                                // draw triangle and for each pixel compute depth as the ray intersection with the plane                                                          Advanced Rasterization by Nick (Nicolas Capens) 2004                              Advanced Rasterization                                                                                                                          // compute the projection area of visible faces                                                                                                    // create faces graph          // assign the best view to each face                          // find connected components              // map face ID from global to component space              // normalize quality values              // initialize inference structures              // set data costs                                  // set costs for label 0 (undefined)                  // set data costs for all labels (except label 0 - undefined)                                            // assign the optimal view (label) to each face              // extract resulting labeling                                // create texture patches                          // divide graph in sub-graphs of connected faces having the same label              // find connected components: texture patches              // last texture patch contains all faces with no texture              // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                          GenerateTexture      ">
     <meta itemprop="datePublished" content="2021-09-26T19:51:42+08:00">
     
 
@@ -363,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -412,8 +412,28 @@
                           <li>plane with <code class="language-plaintext highlighter-rouge">AABB</code>✔️</li>
                         </ul>
                       </li>
-                      <li>//project all triangles in this view and keep the closest ones</li>
-                      <li>//compute the projection area of visible faces</li>
+                      <li>//project all triangles in this view and keep the closest ones
+                        <ul>
+                          <li>// skip face if not completely inside
+                            <ul>
+                              <li>using <code class="language-plaintext highlighter-rouge">TransformPointW2C</code> and <code class="language-plaintext highlighter-rouge">TransformPointC2I</code> to check the point is in image plane, <code class="language-plaintext highlighter-rouge">OpenMVS</code> use 3 pixel as border width ✔️</li>
+                            </ul>
+                          </li>
+                          <li>// skip face if the (cos) angle between the view to face vector and the view direction is negative✔️
+                            <ul>
+                              <li><code class="language-plaintext highlighter-rouge">(faceCenter.z &lt;= REAL(0))</code></li>
+                              <li><code class="language-plaintext highlighter-rouge">faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()</code></li>
+                            </ul>
+                          </li>
+                          <li>// draw triangle and for each pixel compute depth as the ray intersection with the plane
+                            <ul>
+                              <li><strong><code class="language-plaintext highlighter-rouge">Advanced Rasterization</code></strong> by Nick (Nicolas Capens) 2004</li>
+                              <li><a href="https://forum.beyond3d.com/threads/advanced-rasterization.12507/">Advanced Rasterization</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>// compute the projection area of visible faces</li>
                     </ul>
                   </li>
                 </ul>
@@ -529,6 +549,57 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/3d/Trangle-Rasterization/" rel="permalink">Trangle Rasterization
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-09-28T17:08:24+08:00">September 28, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">OpenMVS
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/3d/Operator-For-Image/" rel="permalink">Operator For Image
 </a>
       
@@ -626,7 +697,7 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191117.png" alt="">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191016.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -664,57 +735,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Reinstall vcpkg at xps
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/Clion-Debug/" rel="permalink">Clion Debug
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-09-23T16:24:52+08:00">September 23, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Problem List
 </p>
   </article>
 </div>
