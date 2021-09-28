@@ -4,7 +4,7 @@ title:  "Build and run TextureMesh at UCAS machine"
 date:   "2021-09-24 18:23:30 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191117.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191016.png
 ---
 
 ## Reinstall vcpkg at xps

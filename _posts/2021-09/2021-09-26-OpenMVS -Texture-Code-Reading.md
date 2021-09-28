@@ -22,7 +22,15 @@ header:
           - //select faces inside view frustum✔️
             - plane with `AABB`✔️
           - //project all triangles in this view and keep the closest ones
-          - //compute the projection area of visible faces
+            - // skip face if not completely inside
+              - using `TransformPointW2C` and `TransformPointC2I` to check the point is in image plane, `OpenMVS` use 3 pixel as border width ✔️
+            - // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️
+              - `(faceCenter.z <= REAL(0))`
+              - `faceCenter.dot(normalPlane) >= ZEROTOLERANCE<REAL>()`
+            - // draw triangle and for each pixel compute depth as the ray intersection with the plane
+              - **`Advanced Rasterization`** by Nick (Nicolas Capens) 2004
+              - [Advanced Rasterization](https://forum.beyond3d.com/threads/advanced-rasterization.12507/)
+          - // compute the projection area of visible faces
     - // create faces graph
     - // assign the best view to each face
       - // find connected components
