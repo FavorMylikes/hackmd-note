@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Texture code reading / Notes B</title>
+<!-- begin _includes/seo.html --><title>OpenMVS Texture code reading / Notes B</title>
 <meta name="description" content="TextureMesh            FaceViewSelection                    ListVertexFaces✔️ // extract array of triangles incident to each vertex                            EmptyExtra✔️               ListIncidenteFaces✔️               ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                       // create texture patches                            ListCameraFaces // list all views for each face                                    //create vertices octree of vertices✔️                   //extract array of faces viewed by each image✔️                                            //compute gradient magnitude✔️                       //select faces inside view frustum✔️                                                    plane with AABB✔️                                                                       //project all triangles in this view and keep the closest ones                       //compute the projection area of visible faces                                                                                                           // create faces graph           // assign the best view to each face                            // find connected components               // map face ID from global to component space               // normalize quality values               // initialize inference structures               // set data costs                                    // set costs for label 0 (undefined)                   // set data costs for all labels (except label 0 - undefined)                                               // assign the optimal view (label) to each face               // extract resulting labeling                                   // create texture patches                            // divide graph in sub-graphs of connected faces having the same label               // find connected components: texture patches               // last texture patch contains all faces with no texture               // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                               GenerateTexture">
 
 
@@ -22,15 +22,15 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Texture code reading">
-<meta property="og:url" content="https://ucas.io/3d/Code-Reading/">
+<meta property="og:title" content="OpenMVS Texture code reading">
+<meta property="og:url" content="https://ucas.io/3d/OpenMVS-Texture-Code-Reading/">
 
 
   <meta property="og:description" content="TextureMesh            FaceViewSelection                    ListVertexFaces✔️ // extract array of triangles incident to each vertex                            EmptyExtra✔️               ListIncidenteFaces✔️               ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                       // create texture patches                            ListCameraFaces // list all views for each face                                    //create vertices octree of vertices✔️                   //extract array of faces viewed by each image✔️                                            //compute gradient magnitude✔️                       //select faces inside view frustum✔️                                                    plane with AABB✔️                                                                       //project all triangles in this view and keep the closest ones                       //compute the projection area of visible faces                                                                                                           // create faces graph           // assign the best view to each face                            // find connected components               // map face ID from global to component space               // normalize quality values               // initialize inference structures               // set data costs                                    // set costs for label 0 (undefined)                   // set data costs for all labels (except label 0 - undefined)                                               // assign the optimal view (label) to each face               // extract resulting labeling                                   // create texture patches                            // divide graph in sub-graphs of connected faces having the same label               // find connected components: texture patches               // last texture patch contains all faces with no texture               // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                               GenerateTexture">
 
 
 
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210928142744.png">
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-<link rel="canonical" href="https://ucas.io/3d/Code-Reading/">
+<link rel="canonical" href="https://ucas.io/3d/OpenMVS-Texture-Code-Reading/">
 
 
 
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">Texture code reading</li>
+        <li class="current">OpenMVS Texture code reading</li>
       
     
   </ol>
@@ -332,7 +332,7 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Texture code reading">
+    <meta itemprop="headline" content="OpenMVS Texture code reading">
     <meta itemprop="description" content="  TextureMesh          FaceViewSelection                  ListVertexFaces✔️ // extract array of triangles incident to each vertex                          EmptyExtra✔️              ListIncidenteFaces✔️              ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                // create texture patches                          ListCameraFaces // list all views for each face                                  //create vertices octree of vertices✔️                  //extract array of faces viewed by each image✔️                                          //compute gradient magnitude✔️                      //select faces inside view frustum✔️                                                  plane with AABB✔️                                                                    //project all triangles in this view and keep the closest ones                      //compute the projection area of visible faces                                                                                                    // create faces graph          // assign the best view to each face                          // find connected components              // map face ID from global to component space              // normalize quality values              // initialize inference structures              // set data costs                                  // set costs for label 0 (undefined)                  // set data costs for all labels (except label 0 - undefined)                                            // assign the optimal view (label) to each face              // extract resulting labeling                                // create texture patches                          // divide graph in sub-graphs of connected faces having the same label              // find connected components: texture patches              // last texture patch contains all faces with no texture              // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                          GenerateTexture      ">
     <meta itemprop="datePublished" content="2021-09-26T19:51:42+08:00">
     
@@ -340,7 +340,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Texture code reading
+          <h1 id="page-title" class="page__title" itemprop="headline">OpenMVS Texture code reading
 </h1>
           
 
@@ -485,11 +485,11 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Texture+code+reading%20https%3A%2F%2Fucas.io%2F3d%2FCode-Reading%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=OpenMVS+Texture+code+reading%20https%3A%2F%2Fucas.io%2F3d%2FOpenMVS-Texture-Code-Reading%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FCode-Reading%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FOpenMVS-Texture-Code-Reading%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FCode-Reading%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FOpenMVS-Texture-Code-Reading%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -626,7 +626,7 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png" alt="">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191117.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
