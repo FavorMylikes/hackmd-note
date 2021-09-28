@@ -1,10 +1,10 @@
 ---
 layout: single
-title:  "Texture code reading"
+title:  "OpenMVS Texture code reading"
 date:   "2021-09-26 19:51:42 +0800"
 categories: 3d
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210928142744.png
 ---
 
 - TextureMesh
