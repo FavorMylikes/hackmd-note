@@ -7,11 +7,12 @@ header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png
 ---
 
-## OpenMVS
+## OpenMVS[Homogeneous Coordinate]
 
 - [Advanced Rasterization - Nick 2004](https://forum.beyond3d.com/threads/advanced-rasterization.12507/)
   - [Triangle Scan Conversion using 2D Homogeneous Coordinates - CMU](https://www.cs.cmu.edu/afs/cs/academic/class/15869-f11/www/readings/olano97_homogeneous.pdf)
     - ![j](https://img.shields.io/badge/SIGGRAPH-1997-blue?style=flat-square)![j](https://img.shields.io/badge/EG-1997-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-122-blue?style=flat-square)
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210929133013.png" alt="20210929133013"/>
 
 ## Line sweeping[线扫法]
 
