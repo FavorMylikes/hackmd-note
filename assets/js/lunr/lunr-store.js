@@ -402,8 +402,14 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png"
       },{
         "title": "Trangle Rasterization",
-        "excerpt":"OpenMVS Advanced Rasterization - Nick 2004 Triangle Scan Conversion using 2D Homogeneous Coordinates - CMU Line sweeping[线扫法] Triangle-rasterization-and-back-face-culling 对y排序，从左向右设置像素 分两段画完 Barycentric Coordinates[重心坐标系判定法 - 并行计算中的判定] 遍历AABB内的所有点的重心坐标 For Convex 重心坐标具有仿射不变性 As Area coordinates in trangle 对于三点$A,B,C$的坐标分别为$\\mathbf{a,b,c}$ 对于任意点$P$的坐标$p$ 设$S_{\\triangle{PBC}}:S_{\\triangle{PBC}}:S_{\\triangle{PBC}}=\\lambda_1:\\lambda_2:\\lambda_3$ $\\lambda_1+\\lambda_2+\\lambda_3=1$ 延长$AP$交$BC$于$D$ $$ \\begin{aligned} &\\because&BD:DC&=\\lambda_3:\\lambda_2\\\\ &\\therefore& \\mathbf{d}&=\\frac{\\lambda_2\\mathbf{b}+\\lambda_3\\mathbf{c}}{\\lambda_2+\\lambda_3}\\\\ &\\because&AP:PD&=(\\lambda_2+\\lambda_3):\\lambda_1\\\\ &\\therefore&\\mathbf{p}&=\\frac{(\\lambda_2+\\lambda_3)\\mathbf{d}+\\lambda_1\\mathbf{a}}{\\lambda_1+\\lambda_2+\\lambda_3}\\\\ &\\therefore&\\mathbf{p}&=\\lambda_1\\mathbf{a}+\\lambda_2\\mathbf{b}+\\lambda_3\\mathbf{c} \\end{aligned} $$ 因此，重心坐标， 也是面积坐标...","categories": ["3d"],
+        "excerpt":"OpenMVS[Homogeneous Coordinate] Advanced Rasterization - Nick 2004 Triangle Scan Conversion using 2D Homogeneous Coordinates - CMU Line sweeping[线扫法] Triangle-rasterization-and-back-face-culling 对y排序，从左向右设置像素 分两段画完 Barycentric Coordinates[重心坐标系判定法 - 并行计算中的判定] 遍历AABB内的所有点的重心坐标 For Convex 重心坐标具有仿射不变性 As Area coordinates in trangle 对于三点$A,B,C$的坐标分别为$\\mathbf{a,b,c}$ 对于任意点$P$的坐标$p$ 设$S_{\\triangle{PBC}}:S_{\\triangle{PBC}}:S_{\\triangle{PBC}}=\\lambda_1:\\lambda_2:\\lambda_3$ $\\lambda_1+\\lambda_2+\\lambda_3=1$ 延长$AP$交$BC$于$D$ $$ \\begin{aligned} &\\because&BD:DC&=\\lambda_3:\\lambda_2\\\\ &\\therefore& \\mathbf{d}&=\\frac{\\lambda_2\\mathbf{b}+\\lambda_3\\mathbf{c}}{\\lambda_2+\\lambda_3}\\\\ &\\because&AP:PD&=(\\lambda_2+\\lambda_3):\\lambda_1\\\\ &\\therefore&\\mathbf{p}&=\\frac{(\\lambda_2+\\lambda_3)\\mathbf{d}+\\lambda_1\\mathbf{a}}{\\lambda_1+\\lambda_2+\\lambda_3}\\\\ &\\therefore&\\mathbf{p}&=\\lambda_1\\mathbf{a}+\\lambda_2\\mathbf{b}+\\lambda_3\\mathbf{c} \\end{aligned} $$ 因此，重心坐标，...","categories": ["3d"],
         "tags": [],
         "url": "/3d/Trangle-Rasterization/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png"
+      },{
+        "title": "Cmake Bug",
+        "excerpt":"Cmake can not find OpenMP Clion(2021.2.2) use the default Cmake version is 3.20.2 Got following error at path-to-build/CMakeFiles/CMakeError.log -- The C compiler identification is MSVC 19.29.30133.0 -- The CXX compiler identification is MSVC 19.29 30133.0 -- Detecting C compiler ABI info -- Detecting C compiler ABI info - failed --...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Cmake-Bug/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png"
       }]

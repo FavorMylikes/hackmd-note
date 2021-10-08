@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-09-28T23:15:16+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Trangle Rasterization</title><link href="https://ucas.io/3d/Trangle-Rasterization/" rel="alternate" type="text/html" title="Trangle Rasterization" /><published>2021-09-28T17:08:24+08:00</published><updated>2021-09-28T17:08:24+08:00</updated><id>https://ucas.io/3d/Trangle-Rasterization</id><content type="html" xml:base="https://ucas.io/3d/Trangle-Rasterization/">&lt;h2 id=&quot;openmvs&quot;&gt;OpenMVS&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-10-08T17:05:55+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Cmake Bug</title><link href="https://ucas.io/3d/Cmake-Bug/" rel="alternate" type="text/html" title="Cmake Bug" /><published>2021-10-08T15:56:23+08:00</published><updated>2021-10-08T15:56:23+08:00</updated><id>https://ucas.io/3d/Cmake-Bug</id><content type="html" xml:base="https://ucas.io/3d/Cmake-Bug/">&lt;h2 id=&quot;cmake-can-not-find-openmp&quot;&gt;Cmake can not find &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OpenMP&lt;/code&gt;&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Clion(2021.2.2) use the default Cmake version is 3.20.2
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;Got following error at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;path-to-build/CMakeFiles/CMakeError.log&lt;/code&gt;&lt;/p&gt;
+
+        &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;  -- The C compiler identification is MSVC 19.29.30133.0
+  -- The CXX compiler identification is MSVC 19.29  30133.0
+  -- Detecting C compiler ABI info
+  -- Detecting C compiler ABI info - failed
+  -- Check for working C compiler: C:/Program Files  (x86)/Microsoft Visual Studio/2019/BuildTools/VC  Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe
+  -- Check for working C compiler: C:/Program Files  (x86)/Microsoft Visual Studio/2019/BuildTools/VC  Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe -  works
+  -- Detecting C compile features
+  -- Detecting C compile features - done
+  -- Detecting CXX compiler ABI info
+  -- Detecting CXX compiler ABI info - failed
+  -- Check for working CXX compiler: C:/Program  Files (x86)/Microsoft Visual Studio/2019  BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64  x64/cl.exe
+  -- Check for working CXX compiler: C:/Program  Files (x86)/Microsoft Visual Studio/2019  BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64  x64/cl.exe - works
+  -- Detecting CXX compile features
+  -- Detecting CXX compile features - done
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;After a few tests, I have a status table at below, we can follow this &lt;a href=&quot;https://youtrack.jetbrains.com/issue/CPP-26827&quot;&gt;issue&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt; &lt;/th&gt;
+          &lt;th&gt;PC1[xps]&lt;/th&gt;
+          &lt;th&gt;PC2[ucas]&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;clion(cmake 3.20.2)&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;cmake 3.21.3&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;cmake 3.19.8&lt;/td&gt;
+          &lt;td&gt;✅warning(CMAKE_DEPENDS_USE_COMPILER)&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;change clion use cmake 3.19.8, the problem has gone&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;how-to-use-openmp&quot;&gt;How to use OpenMp&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Need some attention code at CMakeLists.txt&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CMakeLists.txt&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-cmake highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;FIND_PACKAGE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;OpenMP&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;SET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;CMAKE_CXX_FLAGS &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CMAKE_CXX_FLAGS&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;OpenMP_CXX_FLAGS&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OMP_NUM_THREADS=4&lt;/code&gt; at env To Control thread num&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;code-a-simple-example&quot;&gt;Code, A simple example&lt;/h2&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;omp.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;cp&quot;&gt;#pragma omp parallel for private(i)
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;omp_get_thread_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/u011089523/article/details/103412177&quot;&gt;OpenMP的简单使用教程 - CSDN&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.dartmouth.edu/~rc/classes/intro_openmp/compile_run.html&quot;&gt;How to Compile and Run an OpenMP Program&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/ArrowYL/article/details/81094837&quot;&gt;OpenMP用法大全（个人整理版）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Cmake can not find OpenMP</summary></entry><entry><title type="html">Trangle Rasterization</title><link href="https://ucas.io/3d/Trangle-Rasterization/" rel="alternate" type="text/html" title="Trangle Rasterization" /><published>2021-09-28T17:08:24+08:00</published><updated>2021-09-28T17:08:24+08:00</updated><id>https://ucas.io/3d/Trangle-Rasterization</id><content type="html" xml:base="https://ucas.io/3d/Trangle-Rasterization/">&lt;h2 id=&quot;openmvshomogeneous-coordinate&quot;&gt;OpenMVS[Homogeneous Coordinate]&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://forum.beyond3d.com/threads/advanced-rasterization.12507/&quot;&gt;Advanced Rasterization - Nick 2004&lt;/a&gt;
@@ -8,6 +101,7 @@
           &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-1997-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/EG-1997-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-122-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210929133013.png&quot; alt=&quot;20210929133013&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -128,7 +222,7 @@ $$&lt;/div&gt;
       &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210928212842.png&quot; alt=&quot;20210928212842&quot; height=&quot;200px&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">OpenMVS</summary></entry><entry><title type="html">Minimum bounding box [MBB]</title><link href="https://ucas.io/3d/Minimum-bounding-box-MBB/" rel="alternate" type="text/html" title="Minimum bounding box [MBB]" /><published>2021-09-27T14:57:40+08:00</published><updated>2021-09-27T14:57:40+08:00</updated><id>https://ucas.io/3d/Minimum-bounding-box-%5BMBB%5D</id><content type="html" xml:base="https://ucas.io/3d/Minimum-bounding-box-MBB/">&lt;h2 id=&quot;mbb-最小包围盒-minimum-bounding-box&quot;&gt;MBB 最小包围盒 [Minimum bounding box]&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">OpenMVS[Homogeneous Coordinate]</summary></entry><entry><title type="html">Minimum bounding box [MBB]</title><link href="https://ucas.io/3d/Minimum-bounding-box-MBB/" rel="alternate" type="text/html" title="Minimum bounding box [MBB]" /><published>2021-09-27T14:57:40+08:00</published><updated>2021-09-27T14:57:40+08:00</updated><id>https://ucas.io/3d/Minimum-bounding-box-%5BMBB%5D</id><content type="html" xml:base="https://ucas.io/3d/Minimum-bounding-box-MBB/">&lt;h2 id=&quot;mbb-最小包围盒-minimum-bounding-box&quot;&gt;MBB 最小包围盒 [Minimum bounding box]&lt;/h2&gt;
 
 &lt;h3 id=&quot;aabb-轴对齐包围盒-axis-aligned-minimum-bounding-box&quot;&gt;AABB 轴对齐包围盒 [Axis-aligned minimum bounding box]&lt;/h3&gt;
 
@@ -1478,112 +1572,4 @@ blended on a per-fragment basis&lt;/p&gt;
 &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fillPoly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mesh_faces&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:,:]&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 水平翻转
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imshow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hstack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">More Smooth case</summary></entry><entry><title type="html">Texture for smooth</title><link href="https://ucas.io/3d/Texture-for-smooth/" rel="alternate" type="text/html" title="Texture for smooth" /><published>2021-09-17T16:40:14+08:00</published><updated>2021-09-17T16:40:14+08:00</updated><id>https://ucas.io/3d/Texture-for-smooth</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-smooth/">&lt;h3 id=&quot;run-data-set&quot;&gt;Run Data set&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;id&lt;/th&gt;
-      &lt;th&gt;obj&lt;/th&gt;
-      &lt;th&gt;image&lt;/th&gt;
-      &lt;th&gt;ot&lt;/th&gt;
-      &lt;th&gt;mr&lt;/th&gt;
-      &lt;th&gt;csr&lt;/th&gt;
-      &lt;th&gt;gsl&lt;/th&gt;
-      &lt;th&gt;lsl&lt;/th&gt;
-      &lt;th&gt;ec&lt;/th&gt;
-      &lt;th&gt;result&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;12w&lt;/td&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;meshlab_lap-smooth_12w&lt;/td&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;meshlab_HC-lap-smooth_12w&lt;/td&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;meshlab_normal-smooth_12w&lt;/td&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210917164323.png&quot; alt=&quot;20210917164323&quot; height=&quot;200px&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210917164348.png&quot; alt=&quot;20210917164348&quot; height=&quot;200px&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210917172233.png&quot; alt=&quot;20210917172233&quot; height=&quot;200px&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;Same with 1&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;explaination&quot;&gt;Explaination&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;For case 4: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sommth Face Normals&lt;/code&gt; will not affect the vertex position, but affect the normal of vertex, names &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vn&lt;/code&gt; at obj file. And &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Texeture&lt;/code&gt; does not use that var for compute
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img8cf60c1524815e43726c146fc77d0cf.png&quot; alt=&quot;8cf60c1524815e43726c146fc77d0cf&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img4be3fdda52f0a00e95c494bbaf9b36e.png&quot; alt=&quot;4be3fdda52f0a00e95c494bbaf9b36e&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;obj-format&quot;&gt;Obj Format&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cs.cmu.edu/~mbz/personal/graphics/obj.html&quot;&gt;cmu&lt;/a&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;The vertex normal command specifies a normal vector. A lot of times these aren’t used, because the ‘f’ face command will use the order the ‘v’ commands are given to determine the normal instead. Like the ‘vt’ commands, they don’t mean anything until grouped with a vertex in the ‘f’ face command.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Lap-Smooth
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://diglib.eg.org/handle/10.2312/egst.20051044.053-070&quot;&gt;doi:10.2312/egst.20051044&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/EG_STARs-2005-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-232-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;HC-Lap-Smooth
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://onlinelibrary.wiley.com/doi/abs/10.1111/1467-8659.00334&quot;&gt;Improved laplacian smoothing of noisy surface meshes&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://onlinelibrary.wiley.com/doi/abs/10.1111/1467-8659.00334&quot;&gt;doi:10.1111/1467-8659.00334&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CG-1999-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-574-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Run Data set</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">More Smooth case</summary></entry></feed>
