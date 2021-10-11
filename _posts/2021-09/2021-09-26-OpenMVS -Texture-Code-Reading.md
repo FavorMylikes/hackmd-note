@@ -21,30 +21,89 @@ header:
           - //compute gradient magnitude✔️
           - //select faces inside view frustum✔️
             - plane with `AABB`✔️
-          - //project all triangles in this view and keep the closest ones
-            - // skip face if not completely inside
+          - // project all triangles in this view and keep the closest ones
+            - // skip face if not completely inside✔️
               - using `TransformPointW2C` and `TransformPointC2I` to check the point is in image plane, `OpenMVS` use 3 pixel as border width ✔️
             - // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️
               - `(faceCenter.z <= REAL(0))`
               - `faceCenter.dot(normalPlane) >= ZEROTOLERANCE<REAL>()`
-            - // draw triangle and for each pixel compute depth as the ray intersection with the plane
+            - // draw triangle and for each pixel compute depth as the ray intersection with the plane✔️
               - **`Advanced Rasterization`** by Nick (Nicolas Capens) 2004
-              - [Advanced Rasterization](https://forum.beyond3d.com/threads/advanced-rasterization.12507/)
+              - [Advanced Rasterization](https://forum.beyond3d.com/threads/advanced-rasterization.12507/)🤔
+              - `libs/Common/Types.inl:2474/TImage<TYPE>::RasterizeTriangle`
+              - **OpenMVS: Using block size eq 8, and `Half-Space`**
           - // compute the projection area of visible faces
-    - // create faces graph
-    - // assign the best view to each face
-      - // find connected components
-      - // map face ID from global to component space
-      - // normalize quality values
-      - // initialize inference structures
-      - // set data costs
-        - // set costs for label 0 (undefined)
-        - // set data costs for all labels (except label 0 - undefined)
-      - // assign the optimal view (label) to each face
-      - // extract resulting labeling
-    - // create texture patches
-      - // divide graph in sub-graphs of connected faces having the same label
-      - // find connected components: texture patches
-      - // last texture patch contains all faces with no texture
-      - // remove all patches with invalid label (except the last one) and create the map from the old index to the new one
+            - 遍历照片上的像素，获取最近的`face`最近的view, 计算`face`颜色均值✔️
+          - `(fOutlierThreshold > 0)` // try to detect outlier views for each face
+            - 取face 3个通道的均色，对均色做多元正太分布计算，如果偏差大于阈值，则视为`outlier`✔️
+              - `LU分解`取逆
+    - // create faces graph✔️
+      - 遍历`face`以及面的邻接`faceAdj`, 若一个可见，一个不可见，则增加`seam`
+    - // assign the best view to each face✔️
+      - // find connected components✔️
+        - 根据前面计算的`face`邻接关系计算连通图
+      - // map face ID from global to component space✔️
+        - 为每个面计算连通图的新id，`component1: [1,2,3,...,c1], component2: [1,2,3,...,c2]`
+      - // normalize quality values✔️
+        - 计算图片质量[二阶导积分]的95分位置近似值
+      - // initialize inference structures✔️
+        - `numNodes`=连通图face的数量，如果数量小于等于1，则忽略
+        - `SmoothCost`=0[if node eq]~1000
+        - `Neighbors`
+      - // set data costs✔️
+        - // set costs for label 0 (undefined)✔️
+          - `dataCost = fRatioDataSmoothness * 1000` for min of all labels
+        - // set data costs for all labels (except label 0 - undefined)✔️
+          - `dataCost =` $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$
+        - Label = 0, 未定义，label >= 1是指其他图片✔️
+      - // assign the optimal view (label) to each face✔️
+        - `Optimize` 优化单位是连通图✔️
+          - `ComputeEnergy`✔️
+            - $\sum{cost_{data}} + \sum(cost_{edge})$
+            - $cost_{edge} = 1000$ if label is not equal
+          - `Optimize(n=1)`✔️
+            - for(n times)
+              - 计算每个面在选择不同`label`时得到的`minEnergy`
+              - `Swap` `newMsgs` and `oldMsgs`, `oldMsgs - min(oldMsgs)`
+            - 更新选择的`label`和`dataCost`✔️
+          - 根据能量差分提前返回✔️
+      - // extract resulting labeling✔️
+        - label-1，调整索引
+    - // create texture patches✔️
+      - // divide graph in sub-graphs of connected faces having the same label✔️
+        - 计算图片不一致的边缝`A`，对于相邻一侧无label的也作为边缝`B`
+        - 去掉`A`的连通边
+      - // find connected components: texture patches✔️
+        - 计算新的连通图
+      - // last texture patch contains all faces with no texture✔️
+        - 每个`Texture` 收集每个连通体的`face`
+      - // remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️
   - GenerateTexture
+    - // project patches in the corresponding view and compute texture-coordinates and bounding-box
+    - // project vertices and compute bounding-box✔️
+      - 对每个`patch`的面映射到图片中后，算一个2d的`aabb`
+    - // compute relative texture coordinates✔️
+      - 计算offset，修改相应的坐标
+    - // init last patch to point to a small uniform color patch✔️
+      - 默认纹理位置
+    - // perform seam leveling
+      - // create seam vertices and edges✔️
+      - // perform global seam leveling
+        - // find the patch ID for each vertex✔️
+          - 对点赋值patch_id，边缝点使用`idxSeamVertex`
+        - // assign a row index within the solution vector x to each vertex/patch
+          - 生成一个patch数组`vertpatch2rows`, 行号为点索引，二阶索引为patch，对于单个`patch`的点，只赋值一个patch，对于边缝点多个`patch`的点，赋多个`patch`，值为递增值`rowsX`
+        - // fill Tikhonov's Gamma matrix (regularization constraints)
+      - // perform local seam leveling
+    - // merge texture patches with overlapping rectangles
+      - // translate texture coordinates
+      - // join faces lists
+      - // remove the small patch
+    - // create texture
+      - // arrange texture patches to fit the smallest possible texture image
+      - // increase texture size till all patches fit
+    - // create texture image
+      - // copy patch image
+        - // flip patch and texture-coordinates
+      - // compute final texture coordinates
+        - // translate, normalize and flip Y axis
