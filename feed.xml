@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-10-08T17:05:55+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Cmake Bug</title><link href="https://ucas.io/3d/Cmake-Bug/" rel="alternate" type="text/html" title="Cmake Bug" /><published>2021-10-08T15:56:23+08:00</published><updated>2021-10-08T15:56:23+08:00</updated><id>https://ucas.io/3d/Cmake-Bug</id><content type="html" xml:base="https://ucas.io/3d/Cmake-Bug/">&lt;h2 id=&quot;cmake-can-not-find-openmp&quot;&gt;Cmake can not find &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OpenMP&lt;/code&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-10-11T22:28:00+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Texture for invisible</title><link href="https://ucas.io/3d/Texture-for-invisible-face/" rel="alternate" type="text/html" title="Texture for invisible" /><published>2021-10-09T11:19:26+08:00</published><updated>2021-10-09T11:19:26+08:00</updated><id>https://ucas.io/3d/Texture-for-invisible-face</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-invisible-face/">&lt;h2 id=&quot;causes-of-no-texture&quot;&gt;Causes of no texture&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bInvisibleFace || bInvisibleFaceAdj == Ture&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211009111851.png&quot; alt=&quot;20211009111851&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bInvisibleFace == True&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211009132134.png&quot; alt=&quot;20211009132134&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211009132157.png&quot; alt=&quot;20211009132157&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;mesh问题
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgo.gif&quot; alt=&quot;o&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;c-tech&quot;&gt;C++ Tech&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.360doc.com/content/19/0212/20/496343_814522118.shtml&quot;&gt;调用约定——_cdecl,_stdcall,_fastcall&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211009232731.png&quot; alt=&quot;20211009232731&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Causes of no texture</summary></entry><entry><title type="html">Cmake Bug</title><link href="https://ucas.io/3d/Cmake-Bug/" rel="alternate" type="text/html" title="Cmake Bug" /><published>2021-10-08T15:56:23+08:00</published><updated>2021-10-08T15:56:23+08:00</updated><id>https://ucas.io/3d/Cmake-Bug</id><content type="html" xml:base="https://ucas.io/3d/Cmake-Bug/">&lt;h2 id=&quot;cmake-can-not-find-openmp&quot;&gt;Cmake can not find &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OpenMP&lt;/code&gt;&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Clion(2021.2.2) use the default Cmake version is 3.20.2
@@ -606,9 +635,9 @@ $$&lt;/div&gt;
                           &lt;li&gt;plane with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AABB&lt;/code&gt;✔️&lt;/li&gt;
                         &lt;/ul&gt;
                       &lt;/li&gt;
-                      &lt;li&gt;//project all triangles in this view and keep the closest ones
+                      &lt;li&gt;// project all triangles in this view and keep the closest ones
                         &lt;ul&gt;
-                          &lt;li&gt;// skip face if not completely inside
+                          &lt;li&gt;// skip face if not completely inside✔️
                             &lt;ul&gt;
                               &lt;li&gt;using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TransformPointW2C&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TransformPointC2I&lt;/code&gt; to check the point is in image plane, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OpenMVS&lt;/code&gt; use 3 pixel as border width ✔️&lt;/li&gt;
                             &lt;/ul&gt;
@@ -619,52 +648,207 @@ $$&lt;/div&gt;
                               &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;faceCenter.dot(normalPlane) &amp;gt;= ZEROTOLERANCE&amp;lt;REAL&amp;gt;()&lt;/code&gt;&lt;/li&gt;
                             &lt;/ul&gt;
                           &lt;/li&gt;
-                          &lt;li&gt;// draw triangle and for each pixel compute depth as the ray intersection with the plane
+                          &lt;li&gt;// draw triangle and for each pixel compute depth as the ray intersection with the plane✔️
                             &lt;ul&gt;
                               &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Advanced Rasterization&lt;/code&gt;&lt;/strong&gt; by Nick (Nicolas Capens) 2004&lt;/li&gt;
-                              &lt;li&gt;&lt;a href=&quot;https://forum.beyond3d.com/threads/advanced-rasterization.12507/&quot;&gt;Advanced Rasterization&lt;/a&gt;&lt;/li&gt;
+                              &lt;li&gt;&lt;a href=&quot;https://forum.beyond3d.com/threads/advanced-rasterization.12507/&quot;&gt;Advanced Rasterization&lt;/a&gt;🤔&lt;/li&gt;
+                              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;libs/Common/Types.inl:2474/TImage&amp;lt;TYPE&amp;gt;::RasterizeTriangle&lt;/code&gt;&lt;/li&gt;
+                              &lt;li&gt;&lt;strong&gt;OpenMVS: Using block size eq 8, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Half-Space&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
                             &lt;/ul&gt;
                           &lt;/li&gt;
                         &lt;/ul&gt;
                       &lt;/li&gt;
-                      &lt;li&gt;// compute the projection area of visible faces&lt;/li&gt;
+                      &lt;li&gt;// compute the projection area of visible faces
+                        &lt;ul&gt;
+                          &lt;li&gt;遍历照片上的像素，获取最近的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;face&lt;/code&gt;最近的view, 计算&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;face&lt;/code&gt;颜色均值✔️&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(fOutlierThreshold &amp;gt; 0)&lt;/code&gt; // try to detect outlier views for each face
+                        &lt;ul&gt;
+                          &lt;li&gt;取face 3个通道的均色，对均色做多元正太分布计算，如果偏差大于阈值，则视为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outlier&lt;/code&gt;✔️
+                            &lt;ul&gt;
+                              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LU分解&lt;/code&gt;取逆&lt;/li&gt;
+                            &lt;/ul&gt;
+                          &lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
                     &lt;/ul&gt;
                   &lt;/li&gt;
                 &lt;/ul&gt;
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;// create faces graph&lt;/li&gt;
-          &lt;li&gt;// assign the best view to each face
+          &lt;li&gt;// create faces graph✔️
             &lt;ul&gt;
-              &lt;li&gt;// find connected components&lt;/li&gt;
-              &lt;li&gt;// map face ID from global to component space&lt;/li&gt;
-              &lt;li&gt;// normalize quality values&lt;/li&gt;
-              &lt;li&gt;// initialize inference structures&lt;/li&gt;
-              &lt;li&gt;// set data costs
-                &lt;ul&gt;
-                  &lt;li&gt;// set costs for label 0 (undefined)&lt;/li&gt;
-                  &lt;li&gt;// set data costs for all labels (except label 0 - undefined)&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;// assign the optimal view (label) to each face&lt;/li&gt;
-              &lt;li&gt;// extract resulting labeling&lt;/li&gt;
+              &lt;li&gt;遍历&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;face&lt;/code&gt;以及面的邻接&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;faceAdj&lt;/code&gt;, 若一个可见，一个不可见，则增加&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;seam&lt;/code&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;// create texture patches
+          &lt;li&gt;// assign the best view to each face✔️
             &lt;ul&gt;
-              &lt;li&gt;// divide graph in sub-graphs of connected faces having the same label&lt;/li&gt;
-              &lt;li&gt;// find connected components: texture patches&lt;/li&gt;
-              &lt;li&gt;// last texture patch contains all faces with no texture&lt;/li&gt;
-              &lt;li&gt;// remove all patches with invalid label (except the last one) and create the map from the old index to the new one&lt;/li&gt;
+              &lt;li&gt;// find connected components✔️
+                &lt;ul&gt;
+                  &lt;li&gt;根据前面计算的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;face&lt;/code&gt;邻接关系计算连通图&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// map face ID from global to component space✔️
+                &lt;ul&gt;
+                  &lt;li&gt;为每个面计算连通图的新id，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;component1: [1,2,3,...,c1], component2: [1,2,3,...,c2]&lt;/code&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// normalize quality values✔️
+                &lt;ul&gt;
+                  &lt;li&gt;计算图片质量[二阶导积分]的95分位置近似值&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// initialize inference structures✔️
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;numNodes&lt;/code&gt;=连通图face的数量，如果数量小于等于1，则忽略&lt;/li&gt;
+                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SmoothCost&lt;/code&gt;=0[if node eq]~1000&lt;/li&gt;
+                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Neighbors&lt;/code&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// set data costs✔️
+                &lt;ul&gt;
+                  &lt;li&gt;// set costs for label 0 (undefined)✔️
+                    &lt;ul&gt;
+                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dataCost = fRatioDataSmoothness * 1000&lt;/code&gt; for min of all labels&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;// set data costs for all labels (except label 0 - undefined)✔️
+                    &lt;ul&gt;
+                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dataCost =&lt;/code&gt; $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;Label = 0, 未定义，label &amp;gt;= 1是指其他图片✔️&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// assign the optimal view (label) to each face✔️
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Optimize&lt;/code&gt; 优化单位是连通图✔️
+                    &lt;ul&gt;
+                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ComputeEnergy&lt;/code&gt;✔️
+                        &lt;ul&gt;
+                          &lt;li&gt;$\sum{cost_{data}} + \sum(cost_{edge})$&lt;/li&gt;
+                          &lt;li&gt;$cost_{edge} = 1000$ if label is not equal&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Optimize(n=1)&lt;/code&gt;✔️
+                        &lt;ul&gt;
+                          &lt;li&gt;for(n times)
+                            &lt;ul&gt;
+                              &lt;li&gt;计算每个面在选择不同&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label&lt;/code&gt;时得到的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minEnergy&lt;/code&gt;&lt;/li&gt;
+                              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Swap&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newMsgs&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;oldMsgs&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;oldMsgs - min(oldMsgs)&lt;/code&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                          &lt;/li&gt;
+                          &lt;li&gt;更新选择的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dataCost&lt;/code&gt;✔️&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;根据能量差分提前返回✔️&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// extract resulting labeling✔️
+                &lt;ul&gt;
+                  &lt;li&gt;label-1，调整索引&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;// create texture patches✔️
+            &lt;ul&gt;
+              &lt;li&gt;// divide graph in sub-graphs of connected faces having the same label✔️
+                &lt;ul&gt;
+                  &lt;li&gt;计算图片不一致的边缝&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;，对于相邻一侧无label的也作为边缝&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt;&lt;/li&gt;
+                  &lt;li&gt;去掉&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;的连通边&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// find connected components: texture patches✔️
+                &lt;ul&gt;
+                  &lt;li&gt;计算新的连通图&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// last texture patch contains all faces with no texture✔️
+                &lt;ul&gt;
+                  &lt;li&gt;每个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Texture&lt;/code&gt; 收集每个连通体的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;face&lt;/code&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;GenerateTexture&lt;/li&gt;
+      &lt;li&gt;GenerateTexture
+        &lt;ul&gt;
+          &lt;li&gt;// project patches in the corresponding view and compute texture-coordinates and bounding-box&lt;/li&gt;
+          &lt;li&gt;// project vertices and compute bounding-box✔️
+            &lt;ul&gt;
+              &lt;li&gt;对每个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;patch&lt;/code&gt;的面映射到图片中后，算一个2d的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aabb&lt;/code&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;// compute relative texture coordinates✔️
+            &lt;ul&gt;
+              &lt;li&gt;计算offset，修改相应的坐标&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;// init last patch to point to a small uniform color patch✔️
+            &lt;ul&gt;
+              &lt;li&gt;默认纹理位置&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;// perform seam leveling
+            &lt;ul&gt;
+              &lt;li&gt;// create seam vertices and edges✔️&lt;/li&gt;
+              &lt;li&gt;// perform global seam leveling
+                &lt;ul&gt;
+                  &lt;li&gt;// find the patch ID for each vertex✔️
+                    &lt;ul&gt;
+                      &lt;li&gt;对点赋值patch_id，边缝点使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;idxSeamVertex&lt;/code&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;// assign a row index within the solution vector x to each vertex/patch
+                    &lt;ul&gt;
+                      &lt;li&gt;生成一个patch数组&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vertpatch2rows&lt;/code&gt;, 行号为点索引，二阶索引为patch，对于单个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;patch&lt;/code&gt;的点，只赋值一个patch，对于边缝点多个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;patch&lt;/code&gt;的点，赋多个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;patch&lt;/code&gt;，值为递增值&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rowsX&lt;/code&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;// fill Tikhonov’s Gamma matrix (regularization constraints)&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// perform local seam leveling&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;// merge texture patches with overlapping rectangles
+            &lt;ul&gt;
+              &lt;li&gt;// translate texture coordinates&lt;/li&gt;
+              &lt;li&gt;// join faces lists&lt;/li&gt;
+              &lt;li&gt;// remove the small patch&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;// create texture
+            &lt;ul&gt;
+              &lt;li&gt;// arrange texture patches to fit the smallest possible texture image&lt;/li&gt;
+              &lt;li&gt;// increase texture size till all patches fit&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;// create texture image
+            &lt;ul&gt;
+              &lt;li&gt;// copy patch image
+                &lt;ul&gt;
+                  &lt;li&gt;// flip patch and texture-coordinates&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;// compute final texture coordinates
+                &lt;ul&gt;
+                  &lt;li&gt;// translate, normalize and flip Y axis&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">TextureMesh FaceViewSelection ListVertexFaces✔️ // extract array of triangles incident to each vertex EmptyExtra✔️ ListIncidenteFaces✔️ ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用 // create texture patches ListCameraFaces // list all views for each face //create vertices octree of vertices✔️ //extract array of faces viewed by each image✔️ //compute gradient magnitude✔️ //select faces inside view frustum✔️ plane with AABB✔️ //project all triangles in this view and keep the closest ones // skip face if not completely inside using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️ // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️ (faceCenter.z &amp;lt;= REAL(0)) faceCenter.dot(normalPlane) &amp;gt;= ZEROTOLERANCE&amp;lt;REAL&amp;gt;() // draw triangle and for each pixel compute depth as the ray intersection with the plane Advanced Rasterization by Nick (Nicolas Capens) 2004 Advanced Rasterization // compute the projection area of visible faces // create faces graph // assign the best view to each face // find connected components // map face ID from global to component space // normalize quality values // initialize inference structures // set data costs // set costs for label 0 (undefined) // set data costs for all labels (except label 0 - undefined) // assign the optimal view (label) to each face // extract resulting labeling // create texture patches // divide graph in sub-graphs of connected faces having the same label // find connected components: texture patches // last texture patch contains all faces with no texture // remove all patches with invalid label (except the last one) and create the map from the old index to the new one GenerateTexture</summary></entry><entry><title type="html">Build and run TextureMesh at UCAS machine</title><link href="https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine/" rel="alternate" type="text/html" title="Build and run TextureMesh at UCAS machine" /><published>2021-09-24T18:23:30+08:00</published><updated>2021-09-24T18:23:30+08:00</updated><id>https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine</id><content type="html" xml:base="https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine/">&lt;h2 id=&quot;reinstall-vcpkg-at-xps&quot;&gt;Reinstall vcpkg at xps&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">TextureMesh FaceViewSelection ListVertexFaces✔️ // extract array of triangles incident to each vertex EmptyExtra✔️ ListIncidenteFaces✔️ ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用 // create texture patches ListCameraFaces // list all views for each face //create vertices octree of vertices✔️ //extract array of faces viewed by each image✔️ //compute gradient magnitude✔️ //select faces inside view frustum✔️ plane with AABB✔️ // project all triangles in this view and keep the closest ones // skip face if not completely inside✔️ using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️ // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️ (faceCenter.z &amp;lt;= REAL(0)) faceCenter.dot(normalPlane) &amp;gt;= ZEROTOLERANCE&amp;lt;REAL&amp;gt;() // draw triangle and for each pixel compute depth as the ray intersection with the plane✔️ Advanced Rasterization by Nick (Nicolas Capens) 2004 Advanced Rasterization🤔 libs/Common/Types.inl:2474/TImage&amp;lt;TYPE&amp;gt;::RasterizeTriangle OpenMVS: Using block size eq 8, and Half-Space // compute the projection area of visible faces 遍历照片上的像素，获取最近的face最近的view, 计算face颜色均值✔️ (fOutlierThreshold &amp;gt; 0) // try to detect outlier views for each face 取face 3个通道的均色，对均色做多元正太分布计算，如果偏差大于阈值，则视为outlier✔️ LU分解取逆 // create faces graph✔️ 遍历face以及面的邻接faceAdj, 若一个可见，一个不可见，则增加seam // assign the best view to each face✔️ // find connected components✔️ 根据前面计算的face邻接关系计算连通图 // map face ID from global to component space✔️ 为每个面计算连通图的新id，component1: [1,2,3,...,c1], component2: [1,2,3,...,c2] // normalize quality values✔️ 计算图片质量[二阶导积分]的95分位置近似值 // initialize inference structures✔️ numNodes=连通图face的数量，如果数量小于等于1，则忽略 SmoothCost=0[if node eq]~1000 Neighbors // set data costs✔️ // set costs for label 0 (undefined)✔️ dataCost = fRatioDataSmoothness * 1000 for min of all labels // set data costs for all labels (except label 0 - undefined)✔️ dataCost = $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$ Label = 0, 未定义，label &amp;gt;= 1是指其他图片✔️ // assign the optimal view (label) to each face✔️ Optimize 优化单位是连通图✔️ ComputeEnergy✔️ $\sum{cost_{data}} + \sum(cost_{edge})$ $cost_{edge} = 1000$ if label is not equal Optimize(n=1)✔️ for(n times) 计算每个面在选择不同label时得到的minEnergy Swap newMsgs and oldMsgs, oldMsgs - min(oldMsgs) 更新选择的label和dataCost✔️ 根据能量差分提前返回✔️ // extract resulting labeling✔️ label-1，调整索引 // create texture patches✔️ // divide graph in sub-graphs of connected faces having the same label✔️ 计算图片不一致的边缝A，对于相邻一侧无label的也作为边缝B 去掉A的连通边 // find connected components: texture patches✔️ 计算新的连通图 // last texture patch contains all faces with no texture✔️ 每个Texture 收集每个连通体的face // remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️ GenerateTexture // project patches in the corresponding view and compute texture-coordinates and bounding-box // project vertices and compute bounding-box✔️ 对每个patch的面映射到图片中后，算一个2d的aabb // compute relative texture coordinates✔️ 计算offset，修改相应的坐标 // init last patch to point to a small uniform color patch✔️ 默认纹理位置 // perform seam leveling // create seam vertices and edges✔️ // perform global seam leveling // find the patch ID for each vertex✔️ 对点赋值patch_id，边缝点使用idxSeamVertex // assign a row index within the solution vector x to each vertex/patch 生成一个patch数组vertpatch2rows, 行号为点索引，二阶索引为patch，对于单个patch的点，只赋值一个patch，对于边缝点多个patch的点，赋多个patch，值为递增值rowsX // fill Tikhonov’s Gamma matrix (regularization constraints) // perform local seam leveling // merge texture patches with overlapping rectangles // translate texture coordinates // join faces lists // remove the small patch // create texture // arrange texture patches to fit the smallest possible texture image // increase texture size till all patches fit // create texture image // copy patch image // flip patch and texture-coordinates // compute final texture coordinates // translate, normalize and flip Y axis</summary></entry><entry><title type="html">Build and run TextureMesh at UCAS machine</title><link href="https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine/" rel="alternate" type="text/html" title="Build and run TextureMesh at UCAS machine" /><published>2021-09-24T18:23:30+08:00</published><updated>2021-09-24T18:23:30+08:00</updated><id>https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine</id><content type="html" xml:base="https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine/">&lt;h2 id=&quot;reinstall-vcpkg-at-xps&quot;&gt;Reinstall vcpkg at xps&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Just remove vcpkg directory.&lt;/li&gt;
@@ -1380,196 +1564,4 @@ blended on a per-fragment basis&lt;/p&gt;
       &lt;li&gt;&lt;strong&gt;minimizes texture deviation&lt;/strong&gt; (“slippage” error based on parametric correspondence) to obtain accurate textured mesh approximations&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Texture Mapping Progressive Meshes - Microsoft Research</summary></entry><entry><title type="html">Texture for smooth 2</title><link href="https://ucas.io/3d/Texture-for-smooth2/" rel="alternate" type="text/html" title="Texture for smooth 2" /><published>2021-09-18T23:18:09+08:00</published><updated>2021-09-18T23:18:09+08:00</updated><id>https://ucas.io/3d/Texture-for-smooth2</id><content type="html" xml:base="https://ucas.io/3d/Texture-for-smooth2/">&lt;h2 id=&quot;more-smooth-case&quot;&gt;More Smooth case&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;id&lt;/th&gt;
-      &lt;th&gt;obj&lt;/th&gt;
-      &lt;th&gt;image&lt;/th&gt;
-      &lt;th&gt;ot&lt;/th&gt;
-      &lt;th&gt;mr&lt;/th&gt;
-      &lt;th&gt;csr&lt;/th&gt;
-      &lt;th&gt;gsl&lt;/th&gt;
-      &lt;th&gt;lsl&lt;/th&gt;
-      &lt;th&gt;ec&lt;/th&gt;
-      &lt;th&gt;result&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;12w&lt;/td&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;12w-5w&lt;/td&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;mapple_gussian-0.1_12w&lt;/td&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;mapple_sm-remesh_12w-5w&lt;/td&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;mapple_sm-remesh_12w-8w&lt;/td&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;6&lt;/td&gt;
-      &lt;td&gt;mapple_sm-remesh_12w-12w&lt;/td&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;false&lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;7&lt;/td&gt;
-      &lt;td&gt;mapple_sm-remesh_12w-3k&lt;/td&gt;
-      &lt;td&gt;lion&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;8&lt;/td&gt;
-      &lt;td&gt;mapple_sm-remesh_12w-5w&lt;/td&gt;
-      &lt;td&gt;lion&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;9&lt;/td&gt;
-      &lt;td&gt;mapple_sm-remesh_12w-8w&lt;/td&gt;
-      &lt;td&gt;lion&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;10&lt;/td&gt;
-      &lt;td&gt;mapple_sm-remesh_12w-12w&lt;/td&gt;
-      &lt;td&gt;lion&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;⬛&lt;/td&gt;
-      &lt;td&gt;💩&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;texture-result&quot;&gt;Texture Result&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;kind&lt;/th&gt;
-      &lt;th&gt;sm-remesh-3k&lt;/th&gt;
-      &lt;th&gt;sm-remesh-5w&lt;/th&gt;
-      &lt;th&gt;sm-remesh-8w&lt;/th&gt;
-      &lt;th&gt;sm-remesh-12w&lt;/th&gt;
-      &lt;th&gt;no-remesh-12w&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;pure-color&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234813.png&quot; alt=&quot;20210918234813&quot; height=&quot;100px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234735.png&quot; alt=&quot;20210918234735&quot; height=&quot;100px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234647.png&quot; alt=&quot;20210918234647&quot; height=&quot;100px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234540.png&quot; alt=&quot;20210918234540&quot; height=&quot;100px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234052.png&quot; alt=&quot;20210918234052&quot; height=&quot;100px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;lion&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918234946.png&quot; alt=&quot;20210918234946&quot; height=&quot;100px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918235040.png&quot; alt=&quot;20210918235040&quot; height=&quot;100px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918235116.png&quot; alt=&quot;20210918235116&quot; height=&quot;100px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918235327.png&quot; alt=&quot;20210918235327&quot; height=&quot;100px&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;gussian-noise&quot;&gt;Gussian noise&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918235542.png&quot; alt=&quot;20210918235542&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;remapping-texture&quot;&gt;ReMapping Texture&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210918235717.png&quot; alt=&quot;20210918235717&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;faces_F3_T2F_V3F&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;materials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vertices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uint8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mesh_faces&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;faces_F3_T2F_V3F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mesh_faces&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh_faces&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;mesh_faces&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mesh_faces&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;int64&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fillPoly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mesh_faces&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:,:]&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 水平翻转
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imshow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hstack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">More Smooth case</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Texture Mapping Progressive Meshes - Microsoft Research</summary></entry></feed>

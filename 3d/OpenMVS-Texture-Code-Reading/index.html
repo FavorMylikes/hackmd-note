@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>OpenMVS Texture code reading / Notes B</title>
-<meta name="description" content="TextureMesh            FaceViewSelection                    ListVertexFaces✔️ // extract array of triangles incident to each vertex                            EmptyExtra✔️               ListIncidenteFaces✔️               ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                       // create texture patches                            ListCameraFaces // list all views for each face                                    //create vertices octree of vertices✔️                   //extract array of faces viewed by each image✔️                                            //compute gradient magnitude✔️                       //select faces inside view frustum✔️                                                    plane with AABB✔️                                                                       //project all triangles in this view and keep the closest ones                                                    // skip face if not completely inside                                                            using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️                                                                                   // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️                                                            (faceCenter.z &lt;= REAL(0))                               faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()                                                                                   // draw triangle and for each pixel compute depth as the ray intersection with the plane                                                            Advanced Rasterization by Nick (Nicolas Capens) 2004                               Advanced Rasterization                                                                                                                               // compute the projection area of visible faces                                                                                                           // create faces graph           // assign the best view to each face                            // find connected components               // map face ID from global to component space               // normalize quality values               // initialize inference structures               // set data costs                                    // set costs for label 0 (undefined)                   // set data costs for all labels (except label 0 - undefined)                                               // assign the optimal view (label) to each face               // extract resulting labeling                                   // create texture patches                            // divide graph in sub-graphs of connected faces having the same label               // find connected components: texture patches               // last texture patch contains all faces with no texture               // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                               GenerateTexture">
+<meta name="description" content="TextureMesh            FaceViewSelection                    ListVertexFaces✔️ // extract array of triangles incident to each vertex                            EmptyExtra✔️               ListIncidenteFaces✔️               ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                       // create texture patches                            ListCameraFaces // list all views for each face                                    //create vertices octree of vertices✔️                   //extract array of faces viewed by each image✔️                                            //compute gradient magnitude✔️                       //select faces inside view frustum✔️                                                    plane with AABB✔️                                                                       // project all triangles in this view and keep the closest ones                                                    // skip face if not completely inside✔️                                                            using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️                                                                                   // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️                                                            (faceCenter.z &lt;= REAL(0))                               faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()                                                                                   // draw triangle and for each pixel compute depth as the ray intersection with the plane✔️                                                            Advanced Rasterization by Nick (Nicolas Capens) 2004                               Advanced Rasterization🤔                               libs/Common/Types.inl:2474/TImage&lt;TYPE&gt;::RasterizeTriangle                               OpenMVS: Using block size eq 8, and Half-Space                                                                                                                               // compute the projection area of visible faces                                                    遍历照片上的像素，获取最近的face最近的view, 计算face颜色均值✔️                                                                       (fOutlierThreshold &gt; 0) // try to detect outlier views for each face                                                    取face 3个通道的均色，对均色做多元正太分布计算，如果偏差大于阈值，则视为outlier✔️                                                            LU分解取逆                                                                                                                                                                                                                   // create faces graph✔️                            遍历face以及面的邻接faceAdj, 若一个可见，一个不可见，则增加seam                                   // assign the best view to each face✔️                            // find connected components✔️                                    根据前面计算的face邻接关系计算连通图                                               // map face ID from global to component space✔️                                    为每个面计算连通图的新id，component1: [1,2,3,...,c1], component2: [1,2,3,...,c2]                                               // normalize quality values✔️                                    计算图片质量[二阶导积分]的95分位置近似值                                               // initialize inference structures✔️                                    numNodes=连通图face的数量，如果数量小于等于1，则忽略                   SmoothCost=0[if node eq]~1000                   Neighbors                                               // set data costs✔️                                    // set costs for label 0 (undefined)✔️                                            dataCost = fRatioDataSmoothness * 1000 for min of all labels                                                           // set data costs for all labels (except label 0 - undefined)✔️                                            dataCost = $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$                                                           Label = 0, 未定义，label &gt;= 1是指其他图片✔️                                               // assign the optimal view (label) to each face✔️                                    Optimize 优化单位是连通图✔️                                            ComputeEnergy✔️                                                    $\sum{cost_{data}} + \sum(cost_{edge})$                           $cost_{edge} = 1000$ if label is not equal                                                                       Optimize(n=1)✔️                                                    for(n times)                                                            计算每个面在选择不同label时得到的minEnergy                               Swap newMsgs and oldMsgs, oldMsgs - min(oldMsgs)                                                                                   更新选择的label和dataCost✔️                                                                       根据能量差分提前返回✔️                                                                                       // extract resulting labeling✔️                                    label-1，调整索引                                                                   // create texture patches✔️                            // divide graph in sub-graphs of connected faces having the same label✔️                                    计算图片不一致的边缝A，对于相邻一侧无label的也作为边缝B                   去掉A的连通边                                               // find connected components: texture patches✔️                                    计算新的连通图                                               // last texture patch contains all faces with no texture✔️                                    每个Texture 收集每个连通体的face                                               // remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️                                               GenerateTexture                    // project patches in the corresponding view and compute texture-coordinates and bounding-box           // project vertices and compute bounding-box✔️                            对每个patch的面映射到图片中后，算一个2d的aabb                                   // compute relative texture coordinates✔️                            计算offset，修改相应的坐标                                   // init last patch to point to a small uniform color patch✔️                            默认纹理位置                                   // perform seam leveling                            // create seam vertices and edges✔️               // perform global seam leveling                                    // find the patch ID for each vertex✔️                                            对点赋值patch_id，边缝点使用idxSeamVertex                                                           // assign a row index within the solution vector x to each vertex/patch                                            生成一个patch数组vertpatch2rows, 行号为点索引，二阶索引为patch，对于单个patch的点，只赋值一个patch，对于边缝点多个patch的点，赋多个patch，值为递增值rowsX                                                           // fill Tikhonov’s Gamma matrix (regularization constraints)                                               // perform local seam leveling                                   // merge texture patches with overlapping rectangles                            // translate texture coordinates               // join faces lists               // remove the small patch                                   // create texture                            // arrange texture patches to fit the smallest possible texture image               // increase texture size till all patches fit                                   // create texture image                            // copy patch image                                    // flip patch and texture-coordinates                                               // compute final texture coordinates                                    // translate, normalize and flip Y axis">
 
 
   <meta name="author" content="麦丽素">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://ucas.io/3d/OpenMVS-Texture-Code-Reading/">
 
 
-  <meta property="og:description" content="TextureMesh            FaceViewSelection                    ListVertexFaces✔️ // extract array of triangles incident to each vertex                            EmptyExtra✔️               ListIncidenteFaces✔️               ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                       // create texture patches                            ListCameraFaces // list all views for each face                                    //create vertices octree of vertices✔️                   //extract array of faces viewed by each image✔️                                            //compute gradient magnitude✔️                       //select faces inside view frustum✔️                                                    plane with AABB✔️                                                                       //project all triangles in this view and keep the closest ones                                                    // skip face if not completely inside                                                            using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️                                                                                   // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️                                                            (faceCenter.z &lt;= REAL(0))                               faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()                                                                                   // draw triangle and for each pixel compute depth as the ray intersection with the plane                                                            Advanced Rasterization by Nick (Nicolas Capens) 2004                               Advanced Rasterization                                                                                                                               // compute the projection area of visible faces                                                                                                           // create faces graph           // assign the best view to each face                            // find connected components               // map face ID from global to component space               // normalize quality values               // initialize inference structures               // set data costs                                    // set costs for label 0 (undefined)                   // set data costs for all labels (except label 0 - undefined)                                               // assign the optimal view (label) to each face               // extract resulting labeling                                   // create texture patches                            // divide graph in sub-graphs of connected faces having the same label               // find connected components: texture patches               // last texture patch contains all faces with no texture               // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                               GenerateTexture">
+  <meta property="og:description" content="TextureMesh            FaceViewSelection                    ListVertexFaces✔️ // extract array of triangles incident to each vertex                            EmptyExtra✔️               ListIncidenteFaces✔️               ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                       // create texture patches                            ListCameraFaces // list all views for each face                                    //create vertices octree of vertices✔️                   //extract array of faces viewed by each image✔️                                            //compute gradient magnitude✔️                       //select faces inside view frustum✔️                                                    plane with AABB✔️                                                                       // project all triangles in this view and keep the closest ones                                                    // skip face if not completely inside✔️                                                            using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️                                                                                   // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️                                                            (faceCenter.z &lt;= REAL(0))                               faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()                                                                                   // draw triangle and for each pixel compute depth as the ray intersection with the plane✔️                                                            Advanced Rasterization by Nick (Nicolas Capens) 2004                               Advanced Rasterization🤔                               libs/Common/Types.inl:2474/TImage&lt;TYPE&gt;::RasterizeTriangle                               OpenMVS: Using block size eq 8, and Half-Space                                                                                                                               // compute the projection area of visible faces                                                    遍历照片上的像素，获取最近的face最近的view, 计算face颜色均值✔️                                                                       (fOutlierThreshold &gt; 0) // try to detect outlier views for each face                                                    取face 3个通道的均色，对均色做多元正太分布计算，如果偏差大于阈值，则视为outlier✔️                                                            LU分解取逆                                                                                                                                                                                                                   // create faces graph✔️                            遍历face以及面的邻接faceAdj, 若一个可见，一个不可见，则增加seam                                   // assign the best view to each face✔️                            // find connected components✔️                                    根据前面计算的face邻接关系计算连通图                                               // map face ID from global to component space✔️                                    为每个面计算连通图的新id，component1: [1,2,3,...,c1], component2: [1,2,3,...,c2]                                               // normalize quality values✔️                                    计算图片质量[二阶导积分]的95分位置近似值                                               // initialize inference structures✔️                                    numNodes=连通图face的数量，如果数量小于等于1，则忽略                   SmoothCost=0[if node eq]~1000                   Neighbors                                               // set data costs✔️                                    // set costs for label 0 (undefined)✔️                                            dataCost = fRatioDataSmoothness * 1000 for min of all labels                                                           // set data costs for all labels (except label 0 - undefined)✔️                                            dataCost = $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$                                                           Label = 0, 未定义，label &gt;= 1是指其他图片✔️                                               // assign the optimal view (label) to each face✔️                                    Optimize 优化单位是连通图✔️                                            ComputeEnergy✔️                                                    $\sum{cost_{data}} + \sum(cost_{edge})$                           $cost_{edge} = 1000$ if label is not equal                                                                       Optimize(n=1)✔️                                                    for(n times)                                                            计算每个面在选择不同label时得到的minEnergy                               Swap newMsgs and oldMsgs, oldMsgs - min(oldMsgs)                                                                                   更新选择的label和dataCost✔️                                                                       根据能量差分提前返回✔️                                                                                       // extract resulting labeling✔️                                    label-1，调整索引                                                                   // create texture patches✔️                            // divide graph in sub-graphs of connected faces having the same label✔️                                    计算图片不一致的边缝A，对于相邻一侧无label的也作为边缝B                   去掉A的连通边                                               // find connected components: texture patches✔️                                    计算新的连通图                                               // last texture patch contains all faces with no texture✔️                                    每个Texture 收集每个连通体的face                                               // remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️                                               GenerateTexture                    // project patches in the corresponding view and compute texture-coordinates and bounding-box           // project vertices and compute bounding-box✔️                            对每个patch的面映射到图片中后，算一个2d的aabb                                   // compute relative texture coordinates✔️                            计算offset，修改相应的坐标                                   // init last patch to point to a small uniform color patch✔️                            默认纹理位置                                   // perform seam leveling                            // create seam vertices and edges✔️               // perform global seam leveling                                    // find the patch ID for each vertex✔️                                            对点赋值patch_id，边缝点使用idxSeamVertex                                                           // assign a row index within the solution vector x to each vertex/patch                                            生成一个patch数组vertpatch2rows, 行号为点索引，二阶索引为patch，对于单个patch的点，只赋值一个patch，对于边缝点多个patch的点，赋多个patch，值为递增值rowsX                                                           // fill Tikhonov’s Gamma matrix (regularization constraints)                                               // perform local seam leveling                                   // merge texture patches with overlapping rectangles                            // translate texture coordinates               // join faces lists               // remove the small patch                                   // create texture                            // arrange texture patches to fit the smallest possible texture image               // increase texture size till all patches fit                                   // create texture image                            // copy patch image                                    // flip patch and texture-coordinates                                               // compute final texture coordinates                                    // translate, normalize and flip Y axis">
 
 
 
@@ -333,7 +333,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="OpenMVS Texture code reading">
-    <meta itemprop="description" content="  TextureMesh          FaceViewSelection                  ListVertexFaces✔️ // extract array of triangles incident to each vertex                          EmptyExtra✔️              ListIncidenteFaces✔️              ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                // create texture patches                          ListCameraFaces // list all views for each face                                  //create vertices octree of vertices✔️                  //extract array of faces viewed by each image✔️                                          //compute gradient magnitude✔️                      //select faces inside view frustum✔️                                                  plane with AABB✔️                                                                    //project all triangles in this view and keep the closest ones                                                  // skip face if not completely inside                                                          using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️                                                                                // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️                                                          (faceCenter.z &lt;= REAL(0))                              faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()                                                                                // draw triangle and for each pixel compute depth as the ray intersection with the plane                                                          Advanced Rasterization by Nick (Nicolas Capens) 2004                              Advanced Rasterization                                                                                                                          // compute the projection area of visible faces                                                                                                    // create faces graph          // assign the best view to each face                          // find connected components              // map face ID from global to component space              // normalize quality values              // initialize inference structures              // set data costs                                  // set costs for label 0 (undefined)                  // set data costs for all labels (except label 0 - undefined)                                            // assign the optimal view (label) to each face              // extract resulting labeling                                // create texture patches                          // divide graph in sub-graphs of connected faces having the same label              // find connected components: texture patches              // last texture patch contains all faces with no texture              // remove all patches with invalid label (except the last one) and create the map from the old index to the new one                                          GenerateTexture      ">
+    <meta itemprop="description" content="  TextureMesh          FaceViewSelection                  ListVertexFaces✔️ // extract array of triangles incident to each vertex                          EmptyExtra✔️              ListIncidenteFaces✔️              ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用                                                                                                // create texture patches                          ListCameraFaces // list all views for each face                                  //create vertices octree of vertices✔️                  //extract array of faces viewed by each image✔️                                          //compute gradient magnitude✔️                      //select faces inside view frustum✔️                                                  plane with AABB✔️                                                                    // project all triangles in this view and keep the closest ones                                                  // skip face if not completely inside✔️                                                          using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️                                                                                // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️                                                          (faceCenter.z &lt;= REAL(0))                              faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()                                                                                // draw triangle and for each pixel compute depth as the ray intersection with the plane✔️                                                          Advanced Rasterization by Nick (Nicolas Capens) 2004                              Advanced Rasterization🤔                              libs/Common/Types.inl:2474/TImage&lt;TYPE&gt;::RasterizeTriangle                              OpenMVS: Using block size eq 8, and Half-Space                                                                                                                          // compute the projection area of visible faces                                                  遍历照片上的像素，获取最近的face最近的view, 计算face颜色均值✔️                                                                    (fOutlierThreshold &gt; 0) // try to detect outlier views for each face                                                  取face 3个通道的均色，对均色做多元正太分布计算，如果偏差大于阈值，则视为outlier✔️                                                          LU分解取逆                                                                                                                                                                                                        // create faces graph✔️                          遍历face以及面的邻接faceAdj, 若一个可见，一个不可见，则增加seam                                // assign the best view to each face✔️                          // find connected components✔️                                  根据前面计算的face邻接关系计算连通图                                            // map face ID from global to component space✔️                                  为每个面计算连通图的新id，component1: [1,2,3,...,c1], component2: [1,2,3,...,c2]                                            // normalize quality values✔️                                  计算图片质量[二阶导积分]的95分位置近似值                                            // initialize inference structures✔️                                  numNodes=连通图face的数量，如果数量小于等于1，则忽略                  SmoothCost=0[if node eq]~1000                  Neighbors                                            // set data costs✔️                                  // set costs for label 0 (undefined)✔️                                          dataCost = fRatioDataSmoothness * 1000 for min of all labels                                                        // set data costs for all labels (except label 0 - undefined)✔️                                          dataCost = $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$                                                        Label = 0, 未定义，label &gt;= 1是指其他图片✔️                                            // assign the optimal view (label) to each face✔️                                  Optimize 优化单位是连通图✔️                                          ComputeEnergy✔️                                                  $\sum{cost_{data}} + \sum(cost_{edge})$                          $cost_{edge} = 1000$ if label is not equal                                                                    Optimize(n=1)✔️                                                  for(n times)                                                          计算每个面在选择不同label时得到的minEnergy                              Swap newMsgs and oldMsgs, oldMsgs - min(oldMsgs)                                                                                更新选择的label和dataCost✔️                                                                    根据能量差分提前返回✔️                                                                                  // extract resulting labeling✔️                                  label-1，调整索引                                                              // create texture patches✔️                          // divide graph in sub-graphs of connected faces having the same label✔️                                  计算图片不一致的边缝A，对于相邻一侧无label的也作为边缝B                  去掉A的连通边                                            // find connected components: texture patches✔️                                  计算新的连通图                                            // last texture patch contains all faces with no texture✔️                                  每个Texture 收集每个连通体的face                                            // remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️                                          GenerateTexture                  // project patches in the corresponding view and compute texture-coordinates and bounding-box          // project vertices and compute bounding-box✔️                          对每个patch的面映射到图片中后，算一个2d的aabb                                // compute relative texture coordinates✔️                          计算offset，修改相应的坐标                                // init last patch to point to a small uniform color patch✔️                          默认纹理位置                                // perform seam leveling                          // create seam vertices and edges✔️              // perform global seam leveling                                  // find the patch ID for each vertex✔️                                          对点赋值patch_id，边缝点使用idxSeamVertex                                                        // assign a row index within the solution vector x to each vertex/patch                                          生成一个patch数组vertpatch2rows, 行号为点索引，二阶索引为patch，对于单个patch的点，只赋值一个patch，对于边缝点多个patch的点，赋多个patch，值为递增值rowsX                                                        // fill Tikhonov’s Gamma matrix (regularization constraints)                                            // perform local seam leveling                                // merge texture patches with overlapping rectangles                          // translate texture coordinates              // join faces lists              // remove the small patch                                // create texture                          // arrange texture patches to fit the smallest possible texture image              // increase texture size till all patches fit                                // create texture image                          // copy patch image                                  // flip patch and texture-coordinates                                            // compute final texture coordinates                                  // translate, normalize and flip Y axis                                                                        ">
     <meta itemprop="datePublished" content="2021-09-26T19:51:42+08:00">
     
 
@@ -363,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          2 minute read
         
       </span>
     
@@ -412,9 +412,9 @@
                           <li>plane with <code class="language-plaintext highlighter-rouge">AABB</code>✔️</li>
                         </ul>
                       </li>
-                      <li>//project all triangles in this view and keep the closest ones
+                      <li>// project all triangles in this view and keep the closest ones
                         <ul>
-                          <li>// skip face if not completely inside
+                          <li>// skip face if not completely inside✔️
                             <ul>
                               <li>using <code class="language-plaintext highlighter-rouge">TransformPointW2C</code> and <code class="language-plaintext highlighter-rouge">TransformPointC2I</code> to check the point is in image plane, <code class="language-plaintext highlighter-rouge">OpenMVS</code> use 3 pixel as border width ✔️</li>
                             </ul>
@@ -425,49 +425,204 @@
                               <li><code class="language-plaintext highlighter-rouge">faceCenter.dot(normalPlane) &gt;= ZEROTOLERANCE&lt;REAL&gt;()</code></li>
                             </ul>
                           </li>
-                          <li>// draw triangle and for each pixel compute depth as the ray intersection with the plane
+                          <li>// draw triangle and for each pixel compute depth as the ray intersection with the plane✔️
                             <ul>
                               <li><strong><code class="language-plaintext highlighter-rouge">Advanced Rasterization</code></strong> by Nick (Nicolas Capens) 2004</li>
-                              <li><a href="https://forum.beyond3d.com/threads/advanced-rasterization.12507/">Advanced Rasterization</a></li>
+                              <li><a href="https://forum.beyond3d.com/threads/advanced-rasterization.12507/">Advanced Rasterization</a>🤔</li>
+                              <li><code class="language-plaintext highlighter-rouge">libs/Common/Types.inl:2474/TImage&lt;TYPE&gt;::RasterizeTriangle</code></li>
+                              <li><strong>OpenMVS: Using block size eq 8, and <code class="language-plaintext highlighter-rouge">Half-Space</code></strong></li>
                             </ul>
                           </li>
                         </ul>
                       </li>
-                      <li>// compute the projection area of visible faces</li>
+                      <li>// compute the projection area of visible faces
+                        <ul>
+                          <li>遍历照片上的像素，获取最近的<code class="language-plaintext highlighter-rouge">face</code>最近的view, 计算<code class="language-plaintext highlighter-rouge">face</code>颜色均值✔️</li>
+                        </ul>
+                      </li>
+                      <li><code class="language-plaintext highlighter-rouge">(fOutlierThreshold &gt; 0)</code> // try to detect outlier views for each face
+                        <ul>
+                          <li>取face 3个通道的均色，对均色做多元正太分布计算，如果偏差大于阈值，则视为<code class="language-plaintext highlighter-rouge">outlier</code>✔️
+                            <ul>
+                              <li><code class="language-plaintext highlighter-rouge">LU分解</code>取逆</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
                     </ul>
                   </li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li>// create faces graph</li>
-          <li>// assign the best view to each face
+          <li>// create faces graph✔️
             <ul>
-              <li>// find connected components</li>
-              <li>// map face ID from global to component space</li>
-              <li>// normalize quality values</li>
-              <li>// initialize inference structures</li>
-              <li>// set data costs
-                <ul>
-                  <li>// set costs for label 0 (undefined)</li>
-                  <li>// set data costs for all labels (except label 0 - undefined)</li>
-                </ul>
-              </li>
-              <li>// assign the optimal view (label) to each face</li>
-              <li>// extract resulting labeling</li>
+              <li>遍历<code class="language-plaintext highlighter-rouge">face</code>以及面的邻接<code class="language-plaintext highlighter-rouge">faceAdj</code>, 若一个可见，一个不可见，则增加<code class="language-plaintext highlighter-rouge">seam</code></li>
             </ul>
           </li>
-          <li>// create texture patches
+          <li>// assign the best view to each face✔️
             <ul>
-              <li>// divide graph in sub-graphs of connected faces having the same label</li>
-              <li>// find connected components: texture patches</li>
-              <li>// last texture patch contains all faces with no texture</li>
-              <li>// remove all patches with invalid label (except the last one) and create the map from the old index to the new one</li>
+              <li>// find connected components✔️
+                <ul>
+                  <li>根据前面计算的<code class="language-plaintext highlighter-rouge">face</code>邻接关系计算连通图</li>
+                </ul>
+              </li>
+              <li>// map face ID from global to component space✔️
+                <ul>
+                  <li>为每个面计算连通图的新id，<code class="language-plaintext highlighter-rouge">component1: [1,2,3,...,c1], component2: [1,2,3,...,c2]</code></li>
+                </ul>
+              </li>
+              <li>// normalize quality values✔️
+                <ul>
+                  <li>计算图片质量[二阶导积分]的95分位置近似值</li>
+                </ul>
+              </li>
+              <li>// initialize inference structures✔️
+                <ul>
+                  <li><code class="language-plaintext highlighter-rouge">numNodes</code>=连通图face的数量，如果数量小于等于1，则忽略</li>
+                  <li><code class="language-plaintext highlighter-rouge">SmoothCost</code>=0[if node eq]~1000</li>
+                  <li><code class="language-plaintext highlighter-rouge">Neighbors</code></li>
+                </ul>
+              </li>
+              <li>// set data costs✔️
+                <ul>
+                  <li>// set costs for label 0 (undefined)✔️
+                    <ul>
+                      <li><code class="language-plaintext highlighter-rouge">dataCost = fRatioDataSmoothness * 1000</code> for min of all labels</li>
+                    </ul>
+                  </li>
+                  <li>// set data costs for all labels (except label 0 - undefined)✔️
+                    <ul>
+                      <li><code class="language-plaintext highlighter-rouge">dataCost =</code> $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$</li>
+                    </ul>
+                  </li>
+                  <li>Label = 0, 未定义，label &gt;= 1是指其他图片✔️</li>
+                </ul>
+              </li>
+              <li>// assign the optimal view (label) to each face✔️
+                <ul>
+                  <li><code class="language-plaintext highlighter-rouge">Optimize</code> 优化单位是连通图✔️
+                    <ul>
+                      <li><code class="language-plaintext highlighter-rouge">ComputeEnergy</code>✔️
+                        <ul>
+                          <li>$\sum{cost_{data}} + \sum(cost_{edge})$</li>
+                          <li>$cost_{edge} = 1000$ if label is not equal</li>
+                        </ul>
+                      </li>
+                      <li><code class="language-plaintext highlighter-rouge">Optimize(n=1)</code>✔️
+                        <ul>
+                          <li>for(n times)
+                            <ul>
+                              <li>计算每个面在选择不同<code class="language-plaintext highlighter-rouge">label</code>时得到的<code class="language-plaintext highlighter-rouge">minEnergy</code></li>
+                              <li><code class="language-plaintext highlighter-rouge">Swap</code> <code class="language-plaintext highlighter-rouge">newMsgs</code> and <code class="language-plaintext highlighter-rouge">oldMsgs</code>, <code class="language-plaintext highlighter-rouge">oldMsgs - min(oldMsgs)</code></li>
+                            </ul>
+                          </li>
+                          <li>更新选择的<code class="language-plaintext highlighter-rouge">label</code>和<code class="language-plaintext highlighter-rouge">dataCost</code>✔️</li>
+                        </ul>
+                      </li>
+                      <li>根据能量差分提前返回✔️</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>// extract resulting labeling✔️
+                <ul>
+                  <li>label-1，调整索引</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>// create texture patches✔️
+            <ul>
+              <li>// divide graph in sub-graphs of connected faces having the same label✔️
+                <ul>
+                  <li>计算图片不一致的边缝<code class="language-plaintext highlighter-rouge">A</code>，对于相邻一侧无label的也作为边缝<code class="language-plaintext highlighter-rouge">B</code></li>
+                  <li>去掉<code class="language-plaintext highlighter-rouge">A</code>的连通边</li>
+                </ul>
+              </li>
+              <li>// find connected components: texture patches✔️
+                <ul>
+                  <li>计算新的连通图</li>
+                </ul>
+              </li>
+              <li>// last texture patch contains all faces with no texture✔️
+                <ul>
+                  <li>每个<code class="language-plaintext highlighter-rouge">Texture</code> 收集每个连通体的<code class="language-plaintext highlighter-rouge">face</code></li>
+                </ul>
+              </li>
+              <li>// remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️</li>
             </ul>
           </li>
         </ul>
       </li>
-      <li>GenerateTexture</li>
+      <li>GenerateTexture
+        <ul>
+          <li>// project patches in the corresponding view and compute texture-coordinates and bounding-box</li>
+          <li>// project vertices and compute bounding-box✔️
+            <ul>
+              <li>对每个<code class="language-plaintext highlighter-rouge">patch</code>的面映射到图片中后，算一个2d的<code class="language-plaintext highlighter-rouge">aabb</code></li>
+            </ul>
+          </li>
+          <li>// compute relative texture coordinates✔️
+            <ul>
+              <li>计算offset，修改相应的坐标</li>
+            </ul>
+          </li>
+          <li>// init last patch to point to a small uniform color patch✔️
+            <ul>
+              <li>默认纹理位置</li>
+            </ul>
+          </li>
+          <li>// perform seam leveling
+            <ul>
+              <li>// create seam vertices and edges✔️</li>
+              <li>// perform global seam leveling
+                <ul>
+                  <li>// find the patch ID for each vertex✔️
+                    <ul>
+                      <li>对点赋值patch_id，边缝点使用<code class="language-plaintext highlighter-rouge">idxSeamVertex</code></li>
+                    </ul>
+                  </li>
+                  <li>// assign a row index within the solution vector x to each vertex/patch
+                    <ul>
+                      <li>生成一个patch数组<code class="language-plaintext highlighter-rouge">vertpatch2rows</code>, 行号为点索引，二阶索引为patch，对于单个<code class="language-plaintext highlighter-rouge">patch</code>的点，只赋值一个patch，对于边缝点多个<code class="language-plaintext highlighter-rouge">patch</code>的点，赋多个<code class="language-plaintext highlighter-rouge">patch</code>，值为递增值<code class="language-plaintext highlighter-rouge">rowsX</code></li>
+                    </ul>
+                  </li>
+                  <li>// fill Tikhonov’s Gamma matrix (regularization constraints)</li>
+                </ul>
+              </li>
+              <li>// perform local seam leveling</li>
+            </ul>
+          </li>
+          <li>// merge texture patches with overlapping rectangles
+            <ul>
+              <li>// translate texture coordinates</li>
+              <li>// join faces lists</li>
+              <li>// remove the small patch</li>
+            </ul>
+          </li>
+          <li>// create texture
+            <ul>
+              <li>// arrange texture patches to fit the smallest possible texture image</li>
+              <li>// increase texture size till all patches fit</li>
+            </ul>
+          </li>
+          <li>// create texture image
+            <ul>
+              <li>// copy patch image
+                <ul>
+                  <li>// flip patch and texture-coordinates</li>
+                </ul>
+              </li>
+              <li>// compute final texture coordinates
+                <ul>
+                  <li>// translate, normalize and flip Y axis</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -535,6 +690,57 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211009132134.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Texture-for-invisible-face/" rel="permalink">Texture for invisible
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-10-09T11:19:26+08:00">October 9, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Causes of no texture
+</p>
+  </article>
+</div>
+
         
           
 
@@ -684,57 +890,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Sobel Operator - 1968 [索伯算子, 索贝尔算子]
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/BoundingBox.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/Minimum-bounding-box-MBB/" rel="permalink">Minimum bounding box [MBB]
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-09-27T14:57:40+08:00">September 27, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          2 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">MBB 最小包围盒 [Minimum bounding box]
 </p>
   </article>
 </div>

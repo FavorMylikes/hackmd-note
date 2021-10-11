@@ -412,4 +412,10 @@ var store = [{
         "tags": [],
         "url": "/3d/Cmake-Bug/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png"
+      },{
+        "title": "Texture for invisible",
+        "excerpt":"Causes of no texture      bInvisibleFace || bInvisibleFaceAdj == Ture                       bInvisibleFace == True                              mesh问题                       C++ Tech      调用约定——_cdecl,_stdcall,_fastcall                      ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Texture-for-invisible-face/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211009132134.png"
       }]
