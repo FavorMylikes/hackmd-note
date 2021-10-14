@@ -14,7 +14,7 @@ header:
       - ListIncidenteFaces✔️
       - ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用
         - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210926235332.png" alt="20210926235332"/>
-    - // create texture patches
+    - // create texture patches✔️
       - ListCameraFaces // list all views for each face
         - //create vertices **octree** of vertices✔️
         - //extract array of faces viewed by each image✔️
@@ -37,47 +37,47 @@ header:
           - `(fOutlierThreshold > 0)` // try to detect outlier views for each face
             - 取face 3个通道的均色，对均色做多元正太分布计算，如果偏差大于阈值，则视为`outlier`✔️
               - `LU分解`取逆
-    - // create faces graph✔️
-      - 遍历`face`以及面的邻接`faceAdj`, 若一个可见，一个不可见，则增加`seam`
-    - // assign the best view to each face✔️
-      - // find connected components✔️
-        - 根据前面计算的`face`邻接关系计算连通图
-      - // map face ID from global to component space✔️
-        - 为每个面计算连通图的新id，`component1: [1,2,3,...,c1], component2: [1,2,3,...,c2]`
-      - // normalize quality values✔️
-        - 计算图片质量[二阶导积分]的95分位置近似值
-      - // initialize inference structures✔️
-        - `numNodes`=连通图face的数量，如果数量小于等于1，则忽略
-        - `SmoothCost`=0[if node eq]~1000
-        - `Neighbors`
-      - // set data costs✔️
-        - // set costs for label 0 (undefined)✔️
-          - `dataCost = fRatioDataSmoothness * 1000` for min of all labels
-        - // set data costs for all labels (except label 0 - undefined)✔️
-          - `dataCost =` $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$
-        - Label = 0, 未定义，label >= 1是指其他图片✔️
-      - // assign the optimal view (label) to each face✔️
-        - `Optimize` 优化单位是连通图✔️
-          - `ComputeEnergy`✔️
-            - $\sum{cost_{data}} + \sum(cost_{edge})$
-            - $cost_{edge} = 1000$ if label is not equal
-          - `Optimize(n=1)`✔️
-            - for(n times)
-              - 计算每个面在选择不同`label`时得到的`minEnergy`
-              - `Swap` `newMsgs` and `oldMsgs`, `oldMsgs - min(oldMsgs)`
-            - 更新选择的`label`和`dataCost`✔️
-          - 根据能量差分提前返回✔️
-      - // extract resulting labeling✔️
-        - label-1，调整索引
-    - // create texture patches✔️
-      - // divide graph in sub-graphs of connected faces having the same label✔️
-        - 计算图片不一致的边缝`A`，对于相邻一侧无label的也作为边缝`B`
-        - 去掉`A`的连通边
-      - // find connected components: texture patches✔️
-        - 计算新的连通图
-      - // last texture patch contains all faces with no texture✔️
-        - 每个`Texture` 收集每个连通体的`face`
-      - // remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️
+      - // create faces graph✔️
+        - 遍历`face`以及面的邻接`faceAdj`, 若一个可见，一个不可见，则增加`seam`
+      - // assign the best view to each face✔️
+        - // find connected components✔️
+          - 根据前面计算的`face`邻接关系计算连通图
+        - // map face ID from global to component space✔️
+          - 为每个面计算连通图的新id，`component1: [1,2,3,...,c1], component2: [1,2,3,...,c2]`
+        - // normalize quality values✔️
+          - 计算图片质量[二阶导积分]的95分位置近似值
+        - // initialize inference structures✔️
+          - `numNodes`=连通图face的数量，如果数量小于等于1，则忽略
+          - `SmoothCost`=0[if node eq]~1000
+          - `Neighbors`
+        - // set data costs✔️
+          - // set costs for label 0 (undefined)✔️
+            - `dataCost = fRatioDataSmoothness * 1000` for min of all labels
+          - // set data costs for all labels (except label 0 - undefined)✔️
+            - `dataCost =` $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$
+          - Label = 0, 未定义，label >= 1是指其他图片✔️
+        - // assign the optimal view (label) to each face✔️
+          - `Optimize` 优化单位是连通图✔️
+            - `ComputeEnergy`✔️
+              - $\sum{cost_{data}} + \sum(cost_{edge})$
+              - $cost_{edge} = 1000$ if label is not equal
+            - `Optimize(n=1)`✔️
+              - for(n times)
+                - 计算每个面在选择不同`label`时得到的`minEnergy`
+                - `Swap` `newMsgs` and `oldMsgs`, `oldMsgs - min(oldMsgs)`
+              - 更新选择的`label`和`dataCost`✔️
+            - 根据能量差分提前返回✔️
+        - // extract resulting labeling✔️
+          - label-1，调整索引
+      - // create texture patches✔️
+        - // divide graph in sub-graphs of connected faces having the same label✔️
+          - 计算图片不一致的边缝`A`，对于相邻一侧无label的也作为边缝`B`
+          - 去掉`A`的连通边
+        - // find connected components: texture patches✔️
+          - 计算新的连通图
+        - // last texture patch contains all faces with no texture✔️
+          - 每个`Texture` 收集每个连通体的`face`
+        - // remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️
   - GenerateTexture
     - // project patches in the corresponding view and compute texture-coordinates and bounding-box
     - // project vertices and compute bounding-box✔️
@@ -88,13 +88,15 @@ header:
       - 默认纹理位置
     - // perform seam leveling
       - // create seam vertices and edges✔️
-      - // perform global seam leveling
+      - // perform global seam leveling🤔
+        - 利用`ConjugateGradient`求解`Tikhonov's Gamma matrix`使得全局颜色差分较小的新解
         - // find the patch ID for each vertex✔️
           - 对点赋值patch_id，边缝点使用`idxSeamVertex`
-        - // assign a row index within the solution vector x to each vertex/patch
+        - // assign a row index within the solution vector x to each vertex/patch✔️
           - 生成一个patch数组`vertpatch2rows`, 行号为点索引，二阶索引为patch，对于单个`patch`的点，只赋值一个patch，对于边缝点多个`patch`的点，赋多个`patch`，值为递增值`rowsX`
-        - // fill Tikhonov's Gamma matrix (regularization constraints)
-      - // perform local seam leveling
+        - // fill Tikhonov's Gamma matrix (regularization constraints)✔️
+      - // perform local seam leveling✔️
+        - 优化`patch`间的线条颜色
     - // merge texture patches with overlapping rectangles
       - // translate texture coordinates
       - // join faces lists
