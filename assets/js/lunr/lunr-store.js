@@ -323,10 +323,10 @@ var store = [{
         "url": "/3d/Texture-for-dog-project/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210908163126.png"
       },{
-        "title": "Texture Paper Reading",
+        "title": "Texture Paper Reading-[Let There Be Color!]",
         "excerpt":"Let There Be Color! - Large-Scale Texturing of 3D Reconstructions Paper.pdf In this paper we therefore present the first unified texturing approach that handles large, realistic datasets reconstructed from images with a structure-from-motion plus multi-view stereo pipeline. millions of triangles within less than two hours. Related view selection blend multiple...","categories": ["3d"],
         "tags": [],
-        "url": "/3d/Texture-Paper-Reading/",
+        "url": "/3d/Texture-Paper-Reading-Let-There-Be-Color!/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210910164754.png"
       },{
         "title": "Possion Image Edit",
@@ -384,7 +384,7 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191016.png"
       },{
         "title": "OpenMVS Texture code reading",
-        "excerpt":"TextureMesh FaceViewSelection ListVertexFaces✔️ // extract array of triangles incident to each vertex EmptyExtra✔️ ListIncidenteFaces✔️ ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用 // create texture patches ListCameraFaces // list all views for each face //create vertices octree of vertices✔️ //extract array of faces viewed by each image✔️ //compute gradient magnitude✔️ //select faces inside view frustum✔️...","categories": ["3d"],
+        "excerpt":"TextureMesh FaceViewSelection ListVertexFaces✔️ // extract array of triangles incident to each vertex EmptyExtra✔️ ListIncidenteFaces✔️ ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用 // create texture patches✔️ ListCameraFaces // list all views for each face //create vertices octree of vertices✔️ //extract array of faces viewed by each image✔️ //compute gradient magnitude✔️ //select faces inside view frustum✔️...","categories": ["3d"],
         "tags": [],
         "url": "/3d/OpenMVS-Texture-Code-Reading/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210928142744.png"
@@ -417,5 +417,11 @@ var store = [{
         "excerpt":"Causes of no texture      bInvisibleFace || bInvisibleFaceAdj == Ture                       bInvisibleFace == True                              mesh问题                       C++ Tech      调用约定——_cdecl,_stdcall,_fastcall                      ","categories": ["3d"],
         "tags": [],
         "url": "/3d/Texture-for-invisible-face/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211009132134.png"
+      },{
+        "title": "Nerf",
+        "excerpt":"Nerf                  Repository       spark       star                                                   Nerf HomePage                   Paper.pdf           Key Point      输入是位置和视角方向$(x,y,z) + (\\theta, \\phi)$构成的5D坐标，输出是体积密度和颜色            Position encoding可以提高细节       层次化的采样流程可以减少采样           通过volume rendering实现视图合成   全连接网络MLP      Reference      【论文精炼】何雨龙 - cnblogs   nerf(ML Research Paper Explained) - Youtube   图形学新高潮? NeRF 笔记 - Lee bro的文章 - 知乎   NeRF ——使用神经辐射场(Neural Radiance Fields)表示场景来进行视图合成(View Synthesis)🤙   【NeRF论文笔记】用于视图合成的神经辐射场技术 - 林天威的文章 - 知乎  ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Nerf/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211009132134.png"
       }]
