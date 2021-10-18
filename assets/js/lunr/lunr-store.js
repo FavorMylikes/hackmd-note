@@ -423,5 +423,11 @@ var store = [{
         "excerpt":"Nerf                  Repository       spark       star                                                   Nerf HomePage                   Paper.pdf           Key Point      输入是位置和视角方向$(x,y,z) + (\\theta, \\phi)$构成的5D坐标，输出是体积密度和颜色            Position encoding可以提高细节       层次化的采样流程可以减少采样           通过volume rendering实现视图合成   全连接网络MLP      Reference      【论文精炼】何雨龙 - cnblogs   nerf(ML Research Paper Explained) - Youtube   图形学新高潮? NeRF 笔记 - Lee bro的文章 - 知乎   NeRF ——使用神经辐射场(Neural Radiance Fields)表示场景来进行视图合成(View Synthesis)🤙   【NeRF论文笔记】用于视图合成的神经辐射场技术 - 林天威的文章 - 知乎  ","categories": ["3d"],
         "tags": [],
         "url": "/3d/Nerf/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211009132134.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211014233233.png"
+      },{
+        "title": "The Path to Nerf",
+        "excerpt":"Three tools to create citation mapping 3 new tools to try for Literature mapping — Connected Papers, Inciteful and Litmaps - Medium Connected Papers Inciteful Litmaps🤙 CoCites Has chrome extension Citation Gecko Too simple VOSviewer Need data file NeRF Path Track Perior LLFF Local Light Field Fusion: Practical View Synthesis...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/The-Path-To-Nerf/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018233219.png"
       }]
