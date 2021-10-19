@@ -426,7 +426,7 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211014233233.png"
       },{
         "title": "The Path to Nerf",
-        "excerpt":"Three tools to create citation mapping 3 new tools to try for Literature mapping — Connected Papers, Inciteful and Litmaps - Medium Connected Papers Inciteful Litmaps🤙 CoCites Has chrome extension Citation Gecko Too simple VOSviewer Need data file NeRF Path Track Perior LLFF Local Light Field Fusion: Practical View Synthesis...","categories": ["3d"],
+        "excerpt":"Three tools to create citation mapping 3 new tools to try for Literature mapping — Connected Papers, Inciteful and Litmaps - Medium Connected Papers Inciteful Litmaps🤙 CoCites Has chrome extension Citation Gecko Too simple VOSviewer Need data file NeRF Path Track [2D变3D，视角随意换，神还原高清立体感，还是不用3D建模的那种 代码数据开源 - 量子位的文章 - 知乎](https://zhuanlan.zhihu.com/p/128554388) Perior Volume Rendering...","categories": ["3d"],
         "tags": [],
         "url": "/3d/The-Path-To-Nerf/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018233219.png"
