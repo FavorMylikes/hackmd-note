@@ -26,10 +26,29 @@ header:
 
 ## NeRF Path Track
 
-<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018233219.png" alt="20211018233219"/>
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019231223.png" alt="20211019231223"/>
+
+- [2D变3D，视角随意换，神还原高清立体感，还是不用3D建模的那种 | 代码数据开源 - 量子位的文章 - 知乎](https://zhuanlan.zhihu.com/p/128554388)
 
 ### Perior
 
+- Volume Rendering
+  - [体渲染数学原理 - 杨超wantnon的文章 - 知乎](https://zhuanlan.zhihu.com/p/56710440)
+  - [【译】实时体渲染——第一章 体渲染 - Maple的文章 - 知乎](https://zhuanlan.zhihu.com/p/260540982)
+    - [Real-Time Volume Graphics](https://dl.acm.org/doi/abs/10.1145/1103900.1103929)
+    - ![j](https://img.shields.io/badge/SIGGRAPH-2004-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-996-blue?style=flat-square)
+  - [Ray tracing volume densities](https://dl.acm.org/doi/abs/10.1145/964965.808594)
+    - ![j](https://img.shields.io/badge/SIGGRAPH-1984-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-1296-blue?style=flat-square)
+- [LFR](https://graphics.stanford.edu/papers/light/)
+  - [Light field rendering](https://dl.acm.org/doi/10.1145/237170.237199)
+  - ![j](https://img.shields.io/badge/SIGGRAPH-1996-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-5237-blue?style=flat-square)
+  - [漫谈计算摄影学 (一)：直观理解光场(Light Field) - YE Y的文章 - 知乎](https://zhuanlan.zhihu.com/p/24982662)
+    - [Raytrix](https://raytrix.de/)
+      - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgf8abeb4e7d5f1ff2e7d1d38b159cb02.png" alt="f8abeb4e7d5f1ff2e7d1d38b159cb02"/>
+- [LDI](https://grail.cs.washington.edu/projects/ldi/)
+  - [Layered Depth Images](https://grail.cs.washington.edu/projects/ldi/)
+  - ![j](https://img.shields.io/badge/SIGGRAPH-1998-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-1656-blue?style=flat-square)
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019151938.png" alt="20211019151938"/>
 - [LLFF](https://bmild.github.io/llff/)
   - [Local Light Field Fusion: Practical View Synthesis with Prescriptive Sampling Guidelines](https://bmild.github.io/llff/)
   - [Github](https://github.com/Fyusion/LLFF)
@@ -43,11 +62,14 @@ header:
 ### Future
 
 - [MINE: Towards Continuous Depth MPI With NeRF for Novel View Synthesis - ByteDances](https://openaccess.thecvf.com/content/ICCV2021/html/Li_MINE_Towards_Continuous_Depth_MPI_With_NeRF_for_Novel_View_ICCV_2021_paper.html)
-  - ![j](https://img.shields.io/badge/ICCV-2019-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-0-blue?style=flat-square)
-- [Single-view view synthesis with multiplane images](https://arxiv.org/abs/2004.11364)
+  - ![j](https://img.shields.io/badge/ICCV-2021-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-0-blue?style=flat-square)
+  - [GithHub](https://github.com/vincentfung13/MINE)
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019123823.png" alt="20211019123823"/>
+  - [ICCV 2021 | 字节跳动利用单张图片做三维重建：将NeRF、MPI结合，提出MINE - 不爱玩的小玩家的文章 - 知乎](https://zhuanlan.zhihu.com/p/419468401)
+- [MPI: Single-view view synthesis with multiplane images](https://arxiv.org/abs/2004.11364)
   - [Github.io](https://single-view-mpi.github.io/)
   - ![j](https://img.shields.io/badge/CVPR-2020-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-60-blue?style=flat-square)
-
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019123036.png" alt="20211019123036"/>
 
 ## Mesure
 
