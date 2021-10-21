@@ -29,10 +29,12 @@ header:
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019231223.png" alt="20211019231223"/>
 
 - [2D变3D，视角随意换，神还原高清立体感，还是不用3D建模的那种 | 代码数据开源 - 量子位的文章 - 知乎](https://zhuanlan.zhihu.com/p/128554388)
+- [白话神经辐射场（NeRF）：类神经网路在查看综合的热门新方向 - medium](https://medium.com/%E8%BB%9F%E9%AB%94%E4%B9%8B%E5%BF%83/%E7%99%BD%E8%A9%B1neural-radiance-fields-nerf-%E9%A1%9E%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E5%9C%A8view-synthesis%E7%9A%84%E7%86%B1%E9%96%80%E6%96%B0%E6%96%B9%E5%90%91-23be9411d399)
 
 ### Perior
 
 - Volume Rendering
+  - [立体渲染 - WikiPidea](https://zh.wikipedia.org/wiki/%E7%AB%8B%E4%BD%93%E6%B8%B2%E6%9F%93)
   - [体渲染数学原理 - 杨超wantnon的文章 - 知乎](https://zhuanlan.zhihu.com/p/56710440)
   - [【译】实时体渲染——第一章 体渲染 - Maple的文章 - 知乎](https://zhuanlan.zhihu.com/p/260540982)
     - [Real-Time Volume Graphics](https://dl.acm.org/doi/abs/10.1145/1103900.1103929)
@@ -70,6 +72,12 @@ header:
   - [Github.io](https://single-view-mpi.github.io/)
   - ![j](https://img.shields.io/badge/CVPR-2020-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-60-blue?style=flat-square)
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019123036.png" alt="20211019123036"/>
+- [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/abs/2011.12100)
+  - ![j](https://img.shields.io/badge/CVPR-2021-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-30-blue?style=flat-square)
+- [fourfeat](https://bmild.github.io/fourfeat/)
+  - [Fourier Features Let Networks Learn
+High Frequency Functions in Low Dimensional Domains](https://arxiv.org/abs/2006.10739)
+  - ![j](https://img.shields.io/badge/NeurIPS-2020-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-171-blue?style=flat-square)
 
 ## Mesure
 
