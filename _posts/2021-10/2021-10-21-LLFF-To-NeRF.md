@@ -70,3 +70,14 @@ data/desk
 - change `/host/etc/sudoers`
 - append **`lihuibin    ALL=(ALL:ALL) ALL`** below `root    ALL=(ALL:ALL) ALL`
 - [linux下添加用户并赋予root权限](https://blog.csdn.net/hellozpc/article/details/46952595)
+
+## Nerf
+
+- issues
+  - `ffmpeg: Unrecognized option 'crf'. Error splitting the argument list: Option not found`
+    - [stackoverflow](https://superuser.com/questions/1302753/ffmpeg-unrecognized-option-crf-error-splitting-the-argument-list-option-not)
+    - remove ffmpeg from conda
+      - `conda remove --force ffmpeg`
+    - install ffmpeg with apt
+      - `sudo apt install ffmpeg`
+
