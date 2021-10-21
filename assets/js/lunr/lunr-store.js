@@ -430,4 +430,10 @@ var store = [{
         "tags": [],
         "url": "/3d/The-Path-To-Nerf/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018233219.png"
+      },{
+        "title": "The Path to Nerf",
+        "excerpt":"LLFF Prepare Image data/desk/images ├── 2c68275866dc2b1da47f5eaf885c583.jpg ├── 2fd70dcc8b5f374886df488054fa5ab.jpg ├── 34df512a279040a3820c531c13d5e17.jpg ├── 358af944c88b7a3ff231e4e2eeafdd0.jpg ├── 3808e607c1cf63cebf12b29dc7f2442.jpg ├── 5dbf835776758757c2be8b5ee08e17b.jpg ├── 9ca4a35fffb7a69f84be9e1f2945848.jpg ├── d86ac4a847edb12b6dcded776d47732.jpg ├── e1402fe72717cfac86bd9cd69c3b98f.jpg ├── f2dfe38840ae9fd02dd33fa09dad769.jpg ├── fd177d4977813dfce11b09f71797e01.jpg └── ff21b26780837071d7980447866f217.jpg At LLFF project directory nvidia-docker run --rm --env CUDA_VISIBLE_DEVICES=3 --volume /:/host --workdir /host$PWD tf_colmap bash demo.sh --env CUDA_VISIBLE_DEVICES=3 is docker container env....","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/LLFF-To-NeRF/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211021200334.png"
       }]

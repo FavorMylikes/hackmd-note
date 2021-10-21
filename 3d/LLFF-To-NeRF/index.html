@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Cmake Bug / Notes B</title>
-<meta name="description" content="Cmake can not find OpenMP">
+<!-- begin _includes/seo.html --><title>The Path to Nerf / Notes B</title>
+<meta name="description" content="LLFF">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Cmake Bug">
-<meta property="og:url" content="https://ucas.io/3d/Cmake-Bug/">
+<meta property="og:title" content="The Path to Nerf">
+<meta property="og:url" content="https://ucas.io/3d/LLFF-To-NeRF/">
 
 
-  <meta property="og:description" content="Cmake can not find OpenMP">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png">
+  <meta property="og:description" content="LLFF">
 
 
 
-
-
-  <meta property="article:published_time" content="2021-10-08T15:56:23+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211021200334.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2021-10-18T14:44:18+08:00">
 
-<link rel="canonical" href="https://ucas.io/3d/Cmake-Bug/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/3d/LLFF-To-NeRF/">
 
 
 
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">Cmake Bug</li>
+        <li class="current">The Path to Nerf</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Cmake Bug">
-    <meta itemprop="description" content="Cmake can not find OpenMP">
-    <meta itemprop="datePublished" content="2021-10-08T15:56:23+08:00">
+    <meta itemprop="headline" content="The Path to Nerf">
+    <meta itemprop="description" content="LLFF">
+    <meta itemprop="datePublished" content="2021-10-18T14:44:18+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Cmake Bug
+          <h1 id="page-title" class="page__title" itemprop="headline">The Path to Nerf
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-10-08T15:56:23+08:00">October 8, 2021</time>
+        <time datetime="2021-10-18T14:44:18+08:00">October 18, 2021</time>
       </span>
     
 
@@ -363,7 +363,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -378,104 +378,90 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#cmake-can-not-find-openmp">Cmake can not find OpenMP</a></li><li><a href="#how-to-use-openmp">How to use OpenMp</a></li><li><a href="#code-a-simple-example">Code, A simple example</a></li><li><a href="#reference">Reference</a></li></ul>
+              <ul class="toc__menu"><li><a href="#llff">LLFF</a></li><li><a href="#attention">Attention</a></li><li><a href="#docker-越权">Docker 越权</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="cmake-can-not-find-openmp">Cmake can not find <code class="language-plaintext highlighter-rouge">OpenMP</code></h2>
-
-<ol>
-  <li>Clion(2021.2.2) use the default Cmake version is 3.20.2
-    <ol>
-      <li>
-        <p>Got following error at <code class="language-plaintext highlighter-rouge">path-to-build/CMakeFiles/CMakeError.log</code></p>
-
-        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  -- The C compiler identification is MSVC 19.29.30133.0
-  -- The CXX compiler identification is MSVC 19.29  30133.0
-  -- Detecting C compiler ABI info
-  -- Detecting C compiler ABI info - failed
-  -- Check for working C compiler: C:/Program Files  (x86)/Microsoft Visual Studio/2019/BuildTools/VC  Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe
-  -- Check for working C compiler: C:/Program Files  (x86)/Microsoft Visual Studio/2019/BuildTools/VC  Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe -  works
-  -- Detecting C compile features
-  -- Detecting C compile features - done
-  -- Detecting CXX compiler ABI info
-  -- Detecting CXX compiler ABI info - failed
-  -- Check for working CXX compiler: C:/Program  Files (x86)/Microsoft Visual Studio/2019  BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64  x64/cl.exe
-  -- Check for working CXX compiler: C:/Program  Files (x86)/Microsoft Visual Studio/2019  BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64  x64/cl.exe - works
-  -- Detecting CXX compile features
-  -- Detecting CXX compile features - done
-</span></code></pre></div>        </div>
-      </li>
-    </ol>
-  </li>
-  <li>After a few tests, I have a status table at below, we can follow this <a href="https://youtrack.jetbrains.com/issue/CPP-26827">issue</a></li>
-  <li>
-    <table>
-      <thead>
-        <tr>
-          <th> </th>
-          <th>PC1[xps]</th>
-          <th>PC2[ucas]</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>clion(cmake 3.20.2)</td>
-          <td>❌</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td>cmake 3.21.3</td>
-          <td>❌</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td>cmake 3.19.8</td>
-          <td>✅warning(CMAKE_DEPENDS_USE_COMPILER)</td>
-          <td>✅</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>change clion use cmake 3.19.8, the problem has gone</li>
-</ol>
-
-<h2 id="how-to-use-openmp">How to use OpenMp</h2>
+        <h2 id="llff">LLFF</h2>
 
 <ul>
-  <li>Need some attention code at CMakeLists.txt</li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">CMakeLists.txt</code></p>
-
-    <div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">FIND_PACKAGE</span><span class="p">(</span>OpenMP<span class="p">)</span>
-<span class="nf">SET</span><span class="p">(</span>CMAKE_CXX_FLAGS <span class="s2">"</span><span class="si">${</span><span class="nv">CMAKE_CXX_FLAGS</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">OpenMP_CXX_FLAGS</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Using <code class="language-plaintext highlighter-rouge">OMP_NUM_THREADS=4</code> at env To Control thread num</li>
+  <li>Prepare Image</li>
 </ul>
 
-<h2 id="code-a-simple-example">Code, A simple example</h2>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
-#include &lt;omp.h&gt;
-</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-    <span class="cp">#pragma omp parallel for private(i)
-</span>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello, World!"</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\t</span><span class="s">"</span> <span class="o">&lt;&lt;</span><span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="reference">Reference</h2>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">data/desk/images
+├── 2c68275866dc2b1da47f5eaf885c583.jpg
+├── 2fd70dcc8b5f374886df488054fa5ab.jpg
+├── 34df512a279040a3820c531c13d5e17.jpg
+├── 358af944c88b7a3ff231e4e2eeafdd0.jpg
+├── 3808e607c1cf63cebf12b29dc7f2442.jpg
+├── 5dbf835776758757c2be8b5ee08e17b.jpg
+├── 9ca4a35fffb7a69f84be9e1f2945848.jpg
+├── d86ac4a847edb12b6dcded776d47732.jpg
+├── e1402fe72717cfac86bd9cd69c3b98f.jpg
+├── f2dfe38840ae9fd02dd33fa09dad769.jpg
+├── fd177d4977813dfce11b09f71797e01.jpg
+└── ff21b26780837071d7980447866f217.jpg
+</span></code></pre></div></div>
 
 <ul>
-  <li><a href="https://blog.csdn.net/u011089523/article/details/103412177">OpenMP的简单使用教程 - CSDN</a></li>
-  <li><a href="https://www.dartmouth.edu/~rc/classes/intro_openmp/compile_run.html">How to Compile and Run an OpenMP Program</a></li>
-  <li><a href="https://blog.csdn.net/ArrowYL/article/details/81094837">OpenMP用法大全（个人整理版）</a></li>
+  <li>At LLFF project directory</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvidia-docker run <span class="nt">--rm</span> <span class="nt">--env</span> <span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span>3 <span class="nt">--volume</span> /:/host <span class="nt">--workdir</span> /host<span class="nv">$PWD</span> tf_colmap bash demo.sh
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">--env CUDA_VISIBLE_DEVICES=3</code> is docker container env.</li>
+  <li>Use watch command to check which gpu is available
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">watch 'nvidia-smi | grep Default'</code></li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211021192003.png" alt="20211021192003" /></li>
+    </ul>
+  </li>
+  <li>output</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">data/desk
+├── colmap_output.txt
+├── database.db
+├── images
+├── images_480x360
+├── mpis_360
+├── outputs
+├── poses_bounds.npy
+└── sparse
+    └── 0
+        ├── cameras.bin
+        ├── images.bin
+        ├── points3D.bin
+        └── project.ini
+</span></code></pre></div></div>
+
+<ul>
+  <li>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/LXCnnWBqoYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+  </li>
+</ul>
+
+<h2 id="attention">Attention</h2>
+
+<ul>
+  <li>拍摄的图片需要是个矩阵，不然容易报错
+    <ul>
+      <li>报错代码主要位置</li>
+      <li><code class="language-plaintext highlighter-rouge">llff/poses/pose_utils.py:66</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="docker-越权">Docker 越权</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">docker run -it --volume /:/host tf_colmap</code></li>
+  <li>change <code class="language-plaintext highlighter-rouge">/host/etc/sudoers</code></li>
+  <li>append <strong><code class="language-plaintext highlighter-rouge">lihuibin    ALL=(ALL:ALL) ALL</code></strong> below <code class="language-plaintext highlighter-rouge">root    ALL=(ALL:ALL) ALL</code></li>
+  <li><a href="https://blog.csdn.net/hellozpc/article/details/46952595">linux下添加用户并赋予root权限</a></li>
 </ul>
 
         
@@ -503,7 +489,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-10-08T15:56:23+08:00">October 8, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-10-18T14:44:18+08:00">October 18, 2021</time></p>
 
 
       </footer>
@@ -511,23 +497,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Cmake+Bug%20https%3A%2F%2Fucas.io%2F3d%2FCmake-Bug%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=The+Path+to+Nerf%20https%3A%2F%2Fucas.io%2F3d%2FLLFF-To-NeRF%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FCmake-Bug%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2F3d%2FLLFF-To-NeRF%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FCmake-Bug%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2F3d%2FLLFF-To-NeRF%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/3d/Trangle-Rasterization/" class="pagination--pager" title="Trangle Rasterization
+      <a href="/3d/The-Path-To-Nerf/" class="pagination--pager" title="The Path to Nerf
 ">Previous</a>
     
     
-      <a href="/3d/Texture-for-invisible-face/" class="pagination--pager" title="Texture for invisible
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -541,57 +526,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211021200334.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/LLFF-To-NeRF/" rel="permalink">The Path to Nerf
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-10-18T14:44:18+08:00">October 18, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">LLFF
-</p>
-  </article>
-</div>
-
         
           
 
@@ -631,7 +565,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -741,6 +675,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Causes of no texture
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/Cmake-Bug/" rel="permalink">Cmake Bug
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-10-08T15:56:23+08:00">October 8, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Cmake can not find OpenMP
 </p>
   </article>
 </div>

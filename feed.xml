@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-10-19T23:24:41+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">The Path to Nerf</title><link href="https://ucas.io/3d/The-Path-To-Nerf/" rel="alternate" type="text/html" title="The Path to Nerf" /><published>2021-10-18T14:44:18+08:00</published><updated>2021-10-18T14:44:18+08:00</updated><id>https://ucas.io/3d/The-Path-To-Nerf</id><content type="html" xml:base="https://ucas.io/3d/The-Path-To-Nerf/">&lt;h2 id=&quot;three-tools-to-create-citation-mapping&quot;&gt;Three tools to create citation mapping&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-10-21T20:16:51+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">The Path to Nerf</title><link href="https://ucas.io/3d/The-Path-To-Nerf/" rel="alternate" type="text/html" title="The Path to Nerf" /><published>2021-10-18T14:44:18+08:00</published><updated>2021-10-18T14:44:18+08:00</updated><id>https://ucas.io/3d/The-Path-To-Nerf</id><content type="html" xml:base="https://ucas.io/3d/The-Path-To-Nerf/">&lt;h2 id=&quot;three-tools-to-create-citation-mapping&quot;&gt;Three tools to create citation mapping&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://aarontay.medium.com/3-new-tools-to-try-for-literature-mapping-connected-papers-inciteful-and-litmaps-a399f27622a&quot;&gt;3 new tools to try for Literature mapping — Connected Papers, Inciteful and Litmaps - Medium&lt;/a&gt;
@@ -165,7 +165,86 @@
       &lt;li&gt;&lt;a href=&quot;https://github.com/richzhang/PerceptualSimilarity&quot;&gt;git richzhang/PerceptualSimilarity&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Three tools to create citation mapping</summary></entry><entry><title type="html">Nerf</title><link href="https://ucas.io/3d/Nerf/" rel="alternate" type="text/html" title="Nerf" /><published>2021-10-14T23:16:43+08:00</published><updated>2021-10-14T23:16:43+08:00</updated><id>https://ucas.io/3d/Nerf</id><content type="html" xml:base="https://ucas.io/3d/Nerf/">&lt;h2 id=&quot;nerf&quot;&gt;Nerf&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Three tools to create citation mapping</summary></entry><entry><title type="html">The Path to Nerf</title><link href="https://ucas.io/3d/LLFF-To-NeRF/" rel="alternate" type="text/html" title="The Path to Nerf" /><published>2021-10-18T14:44:18+08:00</published><updated>2021-10-18T14:44:18+08:00</updated><id>https://ucas.io/3d/LLFF-To-NeRF</id><content type="html" xml:base="https://ucas.io/3d/LLFF-To-NeRF/">&lt;h2 id=&quot;llff&quot;&gt;LLFF&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Prepare Image&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;data/desk/images
+├── 2c68275866dc2b1da47f5eaf885c583.jpg
+├── 2fd70dcc8b5f374886df488054fa5ab.jpg
+├── 34df512a279040a3820c531c13d5e17.jpg
+├── 358af944c88b7a3ff231e4e2eeafdd0.jpg
+├── 3808e607c1cf63cebf12b29dc7f2442.jpg
+├── 5dbf835776758757c2be8b5ee08e17b.jpg
+├── 9ca4a35fffb7a69f84be9e1f2945848.jpg
+├── d86ac4a847edb12b6dcded776d47732.jpg
+├── e1402fe72717cfac86bd9cd69c3b98f.jpg
+├── f2dfe38840ae9fd02dd33fa09dad769.jpg
+├── fd177d4977813dfce11b09f71797e01.jpg
+└── ff21b26780837071d7980447866f217.jpg
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;At LLFF project directory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nvidia-docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--env&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;CUDA_VISIBLE_DEVICES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3 &lt;span class=&quot;nt&quot;&gt;--volume&lt;/span&gt; /:/host &lt;span class=&quot;nt&quot;&gt;--workdir&lt;/span&gt; /host&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt; tf_colmap bash demo.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--env CUDA_VISIBLE_DEVICES=3&lt;/code&gt; is docker container env.&lt;/li&gt;
+  &lt;li&gt;Use watch command to check which gpu is available
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;watch 'nvidia-smi | grep Default'&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211021192003.png&quot; alt=&quot;20211021192003&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;output&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;data/desk
+├── colmap_output.txt
+├── database.db
+├── images
+├── images_480x360
+├── mpis_360
+├── outputs
+├── poses_bounds.npy
+└── sparse
+    └── 0
+        ├── cameras.bin
+        ├── images.bin
+        ├── points3D.bin
+        └── project.ini
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/LXCnnWBqoYQ&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;attention&quot;&gt;Attention&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;拍摄的图片需要是个矩阵，不然容易报错
+    &lt;ul&gt;
+      &lt;li&gt;报错代码主要位置&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;llff/poses/pose_utils.py:66&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;docker-越权&quot;&gt;Docker 越权&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run -it --volume /:/host tf_colmap&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/host/etc/sudoers&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;append &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lihuibin    ALL=(ALL:ALL) ALL&lt;/code&gt;&lt;/strong&gt; below &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;root    ALL=(ALL:ALL) ALL&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/hellozpc/article/details/46952595&quot;&gt;linux下添加用户并赋予root权限&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">LLFF</summary></entry><entry><title type="html">Nerf</title><link href="https://ucas.io/3d/Nerf/" rel="alternate" type="text/html" title="Nerf" /><published>2021-10-14T23:16:43+08:00</published><updated>2021-10-14T23:16:43+08:00</updated><id>https://ucas.io/3d/Nerf</id><content type="html" xml:base="https://ucas.io/3d/Nerf/">&lt;h2 id=&quot;nerf&quot;&gt;Nerf&lt;/h2&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -1139,177 +1218,4 @@ $$&lt;/div&gt;
       &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191117.png&quot; alt=&quot;20210924191117&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Reinstall vcpkg at xps</summary></entry><entry><title type="html">Clion Debug</title><link href="https://ucas.io/3d/Clion-Debug/" rel="alternate" type="text/html" title="Clion Debug" /><published>2021-09-23T16:24:52+08:00</published><updated>2021-09-23T16:24:52+08:00</updated><id>https://ucas.io/3d/Clion-Debug</id><content type="html" xml:base="https://ucas.io/3d/Clion-Debug/">&lt;h2 id=&quot;problem-list&quot;&gt;Problem List&lt;/h2&gt;
-
-&lt;h3 id=&quot;windows-xps-build&quot;&gt;windows [xps] build&lt;/h3&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;...
-&lt;/span&gt;&lt;span class=&quot;go&quot;&gt;[ 75%] Linking CXX executable ..\..\bin\x86\InterfaceVisualSFM.exe
-LINK: command &quot;... C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib\Win32\cuda.lib ...&quot; failed (exit code 1120) with the following output:
-MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuGetErrorString
-MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuGetErrorName
-MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuParamSetSize
-MVS.lib(Mesh.cpp.obj) : error LNK2001: 无法解析的外部符号 cuFuncSetBlockShape
-&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;...
-&lt;/span&gt;&lt;span class=&quot;go&quot;&gt;Common.lib(CUDA.cpp.obj) : error LNK2001: 无法解析的外部符号 cuStreamWaitEvent
-Common.lib(CUDA.cpp.obj) : error LNK2001: 无法解析的外部符号 cuModuleUnload
-..\..\bin\x86\InterfaceVisualSFM.exe : fatal error LNK1120: 33 个无法解析的外部命令
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;consider it about cuda version
-    &lt;ul&gt;
-      &lt;li&gt;Download &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CUDA Driver api&lt;/code&gt; &lt;a href=&quot;https://docs.nvidia.com/cuda/pdf/CUDA_Driver_API.pdf&quot;&gt;file.pdf&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923163138.png&quot; alt=&quot;20210923163138&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dumpbin.exe&lt;/code&gt;&lt;/p&gt;
-
-        &lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;\dumpbin.exe&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib\Win32\cuda.lib&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/symbols&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;/exports&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;get list of function that exported by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cuda.lib&lt;/code&gt; file&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923163629.png&quot; alt=&quot;20210923163629&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923163648.png&quot; alt=&quot;20210923163648&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;Dont how to fix it.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Here a list about this issue
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/cdcseacave/openMVS/issues/147#issuecomment-263116200&quot;&gt;https://github.com/cdcseacave/openMVS/issues/147&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-lcuda&lt;/code&gt; at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openMVS/libs/MVS/CMakeLists.txt&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;have tried, does not work, cause &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-lcuda&lt;/code&gt; will by ignore under windows system&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/19981506/5587080&quot;&gt;how-to-let-cmake-find-cuda&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-DCUDA_TOOLKIT_ROOT_DIR=cuda_path_the_version_you_want&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;ATTATION&lt;/strong&gt;: for example &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-DCUDA_TOOLKIT_ROOT_DIR=&quot;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.4&quot;&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;You need double slash &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\\&lt;/code&gt; at path&lt;/strong&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;change-to-other-machineworkstation&quot;&gt;change to other machine[workstation]&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Fixed&lt;/strong&gt;????!!!
-    &lt;ul&gt;
-      &lt;li&gt;Mayby too many difference cuda version at xps?&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;By the way
-    &lt;ul&gt;
-      &lt;li&gt;need use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--use-cuda=0&lt;/code&gt; to disable gpu at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RefineMesh&lt;/code&gt; step&lt;/li&gt;
-      &lt;li&gt;otherwise a gpu error message will by throw, but obviously, there is very enough memory at here.&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165608.png&quot; alt=&quot;20210923165608&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CUDA error: cuMemFree(pData) (CUDA_ERROR_ILLEGAL_ADDRESS (code 700) - an illegal memory access was encountered)&lt;/code&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;A very shity result be generated here
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923165954.png&quot; alt=&quot;20210923165954&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;set--dcmake_verbose_makefileboolon-at-cmake-config-at-clion&quot;&gt;Set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON&lt;/code&gt; at cmake config at Clion&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Here the ucas machine looks like&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;C:\PROGRA~2\MICROS~3\2019\ENTERP~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\link.exe @CMakeFiles\DensifyPointCloud.dir\objects1.rsp /out:..\..\bin\x64\DensifyPointCloud.exe /implib:..\..\bin\x64\DensifyPointCloud.lib /pdb:
-C:\workspace\workspace_3d\openMVS\cmake-build-release-visual-studio\bin\x64\DensifyPointCloud.pdb /version:0.0 /machine:x64 /INCREMENTAL:NO /LTCG /subsystem:console -LIBPATH:
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib -LIBPATH:
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\debug\lib ..\..\lib\x64\MVS.lib ..\..\lib\x64\Math.lib ..\..\lib\x64\IO.lib ..\..\lib\x64\Common.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_iostreams-vc140-mt.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_program_options-vc140-mt.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_system-vc140-mt.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_serialization-vc140-mt.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_regex-vc140-mt.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_highgui.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_ml.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_objdetect.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_photo.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_stitching.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_video.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_calib3d.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_dnn.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_features2d.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_flann.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_videoio.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_imgcodecs.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_imgproc.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_core.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\libpng16.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\zlib.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\jpeg.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\tiff.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\lzma.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\zlib.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\jpeg.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\tiff.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\lzma.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\mpfr.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\gmp.lib 
-C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib\x64\cuda.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:..\..\bin\x64\DensifyPointCloud.exe.manifest
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;and here is the xps machine&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;C:\PROGRA~2\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x64\link.exe /nologo @CMakeFiles\DensifyPointCloud.dir\objects1.rsp /out:..\..\bin\x86\DensifyPointCloud.exe /implib:..\..\bin\x86\DensifyPointCloud.lib /pdb:
-C:\workspace\workspace_3d\openMVS\cmake-build-release-visual-studio\bin\x86\DensifyPointCloud.pdb /version:0.0 /machine:x64 /INCREMENTAL:NO /LTCG /subsystem:console -LIBPATH:
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib -LIBPATH:
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\debug\lib ..\..\lib\x86\MVS.lib ..\..\lib\x86\Math.lib ..\..\lib\x86\IO.lib ..\..\lib\x86\Common.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_iostreams-vc140-mt.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_program_options-vc140-mt.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_system-vc140-mt.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_serialization-vc140-mt.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\boost_regex-vc140-mt.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_highgui.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_ml.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_objdetect.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_photo.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_stitching.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_video.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_calib3d.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_dnn.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_features2d.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_flann.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_videoio.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_imgcodecs.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_imgproc.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\opencv_core.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\libpng16.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\zlib.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\jpeg.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\tiff.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\lzma.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\zlib.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\jpeg.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\tiff.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\lzma.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\mpfr.lib 
-C:\workspace\workspace_3d\vcpkg\installed\x64-windows\lib\gmp.lib 
-C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib\Win32\cuda.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:..\..\bin\x86\DensifyPointCloud.exe.manifest
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;After file compare&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210923184051.png&quot; alt=&quot;20210923184051&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;xps has a wrong target triplet&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;todo&quot;&gt;TODO&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;still not figure it out how it happen, reinstalling vcpkg, wish it be helpful.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Problem List</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Reinstall vcpkg at xps</summary></entry></feed>
