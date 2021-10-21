@@ -378,7 +378,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#llff">LLFF</a></li><li><a href="#attention">Attention</a></li><li><a href="#docker-越权">Docker 越权</a></li></ul>
+              <ul class="toc__menu"><li><a href="#llff">LLFF</a></li><li><a href="#attention">Attention</a></li><li><a href="#docker-越权">Docker 越权</a></li><li><a href="#nerf">Nerf</a></li></ul>
 
             </nav>
           </aside>
@@ -463,6 +463,31 @@
   <li>append <strong><code class="language-plaintext highlighter-rouge">lihuibin    ALL=(ALL:ALL) ALL</code></strong> below <code class="language-plaintext highlighter-rouge">root    ALL=(ALL:ALL) ALL</code></li>
   <li><a href="https://blog.csdn.net/hellozpc/article/details/46952595">linux下添加用户并赋予root权限</a></li>
 </ul>
+
+<h2 id="nerf">Nerf</h2>
+
+<ul>
+  <li>issues
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">ffmpeg: Unrecognized option 'crf'. Error splitting the argument list: Option not found</code>
+        <ul>
+          <li><a href="https://superuser.com/questions/1302753/ffmpeg-unrecognized-option-crf-error-splitting-the-argument-list-option-not">stackoverflow</a></li>
+          <li>remove ffmpeg from conda
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">conda remove --force ffmpeg</code></li>
+            </ul>
+          </li>
+          <li>install ffmpeg with apt
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">sudo apt install ffmpeg</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 
         
       </section>

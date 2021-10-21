@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-10-21T20:17:18+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">The Path to Nerf</title><link href="https://ucas.io/3d/The-Path-To-Nerf/" rel="alternate" type="text/html" title="The Path to Nerf" /><published>2021-10-18T14:44:18+08:00</published><updated>2021-10-18T14:44:18+08:00</updated><id>https://ucas.io/3d/The-Path-To-Nerf</id><content type="html" xml:base="https://ucas.io/3d/The-Path-To-Nerf/">&lt;h2 id=&quot;three-tools-to-create-citation-mapping&quot;&gt;Three tools to create citation mapping&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-10-21T23:19:57+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">The Path to Nerf</title><link href="https://ucas.io/3d/The-Path-To-Nerf/" rel="alternate" type="text/html" title="The Path to Nerf" /><published>2021-10-18T14:44:18+08:00</published><updated>2021-10-18T14:44:18+08:00</updated><id>https://ucas.io/3d/The-Path-To-Nerf</id><content type="html" xml:base="https://ucas.io/3d/The-Path-To-Nerf/">&lt;h2 id=&quot;three-tools-to-create-citation-mapping&quot;&gt;Three tools to create citation mapping&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://aarontay.medium.com/3-new-tools-to-try-for-literature-mapping-connected-papers-inciteful-and-litmaps-a399f27622a&quot;&gt;3 new tools to try for Literature mapping — Connected Papers, Inciteful and Litmaps - Medium&lt;/a&gt;
@@ -53,6 +53,7 @@
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/%E8%BB%9F%E9%AB%94%E4%B9%8B%E5%BF%83/%E7%99%BD%E8%A9%B1neural-radiance-fields-nerf-%E9%A1%9E%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E5%9C%A8view-synthesis%E7%9A%84%E7%86%B1%E9%96%80%E6%96%B0%E6%96%B9%E5%90%91-23be9411d399&quot;&gt;白话神经辐射场（NeRF）：类神经网路在查看综合的热门新方向 - medium&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;perior&quot;&gt;Perior&lt;/h3&gt;
@@ -60,6 +61,7 @@
 &lt;ul&gt;
   &lt;li&gt;Volume Rendering
     &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%AB%8B%E4%BD%93%E6%B8%B2%E6%9F%93&quot;&gt;立体渲染 - WikiPidea&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/56710440&quot;&gt;体渲染数学原理 - 杨超wantnon的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/260540982&quot;&gt;【译】实时体渲染——第一章 体渲染 - Maple的文章 - 知乎&lt;/a&gt;
         &lt;ul&gt;
@@ -138,6 +140,18 @@
       &lt;li&gt;&lt;a href=&quot;https://single-view-mpi.github.io/&quot;&gt;Github.io&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CVPR-2020-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-60-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
       &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019123036.png&quot; alt=&quot;20211019123036&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2011.12100&quot;&gt;GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CVPR-2021-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-30-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bmild.github.io/fourfeat/&quot;&gt;fourfeat&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2006.10739&quot;&gt;Fourier Features Let Networks Learn
+High Frequency Functions in Low Dimensional Domains&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/NeurIPS-2020-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-171-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -244,6 +258,30 @@
   &lt;li&gt;change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/host/etc/sudoers&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;append &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lihuibin    ALL=(ALL:ALL) ALL&lt;/code&gt;&lt;/strong&gt; below &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;root    ALL=(ALL:ALL) ALL&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/hellozpc/article/details/46952595&quot;&gt;linux下添加用户并赋予root权限&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;nerf&quot;&gt;Nerf&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;issues
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ffmpeg: Unrecognized option 'crf'. Error splitting the argument list: Option not found&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://superuser.com/questions/1302753/ffmpeg-unrecognized-option-crf-error-splitting-the-argument-list-option-not&quot;&gt;stackoverflow&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;remove ffmpeg from conda
+            &lt;ul&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;conda remove --force ffmpeg&lt;/code&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;install ffmpeg with apt
+            &lt;ul&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo apt install ffmpeg&lt;/code&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">LLFF</summary></entry><entry><title type="html">Nerf</title><link href="https://ucas.io/3d/Nerf/" rel="alternate" type="text/html" title="Nerf" /><published>2021-10-14T23:16:43+08:00</published><updated>2021-10-14T23:16:43+08:00</updated><id>https://ucas.io/3d/Nerf</id><content type="html" xml:base="https://ucas.io/3d/Nerf/">&lt;h2 id=&quot;nerf&quot;&gt;Nerf&lt;/h2&gt;
 
 &lt;table&gt;
