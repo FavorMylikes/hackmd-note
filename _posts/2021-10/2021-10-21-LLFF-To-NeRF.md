@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "The Path to Nerf" 
-date:   "2021-10-18 14:44:18 +0800"
+date:   "2021-10-21 14:44:18 +0800"
 categories: 3d
 header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211021200334.png
@@ -80,4 +80,3 @@ data/desk
       - `conda remove --force ffmpeg`
     - install ffmpeg with apt
       - `sudo apt install ffmpeg`
-
