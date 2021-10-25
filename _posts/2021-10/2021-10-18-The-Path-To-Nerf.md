@@ -56,6 +56,7 @@ header:
   - [Github](https://github.com/Fyusion/LLFF)
   - ![j](https://img.shields.io/badge/SIGGRAPH-2019-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-198-blue?style=flat-square)
 - [Stereo Magnification: Learning View Synthesis using Multiplane Images - Google](https://arxiv.org/abs/1805.09817)
+  - 多张多视角图片生成MPI
   - [Github.io](https://tinghuiz.github.io/projects/mpi/)
   - ![j](https://img.shields.io/badge/SIGGRAPH-2018-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-275-blue?style=flat-square)
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018232827.png" alt="20211018232827"/>
@@ -70,8 +71,10 @@ header:
   - [ICCV 2021 | 字节跳动利用单张图片做三维重建：将NeRF、MPI结合，提出MINE - 不爱玩的小玩家的文章 - 知乎](https://zhuanlan.zhihu.com/p/419468401)
 - [MPI: Single-view view synthesis with multiplane images](https://arxiv.org/abs/2004.11364)
   - [Github.io](https://single-view-mpi.github.io/)
+  - 单张多视角图片生成MPI
   - ![j](https://img.shields.io/badge/CVPR-2020-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-60-blue?style=flat-square)
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019123036.png" alt="20211019123036"/>
+  - [Colab](https://colab.research.google.com/github/google-research/google-research/blob/master/single_view_mpi/example.ipynb#scrollTo=7vbB3JcaqirL)
 - [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/abs/2011.12100)
   - ![j](https://img.shields.io/badge/CVPR-2021-blue?style=flat-square)![cite](https://img.shields.io/badge/cite-30-blue?style=flat-square)
 - [fourfeat](https://bmild.github.io/fourfeat/)
