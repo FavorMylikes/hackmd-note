@@ -13,8 +13,13 @@ header:
 
 ## 单机多卡
 
+### DataParallel [DP]
+
 - dataset: `FashionMNIST`
 - Main Code
+- `DataParallel`
+  - `Parameter server` 算法
+  - > reducer的那张卡会多出3-4g的显存占用
 
 ```python
 # Model
@@ -40,6 +45,36 @@ labels = labels.cuda()
   - `fuser -v /dev/nvidia*` to check all pid with this device
   - `fuser -k /dev/nvidia6` kill all processes that using the device nvidia6
     - **But it will kill all other processes too**
+
+### DistributedDataParallel [DDP]
+
+- main code
+
+```python
+net = net.cuda()
+net = nn.parallel.DistributedDataParallel(net)
+...
+trainloader = torch.utils.data.DataLoader(trainset, 
+                                          batch_size=4,
+                                          num_workers=2,
+                                          sampler=DistributedSampler(trainset, shuffle=True))
+
+testloader = torch.utils.data.DataLoader(testset, 
+                                         batch_size=4,
+                                         num_workers=2,
+                                         sampler=DistributedSampler(testset, shuffle=False))
+```
+
+- `nproc_per_node`: node
+
+|Speed|CUDA|LOCAL_RANK|OMP|node|Mem%|epoch|Loss|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|7500it [00:32, 229.33it/s]*2|0,3,5,6|0|1|2|3:7-13|1|0.4727|
+|3750it [00:17, 210.65it/s]*4|0,3,5,6|0|1|4|0,3,5,6:17-30|1|0.6264|
+|7500it [00:32, 228.66it/s]*2|0,3|0|1|2|0,3:17-30|1|0.4878|
+|15000it [01:00, 210.65it/s]|0,3,5,6|0|1|1|0:17-30|1|0.4165|
+|7500it [00:32, 228.66it/s]*4|0,3,5,6|0|1|2|0,3:17-30|2|0.3774|
+|3750it [00:25, 149.55it/s]*16|0,3,5,6|0|1|4|0,3,5,6:17-30|4|0.3563|
 
 ## Gpu Monitor
 
@@ -75,3 +110,12 @@ labels = labels.cuda()
 ## Reference
 
 - [pytorch多gpu并行训练 - link-web的文章 - 知乎](https://zhuanlan.zhihu.com/p/86441879)
+- [【分布式训练】单机多卡的正确打开方式（三）：PyTorch - Nicolas的文章 - 知乎](https://zhuanlan.zhihu.com/p/74792767)
+- [【深度学习分布式】Parameter Server 详解 - 仙道菜的文章 - 知乎](https://zhuanlan.zhihu.com/p/21569493)
+  - [incubator-mxnet_repo]: https://github.com/apache/incubator-mxnet
+    [incubator-mxnet_fork]: https://img.shields.io/github/forks/apache/incubator-mxnet.svg?style=social&label=Fork&maxAge=2592000
+    [incubator-mxnet_star]: https://stars.medv.io/apache/incubator-mxnet.svg
+
+    |Repository|spark|star|
+    |:-:|:-:|:-:|
+    |[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=apache&repo=incubator-mxnet&show_owner=true)][incubator-mxnet_repo]|[![Sparkline](https://stars.medv.io/apache/incubator-mxnet.svg)][incubator-mxnet_repo]|<a href='https://starchart.cc/apache/incubator-mxnet'><img src='https://starchart.cc/apache/incubator-mxnet.svg' width='200px'/></a>
