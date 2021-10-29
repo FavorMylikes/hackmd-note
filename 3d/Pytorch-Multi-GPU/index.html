@@ -501,7 +501,9 @@
       <li>
         <p><code class="language-plaintext highlighter-rouge">--nproc_per_node=2</code>时，两个进程的rank是不一样的</p>
 
-        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">.</span><span class="n">cuda</span><span class="p">()</span>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rank</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">distributed</span><span class="p">.</span><span class="n">get_rank</span><span class="p">()</span>
+<span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="n">set_device</span><span class="p">(</span><span class="n">rank</span><span class="p">)</span>  <span class="c1"># 重要
+</span><span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">.</span><span class="n">cuda</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="c1"># 不同的进程会把不同的数据放到不同的GPU上
 </span>    <span class="c1"># DataLoader 的 sampler处理这一逻辑
