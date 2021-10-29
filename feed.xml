@@ -1,185 +1,600 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-10-21T23:19:57+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">The Path to Nerf</title><link href="https://ucas.io/3d/The-Path-To-Nerf/" rel="alternate" type="text/html" title="The Path to Nerf" /><published>2021-10-18T14:44:18+08:00</published><updated>2021-10-18T14:44:18+08:00</updated><id>https://ucas.io/3d/The-Path-To-Nerf</id><content type="html" xml:base="https://ucas.io/3d/The-Path-To-Nerf/">&lt;h2 id=&quot;three-tools-to-create-citation-mapping&quot;&gt;Three tools to create citation mapping&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-10-29T16:03:53+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Pytorch Multi GPU</title><link href="https://ucas.io/3d/Pytorch-Multi-GPU/" rel="alternate" type="text/html" title="Pytorch Multi GPU" /><published>2021-10-27T15:19:10+08:00</published><updated>2021-10-27T15:19:10+08:00</updated><id>https://ucas.io/3d/Pytorch-Multi-GPU</id><content type="html" xml:base="https://ucas.io/3d/Pytorch-Multi-GPU/">&lt;h2 id=&quot;单机多卡&quot;&gt;单机多卡&lt;/h2&gt;
+
+&lt;h3 id=&quot;priori-knowledge&quot;&gt;Priori Knowledge&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://aarontay.medium.com/3-new-tools-to-try-for-literature-mapping-connected-papers-inciteful-and-litmaps-a399f27622a&quot;&gt;3 new tools to try for Literature mapping — Connected Papers, Inciteful and Litmaps - Medium&lt;/a&gt;
+  &lt;li&gt;Pytorch 1.x 的多机多卡计算模型
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.connectedpapers.com/&quot;&gt;Connected Papers&lt;/a&gt;
+      &lt;li&gt;Uber: Horovod, Baidu: RingAllReduce
         &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018144925.png&quot; alt=&quot;20211018144925&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://andrew.gibiansky.com/blog/machine-learning/baidu-allreduce&quot;&gt;Baidu: RingAllReduce&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://inciteful.xyz/&quot;&gt;Inciteful&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018144807.png&quot; alt=&quot;20211018144807&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgring-gpus.png&quot; alt=&quot;ring-gpus&quot; width=&quot;250px&quot; /&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgscatter-reduce-iteration-4.png&quot; alt=&quot;scatter-reduce-iteration-4&quot; width=&quot;250px&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;PS 计算模型
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgmaster-slave-gpus.png&quot; alt=&quot;master-slave-gpus&quot; width=&quot;300px&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dataparallel-dp&quot;&gt;DataParallel [DP]&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;dataset: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FashionMNIST&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Main Code&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DataParallel&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Parameter server&lt;/code&gt; 算法&lt;/li&gt;
+      &lt;li&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;reducer的那张卡会多出3-4g的显存占用&lt;/p&gt;
+        &lt;/blockquote&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.litmaps.co/&quot;&gt;Litmaps🤙&lt;/a&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Model
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataParallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Data
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Params&lt;/th&gt;
+      &lt;th&gt;Speed&lt;/th&gt;
+      &lt;th&gt;Mem%&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CUDA_VISIBLE_DEVICES=3&lt;/td&gt;
+      &lt;td&gt;15000it [00:55, 271.38it/s]&lt;/td&gt;
+      &lt;td&gt;3:7-13&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CUDA_VISIBLE_DEVICES=3,4,6&lt;/td&gt;
+      &lt;td&gt;15000it [01:48, 138.19it/s]&lt;/td&gt;
+      &lt;td&gt;3:4-7,4:3-5,6:0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CUDA_VISIBLE_DEVICES=2,3,4&lt;/td&gt;
+      &lt;td&gt;15000it [01:50, 134.29it/s]&lt;/td&gt;
+      &lt;td&gt;2:4-7,3:3-5,4:0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CUDA_VISIBLE_DEVICES=0,1,2,3&lt;/td&gt;
+      &lt;td&gt;15000it [02:59, 83.67it/s]&lt;/td&gt;
+      &lt;td&gt;0,1,2,3:2-3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CUDA_VISIBLE_DEVICES=1,2,3,4,6&lt;/td&gt;
+      &lt;td&gt;15000it [02:28, 101.34it/s]]&lt;/td&gt;
+      &lt;td&gt;1:4-6,2,3,4:2-4,6:0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CUDA_VISIBLE_DEVICES=6&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;CUDNN_STATUS_NOT_INITIALIZED&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CUDA_VISIBLE_DEVICES=3,6&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;CUDNN_STATUS_NOT_INITIALIZED&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CUDNN_STATUS_NOT_INITIALIZED&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Gpu 内存未释放，但未使用，存在僵尸进程&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fuser -v /dev/nvidia*&lt;/code&gt; to check all pid with this device&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fuser -k /dev/nvidia6&lt;/code&gt; kill all processes that using the device nvidia6
         &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018151119.png&quot; alt=&quot;20211018151119&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.cocites.com/&quot;&gt;CoCites&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Has chrome extension&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://citationgecko.com/&quot;&gt;Citation Gecko&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Too simple&lt;/li&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018152955.png&quot; alt=&quot;20211018152955&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.vosviewer.com/&quot;&gt;VOSviewer&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Need data file&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;But it will kill all other processes too&lt;/strong&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;nerf-path-track&quot;&gt;NeRF Path Track&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019231223.png&quot; alt=&quot;20211019231223&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;distributeddataparallel-ddp&quot;&gt;DistributedDataParallel [DDP]&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;[2D变3D，视角随意换，神还原高清立体感，还是不用3D建模的那种&lt;/td&gt;
-          &lt;td&gt;代码数据开源 - 量子位的文章 - 知乎](https://zhuanlan.zhihu.com/p/128554388)&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;torch.distributed.get_rank()&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;获得进程号&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--nproc_per_node=2&lt;/code&gt;时，两个进程的rank是不一样的&lt;/p&gt;
+
+        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 不同的进程会把不同的数据放到不同的GPU上
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# DataLoader 的 sampler处理这一逻辑
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 因此batch速度会加快
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# tensor(-1578.1804, device='cuda:0'), tensor(-1578.1804, device='cuda:0')
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/%E8%BB%9F%E9%AB%94%E4%B9%8B%E5%BF%83/%E7%99%BD%E8%A9%B1neural-radiance-fields-nerf-%E9%A1%9E%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E5%9C%A8view-synthesis%E7%9A%84%E7%86%B1%E9%96%80%E6%96%B0%E6%96%B9%E5%90%91-23be9411d399&quot;&gt;白话神经辐射场（NeRF）：类神经网路在查看综合的热门新方向 - medium&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;main code&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;perior&quot;&gt;Perior&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DistributedDataParallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;trainloader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utils&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                                          &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                          &lt;span class=&quot;n&quot;&gt;num_workers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                          &lt;span class=&quot;n&quot;&gt;sampler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DistributedSampler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;testloader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utils&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                                         &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                         &lt;span class=&quot;n&quot;&gt;num_workers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                         &lt;span class=&quot;n&quot;&gt;sampler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DistributedSampler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Volume Rendering
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%AB%8B%E4%BD%93%E6%B8%B2%E6%9F%93&quot;&gt;立体渲染 - WikiPidea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/56710440&quot;&gt;体渲染数学原理 - 杨超wantnon的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/260540982&quot;&gt;【译】实时体渲染——第一章 体渲染 - Maple的文章 - 知乎&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/1103900.1103929&quot;&gt;Real-Time Volume Graphics&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-2004-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-996-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/964965.808594&quot;&gt;Ray tracing volume densities&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-1984-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-1296-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://graphics.stanford.edu/papers/light/&quot;&gt;LFR&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/10.1145/237170.237199&quot;&gt;Light field rendering&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-1996-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-5237-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/24982662&quot;&gt;漫谈计算摄影学 (一)：直观理解光场(Light Field) - YE Y的文章 - 知乎&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://raytrix.de/&quot;&gt;Raytrix&lt;/a&gt;
-            &lt;ul&gt;
-              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgf8abeb4e7d5f1ff2e7d1d38b159cb02.png&quot; alt=&quot;f8abeb4e7d5f1ff2e7d1d38b159cb02&quot; /&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://grail.cs.washington.edu/projects/ldi/&quot;&gt;LDI&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://grail.cs.washington.edu/projects/ldi/&quot;&gt;Layered Depth Images&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-1998-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-1656-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019151938.png&quot; alt=&quot;20211019151938&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://bmild.github.io/llff/&quot;&gt;LLFF&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://bmild.github.io/llff/&quot;&gt;Local Light Field Fusion: Practical View Synthesis with Prescriptive Sampling Guidelines&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/Fyusion/LLFF&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-2019-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-198-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1805.09817&quot;&gt;Stereo Magnification: Learning View Synthesis using Multiplane Images - Google&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://tinghuiz.github.io/projects/mpi/&quot;&gt;Github.io&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-2018-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-275-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018232827.png&quot; alt=&quot;20211018232827&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;Multiplane Images&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nproc_per_node&lt;/code&gt;: node&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;future&quot;&gt;Future&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Speed&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;CUDA&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;LOCAL_RANK&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;OMP&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;node&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Mem%&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;epoch&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Loss&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7500it [00:32, 229.33it/s]*2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3,5,6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3:7-13&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.4727&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3750it [00:17, 210.65it/s]*4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3,5,6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3,5,6:17-30&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.6264&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7500it [00:32, 228.66it/s]*2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3:17-30&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.4878&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;15000it [01:00, 210.65it/s]&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3,5,6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0:17-30&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.4165&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7500it [00:32, 228.66it/s]*4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3,5,6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3:17-30&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.3774&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3750it [00:25, 149.55it/s]*16&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3,5,6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3,5,6:17-30&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.3563&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;gpu-monitor&quot;&gt;Gpu Monitor&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content/ICCV2021/html/Li_MINE_Towards_Continuous_Depth_MPI_With_NeRF_for_Novel_View_ICCV_2021_paper.html&quot;&gt;MINE: Towards Continuous Depth MPI With NeRF for Novel View Synthesis - ByteDances&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/NVIDIA/gpu-monitoring-tools&quot;&gt;Github - NVIDIA/gpu-monitoring-tools&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ICCV-2021-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-0-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/vincentfung13/MINE&quot;&gt;GithHub&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019123823.png&quot; alt=&quot;20211019123823&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;deprecated&lt;/strong&gt; at August 2021&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/NVIDIA/dcgm-exporter&quot;&gt;NVIDIA/dcgm-exporter&lt;/a&gt;
+    &lt;ul&gt;
       &lt;li&gt;
         &lt;table&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
+              &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
+              &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
           &lt;tbody&gt;
             &lt;tr&gt;
-              &lt;td&gt;[ICCV 2021&lt;/td&gt;
-              &lt;td&gt;字节跳动利用单张图片做三维重建：将NeRF、MPI结合，提出MINE - 不爱玩的小玩家的文章 - 知乎](https://zhuanlan.zhihu.com/p/419468401)&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/NVIDIA/dcgm-exporter&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=NVIDIA&amp;amp;repo=dcgm-exporter&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/NVIDIA/dcgm-exporter&quot;&gt;&lt;img src=&quot;https://stars.medv.io/NVIDIA/dcgm-exporter.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/NVIDIA/dcgm-exporter&quot;&gt;&lt;img src=&quot;https://starchart.cc/NVIDIA/dcgm-exporter.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://docs.nvidia.com/datacenter/cloud-native/gpu-telemetry/dcgm-exporter.html&quot;&gt;Offcial Doc&lt;/a&gt;&lt;/p&gt;
+
+        &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;DCGM_EXPORTER_VERSION=2.1.4-2.3.1 &amp;amp;&amp;amp; docker run -d --rm --gpus all    --net host --cap-add SYS_ADMIN nvcr.io/nvidia/k8s/dcgm-exporter:$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;DCGM_EXPORTER_VERSION&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ubuntu20&lt;/span&gt;.04 &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; /etc/dcgm-exporter/dcp-metrics-included.csv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Prometheus
+    &lt;ul&gt;
+      &lt;li&gt;config&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;job_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;gpu'&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;scheme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http'&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;metrics_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/metrics'&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;static_configs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;targets&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;localhost:9400'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Grafana
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://grafana.com/docs/grafana/latest/installation/debian/&quot;&gt;Install&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211028112306.png&quot; alt=&quot;20211028112306&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://grafana.com/grafana/dashboards/12239&quot;&gt;DashBoard import 12239&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/178402798&quot;&gt;🤙[原创][深度][PyTorch] DDP系列第一篇：入门教程 - 996黄金一代的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/86441879&quot;&gt;pytorch多gpu并行训练 - link-web的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/74792767&quot;&gt;【分布式训练】单机多卡的正确打开方式（三）：PyTorch - Nicolas的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/21569493&quot;&gt;【深度学习分布式】Parameter Server 详解 - 仙道菜的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+
+        &lt;table&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
+              &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
+              &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/apache/incubator-mxnet&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=apache&amp;amp;repo=incubator-mxnet&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/apache/incubator-mxnet&quot;&gt;&lt;img src=&quot;https://stars.medv.io/apache/incubator-mxnet.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/apache/incubator-mxnet&quot;&gt;&lt;img src=&quot;https://starchart.cc/apache/incubator-mxnet.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
             &lt;/tr&gt;
           &lt;/tbody&gt;
         &lt;/table&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2004.11364&quot;&gt;MPI: Single-view view synthesis with multiplane images&lt;/a&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /></entry><entry><title type="html">VPN Share</title><link href="https://ucas.io/share/VPN-Share/" rel="alternate" type="text/html" title="VPN Share" /><published>2021-10-26T15:17:17+08:00</published><updated>2021-10-26T15:17:17+08:00</updated><id>https://ucas.io/share/VPN-Share</id><content type="html" xml:base="https://ucas.io/share/VPN-Share/">&lt;h2 id=&quot;翻墙小白入门&quot;&gt;翻墙小白入门&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;历史
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://single-view-mpi.github.io/&quot;&gt;Github.io&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CVPR-2020-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-60-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019123036.png&quot; alt=&quot;20211019123036&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;hosts
+|Repository|spark|star|
+|:-:|:-:|:-:|
+|&lt;a href=&quot;https://github.com/googlehosts/hosts&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=googlehosts&amp;amp;repo=hosts&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/googlehosts/hosts&quot;&gt;&lt;img src=&quot;https://stars.medv.io/googlehosts/hosts.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://starchart.cc/googlehosts/hosts&quot;&gt;&lt;img src=&quot;https://starchart.cc/googlehosts/hosts.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;自由门
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026123814.png&quot; alt=&quot;20211026123814&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;GoAgent
+        &lt;ul&gt;
+          &lt;li&gt;GAE&lt;/li&gt;
+          &lt;li&gt;to 2015-8&lt;/li&gt;
+          &lt;li&gt;GoProxy&lt;/li&gt;
+          &lt;li&gt;to 2015-3&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;ss [clowwindy]
+|Repository|spark|star|
+|:-:|:-:|:-:|
+|&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-windows&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=shadowsocks&amp;amp;repo=shadowsocks-windows&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-windows&quot;&gt;&lt;img src=&quot;https://stars.medv.io/shadowsocks/shadowsocks-windows.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://starchart.cc/shadowsocks/shadowsocks-windows&quot;&gt;&lt;img src=&quot;https://starchart.cc/shadowsocks/shadowsocks-windows.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;2012年4月22日 发布&lt;/li&gt;
+          &lt;li&gt;2015年8月18日 警察&lt;/li&gt;
+          &lt;li&gt;2015年8月21日 喝茶&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://gfw.report/blog/gfw_shadowsocks/zh.html&quot;&gt;Shadowsocks 是如何被检测和封锁的&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;ssr [breakwa11]
+        &lt;ul&gt;
+          &lt;li&gt;评价
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-windows/issues/293#issuecomment-132253168&quot;&gt;shadosocks-windows/Issue108&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;2017年7月27日 停止
+            &lt;ul&gt;
+              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026154124.png&quot; alt=&quot;20211026154124&quot; /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;事件列表
+        &lt;ul&gt;
+          &lt;li&gt;2017年1月《关于清理规范互联网网络接入服务市场的通知》
+            &lt;ul&gt;
+              &lt;li&gt;2017年7月底，中国区 App Store 多款 VPN 相关应用在无任何说明与通知的情况下，突然集体被下架&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;2017年10月, 十九大, 封杀, SSR
+            &lt;ul&gt;
+              &lt;li&gt;大会闭幕后, IP解封&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;2018年1月, 两会, 更大规模的封杀&lt;/li&gt;
+          &lt;li&gt;2018年9月30日, 《公安机关互联网安全监督检查规定》&lt;/li&gt;
+          &lt;li&gt;孙东洋, 逗比根据地
+            &lt;ul&gt;
+              &lt;li&gt;2019年3月25日, 新密市人民检察院依法以提供侵入计算机系统工具罪对&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;孙东洋&lt;/code&gt;提起公诉&lt;/li&gt;
+              &lt;li&gt;2019年5月31日, 宣判
+                &lt;ul&gt;
+                  &lt;li&gt;有期徒刑3年，缓刑4年，罚金两万元&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;秋水逸冰
+            &lt;ul&gt;
+              &lt;li&gt;2019年05月14日，退出&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;2019年09月16日 - 2019年09月22日网络安全宣传周
+            &lt;ul&gt;
+              &lt;li&gt;机场被封&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2011.12100&quot;&gt;GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields&lt;/a&gt;
+  &lt;li&gt;v2ray
     &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CVPR-2021-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-30-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;client
+        &lt;ul&gt;
+          &lt;li&gt;V2RayW &lt;img src=&quot;https://cdn1.iconfinder.com/data/icons/system-black-circles/512/microsoft_windows-20.png&quot; alt=&quot;win&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;V2RayU &lt;img src=&quot;https://cdn1.iconfinder.com/data/icons/system-black-circles/512/iOS-20.png&quot; alt=&quot;ios&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;Qv2ray &lt;img src=&quot;https://cdn1.iconfinder.com/data/icons/system-black-circles/512/microsoft_windows-20.png&quot; alt=&quot;win&quot; /&gt;&lt;img src=&quot;https://cdn1.iconfinder.com/data/icons/system-black-circles/512/iOS-20.png&quot; alt=&quot;ios&quot; /&gt;&lt;img src=&quot;https://cdn1.iconfinder.com/data/icons/system-black-circles/512/linux_tox-20.png&quot; alt=&quot;linux&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;V2RayNG &lt;img src=&quot;https://cdn1.iconfinder.com/data/icons/system-black-circles/512/android-20.png&quot; alt=&quot;android&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;Shadowrocket &lt;img src=&quot;https://cdn1.iconfinder.com/data/icons/system-black-circles/512/android-20.png&quot; alt=&quot;android&quot; /&gt;&lt;img src=&quot;https://cdn1.iconfinder.com/data/icons/system-black-circles/512/iOS-20.png&quot; alt=&quot;ios&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;vmesss&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developers.google.com/protocol-buffers&quot;&gt;protobuff&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026161915.png&quot; alt=&quot;20211026161915&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;python or go client&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://bmild.github.io/fourfeat/&quot;&gt;fourfeat&lt;/a&gt;
+  &lt;li&gt;封禁检查
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2006.10739&quot;&gt;Fourier Features Let Networks Learn
-High Frequency Functions in Low Dimensional Domains&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/NeurIPS-2020-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-171-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;丢包监控
+        &lt;ul&gt;
+          &lt;li&gt;pine.pe&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026163001.png&quot; alt=&quot;20211026163001&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;真人概率
+        &lt;ul&gt;
+          &lt;li&gt;ipip.net&lt;/li&gt;
+          &lt;li&gt;rtbasia&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026163048.png&quot; alt=&quot;20211026163048&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;抖音
+        &lt;ul&gt;
+          &lt;li&gt;cdc检测&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;数据流
+    &lt;ul&gt;
+      &lt;li&gt;指纹检测
+        &lt;ul&gt;
+          &lt;li&gt;sssniff
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;blockquote&gt;
+                  &lt;p&gt;It computes entropy of the first 32 packet lengths of each TCP connection. When the entropy is larger than a threshold, the connection is detected as a SSR connection.&lt;/p&gt;
+                &lt;/blockquote&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;防窃听
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026180221.png&quot; alt=&quot;20211026180221&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;监控
+    &lt;ul&gt;
+      &lt;li&gt;grafana
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026182104.png&quot; alt=&quot;20211026182104&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Prometheus
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026175915.png&quot; alt=&quot;20211026175915&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026175601.png&quot; alt=&quot;20211026175601&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;法律风险
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;提供侵入、非法控制计算机信息系统程序、工具罪&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;刑法 第285条第3款&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026165349.png&quot; alt=&quot;20211026165349&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026165413.png&quot; alt=&quot;20211026165413&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1635237725(1).jpg&quot; alt=&quot;1635237725(1)&quot; width=&quot;40%&quot; /&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026164334.png&quot; alt=&quot;20211026164334&quot; width=&quot;40%&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;国家比较
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026163421.png&quot; alt=&quot;20211026163421&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Reference
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/KeiKinn/ShadowsocksBio&quot;&gt;KeiKinn/ShadowsocksBio&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="share" /><summary type="html">翻墙小白入门</summary></entry><entry><title type="html">Pytorch Gpu</title><link href="https://ucas.io/3d/Pytorch-GPU/" rel="alternate" type="text/html" title="Pytorch Gpu" /><published>2021-10-25T22:59:21+08:00</published><updated>2021-10-25T22:59:21+08:00</updated><id>https://ucas.io/3d/Pytorch-GPU</id><content type="html" xml:base="https://ucas.io/3d/Pytorch-GPU/">&lt;h2 id=&quot;pytorch-using-gpu-to-training&quot;&gt;Pytorch using GPU to training&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Make input data and model to cuda device
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;for Model&lt;/p&gt;
+
+        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_available&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;device&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cuda&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;for data&lt;/p&gt;
+
+        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;verify&lt;/p&gt;
+
+        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# cuda
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# cuda
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Make output data to cpu device
+    &lt;ul&gt;
+      &lt;li&gt;for data&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# images&amp;gt;gpu, net&amp;gt;gpu, output&amp;gt;gpu
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cpu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# output&amp;gt;cpu
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;images&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cpu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# images&amp;gt;cpu
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cpu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# labels&amp;gt;cpu
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;mesure&quot;&gt;Mesure&lt;/h2&gt;
+&lt;h2 id=&quot;follow-2-to-training-by-pytorch&quot;&gt;Follow [2] to training by pytorch&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211025231533.png&quot; alt=&quot;20211025231533&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;PSNR
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/158375254&quot;&gt;PyTorch 20.GPU训练 - 科技猛兽的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html&quot;&gt;VISUALIZING MODELS, DATA, AND TRAINING WITH TENSORBOARD - Pytorch&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/57832423/convert-cuda-tensor-to-numpy&quot;&gt;Convert CUDA tensor to NumPy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Pytorch using GPU to training</summary></entry><entry><title type="html">MPI Paper Reading</title><link href="https://ucas.io/3d/MPI-Paper-Reading/" rel="alternate" type="text/html" title="MPI Paper Reading" /><published>2021-10-22T15:37:35+08:00</published><updated>2021-10-22T15:37:35+08:00</updated><id>https://ucas.io/3d/MPI-Paper-Reading</id><content type="html" xml:base="https://ucas.io/3d/MPI-Paper-Reading/">&lt;h2 id=&quot;mpi-single-view-view-synthesis-with-multiplane-images&quot;&gt;&lt;a href=&quot;https://arxiv.org/abs/2004.11364&quot;&gt;MPI: Single-view view synthesis with multiplane images&lt;/a&gt;&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/google-research/google-research&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=google-research&amp;amp;repo=google-research&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/google-research/google-research&quot;&gt;&lt;img src=&quot;https://stars.medv.io/google-research/google-research.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/google-research/google-research&quot;&gt;&lt;img src=&quot;https://starchart.cc/google-research/google-research.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://single-view-mpi.github.io/&quot;&gt;Github.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CVPR-2020-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-60-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019123036.png&quot; alt=&quot;20211019123036&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://colab.research.google.com/github/google-research/google-research/blob/master/single_view_mpi/example.ipynb#scrollTo=7vbB3JcaqirL&quot;&gt;Colab&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;Peak signal-to-noise ratio, 尖峰信噪比&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018203024.png&quot; alt=&quot;20211018203024&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211022154325.png&quot; alt=&quot;20211022154325&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;SSIM
+  &lt;li&gt;term or concept
     &lt;ul&gt;
-      &lt;li&gt;Structural similarity&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Structural_similarity&quot;&gt;Wikipidea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;结构相似性在影像品质的衡量上更能符合人眼对影像品质的判断&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018202834.png&quot; alt=&quot;20211018202834&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;non-Lambertian effects&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/26290341/answer/32587285&quot;&gt;为什么太阳看起来像一个均匀发光圆盘? - a crysfer的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Lambertian_reflectance&quot;&gt;Lambertian reflectance - WikiPidea&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%B9%BE%E4%BD%95%E5%8F%8D%E7%85%A7%E7%8E%87&quot;&gt;几何反照率 - WikiPidea&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;发光强度和亮度的概念不仅适用于自己发光的物体，也可以应用到反射体。光线射到光滑的表面上，定向地发射出去；射到粗糙的表面上时，它将朝向所有方向漫射。一个理想的漫射面，应是遵循朗伯定律的，即不管入射光来自何方，沿各方向漫射光的发光强度总与cosθ成正比，从而亮度相同。积雪、刷粉的白墙或十分粗糙的白纸表面，都很接近这类理想的漫射面。这类物体称为朗伯反射体。&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;LPIPS
-    &lt;ul&gt;
-      &lt;li&gt;Learned Perceptual Image Patch Similarity&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/richzhang/PerceptualSimilarity&quot;&gt;git richzhang/PerceptualSimilarity&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Three tools to create citation mapping</summary></entry><entry><title type="html">The Path to Nerf</title><link href="https://ucas.io/3d/LLFF-To-NeRF/" rel="alternate" type="text/html" title="The Path to Nerf" /><published>2021-10-18T14:44:18+08:00</published><updated>2021-10-18T14:44:18+08:00</updated><id>https://ucas.io/3d/LLFF-To-NeRF</id><content type="html" xml:base="https://ucas.io/3d/LLFF-To-NeRF/">&lt;h2 id=&quot;llff&quot;&gt;LLFF&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">MPI: Single-view view synthesis with multiplane images</summary></entry><entry><title type="html">The Path to Nerf</title><link href="https://ucas.io/3d/LLFF-To-NeRF/" rel="alternate" type="text/html" title="The Path to Nerf" /><published>2021-10-21T14:44:18+08:00</published><updated>2021-10-21T14:44:18+08:00</updated><id>https://ucas.io/3d/LLFF-To-NeRF</id><content type="html" xml:base="https://ucas.io/3d/LLFF-To-NeRF/">&lt;h2 id=&quot;llff&quot;&gt;LLFF&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Prepare Image&lt;/li&gt;
@@ -282,7 +697,192 @@ High Frequency Functions in Low Dimensional Domains&lt;/a&gt;&lt;/li&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">LLFF</summary></entry><entry><title type="html">Nerf</title><link href="https://ucas.io/3d/Nerf/" rel="alternate" type="text/html" title="Nerf" /><published>2021-10-14T23:16:43+08:00</published><updated>2021-10-14T23:16:43+08:00</updated><id>https://ucas.io/3d/Nerf</id><content type="html" xml:base="https://ucas.io/3d/Nerf/">&lt;h2 id=&quot;nerf&quot;&gt;Nerf&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">LLFF</summary></entry><entry><title type="html">The Path to Nerf</title><link href="https://ucas.io/3d/The-Path-To-Nerf/" rel="alternate" type="text/html" title="The Path to Nerf" /><published>2021-10-18T14:44:18+08:00</published><updated>2021-10-18T14:44:18+08:00</updated><id>https://ucas.io/3d/The-Path-To-Nerf</id><content type="html" xml:base="https://ucas.io/3d/The-Path-To-Nerf/">&lt;h2 id=&quot;three-tools-to-create-citation-mapping&quot;&gt;Three tools to create citation mapping&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://aarontay.medium.com/3-new-tools-to-try-for-literature-mapping-connected-papers-inciteful-and-litmaps-a399f27622a&quot;&gt;3 new tools to try for Literature mapping — Connected Papers, Inciteful and Litmaps - Medium&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.connectedpapers.com/&quot;&gt;Connected Papers&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018144925.png&quot; alt=&quot;20211018144925&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://inciteful.xyz/&quot;&gt;Inciteful&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018144807.png&quot; alt=&quot;20211018144807&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.litmaps.co/&quot;&gt;Litmaps🤙&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018151119.png&quot; alt=&quot;20211018151119&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.cocites.com/&quot;&gt;CoCites&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Has chrome extension&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://citationgecko.com/&quot;&gt;Citation Gecko&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Too simple&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018152955.png&quot; alt=&quot;20211018152955&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.vosviewer.com/&quot;&gt;VOSviewer&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Need data file&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;nerf-path-track&quot;&gt;NeRF Path Track&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019231223.png&quot; alt=&quot;20211019231223&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;[2D变3D，视角随意换，神还原高清立体感，还是不用3D建模的那种&lt;/td&gt;
+          &lt;td&gt;代码数据开源 - 量子位的文章 - 知乎](https://zhuanlan.zhihu.com/p/128554388)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/%E8%BB%9F%E9%AB%94%E4%B9%8B%E5%BF%83/%E7%99%BD%E8%A9%B1neural-radiance-fields-nerf-%E9%A1%9E%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E5%9C%A8view-synthesis%E7%9A%84%E7%86%B1%E9%96%80%E6%96%B0%E6%96%B9%E5%90%91-23be9411d399&quot;&gt;白话神经辐射场（NeRF）：类神经网路在查看综合的热门新方向 - medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;prior&quot;&gt;Prior&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Volume Rendering
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%AB%8B%E4%BD%93%E6%B8%B2%E6%9F%93&quot;&gt;立体渲染 - WikiPidea&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/56710440&quot;&gt;体渲染数学原理 - 杨超wantnon的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/260540982&quot;&gt;【译】实时体渲染——第一章 体渲染 - Maple的文章 - 知乎&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/1103900.1103929&quot;&gt;Real-Time Volume Graphics&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-2004-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-996-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/964965.808594&quot;&gt;Ray tracing volume densities&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-1984-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-1296-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://graphics.stanford.edu/papers/light/&quot;&gt;LFR&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/10.1145/237170.237199&quot;&gt;Light field rendering&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-1996-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-5237-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/24982662&quot;&gt;漫谈计算摄影学 (一)：直观理解光场(Light Field) - YE Y的文章 - 知乎&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://raytrix.de/&quot;&gt;Raytrix&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgf8abeb4e7d5f1ff2e7d1d38b159cb02.png&quot; alt=&quot;f8abeb4e7d5f1ff2e7d1d38b159cb02&quot; /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://grail.cs.washington.edu/projects/ldi/&quot;&gt;LDI&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://grail.cs.washington.edu/projects/ldi/&quot;&gt;Layered Depth Images&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-1998-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-1656-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019151938.png&quot; alt=&quot;20211019151938&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bmild.github.io/llff/&quot;&gt;LLFF&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://bmild.github.io/llff/&quot;&gt;Local Light Field Fusion: Practical View Synthesis with Prescriptive Sampling Guidelines&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/Fyusion/LLFF&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-2019-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-198-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1805.09817&quot;&gt;Stereo Magnification: Learning View Synthesis using Multiplane Images - Google&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;多张多视角图片生成MPI&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://tinghuiz.github.io/projects/mpi/&quot;&gt;Github.io&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-2018-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-275-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018232827.png&quot; alt=&quot;20211018232827&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;Multiplane Images&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;future&quot;&gt;Future&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://openaccess.thecvf.com/content/ICCV2021/html/Li_MINE_Towards_Continuous_Depth_MPI_With_NeRF_for_Novel_View_ICCV_2021_paper.html&quot;&gt;MINE: Towards Continuous Depth MPI With NeRF for Novel View Synthesis - ByteDances&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/ICCV-2021-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-0-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/vincentfung13/MINE&quot;&gt;GithHub&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019123823.png&quot; alt=&quot;20211019123823&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;[ICCV 2021&lt;/td&gt;
+              &lt;td&gt;字节跳动利用单张图片做三维重建：将NeRF、MPI结合，提出MINE - 不爱玩的小玩家的文章 - 知乎](https://zhuanlan.zhihu.com/p/419468401)&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2004.11364&quot;&gt;MPI: Single-view view synthesis with multiplane images&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://single-view-mpi.github.io/&quot;&gt;Github.io&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;单张多视角图片生成MPI&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CVPR-2020-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-60-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211019123036.png&quot; alt=&quot;20211019123036&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://colab.research.google.com/github/google-research/google-research/blob/master/single_view_mpi/example.ipynb#scrollTo=7vbB3JcaqirL&quot;&gt;Colab&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2011.12100&quot;&gt;GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/CVPR-2021-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-30-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/autonomousvision/giraffe&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bmild.github.io/fourfeat/&quot;&gt;fourfeat&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2006.10739&quot;&gt;Fourier Features Let Networks Learn
+High Frequency Functions in Low Dimensional Domains&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/NeurIPS-2020-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-171-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mesure&quot;&gt;Mesure&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;PSNR
+    &lt;ul&gt;
+      &lt;li&gt;Peak signal-to-noise ratio, 尖峰信噪比&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018203024.png&quot; alt=&quot;20211018203024&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SSIM
+    &lt;ul&gt;
+      &lt;li&gt;Structural similarity&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Structural_similarity&quot;&gt;Wikipidea&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;结构相似性在影像品质的衡量上更能符合人眼对影像品质的判断&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211018202834.png&quot; alt=&quot;20211018202834&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;LPIPS
+    &lt;ul&gt;
+      &lt;li&gt;Learned Perceptual Image Patch Similarity&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/richzhang/PerceptualSimilarity&quot;&gt;git richzhang/PerceptualSimilarity&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Three tools to create citation mapping</summary></entry><entry><title type="html">Nerf</title><link href="https://ucas.io/3d/Nerf/" rel="alternate" type="text/html" title="Nerf" /><published>2021-10-14T23:16:43+08:00</published><updated>2021-10-14T23:16:43+08:00</updated><id>https://ucas.io/3d/Nerf</id><content type="html" xml:base="https://ucas.io/3d/Nerf/">&lt;h2 id=&quot;nerf&quot;&gt;Nerf&lt;/h2&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -585,675 +1185,4 @@ $$&lt;/div&gt;
       &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210928212842.png&quot; alt=&quot;20210928212842&quot; height=&quot;200px&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">OpenMVS[Homogeneous Coordinate]</summary></entry><entry><title type="html">Minimum bounding box [MBB]</title><link href="https://ucas.io/3d/Minimum-bounding-box-MBB/" rel="alternate" type="text/html" title="Minimum bounding box [MBB]" /><published>2021-09-27T14:57:40+08:00</published><updated>2021-09-27T14:57:40+08:00</updated><id>https://ucas.io/3d/Minimum-bounding-box-%5BMBB%5D</id><content type="html" xml:base="https://ucas.io/3d/Minimum-bounding-box-MBB/">&lt;h2 id=&quot;mbb-最小包围盒-minimum-bounding-box&quot;&gt;MBB 最小包围盒 [Minimum bounding box]&lt;/h2&gt;
-
-&lt;h3 id=&quot;aabb-轴对齐包围盒-axis-aligned-minimum-bounding-box&quot;&gt;AABB 轴对齐包围盒 [Axis-aligned minimum bounding box]&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;when the model is rotated they cannot be simply rotated with it, but need to be recomputed.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927212832.png&quot; alt=&quot;20210927212832&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-  P_{min} &amp;= [x_{min},y_{min},z_{min}]\\
-  P_{max} &amp;= [x_{max},y_{max},z_{max}]
-\end{aligned}
-$$&lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;obb-有向围盒-oriented-minimum-bounding-box&quot;&gt;OBB 有向围盒 [Oriented minimum bounding box]&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927215723.png&quot; alt=&quot;20210927215723&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;其中
-    &lt;ul&gt;
-      &lt;li&gt;$C$: Center Point&lt;/li&gt;
-      &lt;li&gt;$\mathbf{u, v, w}$: three unit vectors orthornormal basis&lt;/li&gt;
-      &lt;li&gt;$h_u, h_v, h_w$: three scalars representing half the dimension in each directions&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Arbitrarily oriented minimum bounding box&lt;/li&gt;
-  &lt;li&gt;Object-oriented minimum bounding box&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;dop-离散定向多面体-discrete-oriented-polyhedra&quot;&gt;DOP 离散定向多面体 [Discrete Oriented Polyhedra]&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;A k-DOP is the Boolean intersection of extents along k directions. Thus, a k-DOP is the Boolean intersection of k bounding slabs and is a convex polytope containing the object&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;intersection-checks&quot;&gt;Intersection checks&lt;/h2&gt;
-
-&lt;h3 id=&quot;oriented-bounding-box-and-orthogonal-frustum-obb-和-方平截头体-正交平截头体&quot;&gt;Oriented Bounding Box and Orthogonal Frustum [OBB 和 方平截头体, 正交平截头体]&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Orthogonal Frustum, usually is the viewing frustum[视体]
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/02/ViewFrustum.svg&quot; height=&quot;200px&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927230250.png&quot; alt=&quot;20210927230250&quot; height=&quot;400px&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;The Method of Separating Axes [分离轴定理]
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hyperplane_separation_theorem&quot;&gt;Hyperplane separation theorem - Wikipidea&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.sevenson.com.au/programming/sat/&quot;&gt;Separating Axis Theorem (SAT) Explanation&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/yorhomwang/article/details/54869018&quot;&gt;碰撞检测之分离轴定理算法讲解 - CSDN&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927222129.png&quot; alt=&quot;20210927222129&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;取一条边，做每个点在其法向上的投影，对每个形状取最大值和最小值作为投影范围，判断投影是否相交即可，如果投影不想交，则两个图形必然不想交，否则继续迭代下一个边，如果所有的边都相交，则物体相交&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;本方法只适用于凸多面体&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;difficult problem is selecting a finite set of line directions such that the intersection/nonintersection can be determined by separating axis tests using only vectors in that set&lt;/p&gt;
-        &lt;/blockquote&gt;
-        &lt;ul&gt;
-          &lt;li&gt;减少需要迭代的边可以提高运行速度&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;For &lt;strong&gt;convex polyhedra&lt;/strong&gt; it turns out that the set consisting of face normals for the two polyhedra and vectors that are the &lt;strong&gt;cross product of edges&lt;/strong&gt;, one edge from each polyhedron, is sufficient for the intersection testing.&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;对于一个多面体$i$，有$F_i, E_i$个面和边，需要检测的直线总量为$F_0+F_1+E_0E_1$&lt;/li&gt;
-      &lt;li&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;It is possible that some of the vectors formed by cross products
-of edges are zero, in which case they &lt;strong&gt;do not need to be tested&lt;/strong&gt;&lt;/p&gt;
-        &lt;/blockquote&gt;
-        &lt;ul&gt;
-          &lt;li&gt;For &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OBB&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OF&lt;/code&gt;
-            &lt;ul&gt;
-              &lt;li&gt;OBB: $F=3, E=3$&lt;/li&gt;
-              &lt;li&gt;OF: $F=5, E=6$&lt;/li&gt;
-              &lt;li&gt;The total number of vectors to test is $26$&lt;/li&gt;
-              &lt;li&gt;&lt;strong&gt;Caching Intermediate Results to make an optimized implementation&lt;/strong&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927230617.png&quot; alt=&quot;20210927230617&quot; /&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;For &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AABB&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AABB&lt;/code&gt;
-            &lt;ul&gt;
-              &lt;li&gt;AABB: $F=3, E=3$&lt;/li&gt;
-              &lt;li&gt;The total number of vectors to test is $3+3+3*3=15$&lt;/li&gt;
-              &lt;li&gt;The set has only &lt;strong&gt;three nonzero vectors&lt;/strong&gt;.&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;For &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OBB&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OBB&lt;/code&gt;
-            &lt;ul&gt;
-              &lt;li&gt;OBB: $F=3, E=3$&lt;/li&gt;
-              &lt;li&gt;Total: $3 + 3+ 3*3=15$&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;平面与包围盒的相交测试&quot;&gt;平面与包围盒的相交测试&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;对角线判定法
-    &lt;ul&gt;
-      &lt;li&gt;利用了平面与包围盒相交，则它必定与包围盒的一条对角线相交这个性质，所以只要找到那条对角线，把它的两个顶点代入平面的方程中，判断求解的结果的符号即可&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;距离判定法
-    &lt;ul&gt;
-      &lt;li&gt;是通过对比投影半长与包围盒中心到平面的距离来判定是否相交&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;射线与包围盒的相交测试&quot;&gt;射线与包围盒的相交测试&lt;/h2&gt;
-
-&lt;h2 id=&quot;openmvs距离判定法&quot;&gt;OpenMVS[距离判定法?]&lt;/h2&gt;
-
-&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
- * Culls AABB to n sided frustum. Normals pointing outwards.
- * -&amp;gt; IN:  AABB    - bounding box to be tested
- *    OUT: VISIBLE - aabb totally inside frustum
- *         CLIPPED - aabb clipped by frustum
- *         CULLED  - aabb totally outside frustum
- */&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;GCLASS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TFrustum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TYPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DIMS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Classify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AABB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bIntersects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// find and test extreme points&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DIMS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PLANE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plane&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m_planes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;POINT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ptPlaneMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ptPlaneMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// x coordinate&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m_vN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TYPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// y coordinate&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m_vN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TYPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// z coordinate&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m_vN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TYPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;ptPlaneMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aabb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m_vN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptPlaneMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m_fD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CULLED&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m_vN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptPlaneMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m_fD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;bIntersects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// for&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bIntersects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CLIPPED&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VISIBLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/book/9781558605947/geometric-tools-for-computer-graphics&quot;&gt;Geometric Tools for Computer Graphics&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Book-2002-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-880-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/156750299&quot;&gt;平面与包围盒的相交测试 - chopper的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/138259656&quot;&gt;射线与包围盒的相交测试 - chopper的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.taylorfrancis.com/books/mono/10.1201/b22086/real-time-rendering-fourth-edition-tomas-akenine-mo%C2%A8ller-eric-haines-naty-hoffman?context=ubx&amp;amp;refId=579e65e7-e3e8-45ea-b45b-317d05c7fb79&quot;&gt;Real-time rendering 1999[1],2002[2],2008[3],2018[4]&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Book-2018-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-2782-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">MBB 最小包围盒 [Minimum bounding box]</summary></entry><entry><title type="html">Operator For Image</title><link href="https://ucas.io/3d/Operator-For-Image/" rel="alternate" type="text/html" title="Operator For Image" /><published>2021-09-27T14:57:40+08:00</published><updated>2021-09-27T14:57:40+08:00</updated><id>https://ucas.io/3d/Operator-For-Image</id><content type="html" xml:base="https://ucas.io/3d/Operator-For-Image/">&lt;h2 id=&quot;sobel-operator---1968-索伯算子-索贝尔算子&quot;&gt;Sobel Operator - 1968 [索伯算子, 索贝尔算子]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.researchgate.net/publication/239398674_An_Isotropic_3x3_Image_Gradient_Operator&quot;&gt;Paper - An Isotropic 3x3 Image Gradient Operator&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.researchgate.net/profile/Irwin-Sobel/publication/239398674_An_Isotropic_3x3_Image_Gradient_Operator/links/557e06f508aeea18b777c389/An-Isotropic-3x3-Image-Gradient-Operator.pdf&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Formula
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-        G_x &amp;= \begin{bmatrix}
-            +1&amp;0&amp;-1\\+2&amp;0&amp;-2\\+1&amp;0&amp;-1\\
-        \end{bmatrix} * IMG\\
-        G_y &amp;= \begin{bmatrix}
-            +1&amp;+2&amp;+1\\0&amp;0&amp;0\\-1&amp;-2&amp;-1\\
-        \end{bmatrix} * IMG\\
-        G &amp;= \sqrt{G_x^2 + G_y^2}\\
-        \Theta &amp;= \arctan(\frac{G_y}{G_x})=atan2(G_x, G_y)
-    \end{aligned}
-$$&lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;OpenMvs
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927200240.png&quot; alt=&quot;20210927200240&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Related
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/B9780080515816500271&quot;&gt;Digital step edges from zero crossing of second directional derivatives&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/B9780080515816500271?via%3Dihub&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/TPAMI-1987-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-1690-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927160347.png&quot; alt=&quot;20210927160347&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927162819.png&quot; alt=&quot;20210927162819&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;scharr-operatorfilter---2000-沙尔算子&quot;&gt;Scharr Operator(Filter) - 2000 [沙尔算子]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.researchgate.net/publication/36148383_Optimal_operators_in_digital_image_processing_Elektronische_Ressource&quot;&gt;Paper written in German - Optimal operators in digital image processing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Phd_thesis-2000-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-145-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.researchgate.net/profile/Hanno-Scharr/publication/36148383_Optimal_operators_in_digital_image_processing_Elektronische_Ressource/links/54257c130cf238c6ea741031/Optimal-operators-in-digital-image-processing-Elektronische-Ressource.pdf&quot;&gt;Paper.pdf&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sobel Operator&lt;/code&gt; does not exhibit a good rotational symmetry (about 1° of error)&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Scharr filter&lt;/code&gt; results in a less rotational variance than the Sobel filter &lt;a href=&quot;https://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html&quot;&gt;scikit - edge filter&lt;/a&gt;&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-        \alpha_{1,ref}(\mathbf{\tilde{k}})&amp;=\arctan(\frac{\tilde{k_y}}{\tilde{k_x}})\\
-        \alpha_{1}(\mathbf{\tilde{k},d})&amp;=\arctan(\frac{\hat{D}_y}{\hat{D}_x})\\
-        d(\mathbf{\tilde{k,d}})&amp;=\alpha_{1}(\mathbf{\tilde{k},d}) - \alpha_{1,ref}(\mathbf{\tilde{k}})
-    \end{aligned}
-$$&lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927184146.png&quot; alt=&quot;20210927184146&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Formula
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-        G_x &amp;= \begin{bmatrix}
-            +3&amp;0&amp;-3\\+10&amp;0&amp;-10\\+3&amp;0&amp;-3\\
-        \end{bmatrix} * IMG\\
-        G_y &amp;= \begin{bmatrix}
-            +3&amp;+10&amp;+3\\0&amp;0&amp;0\\-3&amp;-10&amp;-3\\
-        \end{bmatrix} * IMG\\
-        G &amp;= \sqrt{G_x^2 + G_y^2}\\
-        \Theta &amp;= \arctan(\frac{G_y}{G_x})=atan2(G_x, G_y)
-    \end{aligned}
-$$&lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927185639.png&quot; alt=&quot;20210927185639&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927185750.png&quot; alt=&quot;20210927185750&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;prewitt-operator---1970-普鲁伊特算子&quot;&gt;Prewitt operator - 1970 [普鲁伊特算子]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://books.google.com/books?hl=zh-CN&amp;amp;lr=&amp;amp;id=vp-w_pC9JBAC&amp;amp;oi=fnd&amp;amp;pg=PA75&amp;amp;dq=Object+Enhancement+and+Extraction&amp;amp;ots=sAD85lrCIa&amp;amp;sig=NIFwSGOQDOSebsLUcKx9PIwKFOM#v=onepage&amp;amp;q=Object%20Enhancement%20and%20Extraction&amp;amp;f=false&quot;&gt;Book - Object Enhancement and Extraction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/Book-1970-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-2151-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;Formula
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-        G_x &amp;= \begin{bmatrix}
-            +1&amp;0&amp;-1\\+1&amp;0&amp;-1\\+1&amp;0&amp;-1\\
-        \end{bmatrix} * IMG\\
-        G_y &amp;= \begin{bmatrix}
-            +1&amp;+1&amp;+1\\0&amp;0&amp;0\\-1&amp;-1&amp;-1\\
-        \end{bmatrix} * IMG\\
-        G &amp;= \sqrt{G_x^2 + G_y^2}\\
-        \Theta &amp;= \arctan(\frac{G_y}{G_x})=atan2(G_x, G_y)
-    \end{aligned}
-$$&lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Related
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://www.cqvip.com/qk/84018x/200921/32051803.html&quot;&gt;一种改进的图像边缘检测算法💩🤮&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/科学技术与工程-2009-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-5-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://awsdownload.cqvip.com/downloadpaper/api/v1/pdf/stream/2009/32051803?infos=RkFFREVHRk1FQkFNRkdGSEFMQUdBSUZIRkNCRkZFQURBTEFMQk5BQkFDQU5BQUJPQUxBQUZDQU5CTUFNRkZBQUFIQUhGQkFDQUlGTEZGRkZGQ0JOQUNBRkFCQUJCUEFBQUJBQ0FGQUVBSkFJQURCTUFDQUxBQkFGQUFBQkFCQUdCTUFFQlBBRkJPQkhBQ0FEQUJBREJOQUZBSUJGQUNBRUJEQURBSkFQQURBT0FLQUhBQUJORkVGR0ZDRk1BRkFMQUVBS0FJRkJBR0ZPQUJGQUFLQUFGQ0FFQUZBQkZFRkFGQ0FBRkRGR0ZEQUxBQUFMQUFBS0JQQUZCT0FJ&amp;amp;clientID=cqvip4fd848bc-d089-4350-82b8-4e345a79cefa&amp;amp;fileName=%e4%b8%80%e7%a7%8d%e6%94%b9%e8%bf%9b%e7%9a%84%e5%9b%be%e5%83%8f%e8%be%b9%e7%bc%98%e6%a3%80%e6%b5%8b%e7%ae%97%e6%b3%95.pdf&amp;amp;algorithm=0&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927193452.png&quot; alt=&quot;20210927193452&quot; height=&quot;400px&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;roberts-cross-罗伯茨算子&quot;&gt;Roberts cross [罗伯茨算子]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dspace.mit.edu/bitstream/handle/1721.1/11589/33959125-MIT.pdf&quot;&gt;Machine Perception Of Three-Dimensional Solids&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/MIT-1963-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-2971-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;Formula
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-        G_x &amp;= \begin{bmatrix}
-            +1&amp;0\\0&amp;-1
-        \end{bmatrix} * IMG\\
-        G_y &amp;= \begin{bmatrix}
-            0&amp;+1\\-1&amp;0
-        \end{bmatrix} * IMG\\
-        G &amp;= \sqrt{G_x^2 + G_y^2}\\
-        \Theta &amp;= \arctan(\frac{G_y}{G_x})-\frac{3\pi}{4}
-    \end{aligned}
-$$&lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;compare-of-them&quot;&gt;Compare of them&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210927195227.png&quot; alt=&quot;20210927195227&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Sobel Operator - 1968 [索伯算子, 索贝尔算子]</summary></entry><entry><title type="html">OpenMVS Texture code reading</title><link href="https://ucas.io/3d/OpenMVS-Texture-Code-Reading/" rel="alternate" type="text/html" title="OpenMVS Texture code reading" /><published>2021-09-26T19:51:42+08:00</published><updated>2021-09-26T19:51:42+08:00</updated><id>https://ucas.io/3d/OpenMVS%20-Texture-Code-Reading</id><content type="html" xml:base="https://ucas.io/3d/OpenMVS-Texture-Code-Reading/">&lt;ul&gt;
-  &lt;li&gt;TextureMesh
-    &lt;ul&gt;
-      &lt;li&gt;FaceViewSelection
-        &lt;ul&gt;
-          &lt;li&gt;ListVertexFaces✔️ // extract array of triangles incident to each vertex
-            &lt;ul&gt;
-              &lt;li&gt;EmptyExtra✔️&lt;/li&gt;
-              &lt;li&gt;ListIncidenteFaces✔️&lt;/li&gt;
-              &lt;li&gt;ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用
-                &lt;ul&gt;
-                  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210926235332.png&quot; alt=&quot;20210926235332&quot; /&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;// create texture patches✔️
-            &lt;ul&gt;
-              &lt;li&gt;ListCameraFaces // list all views for each face
-                &lt;ul&gt;
-                  &lt;li&gt;//create vertices &lt;strong&gt;octree&lt;/strong&gt; of vertices✔️&lt;/li&gt;
-                  &lt;li&gt;//extract array of faces viewed by each image✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;//compute gradient magnitude✔️&lt;/li&gt;
-                      &lt;li&gt;//select faces inside view frustum✔️
-                        &lt;ul&gt;
-                          &lt;li&gt;plane with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AABB&lt;/code&gt;✔️&lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                      &lt;li&gt;// project all triangles in this view and keep the closest ones
-                        &lt;ul&gt;
-                          &lt;li&gt;// skip face if not completely inside✔️
-                            &lt;ul&gt;
-                              &lt;li&gt;using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TransformPointW2C&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TransformPointC2I&lt;/code&gt; to check the point is in image plane, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OpenMVS&lt;/code&gt; use 3 pixel as border width ✔️&lt;/li&gt;
-                            &lt;/ul&gt;
-                          &lt;/li&gt;
-                          &lt;li&gt;// skip face if the (cos) angle between the view to face vector and the view direction is negative✔️
-                            &lt;ul&gt;
-                              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(faceCenter.z &amp;lt;= REAL(0))&lt;/code&gt;&lt;/li&gt;
-                              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;faceCenter.dot(normalPlane) &amp;gt;= ZEROTOLERANCE&amp;lt;REAL&amp;gt;()&lt;/code&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
-                          &lt;/li&gt;
-                          &lt;li&gt;// draw triangle and for each pixel compute depth as the ray intersection with the plane✔️
-                            &lt;ul&gt;
-                              &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Advanced Rasterization&lt;/code&gt;&lt;/strong&gt; by Nick (Nicolas Capens) 2004&lt;/li&gt;
-                              &lt;li&gt;&lt;a href=&quot;https://forum.beyond3d.com/threads/advanced-rasterization.12507/&quot;&gt;Advanced Rasterization&lt;/a&gt;🤔&lt;/li&gt;
-                              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;libs/Common/Types.inl:2474/TImage&amp;lt;TYPE&amp;gt;::RasterizeTriangle&lt;/code&gt;&lt;/li&gt;
-                              &lt;li&gt;&lt;strong&gt;OpenMVS: Using block size eq 8, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Half-Space&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
-                          &lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                      &lt;li&gt;// compute the projection area of visible faces
-                        &lt;ul&gt;
-                          &lt;li&gt;遍历照片上的像素，获取最近的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;face&lt;/code&gt;最近的view, 计算&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;face&lt;/code&gt;颜色均值✔️&lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(fOutlierThreshold &amp;gt; 0)&lt;/code&gt; // try to detect outlier views for each face
-                        &lt;ul&gt;
-                          &lt;li&gt;取face 3个通道的均色，对均色做多元正太分布计算，如果偏差大于阈值，则视为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outlier&lt;/code&gt;✔️
-                            &lt;ul&gt;
-                              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LU分解&lt;/code&gt;取逆&lt;/li&gt;
-                            &lt;/ul&gt;
-                          &lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;// create faces graph✔️
-                &lt;ul&gt;
-                  &lt;li&gt;遍历&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;face&lt;/code&gt;以及面的邻接&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;faceAdj&lt;/code&gt;, 若一个可见，一个不可见，则增加&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;seam&lt;/code&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;// assign the best view to each face✔️
-                &lt;ul&gt;
-                  &lt;li&gt;// find connected components✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;根据前面计算的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;face&lt;/code&gt;邻接关系计算连通图&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// map face ID from global to component space✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;为每个面计算连通图的新id，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;component1: [1,2,3,...,c1], component2: [1,2,3,...,c2]&lt;/code&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// normalize quality values✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;计算图片质量[二阶导积分]的95分位置近似值&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// initialize inference structures✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;numNodes&lt;/code&gt;=连通图face的数量，如果数量小于等于1，则忽略&lt;/li&gt;
-                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SmoothCost&lt;/code&gt;=0[if node eq]~1000&lt;/li&gt;
-                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Neighbors&lt;/code&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// set data costs✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;// set costs for label 0 (undefined)✔️
-                        &lt;ul&gt;
-                          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dataCost = fRatioDataSmoothness * 1000&lt;/code&gt; for min of all labels&lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                      &lt;li&gt;// set data costs for all labels (except label 0 - undefined)✔️
-                        &lt;ul&gt;
-                          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dataCost =&lt;/code&gt; $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$&lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                      &lt;li&gt;Label = 0, 未定义，label &amp;gt;= 1是指其他图片✔️&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// assign the optimal view (label) to each face✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Optimize&lt;/code&gt; 优化单位是连通图✔️
-                        &lt;ul&gt;
-                          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ComputeEnergy&lt;/code&gt;✔️
-                            &lt;ul&gt;
-                              &lt;li&gt;$\sum{cost_{data}} + \sum(cost_{edge})$&lt;/li&gt;
-                              &lt;li&gt;$cost_{edge} = 1000$ if label is not equal&lt;/li&gt;
-                            &lt;/ul&gt;
-                          &lt;/li&gt;
-                          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Optimize(n=1)&lt;/code&gt;✔️
-                            &lt;ul&gt;
-                              &lt;li&gt;for(n times)
-                                &lt;ul&gt;
-                                  &lt;li&gt;计算每个面在选择不同&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label&lt;/code&gt;时得到的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minEnergy&lt;/code&gt;&lt;/li&gt;
-                                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Swap&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newMsgs&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;oldMsgs&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;oldMsgs - min(oldMsgs)&lt;/code&gt;&lt;/li&gt;
-                                &lt;/ul&gt;
-                              &lt;/li&gt;
-                              &lt;li&gt;更新选择的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dataCost&lt;/code&gt;✔️&lt;/li&gt;
-                            &lt;/ul&gt;
-                          &lt;/li&gt;
-                          &lt;li&gt;根据能量差分提前返回✔️&lt;/li&gt;
-                        &lt;/ul&gt;
-                      &lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// extract resulting labeling✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;label-1，调整索引&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;// create texture patches✔️
-                &lt;ul&gt;
-                  &lt;li&gt;// divide graph in sub-graphs of connected faces having the same label✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;计算图片不一致的边缝&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;，对于相邻一侧无label的也作为边缝&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt;&lt;/li&gt;
-                      &lt;li&gt;去掉&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;的连通边&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// find connected components: texture patches✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;计算新的连通图&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// last texture patch contains all faces with no texture✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;每个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Texture&lt;/code&gt; 收集每个连通体的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;face&lt;/code&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;GenerateTexture
-        &lt;ul&gt;
-          &lt;li&gt;// project patches in the corresponding view and compute texture-coordinates and bounding-box&lt;/li&gt;
-          &lt;li&gt;// project vertices and compute bounding-box✔️
-            &lt;ul&gt;
-              &lt;li&gt;对每个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;patch&lt;/code&gt;的面映射到图片中后，算一个2d的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aabb&lt;/code&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;// compute relative texture coordinates✔️
-            &lt;ul&gt;
-              &lt;li&gt;计算offset，修改相应的坐标&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;// init last patch to point to a small uniform color patch✔️
-            &lt;ul&gt;
-              &lt;li&gt;默认纹理位置&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;// perform seam leveling
-            &lt;ul&gt;
-              &lt;li&gt;// create seam vertices and edges✔️&lt;/li&gt;
-              &lt;li&gt;// perform global seam leveling🤔
-                &lt;ul&gt;
-                  &lt;li&gt;利用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ConjugateGradient&lt;/code&gt;求解&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tikhonov's Gamma matrix&lt;/code&gt;使得全局颜色差分较小的新解&lt;/li&gt;
-                  &lt;li&gt;// find the patch ID for each vertex✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;对点赋值patch_id，边缝点使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;idxSeamVertex&lt;/code&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// assign a row index within the solution vector x to each vertex/patch✔️
-                    &lt;ul&gt;
-                      &lt;li&gt;生成一个patch数组&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vertpatch2rows&lt;/code&gt;, 行号为点索引，二阶索引为patch，对于单个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;patch&lt;/code&gt;的点，只赋值一个patch，对于边缝点多个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;patch&lt;/code&gt;的点，赋多个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;patch&lt;/code&gt;，值为递增值&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rowsX&lt;/code&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;// fill Tikhonov’s Gamma matrix (regularization constraints)✔️&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;// perform local seam leveling✔️
-                &lt;ul&gt;
-                  &lt;li&gt;优化&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;patch&lt;/code&gt;间的线条颜色&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;// merge texture patches with overlapping rectangles
-            &lt;ul&gt;
-              &lt;li&gt;// translate texture coordinates&lt;/li&gt;
-              &lt;li&gt;// join faces lists&lt;/li&gt;
-              &lt;li&gt;// remove the small patch&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;// create texture
-            &lt;ul&gt;
-              &lt;li&gt;// arrange texture patches to fit the smallest possible texture image&lt;/li&gt;
-              &lt;li&gt;// increase texture size till all patches fit&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;// create texture image
-            &lt;ul&gt;
-              &lt;li&gt;// copy patch image
-                &lt;ul&gt;
-                  &lt;li&gt;// flip patch and texture-coordinates&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;// compute final texture coordinates
-                &lt;ul&gt;
-                  &lt;li&gt;// translate, normalize and flip Y axis&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">TextureMesh FaceViewSelection ListVertexFaces✔️ // extract array of triangles incident to each vertex EmptyExtra✔️ ListIncidenteFaces✔️ ListBoundaryVertices✔️, // 边界点检查，在面中，只使用了1次的点是边界点，另外，代码中假设每个点通常不会超过12个面使用 // create texture patches✔️ ListCameraFaces // list all views for each face //create vertices octree of vertices✔️ //extract array of faces viewed by each image✔️ //compute gradient magnitude✔️ //select faces inside view frustum✔️ plane with AABB✔️ // project all triangles in this view and keep the closest ones // skip face if not completely inside✔️ using TransformPointW2C and TransformPointC2I to check the point is in image plane, OpenMVS use 3 pixel as border width ✔️ // skip face if the (cos) angle between the view to face vector and the view direction is negative✔️ (faceCenter.z &amp;lt;= REAL(0)) faceCenter.dot(normalPlane) &amp;gt;= ZEROTOLERANCE&amp;lt;REAL&amp;gt;() // draw triangle and for each pixel compute depth as the ray intersection with the plane✔️ Advanced Rasterization by Nick (Nicolas Capens) 2004 Advanced Rasterization🤔 libs/Common/Types.inl:2474/TImage&amp;lt;TYPE&amp;gt;::RasterizeTriangle OpenMVS: Using block size eq 8, and Half-Space // compute the projection area of visible faces 遍历照片上的像素，获取最近的face最近的view, 计算face颜色均值✔️ (fOutlierThreshold &amp;gt; 0) // try to detect outlier views for each face 取face 3个通道的均色，对均色做多元正太分布计算，如果偏差大于阈值，则视为outlier✔️ LU分解取逆 // create faces graph✔️ 遍历face以及面的邻接faceAdj, 若一个可见，一个不可见，则增加seam // assign the best view to each face✔️ // find connected components✔️ 根据前面计算的face邻接关系计算连通图 // map face ID from global to component space✔️ 为每个面计算连通图的新id，component1: [1,2,3,...,c1], component2: [1,2,3,...,c2] // normalize quality values✔️ 计算图片质量[二阶导积分]的95分位置近似值 // initialize inference structures✔️ numNodes=连通图face的数量，如果数量小于等于1，则忽略 SmoothCost=0[if node eq]~1000 Neighbors // set data costs✔️ // set costs for label 0 (undefined)✔️ dataCost = fRatioDataSmoothness * 1000 for min of all labels // set data costs for all labels (except label 0 - undefined)✔️ dataCost = $\big(1-\max(1, \frac{quality}{quality_{p95}})\big)*1000$ Label = 0, 未定义，label &amp;gt;= 1是指其他图片✔️ // assign the optimal view (label) to each face✔️ Optimize 优化单位是连通图✔️ ComputeEnergy✔️ $\sum{cost_{data}} + \sum(cost_{edge})$ $cost_{edge} = 1000$ if label is not equal Optimize(n=1)✔️ for(n times) 计算每个面在选择不同label时得到的minEnergy Swap newMsgs and oldMsgs, oldMsgs - min(oldMsgs) 更新选择的label和dataCost✔️ 根据能量差分提前返回✔️ // extract resulting labeling✔️ label-1，调整索引 // create texture patches✔️ // divide graph in sub-graphs of connected faces having the same label✔️ 计算图片不一致的边缝A，对于相邻一侧无label的也作为边缝B 去掉A的连通边 // find connected components: texture patches✔️ 计算新的连通图 // last texture patch contains all faces with no texture✔️ 每个Texture 收集每个连通体的face // remove all patches with invalid label (except the last one) and create the map from the old index to the new one✔️ GenerateTexture // project patches in the corresponding view and compute texture-coordinates and bounding-box // project vertices and compute bounding-box✔️ 对每个patch的面映射到图片中后，算一个2d的aabb // compute relative texture coordinates✔️ 计算offset，修改相应的坐标 // init last patch to point to a small uniform color patch✔️ 默认纹理位置 // perform seam leveling // create seam vertices and edges✔️ // perform global seam leveling🤔 利用ConjugateGradient求解Tikhonov's Gamma matrix使得全局颜色差分较小的新解 // find the patch ID for each vertex✔️ 对点赋值patch_id，边缝点使用idxSeamVertex // assign a row index within the solution vector x to each vertex/patch✔️ 生成一个patch数组vertpatch2rows, 行号为点索引，二阶索引为patch，对于单个patch的点，只赋值一个patch，对于边缝点多个patch的点，赋多个patch，值为递增值rowsX // fill Tikhonov’s Gamma matrix (regularization constraints)✔️ // perform local seam leveling✔️ 优化patch间的线条颜色 // merge texture patches with overlapping rectangles // translate texture coordinates // join faces lists // remove the small patch // create texture // arrange texture patches to fit the smallest possible texture image // increase texture size till all patches fit // create texture image // copy patch image // flip patch and texture-coordinates // compute final texture coordinates // translate, normalize and flip Y axis</summary></entry><entry><title type="html">Build and run TextureMesh at UCAS machine</title><link href="https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine/" rel="alternate" type="text/html" title="Build and run TextureMesh at UCAS machine" /><published>2021-09-24T18:23:30+08:00</published><updated>2021-09-24T18:23:30+08:00</updated><id>https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine</id><content type="html" xml:base="https://ucas.io/3d/Build-And-Run-TextureMesh-at-UCAS-machine/">&lt;h2 id=&quot;reinstall-vcpkg-at-xps&quot;&gt;Reinstall vcpkg at xps&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Just remove vcpkg directory.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;compile-and-build-texture_extract-at-xps-machine&quot;&gt;Compile and Build Texture_extract at xps machine&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The files need change&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924182630.png&quot; alt=&quot;20210924182630&quot; /&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Copy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CMakeLists.txt&lt;/code&gt; from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TextureMesh&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TextureMesh_extract&lt;/code&gt;, change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TextureMesh&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TextureMesh_extract&lt;/code&gt; at the same time
-        &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924182810.png&quot; alt=&quot;20210924182810&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;include&lt;/code&gt; at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TextureMesh_extract.cpp&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;interfaceCamera.hpp&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924182913.png&quot; alt=&quot;20210924182913&quot; /&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924182926.png&quot; alt=&quot;20210924182926&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Build with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x64&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;same-example-after-texture&quot;&gt;Same example after texture&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;original
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924184348.png&quot; alt=&quot;20210924184348&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;HC-lap-smooth
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924184427.png&quot; alt=&quot;20210924184427&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;gussian
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924184454.png&quot; alt=&quot;20210924184454&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;detail&quot;&gt;Detail&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;xps result
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210916232251.png&quot; alt=&quot;20210916232251&quot; height=&quot;100px&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;ucas machine result
-    &lt;ul&gt;
-      &lt;li&gt;the blue mesh has gone&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191016.png&quot; alt=&quot;20210924191016&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;code compare of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SceneTexture.cpp&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Left is the code from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;liuchao&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Right is the newest from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OpenMVS.git&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210924191117.png&quot; alt=&quot;20210924191117&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Reinstall vcpkg at xps</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">OpenMVS[Homogeneous Coordinate]</summary></entry></feed>

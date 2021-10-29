@@ -436,4 +436,28 @@ var store = [{
         "tags": [],
         "url": "/3d/LLFF-To-NeRF/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211021200334.png"
+      },{
+        "title": "MPI Paper Reading",
+        "excerpt":"MPI: Single-view view synthesis with multiplane images                  Repository       spark       star                                                   Github.io         Colab                       term or concept            non-Lambertian effects                    为什么太阳看起来像一个均匀发光圆盘? - a crysfer的回答 - 知乎           Lambertian reflectance - WikiPidea           几何反照率 - WikiPidea                                       发光强度和亮度的概念不仅适用于自己发光的物体，也可以应用到反射体。光线射到光滑的表面上，定向地发射出去；射到粗糙的表面上时，它将朝向所有方向漫射。一个理想的漫射面，应是遵循朗伯定律的，即不管入射光来自何方，沿各方向漫射光的发光强度总与cosθ成正比，从而亮度相同。积雪、刷粉的白墙或十分粗糙的白纸表面，都很接近这类理想的漫射面。这类物体称为朗伯反射体。                                                   ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/MPI-Paper-Reading/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211022153912.png"
+      },{
+        "title": "Pytorch Gpu",
+        "excerpt":"Pytorch using GPU to training Make input data and model to cuda device for Model net = Net() device = None if torch.cuda.is_available(): device = torch.device(\"cuda\") net = net.to(device) for data inputs = inputs.to(device) labels = labels.to(device) verify input.device # cuda label.device # cuda Make output data to cpu device...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Pytorch-GPU/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211025231533.png"
+      },{
+        "title": "VPN Share",
+        "excerpt":"翻墙小白入门 历史 hosts |Repository|spark|star| |:-:|:-:|:-:| ||| 自由门 GoAgent GAE to 2015-8 GoProxy to 2015-3 ss [clowwindy] |Repository|spark|star| |:-:|:-:|:-:| ||| 2012年4月22日 发布 2015年8月18日 警察 2015年8月21日 喝茶 Shadowsocks 是如何被检测和封锁的 ssr [breakwa11] 评价 shadosocks-windows/Issue108 2017年7月27日 停止 事件列表 2017年1月《关于清理规范互联网网络接入服务市场的通知》 2017年7月底，中国区 App Store 多款 VPN 相关应用在无任何说明与通知的情况下，突然集体被下架 2017年10月, 十九大, 封杀, SSR 大会闭幕后, IP解封 2018年1月, 两会, 更大规模的封杀...","categories": ["share"],
+        "tags": [],
+        "url": "/share/VPN-Share/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211026163001.png"
+      },{
+        "title": "Pytorch Multi GPU",
+        "excerpt":"单机多卡 Priori Knowledge Pytorch 1.x 的多机多卡计算模型 Uber: Horovod, Baidu: RingAllReduce Baidu: RingAllReduce PS 计算模型 DataParallel [DP] dataset: FashionMNIST Main Code DataParallel Parameter server 算法 reducer的那张卡会多出3-4g的显存占用 # Model net = nn.DataParallel(net) net = net.cuda() # Data inputs = inputs.cuda() labels = labels.cuda() Params Speed Mem% CUDA_VISIBLE_DEVICES=3 15000it [00:55, 271.38it/s] 3:7-13 CUDA_VISIBLE_DEVICES=3,4,6...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Pytorch-Multi-GPU/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211028112306.png"
       }]
