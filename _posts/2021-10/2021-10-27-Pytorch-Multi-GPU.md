@@ -62,6 +62,8 @@ labels = labels.cuda()
   - `--nproc_per_node=2`时，两个进程的rank是不一样的
 
     ```python
+    rank = torch.distributed.get_rank()
+    torch.cuda.set_device(rank)  # 重要
     inputs = inputs.cuda()
     if i == 0:
         # 不同的进程会把不同的数据放到不同的GPU上
