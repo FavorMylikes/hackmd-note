@@ -13,6 +13,15 @@ header:
 
 ## 单机多卡
 
+### Priori Knowledge
+
+- Pytorch 1.x 的多机多卡计算模型
+  - Uber: Horovod, Baidu: RingAllReduce
+    - [Baidu: RingAllReduce](https://andrew.gibiansky.com/blog/machine-learning/baidu-allreduce)
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgring-gpus.png" alt="ring-gpus" width="250px"/><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgscatter-reduce-iteration-4.png" alt="scatter-reduce-iteration-4" width="250px"/>
+- PS 计算模型
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgmaster-slave-gpus.png" alt="master-slave-gpus"  width="300px"/>
+
 ### DataParallel [DP]
 
 - dataset: `FashionMNIST`
@@ -47,6 +56,19 @@ labels = labels.cuda()
     - **But it will kill all other processes too**
 
 ### DistributedDataParallel [DDP]
+
+- `torch.distributed.get_rank()`
+  - 获得进程号
+  - `--nproc_per_node=2`时，两个进程的rank是不一样的
+
+    ```python
+    inputs = inputs.cuda()
+    if i == 0:
+        # 不同的进程会把不同的数据放到不同的GPU上
+        # DataLoader 的 sampler处理这一逻辑
+        # 因此batch速度会加快
+        print(inputs.sum())  # tensor(-1578.1804, device='cuda:0'), tensor(-1578.1804, device='cuda:0')
+    ```
 
 - main code
 
@@ -109,6 +131,7 @@ testloader = torch.utils.data.DataLoader(testset,
 
 ## Reference
 
+- [🤙[原创][深度][PyTorch] DDP系列第一篇：入门教程 - 996黄金一代的文章 - 知乎](https://zhuanlan.zhihu.com/p/178402798)
 - [pytorch多gpu并行训练 - link-web的文章 - 知乎](https://zhuanlan.zhihu.com/p/86441879)
 - [【分布式训练】单机多卡的正确打开方式（三）：PyTorch - Nicolas的文章 - 知乎](https://zhuanlan.zhihu.com/p/74792767)
 - [【深度学习分布式】Parameter Server 详解 - 仙道菜的文章 - 知乎](https://zhuanlan.zhihu.com/p/21569493)
