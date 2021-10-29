@@ -72,6 +72,13 @@ labels = labels.cuda()
         print(inputs.sum())  # tensor(-1578.1804, device='cuda:0'), tensor(-1578.1804, device='cuda:0')
     ```
 
+- 保存参数 (只需要在一台机器上执行一次)
+  
+  ```python
+    if dist.get_rank() == 0:
+        torch.save(model.module, "saved_model.ckpt")
+  ```
+
 - main code
 
 ```python
@@ -99,6 +106,17 @@ testloader = torch.utils.data.DataLoader(testset,
 |15000it [01:00, 210.65it/s]|0,3,5,6|0|1|1|0:17-30|1|0.4165|
 |7500it [00:32, 228.66it/s]*4|0,3,5,6|0|1|2|0,3:17-30|2|0.3774|
 |3750it [00:25, 149.55it/s]*16|0,3,5,6|0|1|4|0,3,5,6:17-30|4|0.3563|
+
+## 多机多卡
+
+- nnodes
+  - 机器数
+- node_rank
+  - 当前机器序号
+- nproc_per_node
+  - 每台机器上进程数
+- address, port
+  - 通讯地址及端口
 
 ## Gpu Monitor
 
@@ -130,6 +148,11 @@ testloader = torch.utils.data.DataLoader(testset,
   - [Install](https://grafana.com/docs/grafana/latest/installation/debian/)
   - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211028112306.png" alt="20211028112306"/>
   - [DashBoard import 12239](https://grafana.com/grafana/dashboards/12239)
+- Fish
+  - `sudo apt install fish`
+  - `chsh -s /usr/bin/fish` change default bash to fish
+  - `conda init fish` at `bash`
+  - `conda config --set auto_activate_base true`, auto activate base
 
 ## Reference
 
