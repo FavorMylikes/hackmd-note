@@ -460,4 +460,10 @@ var store = [{
         "tags": [],
         "url": "/3d/Pytorch-Multi-GPU/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211028112306.png"
+      },{
+        "title": "3D Render Lib Python",
+        "excerpt":"Python 3D render engine 3D Scene Renderer for Python [closed] - stackoverflow First-rate, full game engines (have been used for commercial games) Panda3d |Repository|spark|star| |:-:|:-:|:-:| ||| PyOgre Pyrr (Irrlicht wrapper) Less popular 3d engines, new or beta: YMMV. OpenSceneGraph Spyre PySoy Official Web is Dead Soya PyCrystal Horde3d VTK pyrender...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/3D-Render-Lib-Python/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211028112306.png"
       }]

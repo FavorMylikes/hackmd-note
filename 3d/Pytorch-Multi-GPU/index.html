@@ -378,7 +378,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#单机多卡">单机多卡</a><ul><li><a href="#priori-knowledge">Priori Knowledge</a></li><li><a href="#dataparallel-dp">DataParallel [DP]</a></li><li><a href="#distributeddataparallel-ddp">DistributedDataParallel [DDP]</a></li></ul></li><li><a href="#gpu-monitor">Gpu Monitor</a></li><li><a href="#reference">Reference</a></li></ul>
+              <ul class="toc__menu"><li><a href="#单机多卡">单机多卡</a><ul><li><a href="#priori-knowledge">Priori Knowledge</a></li><li><a href="#dataparallel-dp">DataParallel [DP]</a></li><li><a href="#distributeddataparallel-ddp">DistributedDataParallel [DDP]</a></li></ul></li><li><a href="#多机多卡">多机多卡</a></li><li><a href="#gpu-monitor">Gpu Monitor</a></li><li><a href="#reference">Reference</a></li></ul>
 
             </nav>
           </aside>
@@ -513,6 +513,13 @@
       </li>
     </ul>
   </li>
+  <li>
+    <p>保存参数 (只需要在一台机器上执行一次)</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">if</span> <span class="n">dist</span><span class="p">.</span><span class="n">get_rank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="n">torch</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">module</span><span class="p">,</span> <span class="s">"saved_model.ckpt"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
   <li>main code</li>
 </ul>
 
@@ -554,7 +561,7 @@
       <td style="text-align: center">0</td>
       <td style="text-align: center">1</td>
       <td style="text-align: center">2</td>
-      <td style="text-align: center">3:7-13</td>
+      <td style="text-align: center">0,3:7-13</td>
       <td style="text-align: center">1</td>
       <td style="text-align: center">0.4727</td>
     </tr>
@@ -566,7 +573,7 @@
       <td style="text-align: center">4</td>
       <td style="text-align: center">0,3,5,6:17-30</td>
       <td style="text-align: center">1</td>
-      <td style="text-align: center">0.6264</td>
+      <td style="text-align: center">0.6172</td>
     </tr>
     <tr>
       <td style="text-align: center">7500it [00:32, 228.66it/s]*2</td>
@@ -610,6 +617,31 @@
     </tr>
   </tbody>
 </table>
+
+<h2 id="多机多卡">多机多卡</h2>
+
+<ul>
+  <li>nnodes
+    <ul>
+      <li>机器数</li>
+    </ul>
+  </li>
+  <li>node_rank
+    <ul>
+      <li>当前机器序号</li>
+    </ul>
+  </li>
+  <li>nproc_per_node
+    <ul>
+      <li>每台机器上进程数</li>
+    </ul>
+  </li>
+  <li>address, port
+    <ul>
+      <li>通讯地址及端口</li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="gpu-monitor">Gpu Monitor</h2>
 
@@ -665,6 +697,14 @@
       <li><a href="https://grafana.com/docs/grafana/latest/installation/debian/">Install</a></li>
       <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211028112306.png" alt="20211028112306" /></li>
       <li><a href="https://grafana.com/grafana/dashboards/12239">DashBoard import 12239</a></li>
+    </ul>
+  </li>
+  <li>Fish
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sudo apt install fish</code></li>
+      <li><code class="language-plaintext highlighter-rouge">chsh -s /usr/bin/fish</code> change default bash to fish</li>
+      <li><code class="language-plaintext highlighter-rouge">conda init fish</code> at <code class="language-plaintext highlighter-rouge">bash</code></li>
+      <li><code class="language-plaintext highlighter-rouge">conda config --set auto_activate_base true</code>, auto activate base</li>
     </ul>
   </li>
 </ul>
@@ -748,7 +788,8 @@
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/3d/3D-Render-Lib-Python/" class="pagination--pager" title="3D Render Lib Python
+">Next</a>
     
   </nav>
 
@@ -762,6 +803,57 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211028112306.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/3d/3D-Render-Lib-Python/" rel="permalink">3D Render Lib Python
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-01T15:02:17+08:00">November 1, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Python 3D render engine
+</p>
+  </article>
+</div>
+
         
           
 
@@ -911,57 +1003,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">MPI: Single-view view synthesis with multiplane images
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211021200334.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/3d/LLFF-To-NeRF/" rel="permalink">The Path to Nerf
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2021-10-21T14:44:18+08:00">October 21, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">LLFF
 </p>
   </article>
 </div>

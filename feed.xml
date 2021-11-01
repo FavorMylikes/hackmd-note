@@ -1,4 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-10-29T16:21:14+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Pytorch Multi GPU</title><link href="https://ucas.io/3d/Pytorch-Multi-GPU/" rel="alternate" type="text/html" title="Pytorch Multi GPU" /><published>2021-10-27T15:19:10+08:00</published><updated>2021-10-27T15:19:10+08:00</updated><id>https://ucas.io/3d/Pytorch-Multi-GPU</id><content type="html" xml:base="https://ucas.io/3d/Pytorch-Multi-GPU/">&lt;h2 id=&quot;单机多卡&quot;&gt;单机多卡&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2021-11-01T23:33:34+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">3D Render Lib Python</title><link href="https://ucas.io/3d/3D-Render-Lib-Python/" rel="alternate" type="text/html" title="3D Render Lib Python" /><published>2021-11-01T15:02:17+08:00</published><updated>2021-11-01T15:02:17+08:00</updated><id>https://ucas.io/3d/3D-Render-Lib-Python</id><content type="html" xml:base="https://ucas.io/3d/3D-Render-Lib-Python/">&lt;h2 id=&quot;python-3d-render-engine&quot;&gt;Python 3D render engine&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/4523262/5587080&quot;&gt;3D Scene Renderer for Python [closed] - stackoverflow&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;First-rate, full game engines (have been used for commercial games)
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.panda3d.org/&quot;&gt;Panda3d&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;p&gt;|Repository|spark|star|
+|:-:|:-:|:-:|
+|&lt;a href=&quot;https://github.com/panda3d/panda3d&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=panda3d&amp;amp;repo=panda3d&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/panda3d/panda3d&quot;&gt;&lt;img src=&quot;https://stars.medv.io/panda3d/panda3d.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://starchart.cc/panda3d/panda3d&quot;&gt;&lt;img src=&quot;https://starchart.cc/panda3d/panda3d.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+              &lt;/li&gt;
+              &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/python-3-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.ogre3d.org/tikiwiki/PyOgre&quot;&gt;PyOgre&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;Pyrr (Irrlicht wrapper)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Less popular 3d engines, new or beta: YMMV.
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.openscenegraph.org/projects/osg&quot;&gt;OpenSceneGraph&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://pduel.sourceforge.net/spyre/spyre.spyre-module.html&quot;&gt;Spyre&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.pysoy.org/&quot;&gt;PySoy&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;Official Web is Dead&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://pypi.python.org/pypi/Soya/0.11.2&quot;&gt;Soya&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.crystalspace3d.org/main/PyCrystal&quot;&gt;PyCrystal&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.horde3d.org/&quot;&gt;Horde3d&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.vtk.org/&quot;&gt;VTK&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://pyrender.readthedocs.io/en/latest/&quot;&gt;pyrender&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;p&gt;|Repository|spark|star|
+|:-:|:-:|:-:|
+|&lt;a href=&quot;https://github.com/mmatl/pyrender&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=mmatl&amp;amp;repo=pyrender&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/mmatl/pyrender&quot;&gt;&lt;img src=&quot;https://stars.medv.io/mmatl/pyrender.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://starchart.cc/mmatl/pyrender&quot;&gt;&lt;img src=&quot;https://starchart.cc/mmatl/pyrender.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+              &lt;/li&gt;
+              &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/python-2.7,3.4~3,6-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Low-level OpenGL interfaces - more control
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://pyopengl.sourceforge.net/&quot;&gt;PyOpenGL&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://pyglet.org/&quot;&gt;pyglet&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.reddit.com/r/Python/comments/7oku8/dear_python_what_panda3d_soya3d_pyopengl_etc/&quot;&gt;🤙Reddit suggest (compare by Panda3D, Soya3D, PyOpenGL, etc…)&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://pypi.org/project/PyWavefront/&quot;&gt;🤙PyWavefront Suggest&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;|Repository|spark|star|
+|:-:|:-:|:-:|
+|&lt;a href=&quot;https://github.com/pyglet/pyglet&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=pyglet&amp;amp;repo=pyglet&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/pyglet/pyglet&quot;&gt;&lt;img src=&quot;https://stars.medv.io/pyglet/pyglet.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://starchart.cc/pyglet/pyglet&quot;&gt;&lt;img src=&quot;https://starchart.cc/pyglet/pyglet.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+              &lt;/li&gt;
+              &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/python-3.6+-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.alcyone.com/software/zoe/&quot;&gt;Zoe&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Non-realtime interfaces
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://cgkit.sourceforge.net/documentation.html&quot;&gt;cgkit&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://www.blender3d.org/&quot;&gt;Blender&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;p&gt;|Repository|spark|star|
+|:-:|:-:|:-:|
+|&lt;a href=&quot;https://github.com/blender/blender&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=blender&amp;amp;repo=blender&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://github.com/blender/blender&quot;&gt;&lt;img src=&quot;https://stars.medv.io/blender/blender.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;|&lt;a href=&quot;https://starchart.cc/blender/blender&quot;&gt;&lt;img src=&quot;https://starchart.cc/blender/blender.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+              &lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/s/video/BV1Ji4y1g7Kf&quot;&gt;BiliBili - Blender 新手入门基础教程(1-7集)&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://code.activestate.com/recipes/205451/&quot;&gt;POVray&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;experience&quot;&gt;Experience&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pyglet&lt;/code&gt; + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PyWavefront&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pywavefront&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Wavefront&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'file.obj'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;visualization&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Error: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OverflowError: The '_length_' attribute is too large&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Maybe the model is too large&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211101171201.png&quot; alt=&quot;20211101171201&quot; /&gt;
+        &lt;ul&gt;
+          &lt;li&gt;It is based on OpenGL looks like.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;PyTorch3D&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://pytorch3d.org/tutorials/render_textured_meshes&quot;&gt;Example&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deform_source_mesh_to_target_mesh&lt;/code&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211101183041.png&quot; alt=&quot;20211101183041&quot; /&gt;&lt;/li&gt;
+              &lt;li&gt;chamfer_losses: &lt;a href=&quot;https://github.com/UM-ARM-Lab/Chamfer-Distance-API&quot;&gt;chamfer_distance&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;edge_losses: &lt;a href=&quot;https://pytorch3d.readthedocs.io/en/latest/_modules/pytorch3d/loss/mesh_edge_loss.html&quot;&gt;mesh_edge_loss&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;normal_losses: &lt;a href=&quot;https://pytorch3d.readthedocs.io/en/latest/_modules/pytorch3d/loss/mesh_normal_consistency.html&quot;&gt;mesh_normal_consistency&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;laplacian_losses: &lt;a href=&quot;https://pytorch3d.readthedocs.io/en/latest/modules/loss.html?highlight=mesh_laplacian_smoothing#pytorch3d.loss.mesh_laplacian_smoothing&quot;&gt;mesh_laplacian_smoothing&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle_adjustment&lt;/code&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211101212441.png&quot; alt=&quot;20211101212441&quot; /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;error:
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PIL.Image.DecompressionBombError: Image size (268435456 pixels) exceeds limit of 178956970 pixels, could be decompression bomb DOS attack.&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Python 3D render engine</summary></entry><entry><title type="html">Pytorch Multi GPU</title><link href="https://ucas.io/3d/Pytorch-Multi-GPU/" rel="alternate" type="text/html" title="Pytorch Multi GPU" /><published>2021-10-27T15:19:10+08:00</published><updated>2021-10-27T15:19:10+08:00</updated><id>https://ucas.io/3d/Pytorch-Multi-GPU</id><content type="html" xml:base="https://ucas.io/3d/Pytorch-Multi-GPU/">&lt;h2 id=&quot;单机多卡&quot;&gt;单机多卡&lt;/h2&gt;
 
 &lt;h3 id=&quot;priori-knowledge&quot;&gt;Priori Knowledge&lt;/h3&gt;
 
@@ -127,6 +262,13 @@
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;保存参数 (只需要在一台机器上执行一次)&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;saved_model.ckpt&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
   &lt;li&gt;main code&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -168,7 +310,7 @@
       &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3:7-13&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0,3:7-13&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;0.4727&lt;/td&gt;
     &lt;/tr&gt;
@@ -180,7 +322,7 @@
       &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;0,3,5,6:17-30&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0.6264&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.6172&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;7500it [00:32, 228.66it/s]*2&lt;/td&gt;
@@ -224,6 +366,31 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;h2 id=&quot;多机多卡&quot;&gt;多机多卡&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;nnodes
+    &lt;ul&gt;
+      &lt;li&gt;机器数&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;node_rank
+    &lt;ul&gt;
+      &lt;li&gt;当前机器序号&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;nproc_per_node
+    &lt;ul&gt;
+      &lt;li&gt;每台机器上进程数&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;address, port
+    &lt;ul&gt;
+      &lt;li&gt;通讯地址及端口&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;gpu-monitor&quot;&gt;Gpu Monitor&lt;/h2&gt;
 
@@ -279,6 +446,14 @@
       &lt;li&gt;&lt;a href=&quot;https://grafana.com/docs/grafana/latest/installation/debian/&quot;&gt;Install&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211028112306.png&quot; alt=&quot;20211028112306&quot; /&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://grafana.com/grafana/dashboards/12239&quot;&gt;DashBoard import 12239&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Fish
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo apt install fish&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chsh -s /usr/bin/fish&lt;/code&gt; change default bash to fish&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;conda init fish&lt;/code&gt; at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bash&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;conda config --set auto_activate_base true&lt;/code&gt;, auto activate base&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1056,135 +1231,4 @@ High Frequency Functions in Low Dimensional Domains&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/u011089523/article/details/103412177&quot;&gt;OpenMP的简单使用教程 - CSDN&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.dartmouth.edu/~rc/classes/intro_openmp/compile_run.html&quot;&gt;How to Compile and Run an OpenMP Program&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/ArrowYL/article/details/81094837&quot;&gt;OpenMP用法大全（个人整理版）&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Cmake can not find OpenMP</summary></entry><entry><title type="html">Trangle Rasterization</title><link href="https://ucas.io/3d/Trangle-Rasterization/" rel="alternate" type="text/html" title="Trangle Rasterization" /><published>2021-09-28T17:08:24+08:00</published><updated>2021-09-28T17:08:24+08:00</updated><id>https://ucas.io/3d/Trangle-Rasterization</id><content type="html" xml:base="https://ucas.io/3d/Trangle-Rasterization/">&lt;h2 id=&quot;openmvshomogeneous-coordinate&quot;&gt;OpenMVS[Homogeneous Coordinate]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://forum.beyond3d.com/threads/advanced-rasterization.12507/&quot;&gt;Advanced Rasterization - Nick 2004&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.cs.cmu.edu/afs/cs/academic/class/15869-f11/www/readings/olano97_homogeneous.pdf&quot;&gt;Triangle Scan Conversion using 2D Homogeneous Coordinates - CMU&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-1997-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/EG-1997-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-122-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210929133013.png&quot; alt=&quot;20210929133013&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;line-sweeping线扫法&quot;&gt;Line sweeping[线扫法]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ssloy/tinyrenderer/wiki/Lesson-2:-Triangle-rasterization-and-back-face-culling&quot;&gt;Triangle-rasterization-and-back-face-culling&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210928215359.png&quot; alt=&quot;20210928215359&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;对y排序，从左向右设置像素&lt;/li&gt;
-  &lt;li&gt;分两段画完&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;barycentric-coordinates重心坐标系判定法---并行计算中的判定&quot;&gt;Barycentric Coordinates[重心坐标系判定法 - 并行计算中的判定]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;遍历AABB内的所有点的重心坐标&lt;/li&gt;
-  &lt;li&gt;For Convex&lt;/li&gt;
-  &lt;li&gt;重心坐标具有仿射不变性&lt;/li&gt;
-  &lt;li&gt;As Area coordinates in trangle
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210928223322.png&quot; alt=&quot;20210928223322&quot; height=&quot;200px&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;对于三点$A,B,C$的坐标分别为$\mathbf{a,b,c}$&lt;/li&gt;
-      &lt;li&gt;对于任意点$P$的坐标$p$&lt;/li&gt;
-      &lt;li&gt;设$S_{\triangle{PBC}}:S_{\triangle{PBC}}:S_{\triangle{PBC}}=\lambda_1:\lambda_2:\lambda_3$&lt;/li&gt;
-      &lt;li&gt;$\lambda_1+\lambda_2+\lambda_3=1$&lt;/li&gt;
-      &lt;li&gt;延长$AP$交$BC$于$D$&lt;/li&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-        &amp;\because&amp;BD:DC&amp;=\lambda_3:\lambda_2\\
-        &amp;\therefore&amp; \mathbf{d}&amp;=\frac{\lambda_2\mathbf{b}+\lambda_3\mathbf{c}}{\lambda_2+\lambda_3}\\
-        &amp;\because&amp;AP:PD&amp;=(\lambda_2+\lambda_3):\lambda_1\\
-        &amp;\therefore&amp;\mathbf{p}&amp;=\frac{(\lambda_2+\lambda_3)\mathbf{d}+\lambda_1\mathbf{a}}{\lambda_1+\lambda_2+\lambda_3}\\
-        &amp;\therefore&amp;\mathbf{p}&amp;=\lambda_1\mathbf{a}+\lambda_2\mathbf{b}+\lambda_3\mathbf{c}
-    \end{aligned}
-$$&lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;因此，重心坐标， 也是面积坐标&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;For each pixel we compute its barycentric coordinates. &lt;strong&gt;If it has at least one negative component&lt;/strong&gt;, then the pixel is outside of the triangle.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;点在三角形内的问题转换为求解重心坐标
-    &lt;ul&gt;
-      &lt;li&gt;面积法
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-\lambda_1=\frac{S_{\triangle{PBC}}}{S_{\triangle{ABC}}}=\frac{\begin{vmatrix}
-      1&amp;x_p&amp;y_p\\
-      1&amp;x_b&amp;y_b\\
-      1&amp;x_c&amp;y_c\\
-  \end{vmatrix}}{\begin{vmatrix}
-      1&amp;x_a&amp;y_a\\
-      1&amp;x_b&amp;y_b\\
-      1&amp;x_c&amp;y_c\\
-  \end{vmatrix}}
-$$&lt;/div&gt;
-          &lt;/li&gt;
-          &lt;li&gt;其中&lt;/li&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-S_{\triangle_{ABC}}=\frac{1}{2}\begin{vmatrix}
-      1&amp;x_a&amp;y_a\\
-      1&amp;x_b&amp;y_b\\
-      1&amp;x_c&amp;y_c\\
-  \end{vmatrix}
-$$&lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;代数法
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{cases}
-      \lambda_1x_a+\lambda_2x_b+\lambda_3x_c&amp;=x_p\\
-      \lambda_1y_a+\lambda_2y_b+\lambda_3y_c&amp;=y_p\\
-      \lambda_1+\lambda_2+\lambda_3&amp;=1\\
-  \end{cases}
-$$&lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;linear-edge-function-line-sweeping线边法&quot;&gt;Linear Edge Function, Line sweeping[线边法]&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/abs/10.1145/54852.378457&quot;&gt;A parallel algorithm for polygon rasterization&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-1988-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-295-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.cs.drexel.edu/~david/Classes/Papers/comp175-06-pineda.pdf&quot;&gt;Paper.pdf&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;主要描述线扫法和并行计算中对多边形的填充设计&lt;/li&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;kdmath&quot;&gt;$$
-\begin{aligned}
-        dX_i &amp;= X_i - X_{i-1}\\
-        dY_i &amp;= Y_i - Y_{i-1}\\
-        E_i(X, Y) &amp;= (X-X_i)dX_i - (Y-Y_i)dY_i
-    \end{aligned}
-$$&lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;多边形内为正，多边形外为负，线上为0&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210928213747.png&quot; alt=&quot;20210928213747&quot; height=&quot;200px&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dl.acm.org/doi/pdf/10.1145/325334.325205&quot;&gt;Fast Spheres, Shadows, Textures, Transparencies, and Image Enhancements in Pixel-Planes&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://img.shields.io/badge/SIGGRAPH-1985-blue?style=flat-square&quot; alt=&quot;j&quot; /&gt;&lt;img src=&quot;https://img.shields.io/badge/cite-266-blue?style=flat-square&quot; alt=&quot;cite&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;主要描述硬件渲染技术&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20210928212842.png&quot; alt=&quot;20210928212842&quot; height=&quot;200px&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">OpenMVS[Homogeneous Coordinate]</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Cmake can not find OpenMP</summary></entry></feed>
