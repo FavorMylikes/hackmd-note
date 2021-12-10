@@ -88,3 +88,4 @@ header:
       - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211101212441.png" alt="20211101212441"/>
   - error:
     - `PIL.Image.DecompressionBombError: Image size (268435456 pixels) exceeds limit of 178956970 pixels, could be decompression bomb DOS attack.`
+      - [DecompressionBombError - Stackoverflow](https://stackoverflow.com/a/51152514/5587080)
