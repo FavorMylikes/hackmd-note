@@ -466,4 +466,46 @@ var store = [{
         "tags": [],
         "url": "/3d/3D-Render-Lib-Python/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211028112306.png"
+      },{
+        "title": "Normal Device Coordinate with Different System",
+        "excerpt":"NDC [Normal Device Coordinate] 标准化设备坐标 Clip coordinates - Wikipedia assume the coordinate system in math x: outside the screen y: right side z: up side NDC coordinate system platform coordinate system rotation cite pytorch 3d right hand left hand, clockwise pytorch3d doc unity left hand left hand, clockwise aclockworkberry OpenGL...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Normal-Device-Coordinate-with-Different-System/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211102164656.png"
+      },{
+        "title": "The Coordinate System - How to convert between different coordinate system",
+        "excerpt":"Coordinate System system image System hand Rotation hand Camera Order OpenGL RH RH (0,0,-1) XYZ Unity LH LH (0,0,1) YXZ(local) zxy(global) pytorch3d RH LH (0,0,1) XYZ OpenCV RH RH (0,0,1) XYZ scipy   RH LH   XYZ xyz Docs scipy quat = [x,y,z,w] euler XYZ means intrinsic rotations 内在旋转,Conventions by...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/The-Coordinate-System-How-to-convert-between-different-coordinate-system/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211116000556.png"
+      },{
+        "title": "Mutly Polygon plot",
+        "excerpt":"WordCloud Algorithm Repository spark star 分词 根据词频设计字体大小 从大到小，利用积分图寻找可以放置矩形的空白空间 积分图 每个点表示左上角矩形的像素和 利用int_canvas[y+h,x+w] - int_canvas[y,x+w] - int_canvas[y+h,x] + int_canvas[y,x] 可以判断该矩形内是否存在任何像素 wordcloud使用内置对象IntegralOccupancyMap实现积分图查找对应矩形内是否存在像素 缺点 wordcloud不支持任意角度旋转 echart支持 Triangle Texture Random triangle contours = np.random.randint(0, 100, (n, 3, 2)) 四叉树 Triangle collision detection Quadrilateral collision detection AABB with AABB collision detection kishimotostudios.com Square Layout Refernece 你不知道的词云...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Mutly-Polygon-plot/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211210133721.png"
+      },{
+        "title": "Pytorch mesh render memory using",
+        "excerpt":"Memory                  Name       Memory       speed                       factor x4       1.6-2.5G       2.3s/it                 factor x2       2.6-3.7G       2.5s/it                 factor x1       4.68G-8.58G       5s/it           Parameter                  Name       Comment                       9-9       在原有贴图上训练进行修正，Factor=4                 uv_avg_pooling       为了避免某些贴图像素未被训练，讲max_pooling改为avg_pooling                 factor       更改uv大小                 zeros_uv       纯黑色的uvmap                 color_sobel       gray sobel的训练结果偏绿，各层训练结果不同步，使用3层sobel修正彩色部分                 no_maxmin_scalar       blur后存在大于1的像素点，归一化时曾使用过maxmin_scalar，但这直接影响了训练结果的齐次性                 random_uv       zero uv在训练时存在扩散效应，固训练速度较慢，改为random_uv训练速度变大                 multi_loss       sobel_loss只将边缘计算了出来，无法表达平滑像素                 softphone-shader       更改hardphone-shader，使得点的权重加大           $\\sqrt{0}\\rightarrow\\frac{1}{2}0^{-\\frac{1}{2}}$   $\\sqrt{0 + \\epsilon^2}-\\epsilon\\rightarrow\\frac{1}{2}(0+\\epsilon^2)^{-\\frac{1}{2}}$   $uv=sigmoid(\\log(\\frac{uv}{1-uv}))$  ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Pytorch-mesh-render-memory/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211210133721.png"
+      },{
+        "title": "Mesh UV Motivation",
+        "excerpt":"obj file Img file mtllib square.mtl v 0 0 0 v 0 1 0 v 1 1 0 v 0 0 0 v 1 1 0 v 1 0 0 vt 0.25 0.25 vt 0.25 0.75 vt 0.75 0.75 vt 0.25 0.25 vt 0.75 0.75 vt 0.75 0.25 usemtl material_0...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/uv-mesh-motivation/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
+      },{
+        "title": "Pytorch Distributed Training Dataloader Test",
+        "excerpt":"How the dataloader split data into mutly devices Code from typing import List import torch from torch.distributed import init_process_group, get_rank from torch.utils.data import Dataset, DataLoader, DistributedSampler from tqdm import tqdm class TestDataset(Dataset): def __init__(self, size: int): self.size = size self.data: List[int] = list(range(size)) def __len__(self): return self.size def __getitem__(self, index):...","categories": ["3d","pytorch"],
+        "tags": [],
+        "url": "/3d/pytorch/pytorch-distributed-training-dataloader-test/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
+      },{
+        "title": "Rotation Training by backward progation",
+        "excerpt":"Fix light parameter With Sobel Loss RANDOM_UV = False UV_SHAPE = 1024, 1024, 3 UV_TRAIN = False AMBIENT_TRAIN: bool = True DIFFUSE_TRAIN: bool = False SPECULAR_TRAIN: bool = False LOCATION_TRAIN: bool = False expect_value euler_angles_to_matrix(rotation_mask.rotation[i] / 10, 'XYZ') @ euler_angles_to_matrix(torch.tensor([-.1, -.2, -.03], device=device), 'ZYX') With Pixel Loss RANDOM_UV = False...","categories": ["3d","pytorch"],
+        "tags": [],
+        "url": "/3d/pytorch/rotation-training/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
       }]
