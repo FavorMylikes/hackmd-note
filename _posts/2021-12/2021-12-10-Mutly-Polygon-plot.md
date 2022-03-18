@@ -35,6 +35,21 @@ header:
 
 - Random triangle
 - `contours = np.random.randint(0, 100, (n, 3, 2))`
+- 四叉树
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211211171145.png" alt="20211211171145"/>
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211211202201.png" alt="20211211202201"/>
+- Triangle collision detection
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211213200123.png" alt="20211213200123"/>
+- Quadrilateral collision detection
+  - <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211213200624.png" alt="20211213200624"/>
+
+## AABB with AABB collision detection
+
+- [kishimotostudios.com](https://kishimotostudios.com/articles/aabb_collision/)
+
+## Square Layout
+
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211214203648.png" alt="20211214203648"/>
 
 ## Refernece
 
