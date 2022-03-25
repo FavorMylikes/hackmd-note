@@ -508,4 +508,16 @@ var store = [{
         "tags": [],
         "url": "/3d/pytorch/rotation-training/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
+      },{
+        "title": "Python speed up, Campare for numba and cuda",
+        "excerpt":"numba Code from timeit import timeit import numpy as np import numba from numba import jit, njit # 传入jit，numba装饰器中的一种 @jit(nopython=True) def go_fast(a): # 首次调用时，函数被编译为机器代码 trace = 0 # 假设输入变量是numpy数组 for i in range(a.shape[0]): # Numba 擅长处理循环 trace += np.tanh(a[i, i]) # numba喜欢numpy函数 return a + trace # numba喜欢numpy广播 @jit(nopython=True) def...","categories": ["3d","pytorch"],
+        "tags": [],
+        "url": "/3d/pytorch/python-speed-up-compare-numba-cuda/",
+        "teaser": null
+      },{
+        "title": "Python setup.py, How to install package by your self",
+        "excerpt":"Code Home Page - Github Pypi Page setup.py file from setuptools import setup, find_packages with open('requirements.txt', mode=\"r\", encoding=\"utf8\") as f: required = f.read().splitlines() setup( name='cuefig', version='0.0.2', url='https://github.com/FavorMylikes/cuefig', license='MIT License', author='麦丽素', author_email='l786112323@gmail.com', description='A config framework that you can cue and hint quickly.', package_data={\"\": [\"*.yaml\"], }, classifiers=[ \"Programming Language :: Python ::...","categories": ["tutorial"],
+        "tags": [],
+        "url": "/tutorial/python-setup/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
       }]
