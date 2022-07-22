@@ -520,4 +520,16 @@ var store = [{
         "tags": [],
         "url": "/tutorial/python-setup/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
+      },{
+        "title": "Matlab 2018b support vs 2019",
+        "excerpt":"Config   mex -setup      Choose ` mex -setup C++ `   Reference      让MATLAB2018b支持VS2019的mex配置 - CSDN            Can I use Microsoft Visual Studio 2019 with MATLAB R2019a or R2018b? - MathWork           ","categories": ["tutorial"],
+        "tags": [],
+        "url": "/tutorial/Matlab-2018a-support-vs2019/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
+      },{
+        "title": "Ubuntu change dns",
+        "excerpt":"显现      Can not ping, but curl ok   apt can not update            Could not resolve 'nvidia.github.io'           Can not ping 8.8.8.8, but 223.5.5.5(ali dns) ok   如何解决      更改dns        ubuntu 18       sudo vim /etc/systemd/resolved.conf DNS=223.5.5.5 sudo systemctl restart systemd-resolved.service           检查   systemd-resolve --status   Global     DNS Servers: 223.5.5.5   Reference      Ubuntu 18.04 永久修改DNS的方法 - 51cto  ","categories": ["tutorial"],
+        "tags": [],
+        "url": "/tutorial/Matlab-2018a-support-vs2019/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
       }]
