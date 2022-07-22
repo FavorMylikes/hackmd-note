@@ -522,7 +522,7 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
       },{
         "title": "Matlab 2018b support vs 2019",
-        "excerpt":"Config   mex -setup      Choose ` mex -setup C++ `   Reference      让MATLAB2018b支持VS2019的mex配置 - CSDN            Can I use Microsoft Visual Studio 2019 with MATLAB R2019a or R2018b? - MathWork           ","categories": ["tutorial"],
+        "excerpt":"Config   mex -setup      Choose ` mex -setup C++ `   Reference      让MATLAB2018b支持VS2019的mex配置 - CSDN            Can I use Microsoft Visual Studio 2019 with MATLAB R2019a or R2018b? - MathWork          ","categories": ["tutorial"],
         "tags": [],
         "url": "/tutorial/Matlab-2018a-support-vs2019/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
