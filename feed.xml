@@ -1,961 +1,481 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2022-07-22T14:48:44+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Ubuntu change dns</title><link href="https://ucas.io/tutorial/Matlab-2018a-support-vs2019/" rel="alternate" type="text/html" title="Ubuntu change dns" /><published>2022-07-22T13:56:51+08:00</published><updated>2022-07-22T13:56:51+08:00</updated><id>https://ucas.io/tutorial/Matlab-2018a-support-vs2019</id><content type="html" xml:base="https://ucas.io/tutorial/Matlab-2018a-support-vs2019/">&lt;h2 id=&quot;显现&quot;&gt;显现&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2023-08-21T23:35:32+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">MeshNet</title><link href="https://ucas.io/ai/WGAN-GP/" rel="alternate" type="text/html" title="MeshNet" /><published>2023-08-21T21:05:19+08:00</published><updated>2023-08-21T21:05:19+08:00</updated><id>https://ucas.io/ai/WGAN-GP</id><content type="html" xml:base="https://ucas.io/ai/WGAN-GP/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;h4 id=&quot;wgan-gp-wasserstein-gan-with-gradient-penalty&quot;&gt;WGAN-GP: Wasserstein GAN with Gradient Penalty&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Can not ping, but curl ok&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt&lt;/code&gt; can not &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update&lt;/code&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1704.00028v3&quot;&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;论文要点&quot;&gt;论文要点&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Wasserstein GAN
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Could not resolve 'nvidia.github.io'&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;WGAN在训练过程中可能遇到不稳定性和收敛困难的问题，而WGAN-GP通过引入梯度惩罚项来替代权重裁剪，能够有效提升GAN的稳定性和训练效果。&lt;/li&gt;
+      &lt;li&gt;WGAN-GP中，通过对批次中真实样本和生成样本之间直线上的点进行采样，并对生成器的梯度进行惩罚来实现Lipschitz约束。这种方法能够在不进行任何超参数调整的情况下，稳定地训练各种GAN架构，包括具有101层ResNet的图像生成模型和连续生成器的语言模型。&lt;/li&gt;
+      &lt;li&gt;在实验中，通过对CIFAR-10和LSUN卧室数据集进行训练和生成，展示了WGAN-GP相对于传统权重裁剪方法在训练速度和样本质量上的改进。论文还对200个随机架构进行了训练并对比其性能，结果显示WGAN-GP能够成功训练大多数架构。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Can not ping &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8.8.8.8&lt;/code&gt;, but &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;223.5.5.5&lt;/code&gt;(ali dns) ok&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;如何解决&quot;&gt;如何解决&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;更改dns&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ubuntu 18&lt;/p&gt;
-
-    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vim /etc/systemd/resolved.conf
-&lt;span class=&quot;nv&quot;&gt;DNS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;223.5.5.5
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl restart systemd-resolved.service
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;检查&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;systemd-resolve --status&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;Global
-    DNS Servers: 223.5.5.5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.51cto.com/u_14841814/2988890&quot;&gt;Ubuntu 18.04 永久修改DNS的方法 - 51cto&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">显现</summary></entry><entry><title type="html">Matlab 2018b support vs 2019</title><link href="https://ucas.io/tutorial/Matlab-2018a-support-vs2019/" rel="alternate" type="text/html" title="Matlab 2018b support vs 2019" /><published>2022-05-03T16:50:13+08:00</published><updated>2022-05-03T16:50:13+08:00</updated><id>https://ucas.io/tutorial/Matlab-2018a-support-vs2019</id><content type="html" xml:base="https://ucas.io/tutorial/Matlab-2018a-support-vs2019/">&lt;h2 id=&quot;config&quot;&gt;Config&lt;/h2&gt;
-
-&lt;div class=&quot;language-matlab highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;setup&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Choose ` mex -setup C++ `&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/u013238941/article/details/106490969&quot;&gt;让MATLAB2018b支持VS2019的mex配置 - CSDN&lt;/a&gt;
+  &lt;li&gt;需要理解KL散度，JS散度（KL的对称版）&lt;/li&gt;
+  &lt;li&gt;GAN
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://ww2.mathworks.cn/matlabcentral/answers/454296-can-i-use-microsoft-visual-studio-2019-with-matlab-r2019a-or-r2018b#answer_376567&quot;&gt;Can I use Microsoft Visual Studio 2019 with MATLAB R2019a or R2018b? - MathWork&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;D(Y, θ)：其中相对熵被用神经网络训练(希望尽可能大-网络可以区分)&lt;/li&gt;
+      &lt;li&gt;G(X, θ)：希望两个分布尽可能相似(希望尽可能小)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Config</summary></entry><entry><title type="html">Python setup.py, How to install package by your self</title><link href="https://ucas.io/tutorial/python-setup/" rel="alternate" type="text/html" title="Python setup.py, How to install package by your self" /><published>2022-03-19T21:35:47+08:00</published><updated>2022-03-19T21:35:47+08:00</updated><id>https://ucas.io/tutorial/python-setup</id><content type="html" xml:base="https://ucas.io/tutorial/python-setup/">&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/FavorMylikes/cuefig&quot;&gt;Home Page - Github&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pypi.org/project/cuefig/&quot;&gt;Pypi Page&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setup.py&lt;/code&gt; file&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;setuptools&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;find_packages&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'requirements.txt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;r&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;splitlines&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'cuefig'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0.0.2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'https://github.com/FavorMylikes/cuefig'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;license&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'MIT License'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'麦丽素'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;author_email&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'l786112323@gmail.com'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'A config framework that you can cue and hint quickly.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;package_data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;*.yaml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;classifiers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;Programming Language :: Python :: 3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;License :: OSI Approved :: MIT License&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;Operating System :: OS Independent&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;install_requires&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;packages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;python_requires&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&amp;gt;=3.7&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;tree&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;│   LICENSE
-│   main.py
-│   README.md
-│   requirements.txt
-│   setup.py
-│
-├───cuefig
-│   │   __init__.py
-│   │
-│   ├───logger
-│   │       logging.yaml
-│   │       __init__.py
-│   │
-│   └───utils
-│           __init__.py
-
-
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;install&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;python ./setup.py install
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;deploy&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;python setup.py check
-python -m build
-python -m twine upload --skip-existing --repository pypi dist/* --verbose
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;hint&quot;&gt;Hint&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/pypa/packaging-problems/issues/74#issuecomment-137763944&quot;&gt;You can not upload save version dist twice&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://packaging.python.org/en/latest/specifications/pypirc/#using-a-pypi-token&quot;&gt;Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.pypirc&lt;/code&gt; to save pypi token&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/276461821&quot;&gt;花了两天，终于把 Python 的 setup.py 给整明白了 - 王炳明的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/napolunyishi/article/details/52067872&quot;&gt;制作基于pbr的python可发布package - CSDN&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/tanmx219/article/details/87783312&quot;&gt;pytorch通过torch.utils.cpp_extension构建CUDA/C++拓展 - CSDN&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://packaging.python.org/en/latest/tutorials/packaging-projects&quot;&gt;Packageing project - python🤙&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="tutorial" /><summary type="html">Code</summary></entry><entry><title type="html">Python speed up, Campare for numba and cuda</title><link href="https://ucas.io/3d/pytorch/python-speed-up-compare-numba-cuda/" rel="alternate" type="text/html" title="Python speed up, Campare for numba and cuda" /><published>2022-03-18T20:28:45+08:00</published><updated>2022-03-18T20:28:45+08:00</updated><id>https://ucas.io/3d/pytorch/python-speed-up-compare-numba-cuda</id><content type="html" xml:base="https://ucas.io/3d/pytorch/python-speed-up-compare-numba-cuda/">&lt;h2 id=&quot;numba&quot;&gt;numba&lt;/h2&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;timeit&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeit&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numba&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numba&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;njit&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# 传入jit，numba装饰器中的一种
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nopython&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;go_fast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 首次调用时，函数被编译为机器代码
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;trace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 假设输入变量是numpy数组
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Numba 擅长处理循环
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;trace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tanh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# numba喜欢numpy函数
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trace&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# numba喜欢numpy广播
-&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nopython&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tanh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;blog&quot;&gt;Blog&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.quora.com/How-do-Cython-Numba-and-PyPy-compare-in-terms-of-performance-ease-of-use-and-restrictions&quot;&gt;How do Cython, Numba, and PyPy compare in terms of performance, ease of use, and restrictions - Quora&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/24695645/answer/519267980&quot;&gt;优化 Python 性能：PyPy、Numba 与 Cython，谁才是目前最优秀的 Python 运算解决方案？ - 皮皮关的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/78882641&quot;&gt;numba，让python速度提升百倍 - 朱卫军的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;result&quot;&gt;Result&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;method&lt;/th&gt;
-      &lt;th&gt;jit&lt;/th&gt;
-      &lt;th&gt;timeit&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;go_fast&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;11.3 µs ± 147 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;go_fast&lt;/td&gt;
-      &lt;td&gt;njit&lt;/td&gt;
-      &lt;td&gt;805 ns ± 9.31 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;go&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;7.43 µs ± 45.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;go&lt;/td&gt;
-      &lt;td&gt;njit&lt;/td&gt;
-      &lt;td&gt;921 ns ± 9.16 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;cuda&quot;&gt;cuda&lt;/h2&gt;
-
-&lt;h3 id=&quot;code-cuda&quot;&gt;Code Cuda&lt;/h3&gt;
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;compile&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;nvcc -std=c++11 -o nbody nbody.cu
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;report&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;nsys profile --stats=true --force-overwrite=true -o nbody-report ./nbody
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="pytorch" /><summary type="html">numba</summary></entry><entry><title type="html">Rotation Training by backward progation</title><link href="https://ucas.io/3d/pytorch/rotation-training/" rel="alternate" type="text/html" title="Rotation Training by backward progation" /><published>2022-03-12T21:33:43+08:00</published><updated>2022-03-12T21:33:43+08:00</updated><id>https://ucas.io/3d/pytorch/rotation-training</id><content type="html" xml:base="https://ucas.io/3d/pytorch/rotation-training/">&lt;h2 id=&quot;fix-light-parameter&quot;&gt;Fix light parameter&lt;/h2&gt;
-
-&lt;h3 id=&quot;with-sobel-loss&quot;&gt;With Sobel Loss&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;RANDOM_UV&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;UV_SHAPE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;UV_TRAIN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;AMBIENT_TRAIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;DIFFUSE_TRAIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;SPECULAR_TRAIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;LOCATION_TRAIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;expect_value&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;euler_angles_to_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rotation_mask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'XYZ'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;euler_angles_to_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ZYX'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1647091326.jpg&quot; alt=&quot;1647091326&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;with-pixel-loss&quot;&gt;With Pixel Loss&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;RANDOM_UV&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;UV_SHAPE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;UV_TRAIN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;AMBIENT_TRAIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;DIFFUSE_TRAIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;SPECULAR_TRAIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;LOCATION_TRAIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;expect_value&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;euler_angles_to_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rotation_mask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'XYZ'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;euler_angles_to_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ZYX'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220318201510.png&quot; alt=&quot;20220318201510&quot; /&gt;&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="pytorch" /><summary type="html">Fix light parameter</summary></entry><entry><title type="html">Pytorch Distributed Training Dataloader Test</title><link href="https://ucas.io/3d/pytorch/pytorch-distributed-training-dataloader-test/" rel="alternate" type="text/html" title="Pytorch Distributed Training Dataloader Test" /><published>2022-01-20T16:33:20+08:00</published><updated>2022-01-20T16:33:20+08:00</updated><id>https://ucas.io/3d/pytorch/pytorch-distributed-training-dataloader-test</id><content type="html" xml:base="https://ucas.io/3d/pytorch/pytorch-distributed-training-dataloader-test/">&lt;h2 id=&quot;how-the-dataloader-split-data-into-mutly-devices&quot;&gt;How the dataloader split data into mutly devices&lt;/h2&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;typing&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch.distributed&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init_process_group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_rank&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch.utils.data&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DistributedSampler&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tqdm&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tqdm&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestDataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__len__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__getitem__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;init_process_group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nccl&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cuda&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;BATCH_SIZE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TestDataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BATCH_SIZE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_workers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;drop_last&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;sampler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DistributedSampler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tqdm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;leave&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;disable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;command&quot;&gt;Command&lt;/h3&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;PYTHONUNBUFFERED=1;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CUDA_VISIBLE_DEVICES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0,7&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;OMP_NUM_THREADS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CUDA_LAUNCH_BLOCKING&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
-&lt;span class=&quot;go&quot;&gt;-u -m torch.distributed.run --nproc_per_node=2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;result&quot;&gt;Result&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;size = 1&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;(rank:0, i:0, tensor([0], device='cuda:0'))
-(rank:1, i:0, tensor([0], device='cuda:1'))
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;size = 2&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;(rank:0, i:0, tensor([0], device='cuda:0'))
-(rank:1, i:0, tensor([1], device='cuda:1'))
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;size = 3&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;means pytorch will pick enough data to fill a batch&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;(rank:0, i:0, tensor([2], device='cuda:0'))
-(rank:0, i:1, tensor([1], device='cuda:0'))
-(rank:1, i:0, tensor([0], device='cuda:1'))
-(rank:1, i:1, tensor([2], device='cuda:1'))
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;comment&quot;&gt;Comment&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;here the data model will not synchronism&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ddp&quot;&gt;DDP&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;typing&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distributed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tensor&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch.distributed&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init_process_group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_rank&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch.nn.parallel&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DistributedDataParallel&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch.utils.data&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DistributedSampler&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tqdm&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tqdm&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setup_seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manual_seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manual_seed_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;use_deterministic_algorithms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reduce_tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;distributed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all_reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;op&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distributed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ReduceOp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distributed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_world_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rt&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;norm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestDataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__len__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__getitem__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;init_process_group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nccl&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cuda&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;BATCH_SIZE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;SEED&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setup_seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SEED&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TestDataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BATCH_SIZE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_workers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;drop_last&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;sampler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DistributedSampler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tqdm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;leave&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;disable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TestModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DistributedDataParallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Adam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;# will lead the tensor reduce hangs
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zero_grad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;total_reduce&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reduce_tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;total_reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;PYTHONUNBUFFERED=1;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CUDA_VISIBLE_DEVICES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0,7&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;OMP_NUM_THREADS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CUDA_LAUNCH_BLOCKING&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
-&lt;span class=&quot;go&quot;&gt;-u -m torch.distributed.run --nproc_per_node=2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;about-reduce-api&quot;&gt;About &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reduce api&lt;/code&gt;&lt;/h2&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;all_reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;op&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ReduceOp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async_op&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Here async_op 表示同步还是异步，default as False
-# 如果是异步，则不同的进程得到的结果是不同的
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;init_process_group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nccl&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cuda&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;item_inner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;item_outer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# print((rank, x))
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;op_outer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;all_reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item_outer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async_op&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 隐式变量依然可以保持同步
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;op_inner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;all_reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item_inner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;op&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ReduceOp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async_op&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;op_inner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 如果op_inner已完成等待，则op_outer也已完成reduce计算
-# 反之op_outer已完成等待，op_inner未必完成计算
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item_inner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item_outer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/178402798&quot;&gt;[原创][深度][PyTorch] DDP系列第一篇：入门教程 - 996黄金一代的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/187610959&quot;&gt;[原创][深度][PyTorch] DDP系列第二篇：实现原理与源代码解析 - 996黄金一代的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/250471767&quot;&gt;[原创][深度][PyTorch] DDP系列第三篇：实战与技巧 - 996黄金一代的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zyc.ai/pytorch/distributed/&quot;&gt;Zhiyuan Chen - zyc.ai&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://discuss.pytorch.org/t/best-practice-for-uneven-dataset-sizes-with-distributeddataparallel/67308/2&quot;&gt;Best practice for uneven dataset sizes with DistributedDataParallel - discuss.pytorch.org&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/pytorch/pytorch/issues/33148&quot;&gt;Support uneven DDP inputs - github.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Hook
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://medium.com/the-dl/how-to-use-pytorch-hooks-5041d777f904&quot;&gt;How to Use PyTorch Hooks - Frank Odom - medium&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="pytorch" /><summary type="html">How the dataloader split data into mutly devices</summary></entry><entry><title type="html">Mesh UV Motivation</title><link href="https://ucas.io/3d/uv-mesh-motivation/" rel="alternate" type="text/html" title="Mesh UV Motivation" /><published>2022-01-14T13:28:56+08:00</published><updated>2022-01-14T13:28:56+08:00</updated><id>https://ucas.io/3d/uv-mesh-motivation</id><content type="html" xml:base="https://ucas.io/3d/uv-mesh-motivation/">&lt;h2 id=&quot;obj-file&quot;&gt;obj file&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Img file&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220114133423.png&quot; alt=&quot;20220114133423&quot; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-obj&quot;&gt;mtllib square.mtl
-v 0 0 0
-v 0 1 0
-v 1 1 0
-v 0 0 0
-v 1 1 0
-v 1 0 0
-vt 0.25 0.25
-vt 0.25 0.75
-vt 0.75 0.75
-vt 0.25 0.25
-vt 0.75 0.75
-vt 0.75 0.25
-usemtl material_0
-f 1/1 2/2 3/3
-f 4/4 5/5 6/6
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220114133304.png&quot; alt=&quot;20220114133304&quot; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-obj&quot;&gt;mtllib square.mtl
-v 0 0 0
-v 0 1 0
-v 1 1 0
-v 0 0 0
-v 1 1 0
-v 1 0 0
-vt 0 0
-vt 0 1
-vt 1 1
-vt 0 0
-vt 1 1
-vt 1 0
-usemtl material_0
-f 1/1 2/2 3/3
-f 4/4 5/5 6/6
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220114133129.png&quot; alt=&quot;20220114133129&quot; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-obj&quot;&gt;mtllib square_2x3.mtl
-v 0 0 0
-v 0 1 0
-v 1 1 0
-v 0 0 0
-v 1 1 0
-v 1 0 0
-vt 0 1
-vt 0 0
-vt 1 0
-vt 0 1
-vt 1 0
-vt 1 1
-usemtl material_0
-f 1/1 2/2 3/3
-f 4/4 5/5 6/6
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220114225740.png&quot; alt=&quot;20220114225740&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;gird-test&quot;&gt;gird test&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;img&lt;/th&gt;
-      &lt;th&gt;params&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115182749.png&quot; width=&quot;150px&quot; alt=&quot;20220115182749&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;gird 4x4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115184433.png&quot; width=&quot;150px&quot; alt=&quot;20220115184433&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;gird 4x4 exp 0h1w&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115184447.png&quot; width=&quot;150px&quot; alt=&quot;20220115184447&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;gird 4x4 exp 0h2w&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115184457.png&quot; width=&quot;150px&quot; alt=&quot;20220115184457&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;gird 4x4 exp 0h4w&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115184505.png&quot; width=&quot;150px&quot; alt=&quot;20220115184505&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;gird 4x4 exp 0h8w&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115184526.png&quot; width=&quot;150px&quot; alt=&quot;20220115184526&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;gird 4x4 exp 8h8w&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png&quot; width=&quot;150px&quot; alt=&quot;20220115190637&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;gird 4x4 exp 8h8w moved&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">obj file</summary></entry><entry><title type="html">Pytorch mesh render memory using</title><link href="https://ucas.io/3d/Pytorch-mesh-render-memory/" rel="alternate" type="text/html" title="Pytorch mesh render memory using" /><published>2021-12-21T21:19:02+08:00</published><updated>2021-12-21T21:19:02+08:00</updated><id>https://ucas.io/3d/Pytorch-mesh-render-memory</id><content type="html" xml:base="https://ucas.io/3d/Pytorch-mesh-render-memory/">&lt;h2 id=&quot;memory&quot;&gt;Memory&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Memory&lt;/th&gt;
-      &lt;th&gt;speed&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;factor x4&lt;/td&gt;
-      &lt;td&gt;1.6-2.5G&lt;/td&gt;
-      &lt;td&gt;2.3s/it&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;factor x2&lt;/td&gt;
-      &lt;td&gt;2.6-3.7G&lt;/td&gt;
-      &lt;td&gt;2.5s/it&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;factor x1&lt;/td&gt;
-      &lt;td&gt;4.68G-8.58G&lt;/td&gt;
-      &lt;td&gt;5s/it&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;parameter&quot;&gt;Parameter&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Comment&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;9-9&lt;/td&gt;
-      &lt;td&gt;在原有贴图上训练进行修正，Factor=4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;uv_avg_pooling&lt;/td&gt;
-      &lt;td&gt;为了避免某些贴图像素未被训练，讲max_pooling改为avg_pooling&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;factor&lt;/td&gt;
-      &lt;td&gt;更改uv大小&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;zeros_uv&lt;/td&gt;
-      &lt;td&gt;纯黑色的uvmap&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;color_sobel&lt;/td&gt;
-      &lt;td&gt;gray sobel的训练结果偏绿，各层训练结果不同步，使用3层sobel修正彩色部分&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;no_maxmin_scalar&lt;/td&gt;
-      &lt;td&gt;blur后存在大于1的像素点，归一化时曾使用过maxmin_scalar，但这直接影响了训练结果的齐次性&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;random_uv&lt;/td&gt;
-      &lt;td&gt;zero uv在训练时存在扩散效应，固训练速度较慢，改为random_uv训练速度变大&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;multi_loss&lt;/td&gt;
-      &lt;td&gt;sobel_loss只将边缘计算了出来，无法表达平滑像素&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;softphone-shader&lt;/td&gt;
-      &lt;td&gt;更改hardphone-shader，使得点的权重加大&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;$\sqrt{0}\rightarrow\frac{1}{2}0^{-\frac{1}{2}}$&lt;/p&gt;
-
-&lt;p&gt;$\sqrt{0 + \epsilon^2}-\epsilon\rightarrow\frac{1}{2}(0+\epsilon^2)^{-\frac{1}{2}}$&lt;/p&gt;
-
-&lt;p&gt;$uv=sigmoid(\log(\frac{uv}{1-uv}))$&lt;/p&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Memory</summary></entry><entry><title type="html">Mutly Polygon plot</title><link href="https://ucas.io/3d/Mutly-Polygon-plot/" rel="alternate" type="text/html" title="Mutly Polygon plot" /><published>2021-12-10T13:36:49+08:00</published><updated>2021-12-10T13:36:49+08:00</updated><id>https://ucas.io/3d/Mutly-Polygon-plot</id><content type="html" xml:base="https://ucas.io/3d/Mutly-Polygon-plot/">&lt;h2 id=&quot;wordcloud-algorithm&quot;&gt;WordCloud Algorithm&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Repository&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;spark&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;star&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/amueller/word_cloud&quot;&gt;&lt;img src=&quot;https://github-readme-stats.vercel.app/api/pin/?username=amueller&amp;amp;repo=word_cloud&amp;amp;show_owner=true&quot; alt=&quot;Readme Card&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/amueller/word_cloud&quot;&gt;&lt;img src=&quot;https://stars.medv.io/amueller/word_cloud.svg&quot; alt=&quot;Sparkline&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://starchart.cc/amueller/word_cloud&quot;&gt;&lt;img src=&quot;https://starchart.cc/amueller/word_cloud.svg&quot; width=&quot;200px&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;分词&lt;/li&gt;
-  &lt;li&gt;根据词频设计字体大小&lt;/li&gt;
-  &lt;li&gt;从大到小，利用积分图寻找可以放置矩形的空白空间
-    &lt;ul&gt;
-      &lt;li&gt;积分图&lt;/li&gt;
-      &lt;li&gt;每个点表示左上角矩形的像素和&lt;/li&gt;
-      &lt;li&gt;利用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int_canvas[y+h,x+w] - int_canvas[y,x+w] - int_canvas[y+h,x] + int_canvas[y,x]&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;可以判断该矩形内是否存在任何像素&lt;/li&gt;
-      &lt;li&gt;wordcloud使用内置对象&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IntegralOccupancyMap&lt;/code&gt;实现积分图查找对应矩形内是否存在像素&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;缺点
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wordcloud&lt;/code&gt;不支持任意角度旋转&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echart&lt;/code&gt;支持&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;triangle-texture&quot;&gt;Triangle Texture&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211210133721.png&quot; alt=&quot;20211117163530&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Random triangle&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;contours = np.random.randint(0, 100, (n, 3, 2))&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;四叉树
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211211171145.png&quot; alt=&quot;20211211171145&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211211202201.png&quot; alt=&quot;20211211202201&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Triangle collision detection
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211213200123.png&quot; alt=&quot;20211213200123&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Quadrilateral collision detection
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211213200624.png&quot; alt=&quot;20211213200624&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;aabb-with-aabb-collision-detection&quot;&gt;AABB with AABB collision detection&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://kishimotostudios.com/articles/aabb_collision/&quot;&gt;kishimotostudios.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;square-layout&quot;&gt;Square Layout&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211214203648.png&quot; alt=&quot;20211214203648&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;refernece&quot;&gt;Refernece&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://python123.io/tutorials/word_cloud&quot;&gt;你不知道的词云 - python123🤙🤙🤙&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/amueller/word_cloud/blob/35ce9b781d3bd5c25ea178edd662b0f6dde9d065/wordcloud/wordcloud.py#L391&quot;&gt;wordcloud - github&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/36215811&quot;&gt;词云布局知多少 - 兔子林呀的文章 - 知乎🤙&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://codepen.io/gracelinmumu/pen/wmVddg&quot;&gt;codepen&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">WordCloud Algorithm</summary></entry><entry><title type="html">The Coordinate System - How to convert between different coordinate system</title><link href="https://ucas.io/3d/The-Coordinate-System-How-to-convert-between-different-coordinate-system/" rel="alternate" type="text/html" title="The Coordinate System - How to convert between different coordinate system" /><published>2021-11-15T16:30:44+08:00</published><updated>2021-11-15T16:30:44+08:00</updated><id>https://ucas.io/3d/The-Coordinate-System-How-to-convert-between-different-coordinate-system</id><content type="html" xml:base="https://ucas.io/3d/The-Coordinate-System-How-to-convert-between-different-coordinate-system/">&lt;h2 id=&quot;coordinate-system&quot;&gt;Coordinate System&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;system&lt;/th&gt;
-      &lt;th&gt;image&lt;/th&gt;
-      &lt;th&gt;System hand&lt;/th&gt;
-      &lt;th&gt;Rotation hand&lt;/th&gt;
-      &lt;th&gt;Camera&lt;/th&gt;
-      &lt;th&gt;Order&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://en.wikibooks.org/wiki/OpenGL_Programming/Mini-Portal_Smooth&quot;&gt;OpenGL&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211116000556.png&quot; alt=&quot;20211116000556&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;RH&lt;/td&gt;
-      &lt;td&gt;RH&lt;/td&gt;
-      &lt;td&gt;(0,0,-1)&lt;/td&gt;
-      &lt;td&gt;XYZ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://docs.unity3d.com/560/Documentation/Manual/Transforms.html&quot;&gt;Unity&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211116001515.png&quot; alt=&quot;20211116000556&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;LH&lt;/td&gt;
-      &lt;td&gt;LH&lt;/td&gt;
-      &lt;td&gt;(0,0,1)&lt;/td&gt;
-      &lt;td&gt;YXZ(local) zxy(global)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://pytorch3d.org/docs/cameras&quot;&gt;pytorch3d&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211116001452.png&quot; alt=&quot;20211116000556&quot; width=&quot;200px&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;RH&lt;/td&gt;
-      &lt;td&gt;LH&lt;/td&gt;
-      &lt;td&gt;(0,0,1)&lt;/td&gt;
-      &lt;td&gt;XYZ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html&quot;&gt;OpenCV&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211117163530.png&quot; alt=&quot;20211117163530&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;RH&lt;/td&gt;
-      &lt;td&gt;RH&lt;/td&gt;
-      &lt;td&gt;(0,0,1)&lt;/td&gt;
-      &lt;td&gt;XYZ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.from_euler.html#reaa093f6923f-1&quot;&gt;scipy&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;RH&lt;/td&gt;
-      &lt;td&gt;LH&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;XYZ xyz&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;docs&quot;&gt;Docs&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;scipy
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;quat = [x,y,z,w]&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;euler
-        &lt;ul&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;XYZ&lt;/code&gt; means &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;intrinsic&lt;/code&gt;&lt;/strong&gt; rotations &lt;a href=&quot;https://en.wikipedia.org/wiki/Davenport_chained_rotations#Intrinsic_rotations&quot;&gt;内在旋转&lt;/a&gt;,&lt;a href=&quot;https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations&quot;&gt;Conventions by intrinsic rotations&lt;/a&gt;
-            &lt;ul&gt;
-              &lt;li&gt;&lt;strong&gt;intrinsic rotations&lt;/strong&gt; 指每次旋转的旋转轴都是上次变换后新坐标系&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xyz&lt;/code&gt; means &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;extrinsic&lt;/code&gt;&lt;/strong&gt; rotations &lt;a href=&quot;https://en.wikipedia.org/wiki/Davenport_chained_rotations#Extrinsic_rotations&quot;&gt;外在旋转&lt;/a&gt;,&lt;a href=&quot;https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_extrinsic_rotations&quot;&gt;Conventions by extrinsic rotations&lt;/a&gt;
-            &lt;ul&gt;
-              &lt;li&gt;&lt;strong&gt;extrinsic rotations&lt;/strong&gt; 指每次旋转的旋转轴都是固定的参考系&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;unity
-    &lt;ul&gt;
-      &lt;li&gt;rotation
-        &lt;ul&gt;
-          &lt;li&gt;local rotation: &lt;strong&gt;intrinsic rotations&lt;/strong&gt;, YXZ&lt;/li&gt;
-          &lt;li&gt;global rotation: &lt;strong&gt;extrinsic rotations&lt;/strong&gt;, zxy&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;order: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YXZ&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;math
+  &lt;li&gt;&lt;a href=&quot;https://kexue.fm/archives/4439&quot;&gt;互怼的艺术：从零直达WGAN-GP&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;
         &lt;table&gt;
           &lt;tbody&gt;
             &lt;tr&gt;
-              &lt;td&gt;Rodrigues: $r_{vert} = [x,y,z]$, $&lt;/td&gt;
-              &lt;td&gt;r_{vert}&lt;/td&gt;
-              &lt;td&gt;&lt;em&gt;2$表示旋转角度, $r&lt;/em&gt;{vert}$表示旋转向量&lt;/td&gt;
+              &lt;td&gt;[公众号：PaperWeekly 第41期&lt;/td&gt;
+              &lt;td&gt;互怼的艺术：从零直达 WGAN-GP](https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;amp;mid=2247484880&amp;amp;idx=1&amp;amp;sn=4b2e976cc715c9fe2d022ff6923879a8&amp;amp;chksm=96e9da50a19e5346307b54f5ce172e355ccaba890aa157ce50fda68eeaccba6ea05425f6ad76&amp;amp;scene=21#wechat_redirect)&lt;/td&gt;
             &lt;/tr&gt;
           &lt;/tbody&gt;
         &lt;/table&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9B%9B%E5%85%83%E6%95%B0%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%97%8B%E8%BD%AC&quot;&gt;四元数与空间旋转&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/bojone/gan/&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;cv2
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;[变分自编码器VAE：原来是这么一回事&lt;/td&gt;
+          &lt;td&gt;附开源代码 - PaperWeekly的文章 - 知乎](https://zhuanlan.zhihu.com/p/34998569)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">MeshNet</title><link href="https://ucas.io/3d/ai/Mesh-%E9%9A%90%E7%A9%BA%E9%97%B4/" rel="alternate" type="text/html" title="MeshNet" /><published>2023-08-20T17:14:46+08:00</published><updated>2023-08-20T17:14:46+08:00</updated><id>https://ucas.io/3d/ai/Mesh%20%E9%9A%90%E7%A9%BA%E9%97%B4</id><content type="html" xml:base="https://ucas.io/3d/ai/Mesh-%E9%9A%90%E7%A9%BA%E9%97%B4/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;h4 id=&quot;deepsdf-learning-continuous-signed-distance-functions-for-shape-representation&quot;&gt;DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation&lt;/h4&gt;
+
+&lt;h5 id=&quot;text-to-3d&quot;&gt;text to 3d&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://3dfy.ai/&quot;&gt;3dfy&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;Rodrigues
+      &lt;li&gt;text to 3d, image to 3d&lt;/li&gt;
+      &lt;li&gt;objects
         &lt;ul&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cv2.Rodrigues(rotvec)[0]&lt;/code&gt;: 旋转向量到旋转矩阵&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cv2.Rodrigues(rotmatrix)[0]&lt;/code&gt;: 旋转矩阵到旋转向量&lt;/li&gt;
+          &lt;li&gt;interiors: table lamps、sofa、table、ottoman、cutlery&lt;/li&gt;
+          &lt;li&gt;gaming：sword、shield、axes&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+      &lt;li&gt;提供API&lt;/li&gt;
+      &lt;li&gt;面像对象：GTA&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://3dfy.ai/technology&quot;&gt;架构和技术方案&lt;/a&gt;(没有具体写参照的论文)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dreamfusion3d.github.io/&quot;&gt;DreamFusion - google&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;平均1.5小时&lt;/li&gt;
+      &lt;li&gt;文本-&amp;gt;2D图像-&amp;gt;优化为Nerf
+        &lt;ul&gt;
+          &lt;li&gt;Score Jacobian Chaining(目前几乎所有的零样本开放域文生 3D 工作所使用的算法)&lt;/li&gt;
+          &lt;li&gt;问题：过于平滑、过饱和现象严重&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820201944.png&quot; alt=&quot;20230820201944&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ashawkey/stable-dreamfusion&quot;&gt;stable-dreamfusion&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;python + cuda&lt;/li&gt;
+          &lt;li&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;A pytorch implementation of the text-to-3D model Dreamfusion&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/thu-ml/prolificdreamer&quot;&gt;prolificdreamer - 清华 2023&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2305.16213&quot;&gt;Paper&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;Code: release soon&lt;/li&gt;
+          &lt;li&gt;DataSet: &lt;a href=&quot;https://arxiv.org/abs/2210.08402&quot;&gt;LAION-5B&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;A dataset consisting of 5.85 billion CLIP-filtered image-text pairs, featuring several nearest neighbor indices, an improved web-interface for exploration and subset generation, and detection scores for watermark, NSFW, and toxic content detection.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;VSD(Variational Score Distillation)变分得分蒸馏 + Nerf&lt;/li&gt;
+          &lt;li&gt;将3D优化转为2D图像概率分布&lt;/li&gt;
+          &lt;li&gt;解决了 DreamFusion 所提 SDS 算法的过饱和、过平滑、缺少多样性等问题&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820201728.png&quot; alt=&quot;20230820201728&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820202131.png&quot; alt=&quot;20230820202131&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.aliyun.com/article/1238277&quot;&gt;开发者社区 机器之心 文章 正文
+无需任何3D数据，直接文本生成高质量3D内容，清华朱军团队带来重大进展 - 阿里云&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://research.nvidia.com/labs/dir/magic3d/&quot;&gt;Magic3D - Nvidia&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;平均40分钟&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/amusi1994/article/details/128030083&quot;&gt;一句话生成3D模型！NVIDIA提出Magic3D：高分辨率文本到3D内容创建 - CSDN&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Magic3D提出了一个两阶段的优化框架，通过使用不同分辨率的扩散先验进行粗到精的优化过程。这使得Magic3D能够生成更高分辨率的几何体和纹理。而DreamFusion在这方面存在限制，无法获取高分辨率的几何体和纹理。&lt;/li&gt;
+      &lt;li&gt;Magic3D采用了一种多分辨率哈希网格编码架构，使用具有32个隐藏单元的单层MLP来预测RGB颜色、体积密度和法线。同时，Magic3D还引入了密度基础剪枝方法来稀疏表示，并通过密度偏置来优化粗糙神经场表示。&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820210204.png&quot; alt=&quot;20230820210204&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/openai/shap-e&quot;&gt;Shap-E: Generating Conditional 3D Implicit Functions - 2023 - OpenAI&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;dataset：貌似是私有的&lt;/li&gt;
+      &lt;li&gt;隐式空间的编码器训练
+        &lt;ul&gt;
+          &lt;li&gt;点云-&amp;gt;点卷积-&amp;gt;交叉注意力-&amp;gt;patch-&amp;gt;隐式空间的编码表示&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820221546.png&quot; alt=&quot;20230820221546&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Latent Diffusion 条件扩散模型&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2212.08751&quot;&gt;Point-E: A System for Generating 3D Point Clouds from Complex Prompts - OpenAI&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;text -&amp;gt; point cloud -&amp;gt; mesh(based on sdf)&lt;/li&gt;
+      &lt;li&gt;基于文本生成合成视图，基于合成视图生成粗糙的点云，最后根据低分辨率点云和合成视图生成精细的点云。&lt;/li&gt;
+      &lt;li&gt;条件扩散模型&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;conversion&quot;&gt;Conversion&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;c r&lt;/th&gt;
-      &lt;th&gt;c t&lt;/th&gt;
-      &lt;th&gt;o r&lt;/th&gt;
-      &lt;th&gt;obj t&lt;/th&gt;
-      &lt;th&gt;obj scale&lt;/th&gt;
-      &lt;th&gt;status&lt;/th&gt;
-      &lt;th&gt;comment&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;9.3,153.1,106.7&lt;/td&gt;
-      &lt;td&gt;-43.2,99.3,83.8&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0,-1,0&lt;/td&gt;
-      &lt;td&gt;✔&lt;/td&gt;
-      &lt;td&gt;c r = inv(mat)zxy,xyz&lt;em&gt;=[-,-,+], t = xyz&lt;/em&gt;[+,+,-]&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;9.3,153.1,106.7&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;43.2,-99.3,-83.8&lt;/td&gt;
-      &lt;td&gt;0,-1,0&lt;/td&gt;
-      &lt;td&gt;✔&lt;/td&gt;
-      &lt;td&gt;c r = inv(mat)zxy,xyz&lt;em&gt;=[-,-,+],o t = xyz&lt;/em&gt;[-,-,+]&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;from-unity-to-pytorch3d&quot;&gt;From unity to pytorch3d&lt;/h3&gt;
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;unity$(t=(x,y,z),r=(\theta_x,\theta_y,\theta_z))$&lt;/li&gt;
-  &lt;li&gt;pytorch3d$(t=(-x,y,z)),r=(-\theta_x,\theta_y,\theta_z)$&lt;/li&gt;
-  &lt;li&gt;code
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xcfnhrYqKac&quot;&gt;youtube MeshNet++&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/iMoonLab/MeshNet&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">MeshNet</title><link href="https://ucas.io/3d/ai/MeshNet-copy/" rel="alternate" type="text/html" title="MeshNet" /><published>2023-08-20T16:11:28+08:00</published><updated>2023-08-20T16:11:28+08:00</updated><id>https://ucas.io/3d/ai/MeshNet%20copy</id><content type="html" xml:base="https://ucas.io/3d/ai/MeshNet-copy/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;h4 id=&quot;deepsdf-learning-continuous-signed-distance-functions-for-shape-representation&quot;&gt;DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation&lt;/h4&gt;
+
+&lt;h5 id=&quot;over-view&quot;&gt;Over View&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png&quot; alt=&quot;20230820161208&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;数据处理&quot;&gt;数据处理&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820162244.png&quot; alt=&quot;20230820162244&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;面旋转卷积&quot;&gt;面旋转卷积&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820165548.png&quot; alt=&quot;20230820165548&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;面核卷积&quot;&gt;面核卷积&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820165656.png&quot; alt=&quot;20230820165656&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;mesh-convolution&quot;&gt;mesh convolution&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820162309.png&quot; alt=&quot;20230820162309&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数据集
     &lt;ul&gt;
-      &lt;li&gt;equivalence transformation&lt;/li&gt;
-      &lt;li&gt;euler to euler&lt;/li&gt;
+      &lt;li&gt;ModelNet40&lt;/li&gt;
     &lt;/ul&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;verts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;theta_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;theta_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;theta_z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;angles&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;rotation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_euler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;yxz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;theta_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;theta_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;theta_z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;degrees&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;trans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
+  &lt;/li&gt;
+  &lt;li&gt;代码
     &lt;ul&gt;
-      &lt;li&gt;unity.quat to scipy.euler&lt;/li&gt;
+      &lt;li&gt;python&lt;/li&gt;
     &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/iMoonLab/MeshNet&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;c1&quot;&gt;# quat from unity [10,-120,70]
-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.459144592&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.731702268&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.347525775&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.364724457&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;euler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_quat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_euler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'zxy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;euler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;rotation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_euler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'yxz'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;euler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+&lt;h3 id=&quot;论文要点&quot;&gt;论文要点&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;将输入转化为空间描述符合结构描述符两种，最后通过mesh 卷积得到全局特征&lt;/li&gt;
+  &lt;li&gt;结构描述符包含面核相关性、面旋转卷积
+    &lt;ul&gt;
+      &lt;li&gt;面核相关性由作者定义的函数进行计算&lt;/li&gt;
+      &lt;li&gt;面旋转卷积由名片各点到面中心的向量进行计算&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;空间描述符主要使用mesh中每个平面的几个中心直接进行MLP处理
+后续增加池化等，活动全局特征&lt;/li&gt;
+  &lt;li&gt;论文不提供重建过程，更多用于分类&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xcfnhrYqKac&quot;&gt;youtube MeshNet++&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/iMoonLab/MeshNet&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">DeepSDF</title><link href="https://ucas.io/3d/ai/DeepSDF/" rel="alternate" type="text/html" title="DeepSDF" /><published>2023-08-19T18:04:02+08:00</published><updated>2023-08-19T18:04:02+08:00</updated><id>https://ucas.io/3d/ai/DeepSDF</id><content type="html" xml:base="https://ucas.io/3d/ai/DeepSDF/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;h4 id=&quot;deepsdf-learning-continuous-signed-distance-functions-for-shape-representation&quot;&gt;DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230819180636.png&quot; alt=&quot;20230819180636&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230819194323.png&quot; alt=&quot;20230819194323&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数据集
+    &lt;ul&gt;
+      &lt;li&gt;ShapeNet&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;代码
+    &lt;ul&gt;
+      &lt;li&gt;C++\python&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;学习连续的有符号距离函数（Signed Distance Function，SDF）
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Signed_distance_function&quot;&gt;WIKI SDF&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.bimant.com/blog/signed-distance-field-implementation/&quot;&gt;有符号距离场原理及实现&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/qq_41368247/article/details/106194092&quot;&gt;2D基本图形的Sign Distance Function (SDF)详解（上）&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SDF的零极线，差不多是为0的等势面&lt;/li&gt;
+  &lt;li&gt;输入：
+    &lt;ul&gt;
+      &lt;li&gt;3D点云 + 噪声或缺失&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;用于训练SDF，并构建3D模型&lt;/li&gt;
+  &lt;li&gt;模型通过输入的部分和嘈杂的3D数据点，使用神经网络进行训练，并生成一个能够表示形状表面的连续距离函数。这个距离函数可以通过计算一个点到形状边界的距离，并根据符号指示区域是形状内部还是外部。通过学习这样的连续距离函数，模型能够实现对形状的表示、重建、插值和完成任务。&lt;/li&gt;
+  &lt;li&gt;DeepSDF通过神经网络将未知形状的表面表示为SDF的零级线，并可用于插值和完成部分和噪声3D数据。相比之前的方法，DeepSDF在学习的3D形状表示和完成任务上取得了最先进的性能。这项工作的关键创新之处在于引入了自动解码器（auto-decoder）的学习方案，将形状编码和网络参数联合进行优化，同时在数据准备、网络架构和实验设计等方面进行了深入的探索和分析。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The authors normalized each mesh to a unit sphere and sampled singed distance values for 500,000 spatial points. To capture greater geometric detail of the objects for better model training, sampling was most aggressive near surface areas.
+Compared with traditional auto-encoders with both encoder and decoder architectures, &lt;strong&gt;such decoder-only network&lt;/strong&gt;s make the model more compact while maintaining good performance.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;直接用隐变量去Auto-Decoder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Training a specific neural network for each shape is neither
+feasible nor very useful. Instead, we want a model that
+can represent a wide variety of shapes, discover their common
+properties, and embed them in a low dimensional latent
+space. To this end, we introduce a latent vector z, which can
+be thought of as encoding the desired shape, as a second input
+to the neural network as depicted in Fig. 3b.
+&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820005850.png&quot; alt=&quot;20230820005850&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;notice&quot;&gt;Notice&lt;/h2&gt;
+
+&lt;p&gt;git&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Shape Completion
+The current release does not include code for shape completion. Please check back later!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/facebookresearch/DeepSDF&quot;&gt;https://github.com/facebookresearch/DeepSDF&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cameronrwolfe.substack.com/p/3d-generative-modeling-with-deepsdf&quot;&gt;3D Generative Modeling with DeepSDF&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://towardsdatascience.com/3d-generative-modeling-with-deepsdf-2cd06f1ec9b3&quot;&gt;3D Generative Modeling with DeepSDF&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/syncedreview/facebook-mit-uw-introduce-deepsdf-ai-for-3d-shape-representation-75416481e1be&quot;&gt;Facebook, MIT &amp;amp; UW Introduce DeepSDF AI for 3D Shape Representation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=LILRJzMQw5o&amp;amp;t=1s&quot;&gt;Youtube&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1iuLxJmQII0&quot;&gt;CSC2547 DeepSDF Learning Continuous Signed Distance Functions for Shape Representation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Dreambooth</title><link href="https://ucas.io/ai/Dreambooth/" rel="alternate" type="text/html" title="Dreambooth" /><published>2023-07-08T18:59:17+08:00</published><updated>2023-07-08T18:59:17+08:00</updated><id>https://ucas.io/ai/Dreambooth</id><content type="html" xml:base="https://ucas.io/ai/Dreambooth/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;h4 id=&quot;dreambooth-fine-tuning-text-to-image-diffusion-models-for-subject-driven-generation&quot;&gt;DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It’s like a photo booth, but once the subject is captured, it can be synthesized wherever your dreams take you.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230708190125.png&quot; alt=&quot;20230708190125&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在微调层面，我们重新使用图片进行微调训练会导致几个问题
+    &lt;ul&gt;
+      &lt;li&gt;语言漂移【学了新的忘了旧的】
+        &lt;ul&gt;
+          &lt;li&gt;在大模型上微调之后，逐渐失去语言的句法和语义知识。即失去对一般知识的理解&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;过度拟合
+        &lt;ul&gt;
+          &lt;li&gt;如图所示，在输入狗的照片后，过拟合会导致狗的姿势一直趴在沙滩上，而非其他姿势&lt;/li&gt;
+          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230708205425.png&quot; alt=&quot;20230708205425&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Dreambooth的优势
+    &lt;ul&gt;
+      &lt;li&gt;使用了一个新的罕见词来代表图片的含义，保证新加入的图片对应的词在模型中没有其他太多含义&lt;/li&gt;
+      &lt;li&gt;区别于Textual inversion方法，Dreambooth使用罕见次，而textual inversion是新词。Dreambooth会对整个模型进行微调，而textual inversion只对embedding部分调整&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pytorch3d.org/docs/cameras&quot;&gt;Pytorch3D - Camera Coordinate Systems&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pytorch3d.org/docs/renderer_getting_started#coordinate-transformation-conventions&quot;&gt;Pytorch3D - Coordinate transformation conventions, with OpenGL&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/facebookresearch/pytorch3d/issues/858&quot;&gt;Github issue - The rendering results of pytorch3d and opencv are different&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/comerge/what-are-the-coordinates-225f1ec0dd78&quot;&gt;Medium - What are the coordinates?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;为什么四元数比欧拉角更好
+  &lt;li&gt;&lt;a href=&quot;https://dreambooth.github.io/&quot;&gt;dreambooth github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/616245445&quot;&gt;【AI绘画】LoRA训练与正则化的真相：Dreambooth底层原理 - 秋葉aaaki的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/620577688&quot;&gt;stable diffusion——Dreambooth原理与实践 - 冲弱的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Lora</title><link href="https://ucas.io/ai/LORA/" rel="alternate" type="text/html" title="Lora" /><published>2023-07-08T02:24:17+08:00</published><updated>2023-07-08T02:24:17+08:00</updated><id>https://ucas.io/ai/LORA</id><content type="html" xml:base="https://ucas.io/ai/LORA/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;h4 id=&quot;lora-low-rank-adaptation-of-large-language-models&quot;&gt;LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230708022434.png&quot; alt=&quot;20230707020805&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;论文的基本假设，对于一个大模型，参数的秩通常是满的，但是对于一个特定领域的微调模型，存在一个更低维度的秩，使得模型可以适配于特定领域。因此，对于微调的模型，可以通过Lora的方式来训练&lt;/li&gt;
+  &lt;li&gt;其基本公式$W=W_0+\Delta W=W_0+BA$&lt;/li&gt;
+  &lt;li&gt;其中$B\in\reals^{d\times r},A\in\reals^{r\times k}$&lt;/li&gt;
+  &lt;li&gt;秩$r\llless\min(d, k)$&lt;/li&gt;
+  &lt;li&gt;对于$h=W_0x+\Delta Wx=W_0x+BAx$&lt;/li&gt;
+  &lt;li&gt;只需要适当训练BA即可&lt;/li&gt;
+  &lt;li&gt;其中A使用随机高斯初始化，B使用0初始化，因此，训练开始时$BA=0$&lt;/li&gt;
+  &lt;li&gt;该算法可以应用到大部分矩阵，例如对于Transformer[QKVO]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/619468521&quot;&gt;LoRA论文回顾 - 我是阿豪啊的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/611557340&quot;&gt;论文阅读：LORA-大型语言模型的低秩适应 - 小虎AI珏爷的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Palette: Image-to-Image Diffusion Models</title><link href="https://ucas.io/ai/Image-to-Image-copy/" rel="alternate" type="text/html" title="Palette: Image-to-Image Diffusion Models" /><published>2023-07-07T02:18:17+08:00</published><updated>2023-07-07T02:18:17+08:00</updated><id>https://ucas.io/ai/Image-to-Image%20copy</id><content type="html" xml:base="https://ucas.io/ai/Image-to-Image-copy/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第一篇基于Conditional Diffusion 的 Image to Image 任务&lt;/li&gt;
+  &lt;li&gt;在训练Diffusion时，L1， L2的作用，以及self attention
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/112449913&quot;&gt;计算机动画 ： 万向节死锁Gimbal Lock的本质 - 卢小六的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Gimbal_lock&quot;&gt;Gimbal lock - WikiPedia&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://andrewfanchina.github.io/UnityLabs/Euler/&quot;&gt;Euler Angle - github.io&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;L1 和 L2的结果质量相似，但L2有更好的多样性&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><summary type="html">Coordinate System</summary></entry></feed>
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020805.png&quot; alt=&quot;20230707020805&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;损失函数增加了额外的条件信息x
+&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020620.png&quot; alt=&quot;20230707020620&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020103.png&quot; alt=&quot;20230707020103&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;[注意力机制的本质&lt;/td&gt;
+          &lt;td&gt;Self-Attention&lt;/td&gt;
+          &lt;td&gt;Transformer&lt;/td&gt;
+          &lt;td&gt;QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1814y1S7US/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;Cross Attention _ Method Explanation _ Math Explained - BiliBili&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Self-Attention</title><link href="https://ucas.io/ai/Self-Attention-copy/" rel="alternate" type="text/html" title="Self-Attention" /><published>2023-07-04T22:18:17+08:00</published><updated>2023-07-04T22:18:17+08:00</updated><id>https://ucas.io/ai/Self-Attention%20copy</id><content type="html" xml:base="https://ucas.io/ai/Self-Attention-copy/">&lt;h2 id=&quot;self-attention&quot;&gt;Self-Attention&lt;/h2&gt;
+
+&lt;p&gt;以腰围和身高举例&lt;/p&gt;
+
+&lt;p&gt;腰围是K，身高是V，有对应关系。这时我希望用Q对合适的K进行查询，Q也是腰围，我希望得到合适的V，一般情况下我需要计算各个腰围K的权重并与V相乘，得到最终结果
+若KQV矩阵是自身，则是自注意力机制。&lt;/p&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;h3 id=&quot;self-attention-1&quot;&gt;Self Attention&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704231311.png&quot; alt=&quot;20230704231311&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222448.png&quot; alt=&quot;20230704222448&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222250.png&quot; alt=&quot;20230704222250&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704230909.png&quot; alt=&quot;20230704230909&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;cross-attention&quot;&gt;Cross Attention&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704230959.png&quot; alt=&quot;20230704230959&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704231126.png&quot; alt=&quot;20230704231126&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;[注意力机制的本质&lt;/td&gt;
+          &lt;td&gt;Self-Attention&lt;/td&gt;
+          &lt;td&gt;Transformer&lt;/td&gt;
+          &lt;td&gt;QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1814y1S7US/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;Cross Attention _ Method Explanation _ Math Explained - BiliBili&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Self-Attention</summary></entry><entry><title type="html">ControlNet</title><link href="https://ucas.io/ai/ControlNet-copy/" rel="alternate" type="text/html" title="ControlNet" /><published>2023-07-03T02:13:07+08:00</published><updated>2023-07-03T02:13:07+08:00</updated><id>https://ucas.io/ai/ControlNet%20copy</id><content type="html" xml:base="https://ucas.io/ai/ControlNet-copy/">&lt;h2 id=&quot;controlnet&quot;&gt;ControlNet&lt;/h2&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;利用Stable Diffusion的Copy，对模型的控制模型进行额外的训练。同时对Stable Diffusion的模型进行冻结，转成对ControlNet进行训练&lt;/li&gt;
+  &lt;li&gt;ControlNet的初始化使用Zero Convolution, 初始化为0的卷积核为1的卷积层。&lt;/li&gt;
+  &lt;li&gt;对每次的输出运算同步到Stable Diffusion当中&lt;/li&gt;
+  &lt;li&gt;实际网络连接
+&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230703021632.png&quot; alt=&quot;20230703021632&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[ ]&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/pdf/2302.05543.pdf&quot;&gt;Adding Conditional Control to Text-to-Image Diffusion Models - arxiv&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV13x4y1w7k1/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;ControlNet - BiliBili&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">ControlNet</summary></entry><entry><title type="html">Diffusion Model</title><link href="https://ucas.io/ai/Diffusion-Model-copy/" rel="alternate" type="text/html" title="Diffusion Model" /><published>2023-07-02T19:05:29+08:00</published><updated>2023-07-02T19:05:29+08:00</updated><id>https://ucas.io/ai/Diffusion-Model%20copy</id><content type="html" xml:base="https://ucas.io/ai/Diffusion-Model-copy/">&lt;h2 id=&quot;diffusion-model&quot;&gt;Diffusion Model&lt;/h2&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;算法主要分为2个部分，第一步讲解关于扩散模型的数据来源和扩散的推导理论，第二部讲解关于反向递推的过程
+其中，模型预测的为上一步的噪音值，而非真实值。&lt;/p&gt;
+
+&lt;p&gt;$\alpha_t=1-\beta_t, beta=0.00001 to 0.002, step =200$&lt;/p&gt;
+
+&lt;p&gt;$x_t=\sqrt{\alpha_t}x_{t-1}+\sqrt{1-\alpha_t}z_1$&lt;/p&gt;
+
+&lt;p&gt;$x_{t-1}=\sqrt{\alpha_{t-1}}x_{t-2}+\sqrt{1-\alpha_{t-1}}z_2$&lt;/p&gt;
+
+&lt;p&gt;$x_t=\sqrt{\alpha_t\alpha_{t-1}}x_{t-2}+\sqrt{1-\alpha_t\alpha_{t-1}}\bar{z_2}$&lt;/p&gt;
+
+&lt;p&gt;$x_t=\sqrt{\bar{\alpha_t}}x_0+\sqrt{1-\bar{\alpha_t}}\bar{z_t}$&lt;/p&gt;
+
+&lt;h3 id=&quot;sample&quot;&gt;Sample&lt;/h3&gt;
+
+&lt;p&gt;采样过程即增加噪音的过程，噪音服从正太分布，每一步的权重根据步骤会进行变化，可以理解为，开始加的噪音小，后面加的噪音大。
+每一步增加的噪音服从正态分布，因此可以根据给定$x_0$得知任意时刻的$x_t$。将每一步增加的噪音值作为GT，通过$x_t$预测$x_{t-1}$时所增加的噪音值&lt;/p&gt;
+
+&lt;p&gt;权重推导&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230705013847.png&quot; alt=&quot;20230705013847&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702195416.png&quot; alt=&quot;20230702195416&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;training&quot;&gt;Training&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702195612.png&quot; alt=&quot;20230702195612&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;训练过程使用了UNet作为噪音的编解码模型对噪音进行预测&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/cj-express-tech-tildi/stable-diffusion-theory-and-application-a0f98881cb03&quot;&gt;Stable Diffusion: Theory and Applications - medium&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV13h411V7vg?p=2&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;Diffusion - BiliBili&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Diffusion Model</summary></entry></feed>

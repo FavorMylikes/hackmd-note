@@ -474,7 +474,7 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211102164656.png"
       },{
         "title": "The Coordinate System - How to convert between different coordinate system",
-        "excerpt":"Coordinate System system image System hand Rotation hand Camera Order OpenGL RH RH (0,0,-1) XYZ Unity LH LH (0,0,1) YXZ(local) zxy(global) pytorch3d RH LH (0,0,1) XYZ OpenCV RH RH (0,0,1) XYZ scipy   RH LH   XYZ xyz Docs scipy quat = [x,y,z,w] euler XYZ means intrinsic rotations 内在旋转,Conventions by...","categories": ["3d"],
+        "excerpt":"Coordinate System system image System hand Rotation hand Camera Order OpenGL RH RH (0,0,-1) XYZ Unity LH LH (0,0,1) YXZ(local) zxy(global) pytorch3d RH LH (0,0,1) XYZ OpenCV、Open3D、Matterport3D、Colmap RH RH (0,0,1) XYZ scipy   RH LH   XYZ xyz blender RH RH     Docs scipy quat = [x,y,z,w] euler XYZ...","categories": ["3d"],
         "tags": [],
         "url": "/3d/The-Coordinate-System-How-to-convert-between-different-coordinate-system/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211116000556.png"
@@ -528,8 +528,116 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
       },{
         "title": "Ubuntu change dns",
-        "excerpt":"显现      Can not ping, but curl ok   apt can not update            Could not resolve 'nvidia.github.io'           Can not ping 8.8.8.8, but 223.5.5.5(ali dns) ok   如何解决      更改dns        ubuntu 18       sudo vim /etc/systemd/resolved.conf DNS=223.5.5.5 sudo systemctl restart systemd-resolved.service           检查   systemd-resolve --status   Global     DNS Servers: 223.5.5.5   Reference      Ubuntu 18.04 永久修改DNS的方法 - 51cto  ","categories": ["tutorial"],
+        "excerpt":"现象      Can not ping, but curl ok   apt can not update            Could not resolve 'nvidia.github.io'           Can not ping 8.8.8.8, but 223.5.5.5(ali dns) ok   如何解决      更改dns        ubuntu 18       sudo vim /etc/systemd/resolved.conf DNS=223.5.5.5 sudo systemctl restart systemd-resolved.service           检查   systemd-resolve --status   Global     DNS Servers: 223.5.5.5   Reference      Ubuntu 18.04 永久修改DNS的方法 - 51cto  ","categories": ["tutorial"],
         "tags": [],
-        "url": "/tutorial/Matlab-2018a-support-vs2019/",
+        "url": "/tutorial/Ubuntu-change-dns/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
+      },{
+        "title": "Pytorch3d conda environment",
+        "excerpt":"Pre-install-dependency Anaconda / Miniconda 镜像 - 清华大学开源软件镜像站 - CSDN 驱动匹配 match Failed to initialize NVML: Driver/library version mismatch sudo nvidia-bug-report.sh nvidia-bug-report.log Sep 29 09:57:22 ubuntu kernel: [ 9996.759866] NVRM: API mismatch: the client has the version 470.74, but Sep 29 09:57:22 ubuntu kernel: [ 9996.759866] NVRM: this kernel module has...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Pytorch3d-conda-environment/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
+      },{
+        "title": "Differentiable Renderer OverView",
+        "excerpt":"微分渲染的流程以及纹理问题   Dataset      BlendedMVS            Format       image(w/o mask), camera, pdm(The depth and probability maps)           Tanks and Temples            Description                    gt：点云数据，视频数据，照片数据                       Intermediate       Advanced           [贵州]            渲染图片(非真实图片)，未简化模型+简模(无地面)，lod2           Reference      NMR 2018 cvpr            可训练的神经三维网格渲染器（Neural 3D Mesh Renderer）- CSDN                 ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Differentiable-Renderer/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png"
+      },{
+        "title": "",
+        "excerpt":"Pixar-USD 安装趟坑 PixarAnimationStudios/USD Issues 编译 Requirement windows official usd-windows reference usd on win10 依赖， PySide需要用pip安装 PyOpenGL 3.1.6 conda PyQt5 5.15.7 conda PySide2 5.15.5 conda PySide6 6.3.1 pip 安裝目录不要使用空格 python USD\\build_scripts\\build_usd.py \"C:\\Program Files\\USD\" ❌ python USD\\build_scripts\\build_usd.py \"C:\\USD\"✔️ 运行 数据kitchen_set 启动脚本，创建\\usd\\usd.cmd ```bat @echo off pushd %~dp0 set USD_INSTALL_ROOT=%CD% popd setlocal set PATH=%USD_INSTALL_ROOT%\\lib;%PATH%...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Pixar-usd/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1663053520068.jpg"
+      },{
+        "title": "ubuntu install desktop",
+        "excerpt":"Ubuntu 服务器安装桌面   sudo apt install ubuntu-desktop sudo apt install tightvncserver xrdp      login with xorg options      Reference      🤙Windows 远程控制 Ubuntu 系统 - segmentfault   How to Switch Between GDM and LightDM in Ubuntu - itsfoss            用于lightdm 和 GDM3切换           CentOS8或Ubuntu17.10以上系统无法通过向日葵被远控解决方案   如何在 Ubuntu 服务器上安装桌面环境（GUI）            内置部分方法不应采用       tasksel 不是很安全           应当安装ubuntu-desktop而不是xubuntu-desktop  ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Ubuntu-install-desktop/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1663053520068.jpg"
+      },{
+        "title": "Omniverse Kaolin install",
+        "excerpt":"Startup   Requirement      Desktop   RTX 2080 +   Reconmmend      Livestream Clients   Install      Kaolin - github   Kaolin - py package   Kaolin - Installation   Run    MESA_GL_VERSION_OVERRIDE=4.6 ./omniverse-launcher-linux.AppImage   Issue      kaolin [carb.cudainterop.plugin] Peer access from 0 to 1 is NOT supported.            restart omniverse with MESA_GL_VERSION_OVERRIDE=4.6           Reference      GLXBadFBConfig - forums.nvidia   Linux Troubleshooting            Q6, Q8          ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Omniverse-Kaolin-install/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20221014194734.png"
+      },{
+        "title": "Blender export unity problem",
+        "excerpt":"Issues      Blender export unity problem            Blender导入模型到Unity的导出设置 - BiliBili           Blender scale vertices            short cut is S in obj-model          ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Blender-export-unity-problem/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20221014194734.png"
+      },{
+        "title": "Rotation Matrix with different coordinate system",
+        "excerpt":"Rotation Matrix   2D  ","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Rotation-Matrix-with-different-coordinate-system/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20221014194734.png"
+      },{
+        "title": "Inpainting",
+        "excerpt":"Loss pixel loss $\\mathcal{L}=|I_{est}-I_{HR}|_2^2$ $I_{est}$估计图像，$I_{HR}$高清图像 perceptual loss $\\mathcal{L}=|\\phi(I_{est})-\\phi(I_{HR})|_2^2$ $\\phi(*)$ VGG-19的第二和第五pooling层 texture matching loss $\\mathcal{L}=|G(\\phi(I_{est}))-G(\\phi(I_{HR}))|_2^2$ $G(F)=F·F^T$, 为Gram矩阵 Adversarial loss G 最小化loss $\\mathcal{L}=-log(D(G(z)))$ D 最小化 $\\mathcal{L}=-log(D(x))-log(1-D(G(z)))$ Content Loss 内容损失 讲解^[DeepLearning.ai学习笔记（四）卷积神经网络 – week4 特殊应用:人力脸识别和神经风格转换] 讲解CSDN^[神经网络风格迁移Pytorch] $\\mathcal{L}_{content}^{l}=\\frac{1}{2}|A^{l}(C)-A^{l}(G)|^2$ $l$为层数，通常取vgg中间层，浅层为像素级别，深层为语义级别 $C$内容图像 $G$风格图像 $A$为激活层 Style loss 风格损失 $\\mathcal{L}{Style}^{l}=\\frac{1}{(2n_H^{l}n_W^{l}n_C^{l})^2}\\sum{k}\\sum_{k’}(Gram_{kk’}^{l}(S)-Gram_{kk’}^{l}(G))$ $l$为层数 $Gram$为$Gram$矩阵$G_{kk’}^{l}(S)=\\sum_{i=1}^{n_H^{l}}\\sum_{j=1}^{n_W^{l}}A_{i,j,k}^{l}(S)A_{i,j,k’}^{l}(S)$ $Gram$ $size=(n_c^l,n_c^l)$ $n_H^{l}$为第l层的H大小 $\\mathcal{L}{style}(S, G)=\\sum_l\\lambda^l\\mathcal{L}{style}^l(S,G)$ PAN^[Perceptual Adversarial...","categories": ["3d"],
+        "tags": [],
+        "url": "/3d/Inpainting/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20221014194734.png"
+      },{
+        "title": "Diffusion Model",
+        "excerpt":"Diffusion Model   Introduction   算法主要分为2个部分，第一步讲解关于扩散模型的数据来源和扩散的推导理论，第二部讲解关于反向递推的过程 其中，模型预测的为上一步的噪音值，而非真实值。   $\\alpha_t=1-\\beta_t, beta=0.00001 to 0.002, step =200$   $x_t=\\sqrt{\\alpha_t}x_{t-1}+\\sqrt{1-\\alpha_t}z_1$   $x_{t-1}=\\sqrt{\\alpha_{t-1}}x_{t-2}+\\sqrt{1-\\alpha_{t-1}}z_2$   $x_t=\\sqrt{\\alpha_t\\alpha_{t-1}}x_{t-2}+\\sqrt{1-\\alpha_t\\alpha_{t-1}}\\bar{z_2}$   $x_t=\\sqrt{\\bar{\\alpha_t}}x_0+\\sqrt{1-\\bar{\\alpha_t}}\\bar{z_t}$   Sample   采样过程即增加噪音的过程，噪音服从正太分布，每一步的权重根据步骤会进行变化，可以理解为，开始加的噪音小，后面加的噪音大。 每一步增加的噪音服从正态分布，因此可以根据给定$x_0$得知任意时刻的$x_t$。将每一步增加的噪音值作为GT，通过$x_t$预测$x_{t-1}$时所增加的噪音值   权重推导         Training      训练过程使用了UNet作为噪音的编解码模型对噪音进行预测   Reference      Stable Diffusion: Theory and Applications - medium   Diffusion - BiliBili  ","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/Diffusion-Model-copy/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702193049.png"
+      },{
+        "title": "ControlNet",
+        "excerpt":"ControlNet   Introduction      利用Stable Diffusion的Copy，对模型的控制模型进行额外的训练。同时对Stable Diffusion的模型进行冻结，转成对ControlNet进行训练   ControlNet的初始化使用Zero Convolution, 初始化为0的卷积核为1的卷积层。   对每次的输出运算同步到Stable Diffusion当中   实际网络连接    Reference      [ ]   Adding Conditional Control to Text-to-Image Diffusion Models - arxiv   ControlNet - BiliBili  ","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/ControlNet-copy/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230703021424.png"
+      },{
+        "title": "Self-Attention",
+        "excerpt":"Self-Attention   以腰围和身高举例   腰围是K，身高是V，有对应关系。这时我希望用Q对合适的K进行查询，Q也是腰围，我希望得到合适的V，一般情况下我需要计算各个腰围K的权重并与V相乘，得到最终结果 若KQV矩阵是自身，则是自注意力机制。   Introduction   Self Attention               Cross Attention         Reference                                      [注意力机制的本质           Self-Attention           Transformer           QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f)                           Cross Attention _ Method Explanation _ Math Explained - BiliBili  ","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/Self-Attention-copy/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222250.png"
+      },{
+        "title": "Palette: Image-to-Image Diffusion Models",
+        "excerpt":"Introduction      第一篇基于Conditional Diffusion 的 Image to Image 任务   在训练Diffusion时，L1， L2的作用，以及self attention            L1 和 L2的结果质量相似，但L2有更好的多样性                 损失函数增加了额外的条件信息x       Reference                                      [注意力机制的本质           Self-Attention           Transformer           QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f)                           Cross Attention _ Method Explanation _ Math Explained - BiliBili  ","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/Image-to-Image-copy/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020103.png"
+      },{
+        "title": "Lora",
+        "excerpt":"Introduction   LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS         论文的基本假设，对于一个大模型，参数的秩通常是满的，但是对于一个特定领域的微调模型，存在一个更低维度的秩，使得模型可以适配于特定领域。因此，对于微调的模型，可以通过Lora的方式来训练   其基本公式$W=W_0+\\Delta W=W_0+BA$   其中$B\\in\\reals^{d\\times r},A\\in\\reals^{r\\times k}$   秩$r\\llless\\min(d, k)$   对于$h=W_0x+\\Delta Wx=W_0x+BAx$   只需要适当训练BA即可   其中A使用随机高斯初始化，B使用0初始化，因此，训练开始时$BA=0$   该算法可以应用到大部分矩阵，例如对于Transformer[QKVO]   Reference      LoRA论文回顾 - 我是阿豪啊的文章 - 知乎   论文阅读：LORA-大型语言模型的低秩适应 - 小虎AI珏爷的文章 - 知乎  ","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/LORA/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230708022434.png"
+      },{
+        "title": "Dreambooth",
+        "excerpt":"Introduction DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation It’s like a photo booth, but once the subject is captured, it can be synthesized wherever your dreams take you. 在微调层面，我们重新使用图片进行微调训练会导致几个问题 语言漂移【学了新的忘了旧的】 在大模型上微调之后，逐渐失去语言的句法和语义知识。即失去对一般知识的理解 过度拟合 如图所示，在输入狗的照片后，过拟合会导致狗的姿势一直趴在沙滩上，而非其他姿势 Dreambooth的优势 使用了一个新的罕见词来代表图片的含义，保证新加入的图片对应的词在模型中没有其他太多含义 区别于Textual inversion方法，Dreambooth使用罕见次，而textual inversion是新词。Dreambooth会对整个模型进行微调，而textual inversion只对embedding部分调整 Reference dreambooth github 【AI绘画】LoRA训练与正则化的真相：Dreambooth底层原理 - 秋葉aaaki的文章 - 知乎 stable...","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/Dreambooth/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230708190125.png"
+      },{
+        "title": "DeepSDF",
+        "excerpt":"Introduction DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation 数据集 ShapeNet 代码 C++\\python 学习连续的有符号距离函数（Signed Distance Function，SDF） WIKI SDF 有符号距离场原理及实现 2D基本图形的Sign Distance Function (SDF)详解（上） SDF的零极线，差不多是为0的等势面 输入： 3D点云 + 噪声或缺失 用于训练SDF，并构建3D模型 模型通过输入的部分和嘈杂的3D数据点，使用神经网络进行训练，并生成一个能够表示形状表面的连续距离函数。这个距离函数可以通过计算一个点到形状边界的距离，并根据符号指示区域是形状内部还是外部。通过学习这样的连续距离函数，模型能够实现对形状的表示、重建、插值和完成任务。 DeepSDF通过神经网络将未知形状的表面表示为SDF的零级线，并可用于插值和完成部分和噪声3D数据。相比之前的方法，DeepSDF在学习的3D形状表示和完成任务上取得了最先进的性能。这项工作的关键创新之处在于引入了自动解码器（auto-decoder）的学习方案，将形状编码和网络参数联合进行优化，同时在数据准备、网络架构和实验设计等方面进行了深入的探索和分析。 The authors normalized each mesh to a unit sphere and sampled singed distance values for 500,000 spatial points....","categories": ["3d","AI"],
+        "tags": [],
+        "url": "/3d/ai/DeepSDF/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230819180636.png"
+      },{
+        "title": "MeshNet",
+        "excerpt":"Introduction   DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation   Over View      数据处理      面旋转卷积      面核卷积      mesh convolution         数据集            ModelNet40           代码            python           github   论文要点      将输入转化为空间描述符合结构描述符两种，最后通过mesh 卷积得到全局特征   结构描述符包含面核相关性、面旋转卷积            面核相关性由作者定义的函数进行计算       面旋转卷积由名片各点到面中心的向量进行计算           空间描述符主要使用mesh中每个平面的几个中心直接进行MLP处理 后续增加池化等，活动全局特征   论文不提供重建过程，更多用于分类   Reference      youtube MeshNet++   Github  ","categories": ["3d","AI"],
+        "tags": [],
+        "url": "/3d/ai/MeshNet-copy/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png"
+      },{
+        "title": "MeshNet",
+        "excerpt":"Introduction DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation text to 3d 3dfy text to 3d, image to 3d objects interiors: table lamps、sofa、table、ottoman、cutlery gaming：sword、shield、axes 提供API 面像对象：GTA 架构和技术方案(没有具体写参照的论文) DreamFusion - google 平均1.5小时 文本-&gt;2D图像-&gt;优化为Nerf Score Jacobian Chaining(目前几乎所有的零样本开放域文生 3D 工作所使用的算法) 问题：过于平滑、过饱和现象严重 stable-dreamfusion python + cuda A pytorch implementation of the text-to-3D model...","categories": ["3d","AI"],
+        "tags": [],
+        "url": "/3d/ai/Mesh-%E9%9A%90%E7%A9%BA%E9%97%B4/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png"
+      },{
+        "title": "MeshNet",
+        "excerpt":"Introduction   WGAN-GP: Wasserstein GAN with Gradient Penalty      Paper   论文要点      Wasserstein GAN            WGAN在训练过程中可能遇到不稳定性和收敛困难的问题，而WGAN-GP通过引入梯度惩罚项来替代权重裁剪，能够有效提升GAN的稳定性和训练效果。       WGAN-GP中，通过对批次中真实样本和生成样本之间直线上的点进行采样，并对生成器的梯度进行惩罚来实现Lipschitz约束。这种方法能够在不进行任何超参数调整的情况下，稳定地训练各种GAN架构，包括具有101层ResNet的图像生成模型和连续生成器的语言模型。       在实验中，通过对CIFAR-10和LSUN卧室数据集进行训练和生成，展示了WGAN-GP相对于传统权重裁剪方法在训练速度和样本质量上的改进。论文还对200个随机架构进行了训练并对比其性能，结果显示WGAN-GP能够成功训练大多数架构。           需要理解KL散度，JS散度（KL的对称版）   GAN            D(Y, θ)：其中相对熵被用神经网络训练(希望尽可能大-网络可以区分)       G(X, θ)：希望两个分布尽可能相似(希望尽可能小)              Reference      互怼的艺术：从零直达WGAN-GP                                                            [公众号：PaperWeekly 第41期               互怼的艺术：从零直达 WGAN-GP](https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;mid=2247484880&amp;idx=1&amp;sn=4b2e976cc715c9fe2d022ff6923879a8&amp;chksm=96e9da50a19e5346307b54f5ce172e355ccaba890aa157ce50fda68eeaccba6ea05425f6ad76&amp;scene=21#wechat_redirect)                                               github                                           [变分自编码器VAE：原来是这么一回事           附开源代码 - PaperWeekly的文章 - 知乎](https://zhuanlan.zhihu.com/p/34998569)                          ","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/WGAN-GP/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png"
       }]
