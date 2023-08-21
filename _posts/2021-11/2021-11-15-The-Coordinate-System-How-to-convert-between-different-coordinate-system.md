@@ -15,8 +15,9 @@ header:
 |[OpenGL](https://en.wikibooks.org/wiki/OpenGL_Programming/Mini-Portal_Smooth)|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211116000556.png" alt="20211116000556" width="200px"/>|RH|RH|(0,0,-1)|XYZ|
 |[Unity](https://docs.unity3d.com/560/Documentation/Manual/Transforms.html)|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211116001515.png" alt="20211116000556" width="200px"/>|LH|LH|(0,0,1)|YXZ(local) zxy(global)|
 |[pytorch3d](https://pytorch3d.org/docs/cameras)|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211116001452.png" alt="20211116000556" width="200px"/>|RH|LH|(0,0,1)|XYZ|
-|[OpenCV](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html)|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211117163530.png" alt="20211117163530"/>|RH|RH|(0,0,1)|XYZ|
+|[OpenCV](https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html)、Open3D、Matterport3D、Colmap|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211117163530.png" alt="20211117163530"/>|RH|RH|(0,0,1)|XYZ|
 |[scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.from_euler.html#reaa093f6923f-1)||RH|LH||XYZ xyz|
+|[blender](https://blog.csdn.net/flyfish1986/article/details/122301484)|<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20211116000556.png" alt="20211116000556" width="200px"/>|RH|RH|||
 
 ## Docs
 
@@ -82,3 +83,6 @@ header:
   - [计算机动画 ： 万向节死锁Gimbal Lock的本质 - 卢小六的文章 - 知乎](https://zhuanlan.zhihu.com/p/112449913)
   - [Gimbal lock - WikiPedia](https://en.wikipedia.org/wiki/Gimbal_lock)
   - [Euler Angle - github.io](https://andrewfanchina.github.io/UnityLabs/Euler/)
+- [3D视觉和图形学系统和数据集中常见坐标系 - Chen Wang的文章 - 知乎](https://zhuanlan.zhihu.com/p/501704425)
+- [Blender to OpenCV 在Blender中使用代码控制人物模型的头部姿态 - 代码实践Dlib版本 - CSDN](https://blog.csdn.net/flyfish1986/article/details/122301484)
+- [NeRF OpenCV OpenGL COLMAP DeepVoxels坐标系朝向 - CSDN](https://blog.csdn.net/OrdinaryMatthew/article/details/126670351)

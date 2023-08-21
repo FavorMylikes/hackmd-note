@@ -1,0 +1,201 @@
+{
+    "root": {
+        "data": {
+            "id": "cq4p7ctnjbc0",
+            "created": 1674997909586,
+            "text": "星期"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cq4pdu0f60g0",
+                    "created": 1674998417186,
+                    "text": "原因"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cq4p7g16csw0",
+                            "created": 1674997916572,
+                            "text": "多语言"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cq4p7p2nubc0",
+                                    "created": 1674997936252,
+                                    "text": "日语，韩语"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq4p7qs58000",
+                                            "created": 1674997939970,
+                                            "text": "月火水木金土日，曜日"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cq4p88hg8s00",
+                                    "created": 1674997978505,
+                                    "text": "中文"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq4p89uopzk0",
+                                            "created": 1674997981483,
+                                            "text": "唐朝：月火水木金土日，曜日，七曜"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq4p9qhjw1k0",
+                                            "created": 1674998096058,
+                                            "text": "现代：星期：牛郎星和织女星相会之期"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cq4pa35zj8g0",
+                                                    "created": 1674998123657,
+                                                    "text": "礼拜：基督教，礼拜的日子，礼拜日，或礼拜天，然后扩展为一周"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cq4p8gmrlfk0",
+                                    "created": 1674997996241,
+                                    "text": "英语"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq4p8jpae6o0",
+                                            "created": 1674998002924,
+                                            "text": "北欧神话：月神，战神，奥丁，雷神，爱神，农神(罗马神话)，日神"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cq4p9dp53rs0",
+                                    "created": 1674998068219,
+                                    "text": "德语"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq4p9fhu7mo0",
+                                            "created": 1674998072131,
+                                            "text": "月火水：（中间日）木金土日"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cq4pdwdlnog0",
+                            "created": 1674998422336,
+                            "text": "行星时"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cq4pe463otc0",
+                                    "created": 1674998439297,
+                                    "text": "时间由7个神掌控，每个神掌控1小时，一天12个小时，从开始，每小时换一个，当天的主星即为当日的主神"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cq4qguty7lc0",
+                                    "created": 1675001475174,
+                                    "text": "顺序："
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq4qgxacvo80",
+                                            "created": 1675001480519,
+                                            "text": "月水金日火木土"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cq4qhdaf9u00",
+                                                    "created": 1675001515352,
+                                                    "text": "地心说快慢"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cq4qhq4f9zk0",
+                                                            "created": 1675001543287,
+                                                            "text": "topic",
+                                                            "image": "https://inews.gtimg.com/newsapp_bt/0/11616583306/1000",
+                                                            "imageTitle": "",
+                                                            "imageSize": {
+                                                                "width": 200,
+                                                                "height": 137
+                                                            }
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cq4qhzmce6o0",
+                                    "created": 1675001563962,
+                                    "text": "取模："
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq4qibbil400",
+                                            "created": 1675001589429,
+                                            "text": "01234567->03625140"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cq4qichldo00",
+                                                    "created": 1675001591973,
+                                                    "text": "月火水木金土日"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

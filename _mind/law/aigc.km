@@ -1,0 +1,212 @@
+{
+    "root": {
+        "data": {
+            "id": "crktoyi1yyo0",
+            "created": 1680291691151,
+            "text": "市场分析"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "crktpfywzs00",
+                    "created": 1680291729176,
+                    "text": "竞争对手"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "crktp6s571k0",
+                            "created": 1680291709176,
+                            "text": "国外"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "crktp2v41q80",
+                                    "created": 1680291700648,
+                                    "text": "Harvey"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "crktprs0j680",
+                                            "created": 1680291754880,
+                                            "text": "A&O"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "crktq2x6mco0",
+                                                    "created": 1680291779137,
+                                                    "text": "A&O announces exclusive launch partnership with Harvey",
+                                                    "hyperlink": "https://www.allenovery.com/en-gb/global/news-and-insights/news/ao-announces-exclusive-launch-partnership-with-harvey",
+                                                    "hyperlinkTitle": "A&O announces exclusive launch partnership with Harvey"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "crktqe9kw8w0",
+                                            "created": 1680291803832,
+                                            "text": "(based on GPT-4"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "crktqkntzog0",
+                                            "created": 1680291817754,
+                                            "text": "OpenAI Startup Fund, "
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "crktthx5sxk0",
+                                            "created": 1680292046880,
+                                            "text": "https://www.harvey.ai/"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "crkttuif2ag0",
+                                            "created": 1680292074287,
+                                            "text": "2022-8月启动"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "crktzceft9c0",
+                                    "created": 1680292505049,
+                                    "text": "DoNotPay【2015】",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "crku00qnu940",
+                                            "created": 1680292558031,
+                                            "text": "GPT-3 "
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "crku0a8ng8g0",
+                                            "created": 1680292578710,
+                                            "text": "该公司成立后的5年时间里，就处理了超过了300万起案件，帮助撤销了价值8000万"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "crku0vec1o00",
+                                            "created": 1680292624766,
+                                            "text": "DoNotPay找到允许戴着Airpods耳机出庭的法院"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "crku0y74ods0",
+                                            "created": 1680292630861,
+                                            "text": "三个月收费36美元的AI律师，可能和你想的不一样",
+                                            "hyperlink": "https://cn.technode.com/post/2023-01-20/donotpay-ai/",
+                                            "hyperlinkTitle": ""
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "crktpl1w76o0",
+                            "created": 1680291740240,
+                            "text": "国内",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "crktp9i22vs0",
+                                    "created": 1680291715096,
+                                    "text": "法聪聪"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "crktpasd62g0",
+                                    "created": 1680291717896,
+                                    "text": "法狗狗"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "crktybnb5zk0",
+                                    "created": 1680292425045,
+                                    "text": "找大状"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "crktydf4d9s0",
+                                            "created": 1680292428903,
+                                            "text": "合同审查"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "crktyg97ld40",
+                                            "created": 1680292435076,
+                                            "text": "人工客服"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "crku3pe6bxs0",
+                                    "created": 1680292846788,
+                                    "text": "法域通"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "crku3xrkt6w0",
+                                            "created": 1680292865013,
+                                            "text": "南京法域通信息技术有限公司"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "crku402wo200",
+                                            "created": 1680292870051,
+                                            "text": "江苏南京"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

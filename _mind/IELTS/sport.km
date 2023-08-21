@@ -1,0 +1,698 @@
+{
+    "root": {
+        "data": {
+            "id": "cq9qiyty0200",
+            "created": 1675509440392,
+            "text": "topic"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cq9qlbc5j0o0",
+                    "created": 1675509624343,
+                    "text": "sport"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cq9ql3426mg0",
+                            "created": 1675509606439,
+                            "text": "topic",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cq9qxucluq80",
+                                    "created": 1675510606099,
+                                    "text": "different ways of saying 'I like' a sport",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq9qy32rnoo0",
+                                            "created": 1675510625095,
+                                            "text": "I'm into ~"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9qy5mtelc0",
+                                            "created": 1675510630661,
+                                            "text": "I am keen on ~"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9qy9rib280",
+                                            "created": 1675510639652,
+                                            "text": "I am a big fan of ~"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9qydehhaw0",
+                                            "created": 1675510647572,
+                                            "text": "I am one for ~"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cq9qzqv3nrc0",
+                                                    "created": 1675510755239,
+                                                    "text": "for sport, for 听起来像 ~fe~"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9qyh3nar40",
+                                            "created": 1675510655623,
+                                            "text": "I really dig ~"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cq9rqh183s00",
+                                    "created": 1675512849674,
+                                    "text": "which sports do you do now"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq9rqkx3xhk0",
+                                            "created": 1675512858132,
+                                            "text": "I'm into football"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9rqonvjo80",
+                                            "created": 1675512866281,
+                                            "text": "I currently play / do / dig"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9rqttmksw0",
+                                            "created": 1675512877512,
+                                            "text": "At the moment, I amd doing yoga"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9rqyn2lt40",
+                                            "created": 1675512888000,
+                                            "text": "I'm fond of ..."
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9rr6wilgo0",
+                                            "created": 1675512905985,
+                                            "text": "prepisition + verb(+ING)"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cq9rs2o9upc0",
+                                                    "created": 1675512975144,
+                                                    "text": "I'm interested in HIKING"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cq9qwxmrd2g0",
+                                    "created": 1675510534879,
+                                    "text": "verb + sport"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq9qx2ynks00",
+                                            "created": 1675510546482,
+                                            "text": "play soccer / football / tennis"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9qx7buo340",
+                                            "created": 1675510555987,
+                                            "text": "do yoga / pilates（菩提拉） / judo（柔道）"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cq9rt2bi74w0",
+                            "created": 1675513052736,
+                            "text": "watching sports"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cq9rt91aky80",
+                                    "created": 1675513067356,
+                                    "text": "Do you prefer to do sports or watch them"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cq9qlk9ip340",
+                            "created": 1675509643775,
+                            "text": "collocations and idioms"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cq9qltvqs4o0",
+                            "created": 1675509664710,
+                            "text": "kahoot"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cq9qsalakr40",
+                            "created": 1675510171268,
+                            "text": "vocabulary",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cq9qsdkv8u00",
+                                    "created": 1675510177773,
+                                    "text": "sport",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq9qsf0v6zk0",
+                                            "created": 1675510180917,
+                                            "text": "n: conutable"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cq9qssi3vbk0",
+                                                    "created": 1675510210257,
+                                                    "text": "I like doing winter sports"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9qsogmn800",
+                                            "created": 1675510201461,
+                                            "text": "uncountable"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cq9qszclo2o0",
+                                                    "created": 1675510225162,
+                                                    "text": "I don't do much sport"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9qtadryfk0",
+                                            "created": 1675510249178,
+                                            "text": "verb"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cq9qtblmzhc0",
+                                                    "created": 1675510251830,
+                                                    "text": "to wear",
+                                                    "expandState": "expand"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cq9qtgmu9kw0",
+                                                            "created": 1675510262786,
+                                                            "text": "she is sporting a fashionable red hat"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cq9qu0k6qxs0",
+                                            "created": 1675510306162,
+                                            "text": "adj"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cq9qu1jrrfc0",
+                                                    "created": 1675510308313,
+                                                    "text": "sporty: someone who enjoys doing sport"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cq9qucqeoio0",
+                                                    "created": 1675510332659,
+                                                    "text": "I am not really the sporty type"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cq9ru81169s0",
+                                    "created": 1675513143527,
+                                    "text": "collocation",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cq9ru8xsl5c0",
+                                            "created": 1675513145508,
+                                            "text": "listen 1",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cq9rx099h400",
+                                                    "created": 1675513361703,
+                                                    "text": "I must confess: 必须承认"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cq9rxdhilg00",
+                                                    "created": 1675513390501,
+                                                    "text": "slump down: 瘫倒在沙发上，to drop, to collapase"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cq9rytevlvc0",
+                                                    "created": 1675513503534,
+                                                    "text": "in front of the telly"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cq9ryzmdvig0",
+                                                    "created": 1675513517048,
+                                                    "text": "football match"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cq9rz5qlhq80",
+                                                    "created": 1675513530364,
+                                                    "text": "a couch potato： a person who spends too much on the sofa"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqd7qokbm340",
+                                                    "created": 1675862683694,
+                                                    "text": "get round to it: Find time to do something"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cqd7qwvx01c0",
+                                                            "created": 1675862701810,
+                                                            "text": "I just don't get round to it: 我没空做某事"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cqd7s93142o0",
+                                            "created": 1675862806725,
+                                            "text": "listen 2",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cqd7sb0y4mw0",
+                                                    "created": 1675862810953,
+                                                    "text": "the occasional football match"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cqd7x4ddws80",
+                                                            "created": 1675863188288,
+                                                            "text": "watch football match occasionaly"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqd7sri4hwg0",
+                                                    "created": 1675862846820,
+                                                    "text": "game of golf: golf is not a match"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqd7swabko00",
+                                                    "created": 1675862857232,
+                                                    "text": "an avid sports fan"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cqd7xztu6140",
+                                                            "created": 1675863256763,
+                                                            "text": "狂热的体育迷"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqd7szfc1bc0",
+                                                    "created": 1675862864066,
+                                                    "text": "to be honest"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cqd7y5m0vcg0",
+                                                            "created": 1675863269352,
+                                                            "text": "for sure"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqd7uj2c9y00",
+                                                    "created": 1675862985180,
+                                                    "text": "a walk in the park"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqd7yjh6p4o0",
+                                                    "created": 1675863299534,
+                                                    "text": "I dont't ___, unless ___ counts"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cqd7yty106g0",
+                                                            "created": 1675863322320,
+                                                            "text": "I don't eat meat, uless chicken counts"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqd8090draw0",
+                                                    "created": 1675863433478,
+                                                    "text": "It counts = it can be included in the end"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cqe05qrar7c0",
+                                            "created": 1675942855010,
+                                            "text": "sport",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cqe05ta4zog0",
+                                                    "created": 1675942860502,
+                                                    "text": "mainsteam sport"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cqe0657ude80",
+                                                            "created": 1675942886485,
+                                                            "text": "popular with everyone"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqe05wuv4n40",
+                                                    "created": 1675942868286,
+                                                    "text": "competitive sport"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqe05z3mg6g0",
+                                                    "created": 1675942873169,
+                                                    "text": "spectator sport"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cqe061wlb4o0",
+                                                            "created": 1675942879274,
+                                                            "text": "a sport many people watch"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqd81kmt3gw0",
+                            "created": 1675863537143,
+                            "text": "tips"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqd81ls9oco0",
+                                    "created": 1675863539650,
+                                    "text": "How many different tenses do you hear"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cqd82k1zk340",
+                                            "created": 1675863614248,
+                                            "text": "tenses: 时态"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cqd837awubs0",
+                                    "created": 1675863664854,
+                                    "text": "There is not much difficult vocabulary with topic like 'sports', so you can use simple vocabulary, but use several of different tenses."
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqd83gwbuu00",
+                                    "created": 1675863685740,
+                                    "text": "单词简单时，可以使用更广泛的时态，wide tenses"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqe0b8qxudk0",
+                                    "created": 1675943285991,
+                                    "text": "what if I hate sports"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cqe0bcaahds0",
+                                            "created": 1675943293691,
+                                            "text": "Say why"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cqe0bk84kaw0",
+                                            "created": 1675943310975,
+                                            "text": "talk about about experiences of sport"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cqe0bojo46w0",
+                                            "created": 1675943320380,
+                                            "text": "what you prefer instead"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cqe0r58ljkw0",
+                                    "created": 1675944532178,
+                                    "text": "idioms"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cqe0r63wxiw0",
+                                            "created": 1675944534072,
+                                            "text": "try your hand at"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cqe0r8xdjpk0",
+                                                    "created": 1675944540207,
+                                                    "text": "to try a new activity"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqe0refmpfk0",
+                                                    "created": 1675944552194,
+                                                    "text": "I'd like to try my hand at paragliding, it looks so much fun"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cqe0rm4dm5s0",
+                                            "created": 1675944568928,
+                                            "text": "To take up"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cqe0rom69d40",
+                                                    "created": 1675944574358,
+                                                    "text": "to start a hobby / sport"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cqe0rv7b2cg0",
+                                                    "created": 1675944588696,
+                                                    "text": "I'd take up water skiing if I had the time and lived near a lake"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cqe07qanr3c0",
+                    "created": 1675943010732,
+                    "text": "reference"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cqe07k28okw0",
+                            "created": 1675942997162,
+                            "text": "collocation query",
+                            "hyperlink": "https://ozdic.com/collocation/sport",
+                            "hyperlinkTitle": ""
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

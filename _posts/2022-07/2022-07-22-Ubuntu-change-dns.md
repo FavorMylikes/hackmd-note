@@ -7,7 +7,7 @@ header:
   teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20220115190637.png
 ---
 
-## 显现
+## 现象
 
 - Can not ping, but curl ok
 - `apt` can not `update`
