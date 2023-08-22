@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "MeshNet"
+title:  "MeshNet Latent space"
 date:   "2023-08-20 17:14:46 +0800"
 categories: 3d AI
 header:
