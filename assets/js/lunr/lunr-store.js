@@ -629,13 +629,13 @@ var store = [{
         "url": "/3d/ai/MeshNet-copy/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png"
       },{
-        "title": "MeshNet",
+        "title": "MeshNet Latent space",
         "excerpt":"Introduction DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation text to 3d 3dfy text to 3d, image to 3d objects interiors: table lamps、sofa、table、ottoman、cutlery gaming：sword、shield、axes 提供API 面像对象：GTA 架构和技术方案(没有具体写参照的论文) DreamFusion - google 平均1.5小时 文本-&gt;2D图像-&gt;优化为Nerf Score Jacobian Chaining(目前几乎所有的零样本开放域文生 3D 工作所使用的算法) 问题：过于平滑、过饱和现象严重 stable-dreamfusion python + cuda A pytorch implementation of the text-to-3D model...","categories": ["3d","AI"],
         "tags": [],
-        "url": "/3d/ai/Mesh-%E9%9A%90%E7%A9%BA%E9%97%B4/",
+        "url": "/3d/ai/Mesh-Latent-space/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png"
       },{
-        "title": "MeshNet",
+        "title": "WGAN-GP",
         "excerpt":"Introduction   WGAN-GP: Wasserstein GAN with Gradient Penalty      Paper   论文要点      Wasserstein GAN            WGAN在训练过程中可能遇到不稳定性和收敛困难的问题，而WGAN-GP通过引入梯度惩罚项来替代权重裁剪，能够有效提升GAN的稳定性和训练效果。       WGAN-GP中，通过对批次中真实样本和生成样本之间直线上的点进行采样，并对生成器的梯度进行惩罚来实现Lipschitz约束。这种方法能够在不进行任何超参数调整的情况下，稳定地训练各种GAN架构，包括具有101层ResNet的图像生成模型和连续生成器的语言模型。       在实验中，通过对CIFAR-10和LSUN卧室数据集进行训练和生成，展示了WGAN-GP相对于传统权重裁剪方法在训练速度和样本质量上的改进。论文还对200个随机架构进行了训练并对比其性能，结果显示WGAN-GP能够成功训练大多数架构。           需要理解KL散度，JS散度（KL的对称版）   GAN            D(Y, θ)：其中相对熵被用神经网络训练(希望尽可能大-网络可以区分)       G(X, θ)：希望两个分布尽可能相似(希望尽可能小)              Reference      互怼的艺术：从零直达WGAN-GP                                                            [公众号：PaperWeekly 第41期               互怼的艺术：从零直达 WGAN-GP](https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;mid=2247484880&amp;idx=1&amp;sn=4b2e976cc715c9fe2d022ff6923879a8&amp;chksm=96e9da50a19e5346307b54f5ce172e355ccaba890aa157ce50fda68eeaccba6ea05425f6ad76&amp;scene=21#wechat_redirect)                                               github                                           [变分自编码器VAE：原来是这么一回事           附开源代码 - PaperWeekly的文章 - 知乎](https://zhuanlan.zhihu.com/p/34998569)                          ","categories": ["AI"],
         "tags": [],
         "url": "/ai/WGAN-GP/",
