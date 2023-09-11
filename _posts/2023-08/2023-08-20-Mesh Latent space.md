@@ -4,7 +4,7 @@ title:  "MeshNet Latent space"
 date:   "2023-08-20 17:14:46 +0800"
 categories: 3d AI
 header:
-  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png
+  teaser: https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820221546.png
 ---
 
 ### Introduction
