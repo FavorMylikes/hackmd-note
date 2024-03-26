@@ -696,7 +696,7 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230921221558.png"
       },{
         "title": "3d Mesh 深度相关",
-        "excerpt":"3D Mesh 深度学习      Subdivision-Based Mesh Convolution Networks - TOG 2021                   通过细分网格，获得mesh网络的卷积关键面，将细分后的网格作为输入，进行卷积核池化运算，卷积运算即通过面榻缩的方式或者边榻缩的方式，将榻缩后的面作为卷积输出，同时，池化操作也很类似。       作者还给出了不同strip参数和不同kernel参数做卷积运算时与原2d conv的类比图              同时论文介绍了基于该思想的不同上采样方法           3D Mesh style transfer      Neural Style Transfer for 3D Meshes                   是一种基于mesh conv net的3d风格迁移方法       网络输入还是mesh的三角面片       网路架构类似2d图片风格迁移，可以参考2016年李飞飞的风格迁移论文              通过比较特征值之间的损失即可得到，同时，损失包含Content loss和style Loss, 在李飞飞2016的论文当中，同样存在两种loss           Reference  ","categories": ["AI","3d"],
+        "excerpt":"3D Mesh 深度学习      Subdivision-Based Mesh Convolution Networks - TOG 2021                   通过细分网格，获得mesh网络的卷积关键面，将细分后的网格作为输入，进行卷积核池化运算，卷积运算即通过面榻缩的方式或者边榻缩的方式，将榻缩后的面作为卷积输出，同时，池化操作也很类似。       作者还给出了不同strip参数和不同kernel参数做卷积运算时与原2d conv的类比图              同时论文介绍了基于该思想的不同上采样方法           3D Mesh style transfer      Neural Style Transfer for 3D Meshes                   是一种基于mesh conv net的3d风格迁移方法       网络输入还是mesh的三角面片       网路架构类似2d图片风格迁移，可以参考2016年李飞飞的风格迁移论文              通过比较特征值之间的损失即可得到，同时，损失包含Content loss和style Loss, 在李飞飞2016的论文当中，同样存在两种loss          ","categories": ["AI","3d"],
         "tags": [],
         "url": "/ai/3d/3d-Mesh-%E6%B7%B1%E5%BA%A6%E7%9B%B8%E5%85%B3/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112150600.png"
