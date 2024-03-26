@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2023-08-22T13:26:11+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">WGAN-GP</title><link href="https://ucas.io/ai/WGAN-GP/" rel="alternate" type="text/html" title="WGAN-GP" /><published>2023-08-21T21:05:19+08:00</published><updated>2023-08-21T21:05:19+08:00</updated><id>https://ucas.io/ai/WGAN-GP</id><content type="html" xml:base="https://ucas.io/ai/WGAN-GP/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;h4 id=&quot;wgan-gp-wasserstein-gan-with-gradient-penalty&quot;&gt;WGAN-GP: Wasserstein GAN with Gradient Penalty&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2024-03-26T14:05:57+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">WGAN-GP</title><link href="https://ucas.io/ai/WGAN-GP/" rel="alternate" type="text/html" title="WGAN-GP" /><published>2023-08-21T21:05:19+08:00</published><updated>2023-08-21T21:05:19+08:00</updated><id>https://ucas.io/ai/WGAN-GP</id><content type="html" xml:base="https://ucas.io/ai/WGAN-GP/">&lt;h3 id=&quot;wgan-gp-wasserstein-gan-with-gradient-penalty&quot;&gt;WGAN-GP: Wasserstein GAN with Gradient Penalty&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1704.00028v3&quot;&gt;Paper&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;论文要点&quot;&gt;论文要点&lt;/h3&gt;
+&lt;h4 id=&quot;论文要点&quot;&gt;论文要点&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Wasserstein GAN
@@ -23,8 +21,9 @@
       &lt;li&gt;G(X, θ)：希望两个分布尽可能相似(希望尽可能小)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;cvae-gan-fine-grained-image-generation-through-asymmetric-training&quot;&gt;CVAE-GAN: Fine-Grained Image Generation through Asymmetric Training&lt;/h3&gt;
 
 &lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
 
@@ -54,7 +53,7 @@
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">MeshNet Latent space</title><link href="https://ucas.io/3d/ai/Mesh-Latent-space/" rel="alternate" type="text/html" title="MeshNet Latent space" /><published>2023-08-20T17:14:46+08:00</published><updated>2023-08-20T17:14:46+08:00</updated><id>https://ucas.io/3d/ai/Mesh%20Latent%20space</id><content type="html" xml:base="https://ucas.io/3d/ai/Mesh-Latent-space/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">WGAN-GP: Wasserstein GAN with Gradient Penalty</summary></entry><entry><title type="html">MeshNet Latent space</title><link href="https://ucas.io/3d/ai/Mesh-Latent-space/" rel="alternate" type="text/html" title="MeshNet Latent space" /><published>2023-08-20T17:14:46+08:00</published><updated>2023-08-20T17:14:46+08:00</updated><id>https://ucas.io/3d/ai/Mesh%20Latent%20space</id><content type="html" xml:base="https://ucas.io/3d/ai/Mesh-Latent-space/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 
 &lt;h4 id=&quot;deepsdf-learning-continuous-signed-distance-functions-for-shape-representation&quot;&gt;DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation&lt;/h4&gt;
 
@@ -150,7 +149,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xcfnhrYqKac&quot;&gt;youtube MeshNet++&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/iMoonLab/MeshNet&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">MeshNet</title><link href="https://ucas.io/3d/ai/MeshNet-copy/" rel="alternate" type="text/html" title="MeshNet" /><published>2023-08-20T16:11:28+08:00</published><updated>2023-08-20T16:11:28+08:00</updated><id>https://ucas.io/3d/ai/MeshNet%20copy</id><content type="html" xml:base="https://ucas.io/3d/ai/MeshNet-copy/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">MeshNet</title><link href="https://ucas.io/3d/ai/MeshNet/" rel="alternate" type="text/html" title="MeshNet" /><published>2023-08-20T16:11:28+08:00</published><updated>2023-08-20T16:11:28+08:00</updated><id>https://ucas.io/3d/ai/MeshNet</id><content type="html" xml:base="https://ucas.io/3d/ai/MeshNet/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 
 &lt;h4 id=&quot;deepsdf-learning-continuous-signed-distance-functions-for-shape-representation&quot;&gt;DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation&lt;/h4&gt;
 
@@ -344,7 +343,7 @@ The current release does not include code for shape completion. Please check bac
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/619468521&quot;&gt;LoRA论文回顾 - 我是阿豪啊的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/611557340&quot;&gt;论文阅读：LORA-大型语言模型的低秩适应 - 小虎AI珏爷的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Palette: Image-to-Image Diffusion Models</title><link href="https://ucas.io/ai/Image-to-Image-copy/" rel="alternate" type="text/html" title="Palette: Image-to-Image Diffusion Models" /><published>2023-07-07T02:18:17+08:00</published><updated>2023-07-07T02:18:17+08:00</updated><id>https://ucas.io/ai/Image-to-Image%20copy</id><content type="html" xml:base="https://ucas.io/ai/Image-to-Image-copy/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Palette: Image-to-Image Diffusion Models</title><link href="https://ucas.io/ai/Image-to-Image/" rel="alternate" type="text/html" title="Palette: Image-to-Image Diffusion Models" /><published>2023-07-07T02:18:17+08:00</published><updated>2023-07-07T02:18:17+08:00</updated><id>https://ucas.io/ai/Image-to-Image</id><content type="html" xml:base="https://ucas.io/ai/Image-to-Image/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;第一篇基于Conditional Diffusion 的 Image to Image 任务&lt;/li&gt;
@@ -380,7 +379,7 @@ The current release does not include code for shape completion. Please check bac
     &lt;/table&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1814y1S7US/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;Cross Attention _ Method Explanation _ Math Explained - BiliBili&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Self-Attention</title><link href="https://ucas.io/ai/Self-Attention-copy/" rel="alternate" type="text/html" title="Self-Attention" /><published>2023-07-04T22:18:17+08:00</published><updated>2023-07-04T22:18:17+08:00</updated><id>https://ucas.io/ai/Self-Attention%20copy</id><content type="html" xml:base="https://ucas.io/ai/Self-Attention-copy/">&lt;h2 id=&quot;self-attention&quot;&gt;Self-Attention&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Self-Attention</title><link href="https://ucas.io/ai/Self-Attention/" rel="alternate" type="text/html" title="Self-Attention" /><published>2023-07-04T22:18:17+08:00</published><updated>2023-07-04T22:18:17+08:00</updated><id>https://ucas.io/ai/Self-Attention</id><content type="html" xml:base="https://ucas.io/ai/Self-Attention/">&lt;h2 id=&quot;self-attention&quot;&gt;Self-Attention&lt;/h2&gt;
 
 &lt;p&gt;以腰围和身高举例&lt;/p&gt;
 
@@ -405,6 +404,10 @@ The current release does not include code for shape completion. Please check bac
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704231126.png&quot; alt=&quot;20230704231126&quot; /&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;vitvision-transformer解析&quot;&gt;ViT（Vision Transformer）解析&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230918191122.png&quot; alt=&quot;20230918191122&quot; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 
 &lt;ul&gt;
@@ -421,7 +424,43 @@ The current release does not include code for shape completion. Please check bac
     &lt;/table&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1814y1S7US/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;Cross Attention _ Method Explanation _ Math Explained - BiliBili&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Self-Attention</summary></entry><entry><title type="html">ControlNet</title><link href="https://ucas.io/ai/ControlNet-copy/" rel="alternate" type="text/html" title="ControlNet" /><published>2023-07-03T02:13:07+08:00</published><updated>2023-07-03T02:13:07+08:00</updated><id>https://ucas.io/ai/ControlNet%20copy</id><content type="html" xml:base="https://ucas.io/ai/ControlNet-copy/">&lt;h2 id=&quot;controlnet&quot;&gt;ControlNet&lt;/h2&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/47282410&quot;&gt;Attention机制详解（二）——Self-Attention与Transformer - 川陀学者的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/98863801&quot;&gt;从ReLU到GELU，一文概览神经网络的激活函数 - 机器之心的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Transformer中使用GELU&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/445122996&quot;&gt;ViT（Vision Transformer）解析 - 德怀特的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;图片Transformer&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/558574918/answer/2711404815&quot;&gt;VAE、GAN 这种生成模型和 transformer 有什么区别？ - 知乎用户的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/106644634&quot;&gt;一文读懂Transformer模型的位置编码 - 眺望远方的龙的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;位置编码&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230918195627.png&quot; alt=&quot;20230918195627&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/57732839&quot;&gt;自注意力与位置编码 - 机器学习小谈的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230919172214.png&quot; alt=&quot;20230919172214&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/391337035&quot;&gt;【时间序列】Transformer for TimeSeries时序预测算法详解 - VoidOc的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://transformers.run/back/transformer/&quot;&gt;第二章：Transformer 模型&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;英文原文&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/48508221&quot;&gt;详解Transformer （Attention Is All You Need） - 大师兄的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer - Alammar&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://luweikxy.gitbook.io/machine-learning-notes/self-attention-and-transformer&quot;&gt;Self-Attention机制和Transformer&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Self-Attention</summary></entry><entry><title type="html">ControlNet</title><link href="https://ucas.io/ai/ControlNet/" rel="alternate" type="text/html" title="ControlNet" /><published>2023-07-03T02:13:07+08:00</published><updated>2023-07-03T02:13:07+08:00</updated><id>https://ucas.io/ai/ControlNet</id><content type="html" xml:base="https://ucas.io/ai/ControlNet/">&lt;h2 id=&quot;controlnet&quot;&gt;ControlNet&lt;/h2&gt;
 
 &lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 
@@ -439,7 +478,7 @@ The current release does not include code for shape completion. Please check bac
   &lt;li&gt;[ ]&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://arxiv.org/pdf/2302.05543.pdf&quot;&gt;Adding Conditional Control to Text-to-Image Diffusion Models - arxiv&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV13x4y1w7k1/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;ControlNet - BiliBili&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">ControlNet</summary></entry><entry><title type="html">Diffusion Model</title><link href="https://ucas.io/ai/Diffusion-Model-copy/" rel="alternate" type="text/html" title="Diffusion Model" /><published>2023-07-02T19:05:29+08:00</published><updated>2023-07-02T19:05:29+08:00</updated><id>https://ucas.io/ai/Diffusion-Model%20copy</id><content type="html" xml:base="https://ucas.io/ai/Diffusion-Model-copy/">&lt;h2 id=&quot;diffusion-model&quot;&gt;Diffusion Model&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">ControlNet</summary></entry><entry><title type="html">Diffusion Model</title><link href="https://ucas.io/ai/Diffusion-Model/" rel="alternate" type="text/html" title="Diffusion Model" /><published>2023-07-02T19:05:29+08:00</published><updated>2023-07-02T19:05:29+08:00</updated><id>https://ucas.io/ai/Diffusion-Model</id><content type="html" xml:base="https://ucas.io/ai/Diffusion-Model/">&lt;h2 id=&quot;diffusion-model&quot;&gt;Diffusion Model&lt;/h2&gt;
 
 &lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 
@@ -471,11 +510,23 @@ The current release does not include code for shape completion. Please check bac
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702195612.png&quot; alt=&quot;20230702195612&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;训练过程使用了UNet作为噪音的编解码模型对噪音进行预测&lt;/p&gt;
-
+&lt;p&gt;训练过程使用了UNet作为噪音的编解码模型对噪音进行预测
+discriminator&lt;/p&gt;
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://medium.com/cj-express-tech-tildi/stable-diffusion-theory-and-application-a0f98881cb03&quot;&gt;Stable Diffusion: Theory and Applications - medium&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV13h411V7vg?p=2&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;Diffusion - BiliBili&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/548112711&quot;&gt;扩散模型 Diffusion Models - 原理篇 - 荏苒岁月的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;有代码有图，有原理&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/639540034&quot;&gt;diffusion model（二）—— DDIM（将diffusion model 提速50倍！） - 莫叶何竹的文章 - 知乎&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;DDIM(denoising diffusion implicit models)和DDPM(denoising diffusion probabilistic)的区别&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/625386246&quot;&gt;【AIGC第十三篇】Diffusion Autoencoders：基于latent space控制的图像生成技术 - 笑书神侠的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/627133524&quot;&gt;深入浅出讲解Stable Diffusion原理，新手也能看明白 - 北方的郎的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Diffusion Model</summary></entry></feed>

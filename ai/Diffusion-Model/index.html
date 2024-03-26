@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Palette: Image-to-Image Diffusion Models / Notes B</title>
-<meta name="description" content="Introduction">
+<!-- begin _includes/seo.html --><title>Diffusion Model / Notes B</title>
+<meta name="description" content="Diffusion Model">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Palette: Image-to-Image Diffusion Models">
-<meta property="og:url" content="https://ucas.io/ai/Image-to-Image-copy/">
+<meta property="og:title" content="Diffusion Model">
+<meta property="og:url" content="https://ucas.io/ai/Diffusion-Model/">
 
 
-  <meta property="og:description" content="Introduction">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020103.png">
+  <meta property="og:description" content="Diffusion Model">
 
 
 
-
-
-  <meta property="article:published_time" content="2023-07-07T02:18:17+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702193049.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2023-07-02T19:05:29+08:00">
 
-<link rel="canonical" href="https://ucas.io/ai/Image-to-Image-copy/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/ai/Diffusion-Model/">
 
 
 
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">Palette: Image-to-Image Diffusion Models</li>
+        <li class="current">Diffusion Model</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Palette: Image-to-Image Diffusion Models">
-    <meta itemprop="description" content="Introduction">
-    <meta itemprop="datePublished" content="2023-07-07T02:18:17+08:00">
+    <meta itemprop="headline" content="Diffusion Model">
+    <meta itemprop="description" content="Diffusion Model">
+    <meta itemprop="datePublished" content="2023-07-02T19:05:29+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Palette: Image-to-Image Diffusion Models
+          <h1 id="page-title" class="page__title" itemprop="headline">Diffusion Model
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2023-07-07T02:18:17+08:00">July 7, 2023</time>
+        <time datetime="2023-07-02T19:05:29+08:00">July 2, 2023</time>
       </span>
     
 
@@ -378,47 +378,62 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#introduction">Introduction</a></li></ul>
+              <ul class="toc__menu"><li><a href="#diffusion-model">Diffusion Model</a><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#training">Training</a></li></ul></li><li><a href="#reference">Reference</a></li></ul>
 
             </nav>
           </aside>
         
-        <h3 id="introduction">Introduction</h3>
+        <h2 id="diffusion-model">Diffusion Model</h2>
 
-<ul>
-  <li>第一篇基于Conditional Diffusion 的 Image to Image 任务</li>
-  <li>在训练Diffusion时，L1， L2的作用，以及self attention
-    <ul>
-      <li>L1 和 L2的结果质量相似，但L2有更好的多样性</li>
-    </ul>
-  </li>
-</ul>
+<h3 id="introduction">Introduction</h3>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020805.png" alt="20230707020805" /></p>
+<p>算法主要分为2个部分，第一步讲解关于扩散模型的数据来源和扩散的推导理论，第二部讲解关于反向递推的过程
+其中，模型预测的为上一步的噪音值，而非真实值。</p>
 
-<ul>
-  <li>损失函数增加了额外的条件信息x
-<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020620.png" alt="20230707020620" /></li>
-</ul>
+<p>$\alpha_t=1-\beta_t, beta=0.00001 to 0.002, step =200$</p>
 
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020103.png" alt="20230707020103" /></p>
+<p>$x_t=\sqrt{\alpha_t}x_{t-1}+\sqrt{1-\alpha_t}z_1$</p>
 
+<p>$x_{t-1}=\sqrt{\alpha_{t-1}}x_{t-2}+\sqrt{1-\alpha_{t-1}}z_2$</p>
+
+<p>$x_t=\sqrt{\alpha_t\alpha_{t-1}}x_{t-2}+\sqrt{1-\alpha_t\alpha_{t-1}}\bar{z_2}$</p>
+
+<p>$x_t=\sqrt{\bar{\alpha_t}}x_0+\sqrt{1-\bar{\alpha_t}}\bar{z_t}$</p>
+
+<h3 id="sample">Sample</h3>
+
+<p>采样过程即增加噪音的过程，噪音服从正太分布，每一步的权重根据步骤会进行变化，可以理解为，开始加的噪音小，后面加的噪音大。
+每一步增加的噪音服从正态分布，因此可以根据给定$x_0$得知任意时刻的$x_t$。将每一步增加的噪音值作为GT，通过$x_t$预测$x_{t-1}$时所增加的噪音值</p>
+
+<p>权重推导</p>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230705013847.png" alt="20230705013847" /></p>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702195416.png" alt="20230702195416" /></p>
+
+<h3 id="training">Training</h3>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702195612.png" alt="20230702195612" /></p>
+
+<p>训练过程使用了UNet作为噪音的编解码模型对噪音进行预测
+discriminator</p>
 <h2 id="reference">Reference</h2>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[注意力机制的本质</td>
-          <td>Self-Attention</td>
-          <td>Transformer</td>
-          <td>QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f)</td>
-        </tr>
-      </tbody>
-    </table>
+  <li><a href="https://medium.com/cj-express-tech-tildi/stable-diffusion-theory-and-application-a0f98881cb03">Stable Diffusion: Theory and Applications - medium</a></li>
+  <li><a href="https://www.bilibili.com/video/BV13h411V7vg?p=2&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f">Diffusion - BiliBili</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/548112711">扩散模型 Diffusion Models - 原理篇 - 荏苒岁月的文章 - 知乎</a>
+    <ul>
+      <li>有代码有图，有原理</li>
+      <li><a href="https://zhuanlan.zhihu.com/p/639540034">diffusion model（二）—— DDIM（将diffusion model 提速50倍！） - 莫叶何竹的文章 - 知乎</a>
+        <ul>
+          <li>DDIM(denoising diffusion implicit models)和DDPM(denoising diffusion probabilistic)的区别</li>
+        </ul>
+      </li>
+    </ul>
   </li>
-  <li><a href="https://www.bilibili.com/video/BV1814y1S7US/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f">Cross Attention _ Method Explanation _ Math Explained - BiliBili</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/625386246">【AIGC第十三篇】Diffusion Autoencoders：基于latent space控制的图像生成技术 - 笑书神侠的文章 - 知乎</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/627133524">深入浅出讲解Stable Diffusion原理，新手也能看明白 - 北方的郎的文章 - 知乎</a></li>
 </ul>
 
         
@@ -446,7 +461,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-07-07T02:18:17+08:00">July 7, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-07-02T19:05:29+08:00">July 2, 2023</time></p>
 
 
       </footer>
@@ -454,22 +469,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Palette%3A+Image-to-Image+Diffusion+Models%20https%3A%2F%2Fucas.io%2Fai%2FImage-to-Image-copy%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Diffusion+Model%20https%3A%2F%2Fucas.io%2Fai%2FDiffusion-Model%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fai%2FImage-to-Image-copy%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fai%2FDiffusion-Model%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fai%2FImage-to-Image-copy%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fai%2FDiffusion-Model%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/ai/Self-Attention-copy/" class="pagination--pager" title="Self-Attention
+      <a href="/3d/Inpainting/" class="pagination--pager" title="Inpainting
 ">Previous</a>
     
     
-      <a href="/ai/LORA/" class="pagination--pager" title="Lora
+      <a href="/ai/ControlNet/" class="pagination--pager" title="ControlNet
 ">Next</a>
     
   </nav>
@@ -530,7 +545,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Introduction
+    <p class="archive__item-excerpt" itemprop="description">WGAN-GP: Wasserstein GAN with Gradient Penalty
 </p>
   </article>
 </div>
@@ -544,7 +559,7 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png" alt="">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820221546.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -600,7 +615,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/3d/ai/MeshNet-copy/" rel="permalink">MeshNet
+        <a href="/3d/ai/MeshNet/" rel="permalink">MeshNet
 </a>
       
     </h2>
@@ -722,7 +737,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2023 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2024 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

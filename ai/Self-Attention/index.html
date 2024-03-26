@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>ControlNet / Notes B</title>
-<meta name="description" content="ControlNet">
+<!-- begin _includes/seo.html --><title>Self-Attention / Notes B</title>
+<meta name="description" content="Self-Attention">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="ControlNet">
-<meta property="og:url" content="https://ucas.io/ai/ControlNet-copy/">
+<meta property="og:title" content="Self-Attention">
+<meta property="og:url" content="https://ucas.io/ai/Self-Attention/">
 
 
-  <meta property="og:description" content="ControlNet">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230703021424.png">
+  <meta property="og:description" content="Self-Attention">
 
 
 
-
-
-  <meta property="article:published_time" content="2023-07-03T02:13:07+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222250.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2023-07-04T22:18:17+08:00">
 
-<link rel="canonical" href="https://ucas.io/ai/ControlNet-copy/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/ai/Self-Attention/">
 
 
 
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">ControlNet</li>
+        <li class="current">Self-Attention</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="ControlNet">
-    <meta itemprop="description" content="ControlNet">
-    <meta itemprop="datePublished" content="2023-07-03T02:13:07+08:00">
+    <meta itemprop="headline" content="Self-Attention">
+    <meta itemprop="description" content="Self-Attention">
+    <meta itemprop="datePublished" content="2023-07-04T22:18:17+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">ControlNet
+          <h1 id="page-title" class="page__title" itemprop="headline">Self-Attention
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2023-07-03T02:13:07+08:00">July 3, 2023</time>
+        <time datetime="2023-07-04T22:18:17+08:00">July 4, 2023</time>
       </span>
     
 
@@ -378,29 +378,92 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#controlnet">ControlNet</a><ul><li><a href="#introduction">Introduction</a></li></ul></li><li><a href="#reference">Reference</a></li></ul>
+              <ul class="toc__menu"><li><a href="#self-attention">Self-Attention</a><ul><li><a href="#introduction">Introduction</a></li><li><a href="#self-attention-1">Self Attention</a></li><li><a href="#cross-attention">Cross Attention</a></li><li><a href="#vitvision-transformer解析">ViT（Vision Transformer）解析</a></li></ul></li><li><a href="#reference">Reference</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="controlnet">ControlNet</h2>
+        <h2 id="self-attention">Self-Attention</h2>
+
+<p>以腰围和身高举例</p>
+
+<p>腰围是K，身高是V，有对应关系。这时我希望用Q对合适的K进行查询，Q也是腰围，我希望得到合适的V，一般情况下我需要计算各个腰围K的权重并与V相乘，得到最终结果
+若KQV矩阵是自身，则是自注意力机制。</p>
 
 <h3 id="introduction">Introduction</h3>
 
-<ul>
-  <li>利用Stable Diffusion的Copy，对模型的控制模型进行额外的训练。同时对Stable Diffusion的模型进行冻结，转成对ControlNet进行训练</li>
-  <li>ControlNet的初始化使用Zero Convolution, 初始化为0的卷积核为1的卷积层。</li>
-  <li>对每次的输出运算同步到Stable Diffusion当中</li>
-  <li>实际网络连接
-<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230703021632.png" alt="20230703021632" /></li>
-</ul>
+<h3 id="self-attention-1">Self Attention</h3>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704231311.png" alt="20230704231311" /></p>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222448.png" alt="20230704222448" /></p>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222250.png" alt="20230704222250" /></p>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704230909.png" alt="20230704230909" /></p>
+
+<h3 id="cross-attention">Cross Attention</h3>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704230959.png" alt="20230704230959" /></p>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704231126.png" alt="20230704231126" /></p>
+
+<h3 id="vitvision-transformer解析">ViT（Vision Transformer）解析</h3>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230918191122.png" alt="20230918191122" /></p>
 
 <h2 id="reference">Reference</h2>
 
 <ul>
-  <li>[ ]</li>
-  <li><a href="https://arxiv.org/pdf/2302.05543.pdf">Adding Conditional Control to Text-to-Image Diffusion Models - arxiv</a></li>
-  <li><a href="https://www.bilibili.com/video/BV13x4y1w7k1/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f">ControlNet - BiliBili</a></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[注意力机制的本质</td>
+          <td>Self-Attention</td>
+          <td>Transformer</td>
+          <td>QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><a href="https://www.bilibili.com/video/BV1814y1S7US/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f">Cross Attention _ Method Explanation _ Math Explained - BiliBili</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/47282410">Attention机制详解（二）——Self-Attention与Transformer - 川陀学者的文章 - 知乎</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/98863801">从ReLU到GELU，一文概览神经网络的激活函数 - 机器之心的文章 - 知乎</a>
+    <ul>
+      <li>Transformer中使用GELU</li>
+    </ul>
+  </li>
+  <li><a href="https://zhuanlan.zhihu.com/p/445122996">ViT（Vision Transformer）解析 - 德怀特的文章 - 知乎</a>
+    <ul>
+      <li>图片Transformer</li>
+    </ul>
+  </li>
+  <li><a href="https://www.zhihu.com/question/558574918/answer/2711404815">VAE、GAN 这种生成模型和 transformer 有什么区别？ - 知乎用户的回答 - 知乎</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/106644634">一文读懂Transformer模型的位置编码 - 眺望远方的龙的文章 - 知乎</a>
+    <ul>
+      <li>位置编码</li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230918195627.png" alt="20230918195627" /></li>
+    </ul>
+  </li>
+  <li><a href="https://zhuanlan.zhihu.com/p/57732839">自注意力与位置编码 - 机器学习小谈的文章 - 知乎</a>
+    <ul>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230919172214.png" alt="20230919172214" /></li>
+    </ul>
+  </li>
+  <li><a href="https://zhuanlan.zhihu.com/p/391337035">【时间序列】Transformer for TimeSeries时序预测算法详解 - VoidOc的文章 - 知乎</a></li>
+  <li><a href="https://transformers.run/back/transformer/">第二章：Transformer 模型</a></li>
+  <li><a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a>
+    <ul>
+      <li>英文原文</li>
+    </ul>
+  </li>
+  <li><a href="https://zhuanlan.zhihu.com/p/48508221">详解Transformer （Attention Is All You Need） - 大师兄的文章 - 知乎</a>
+    <ul>
+      <li><a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer - Alammar</a></li>
+      <li><a href="https://luweikxy.gitbook.io/machine-learning-notes/self-attention-and-transformer">Self-Attention机制和Transformer</a></li>
+    </ul>
+  </li>
 </ul>
 
         
@@ -428,7 +491,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-07-03T02:13:07+08:00">July 3, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-07-04T22:18:17+08:00">July 4, 2023</time></p>
 
 
       </footer>
@@ -436,22 +499,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=ControlNet%20https%3A%2F%2Fucas.io%2Fai%2FControlNet-copy%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Self-Attention%20https%3A%2F%2Fucas.io%2Fai%2FSelf-Attention%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fai%2FControlNet-copy%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fai%2FSelf-Attention%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fai%2FControlNet-copy%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fai%2FSelf-Attention%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/ai/Diffusion-Model-copy/" class="pagination--pager" title="Diffusion Model
+      <a href="/ai/ControlNet/" class="pagination--pager" title="ControlNet
 ">Previous</a>
     
     
-      <a href="/ai/Self-Attention-copy/" class="pagination--pager" title="Self-Attention
+      <a href="/ai/Image-to-Image/" class="pagination--pager" title="Palette: Image-to-Image Diffusion Models
 ">Next</a>
     
   </nav>
@@ -512,7 +575,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Introduction
+    <p class="archive__item-excerpt" itemprop="description">WGAN-GP: Wasserstein GAN with Gradient Penalty
 </p>
   </article>
 </div>
@@ -526,7 +589,7 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png" alt="">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820221546.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -582,7 +645,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/3d/ai/MeshNet-copy/" rel="permalink">MeshNet
+        <a href="/3d/ai/MeshNet/" rel="permalink">MeshNet
 </a>
       
     </h2>
@@ -704,7 +767,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2023 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2024 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

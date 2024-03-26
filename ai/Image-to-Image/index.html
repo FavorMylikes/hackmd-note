@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Self-Attention / Notes B</title>
-<meta name="description" content="Self-Attention">
+<!-- begin _includes/seo.html --><title>Palette: Image-to-Image Diffusion Models / Notes B</title>
+<meta name="description" content="Introduction">
 
 
   <meta name="author" content="麦丽素">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Notes B">
-<meta property="og:title" content="Self-Attention">
-<meta property="og:url" content="https://ucas.io/ai/Self-Attention-copy/">
+<meta property="og:title" content="Palette: Image-to-Image Diffusion Models">
+<meta property="og:url" content="https://ucas.io/ai/Image-to-Image/">
 
 
-  <meta property="og:description" content="Self-Attention">
-
-
-
-  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222250.png">
+  <meta property="og:description" content="Introduction">
 
 
 
-
-
-  <meta property="article:published_time" content="2023-07-04T22:18:17+08:00">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020103.png">
 
 
 
 
 
+  <meta property="article:published_time" content="2023-07-07T02:18:17+08:00">
 
-<link rel="canonical" href="https://ucas.io/ai/Self-Attention-copy/">
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/ai/Image-to-Image/">
 
 
 
@@ -213,7 +213,7 @@
     
       
       
-        <li class="current">Self-Attention</li>
+        <li class="current">Palette: Image-to-Image Diffusion Models</li>
       
     
   </ol>
@@ -332,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Self-Attention">
-    <meta itemprop="description" content="Self-Attention">
-    <meta itemprop="datePublished" content="2023-07-04T22:18:17+08:00">
+    <meta itemprop="headline" content="Palette: Image-to-Image Diffusion Models">
+    <meta itemprop="description" content="Introduction">
+    <meta itemprop="datePublished" content="2023-07-07T02:18:17+08:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Self-Attention
+          <h1 id="page-title" class="page__title" itemprop="headline">Palette: Image-to-Image Diffusion Models
 </h1>
           
 
@@ -350,7 +350,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2023-07-04T22:18:17+08:00">July 4, 2023</time>
+        <time datetime="2023-07-07T02:18:17+08:00">July 7, 2023</time>
       </span>
     
 
@@ -378,35 +378,30 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#self-attention">Self-Attention</a><ul><li><a href="#introduction">Introduction</a></li><li><a href="#self-attention-1">Self Attention</a></li><li><a href="#cross-attention">Cross Attention</a></li></ul></li><li><a href="#reference">Reference</a></li></ul>
+              <ul class="toc__menu"><li><a href="#introduction">Introduction</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="self-attention">Self-Attention</h2>
+        <h3 id="introduction">Introduction</h3>
 
-<p>以腰围和身高举例</p>
+<ul>
+  <li>第一篇基于Conditional Diffusion 的 Image to Image 任务</li>
+  <li>在训练Diffusion时，L1， L2的作用，以及self attention
+    <ul>
+      <li>L1 和 L2的结果质量相似，但L2有更好的多样性</li>
+    </ul>
+  </li>
+</ul>
 
-<p>腰围是K，身高是V，有对应关系。这时我希望用Q对合适的K进行查询，Q也是腰围，我希望得到合适的V，一般情况下我需要计算各个腰围K的权重并与V相乘，得到最终结果
-若KQV矩阵是自身，则是自注意力机制。</p>
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020805.png" alt="20230707020805" /></p>
 
-<h3 id="introduction">Introduction</h3>
+<ul>
+  <li>损失函数增加了额外的条件信息x
+<img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020620.png" alt="20230707020620" /></li>
+</ul>
 
-<h3 id="self-attention-1">Self Attention</h3>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704231311.png" alt="20230704231311" /></p>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222448.png" alt="20230704222448" /></p>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222250.png" alt="20230704222250" /></p>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704230909.png" alt="20230704230909" /></p>
-
-<h3 id="cross-attention">Cross Attention</h3>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704230959.png" alt="20230704230959" /></p>
-
-<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704231126.png" alt="20230704231126" /></p>
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020103.png" alt="20230707020103" /></p>
 
 <h2 id="reference">Reference</h2>
 
@@ -451,7 +446,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-07-04T22:18:17+08:00">July 4, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-07-07T02:18:17+08:00">July 7, 2023</time></p>
 
 
       </footer>
@@ -459,22 +454,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Self-Attention%20https%3A%2F%2Fucas.io%2Fai%2FSelf-Attention-copy%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Palette%3A+Image-to-Image+Diffusion+Models%20https%3A%2F%2Fucas.io%2Fai%2FImage-to-Image%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fai%2FSelf-Attention-copy%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fai%2FImage-to-Image%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fai%2FSelf-Attention-copy%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fai%2FImage-to-Image%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/ai/ControlNet-copy/" class="pagination--pager" title="ControlNet
+      <a href="/ai/Self-Attention/" class="pagination--pager" title="Self-Attention
 ">Previous</a>
     
     
-      <a href="/ai/Image-to-Image-copy/" class="pagination--pager" title="Palette: Image-to-Image Diffusion Models
+      <a href="/ai/LORA/" class="pagination--pager" title="Lora
 ">Next</a>
     
   </nav>
@@ -535,7 +530,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Introduction
+    <p class="archive__item-excerpt" itemprop="description">WGAN-GP: Wasserstein GAN with Gradient Penalty
 </p>
   </article>
 </div>
@@ -549,7 +544,7 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png" alt="">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820221546.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -605,7 +600,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/3d/ai/MeshNet-copy/" rel="permalink">MeshNet
+        <a href="/3d/ai/MeshNet/" rel="permalink">MeshNet
 </a>
       
     </h2>
@@ -727,7 +722,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2023 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2024 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

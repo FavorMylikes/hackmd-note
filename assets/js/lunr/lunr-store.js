@@ -582,27 +582,27 @@ var store = [{
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20221014194734.png"
       },{
         "title": "Diffusion Model",
-        "excerpt":"Diffusion Model   Introduction   算法主要分为2个部分，第一步讲解关于扩散模型的数据来源和扩散的推导理论，第二部讲解关于反向递推的过程 其中，模型预测的为上一步的噪音值，而非真实值。   $\\alpha_t=1-\\beta_t, beta=0.00001 to 0.002, step =200$   $x_t=\\sqrt{\\alpha_t}x_{t-1}+\\sqrt{1-\\alpha_t}z_1$   $x_{t-1}=\\sqrt{\\alpha_{t-1}}x_{t-2}+\\sqrt{1-\\alpha_{t-1}}z_2$   $x_t=\\sqrt{\\alpha_t\\alpha_{t-1}}x_{t-2}+\\sqrt{1-\\alpha_t\\alpha_{t-1}}\\bar{z_2}$   $x_t=\\sqrt{\\bar{\\alpha_t}}x_0+\\sqrt{1-\\bar{\\alpha_t}}\\bar{z_t}$   Sample   采样过程即增加噪音的过程，噪音服从正太分布，每一步的权重根据步骤会进行变化，可以理解为，开始加的噪音小，后面加的噪音大。 每一步增加的噪音服从正态分布，因此可以根据给定$x_0$得知任意时刻的$x_t$。将每一步增加的噪音值作为GT，通过$x_t$预测$x_{t-1}$时所增加的噪音值   权重推导         Training      训练过程使用了UNet作为噪音的编解码模型对噪音进行预测   Reference      Stable Diffusion: Theory and Applications - medium   Diffusion - BiliBili  ","categories": ["AI"],
+        "excerpt":"Diffusion Model Introduction 算法主要分为2个部分，第一步讲解关于扩散模型的数据来源和扩散的推导理论，第二部讲解关于反向递推的过程 其中，模型预测的为上一步的噪音值，而非真实值。 $\\alpha_t=1-\\beta_t, beta=0.00001 to 0.002, step =200$ $x_t=\\sqrt{\\alpha_t}x_{t-1}+\\sqrt{1-\\alpha_t}z_1$ $x_{t-1}=\\sqrt{\\alpha_{t-1}}x_{t-2}+\\sqrt{1-\\alpha_{t-1}}z_2$ $x_t=\\sqrt{\\alpha_t\\alpha_{t-1}}x_{t-2}+\\sqrt{1-\\alpha_t\\alpha_{t-1}}\\bar{z_2}$ $x_t=\\sqrt{\\bar{\\alpha_t}}x_0+\\sqrt{1-\\bar{\\alpha_t}}\\bar{z_t}$ Sample 采样过程即增加噪音的过程，噪音服从正太分布，每一步的权重根据步骤会进行变化，可以理解为，开始加的噪音小，后面加的噪音大。 每一步增加的噪音服从正态分布，因此可以根据给定$x_0$得知任意时刻的$x_t$。将每一步增加的噪音值作为GT，通过$x_t$预测$x_{t-1}$时所增加的噪音值 权重推导 Training 训练过程使用了UNet作为噪音的编解码模型对噪音进行预测 discriminator Reference Stable Diffusion: Theory and Applications - medium Diffusion - BiliBili 扩散模型 Diffusion Models - 原理篇 - 荏苒岁月的文章 - 知乎 有代码有图，有原理 diffusion model（二）—— DDIM（将diffusion model 提速50倍！） - 莫叶何竹的文章...","categories": ["AI"],
         "tags": [],
-        "url": "/ai/Diffusion-Model-copy/",
+        "url": "/ai/Diffusion-Model/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702193049.png"
       },{
         "title": "ControlNet",
         "excerpt":"ControlNet   Introduction      利用Stable Diffusion的Copy，对模型的控制模型进行额外的训练。同时对Stable Diffusion的模型进行冻结，转成对ControlNet进行训练   ControlNet的初始化使用Zero Convolution, 初始化为0的卷积核为1的卷积层。   对每次的输出运算同步到Stable Diffusion当中   实际网络连接    Reference      [ ]   Adding Conditional Control to Text-to-Image Diffusion Models - arxiv   ControlNet - BiliBili  ","categories": ["AI"],
         "tags": [],
-        "url": "/ai/ControlNet-copy/",
+        "url": "/ai/ControlNet/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230703021424.png"
       },{
         "title": "Self-Attention",
-        "excerpt":"Self-Attention   以腰围和身高举例   腰围是K，身高是V，有对应关系。这时我希望用Q对合适的K进行查询，Q也是腰围，我希望得到合适的V，一般情况下我需要计算各个腰围K的权重并与V相乘，得到最终结果 若KQV矩阵是自身，则是自注意力机制。   Introduction   Self Attention               Cross Attention         Reference                                      [注意力机制的本质           Self-Attention           Transformer           QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f)                           Cross Attention _ Method Explanation _ Math Explained - BiliBili  ","categories": ["AI"],
+        "excerpt":"Self-Attention 以腰围和身高举例 腰围是K，身高是V，有对应关系。这时我希望用Q对合适的K进行查询，Q也是腰围，我希望得到合适的V，一般情况下我需要计算各个腰围K的权重并与V相乘，得到最终结果 若KQV矩阵是自身，则是自注意力机制。 Introduction Self Attention Cross Attention ViT（Vision Transformer）解析 Reference [注意力机制的本质 Self-Attention Transformer QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f) Cross Attention _ Method Explanation _ Math Explained - BiliBili Attention机制详解（二）——Self-Attention与Transformer - 川陀学者的文章 - 知乎 从ReLU到GELU，一文概览神经网络的激活函数 - 机器之心的文章 - 知乎 Transformer中使用GELU ViT（Vision Transformer）解析 - 德怀特的文章 - 知乎 图片Transformer VAE、GAN 这种生成模型和 transformer 有什么区别？...","categories": ["AI"],
         "tags": [],
-        "url": "/ai/Self-Attention-copy/",
+        "url": "/ai/Self-Attention/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222250.png"
       },{
         "title": "Palette: Image-to-Image Diffusion Models",
         "excerpt":"Introduction      第一篇基于Conditional Diffusion 的 Image to Image 任务   在训练Diffusion时，L1， L2的作用，以及self attention            L1 和 L2的结果质量相似，但L2有更好的多样性                 损失函数增加了额外的条件信息x       Reference                                      [注意力机制的本质           Self-Attention           Transformer           QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fd373f40f4a1d2e059be533c5b77797f)                           Cross Attention _ Method Explanation _ Math Explained - BiliBili  ","categories": ["AI"],
         "tags": [],
-        "url": "/ai/Image-to-Image-copy/",
+        "url": "/ai/Image-to-Image/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020103.png"
       },{
         "title": "Lora",
@@ -626,17 +626,17 @@ var store = [{
         "title": "MeshNet",
         "excerpt":"Introduction   DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation   Over View      数据处理      面旋转卷积      面核卷积      mesh convolution         数据集            ModelNet40           代码            python           github   论文要点      将输入转化为空间描述符合结构描述符两种，最后通过mesh 卷积得到全局特征   结构描述符包含面核相关性、面旋转卷积            面核相关性由作者定义的函数进行计算       面旋转卷积由名片各点到面中心的向量进行计算           空间描述符主要使用mesh中每个平面的几个中心直接进行MLP处理 后续增加池化等，活动全局特征   论文不提供重建过程，更多用于分类   Reference      youtube MeshNet++   Github  ","categories": ["3d","AI"],
         "tags": [],
-        "url": "/3d/ai/MeshNet-copy/",
+        "url": "/3d/ai/MeshNet/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png"
       },{
         "title": "MeshNet Latent space",
         "excerpt":"Introduction DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation text to 3d 3dfy text to 3d, image to 3d objects interiors: table lamps、sofa、table、ottoman、cutlery gaming：sword、shield、axes 提供API 面像对象：GTA 架构和技术方案(没有具体写参照的论文) DreamFusion - google 平均1.5小时 文本-&gt;2D图像-&gt;优化为Nerf Score Jacobian Chaining(目前几乎所有的零样本开放域文生 3D 工作所使用的算法) 问题：过于平滑、过饱和现象严重 stable-dreamfusion python + cuda A pytorch implementation of the text-to-3D model...","categories": ["3d","AI"],
         "tags": [],
         "url": "/3d/ai/Mesh-Latent-space/",
-        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png"
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820221546.png"
       },{
         "title": "WGAN-GP",
-        "excerpt":"Introduction   WGAN-GP: Wasserstein GAN with Gradient Penalty      Paper   论文要点      Wasserstein GAN            WGAN在训练过程中可能遇到不稳定性和收敛困难的问题，而WGAN-GP通过引入梯度惩罚项来替代权重裁剪，能够有效提升GAN的稳定性和训练效果。       WGAN-GP中，通过对批次中真实样本和生成样本之间直线上的点进行采样，并对生成器的梯度进行惩罚来实现Lipschitz约束。这种方法能够在不进行任何超参数调整的情况下，稳定地训练各种GAN架构，包括具有101层ResNet的图像生成模型和连续生成器的语言模型。       在实验中，通过对CIFAR-10和LSUN卧室数据集进行训练和生成，展示了WGAN-GP相对于传统权重裁剪方法在训练速度和样本质量上的改进。论文还对200个随机架构进行了训练并对比其性能，结果显示WGAN-GP能够成功训练大多数架构。           需要理解KL散度，JS散度（KL的对称版）   GAN            D(Y, θ)：其中相对熵被用神经网络训练(希望尽可能大-网络可以区分)       G(X, θ)：希望两个分布尽可能相似(希望尽可能小)              Reference      互怼的艺术：从零直达WGAN-GP                                                            [公众号：PaperWeekly 第41期               互怼的艺术：从零直达 WGAN-GP](https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;mid=2247484880&amp;idx=1&amp;sn=4b2e976cc715c9fe2d022ff6923879a8&amp;chksm=96e9da50a19e5346307b54f5ce172e355ccaba890aa157ce50fda68eeaccba6ea05425f6ad76&amp;scene=21#wechat_redirect)                                               github                                           [变分自编码器VAE：原来是这么一回事           附开源代码 - PaperWeekly的文章 - 知乎](https://zhuanlan.zhihu.com/p/34998569)                          ","categories": ["AI"],
+        "excerpt":"WGAN-GP: Wasserstein GAN with Gradient Penalty      Paper   论文要点      Wasserstein GAN            WGAN在训练过程中可能遇到不稳定性和收敛困难的问题，而WGAN-GP通过引入梯度惩罚项来替代权重裁剪，能够有效提升GAN的稳定性和训练效果。       WGAN-GP中，通过对批次中真实样本和生成样本之间直线上的点进行采样，并对生成器的梯度进行惩罚来实现Lipschitz约束。这种方法能够在不进行任何超参数调整的情况下，稳定地训练各种GAN架构，包括具有101层ResNet的图像生成模型和连续生成器的语言模型。       在实验中，通过对CIFAR-10和LSUN卧室数据集进行训练和生成，展示了WGAN-GP相对于传统权重裁剪方法在训练速度和样本质量上的改进。论文还对200个随机架构进行了训练并对比其性能，结果显示WGAN-GP能够成功训练大多数架构。           需要理解KL散度，JS散度（KL的对称版）   GAN            D(Y, θ)：其中相对熵被用神经网络训练(希望尽可能大-网络可以区分)       G(X, θ)：希望两个分布尽可能相似(希望尽可能小)           CVAE-GAN: Fine-Grained Image Generation through Asymmetric Training   Reference      互怼的艺术：从零直达WGAN-GP                                                            [公众号：PaperWeekly 第41期               互怼的艺术：从零直达 WGAN-GP](https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;mid=2247484880&amp;idx=1&amp;sn=4b2e976cc715c9fe2d022ff6923879a8&amp;chksm=96e9da50a19e5346307b54f5ce172e355ccaba890aa157ce50fda68eeaccba6ea05425f6ad76&amp;scene=21#wechat_redirect)                                               github                                           [变分自编码器VAE：原来是这么一回事           附开源代码 - PaperWeekly的文章 - 知乎](https://zhuanlan.zhihu.com/p/34998569)                          ","categories": ["AI"],
         "tags": [],
         "url": "/ai/WGAN-GP/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png"
