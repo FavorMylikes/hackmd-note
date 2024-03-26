@@ -40,8 +40,14 @@ $x_t=\sqrt{\bar{\alpha_t}}x_0+\sqrt{1-\bar{\alpha_t}}\bar{z_t}$
 <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702195612.png" alt="20230702195612"/>
 
 训练过程使用了UNet作为噪音的编解码模型对噪音进行预测
-
+discriminator
 ## Reference
 
 - [Stable Diffusion: Theory and Applications - medium](https://medium.com/cj-express-tech-tildi/stable-diffusion-theory-and-application-a0f98881cb03)
 - [Diffusion - BiliBili](https://www.bilibili.com/video/BV13h411V7vg?p=2&vd_source=fd373f40f4a1d2e059be533c5b77797f)
+- [扩散模型 Diffusion Models - 原理篇 - 荏苒岁月的文章 - 知乎](https://zhuanlan.zhihu.com/p/548112711)
+  - 有代码有图，有原理
+  - [diffusion model（二）—— DDIM（将diffusion model 提速50倍！） - 莫叶何竹的文章 - 知乎](https://zhuanlan.zhihu.com/p/639540034)
+    - DDIM(denoising diffusion implicit models)和DDPM(denoising diffusion probabilistic)的区别
+- [【AIGC第十三篇】Diffusion Autoencoders：基于latent space控制的图像生成技术 - 笑书神侠的文章 - 知乎](https://zhuanlan.zhihu.com/p/625386246)
+- [深入浅出讲解Stable Diffusion原理，新手也能看明白 - 北方的郎的文章 - 知乎](https://zhuanlan.zhihu.com/p/627133524)

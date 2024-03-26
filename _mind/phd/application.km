@@ -1,0 +1,771 @@
+{
+    "root": {
+        "data": {
+            "id": "cvie8iijc8o0",
+            "created": 1694669599724,
+            "text": "Application"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cvie8n1r7hs0",
+                    "created": 1694669609593,
+                    "text": "Canada"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cvie8o4omwg0",
+                            "created": 1694669611947,
+                            "text": "[usnews 965] Toronto Metropolitan\nUniversity/TMU/Ryerson University/怀雅逊大学或瑞尔森大学"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cvie8ynfhbs0",
+                                    "created": 1694669634848,
+                                    "text": "  Computer Vision and\n  Intelligent Systems Laboratory"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvie9vgxmzk0",
+                                            "created": 1694669706289,
+                                            "text": "主页"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvie91vi3ds0",
+                                                    "created": 1694669641866,
+                                                    "text": "https://www.cs.ryerson.ca/~wangcs/cvis.html"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvie9901fls0",
+                                            "created": 1694669657378,
+                                            "text": "  wangcs@ryersonca"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvie9bh4uwo0",
+                                            "created": 1694669662766,
+                                            "text": "  博后/硕博"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvie9gbyl400",
+                                                    "created": 1694669673337,
+                                                    "text": "2024 fall"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cvie9kqj1o80",
+                                                    "created": 1694669682925,
+                                                    "text": "2024 spring"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cvie9ozzx480",
+                                                    "created": 1694669692204,
+                                                    "text": "2024 winter"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvie9xve46w0",
+                                            "created": 1694669711517,
+                                            "text": "申请"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvie9sp4urc0",
+                                                    "created": 1694669700255,
+                                                    "text": "  https://www.torontomu.ca/graduate/future-students/apply/online/"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cviemu8vjfk0",
+                                            "created": 1694670722359,
+                                            "text": "  RyersonUniversity"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cw9y1zpt5k00",
+                            "created": 1697467629648,
+                            "text": "[432]York University"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cvietvo10kg0",
+                            "created": 1694671274001,
+                            "text": "谢布鲁克大学"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cvieu26b0xk0",
+                                    "created": 1694671288167,
+                                    "text": "introlab"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvieuh9e21k0",
+                                            "created": 1694671321005,
+                                            "text": "主页"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvieuk01w5c0",
+                                                    "created": 1694671326971,
+                                                    "text": "https://introlab.3it.usherbrooke.ca/mediawiki-introlab/index.php/Main_Page"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cvieuyo6c1s0",
+                                    "created": 1694671358905,
+                                    "text": "魁北克"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cvieveyo89s0",
+                            "created": 1694671394368,
+                            "text": "多伦多大学",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cvievh6ew2w0",
+                                    "created": 1694671399190,
+                                    "text": "CVLab"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvif9hd7ywo0",
+                                            "created": 1694672496700,
+                                            "text": "topic"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cviger9oyeg0",
+                                    "created": 1694675731185,
+                                    "text": "机器视觉与学习实验室"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvigfquvetc0",
+                                            "created": 1694675808653,
+                                            "text": "主页"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvigeqaf8rk0",
+                                                    "created": 1694675729052,
+                                                    "text": "https://rvl.cs.toronto.edu/#/"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvigfol4zb40",
+                                            "created": 1694675803711,
+                                            "text": "申请"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvigfpd00i00",
+                                                    "created": 1694675805395,
+                                                    "text": "https://rvl.cs.toronto.edu/#/joining"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cvigfssic200",
+                                                    "created": 1694675812863,
+                                                    "text": "ddl 12月底"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cviggjxk00w0",
+                                                    "created": 1694675871942,
+                                                    "text": "2023 9月份申奖学金"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cvigkn3nx600",
+                                                            "created": 1694676192298,
+                                                            "text": "nserc-crsng"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cvigkq2q4e00",
+                                                                    "created": 1694676198772,
+                                                                    "text": "https://www.nserc-crsng.gc.ca/students-etudiants/pg-cs/cgsd-bescd_eng.asp"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cviglfafcqw0",
+                                                            "created": 1694676253657,
+                                                            "text": "8:00 p.m. (ET) on October 17"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cvif9if1yew0",
+                                    "created": 1694672498987,
+                                    "text": "博士4年，直博5年"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvifa91tvhc0",
+                                            "created": 1694672556961,
+                                            "text": "topic"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cvifa9zloa00",
+                                    "created": 1694672559003,
+                                    "text": "要求",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvifck2siio0",
+                                            "created": 1694672737692,
+                                            "text": "雅思7(6.5)/托福93(22)"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvifebh3q1c0",
+                                            "created": 1694672875694,
+                                            "text": "GPA>4"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvifufp82zk0",
+                                            "created": 1694674138719,
+                                            "text": "GRE  are strongly encouraged"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvife7gb5y00",
+                                            "created": 1694672866939,
+                                            "text": "https://www.sgs.utoronto.ca/future-students/admission-application-requirements/english-language-proficiency-testing/"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cvifupdch3s0",
+                                    "created": 1694674159769,
+                                    "text": "Date"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvifur99eqw0",
+                                            "created": 1694674163875,
+                                            "text": "2024 Fall 十月初"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cvihh31o5w80",
+                            "created": 1694678734659,
+                            "text": "滑铁卢"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cvihh4bcs2w0",
+                                    "created": 1694678737422,
+                                    "text": "学校主页"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvihh917s3c0",
+                                            "created": 1694678747692,
+                                            "text": "https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/future-students/applying-graduate-school"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cvihhas415k0",
+                                    "created": 1694678751496,
+                                    "text": "英语要求"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvihjrkpn9k0",
+                                            "created": 1694678944782,
+                                            "text": "电气计算机",
+                                            "layout_right_offset": {
+                                                "x": 6.249999906867856,
+                                                "y": -8.74999986961484
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvihkh2m0940",
+                                                    "created": 1694679000284,
+                                                    "text": "雅思6.5"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cvihkjxyw880",
+                                                            "created": 1694679006533,
+                                                            "text": "写作口语6"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cvihknnj4o00",
+                                                    "created": 1694679014609,
+                                                    "text": "托福80"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cvihkpplhv40",
+                                                            "created": 1694679019088,
+                                                            "text": "写作22，口语20，阅读20，听力18"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvihmivncy00",
+                                            "created": 1694679160944,
+                                            "text": "计算机科学"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvihmpwqemo0",
+                                                    "created": 1694679176248,
+                                                    "text": "雅思6.5"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cvihmrz6nz40",
+                                                            "created": 1694679180749,
+                                                            "text": "写作6，口语6.5"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvihl2bu5000",
+                                            "created": 1694679046554,
+                                            "text": "数据科学人工智能"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvihl5ajwf40",
+                                                    "created": 1694679053007,
+                                                    "text": "雅思7.5"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cvihl6pvvhs0",
+                                                            "created": 1694679056110,
+                                                            "text": "写作口语7"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvihkdj8jds0",
+                                            "created": 1694678992582,
+                                            "text": "通常",
+                                            "expandState": "expand"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvihhv5zs080",
+                                                    "created": 1694678795871,
+                                                    "text": "雅思7"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cvihhxc8hgg0",
+                                                            "created": 1694678800602,
+                                                            "text": "写作6.5, 口语6.5"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cvihi4i0zw00",
+                                                    "created": 1694678816189,
+                                                    "text": "托福90"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cvihi6comrk0",
+                                                            "created": 1694678820220,
+                                                            "text": "写作25，口语25"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvihn5x4b1s0",
+                                            "created": 1694679211099,
+                                            "text": "https://uwaterloo.ca/graduate-studies-academic-calendar/general-information-and-regulations/english-language-proficiency"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cvif3fkczvs0",
+                            "created": 1694672022593,
+                            "text": "洛桑联邦理工学院",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cviexvafr0g0",
+                                    "created": 1694671586636,
+                                    "text": "主页"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cviey35bzbs0",
+                                            "created": 1694671603742,
+                                            "text": "https://www.epfl.ch/labs/cvlab/"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cviey57gmpc0",
+                                    "created": 1694671608224,
+                                    "text": "申请"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cviey6d34800",
+                                            "created": 1694671610741,
+                                            "text": "https://www.epfl.ch/education/phd/edic-computer-and-communication-sciences/edic-computer-and-communication-sciences/edic-how-to-apply/"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cvieyom5uxc0",
+                                    "created": 1694671650472,
+                                    "text": "Date",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvieyb6s8zs0",
+                                            "created": 1694671621244,
+                                            "text": "第一轮 12/15截止",
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvieyiw50080",
+                                            "created": 1694671638014,
+                                            "text": "第二轮 补录 4/15截止"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cvieztj6a1s0",
+                                    "created": 1694671739539,
+                                    "text": "Require"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cviezv27cco0",
+                                            "created": 1694671742867,
+                                            "text": "三封推荐信"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvif0zzf72o0",
+                                            "created": 1694671831947,
+                                            "text": "雅思7/托福100"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cvif1jjoxt40",
+                                            "created": 1694671874531,
+                                            "text": "GRE(optional)"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cvif1yhxujs0",
+                                    "created": 1694671907077,
+                                    "text": "attention"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvif2251p200",
+                                            "created": 1694671915004,
+                                            "text": "提交完之后不能修改"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cvigqel2iao0",
+                            "created": 1694676643944,
+                            "text": "UBC"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cvigqgjdgfs0",
+                                    "created": 1694676648195,
+                                    "text": "https://www.1point3acres.com/bbs/thread-995573-1-1.html"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cvigsbh3qjk0",
+                                            "created": 1694676793903,
+                                            "text": "主页"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cvigsag7luo0",
+                                                    "created": 1694676791672,
+                                                    "text": "https://tea.ece.ubc.ca/"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cvigqjv6arc0",
+                                    "created": 1694676655439,
+                                    "text": "CompEng"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cvievqljyf40",
+                            "created": 1694671419696,
+                            "text": "麦吉尔大学"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cvievsp3n1k0",
+                                    "created": 1694671424264,
+                                    "text": "CVML"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cw9y23kqe680",
+                            "created": 1697467638048,
+                            "text": "多伦多"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cvif6d3p2w00",
+                    "created": 1694672252324,
+                    "text": "视觉实验室参考"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cvif6fpy0hk0",
+                            "created": 1694672258023,
+                            "text": "https://github.com/Charmve/computer-vision-in-action/blob/main/docs/0_%E7%BB%AA%E8%AE%BA/chapter0.5_%E5%9B%BD%E5%86%85%E5%A4%96%E4%BC%98%E7%A7%80%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%9B%A2%E9%98%9F%E6%B1%87%E6%80%BB.md"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cvif6snzy8w0",
+                            "created": 1694672286203,
+                            "text": "https://www.jianshu.com/p/9e08b6fa7a13"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cvigb9pdjns0",
+                            "created": 1694675457858,
+                            "text": "https://research.nvidia.com/labs/toronto-ai/"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

@@ -1,0 +1,567 @@
+{
+    "root": {
+        "data": {
+            "id": "cw5u9qezq6g0",
+            "created": 1697050712050,
+            "text": "MainTopic"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cw5uak9txzc0",
+                    "created": 1697050777041,
+                    "text": "Line Graph",
+                    "layout_mind_offset": {
+                        "x": -17.00000025331974,
+                        "y": 0
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cw5uf22hpr40",
+                            "created": 1697051129236,
+                            "text": "句型",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cw5uf30hv400",
+                                    "created": 1697051131292,
+                                    "text": "X + 趋势动词 + 副词"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cw5ugkd0u9c0",
+                                            "created": 1697051247419,
+                                            "text": "The price of textbooks fell sharply in 2019"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cw5uf68rz7c0",
+                                    "created": 1697051138323,
+                                    "text": "There was a 形容词 趋势名词 in X"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cw5ugpejd0o0",
+                                            "created": 1697051258395,
+                                            "text": "There was a rapid decrease in the price of textbooks in 2019"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cw5uflv67nk0",
+                                    "created": 1697051172329,
+                                    "text": "时间 saw/experienced/witnessed a 形容词 趋势名词"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cw5ugwsfo340",
+                                            "created": 1697051274472,
+                                            "text": "The year 2019 witnessed a dramatic drop in the price of textbooks"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cw5ufvq70q80",
+                                    "created": 1697051193796,
+                                    "text": "A 形容词 趋势名词 took place/ occurred"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cw5uh6kiao00",
+                                            "created": 1697051295761,
+                                            "text": "A sharp fall in the price of textbooks took place in 2019"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cw5ug33jz880",
+                                    "created": 1697051209841,
+                                    "text": "X showed/ took an upward/ downward trend"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cw5uhda8jwo0",
+                                            "created": 1697051310377,
+                                            "text": "The price of textbooks showed a downward trend in 2019"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cw5uhroiehs0",
+                            "created": 1697051341715,
+                            "text": "数据描写",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cw5uamjinog0",
+                                    "created": 1697050781980,
+                                    "text": "动词加副词",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cw5uas3afg00",
+                                            "created": 1697050794060,
+                                            "text": "动词"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cw5ub1es32g0",
+                                                    "created": 1697050814346,
+                                                    "text": "上升"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ub35d32w0",
+                                                            "created": 1697050818130,
+                                                            "text": "increase"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ub4st4uw0",
+                                                            "created": 1697050821724,
+                                                            "text": "rise"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ub6mnx2o0",
+                                                            "created": 1697050825706,
+                                                            "text": "grow"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cw5ub9ftsf40",
+                                                    "created": 1697050831823,
+                                                    "text": "下降"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ubacouwg0",
+                                                            "created": 1697050833810,
+                                                            "text": "fall"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ubbm79g00",
+                                                            "created": 1697050836562,
+                                                            "text": "drop"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ubcn5nlk0",
+                                                            "created": 1697050838797,
+                                                            "text": "decrease"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cw5uau7lhxc0",
+                                            "created": 1697050798674,
+                                            "text": "副词",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cw5ubep4aj40",
+                                                    "created": 1697050843269,
+                                                    "text": "显著、大幅"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ubi6bi000",
+                                                            "created": 1697050850839,
+                                                            "text": "sharply"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ubjfsdw00",
+                                                            "created": 1697050853589,
+                                                            "text": "rapidly"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ubkzfwvk0",
+                                                            "created": 1697050856954,
+                                                            "text": "dramatically"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cw5ubn4323s0",
+                                                    "created": 1697050861588,
+                                                    "text": "持续、稳步"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ubp778u00",
+                                                            "created": 1697050866130,
+                                                            "text": "gradually"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ubqok77c0",
+                                                            "created": 1697050869357,
+                                                            "text": "steadily"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ubsykiao0",
+                                                            "created": 1697050874315,
+                                                            "text": "consistently"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cw5ubw2k1ew0",
+                                                    "created": 1697050881087,
+                                                    "text": "轻微、小幅"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ubysqifc0",
+                                                            "created": 1697050887023,
+                                                            "text": "slightly"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5uc0bag1s0",
+                                                            "created": 1697050890322,
+                                                            "text": "marginally"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5uc1opgog0",
+                                                            "created": 1697050893310,
+                                                            "text": "minimally"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cw5ucktqi800",
+                                    "created": 1697050934973,
+                                    "text": "形容词+名词",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cw5uctlqogw0",
+                                            "created": 1697050954081,
+                                            "text": "形容词"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cw5ucoqccuw0",
+                                                    "created": 1697050943475,
+                                                    "text": "显著、大幅"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ucvzstao0",
+                                                            "created": 1697050959284,
+                                                            "text": "sharp、rapid、dramtaic"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cw5ud3kyxds0",
+                                                    "created": 1697050975802,
+                                                    "text": "持续稳步"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5ud60fago0",
+                                                            "created": 1697050981090,
+                                                            "text": "gradual、steady、consistent"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cw5udbo71zc0",
+                                                    "created": 1697050993411,
+                                                    "text": "轻微、小幅"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5udegh19c0",
+                                                            "created": 1697050999474,
+                                                            "text": "slight、marginal、minimal"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cw5udjqcq4o0",
+                                            "created": 1697051010956,
+                                            "text": "名词"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cw5udl60akg0",
+                                                    "created": 1697051014079,
+                                                    "text": "上升"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5udn9zsxc0",
+                                                            "created": 1697051018674,
+                                                            "text": "increase、rise、growth"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cw5udqgcdmg0",
+                                                            "created": 1697051025588,
+                                                            "text": "fall、drop、decrease"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cw5udzuc7yo0",
+                                    "created": 1697051046025,
+                                    "text": "其他",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cw5ue267nlk0",
+                                            "created": 1697051051097,
+                                            "text": "波动"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cw5ue37xefk0",
+                                                    "created": 1697051053377,
+                                                    "text": "fluctuate、experience fluctuation"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cw5uebilun40",
+                                            "created": 1697051071437,
+                                            "text": "保持平稳"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cw5uedd618o0",
+                                                    "created": 1697051075462,
+                                                    "text": "remain stable、stay constant"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cw5ueicjm2g0",
+                                            "created": 1697051086308,
+                                            "text": "到达最高"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cw5uejww5a80",
+                                                    "created": 1697051089715,
+                                                    "text": "peak、reach the highest point"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cw5ueq4yn540",
+                                            "created": 1697051103264,
+                                            "text": "到达最低"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cw5uer3bvjk0",
+                                                    "created": 1697051105342,
+                                                    "text": "reach the lowest level、hit a low of"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cw5uhz4xkuw0",
+                            "created": 1697051357946,
+                            "text": "多点数据连接"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cw5ujl3hp340",
+                                    "created": 1697051484112,
+                                    "text": "现在分词作状语"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cw5ujxtoyfs0",
+                                            "created": 1697051511818,
+                                            "text": "starting at, begining from"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cw5uk3542pc0",
+                                            "created": 1697051523392,
+                                            "text": "Starting at 30, X fluctuated around this level in the first decade"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cw5ukef6ugw0",
+                                    "created": 1697051547946,
+                                    "text": "表示时间"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cw5ukhk9zts0",
+                                            "created": 1697051554784,
+                                            "text": "before，after"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cw5ukkskws80",
+                                            "created": 1697051561816,
+                                            "text": "X had fluctuated around this level in the first decade before it dropped abruptly to 23 in 1970."
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

@@ -57,7 +57,7 @@ header:
 - [Point-E: A System for Generating 3D Point Clouds from Complex Prompts - OpenAI](https://arxiv.org/abs/2212.08751)
   - text -> point cloud -> mesh(based on sdf)
   - 基于文本生成合成视图，基于合成视图生成粗糙的点云，最后根据低分辨率点云和合成视图生成精细的点云。
-  - 条件扩散模型
+  - 条件扩散模型  
 
 ### Reference
 

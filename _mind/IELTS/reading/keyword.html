@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>keyword.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E9%9B%85%E6%80%9D%E5%86%99%E4%BD%9C%E5%85%B3%E9%94%AE%E8%AF%8D">雅思写作关键词</h1>
+<h2 id="%E7%AC%AC%E4%B8%80%E7%B1%BB">第一类</h2>
+<ul>
+<li>resemble
+<ul>
+<li>v: 像，类似</li>
+<li>like</li>
+</ul>
+</li>
+<li>recognize
+<ul>
+<li>vt:认出，认识，意识，承认</li>
+<li>联想词
+<ul>
+<li>acknowledge: vt: 承认，告知已收到
+<ul>
+<li>指公开承认自己犯的错，而recongnize可以指承认一个政权</li>
+</ul>
+</li>
+<li>perceive: v: 察觉, 感知，理解
+<ul>
+<li><strong>recognize 更强调识别和确认，而 perceive 更强调感知和察觉，不一定需要预先的知识。</strong></li>
+<li>例句</li>
+<li>In the dark, I could barely see anything, but I could <strong>perceive</strong> a faint, eerie sound echoing through the woods</li>
+<li>I haven't seen her in years, but when she walked into the room, I immediately <strong>recognized</strong> her by her distinctive smile.</li>
+</ul>
+</li>
+<li>realize: vt: 实现，了解，认识到
+<ul>
+<li>Realize: v: 通常用于描述达到某种认识或理解
+<ul>
+<li>I <strong>realized</strong> that I had left my keys at home.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>appreciate
+<ul>
+<li>vt: 感激，感谢；意识到，体会
+<ul>
+<li>I <strong>appreciate</strong> the significance of this discovery</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>admit: vt: 承认，准许...加入; v:许可入学
+<ul>
+<li>通常用于表示接受或承认某事</li>
+<li>He <strong>admitted</strong> that he made a mistake.</li>
+</ul>
+</li>
+<li>identify: v: 识别，鉴别
+<ul>
+<li>强调确定或确认某事物的身份或特征</li>
+<li>Can you identify the suspect from the security camera footage</li>
+</ul>
+</li>
+<li>comprehend: vt: 理解，领会
+<ul>
+<li>更侧重于深入的理解，强调你能够理解某事的含义、原因或背后的逻辑</li>
+<li>I did not comprehend his meaning.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>adjust
+<ul>
+<li>v: 调整，使适合</li>
+<li>change
+<ul>
+<li>adjust: vt; 意味着对某事物进行微小的改变以适应新情况</li>
+<li>change: vt, vi, n; 意味着对某事物进行更大、根本性的改变以使其与以前的状态不同。</li>
+<li>The room is too bright; can you please <strong>adjust</strong> the brightness of the lights?</li>
+<li>After years of working in finance, she decided to <strong>change</strong> her career and become a teacher.</li>
+</ul>
+</li>
+<li>modify
+<ul>
+<li>v: 更改，修饰</li>
+<li>He needed to <strong>modify</strong> the design of the website by making some small adjustments to the layout and color scheme</li>
+</ul>
+</li>
+<li>shift
+<ul>
+<li>n, vi, vt: 转换，转变</li>
+<li>Shall I shift the chairs? 移动椅子</li>
+</ul>
+</li>
+<li>alter
+<ul>
+<li><strong>As times alter</strong>: 时过境迁</li>
+<li>He <strong>altered his face</strong> all at once. 变脸</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>approach:
+<ul>
+<li>vt, vi: 接近</li>
+<li>n: 靠近，<strong>方法</strong></li>
+<li>method
+<ul>
+<li>approach: 通常指解决问题的方法
+<ul>
+<li>I have a different <strong>approach</strong> to solving this problem</li>
+</ul>
+</li>
+<li>method:  强调的是特定的步骤、技术或程序</li>
+</ul>
+</li>
+<li>way</li>
+</ul>
+</li>
+<li>fundamental
+<ul>
+<li>adj: 基本的，重要的</li>
+<li>n: 基本原则</li>
+<li>rudimentary: adj: 基本的
+<ul>
+<li>fundamental: 表示事物或概念的关键、根本、基础性质或特征。这个词通常与<strong>核心原则、基本原则或基础知识相关联</strong>。
+<ul>
+<li>Respect for human rights is a <strong>fundamental principle</strong> in any just society.</li>
+</ul>
+</li>
+<li>rudimentary:  描述的是某物的最初或最基本的形式，通常还没有经过深入发展或完善。
+<ul>
+<li><strong>rudimentary technology</strong>，最基本最基础的功能</li>
+<li>a rudimentary stage of evolution：进化的雏形阶段</li>
+<li>he received a <strong>rudimentary education</strong>：他只受过基本教育</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>preliminary: adj: 预备的,初步的; n：准备工作
+<ul>
+<li>a <strong>preliminary investigation</strong>：事先调查</li>
+<li>Now this is just a <strong>preliminary study</strong>：初步研究</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>rely on
+<ul>
+<li>It would be rash to <strong>rely on</strong> such evidence
+<ul>
+<li>依靠这样的证据太轻率了。</li>
+</ul>
+</li>
+<li>depend on
+<ul>
+<li>it <strong>depends on</strong> what kind of person you are.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>domestic: adj: 家庭的，国内的
+<ul>
+<li>domestic dogs: 家犬</li>
+<li>domestic wine：国产酒</li>
+<li>domestic affairs：国内事务</li>
+<li>home</li>
+<li>local</li>
+<li>national: adj: 家里的;本国的;驯养的
+<ul>
+<li>domestic: 通常用来描述与国家内部事务、国内政策、国内经济、国内事物或与个人家庭有关的事物。它<strong>强调国家内部的范围和范畴</strong>。</li>
+<li>national: 用来指代与整个国家、全体国民、国家政府或国家层面的事物有关的事物。它<strong>强调的是国家的范围和影响力</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>measure: v: 测量， n: 尺寸, 措施
+<ul>
+<li>a measure of recognition: 适度的认可</li>
+<li>a measure of good-will：有分寸的善意</li>
+<li>An inch is a measure of length：尺是长度的度量单位</li>
+<li>calculate
+<ul>
+<li>强调<strong>使用数学运算来获得数值</strong></li>
+<li>measure：强调<strong>使用测量工具或方法来获取数据</strong></li>
+</ul>
+</li>
+<li>assess: (为征税)评估(财产,收入);征税;评价
+<ul>
+<li>assess sb.'s efforts： 评价某人的工作</li>
+<li>强调的是对事物的总体状况、性质或状况的判断</li>
+<li>强调<strong>对某事物的综合评估</strong>，通常包括考虑多个方面以得出综合结论</li>
+</ul>
+</li>
+<li>evaluate
+<ul>
+<li><strong>更强调对事物的细致分析和深入思考。</strong></li>
+<li>Let's evaluate the evidence. <strong>评定</strong>一下此证据的价值</li>
+<li>I began to re-evaluate my life. 我开始重新<strong>评价</strong>我的一生</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>trait: n: 特点，特性
+<ul>
+<li>强调个体或事物的内在特征，通常用于描述个人的<strong>性格特征、生物学特质</strong>或特定物种的特性，可能是遗传的、与个体的天性或本质有关的
+<ul>
+<li>personality trait: 人格特质</li>
+<li>What is the <strong>great trait</strong> in your personality? 你最大的特点是什么</li>
+<li>One of her most prominent personality <strong>traits</strong> is her unwavering determination to achieve her goals
+<ul>
+<li>她最显著的性格特质之一是她坚定不移地追求自己的目标。&quot;trait&quot; 描述了个体（她）的性格特点，<strong>强调了她的内在特质</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>characteristic: adj: 典型的，特有的；n: 特征；特性；特色
+<ul>
+<li>强调描述事物的特征或特点，这些特征可以是外在的或内在的，也可以是物质的或非物质的。
+<ul>
+<li>characteristic species: 特有种</li>
+<li>One <strong>characteristic</strong> of this particular species of bird is its vibrant plumage, which makes it easily distinguishable from other birds.
+<ul>
+<li>这种特定鸟类的一个特点是它色彩鲜艳的羽毛，使其容易与其他鸟类区分开来。</li>
+<li>描述了这种鸟类的外在特征，即羽毛的颜色，以便将其与其他鸟类区分开来。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>feature
+<ul>
+<li>用于描述事物的各种可见或可感知的特征，包括外表、构造、性质等。它不限于特定领域或类型的特点。</li>
+<li>用来描述人、动物、物体、地方或概念的<strong>各种可观察的属性或特征</strong></li>
+</ul>
+</li>
+<li>property: 财产；性质，性能；所有权
+<ul>
+<li>经常用于描述事物的属性或性质，如颜色、形状、大小、<strong>所有权</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>coin
+<ul>
+<li>n: 硬币</li>
+<li>v: 制造硬币，<strong>创造</strong>，make up，创造通常指创造术语
+<ul>
+<li><strong>First coined</strong> in 2010 by user experience expert Harry Brignull</li>
+<li><strong>首创</strong></li>
+<li>&quot;Katherine&quot; , <strong>coined by</strong> the ancient Greeks, it denotes &quot;purity.&quot;</li>
+<li><strong>源自</strong></li>
+<li>The term <strong>coined in</strong> the book's title encapsulates the thesis.</li>
+<li>造的词</li>
+</ul>
+</li>
+<li>first used 首次使用</li>
+<li>invent</li>
+</ul>
+</li>
+<li>artificial：adj: 人造的
+<ul>
+<li>synthetic
+<ul>
+<li>强调了通过合成过程创造</li>
+<li>artificial: 强调自然界不存在</li>
+</ul>
+</li>
+<li>man-made</li>
+</ul>
+</li>
+<li>prompt: n: 提示词，付款期限，vt: <strong>促进</strong>，提示，adj: 敏捷的, adv: 准时地
+<ul>
+<li>What <strong>prompted</strong> you to apply this company</li>
+<li>什么<strong>促使</strong>你选择了这家公司</li>
+<li>initiate: vt: 开始，创始，<strong>发起</strong>；adj: 新加入的；n: 开始，新加入的人，接受初始知识的人
+<ul>
+<li>initiate: 更侧重于主动开始或发起某项行动或过程。</li>
+<li>And from that alert, you can <strong>initiate</strong> an emergency call</li>
+<li>你可以根据该警报<strong>发起</strong>紧急呼叫</li>
+</ul>
+</li>
+<li>immediately: adv: 立刻，马上;
+<ul>
+<li>Prompt: 可能会<strong>引发</strong>后续的行动</li>
+<li>immediately: 表示这些行动会<strong>立即</strong>跟随。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>exchange: n: 交换，交易所; vi: 交换; vt: 交换
+<ul>
+<li>share: n: 股份，份额; vi vt: 分享，分担
+<ul>
+<li>exchange: 更侧重于物品、信息或观点的互相传递或交流，通常是双方之间的相互行为，</li>
+<li>share: 更侧重于将自己的东西、信息或感情与他人分享，<strong>这种分享可以是单向的</strong>，不一定要求对方也提供相同的东西。</li>
+</ul>
+</li>
+<li>apply A to B</li>
+</ul>
+</li>
+<li>underlie: vt: 成为...的基础
+<ul>
+<li>based on: 以...为基础</li>
+<li>ground
+<ul>
+<li>The principles of physics <strong>underlie</strong> the operation of all machines.</li>
+<li>The operation of all machines <strong>is grounded in</strong> the principles of physics.</li>
+</ul>
+</li>
+<li>root
+<ul>
+<li>The principles of physics are <strong>the root of</strong> all machines' operation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ignore: v: 忽视，驳回
+<ul>
+<li>当你忽视某事时，<strong>你知道它的存在，但你选择不予关注</strong>。</li>
+<li>She decided to <strong>ignore</strong> the negative comments and focus on her goals.</li>
+<li>neglect: n: 疏忽; v: 忽视
+<ul>
+<li>带有一定的责任和照顾的含义</li>
+<li>The owner <strong>neglected</strong> the maintenance of the building, and now it's in poor condition.</li>
+</ul>
+</li>
+<li>overlook: vt: <strong>忽视</strong>，俯瞰; n: 忽视，眺望
+<ul>
+<li>你可能本来应该注意到它，但你未能做到。</li>
+<li>The editor <strong>overlooked</strong> a few typos in the manuscript</li>
+</ul>
+</li>
+<li>underestimate: vt: 对...低估; n: 低估
+<ul>
+<li>当你低估时，你可能认为某事没有那么重要或某人没有那么有能力。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>fertiliser: 肥料，化肥
+<ul>
+<li>fertilise: 施肥</li>
+<li>chemical: n: 化学制品; adj: 化学的</li>
+<li>toxic: adj: 有毒的</li>
+</ul>
+</li>
+<li>that*</li>
+<li>and*</li>
+<li>rather than*
+<ul>
+<li>but, yet, however, wheras, nonetheless, nevertheless, notwithstanding, although, though, instead</li>
+</ul>
+</li>
+<li>thanks to*: 多亏了...
+<ul>
+<li>stem from: 起源于
+<ul>
+<li>Part of the problem <strong>stems from</strong> contemporary employment</li>
+<li>这个问题部分源于当代的就业环境。</li>
+</ul>
+</li>
+<li>derive: 源于
+<ul>
+<li>derivative: 导数，微商</li>
+<li><strong>derive</strong> knowledge from books
+<ul>
+<li>从书中获得知识</li>
+</ul>
+</li>
+<li>The word <strong>derives from</strong> French
+<ul>
+<li>这个词来自法语。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>owing to: 由于, 因为
+<ul>
+<li>FedEx said that this was <strong>owing to</strong> an error.</li>
+<li>联邦快递表示这是错误操作所致。</li>
+</ul>
+</li>
+<li>due to: 由于
+<ul>
+<li>due to: 用于较庄重的书面语中，<strong>侧重“起因于”</strong>，在句中多作表语，有时作状语。</li>
+<li>owing to:  可以和due to换用，但在句中多作状语，也可作表语。
+<ul>
+<li>owing to: 通常<strong>用于表达原因</strong>，而 &quot;due to&quot; <strong>通常用于表达结果</strong>。</li>
+<li><strong>Owing to</strong> bad weather, the flight was delayed.</li>
+<li>The delay of the flight was <strong>due to</strong> bad weather</li>
+</ul>
+</li>
+<li>because of: 着重某种原因的理由，在句中通常作状语。</li>
+<li>thanks to: 突出一种感激之情，<strong>含“多亏”意味</strong>。</li>
+</ul>
+</li>
+<li>according to: 按照, 取决于
+<ul>
+<li>The art lesson overlaps with the piano lesson <strong>according to</strong> the schedule.</li>
+<li>根据</li>
+</ul>
+</li>
+<li>because of</li>
+<li>on account of: 因为, 由于
+<ul>
+<li><strong>On account of</strong> your approaching marriage with her?</li>
+</ul>
+</li>
+<li>as a result of: 作为...的结果，由于
+<ul>
+<li>He became a cripple <strong>as a result of</strong> the accident</li>
+</ul>
+</li>
+<li>leading to: 导致
+<ul>
+<li>This reduces the battery's power, <strong>leading to</strong> sluggish acceleration</li>
+<li>这降低了电池的能量，<strong>导致</strong>加速缓慢。</li>
+</ul>
+</li>
+<li>because</li>
+<li>since</li>
+<li>for</li>
+<li>in that: 由于
+<ul>
+<li><strong>这个短语用于解释或引出某事的原因或因果关系</strong></li>
+<li>I can't go to the party tonight, <strong>in that</strong> I have to work late.</li>
+<li>我今晚不能去参加聚会，因为我得加班。</li>
+</ul>
+</li>
+<li>as</li>
+<li>therefore
+<ul>
+<li>He was ill, and <strong>therefore</strong> could not come.</li>
+</ul>
+</li>
+<li>hence: 因此</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="%E7%AC%AC%E4%BA%8C%E7%B1%BB">第二类</h2>
+<ul>
+<li>diversity: n: 多样性
+<ul>
+<li>the <strong>diversity</strong> of life on earth</li>
+<li>variety: n: 各种，品种，多样化
+<ul>
+<li>variety of 各种各样的
+<ul>
+<li>You can add <strong>variety</strong> to these color selections</li>
+<li>你可以增加颜色选择的多样性</li>
+<li>强调了一个<strong>集合中各种不同元素的存在</strong></li>
+</ul>
+</li>
+<li>diversity: 强调<strong>不同元素之间的差异和包容性</strong></li>
+</ul>
+</li>
+<li>difference</li>
+</ul>
+</li>
+<li>detect: v: 察觉, 发觉
+<ul>
+<li>detect sb. in (doing)...
+<ul>
+<li>发觉某人在做(坏事)</li>
+</ul>
+</li>
+<li>find</li>
+<li>look for</li>
+<li>seek</li>
+<li>search</li>
+</ul>
+</li>
+<li>isolate: vt: 使孤立;vi: 孤立;n: 隔离种群;adj: 孤立的
+<ul>
+<li><strong>将某物或某人分离、孤立出来，通常是出于目的</strong>
+<ul>
+<li>isolated farms and villages.
+<ul>
+<li><strong>偏僻的</strong>农场和村庄</li>
+</ul>
+</li>
+<li>they were <strong>isolated</strong> incidents
+<ul>
+<li>它们都是些<strong>个别</strong>事件</li>
+</ul>
+</li>
+<li>We should never <strong>isolate</strong> ourselves from the masses.
+<ul>
+<li>我们永远不能脱离群众</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>inaccessible: adj: 达不到的，遥不可及的
+<ul>
+<li><strong>用来描述那些难以接近、无法到达或进入的地方或物体</strong></li>
+<li>The top of Mount Everest is <strong>the most inaccessible place</strong> in the world.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>avoid: v: 避免
+<ul>
+<li>这通常是主动的行为，人们有意识地努力避免某事发生</li>
+<li>escape: vt, vi: 逃避，避免;n: 逃跑
+<ul>
+<li>通常强调逃离或摆脱的行为，而不一定涉及事前的预防</li>
+</ul>
+</li>
+<li>evitable: adj: 可以避免的
+<ul>
+<li>The accident was <strong>evitable</strong> if proper safety measures had been in place</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>budget: n: 预算
+<ul>
+<li>fund: n: 基金; v: 给...拨款</li>
+<li>financial: adj: 金融的</li>
+</ul>
+</li>
+<li>adapt to: 使适应
+<ul>
+<li>fit: n: 合身; 痉挛(医); v: 安装; adj: 恰当的</li>
+<li>suit</li>
+</ul>
+</li>
+<li>alternative: 可供选择的, 可供替代的
+<ul>
+<li><strong>通常用来表示一种不同的方法、途径或方案，而不一定涉及替代品或代替品</strong></li>
+<li>substitute: n: 替身, 代替者; v: 代替, 替换</li>
+<li><strong>这强调了一种替代品或代替品的使用</strong></li>
+</ul>
+</li>
+<li>compensate: v: 补偿, 报酬
+<ul>
+<li>意味着提供补偿或赔偿，<strong>以弥补某种损失、不足或损害</strong>。这可以是金钱、服务、资源等形式的补偿</li>
+<li>compensate sb.for loss
+<ul>
+<li>赔偿某人损失</li>
+<li>The company compensated the customer for the damaged goods by offering a full refund.</li>
+</ul>
+</li>
+<li>make up: v: 编造，<strong>弥补</strong>，化妆
+<ul>
+<li><strong>意味着采取行动或提供某种东西，以填补缺失或损失</strong>。这可以是通过增加数量、时间、努力等方式来弥补。</li>
+<li>She had missed several classes and needed to <strong>make up</strong> the work by studying extra hours</li>
+<li>她缺了几堂课，需要通过额外学习来<strong>弥补</strong></li>
+</ul>
+</li>
+<li>offset: n: 抵消，补偿
+<ul>
+<li><strong>意味着使用相反的力量、因素或效果来抵消或平衡另一个力量、因素或效果，以减轻其影响。</strong></li>
+<li>The carbon emissions from the factory were offset by planting trees to absorb the carbon dioxide.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>component: n: 成分, 组成部分, 部件, 元件
+<ul>
+<li><strong>强调事物的组成结构或要素</strong></li>
+<li>The computer has several components</li>
+<li>proportion: n: 部分，比例
+<ul>
+<li><strong>它通常涉及到不同元素之间的关系，以及它们在整体中所占的比例</strong></li>
+<li>The <strong>proportion</strong> of students who passed the exam was higher this year.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>military: adj: 军事的; n: 军人，军队
+<ul>
+<li>military 是一个更广泛的术语, 包括了陆军（army）以外的其他军种，如海军、空军等，以及与军事有关的所有事物</li>
+<li>weapon: n: 武器</li>
+<li>army: 军队，特指陆军</li>
+</ul>
+</li>
+<li>criteria: n: 标准
+<ul>
+<li>educational criteria: 教育标准
+<ul>
+<li>它表示一种<strong>特定的要求</strong>，用于判断某事物是否符合某种标准或质量</li>
+</ul>
+</li>
+<li>standard: n: 标准
+<ul>
+<li>一种更一般的词汇，用来描述事物的通常水平、质量或规范</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>curriculum: n: 课程
+<ul>
+<li>指的是一个学校、学院或教育机构<strong>提供的整个学习计划</strong>，包括一系列的课程和教学活动</li>
+<li>syllabus: n: 教学大纲
+<ul>
+<li>特定课程的详细计划和大纲，<strong>通常包括每堂课的主题、教材、作业、考试和其他课程要求</strong></li>
+</ul>
+</li>
+<li>course of study: 课程研究
+<ul>
+<li>一个更一般的术语，<strong>用来指代一个学生或学习者在特定学年或学期中要学习的一系列课程或科目</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>feasible: adj: 可行的
+<ul>
+<li><strong>表示某事在技术、资源或时间上是可行的，但不一定意味着它是最佳选择或有望成功</strong></li>
+<li>It is <strong>feasible</strong> to complete the construction of the bridge within a year, but it will require a significant budget</li>
+<li>realistic: adj: 现实的，可行的
+<ul>
+<li><strong>强调某事是否符合现实</strong>，是否在现实条件下能够成功实现</li>
+</ul>
+</li>
+<li>viable: adj: 能养活的
+<ul>
+<li><strong>指的是某事是否具有持久性</strong>、能够长期维持或生存下去</li>
+<li>The business idea is not only <strong>feasible</strong> but also <strong>viable</strong> in the long run, thanks to its innovative approach.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>constrain: vt: 强迫，强使; 限制，约束
+<ul>
+<li>Cold weather <strong>constrained</strong> the plant's growth.
+<ul>
+<li>寒冷的天气抑制了植物的生长</li>
+</ul>
+</li>
+<li>stop</li>
+<li>control</li>
+</ul>
+</li>
+<li>deficiency: n: 缺乏,不足;缺点,缺陷
+<ul>
+<li>表示一种不足或缺少，通常与标准、需求或期望相比较。它强调某物的缺失或不足以满足特定要求
+<ul>
+<li>His <strong>deficiency</strong> in nutrition makes him feel tired often</li>
+<li>他的营养不足，因此他经常感到疲倦</li>
+</ul>
+</li>
+<li>shortage: n: 不足; 缺少
+<ul>
+<li><strong>某物的不足或供应不足，通常是暂时的</strong>。这意味着资源、商品或物资的供应不足以满足需求。</li>
+<li>The region is experiencing a <strong>shortage</strong> of water due to the drought</li>
+<li>由于干旱，这个地区正在经历水资源短缺</li>
+</ul>
+</li>
+<li>defect: n: 缺点，缺陷; v: 叛变
+<ul>
+<li><strong>通常指的是制造过程中的错误或产品的质量问题</strong>。</li>
+<li>This phone has a <strong>defect</strong> in the screen, displaying noticeable lines.</li>
+</ul>
+</li>
+<li>weakness: n: 弱点, 缺点
+<ul>
+<li><strong>通常是指某人的性格、技能或计划中的局限性或不足之处</strong></li>
+<li>Her only <strong>weakness</strong> is a lack of self-confidence
+<ul>
+<li>她的唯一弱点是缺乏自信</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>supplement: n: 补充: v: 增补，补充
+<ul>
+<li><strong>强调提供额外的东西，通常是为了满足特定需求</strong></li>
+<li>she took the job to <strong>supplement</strong> her husband's income.
+<ul>
+<li>她接受这份工作补贴丈夫的收入。</li>
+</ul>
+</li>
+<li>provision: n: 提供，供给，给养，供应品
+<ul>
+<li><strong>强调提前做好准备，确保资源或东西可供使用。</strong></li>
+<li>to make <strong>provision</strong> for the future
+<ul>
+<li>准备日后之需</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>distinguish: v: 区分、辨别
+<ul>
+<li><strong>通常强调寻找和识别细微的差异或特征，以便将事物分类或辨认出来</strong></li>
+<li>separate: n: 分开; v: 分开, adj: 分开的；
+<ul>
+<li><strong>通常强调将事物彼此独立开来，以便防止它们相互混合或互相影响</strong></li>
+<li>He used a knife to <strong>separate</strong> the tangled ropes
+<ul>
+<li>他用刀将缠在一起的绳子分开</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>differentiate: v: 区分、辨别
+<ul>
+<li><strong>意味着确定或表明事物之间的不同特征，通常用于描述将相似或混淆的事物加以区分</strong>
+<ul>
+<li>It's important to <strong>differentiate</strong> between the various species of poisonous snakes based on their markings and behaviors</li>
+<li>根据它们的斑纹和行为，区分各种有毒蛇的物种非常重要</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>analyze: v: 分析
+<ul>
+<li><strong>强调深入研究并了解事物的组成和关系。</strong>
+<ul>
+<li>The scientist will analyze the chemical composition of the substance to determine its properties.</li>
+<li>科学家将分析物质的化学组成，以确定其性质。</li>
+</ul>
+</li>
+<li>examine: v: 仔细检查
+<ul>
+<li><strong>强调观察和检查事物的外部或内部特征</strong>
+<ul>
+<li>The doctor will examine the patient's throat to look for signs of infection.</li>
+<li>医生将检查患者的喉部，寻找感染的迹象。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>diagnose: vi, vt: 诊断
+<ul>
+<li><strong>强调确定健康问题或疾病的原因和性质，通常用于医学和临床上</strong>
+<ul>
+<li>The doctor was able to diagnose the patient with a severe case of pneumonia based on the X-ray results and clinical symptoms.</li>
+<li>医生能够根据X光结果和临床症状诊断出患者患有严重的肺炎。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>emphasize: vt: 强调
+<ul>
+<li>强调特定事物的重要性或特点。</li>
+<li>The teacher <strong>emphasized</strong> the importance of good communication skills in the</li>
+<li>老师强调了职场中良好沟通技巧的重要性</li>
+<li>focus on: 专注于</li>
+<li>stress: n: 压力，强调，重要性; vt: <strong>强调</strong>
+<ul>
+<li>强调某事的重要性，通常用于强调观点、观念或情况</li>
+<li>The professor stressed the need for thorough research before drawing any conclusions</li>
+<li>教授强调在得出任何结论之前需要进行彻底的研究。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>enormous: adj: 极大的，巨大的
+<ul>
+<li>更常用于形容数量或强调极端巨大
+<ul>
+<li>an enormous sum of money</li>
+<li>a man of enormous strength
+<ul>
+<li>力大无穷的人</li>
+</ul>
+</li>
+<li>a debt of enormous size
+<ul>
+<li>巨额债务</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>massive</strong>: adj: 大量的
+<ul>
+<li>强调事物的厚重、坚固或强大。</li>
+<li>There is a massive <strong>monument</strong> in the square.</li>
+</ul>
+</li>
+<li>large</li>
+</ul>
+</li>
+<li>imitate: v: 模仿，效仿
+<ul>
+<li><strong>强调尝试模仿以复制原始行为或特征。</strong></li>
+<li>The child imitated the way his favorite cartoon character walked and talked</li>
+<li>这个孩子模仿他最喜欢的卡通角色的走路和说话方式</li>
+<li>mimic: v: 模仿; n: 小丑, 仿制品; adj: 模仿的
+<ul>
+<li>强调通过模仿来模拟或重现某人或某物的特征或行为，<strong>通常指更具技巧性或准确性的模仿</strong>。</li>
+<li>He had the ability to mimic the voices of famous celebrities with remarkable accuracy.</li>
+<li>他能够以惊人的准确度模仿著名名人的声音</li>
+</ul>
+</li>
+<li>copy</li>
+</ul>
+</li>
+<li>impair: v: 削弱，损害，减少
+<ul>
+<li>意味着造成损害，通常<strong>指的是对某物的质量、价值、效能或功能造成伤害或减弱</strong>。
+<ul>
+<li>Excessive <strong>alcohol consumption</strong> can <strong>impair</strong> your judgment and motor skills.</li>
+</ul>
+</li>
+<li>damage: n: 损失，损害; v: 损害，毁坏
+<ul>
+<li><strong>表示对物体或某人的身体、财产等造成损害，通常强调物理上的破坏或伤害。</strong></li>
+<li>The storm damaged the roof of the house, causing leaks</li>
+<li>风暴损坏了房子的屋顶，导致了漏水。</li>
+</ul>
+</li>
+<li><strong>diminish</strong>: vt: 使减少; vi: 变小
+<ul>
+<li>表示数量、规模、强度等的减少，<strong>通常强调逐渐或逐渐减小</strong>。</li>
+<li>The availability of clean water in the region has diminished over the years due to drought.</li>
+<li>多年来，该地区的清洁水资源由于干旱逐渐减少</li>
+</ul>
+</li>
+<li>decrease: n: 减少, 减少量; v: 减少
+<ul>
+<li>是一个通用的词汇，表示数量、规模、程度等的减少，<strong>没有特定的强调。</strong></li>
+<li>The company decided to decrease its workforce in order to cut costs.</li>
+<li>公司决定减少员工以降低成本</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>hinder: vi, vt: 阻碍
+<ul>
+<li><strong>一种行动或情况，使其进展或发展变得更加困难或缓慢</strong>
+<ul>
+<li>The heavy rain hindered our progress on the hiking trail, making it difficult to move forward</li>
+<li>大雨妨碍了我们在徒步旅行途中的进展，使前行变得困难。</li>
+<li>the inequality of the ground <strong>hindered</strong> their footing.</li>
+</ul>
+</li>
+<li>impede: vt: 阻碍，妨碍
+<ul>
+<li><strong>强调阻碍或干扰前进、发展或完成某事的过程</strong>。</li>
+<li>The deep snow <strong>impeded</strong> travel.</li>
+</ul>
+</li>
+<li>prevent: v: 预防，阻止
+<ul>
+<li><strong>采取措施以制止某事发生</strong>。</li>
+<li>to <strong>prevent</strong> the pollution of the environment</li>
+</ul>
+</li>
+<li>deter:  vt: 制止，阻止
+<ul>
+<li><strong>意味着通过威胁或恐惧来阻止某人或某事。</strong></li>
+<li>Don’t let failure <strong>deter</strong> you</li>
+</ul>
+</li>
+<li>obstacle: n: 障碍，妨碍
+<ul>
+<li><strong>指的是阻碍进展的事物。</strong></li>
+<li>But there are <strong>obstacles</strong> to real change</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>legitimate: adj: 合法的
+<ul>
+<li>通常用于更广泛的含义，<strong>不仅表示合法性，还可以表示合理性、正当性或合法权利的存在</strong>。一件事物可能合法，但它也可能合理或正当。
+<ul>
+<li>a legitimate excuse for being late</li>
+<li>正当的迟到理由</li>
+</ul>
+</li>
+<li>legal: adj: 合法的
+<ul>
+<li>某事是 &quot;legal&quot;，那就意味着它符合法律规定。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>limitation: n: 限制，局限
+<ul>
+<li><strong>侧重于描述限制的本质或原因，通常不涉及主观决定</strong>
+<ul>
+<li>severe <strong>limitations</strong> on water use</li>
+</ul>
+</li>
+<li>restriction: n: 约束，限制
+<ul>
+<li>更多地强调<strong>外部的、有意识的、可改变的行动</strong>，通常涉及规则、法律或决策所导致的限制。这是一种外在强加的约束</li>
+<li>a restriction against smoking in schools</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>convention: n: 手法，习俗
+<ul>
+<li><strong>强调社会上普遍接受的规范</strong>
+<ul>
+<li>In our culture, it's a convention to greet with a handshake when you meet someone for the first time</li>
+<li>在我们的文化中，初次见面时用握手问候是一种惯例</li>
+</ul>
+</li>
+<li>method</li>
+<li>tradition
+<ul>
+<li><strong>强调历史传承下来的文化和习惯</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>demanding: adj: 很费心的, 很费力的, <strong>苛求的</strong>
+<ul>
+<li><strong>强调任务的要求和挑战性</strong></li>
+<li>The new project at work is quite <strong>demanding</strong>, requiring long hours and attention to detail.</li>
+<li>troublesome: adj: 令人烦恼的,讨厌的
+<ul>
+<li><strong>强调引发麻烦或讨厌的性质</strong></li>
+<li>Dealing with the constant technical issues in our office's computer network is <strong>troublesome</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>determine: v: 决定
+<ul>
+<li>更强调发现或确认信息</li>
+<li>We need to <strong>determine</strong> the cause of the problem before we can decide how to fix it.</li>
+<li>decide: v: 决定
+<ul>
+<li>更强调在多个选择之间作出决策。</li>
+<li>After careful consideration, I <strong>have decided</strong> to accept the job offer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>accelerate: vi, vt: 加速， 使增快
+<ul>
+<li>逐渐增加速度，强调平滑过渡
+<ul>
+<li>The car <strong>accelerated</strong> smoothly as the driver gently pressed on the gas pedal.</li>
+</ul>
+</li>
+<li>speed up: v: 加速
+<ul>
+<li>快速增加速度，强调较短时间内的高速</li>
+<li>We need to <strong>speed up</strong> the production process to meet the tight deadline.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ancient: adj: 古代的
+<ul>
+<li>描述非常古老的事物或时代</li>
+<li>aged
+<ul>
+<li>相对年老的人或物体</li>
+</ul>
+</li>
+<li>old</li>
+</ul>
+</li>
+<li>beneficial: adj: 有益的
+<ul>
+<li><strong>这个词通常用于描述某事物的整体有益性</strong>
+<ul>
+<li>Regular exercise is <strong>beneficial</strong> to your overall health.</li>
+</ul>
+</li>
+<li>helpful: adj: 有帮助的
+<ul>
+<li><strong>这个词强调提供帮助的特质。</strong>
+<ul>
+<li>Her guidance and advice were very <strong>helpful</strong> in completing the project.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>advantageous: adj: 有利的
+<ul>
+<li><strong>通常与竞争、成功或达到特定目标有关。</strong>
+<ul>
+<li>Being bilingual can be <strong>advantageous</strong> in today's global job market.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>wholesome: adj: 有益健康的
+<ul>
+<li><strong>这个词通常与食品、娱乐、或价值观有关。</strong></li>
+<li>A diet rich in fruits and vegetables is <strong>wholesome</strong> and contributes to overall well-being</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>chronic: adj: 慢性的
+<ul>
+<li>更强调问题的长期存在和可能的反复，通常与负面情况相关
+<ul>
+<li>He has been suffering from <strong>chronic</strong> back pain for years.&quot;</li>
+</ul>
+</li>
+<li>lasting: adj: 持久的，永恒的, v: 持久，维持
+<ul>
+<li>更强调某事物的持久性，不一定涉及问题，可以用于描述积极和消极情况。
+<ul>
+<li>Their <strong>lasting</strong> friendship is a testament to their strong bond.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>conscious: adj: 意识到的
+<ul>
+<li>强调自我意识和知觉的能力</li>
+<li>She was <strong>conscious</strong> of the fact that she had made a mistake.</li>
+<li>aware: adj: 神志清醒的
+<ul>
+<li>强调对某事或情况的认知
+<ul>
+<li>He became <strong>aware of</strong> the danger when he heard the alarm.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>knowing
+<ul>
+<li>强调已经知道或理解某事或情况。
+<ul>
+<li>a knowing smil</li>
+<li>会心的微笑</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>minimize: vi, vt: 最小化
+<ul>
+<li>reduce: vi, vt: 减少
+<ul>
+<li>强调采取措施来减少某事物，通常涉及达到特定目标或目的</li>
+</ul>
+</li>
+<li>lessen: vi, vt: 减少
+<ul>
+<li>强调某事物的减小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>immunity: n: 免疫力
+<ul>
+<li>they claimed <strong>immunity</strong> on behalf of the Crown
+<ul>
+<li>They respected <strong>diplomatic immunity</strong> as valid.</li>
+<li>外交豁免权</li>
+</ul>
+</li>
+<li>resistance: n: 抵抗，抵抗能力
+<ul>
+<li>put up stout <strong>resistance</strong> to the proposal.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>imperative: adj: 必要的; n: 必要的事
+<ul>
+<li><strong>强调事情的紧迫性和不可或缺性</strong></li>
+<li>compelling: adj: 引人入胜的
+<ul>
+<li><strong>强调引人注目或令人信服的特性</strong></li>
+</ul>
+</li>
+<li>necessary: adj: 必须的
+<ul>
+<li><strong>强调必要性而不一定强调紧迫性</strong></li>
+</ul>
+</li>
+<li>urgent: adj: 紧急的
+<ul>
+<li><strong>表示非常紧急和需要立即处理</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>secrete: v: 藏匿，分泌[<strong>生物</strong>]
+<ul>
+<li>The pores of your body <strong>secrete</strong> sweat.</li>
+<li>discharge: v: 排放、释放, 流出; n: 释放，流出的液体
+<ul>
+<li>是一个更广泛的词汇，用于描述各种物质或能量的释放，可以涵盖人工和自然过程</li>
+<li>a discharge of pus.</li>
+<li>流出的脓液</li>
+</ul>
+</li>
+<li>exude
+<ul>
+<li><strong>强调逐渐流出或释放物质，通常与液体或气味有关</strong></li>
+<li>The sun made him <strong>exude sweat</strong>.</li>
+<li>汗流浃背</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>exaggerate: vi, vt: 夸大，夸张
+<ul>
+<li><strong>更强调夸张的行为本身</strong></li>
+<li>exaggerate an illness</li>
+<li>夸大病情</li>
+<li>overstate: vt: 夸大
+<ul>
+<li><strong>强调结果已经超越了适当或事实的描述</strong></li>
+<li>The <strong>marketing campaign</strong> seemed to <strong>overstate</strong> the benefits of the product, leading to customer disappointment.
+<ul>
+<li>营销活动似乎夸大了产品的好处，导致客户失望。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>transmit: vt, vi: 传输
+<ul>
+<li><strong>更强调信息或信号的传送，通常涉及通信领域</strong></li>
+<li>pass</li>
+<li>send</li>
+<li>transfer: n, v: 转移转让
+<ul>
+<li><strong>更广泛地用于描述物体、资源、权力、责任等的转移</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>extinct: adj: 灭绝的
+<ul>
+<li>die out: 消失，灭绝</li>
+<li>lost</li>
+</ul>
+</li>
+<li>exclusive: adj: 高级的，专门的，排外的; n: 独家新闻
+<ul>
+<li>an exclusive interview.
+<ul>
+<li>专访</li>
+</ul>
+</li>
+<li>an exclusive privilege
+<ul>
+<li>专门特有权</li>
+</ul>
+</li>
+<li>only</li>
+</ul>
+</li>
+<li>guarantee: n: 保证，保证书，担保人，保质期; v: 保证
+<ul>
+<li>assure: v: 保证，担保</li>
+</ul>
+</li>
+<li>inherit: v: 继承，成为继承人
+<ul>
+<li>The eldest son will inherit the title.</li>
+<li>receive: vi,vt: 收到</li>
+</ul>
+</li>
+<li>witness: n: 见证，目击者; v: 目击
+<ul>
+<li>view</li>
+<li>see</li>
+</ul>
+</li>
+<li>magnetic: adj: 有磁性的，有吸引力的
+<ul>
+<li>He has <strong>magnetic personality</strong>.</li>
+<li>attractive: adj: 吸引的, 有吸引力的
+<ul>
+<li>She's a very attractive woman</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>loss: 减少，损失，失败，遗失
+<ul>
+<li>waste: n: 浪费，滥用; vt: 徒劳，浪费; adj: 无用的</li>
+<li>gone</li>
+</ul>
+</li>
+<li>option: n: 选项，选择全
+<ul>
+<li>choice: n: 选择; adj: 精选的
+<ul>
+<li>The car is a <strong>choice</strong> buy.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>prefer to: 更喜欢
+<ul>
+<li>I <strong>prefer to stay in</strong> and read a book rather than go out to a loud party
+<ul>
+<li>倾向前者</li>
+</ul>
+</li>
+<li>rather: adv: 宁可
+<ul>
+<li>rather than： 而不是</li>
+<li>would rather: 宁可，宁愿
+<ul>
+<li>I would <strong>rather go to the beach</strong> than stay at home.</li>
+<li>倾向前者</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>priority: n: 优先权
+<ul>
+<li><strong>强调事情的重要性和顺序</strong>
+<ul>
+<li>Meeting the project deadline is our <strong>top priority</strong></li>
+</ul>
+</li>
+<li>preference: n: 偏好，优选项
+<ul>
+<li><strong>强调个人的喜好和选择</strong></li>
+</ul>
+</li>
+<li>preferential: adj: 优先的</li>
+</ul>
+</li>
+<li>primary: adj: 主要的
+<ul>
+<li>principal: adj: 主要的，最重要的; n: 校长，资本
+<ul>
+<li>principle: n: 原则, [<strong>读音一样</strong>]</li>
+</ul>
+</li>
+<li>main</li>
+</ul>
+</li>
+<li>principle
+<ul>
+<li>rule</li>
+</ul>
+</li>
+<li>potential
+<ul>
+<li>possibility</li>
+</ul>
+</li>
+<li>quantity
+<ul>
+<li>number</li>
+</ul>
+</li>
+<li>settle
+<ul>
+<li>fix</li>
+<li>figure out</li>
+</ul>
+</li>
+<li>sophisticate
+<ul>
+<li>complicate</li>
+</ul>
+</li>
+<li>specific
+<ul>
+<li>detailed</li>
+<li>particular</li>
+</ul>
+</li>
+<li>survive
+<ul>
+<li>remain</li>
+</ul>
+</li>
+<li>swift
+<ul>
+<li>quick</li>
+<li>rapid</li>
+</ul>
+</li>
+<li>unexpectedly
+<ul>
+<li>surprising</li>
+</ul>
+</li>
+<li>surrounding
+<ul>
+<li>setting</li>
+<li>environment</li>
+</ul>
+</li>
+<li>attempt
+<ul>
+<li>try</li>
+<li>test</li>
+</ul>
+</li>
+<li>expertise
+<ul>
+<li>knowledge</li>
+<li>skill</li>
+</ul>
+</li>
+<li>faculty
+<ul>
+<li>ability</li>
+</ul>
+</li>
+<li>donate
+<ul>
+<li>contribute</li>
+</ul>
+</li>
+<li>dynamics
+<ul>
+<li>energy</li>
+<li>force</li>
+<li>move</li>
+</ul>
+</li>
+<li>incentive
+<ul>
+<li>motive</li>
+<li>stimulus</li>
+</ul>
+</li>
+<li>mortality
+<ul>
+<li>death</li>
+</ul>
+</li>
+<li>peripheral
+<ul>
+<li>unimportant</li>
+<li>minor</li>
+</ul>
+</li>
+<li>vicinity
+<ul>
+<li>neighbourbood</li>
+<li>nearby</li>
+</ul>
+</li>
+<li>threaten
+<ul>
+<li>endanger</li>
+<li>jeopardize</li>
+<li>risk</li>
+<li>hazard</li>
+</ul>
+</li>
+<li>practice
+<ul>
+<li>method</li>
+<li>exercise</li>
+</ul>
+</li>
+<li>bacteria
+<ul>
+<li>virus</li>
+<li>germ</li>
+<li>microbe</li>
+</ul>
+</li>
+<li>be subject to
+<ul>
+<li>face</li>
+</ul>
+</li>
+<li>be liable to
+<ul>
+<li>potential</li>
+</ul>
+</li>
+<li>innate
+<ul>
+<li>build-in</li>
+<li>inborn</li>
+</ul>
+</li>
+<li>pattern
+<ul>
+<li>formation</li>
+</ul>
+</li>
+<li>therapy
+<ul>
+<li>treatment</li>
+</ul>
+</li>
+<li>original
+<ul>
+<li>initial</li>
+<li>first</li>
+</ul>
+</li>
+<li>confidential
+<ul>
+<li>undisclosed</li>
+<li>secret</li>
+<li>hidden</li>
+</ul>
+</li>
+<li>cognitive
+<ul>
+<li>mental</li>
+</ul>
+</li>
+<li>comply with
+<ul>
+<li>obey</li>
+</ul>
+</li>
+<li>consult
+<ul>
+<li>ask for advice</li>
+</ul>
+</li>
+<li>superior
+<ul>
+<li>higher</li>
+<li>upper</li>
+</ul>
+</li>
+<li>co-operation
+<ul>
+<li>support</li>
+<li>work together</li>
+</ul>
+</li>
+<li>co-ordinate
+<ul>
+<li>organize</li>
+<li>harmonize</li>
+</ul>
+</li>
+<li>differ
+<ul>
+<li>vary</li>
+</ul>
+</li>
+<li>cue
+<ul>
+<li>hint</li>
+<li>clue</li>
+</ul>
+</li>
+<li>signal
+<ul>
+<li>symbol</li>
+<li>mark</li>
+</ul>
+</li>
+<li>signabandon
+<ul>
+<li>quit</li>
+<li>give up</li>
+<li>forsake</li>
+<li>derelict</li>
+</ul>
+</li>
+<li>halt
+<ul>
+<li>stop</li>
+<li>quit</li>
+</ul>
+</li>
+<li>fragile
+<ul>
+<li>vulnerable</li>
+</ul>
+</li>
+<li>retain
+<ul>
+<li>maintain</li>
+</ul>
+</li>
+<li>vanish
+<ul>
+<li>disappare</li>
+</ul>
+</li>
+<li>delivery
+<ul>
+<li>send</li>
+</ul>
+</li>
+<li>erode
+<ul>
+<li>rust</li>
+<li>damage</li>
+</ul>
+</li>
+<li>induce
+<ul>
+<li>cause</li>
+<li>lead to</li>
+</ul>
+</li>
+<li>stable
+<ul>
+<li>constant</li>
+<li>unchaged</li>
+</ul>
+</li>
+<li>integrate
+<ul>
+<li>combine</li>
+<li>whole</li>
+</ul>
+</li>
+<li>equal
+<ul>
+<li>fair</li>
+<li>even</li>
+</ul>
+</li>
+<li>grant
+<ul>
+<li>offer</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

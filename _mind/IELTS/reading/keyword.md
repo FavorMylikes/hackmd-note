@@ -1,0 +1,709 @@
+# 雅思写作关键词
+
+## 第一类
+
+- resemble
+  - v: 像，类似
+  - like
+    - some people resemble their dogs.
+- recognize
+  - vt:认出，认识，意识，承认
+  - 联想词
+    - acknowledge: vt: 承认，告知已收到
+      - 指公开承认自己犯的错，而recongnize可以指承认一个政权
+    - perceive: v: 察觉, 感知，理解
+      - **recognize 更强调识别和确认，而 perceive 更强调感知和察觉，不一定需要预先的知识。**
+      - 例句
+      - In the dark, I could barely see anything, but I could **perceive** a faint, eerie sound echoing through the woods
+      - I haven't seen her in years, but when she walked into the room, I immediately **recognized** her by her distinctive smile.
+    - realize: vt: 实现，了解，认识到
+      - Realize: v: 通常用于描述达到某种认识或理解
+        - I **realized** that I had left my keys at home.
+    - appreciate
+      - vt: 感激，感谢；意识到，体会
+        - I **appreciate** the significance of this discovery
+    - admit: vt: 承认，准许...加入; v:许可入学
+      - 通常用于表示接受或承认某事
+      - He **admitted** that he made a mistake.
+    - identify: v: 识别，鉴别
+      - 强调确定或确认某事物的身份或特征
+      - Can you identify the suspect from the security camera footage
+    - comprehend: vt: 理解，领会
+      - 更侧重于深入的理解，强调你能够理解某事的含义、原因或背后的逻辑
+      - I did not comprehend his meaning.
+- adjust
+  - v: 调整，使适合
+  - change
+    - adjust: vt; 意味着对某事物进行微小的改变以适应新情况
+    - change: vt, vi, n; 意味着对某事物进行更大、根本性的改变以使其与以前的状态不同。
+    - The room is too bright; can you please **adjust** the brightness of the lights?
+    - After years of working in finance, she decided to **change** her career and become a teacher.
+  - modify
+    - v: 更改，修饰
+    - He needed to **modify** the design of the website by making some small adjustments to the layout and color scheme
+  - shift
+    - n, vi, vt: 转换，转变
+    - Shall I shift the chairs? 移动椅子
+  - alter
+    - **As times alter**: 时过境迁
+    - He **altered his face** all at once. 变脸
+- approach:
+  - vt, vi: 接近
+  - n: 靠近，**方法**
+  - method
+    - approach: 通常指解决问题的方法
+      - I have a different **approach** to solving this problem
+    - method:  强调的是特定的步骤、技术或程序
+  - way
+- fundamental
+  - adj: 基本的，重要的
+  - n: 基本原则
+  - rudimentary: adj: 基本的
+    - fundamental: 表示事物或概念的关键、根本、基础性质或特征。这个词通常与**核心原则、基本原则或基础知识相关联**。
+      - Respect for human rights is a **fundamental principle** in any just society.
+    - rudimentary:  描述的是某物的最初或最基本的形式，通常还没有经过深入发展或完善。
+      - **rudimentary technology**，最基本最基础的功能
+      - a rudimentary stage of evolution：进化的雏形阶段
+      - he received a **rudimentary education**：他只受过基本教育
+  - preliminary: adj: 预备的,初步的; n：准备工作
+    - a **preliminary investigation**：事先调查
+    - Now this is just a **preliminary study**：初步研究
+- rely on
+  - It would be rash to **rely on** such evidence
+    - 依靠这样的证据太轻率了。
+  - depend on
+    - it **depends on** what kind of person you are.
+- domestic: adj: 家庭的，国内的
+  - domestic dogs: 家犬
+  - domestic wine：国产酒
+  - domestic affairs：国内事务
+  - home
+  - local
+  - national: adj: 家里的;本国的;驯养的
+    - domestic: 通常用来描述与国家内部事务、国内政策、国内经济、国内事物或与个人家庭有关的事物。它**强调国家内部的范围和范畴**。
+    - national: 用来指代与整个国家、全体国民、国家政府或国家层面的事物有关的事物。它**强调的是国家的范围和影响力**.
+- measure: v: 测量， n: 尺寸, 措施
+  - a measure of recognition: 适度的认可
+  - a measure of good-will：有分寸的善意
+  - An inch is a measure of length：尺是长度的度量单位
+  - calculate
+    - 强调**使用数学运算来获得数值**
+    - measure：强调**使用测量工具或方法来获取数据**
+  - assess: (为征税)评估(财产,收入);征税;评价
+    - assess sb.'s efforts： 评价某人的工作
+    - 强调的是对事物的总体状况、性质或状况的判断
+    - 强调**对某事物的综合评估**，通常包括考虑多个方面以得出综合结论
+  - evaluate
+    - **更强调对事物的细致分析和深入思考。**
+    - Let's evaluate the evidence. **评定**一下此证据的价值
+    - I began to re-evaluate my life. 我开始重新**评价**我的一生
+- trait: n: 特点，特性
+  - 强调个体或事物的内在特征，通常用于描述个人的**性格特征、生物学特质**或特定物种的特性，可能是遗传的、与个体的天性或本质有关的
+    - personality trait: 人格特质
+    - What is the **great trait** in your personality? 你最大的特点是什么
+    - One of her most prominent personality **traits** is her unwavering determination to achieve her goals
+      - 她最显著的性格特质之一是她坚定不移地追求自己的目标。"trait" 描述了个体（她）的性格特点，**强调了她的内在特质**。
+  - characteristic: adj: 典型的，特有的；n: 特征；特性；特色
+    - 强调描述事物的特征或特点，这些特征可以是外在的或内在的，也可以是物质的或非物质的。
+      - characteristic species: 特有种
+      - One **characteristic** of this particular species of bird is its vibrant plumage, which makes it easily distinguishable from other birds.
+        - 这种特定鸟类的一个特点是它色彩鲜艳的羽毛，使其容易与其他鸟类区分开来。
+        - 描述了这种鸟类的外在特征，即羽毛的颜色，以便将其与其他鸟类区分开来。
+  - feature
+    - 用于描述事物的各种可见或可感知的特征，包括外表、构造、性质等。它不限于特定领域或类型的特点。
+    - 用来描述人、动物、物体、地方或概念的**各种可观察的属性或特征**
+  - property: 财产；性质，性能；所有权
+    - 经常用于描述事物的属性或性质，如颜色、形状、大小、**所有权**
+- coin
+  - n: 硬币
+  - v: 制造硬币，**创造**，make up，创造通常指创造术语
+    - **First coined** in 2010 by user experience expert Harry Brignull
+    - **首创**
+    - "Katherine" , **coined by** the ancient Greeks, it denotes "purity."
+    - **源自**
+    - The term **coined in** the book's title encapsulates the thesis.
+    - 造的词
+  - first used 首次使用
+  - invent
+- artificial：adj: 人造的
+  - synthetic
+    - 强调了通过合成过程创造
+    - artificial: 强调自然界不存在
+  - man-made
+- prompt: n: 提示词，付款期限，vt: **促进**，提示，adj: 敏捷的, adv: 准时地
+  - What **prompted** you to apply this company
+  - 什么**促使**你选择了这家公司
+  - initiate: vt: 开始，创始，**发起**；adj: 新加入的；n: 开始，新加入的人，接受初始知识的人
+    - initiate: 更侧重于主动开始或发起某项行动或过程。
+    - And from that alert, you can **initiate** an emergency call
+    - 你可以根据该警报**发起**紧急呼叫
+  - immediately: adv: 立刻，马上;
+    - Prompt: 可能会**引发**后续的行动
+    - immediately: 表示这些行动会**立即**跟随。
+- exchange: n: 交换，交易所; vi: 交换; vt: 交换
+  - share: n: 股份，份额; vi vt: 分享，分担
+    - exchange: 更侧重于物品、信息或观点的互相传递或交流，通常是双方之间的相互行为，
+    - share: 更侧重于将自己的东西、信息或感情与他人分享，**这种分享可以是单向的**，不一定要求对方也提供相同的东西。
+  - apply A to B
+- underlie: vt: 成为...的基础
+  - based on: 以...为基础
+  - ground
+    - The principles of physics **underlie** the operation of all machines.
+    - The operation of all machines **is grounded in** the principles of physics.
+  - root
+    - The principles of physics are **the root of** all machines' operation
+- ignore: v: 忽视，驳回
+  - 当你忽视某事时，**你知道它的存在，但你选择不予关注**。
+  - She decided to **ignore** the negative comments and focus on her goals.
+  - neglect: n: 疏忽; v: 忽视
+    - 带有一定的责任和照顾的含义
+    - The owner **neglected** the maintenance of the building, and now it's in poor condition.
+  - overlook: vt: **忽视**，俯瞰; n: 忽视，眺望
+    - 你可能本来应该注意到它，但你未能做到。
+    - The editor **overlooked** a few typos in the manuscript
+  - underestimate: vt: 对...低估; n: 低估
+    - 当你低估时，你可能认为某事没有那么重要或某人没有那么有能力。
+- fertiliser: 肥料，化肥
+  - fertilise: 施肥
+  - chemical: n: 化学制品; adj: 化学的
+  - toxic: adj: 有毒的
+- that*
+- and*
+- rather than*
+  - but, yet, however, wheras, nonetheless, nevertheless, notwithstanding, although, though, instead
+- thanks to*: 多亏了...
+  - stem from: 起源于
+    - Part of the problem **stems from** contemporary employment
+    - 这个问题部分源于当代的就业环境。
+  - derive: 源于
+    - derivative: 导数，微商
+    - **derive** knowledge from books
+      - 从书中获得知识
+    - The word **derives from** French
+      - 这个词来自法语。
+  - owing to: 由于, 因为
+    - FedEx said that this was **owing to** an error.
+    - 联邦快递表示这是错误操作所致。
+  - due to: 由于
+    - due to: 用于较庄重的书面语中，**侧重“起因于”**，在句中多作表语，有时作状语。
+    - owing to:  可以和due to换用，但在句中多作状语，也可作表语。
+      - owing to: 通常**用于表达原因**，而 "due to" **通常用于表达结果**。
+      - **Owing to** bad weather, the flight was delayed.
+      - The delay of the flight was **due to** bad weather
+    - because of: 着重某种原因的理由，在句中通常作状语。
+    - thanks to: 突出一种感激之情，**含“多亏”意味**。
+  - according to: 按照, 取决于
+    - The art lesson overlaps with the piano lesson **according to** the schedule.
+    - 根据
+  - because of
+  - on account of: 因为, 由于
+    - **On account of** your approaching marriage with her?
+  - as a result of: 作为...的结果，由于
+    - He became a cripple **as a result of** the accident
+  - leading to: 导致
+    - This reduces the battery's power, **leading to** sluggish acceleration
+    - 这降低了电池的能量，**导致**加速缓慢。
+  - because
+  - since
+  - for
+  - in that: 由于
+    - **这个短语用于解释或引出某事的原因或因果关系**
+    - I can't go to the party tonight, **in that** I have to work late.
+    - 我今晚不能去参加聚会，因为我得加班。
+  - as
+  - therefore
+    - He was ill, and **therefore** could not come.
+  - hence: 因此
+
+---
+
+## 第二类
+
+- diversity: n: 多样性
+  - the **diversity** of life on earth
+  - variety: n: 各种，品种，多样化
+    - variety of 各种各样的
+      - You can add **variety** to these color selections
+      - 你可以增加颜色选择的多样性
+      - 强调了一个**集合中各种不同元素的存在**
+    - diversity: 强调**不同元素之间的差异和包容性**
+  - difference
+- detect: v: 察觉, 发觉
+  - detect sb. in (doing)...
+    - 发觉某人在做(坏事)
+  - find
+  - look for
+  - seek
+  - search
+- isolate: vt: 使孤立;vi: 孤立;n: 隔离种群;adj: 孤立的
+  - **将某物或某人分离、孤立出来，通常是出于目的**
+    - isolated farms and villages.
+      - **偏僻的**农场和村庄
+    - they were **isolated** incidents
+      - 它们都是些**个别**事件
+    - We should never **isolate** ourselves from the masses.
+      - 我们永远不能脱离群众
+  - inaccessible: adj: 达不到的，遥不可及的
+    - **用来描述那些难以接近、无法到达或进入的地方或物体**
+    - The top of Mount Everest is **the most inaccessible place** in the world.
+- avoid: v: 避免
+  - 这通常是主动的行为，人们有意识地努力避免某事发生
+  - escape: vt, vi: 逃避，避免;n: 逃跑  
+    - 通常强调逃离或摆脱的行为，而不一定涉及事前的预防
+  - evitable: adj: 可以避免的
+    - The accident was **evitable** if proper safety measures had been in place
+- budget: n: 预算
+  - fund: n: 基金; v: 给...拨款
+  - financial: adj: 金融的
+- adapt to: 使适应
+  - fit: n: 合身; 痉挛(医); v: 安装; adj: 恰当的
+  - suit
+- alternative: 可供选择的, 可供替代的
+  - **通常用来表示一种不同的方法、途径或方案，而不一定涉及替代品或代替品**
+  - substitute: n: 替身, 代替者; v: 代替, 替换
+  - **这强调了一种替代品或代替品的使用**
+- compensate: v: 补偿, 报酬
+  - 意味着提供补偿或赔偿，**以弥补某种损失、不足或损害**。这可以是金钱、服务、资源等形式的补偿
+  - compensate sb.for loss
+    - 赔偿某人损失
+    - The company compensated the customer for the damaged goods by offering a full refund.
+  - make up: v: 编造，**弥补**，化妆
+    - **意味着采取行动或提供某种东西，以填补缺失或损失**。这可以是通过增加数量、时间、努力等方式来弥补。
+    - She had missed several classes and needed to **make up** the work by studying extra hours
+    - 她缺了几堂课，需要通过额外学习来**弥补**
+  - offset: n: 抵消，补偿
+    - **意味着使用相反的力量、因素或效果来抵消或平衡另一个力量、因素或效果，以减轻其影响。**
+    - The carbon emissions from the factory were offset by planting trees to absorb the carbon dioxide.
+- component: n: 成分, 组成部分, 部件, 元件
+  - **强调事物的组成结构或要素**
+  - The computer has several components
+  - proportion: n: 部分，比例
+    - **它通常涉及到不同元素之间的关系，以及它们在整体中所占的比例**
+    - The **proportion** of students who passed the exam was higher this year.
+- military: adj: 军事的; n: 军人，军队
+  - military 是一个更广泛的术语, 包括了陆军（army）以外的其他军种，如海军、空军等，以及与军事有关的所有事物
+  - weapon: n: 武器
+  - army: 军队，特指陆军
+- criteria: n: 标准
+  - educational criteria: 教育标准
+    - 它表示一种**特定的要求**，用于判断某事物是否符合某种标准或质量
+  - standard: n: 标准
+    - 一种更一般的词汇，用来描述事物的通常水平、质量或规范
+- curriculum: n: 课程
+  - 指的是一个学校、学院或教育机构**提供的整个学习计划**，包括一系列的课程和教学活动
+  - syllabus: n: 教学大纲
+    - 特定课程的详细计划和大纲，**通常包括每堂课的主题、教材、作业、考试和其他课程要求**
+  - course of study: 课程研究
+    - 一个更一般的术语，**用来指代一个学生或学习者在特定学年或学期中要学习的一系列课程或科目**
+- feasible: adj: 可行的
+  - **表示某事在技术、资源或时间上是可行的，但不一定意味着它是最佳选择或有望成功**
+  - It is **feasible** to complete the construction of the bridge within a year, but it will require a significant budget
+  - realistic: adj: 现实的，可行的
+    - **强调某事是否符合现实**，是否在现实条件下能够成功实现
+  - viable: adj: 能养活的
+    - **指的是某事是否具有持久性**、能够长期维持或生存下去
+    - The business idea is not only **feasible** but also **viable** in the long run, thanks to its innovative approach.
+- constrain: vt: 强迫，强使; 限制，约束
+  - Cold weather **constrained** the plant's growth.
+    - 寒冷的天气抑制了植物的生长
+  - stop
+  - control
+- deficiency: n: 缺乏,不足;缺点,缺陷
+  - 表示一种不足或缺少，通常与标准、需求或期望相比较。它强调某物的缺失或不足以满足特定要求
+    - His **deficiency** in nutrition makes him feel tired often
+    - 他的营养不足，因此他经常感到疲倦
+  - shortage: n: 不足; 缺少
+    - **某物的不足或供应不足，通常是暂时的**。这意味着资源、商品或物资的供应不足以满足需求。
+    - The region is experiencing a **shortage** of water due to the drought
+    - 由于干旱，这个地区正在经历水资源短缺
+  - defect: n: 缺点，缺陷; v: 叛变
+    - **通常指的是制造过程中的错误或产品的质量问题**。
+    - This phone has a **defect** in the screen, displaying noticeable lines.
+  - weakness: n: 弱点, 缺点
+    - **通常是指某人的性格、技能或计划中的局限性或不足之处**
+    - Her only **weakness** is a lack of self-confidence
+      - 她的唯一弱点是缺乏自信
+- supplement: n: 补充: v: 增补，补充
+  - **强调提供额外的东西，通常是为了满足特定需求**
+  - she took the job to **supplement** her husband's income.
+    - 她接受这份工作补贴丈夫的收入。
+  - provision: n: 提供，供给，给养，供应品
+    - **强调提前做好准备，确保资源或东西可供使用。**
+    - to make **provision** for the future
+      - 准备日后之需
+- distinguish: v: 区分、辨别
+  - **通常强调寻找和识别细微的差异或特征，以便将事物分类或辨认出来**
+  - separate: n: 分开; v: 分开, adj: 分开的；
+    - **通常强调将事物彼此独立开来，以便防止它们相互混合或互相影响**
+    - He used a knife to **separate** the tangled ropes
+      - 他用刀将缠在一起的绳子分开
+  - differentiate: v: 区分、辨别
+    - **意味着确定或表明事物之间的不同特征，通常用于描述将相似或混淆的事物加以区分**
+      - It's important to **differentiate** between the various species of poisonous snakes based on their markings and behaviors
+      - 根据它们的斑纹和行为，区分各种有毒蛇的物种非常重要
+- analyze: v: 分析
+  - **强调深入研究并了解事物的组成和关系。**
+    - The scientist will analyze the chemical composition of the substance to determine its properties.
+    - 科学家将分析物质的化学组成，以确定其性质。
+  - examine: v: 仔细检查
+    - **强调观察和检查事物的外部或内部特征**
+      - The doctor will examine the patient's throat to look for signs of infection.
+      - 医生将检查患者的喉部，寻找感染的迹象。
+  - diagnose: vi, vt: 诊断
+    - **强调确定健康问题或疾病的原因和性质，通常用于医学和临床上**
+      - The doctor was able to diagnose the patient with a severe case of pneumonia based on the X-ray results and clinical symptoms.
+      - 医生能够根据X光结果和临床症状诊断出患者患有严重的肺炎。
+- emphasize: vt: 强调
+  - 强调特定事物的重要性或特点。
+  - The teacher **emphasized** the importance of good communication skills in the
+  - 老师强调了职场中良好沟通技巧的重要性
+  - focus on: 专注于
+  - stress: n: 压力，强调，重要性; vt: **强调**
+    - 强调某事的重要性，通常用于强调观点、观念或情况
+    - The professor stressed the need for thorough research before drawing any conclusions
+    - 教授强调在得出任何结论之前需要进行彻底的研究。
+- enormous: adj: 极大的，巨大的
+  - 更常用于形容数量或强调极端巨大
+    - an enormous sum of money
+    - a man of enormous strength
+      - 力大无穷的人
+    - a debt of enormous size
+      - 巨额债务
+  - **massive**: adj: 大量的
+    - 强调事物的厚重、坚固或强大。
+    - There is a massive **monument** in the square.
+  - large
+- imitate: v: 模仿，效仿
+  - **强调尝试模仿以复制原始行为或特征。**
+  - The child imitated the way his favorite cartoon character walked and talked
+  - 这个孩子模仿他最喜欢的卡通角色的走路和说话方式
+  - mimic: v: 模仿; n: 小丑, 仿制品; adj: 模仿的
+    - 强调通过模仿来模拟或重现某人或某物的特征或行为，**通常指更具技巧性或准确性的模仿**。
+    - He had the ability to mimic the voices of famous celebrities with remarkable accuracy.
+    - 他能够以惊人的准确度模仿著名名人的声音
+  - copy
+- impair: v: 削弱，损害，减少
+  - 意味着造成损害，通常**指的是对某物的质量、价值、效能或功能造成伤害或减弱**。
+    - Excessive **alcohol consumption** can **impair** your judgment and motor skills.
+  - damage: n: 损失，损害; v: 损害，毁坏
+    - **表示对物体或某人的身体、财产等造成损害，通常强调物理上的破坏或伤害。**
+    - The storm damaged the roof of the house, causing leaks
+    - 风暴损坏了房子的屋顶，导致了漏水。
+  - **diminish**: vt: 使减少; vi: 变小
+    - 表示数量、规模、强度等的减少，**通常强调逐渐或逐渐减小**。
+    - The availability of clean water in the region has diminished over the years due to drought.
+    - 多年来，该地区的清洁水资源由于干旱逐渐减少
+  - decrease: n: 减少, 减少量; v: 减少
+    - 是一个通用的词汇，表示数量、规模、程度等的减少，**没有特定的强调。**
+    - The company decided to decrease its workforce in order to cut costs.
+    - 公司决定减少员工以降低成本
+- hinder: vi, vt: 阻碍
+  - **一种行动或情况，使其进展或发展变得更加困难或缓慢**
+    - The heavy rain hindered our progress on the hiking trail, making it difficult to move forward
+    - 大雨妨碍了我们在徒步旅行途中的进展，使前行变得困难。
+    - the inequality of the ground **hindered** their footing.
+  - impede: vt: 阻碍，妨碍
+    - **强调阻碍或干扰前进、发展或完成某事的过程**。
+    - The deep snow **impeded** travel.
+  - prevent: v: 预防，阻止
+    - **采取措施以制止某事发生**。
+    - to **prevent** the pollution of the environment
+  - deter:  vt: 制止，阻止
+    - **意味着通过威胁或恐惧来阻止某人或某事。**
+    - Don’t let failure **deter** you
+  - obstacle: n: 障碍，妨碍
+    - **指的是阻碍进展的事物。**
+    - But there are **obstacles** to real change
+- legitimate: adj: 合法的
+  - 通常用于更广泛的含义，**不仅表示合法性，还可以表示合理性、正当性或合法权利的存在**。一件事物可能合法，但它也可能合理或正当。
+    - a legitimate excuse for being late
+    - 正当的迟到理由
+  - legal: adj: 合法的
+    - 某事是 "legal"，那就意味着它符合法律规定。
+- limitation: n: 限制，局限
+  - **侧重于描述限制的本质或原因，通常不涉及主观决定**
+    - severe **limitations** on water use
+  - restriction: n: 约束，限制
+    - 更多地强调**外部的、有意识的、可改变的行动**，通常涉及规则、法律或决策所导致的限制。这是一种外在强加的约束
+    - a restriction against smoking in schools
+- convention: n: 手法，习俗
+  - **强调社会上普遍接受的规范**
+    - In our culture, it's a convention to greet with a handshake when you meet someone for the first time
+    - 在我们的文化中，初次见面时用握手问候是一种惯例
+  - method
+  - tradition
+    - **强调历史传承下来的文化和习惯**
+- demanding: adj: 很费心的, 很费力的, **苛求的**
+  - **强调任务的要求和挑战性**
+  - The new project at work is quite **demanding**, requiring long hours and attention to detail.
+  - troublesome: adj: 令人烦恼的,讨厌的
+    - **强调引发麻烦或讨厌的性质**
+    - Dealing with the constant technical issues in our office's computer network is **troublesome**.
+- determine: v: 决定
+  - 更强调发现或确认信息
+  - We need to **determine** the cause of the problem before we can decide how to fix it.
+  - decide: v: 决定
+    - 更强调在多个选择之间作出决策。
+    - After careful consideration, I **have decided** to accept the job offer.
+- accelerate: vi, vt: 加速， 使增快
+  - 逐渐增加速度，强调平滑过渡
+    - The car **accelerated** smoothly as the driver gently pressed on the gas pedal.
+  - speed up: v: 加速
+    - 快速增加速度，强调较短时间内的高速
+    - We need to **speed up** the production process to meet the tight deadline.
+- ancient: adj: 古代的
+  - 描述非常古老的事物或时代
+  - aged
+    - 相对年老的人或物体
+  - old
+- beneficial: adj: 有益的
+  - **这个词通常用于描述某事物的整体有益性**
+    - Regular exercise is **beneficial** to your overall health.
+  - helpful: adj: 有帮助的
+    - **这个词强调提供帮助的特质。**
+      - Her guidance and advice were very **helpful** in completing the project.
+  - advantageous: adj: 有利的
+    - **通常与竞争、成功或达到特定目标有关。**
+      - Being bilingual can be **advantageous** in today's global job market.
+  - wholesome: adj: 有益健康的
+    - **这个词通常与食品、娱乐、或价值观有关。**
+    - A diet rich in fruits and vegetables is **wholesome** and contributes to overall well-being
+- chronic: adj: 慢性的
+  - 更强调问题的长期存在和可能的反复，通常与负面情况相关
+    - He has been suffering from **chronic** back pain for years."
+  - lasting: adj: 持久的，永恒的, v: 持久，维持
+    - 更强调某事物的持久性，不一定涉及问题，可以用于描述积极和消极情况。
+      - Their **lasting** friendship is a testament to their strong bond.
+- conscious: adj: 意识到的
+  - 强调自我意识和知觉的能力
+  - She was **conscious** of the fact that she had made a mistake.
+  - aware: adj: 神志清醒的
+    - 强调对某事或情况的认知
+      - He became **aware of** the danger when he heard the alarm.
+  - knowing
+    - 强调已经知道或理解某事或情况。
+      - a knowing smil
+      - 会心的微笑
+- minimize: vi, vt: 最小化
+  - reduce: vi, vt: 减少
+    - 强调采取措施来减少某事物，通常涉及达到特定目标或目的
+  - lessen: vi, vt: 减少
+    - 强调某事物的减小
+- immunity: n: 免疫力
+  - they claimed **immunity** on behalf of the Crown
+    - They respected **diplomatic immunity** as valid.
+    - 外交豁免权
+  - resistance: n: 抵抗，抵抗能力
+    - put up stout **resistance** to the proposal.
+- imperative: adj: 必要的; n: 必要的事
+  - **强调事情的紧迫性和不可或缺性**
+  - compelling: adj: 引人入胜的
+    - **强调引人注目或令人信服的特性**
+  - necessary: adj: 必须的
+    - **强调必要性而不一定强调紧迫性**
+  - urgent: adj: 紧急的
+    - **表示非常紧急和需要立即处理**
+- secrete: v: 藏匿，分泌[**生物**]
+  - The pores of your body **secrete** sweat.
+  - discharge: v: 排放、释放, 流出; n: 释放，流出的液体
+    - 是一个更广泛的词汇，用于描述各种物质或能量的释放，可以涵盖人工和自然过程
+    - a discharge of pus.
+    - 流出的脓液
+  - exude
+    - **强调逐渐流出或释放物质，通常与液体或气味有关**
+    - The sun made him **exude sweat**.
+    - 汗流浃背
+- exaggerate: vi, vt: 夸大，夸张
+  - **更强调夸张的行为本身**
+  - exaggerate an illness
+  - 夸大病情
+  - overstate: vt: 夸大
+    - **强调结果已经超越了适当或事实的描述**
+    - The **marketing campaign** seemed to **overstate** the benefits of the product, leading to customer disappointment.
+      - 营销活动似乎夸大了产品的好处，导致客户失望。
+- transmit: vt, vi: 传输
+  - **更强调信息或信号的传送，通常涉及通信领域**
+  - pass
+  - send
+  - transfer: n, v: 转移转让
+    - **更广泛地用于描述物体、资源、权力、责任等的转移**
+- extinct: adj: 灭绝的
+  - die out: 消失，灭绝
+  - lost
+- exclusive: adj: 高级的，专门的，排外的; n: 独家新闻
+  - an exclusive interview.
+    - 专访
+  - an exclusive privilege
+    - 专门特有权
+  - only
+- guarantee: n: 保证，保证书，担保人，保质期; v: 保证
+  - assure: v: 保证，担保
+- inherit: v: 继承，成为继承人
+  - The eldest son will inherit the title.
+  - receive: vi,vt: 收到
+- witness: n: 见证，目击者; v: 目击
+  - view
+  - see
+- magnetic: adj: 有磁性的，有吸引力的
+  - He has **magnetic personality**.
+  - attractive: adj: 吸引的, 有吸引力的
+    - She's a very attractive woman
+- loss: 减少，损失，失败，遗失
+  - waste: n: 浪费，滥用; vt: 徒劳，浪费; adj: 无用的
+  - gone
+- option: n: 选项，选择全
+  - choice: n: 选择; adj: 精选的
+    - The car is a **choice** buy.
+- prefer to: 更喜欢
+  - I **prefer to stay in** and read a book rather than go out to a loud party
+    - 倾向前者
+  - rather: adv: 宁可
+    - rather than： 而不是
+    - would rather: 宁可，宁愿
+      - I would **rather go to the beach** than stay at home.
+      - 倾向前者
+- priority: n: 优先权
+  - **强调事情的重要性和顺序**
+    - Meeting the project deadline is our **top priority**
+  - preference: n: 偏好，优选项
+    - **强调个人的喜好和选择**
+  - preferential: adj: 优先的
+- primary: adj: 主要的
+  - principal: adj: 主要的，最重要的; n: 校长，资本
+    - principle: n: 原则, [**读音一样**]
+  - main
+- principle
+  - rule
+- potential
+  - possibility
+- quantity
+  - number
+- settle
+  - fix
+  - figure out
+- sophisticate
+  - complicate
+- specific
+  - detailed
+  - particular
+- survive
+  - remain
+- swift
+  - quick
+  - rapid
+- unexpectedly
+  - surprising
+- surrounding
+  - setting
+  - environment
+- attempt
+  - try
+  - test
+- expertise
+  - knowledge
+  - skill
+- faculty
+  - ability
+- donate
+  - contribute
+- dynamics
+  - energy
+  - force
+  - move
+- incentive
+  - motive
+  - stimulus
+- mortality
+  - death
+- peripheral
+  - unimportant
+  - minor
+- vicinity
+  - neighbourbood
+  - nearby
+- threaten
+  - endanger
+  - jeopardize
+  - risk
+  - hazard
+- practice
+  - method
+  - exercise
+- bacteria
+  - virus
+  - germ
+  - microbe
+- be subject to
+  - face
+- be liable to
+  - potential
+- innate
+  - build-in
+  - inborn
+- pattern
+  - formation
+- therapy
+  - treatment
+- original
+  - initial
+  - first
+- confidential
+  - undisclosed
+  - secret
+  - hidden
+- cognitive
+  - mental
+- comply with
+  - obey
+- consult
+  - ask for advice
+- superior
+  - higher
+  - upper
+- co-operation
+  - support
+  - work together
+- co-ordinate
+  - organize
+  - harmonize
+- differ
+  - vary
+- cue
+  - hint
+  - clue
+- signal
+  - symbol
+  - mark
+- signabandon
+  - quit
+  - give up
+  - forsake
+  - derelict
+- halt
+  - stop
+  - quit
+- fragile
+  - vulnerable
+- retain
+  - maintain
+- vanish
+  - disappare
+- delivery
+  - send
+- erode
+  - rust
+  - damage
+- induce
+  - cause
+  - lead to
+- stable
+  - constant
+  - unchaged
+- integrate
+  - combine
+  - whole
+- equal
+  - fair
+  - even
+- grant
+  - offer
