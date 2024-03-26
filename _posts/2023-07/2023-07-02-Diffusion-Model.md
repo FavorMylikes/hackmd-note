@@ -41,6 +41,7 @@ $x_t=\sqrt{\bar{\alpha_t}}x_0+\sqrt{1-\bar{\alpha_t}}\bar{z_t}$
 
 训练过程使用了UNet作为噪音的编解码模型对噪音进行预测
 discriminator
+
 ## Reference
 
 - [Stable Diffusion: Theory and Applications - medium](https://medium.com/cj-express-tech-tildi/stable-diffusion-theory-and-application-a0f98881cb03)
