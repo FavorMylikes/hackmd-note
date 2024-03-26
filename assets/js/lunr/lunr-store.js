@@ -640,4 +640,106 @@ var store = [{
         "tags": [],
         "url": "/ai/WGAN-GP/",
         "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png"
+      },{
+        "title": "VAE",
+        "excerpt":"   AutoEncoder         VAE      训练结构      Reference      json007.gitbook.io            公式简洁，可能看不懂       含代码，模型结构清晰           从零推导：变分自编码器（VAE） - Alex的文章 - 知乎            含有公式推导，比较清晰，以及对ELBO(Evidence Lower Bound)的理解比较到位           机器学习方法—优雅的模型（一）：变分自编码器（VAE） - 苗思奇的文章 - 知乎            含有公式推导，写的相对全面           c-harlin.github.io 理解VAE            从直观感受上理解VAE，有图           VAE、GAN 这种生成模型和 transformer 有什么区别？ - 知乎用户的回答 - 知乎   概论生成网络(GAN/VAE/Flow/Diffusion) - ZhouBH的文章 - 知乎            四种生成模型           通俗形象地分析比较生成模型（GAN/VAE/Flow/Diffusion/AR） - 谭旭的文章 - 知乎   ","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/VAE/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230911134758.png"
+      },{
+        "title": "视角选择",
+        "excerpt":"Mesh Saliency      TOG-2005   主要思路            任一视角下mesh，或点的曲率和最大，即提供更多的信息                  A Benchmark for Best View Selection of 3D Objects            MM-2010              数据来自于人类经验       使用指标VSE，跟人的选择进行比较                         Heidrich. Viewpoint selection using viewpoint entropy.            视角选择，视角熵       使用face的投影在球面上占比作为概率                  A Survey of Viewpoint Selection Methods for Polygonal Models                       Reference      Mesh Saliency论文阅读 - CSDN  ","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/Mesh-Saliency/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230911165620.png"
+      },{
+        "title": "Image Similarity",
+        "excerpt":"Chamfer distance      棋盘距离      别称                                                            切比雪夫距离， $D_{chebyshev}(p,q):= \\max(               p_i-q_i               )$                                               $L_\\infin$度量                                                       $\\underset{k\\to\\infin}{\\lim}\\bigg(\\sum_{i=1}^n               p_i-q_i               ^k\\bigg)^{\\frac{1}{k}}$                                               棋盘距离为二维的切比雪夫距离           城市街区距离      别称            City Block distance       曼哈顿距离       L1距离       出租车距离(Taxicab Distance), RectilinearDistance(矩形式距离)，蛇形距离（SnakeDistance）              欧式距离   Reference      Chamfer distance   涨知识！​数据科学家绝对不能错过的3个距离 - 读芯术的文章 - 知乎   如何判断两条轨迹（或曲线）的相似度？ - Di Yao的回答 - 知乎            轨迹相似度           pdal.io - 有公式  ","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/image-simlar-distance/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230914204243.png"
+      },{
+        "title": "A kind of mind for 3d manifold to 2d",
+        "excerpt":"   问题，希望建立一种2d坐标对应3维流形坐标的方法      类似问题：            1维方程$R_1\\rightarrow R_1$, 可以使用参数方程进行0,1映射       点集，可以使用ICP进行匹配，但可能会造成过拟合           $R_2\\rightarrow R_3$   数据是空间点云   方案1，以点的路径和作为极坐标的距离，以投影方向作为极坐标的角度      投影方向可以使用PCA，即所有点距离初始点的方差最大的方向作为投影面法线   距离使用树的路径积分            如图所示，以A为原点，最近点为K，AK做垂直平分线(或面)，K侧的点不在作为A的子树，因为他们距离k的距离都小于A，可以通过二分查找进行优化       距离k最近的点为J，此时KJ的垂直平分线划分出的COQP点只属于K的子树，因为他们距离K的距离都小于J       此时，A到C的距离为，AK+KC       尽管AC距离更短，但由于KC短于AC，因此C更适合作为K的后继       当采样点足够多时，若ACK在同一平面，则AC约等于AK+CK，若ACK不在同一平面，则AK+CK更适合表示AC的距离           Reference      做图工具            https://www.geogebra.org/geometry           清华笔记：计算共形几何讲义 （16）拓扑球面的调和映照   B样条曲面和曲线  ","categories": ["AI"],
+        "tags": [],
+        "url": "/ai/A-kind-of-mind-for-3d-manifold-to-2d/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230914204243.png"
+      },{
+        "title": "Latent Partition Implicit with Surface Codes for 3D Representation",
+        "excerpt":"Latent Partition Implicit with Surface Codes for 3D Representation             这篇论文的主要贡献在于提出了一种名为Latent Partition Implicit（LPI）的方法，用于表示三维形状。LPI是一种多层级表示方法，能够高效地捕捉形状中不同数量的部分。该方法使用表面编码来表示个别的部分，并通过在潜在空间中加权这些表面编码来重建表面，从而实现了高度准确的形状和部分建模。            LPI的一个优点在于其灵活性，可以整合额外的表面属性，比如测地距离或分割信息。作者展示了LPI可以从点云中学习，而不需要真实的有符号距离或点法线。            通过在广泛使用的基准数据集上进行详尽的评估，作者展示了他们的方法在形状表示方面胜过了现有最先进的方法。他们在L2 Chamfer距离、法线一致性和F-score等指标上取得了优越的结果。            作者还强调了LPI捕捉复杂结构的能力和重建部分的意义。他们提供了视觉对比来支持他们的观点，并展示了LPI可以准确地表示具有复杂几何结构的形状。            在消融实验中，作者分析了不同距离度量和表面编码对该方法收敛和性能的影响。他们发现使用距离度量来混合部分可以实现更快、更好的收敛。他们还展示了对于非刚性形状建模，使用内在距离与表面编码相结合可以获得最佳性能。      ","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/LPI-Latent-Partition-Implicit-with-Surface-Codes-for-3D-Representation/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230918203343.png"
+      },{
+        "title": "SDF 相关论文",
+        "excerpt":"Neural-Pull: Learning Signed Distance Functions from Point Clouds by Learning to Pull Space onto Surfaces Loss: 最近点距离 2023 CVPR - Diffusion-Based Signed Distance Fields for 3D Shape Generation 2022 CVPR - AutoSDF: Shape Priors for 3D Completion, Reconstruction, and Generation Signed Distance Field - 欧克欧克的文章 - 知乎 浅谈3D隐式表示（SDF，Occupancy field，NeRF）- CSDN...","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/SDF%E7%9B%B8%E5%85%B3/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230918215628.png"
+      },{
+        "title": "卷积-棋盘效应",
+        "excerpt":"Reference      deconv-checkerboard - 可交互   反卷积   A Comprehensive Introduction to DifferentTypes of Convolutions in Deep Learning  ","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/checkerboard/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230921221558.png"
+      },{
+        "title": "参数化",
+        "excerpt":"参数化 Parameterization 网格参数化原理 - 1： Metric Distortion - Allan的文章 - 知乎 比较经典 【相容性网络】Compatible mesh 两个mesh的一一对应关系 球面参数化 Spherical parameterization 球面参数化度量 体参数化 Volumetric parameterization 四面体 $\\sigma_1\\ge\\sigma_2\\ge\\sigma_3$ 几何映射 (Geometric Mapping) $R-&gt;R$ 函数对应 $R^2\\rightarrow R^2$ $M\\rightarrow R^2$ $M\\rightarrow S^2$ $M\\rightarrow M’$ $R^3\\rightarrow R^3$ 低维嵌入 高纬数据可能存在低维结构 【GAMES301-曲面参数化】 雅克比矩阵，用于衡量曲面扭曲情况 参数化方法 线性方法 Tutte 1963; Floater 1997 变形...","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/%E5%8F%82%E6%95%B0%E5%8C%96/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgd04569fbaac510add8cd8a9b507021e.jpg"
+      },{
+        "title": "3d Mesh 生成",
+        "excerpt":"3D Mesh 生成 NeuralNetworksSketchbook - github stable diffusion blender 格栅化反传 TEXTure: Text-Guided Texturing of 3D Shapes iteration[“keep”, “refine”, “generate”] 多较多球面参数化，获得高清纹理 Magic123 - One Image to High-Quality 3D Object Generation Using Both 2D and 3D Diffusion Priors 采用两阶段的3dmesh生成方法 第一阶段使用nerf生成粗糙的3d mesh表示 第二阶段用可微的神经网络对粗糙的3d mesh表示进行精细化 引入了2D和3D扩散先验的结合 论文中提到了姿势化，姿势化是指目标物体或人体在图像中的姿势和表情。在一个单一的未指定姿势的图像中，姿势化是指通过计算机视觉技术和深度学习模型，从图像中推断出物体或人体的三维姿势和形状 Wonder3D: Single Image to 3D using Cross-Domain...","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/3d-Mesh-%E7%94%9F%E6%88%90/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230921221558.png"
+      },{
+        "title": "3d Mesh 深度相关",
+        "excerpt":"3D Mesh 深度学习      Subdivision-Based Mesh Convolution Networks - TOG 2021                   通过细分网格，获得mesh网络的卷积关键面，将细分后的网格作为输入，进行卷积核池化运算，卷积运算即通过面榻缩的方式或者边榻缩的方式，将榻缩后的面作为卷积输出，同时，池化操作也很类似。       作者还给出了不同strip参数和不同kernel参数做卷积运算时与原2d conv的类比图              同时论文介绍了基于该思想的不同上采样方法           3D Mesh style transfer      Neural Style Transfer for 3D Meshes                   是一种基于mesh conv net的3d风格迁移方法       网络输入还是mesh的三角面片       网路架构类似2d图片风格迁移，可以参考2016年李飞飞的风格迁移论文              通过比较特征值之间的损失即可得到，同时，损失包含Content loss和style Loss, 在李飞飞2016的论文当中，同样存在两种loss           Reference  ","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/3d-Mesh-%E6%B7%B1%E5%BA%A6%E7%9B%B8%E5%85%B3/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112150600.png"
+      },{
+        "title": "3d 生成 商业版本",
+        "excerpt":"3D Mesh 生成 web pipeline price result labs.masterpiecex.com text-&gt;3d 3000c/36.99$/month, pic/50c g3d.ai waitlist     ponzu.gg TypeError: Failed to fetch     https://www.prometheanai.com/ Error     leonardo.ai depth-&gt;texture 6000t/month 48$/month   mirageml.com waitlist     pixela.ai stable diffusion     https://github.com/nv-tlabs/GET3D **     www.kaedim3d.com image-&gt;3d 60c/1000$/month   https://www.kinetix.tech animate...","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/3d-%E7%94%9F%E6%88%90-%E5%95%86%E4%B8%9A%E7%89%88/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112150600.png"
+      },{
+        "title": "pytorch 扩展 安装",
+        "excerpt":"涉及项目 Wonder3d pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch 问题：fatal error: filesystem: No such file or directory 解决方案，升级gcc到8.0以上 参考 Ubuntu问题——Ubuntu18.04 更新gcc和g++的版本号 - CSDN Failed to build tinycudann - git Install gcc-8 only on Ubuntu 18.04? - askubuntu 解决gcc-8和gcc7共存问题 安装高版本[&gt;10]的gcc需要ppa的镜像站, 无国内镜像站 apt install software-properties-common add-apt-repository ppa:ubuntu-toolchain-r/test apt update 安装gcc-8: apt install gcc-8 g++-8 安装gcc-7: apt...","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/pytorch-%E6%89%A9%E5%B1%95-%E5%AE%89%E8%A3%85/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112150600.png"
+      },{
+        "title": "pytorch 扩展 安装",
+        "excerpt":"涉及项目 Wonder3d pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch 问题：fatal error: filesystem: No such file or directory 解决方案，升级gcc到8.0以上 参考 Ubuntu问题——Ubuntu18.04 更新gcc和g++的版本号 - CSDN Failed to build tinycudann - git Install gcc-8 only on Ubuntu 18.04? - askubuntu 解决gcc-8和gcc7共存问题 安装高版本[&gt;10]的gcc需要ppa的镜像站, 无国内镜像站 apt install software-properties-common add-apt-repository ppa:ubuntu-toolchain-r/test apt update 安装gcc-8: apt install gcc-8 g++-8 安装gcc-7: apt...","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/pytorch-%E6%89%A9%E5%B1%95-%E5%AE%89%E8%A3%85/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112150600.png"
+      },{
+        "title": "Deep Image Blend",
+        "excerpt":"   Deep Image Blend                   针对泊松融合的局限性，作者提出了Deep Image Blend                    泊松融合主要是参考融合边界处的像素信息，进行梯度最小的优化融合算法。                       本论文主要联合优化了3种不同的损失                    泊松融合损失、风格损失和内容损失           风格损失合内容损失主要引入VGG的风格化向量           通过迭代的方法保证了边界的过度                       论文还涉及了正则化损失，包括直方图损失和总变差损失，以提高图像的平滑度和稳定风格转换。          ","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/AnimeDiff/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209180729.png"
+      },{
+        "title": "AnimeDiff",
+        "excerpt":"   AnimeDiff                          论文主要使用stablediffusion中增加animediff模块进行动画学习                    AnimeDiff包含3个模块                            domain adapter                                    用于减轻基准T2I与视频培训数据之间的视觉分布差异                   主要是由于不同视频之间的风格差异导致的                                               运动模块                                    用于学习动画的运动先验                                               MotionLoRA                                    通过针对上一帧的运动模块，进行运动的预测                   数据集主要是一些带有运动信息的视频                                                                                  ","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/Deep-Image-Blend-copy/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209184118.png"
+      },{
+        "title": "SparseCtrl: Adding Sparse Controls to Text-to-Video Diffusion Models",
+        "excerpt":"   SparseCtrl                   论文主要验证了稀疏控制在text2video方面的作用       原本的条件控制主要在稠密的视频流生成中起作用，但通过稀疏信号的控制一样可以得到较好的结果                    该方法在预训练的T2V模型之上增加了一个附加的条件编码器           通过在帧间复制ControlNet编码器，并将条件图像添加到帧中，实现了条件信号在帧间的传播，以增强时间一致性           通过计算生成视频中的关键帧的深度图像与原始视频中提取的深度图像之间的mse进行评估视频的事件一致性           WebVid-10M数据集                           IpAdaptor                   IP-Adapter通过解耦的跨注意力策略，将图像特征嵌入到预训练的文本到图像扩散模型中实现图像提示能力       将图像特征嵌入到预训练的文本到图像扩散模型中。IP-Adapter由图像编码器和带有解耦跨注意力的调整模块组成       两个开源数据集（LAION-2B和COYO-700M）的大约1000万个文本-图像对       IP-Adapter由图像编码器和带有解耦跨注意力的调整模块组成。图像编码器使用预训练的CLIP图像编码器从图像提示中提取图像特征。解耦的跨注意力策略通过在原始UNet模型中添加新的跨注意力层来嵌入图像特征，从而实现更有效的图像提示适配器。       使用一个大规模的多模态数据集进行IP-Adapter的训练，其中包含来自不同数据集的文本-图像对。训练过程使用AdamW优化器进行，使用DeepSpeed ZeRO-2加速训练。进行了定量和定性的实验评估，比较IP-Adapter与其他适配器方法的性能和效果。           Text2Tex                   从多个视点逐步合成高分辨率的部分纹理。为了避免在视角变化过程中累积不一致和拉伸的伪影，作者将渲染的视图动态分割为生成掩模，表示每个可见像素的生成状态       为了控制扩散过程中的随机性，引入了一个缩放因子γ，通过控制扩散步骤的数量来开始去噪潜在编码       使用修复掩模指导采样过程       通过视角投射和插值，减少纹理的伪影和拉伸问题          ","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/SparseCtrl/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209185739.png"
+      },{
+        "title": "Sora: The paper you need to read",
+        "excerpt":"Papers Dall-e 3 Improving Image Captioning with Better Use of Captions Dalle-3论文阅读 - nlpcver的文章 - 知乎 Vq-vae Neural Discrete Representation Learning DiT Scalable Diffusion Models with Transformers Generating Long Videos of Dynamic Scenes VideoGPT: Video Generation using VQ-VAE and Transformer Imagen Video: High Definition Video Generation with Diffusion Models Align...","categories": ["AI","3d"],
+        "tags": [],
+        "url": "/ai/3d/Sora/",
+        "teaser": "https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209185739.png"
       }]

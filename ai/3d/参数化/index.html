@@ -1,0 +1,1040 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>参数化 / Notes B</title>
+<meta name="description" content="参数化 Parameterization">
+
+
+  <meta name="author" content="麦丽素">
+  
+  <meta property="article:author" content="麦丽素">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Notes B">
+<meta property="og:title" content="参数化">
+<meta property="og:url" content="https://ucas.io/ai/3d/%E5%8F%82%E6%95%B0%E5%8C%96/">
+
+
+  <meta property="og:description" content="参数化 Parameterization">
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgd04569fbaac510add8cd8a9b507021e.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-09-28T15:47:38+08:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/ai/3d/%E5%8F%82%E6%95%B0%E5%8C%96/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://ucas.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Notes B Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Favicon generate from realfavicongenerator.net-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ff0000">
+
+  <!--KaTeX-->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+      });
+    });
+  </script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgucas_logo.png" alt="Notes B"></a>
+        
+        <a class="site-title" href="/">
+          Notes B
+          <span class="site-subtitle">麦丽素的日常</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/years/">Years</a>
+            </li><li class="masthead__menu-item">
+              <a href="/months/">Months</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://ucas.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/ai" itemprop="item"><span itemprop="name">Ai</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/3d" itemprop="item"><span itemprop="name">3d</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">参数化</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://www.gravatar.com/avatar/7ac850b26f9a21a153f8f581964e22cd?s=200" alt="麦丽素" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">麦丽素</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>My life is getting better</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:l786112323@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/FavorMylikes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="参数化">
+    <meta itemprop="description" content="参数化 Parameterization">
+    <meta itemprop="datePublished" content="2023-09-28T15:47:38+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">参数化
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-09-28T15:47:38+08:00">September 28, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#参数化-parameterization">参数化 Parameterization</a></li><li><a href="#基函数拟合">基函数拟合</a></li><li><a href="#三维曲面映射">三维曲面映射</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="参数化-parameterization">参数化 Parameterization</h2>
+
+<ul>
+  <li><a href="https://zhuanlan.zhihu.com/p/255169637">网格参数化原理 - 1： Metric Distortion - Allan的文章 - 知乎</a>
+    <ul>
+      <li>比较经典</li>
+      <li>【相容性网络】Compatible mesh
+        <ul>
+          <li>两个mesh的一一对应关系</li>
+        </ul>
+      </li>
+      <li>球面参数化 Spherical parameterization
+        <ul>
+          <li>球面参数化度量</li>
+        </ul>
+      </li>
+      <li>体参数化 Volumetric parameterization
+        <ul>
+          <li>四面体</li>
+          <li>$\sigma_1\ge\sigma_2\ge\sigma_3$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>几何映射 (Geometric Mapping)
+    <ul>
+      <li>$R-&gt;R$ 函数对应</li>
+      <li>$R^2\rightarrow R^2$</li>
+      <li>$M\rightarrow R^2$</li>
+      <li>$M\rightarrow S^2$</li>
+      <li>$M\rightarrow M’$</li>
+      <li>$R^3\rightarrow R^3$</li>
+      <li><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgd04569fbaac510add8cd8a9b507021e.jpg" alt="d04569fbaac510add8cd8a9b507021e" /></li>
+    </ul>
+  </li>
+  <li>低维嵌入
+    <ul>
+      <li>高纬数据可能存在低维结构</li>
+    </ul>
+  </li>
+  <li><a href="https://www.bilibili.com/video/BV18T411P7hT/?share_source=copy_web">【GAMES301-曲面参数化】</a>
+    <ul>
+      <li>雅克比矩阵，用于衡量曲面扭曲情况</li>
+      <li>参数化方法
+        <ul>
+          <li>线性方法
+            <ul>
+              <li>Tutte 1963; Floater 1997
+                <ul>
+                  <li>变形</li>
+                  <li>Euclidean-orbifold Aigerman et. al. 2015</li>
+                  <li>Hyperbolic-orbifold Aigerman et. al. 2016</li>
+                  <li>Spherical-orbifold Aigerman et. al. 2017</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>将mesh的边界映射到凸二维图形中，通过线性方法(求解器)，得到一个一定不会翻转的参数化方法</li>
+          <li><strong>但是会产生高扭曲</strong></li>
+          <li>优化方法
+            <ul>
+              <li>都会产生翻转，因此需要后处理，一步步让翻转消失</li>
+              <li>As-rigid-as-possible(ARAP) Liu et al. 2008 <strong>刘利刚</strong>
+                <ul>
+                  <li>CGAL包含</li>
+                </ul>
+              </li>
+              <li>ABF/ABF++ Sheffer et al. 2005
+                <ul>
+                  <li>保角</li>
+                </ul>
+              </li>
+              <li>Simplex Assembly Fu and Liu 2016 2016 <strong>刘利刚</strong>
+                <ul>
+                  <li>保角</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>保证无翻转的参数化优化
+            <ul>
+              <li>先保证无翻转，再优化</li>
+              <li>形变量度量
+                <ul>
+                  <li>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>方法</th>
+                          <th>Conformal</th>
+                          <th>Maximal Isometric Distortion</th>
+                          <th>MIPS</th>
+                          <th>isometric</th>
+                          <th>Symmetric Dirichlet energy</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>年份</td>
+                          <td>Degener et al. 2003</td>
+                          <td>Sorikine et al. 2002</td>
+                          <td>Hormann and Greiner 2000</td>
+                          <td>Aigermann et al. 2014</td>
+                          <td>Smith and Schaefer 2015</td>
+                        </tr>
+                        <tr>
+                          <td>度量</td>
+                          <td>$\frac{\sigma_2}{\color{red}{\sigma_1}}$</td>
+                          <td>$\max(\sigma_2, \frac{1}{\color{red}{\sigma_1}})$</td>
+                          <td>$\frac{\color{red}{\sigma_1}}{\sigma_2} + \frac{\sigma_2}{\color{red}{\sigma_1}}$</td>
+                          <td>$\sqrt{\sigma_2^2+\frac{1}{\color{red}{\sigma_1^2}}}$</td>
+                          <td>$\sigma_2^2+\frac{1}{\color{red}{\sigma_1^2}}+{\color{red}{\sigma_1^2}}+\frac{1}{\sigma_2^2}$</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://zhuanlan.zhihu.com/p/89934333">微分几何笔记(2) —— 曲线的参数化 - Silence的文章 - 知乎</a>
+    <ul>
+      <li>曲线微分</li>
+    </ul>
+  </li>
+  <li><a href="https://zhuanlan.zhihu.com/p/89975877">微分几何笔记(4) —— 二维三维空间中曲线的曲率以及环绕数 - Silence的文章 - 知乎</a></li>
+</ul>
+
+<h2 id="基函数拟合">基函数拟合</h2>
+
+<p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1696341320569.jpg" alt="1696341320569" /></p>
+
+<ul>
+  <li><a href="https://juejin.cn/post/7089391423362957325">图形学基础——傅里叶变换及球谐函数</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/351289217">球谐函数介绍（Spherical Harmonics） - 浦夜的文章 - 知乎</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/655283202">球谐函数原理 - 爅一点都不黑的文章 - 知乎</a>
+    <ul>
+      <li>球谐函数推导</li>
+      <li><a href="https://link.zhihu.com/?target=https%3A//ulyanadupletsa.github.io/SphericalCoordinates.pdf">Laplacian in Spherical Coordinates.pdf</a></li>
+    </ul>
+  </li>
+  <li><a href="http://2uv.xyz/post/maths/sh/#-%E7%90%83%E8%B0%90%E5%87%BD%E6%95%B0">渲染中的球谐函数及Deringing - Far Land</a>
+    <ul>
+      <li>比较全面🤙</li>
+    </ul>
+  </li>
+  <li><a href="https://zhuanlan.zhihu.com/p/401892655">球谐光照 从入门到放弃 - 王俊杰 hybrid的文章 - 知乎</a>
+    <ul>
+      <li>没看懂</li>
+    </ul>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Non Uniform DFT</td>
+          <td>非均匀离散傅里叶变换</td>
+          <td>NDFT # 介绍 - 向阳的文章 - 知乎](https://zhuanlan.zhihu.com/p/348240324)</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>非均匀傅里叶</li>
+    </ul>
+  </li>
+  <li><a href="https://zhuanlan.zhihu.com/p/423540067">一文搞明白离散傅里叶变换之作用和威力！ - 数理爱好者的文章 - 知乎</a>
+    <ul>
+      <li>有公式推导</li>
+    </ul>
+  </li>
+  <li><a href="https://www.zhihu.com/question/22611929/answer/341436331">二维傅里叶变换是怎么进行的？ - CharlyGordon的回答 - 知乎</a></li>
+  <li><a href="https://www.zhihu.com/question/68713342">如何评价球面卷积神经网络(Spherical CNNs)？ - 知乎</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/660428438">球面傅立叶变换（SFT，Spherical Fourier Transform） - destroyer的文章 - 知乎</a></li>
+</ul>
+
+<h2 id="三维曲面映射">三维曲面映射</h2>
+
+<ul>
+  <li><a href="https://www.ilovematlab.cn/thread-288157-1-1.html?_dsign=f69799a5">已知离散点坐标，拟合成封闭曲面</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/607755371">三维散点图曲面拟合 - 奶香小饼干的文章 - 知乎</a>
+    <ul>
+      <li>未解决</li>
+    </ul>
+  </li>
+  <li><a href="https://pages.mtu.edu/~shene/COURSES/cs3621/NOTES/surface/bspline-construct.html">mtu 教学</a></li>
+  <li><a href="https://blog.csdn.net/qq_37340588/article/details/128181123">B样条曲线 - CSDN</a>
+    <ul>
+      <li>$R_1\rightarrow R_2$, $R_1\rightarrow R_3$</li>
+    </ul>
+  </li>
+  <li><a href="https://zhuanlan.zhihu.com/p/528642680">B样条曲线。 - 结庐在人境的文章 - 知乎</a>
+    <ul>
+      <li>公式多，可以自己代入运算</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/supuo/b-spline">球面拟合+B样条</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/468238804">计算机图形学基础 - 纹理映射 - pozero的文章 - 知乎</a>
+    <ul>
+      <li>球面映射</li>
+    </ul>
+  </li>
+  <li><a href="https://blog.csdn.net/pizibing880909/article/details/28910835">图形学领域的关键算法及源码链接</a>
+    <ul>
+      <li>包含一大堆代码</li>
+    </ul>
+  </li>
+  <li><a href="https://www.numerical-tours.com/matlab/meshdeform_2_parameterization_sphere/">Spherical Mesh Parameterization</a>
+    <ul>
+      <li>matlab代码</li>
+      <li><strong>重要</strong></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/garyptchoi/spherical-conformal-map#spherical-conformal-map">spherical-conformal-map 2017 - git</a>
+    <ul>
+      <li>matlab代码</li>
+      <li>比上面的快</li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/3d" class="page__taxonomy-item" rel="tag">3d</a><span class="sep">, </span>
+    
+      <a href="/categories/ai" class="page__taxonomy-item" rel="tag">AI</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-09-28T15:47:38+08:00">September 28, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%E5%8F%82%E6%95%B0%E5%8C%96%20https%3A%2F%2Fucas.io%2Fai%2F3d%2F%25E5%258F%2582%25E6%2595%25B0%25E5%258C%2596%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fai%2F3d%2F%25E5%258F%2582%25E6%2595%25B0%25E5%258C%2596%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fai%2F3d%2F%25E5%258F%2582%25E6%2595%25B0%25E5%258C%2596%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/ai/3d/checkerboard/" class="pagination--pager" title="卷积-棋盘效应
+">Previous</a>
+    
+    
+      <a href="/ai/3d/3d-Mesh-%E7%94%9F%E6%88%90/" class="pagination--pager" title="3d Mesh 生成
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209185739.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/3d/Sora/" rel="permalink">Sora: The paper you need to read
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-19T15:37:48+08:00">February 19, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Papers
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209185739.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/3d/SparseCtrl/" rel="permalink">SparseCtrl: Adding Sparse Controls to Text-to-Video Diffusion Models
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-09T18:57:13+08:00">February 9, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  SparseCtrl
+    
+      
+      论文主要验证了稀疏控制在text2video方面的作用
+      原本的条件控制主要在稠密的视频流生成中起作用，但通过稀疏信号的控制一样可以得到较好的结果
+        
+          该方法在预训练的T2V模型之上增加了一个附加的条件编码...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209184118.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/3d/Deep-Image-Blend-copy/" rel="permalink">AnimeDiff
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-09T18:40:45+08:00">February 9, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  AnimeDiff
+    
+      
+      
+      论文主要使用stablediffusion中增加animediff模块进行动画学习
+        
+          AnimeDiff包含3个模块
+            
+              domain adapter
+...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209180729.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/3d/AnimeDiff/" rel="permalink">Deep Image Blend
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-09T18:07:54+08:00">February 9, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Deep Image Blend
+    
+      
+      针对泊松融合的局限性，作者提出了Deep Image Blend
+        
+          泊松融合主要是参考融合边界处的像素信息，进行梯度最小的优化融合算法。
+        
+      
+      本论文主要联合优化了...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '7UHEFEG9HB',
+  apiKey: 'b1cdde9827760050f51383c6c78127bf',
+  indexName: 'prod_UCAS_IO',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const hightlight = hit._highlightResult;
+  const title = hightlight.title && hightlight.title.value  || "";
+  const content = hightlight.html && hightlight.html.value  || "";
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN8PZ697F8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QN8PZ697F8', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

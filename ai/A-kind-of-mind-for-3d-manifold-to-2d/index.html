@@ -1,0 +1,848 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>A kind of mind for 3d manifold to 2d / Notes B</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="麦丽素">
+  
+  <meta property="article:author" content="麦丽素">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Notes B">
+<meta property="og:title" content="A kind of mind for 3d manifold to 2d">
+<meta property="og:url" content="https://ucas.io/ai/A-kind-of-mind-for-3d-manifold-to-2d/">
+
+
+  <meta property="og:description" content="">
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230914204243.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-09-17T21:36:00+08:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://ucas.io/ai/A-kind-of-mind-for-3d-manifold-to-2d/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://ucas.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Notes B Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Favicon generate from realfavicongenerator.net-->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ff0000">
+
+  <!--KaTeX-->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+      });
+    });
+  </script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgucas_logo.png" alt="Notes B"></a>
+        
+        <a class="site-title" href="/">
+          Notes B
+          <span class="site-subtitle">麦丽素的日常</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/years/">Years</a>
+            </li><li class="masthead__menu-item">
+              <a href="/months/">Months</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://ucas.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/ai" itemprop="item"><span itemprop="name">Ai</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">A kind of mind for 3d manifold to 2d</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://www.gravatar.com/avatar/7ac850b26f9a21a153f8f581964e22cd?s=200" alt="麦丽素" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">麦丽素</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>My life is getting better</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:l786112323@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/FavorMylikes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="A kind of mind for 3d manifold to 2d">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2023-09-17T21:36:00+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">A kind of mind for 3d manifold to 2d
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-09-17T21:36:00+08:00">September 17, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#问题希望建立一种2d坐标对应3维流形坐标的方法">问题，希望建立一种2d坐标对应3维流形坐标的方法</a><ul><li><a href="#方案1以点的路径和作为极坐标的距离以投影方向作为极坐标的角度">方案1，以点的路径和作为极坐标的距离，以投影方向作为极坐标的角度</a></li><li><a href="#reference">Reference</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230917191459.png" alt="20230917191459" /></p>
+
+<h2 id="问题希望建立一种2d坐标对应3维流形坐标的方法">问题，希望建立一种2d坐标对应3维流形坐标的方法</h2>
+
+<ul>
+  <li>类似问题：
+    <ul>
+      <li>1维方程$R_1\rightarrow R_1$, 可以使用参数方程进行0,1映射</li>
+      <li>点集，可以使用ICP进行匹配，但可能会造成过拟合</li>
+    </ul>
+  </li>
+</ul>
+
+<p>$R_2\rightarrow R_3$</p>
+
+<p>数据是空间点云</p>
+
+<h3 id="方案1以点的路径和作为极坐标的距离以投影方向作为极坐标的角度">方案1，以点的路径和作为极坐标的距离，以投影方向作为极坐标的角度</h3>
+
+<ul>
+  <li>投影方向可以使用PCA，即所有点距离初始点的方差最大的方向作为投影面法线</li>
+  <li>距离使用树的路径积分
+    <ul>
+      <li>如图所示，以A为原点，最近点为K，AK做垂直平分线(或面)，K侧的点不在作为A的子树，因为他们距离k的距离都小于A，可以通过二分查找进行优化</li>
+      <li>距离k最近的点为J，此时KJ的垂直平分线划分出的COQP点只属于K的子树，因为他们距离K的距离都小于J</li>
+      <li>此时，A到C的距离为，AK+KC</li>
+      <li>尽管AC距离更短，但由于KC短于AC，因此C更适合作为K的后继</li>
+      <li>当采样点足够多时，若ACK在同一平面，则AC约等于AK+CK，若ACK不在同一平面，则AK+CK更适合表示AC的距离</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="reference">Reference</h3>
+
+<ul>
+  <li>做图工具
+    <ul>
+      <li>https://www.geogebra.org/geometry</li>
+    </ul>
+  </li>
+  <li><a href="https://mp.weixin.qq.com/s/oeBoJcW5mTV8hTK99JCvfA">清华笔记：计算共形几何讲义 （16）拓扑球面的调和映照</a></li>
+  <li><a href="https://wlsdzyzl.top/2019/03/19/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E2%80%94%E2%80%94B%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF%E5%92%8C%E6%9B%B2%E9%9D%A2/">B样条曲面和曲线</a></li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/ai" class="page__taxonomy-item" rel="tag">AI</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-09-17T21:36:00+08:00">September 17, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=A+kind+of+mind+for+3d+manifold+to+2d%20https%3A%2F%2Fucas.io%2Fai%2FA-kind-of-mind-for-3d-manifold-to-2d%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fucas.io%2Fai%2FA-kind-of-mind-for-3d-manifold-to-2d%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fucas.io%2Fai%2FA-kind-of-mind-for-3d-manifold-to-2d%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/ai/image-simlar-distance/" class="pagination--pager" title="Image Similarity
+">Previous</a>
+    
+    
+      <a href="/ai/3d/LPI-Latent-Partition-Implicit-with-Surface-Codes-for-3D-Representation/" class="pagination--pager" title="Latent Partition Implicit with Surface Codes for 3D Representation
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209185739.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/3d/Sora/" rel="permalink">Sora: The paper you need to read
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-19T15:37:48+08:00">February 19, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Papers
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209185739.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/3d/SparseCtrl/" rel="permalink">SparseCtrl: Adding Sparse Controls to Text-to-Video Diffusion Models
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-09T18:57:13+08:00">February 9, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  SparseCtrl
+    
+      
+      论文主要验证了稀疏控制在text2video方面的作用
+      原本的条件控制主要在稠密的视频流生成中起作用，但通过稀疏信号的控制一样可以得到较好的结果
+        
+          该方法在预训练的T2V模型之上增加了一个附加的条件编码...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209184118.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/3d/Deep-Image-Blend-copy/" rel="permalink">AnimeDiff
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-09T18:40:45+08:00">February 9, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  AnimeDiff
+    
+      
+      
+      论文主要使用stablediffusion中增加animediff模块进行动画学习
+        
+          AnimeDiff包含3个模块
+            
+              domain adapter
+...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209180729.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/3d/AnimeDiff/" rel="permalink">Deep Image Blend
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-09T18:07:54+08:00">February 9, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Deep Image Blend
+    
+      
+      针对泊松融合的局限性，作者提出了Deep Image Blend
+        
+          泊松融合主要是参考融合边界处的像素信息，进行梯度最小的优化融合算法。
+        
+      
+      本论文主要联合优化了...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Notes B. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '7UHEFEG9HB',
+  apiKey: 'b1cdde9827760050f51383c6c78127bf',
+  indexName: 'prod_UCAS_IO',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const hightlight = hit._highlightResult;
+  const title = hightlight.title && hightlight.title.value  || "";
+  const content = hightlight.html && hightlight.html.value  || "";
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN8PZ697F8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QN8PZ697F8', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,532 +1,704 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2024-03-26T14:05:57+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">WGAN-GP</title><link href="https://ucas.io/ai/WGAN-GP/" rel="alternate" type="text/html" title="WGAN-GP" /><published>2023-08-21T21:05:19+08:00</published><updated>2023-08-21T21:05:19+08:00</updated><id>https://ucas.io/ai/WGAN-GP</id><content type="html" xml:base="https://ucas.io/ai/WGAN-GP/">&lt;h3 id=&quot;wgan-gp-wasserstein-gan-with-gradient-penalty&quot;&gt;WGAN-GP: Wasserstein GAN with Gradient Penalty&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ucas.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ucas.io/" rel="alternate" type="text/html" /><updated>2024-03-26T14:20:26+08:00</updated><id>https://ucas.io/feed.xml</id><title type="html">Notes B</title><subtitle>A place for notes on various topics.</subtitle><author><name>麦丽素</name></author><entry><title type="html">Sora: The paper you need to read</title><link href="https://ucas.io/ai/3d/Sora/" rel="alternate" type="text/html" title="Sora: The paper you need to read" /><published>2024-02-19T15:37:48+08:00</published><updated>2024-02-19T15:37:48+08:00</updated><id>https://ucas.io/ai/3d/Sora</id><content type="html" xml:base="https://ucas.io/ai/3d/Sora/">&lt;h2 id=&quot;papers&quot;&gt;Papers&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1704.00028v3&quot;&gt;Paper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;论文要点&quot;&gt;论文要点&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Wasserstein GAN
+  &lt;li&gt;Dall-e 3
     &lt;ul&gt;
-      &lt;li&gt;WGAN在训练过程中可能遇到不稳定性和收敛困难的问题，而WGAN-GP通过引入梯度惩罚项来替代权重裁剪，能够有效提升GAN的稳定性和训练效果。&lt;/li&gt;
-      &lt;li&gt;WGAN-GP中，通过对批次中真实样本和生成样本之间直线上的点进行采样，并对生成器的梯度进行惩罚来实现Lipschitz约束。这种方法能够在不进行任何超参数调整的情况下，稳定地训练各种GAN架构，包括具有101层ResNet的图像生成模型和连续生成器的语言模型。&lt;/li&gt;
-      &lt;li&gt;在实验中，通过对CIFAR-10和LSUN卧室数据集进行训练和生成，展示了WGAN-GP相对于传统权重裁剪方法在训练速度和样本质量上的改进。论文还对200个随机架构进行了训练并对比其性能，结果显示WGAN-GP能够成功训练大多数架构。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;需要理解KL散度，JS散度（KL的对称版）&lt;/li&gt;
-  &lt;li&gt;GAN
-    &lt;ul&gt;
-      &lt;li&gt;D(Y, θ)：其中相对熵被用神经网络训练(希望尽可能大-网络可以区分)&lt;/li&gt;
-      &lt;li&gt;G(X, θ)：希望两个分布尽可能相似(希望尽可能小)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;cvae-gan-fine-grained-image-generation-through-asymmetric-training&quot;&gt;CVAE-GAN: Fine-Grained Image Generation through Asymmetric Training&lt;/h3&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://kexue.fm/archives/4439&quot;&gt;互怼的艺术：从零直达WGAN-GP&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;table&gt;
-          &lt;tbody&gt;
-            &lt;tr&gt;
-              &lt;td&gt;[公众号：PaperWeekly 第41期&lt;/td&gt;
-              &lt;td&gt;互怼的艺术：从零直达 WGAN-GP](https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;amp;mid=2247484880&amp;amp;idx=1&amp;amp;sn=4b2e976cc715c9fe2d022ff6923879a8&amp;amp;chksm=96e9da50a19e5346307b54f5ce172e355ccaba890aa157ce50fda68eeaccba6ea05425f6ad76&amp;amp;scene=21#wechat_redirect)&lt;/td&gt;
-            &lt;/tr&gt;
-          &lt;/tbody&gt;
-        &lt;/table&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/bojone/gan/&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;[变分自编码器VAE：原来是这么一回事&lt;/td&gt;
-          &lt;td&gt;附开源代码 - PaperWeekly的文章 - 知乎](https://zhuanlan.zhihu.com/p/34998569)&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">WGAN-GP: Wasserstein GAN with Gradient Penalty</summary></entry><entry><title type="html">MeshNet Latent space</title><link href="https://ucas.io/3d/ai/Mesh-Latent-space/" rel="alternate" type="text/html" title="MeshNet Latent space" /><published>2023-08-20T17:14:46+08:00</published><updated>2023-08-20T17:14:46+08:00</updated><id>https://ucas.io/3d/ai/Mesh%20Latent%20space</id><content type="html" xml:base="https://ucas.io/3d/ai/Mesh-Latent-space/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;h4 id=&quot;deepsdf-learning-continuous-signed-distance-functions-for-shape-representation&quot;&gt;DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation&lt;/h4&gt;
-
-&lt;h5 id=&quot;text-to-3d&quot;&gt;text to 3d&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://3dfy.ai/&quot;&gt;3dfy&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;text to 3d, image to 3d&lt;/li&gt;
-      &lt;li&gt;objects
+      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2006.11807&quot;&gt;Improving Image Captioning with Better Use of Captions
+&lt;/a&gt;
         &lt;ul&gt;
-          &lt;li&gt;interiors: table lamps、sofa、table、ottoman、cutlery&lt;/li&gt;
-          &lt;li&gt;gaming：sword、shield、axes&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/682703025&quot;&gt;Dalle-3论文阅读 - nlpcver的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;提供API&lt;/li&gt;
-      &lt;li&gt;面像对象：GTA&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://3dfy.ai/technology&quot;&gt;架构和技术方案&lt;/a&gt;(没有具体写参照的论文)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dreamfusion3d.github.io/&quot;&gt;DreamFusion - google&lt;/a&gt;
+  &lt;li&gt;Vq-vae
     &lt;ul&gt;
-      &lt;li&gt;平均1.5小时&lt;/li&gt;
-      &lt;li&gt;文本-&amp;gt;2D图像-&amp;gt;优化为Nerf
+      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1711.00937&quot;&gt;Neural Discrete Representation Learning&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DiT
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2212.09748&quot;&gt;Scalable Diffusion Models with Transformers&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2206.03429&quot;&gt;Generating Long Videos of Dynamic Scenes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2104.10157&quot;&gt;VideoGPT: Video Generation using VQ-VAE and Transformer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2210.02303&quot;&gt;Imagen Video: High Definition Video Generation with Diffusion Models&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2304.08818&quot;&gt;Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2312.06662&quot;&gt;Photorealistic Video Generation with Diffusion Models&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2103.15691&quot;&gt;ViViT: A Video Vision Transformer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;长上下文训练
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2402.08268&quot;&gt;World Model on Million-Length Video And Language With RingAttention&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2309.14509&quot;&gt;DeepSpeed Ulysses: System Optimizations for Enabling Training of Extreme Long Sequence Transformer Models&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2401.12945&quot;&gt;Lumiere: A Space-Time Diffusion Model for Video Generation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/lucidrains/magvit2-pytorch&quot;&gt;magvit2&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;video vae encoder-decoder&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2307.06304&quot;&gt;Patch n’ Pack: NaViT, a Vision Transformer for any Aspect Ratio and Resolution&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2206.10789&quot;&gt;Scaling Autoregressive Models for Content-Rich Text-to-Image Generation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2203.12602&quot;&gt;VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2312.14125&quot;&gt;VideoPoet: A Large Language Model for Zero-Shot Video Generation&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;分辨率上不去&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><category term="3d" /><summary type="html">Papers</summary></entry><entry><title type="html">SparseCtrl: Adding Sparse Controls to Text-to-Video Diffusion Models</title><link href="https://ucas.io/ai/3d/SparseCtrl/" rel="alternate" type="text/html" title="SparseCtrl: Adding Sparse Controls to Text-to-Video Diffusion Models" /><published>2024-02-09T18:57:13+08:00</published><updated>2024-02-09T18:57:13+08:00</updated><id>https://ucas.io/ai/3d/SparseCtrl</id><content type="html" xml:base="https://ucas.io/ai/3d/SparseCtrl/">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2311.16933&quot;&gt;SparseCtrl&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209185739.png&quot; alt=&quot;20240209185739&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;论文主要验证了稀疏控制在text2video方面的作用&lt;/li&gt;
+      &lt;li&gt;原本的条件控制主要在稠密的视频流生成中起作用，但通过稀疏信号的控制一样可以得到较好的结果
         &lt;ul&gt;
-          &lt;li&gt;Score Jacobian Chaining(目前几乎所有的零样本开放域文生 3D 工作所使用的算法)&lt;/li&gt;
-          &lt;li&gt;问题：过于平滑、过饱和现象严重&lt;/li&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820201944.png&quot; alt=&quot;20230820201944&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;该方法在预训练的T2V模型之上增加了一个附加的条件编码器&lt;/li&gt;
+          &lt;li&gt;通过在帧间复制ControlNet编码器，并将条件图像添加到帧中，实现了条件信号在帧间的传播，以增强时间一致性&lt;/li&gt;
+          &lt;li&gt;通过计算生成视频中的关键帧的深度图像与原始视频中提取的深度图像之间的mse进行评估视频的事件一致性&lt;/li&gt;
+          &lt;li&gt;WebVid-10M数据集&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/ashawkey/stable-dreamfusion&quot;&gt;stable-dreamfusion&lt;/a&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2308.06721&quot;&gt;IpAdaptor&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209194938.png&quot; alt=&quot;20240209194938&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;IP-Adapter通过解耦的跨注意力策略，将图像特征嵌入到预训练的文本到图像扩散模型中实现图像提示能力&lt;/li&gt;
+      &lt;li&gt;将图像特征嵌入到预训练的文本到图像扩散模型中。IP-Adapter由图像编码器和带有解耦跨注意力的调整模块组成&lt;/li&gt;
+      &lt;li&gt;两个开源数据集（LAION-2B和COYO-700M）的大约1000万个文本-图像对&lt;/li&gt;
+      &lt;li&gt;IP-Adapter由图像编码器和带有解耦跨注意力的调整模块组成。图像编码器使用预训练的CLIP图像编码器从图像提示中提取图像特征。解耦的跨注意力策略通过在原始UNet模型中添加新的跨注意力层来嵌入图像特征，从而实现更有效的图像提示适配器。&lt;/li&gt;
+      &lt;li&gt;使用一个大规模的多模态数据集进行IP-Adapter的训练，其中包含来自不同数据集的文本-图像对。训练过程使用AdamW优化器进行，使用DeepSpeed ZeRO-2加速训练。进行了定量和定性的实验评估，比较IP-Adapter与其他适配器方法的性能和效果。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://daveredrum.github.io/Text2Tex/&quot;&gt;Text2Tex&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209203142.png&quot; alt=&quot;20240209203142&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;从多个视点逐步合成高分辨率的部分纹理。为了避免在视角变化过程中累积不一致和拉伸的伪影，作者将渲染的视图动态分割为生成掩模，表示每个可见像素的生成状态&lt;/li&gt;
+      &lt;li&gt;为了控制扩散过程中的随机性，引入了一个缩放因子γ，通过控制扩散步骤的数量来开始去噪潜在编码&lt;/li&gt;
+      &lt;li&gt;使用修复掩模指导采样过程&lt;/li&gt;
+      &lt;li&gt;通过视角投射和插值，减少纹理的伪影和拉伸问题&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><category term="3d" /><summary type="html">SparseCtrl 论文主要验证了稀疏控制在text2video方面的作用 原本的条件控制主要在稠密的视频流生成中起作用，但通过稀疏信号的控制一样可以得到较好的结果 该方法在预训练的T2V模型之上增加了一个附加的条件编码器 通过在帧间复制ControlNet编码器，并将条件图像添加到帧中，实现了条件信号在帧间的传播，以增强时间一致性 通过计算生成视频中的关键帧的深度图像与原始视频中提取的深度图像之间的mse进行评估视频的事件一致性 WebVid-10M数据集 IpAdaptor IP-Adapter通过解耦的跨注意力策略，将图像特征嵌入到预训练的文本到图像扩散模型中实现图像提示能力 将图像特征嵌入到预训练的文本到图像扩散模型中。IP-Adapter由图像编码器和带有解耦跨注意力的调整模块组成 两个开源数据集（LAION-2B和COYO-700M）的大约1000万个文本-图像对 IP-Adapter由图像编码器和带有解耦跨注意力的调整模块组成。图像编码器使用预训练的CLIP图像编码器从图像提示中提取图像特征。解耦的跨注意力策略通过在原始UNet模型中添加新的跨注意力层来嵌入图像特征，从而实现更有效的图像提示适配器。 使用一个大规模的多模态数据集进行IP-Adapter的训练，其中包含来自不同数据集的文本-图像对。训练过程使用AdamW优化器进行，使用DeepSpeed ZeRO-2加速训练。进行了定量和定性的实验评估，比较IP-Adapter与其他适配器方法的性能和效果。 Text2Tex 从多个视点逐步合成高分辨率的部分纹理。为了避免在视角变化过程中累积不一致和拉伸的伪影，作者将渲染的视图动态分割为生成掩模，表示每个可见像素的生成状态 为了控制扩散过程中的随机性，引入了一个缩放因子γ，通过控制扩散步骤的数量来开始去噪潜在编码 使用修复掩模指导采样过程 通过视角投射和插值，减少纹理的伪影和拉伸问题</summary></entry><entry><title type="html">AnimeDiff</title><link href="https://ucas.io/ai/3d/Deep-Image-Blend-copy/" rel="alternate" type="text/html" title="AnimeDiff" /><published>2024-02-09T18:40:45+08:00</published><updated>2024-02-09T18:40:45+08:00</updated><id>https://ucas.io/ai/3d/Deep%20Image%20Blend%20copy</id><content type="html" xml:base="https://ucas.io/ai/3d/Deep-Image-Blend-copy/">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2307.04725&quot;&gt;AnimeDiff&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209184118.png&quot; alt=&quot;20240209184139&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209184139.png&quot; alt=&quot;20240209184139&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;论文主要使用stablediffusion中增加animediff模块进行动画学习
         &lt;ul&gt;
-          &lt;li&gt;python + cuda&lt;/li&gt;
-          &lt;li&gt;
-            &lt;blockquote&gt;
-              &lt;p&gt;A pytorch implementation of the text-to-3D model Dreamfusion&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/thu-ml/prolificdreamer&quot;&gt;prolificdreamer - 清华 2023&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2305.16213&quot;&gt;Paper&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;Code: release soon&lt;/li&gt;
-          &lt;li&gt;DataSet: &lt;a href=&quot;https://arxiv.org/abs/2210.08402&quot;&gt;LAION-5B&lt;/a&gt;
+          &lt;li&gt;AnimeDiff包含3个模块
             &lt;ul&gt;
-              &lt;li&gt;A dataset consisting of 5.85 billion CLIP-filtered image-text pairs, featuring several nearest neighbor indices, an improved web-interface for exploration and subset generation, and detection scores for watermark, NSFW, and toxic content detection.&lt;/li&gt;
+              &lt;li&gt;domain adapter
+                &lt;ul&gt;
+                  &lt;li&gt;用于减轻基准T2I与视频培训数据之间的视觉分布差异&lt;/li&gt;
+                  &lt;li&gt;主要是由于不同视频之间的风格差异导致的&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;运动模块
+                &lt;ul&gt;
+                  &lt;li&gt;用于学习动画的运动先验&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;MotionLoRA
+                &lt;ul&gt;
+                  &lt;li&gt;通过针对上一帧的运动模块，进行运动的预测&lt;/li&gt;
+                  &lt;li&gt;数据集主要是一些带有运动信息的视频&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;VSD(Variational Score Distillation)变分得分蒸馏 + Nerf&lt;/li&gt;
-          &lt;li&gt;将3D优化转为2D图像概率分布&lt;/li&gt;
-          &lt;li&gt;解决了 DreamFusion 所提 SDS 算法的过饱和、过平滑、缺少多样性等问题&lt;/li&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820201728.png&quot; alt=&quot;20230820201728&quot; /&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820202131.png&quot; alt=&quot;20230820202131&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://developer.aliyun.com/article/1238277&quot;&gt;开发者社区 机器之心 文章 正文
-无需任何3D数据，直接文本生成高质量3D内容，清华朱军团队带来重大进展 - 阿里云&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://research.nvidia.com/labs/dir/magic3d/&quot;&gt;Magic3D - Nvidia&lt;/a&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><category term="3d" /><summary type="html">AnimeDiff 论文主要使用stablediffusion中增加animediff模块进行动画学习 AnimeDiff包含3个模块 domain adapter 用于减轻基准T2I与视频培训数据之间的视觉分布差异 主要是由于不同视频之间的风格差异导致的 运动模块 用于学习动画的运动先验 MotionLoRA 通过针对上一帧的运动模块，进行运动的预测 数据集主要是一些带有运动信息的视频</summary></entry><entry><title type="html">Deep Image Blend</title><link href="https://ucas.io/ai/3d/AnimeDiff/" rel="alternate" type="text/html" title="Deep Image Blend" /><published>2024-02-09T18:07:54+08:00</published><updated>2024-02-09T18:07:54+08:00</updated><id>https://ucas.io/ai/3d/AnimeDiff</id><content type="html" xml:base="https://ucas.io/ai/3d/AnimeDiff/">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/owenzlz/DeepImageBlending&quot;&gt;Deep Image Blend&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;平均40分钟&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/amusi1994/article/details/128030083&quot;&gt;一句话生成3D模型！NVIDIA提出Magic3D：高分辨率文本到3D内容创建 - CSDN&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Magic3D提出了一个两阶段的优化框架，通过使用不同分辨率的扩散先验进行粗到精的优化过程。这使得Magic3D能够生成更高分辨率的几何体和纹理。而DreamFusion在这方面存在限制，无法获取高分辨率的几何体和纹理。&lt;/li&gt;
-      &lt;li&gt;Magic3D采用了一种多分辨率哈希网格编码架构，使用具有32个隐藏单元的单层MLP来预测RGB颜色、体积密度和法线。同时，Magic3D还引入了密度基础剪枝方法来稀疏表示，并通过密度偏置来优化粗糙神经场表示。&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820210204.png&quot; alt=&quot;20230820210204&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/openai/shap-e&quot;&gt;Shap-E: Generating Conditional 3D Implicit Functions - 2023 - OpenAI&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;dataset：貌似是私有的&lt;/li&gt;
-      &lt;li&gt;隐式空间的编码器训练
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20240209180729.png&quot; alt=&quot;20240209180729&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;针对泊松融合的局限性，作者提出了Deep Image Blend
         &lt;ul&gt;
-          &lt;li&gt;点云-&amp;gt;点卷积-&amp;gt;交叉注意力-&amp;gt;patch-&amp;gt;隐式空间的编码表示&lt;/li&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820221546.png&quot; alt=&quot;20230820221546&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;泊松融合主要是参考融合边界处的像素信息，进行梯度最小的优化融合算法。&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;Latent Diffusion 条件扩散模型&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2212.08751&quot;&gt;Point-E: A System for Generating 3D Point Clouds from Complex Prompts - OpenAI&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;text -&amp;gt; point cloud -&amp;gt; mesh(based on sdf)&lt;/li&gt;
-      &lt;li&gt;基于文本生成合成视图，基于合成视图生成粗糙的点云，最后根据低分辨率点云和合成视图生成精细的点云。&lt;/li&gt;
-      &lt;li&gt;条件扩散模型&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xcfnhrYqKac&quot;&gt;youtube MeshNet++&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/iMoonLab/MeshNet&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">MeshNet</title><link href="https://ucas.io/3d/ai/MeshNet/" rel="alternate" type="text/html" title="MeshNet" /><published>2023-08-20T16:11:28+08:00</published><updated>2023-08-20T16:11:28+08:00</updated><id>https://ucas.io/3d/ai/MeshNet</id><content type="html" xml:base="https://ucas.io/3d/ai/MeshNet/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;h4 id=&quot;deepsdf-learning-continuous-signed-distance-functions-for-shape-representation&quot;&gt;DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation&lt;/h4&gt;
-
-&lt;h5 id=&quot;over-view&quot;&gt;Over View&lt;/h5&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820161208.png&quot; alt=&quot;20230820161208&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;数据处理&quot;&gt;数据处理&lt;/h5&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820162244.png&quot; alt=&quot;20230820162244&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;面旋转卷积&quot;&gt;面旋转卷积&lt;/h5&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820165548.png&quot; alt=&quot;20230820165548&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;面核卷积&quot;&gt;面核卷积&lt;/h5&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820165656.png&quot; alt=&quot;20230820165656&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;mesh-convolution&quot;&gt;mesh convolution&lt;/h5&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820162309.png&quot; alt=&quot;20230820162309&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;数据集
-    &lt;ul&gt;
-      &lt;li&gt;ModelNet40&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;代码
-    &lt;ul&gt;
-      &lt;li&gt;python&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/iMoonLab/MeshNet&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;论文要点&quot;&gt;论文要点&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;将输入转化为空间描述符合结构描述符两种，最后通过mesh 卷积得到全局特征&lt;/li&gt;
-  &lt;li&gt;结构描述符包含面核相关性、面旋转卷积
-    &lt;ul&gt;
-      &lt;li&gt;面核相关性由作者定义的函数进行计算&lt;/li&gt;
-      &lt;li&gt;面旋转卷积由名片各点到面中心的向量进行计算&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;空间描述符主要使用mesh中每个平面的几个中心直接进行MLP处理
-后续增加池化等，活动全局特征&lt;/li&gt;
-  &lt;li&gt;论文不提供重建过程，更多用于分类&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xcfnhrYqKac&quot;&gt;youtube MeshNet++&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/iMoonLab/MeshNet&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">DeepSDF</title><link href="https://ucas.io/3d/ai/DeepSDF/" rel="alternate" type="text/html" title="DeepSDF" /><published>2023-08-19T18:04:02+08:00</published><updated>2023-08-19T18:04:02+08:00</updated><id>https://ucas.io/3d/ai/DeepSDF</id><content type="html" xml:base="https://ucas.io/3d/ai/DeepSDF/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;h4 id=&quot;deepsdf-learning-continuous-signed-distance-functions-for-shape-representation&quot;&gt;DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230819180636.png&quot; alt=&quot;20230819180636&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230819194323.png&quot; alt=&quot;20230819194323&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;数据集
-    &lt;ul&gt;
-      &lt;li&gt;ShapeNet&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;代码
-    &lt;ul&gt;
-      &lt;li&gt;C++\python&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;学习连续的有符号距离函数（Signed Distance Function，SDF）
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Signed_distance_function&quot;&gt;WIKI SDF&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://www.bimant.com/blog/signed-distance-field-implementation/&quot;&gt;有符号距离场原理及实现&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/qq_41368247/article/details/106194092&quot;&gt;2D基本图形的Sign Distance Function (SDF)详解（上）&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;SDF的零极线，差不多是为0的等势面&lt;/li&gt;
-  &lt;li&gt;输入：
-    &lt;ul&gt;
-      &lt;li&gt;3D点云 + 噪声或缺失&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;用于训练SDF，并构建3D模型&lt;/li&gt;
-  &lt;li&gt;模型通过输入的部分和嘈杂的3D数据点，使用神经网络进行训练，并生成一个能够表示形状表面的连续距离函数。这个距离函数可以通过计算一个点到形状边界的距离，并根据符号指示区域是形状内部还是外部。通过学习这样的连续距离函数，模型能够实现对形状的表示、重建、插值和完成任务。&lt;/li&gt;
-  &lt;li&gt;DeepSDF通过神经网络将未知形状的表面表示为SDF的零级线，并可用于插值和完成部分和噪声3D数据。相比之前的方法，DeepSDF在学习的3D形状表示和完成任务上取得了最先进的性能。这项工作的关键创新之处在于引入了自动解码器（auto-decoder）的学习方案，将形状编码和网络参数联合进行优化，同时在数据准备、网络架构和实验设计等方面进行了深入的探索和分析。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The authors normalized each mesh to a unit sphere and sampled singed distance values for 500,000 spatial points. To capture greater geometric detail of the objects for better model training, sampling was most aggressive near surface areas.
-Compared with traditional auto-encoders with both encoder and decoder architectures, &lt;strong&gt;such decoder-only network&lt;/strong&gt;s make the model more compact while maintaining good performance.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;直接用隐变量去Auto-Decoder&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Training a specific neural network for each shape is neither
-feasible nor very useful. Instead, we want a model that
-can represent a wide variety of shapes, discover their common
-properties, and embed them in a low dimensional latent
-space. To this end, we introduce a latent vector z, which can
-be thought of as encoding the desired shape, as a second input
-to the neural network as depicted in Fig. 3b.
-&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230820005850.png&quot; alt=&quot;20230820005850&quot; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;notice&quot;&gt;Notice&lt;/h2&gt;
-
-&lt;p&gt;git&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Shape Completion
-The current release does not include code for shape completion. Please check back later!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/facebookresearch/DeepSDF&quot;&gt;https://github.com/facebookresearch/DeepSDF&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cameronrwolfe.substack.com/p/3d-generative-modeling-with-deepsdf&quot;&gt;3D Generative Modeling with DeepSDF&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://towardsdatascience.com/3d-generative-modeling-with-deepsdf-2cd06f1ec9b3&quot;&gt;3D Generative Modeling with DeepSDF&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/syncedreview/facebook-mit-uw-introduce-deepsdf-ai-for-3d-shape-representation-75416481e1be&quot;&gt;Facebook, MIT &amp;amp; UW Introduce DeepSDF AI for 3D Shape Representation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=LILRJzMQw5o&amp;amp;t=1s&quot;&gt;Youtube&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1iuLxJmQII0&quot;&gt;CSC2547 DeepSDF Learning Continuous Signed Distance Functions for Shape Representation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="3d" /><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Dreambooth</title><link href="https://ucas.io/ai/Dreambooth/" rel="alternate" type="text/html" title="Dreambooth" /><published>2023-07-08T18:59:17+08:00</published><updated>2023-07-08T18:59:17+08:00</updated><id>https://ucas.io/ai/Dreambooth</id><content type="html" xml:base="https://ucas.io/ai/Dreambooth/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;h4 id=&quot;dreambooth-fine-tuning-text-to-image-diffusion-models-for-subject-driven-generation&quot;&gt;DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation&lt;/h4&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;It’s like a photo booth, but once the subject is captured, it can be synthesized wherever your dreams take you.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230708190125.png&quot; alt=&quot;20230708190125&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;在微调层面，我们重新使用图片进行微调训练会导致几个问题
-    &lt;ul&gt;
-      &lt;li&gt;语言漂移【学了新的忘了旧的】
+      &lt;li&gt;本论文主要联合优化了3种不同的损失
         &lt;ul&gt;
-          &lt;li&gt;在大模型上微调之后，逐渐失去语言的句法和语义知识。即失去对一般知识的理解&lt;/li&gt;
+          &lt;li&gt;泊松融合损失、风格损失和内容损失&lt;/li&gt;
+          &lt;li&gt;风格损失合内容损失主要引入VGG的风格化向量&lt;/li&gt;
+          &lt;li&gt;通过迭代的方法保证了边界的过度&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;过度拟合
+      &lt;li&gt;论文还涉及了正则化损失，包括直方图损失和总变差损失，以提高图像的平滑度和稳定风格转换。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><category term="3d" /><summary type="html">Deep Image Blend 针对泊松融合的局限性，作者提出了Deep Image Blend 泊松融合主要是参考融合边界处的像素信息，进行梯度最小的优化融合算法。 本论文主要联合优化了3种不同的损失 泊松融合损失、风格损失和内容损失 风格损失合内容损失主要引入VGG的风格化向量 通过迭代的方法保证了边界的过度 论文还涉及了正则化损失，包括直方图损失和总变差损失，以提高图像的平滑度和稳定风格转换。</summary></entry><entry><title type="html">pytorch 扩展 安装</title><link href="https://ucas.io/ai/3d/pytorch-%E6%89%A9%E5%B1%95-%E5%AE%89%E8%A3%85/" rel="alternate" type="text/html" title="pytorch 扩展 安装" /><published>2023-12-30T23:19:05+08:00</published><updated>2023-12-30T23:19:05+08:00</updated><id>https://ucas.io/ai/3d/pytorch%20%E6%89%A9%E5%B1%95%20%E5%AE%89%E8%A3%85</id><content type="html" xml:base="https://ucas.io/ai/3d/pytorch-%E6%89%A9%E5%B1%95-%E5%AE%89%E8%A3%85/">&lt;h2 id=&quot;涉及项目&quot;&gt;涉及项目&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/xxlong0/Wonder3D&quot;&gt;Wonder3d&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;问题&lt;/strong&gt;：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fatal error: filesystem: No such file or directory&lt;/code&gt;
         &lt;ul&gt;
-          &lt;li&gt;如图所示，在输入狗的照片后，过拟合会导致狗的姿势一直趴在沙滩上，而非其他姿势&lt;/li&gt;
-          &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230708205425.png&quot; alt=&quot;20230708205425&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;解决方案，升级gcc到8.0以上&lt;/li&gt;
+          &lt;li&gt;参考
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_44128857/article/details/108554751&quot;&gt;Ubuntu问题——Ubuntu18.04 更新gcc和g++的版本号 - CSDN&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://github.com/NVlabs/tiny-cuda-nn/issues/337#issue-1800158950&quot;&gt;Failed to build tinycudann - git&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://askubuntu.com/a/1028656&quot;&gt;Install gcc-8 only on Ubuntu 18.04? - askubuntu&lt;/a&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;解决gcc-8和gcc7共存问题
+                    &lt;ul&gt;
+                      &lt;li&gt;安装高版本[&amp;gt;10]的gcc需要ppa的镜像站, 无国内镜像站
+                        &lt;ul&gt;
+                          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt install software-properties-common&lt;/code&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;add-apt-repository ppa:ubuntu-toolchain-r/test&lt;/code&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt update&lt;/code&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;安装gcc-8: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt install gcc-8 g++-8&lt;/code&gt;&lt;/li&gt;
+                  &lt;li&gt;安装gcc-7: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt install gcc-7 g++-7&lt;/code&gt;&lt;/li&gt;
+                  &lt;li&gt;配置gcc
+                    &lt;ul&gt;
+                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7&lt;/code&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8&lt;/code&gt;
+                        &lt;ul&gt;
+                          &lt;li&gt;中间的数字为优先级，在使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update-alternatives --config&lt;/code&gt;时生效&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;选择默认gcc:&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update-alternatives --config gcc&lt;/code&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Dreambooth的优势
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><category term="3d" /><summary type="html">涉及项目</summary></entry><entry><title type="html">pytorch 扩展 安装</title><link href="https://ucas.io/ai/3d/pytorch-%E6%89%A9%E5%B1%95-%E5%AE%89%E8%A3%85/" rel="alternate" type="text/html" title="pytorch 扩展 安装" /><published>2023-11-27T16:03:35+08:00</published><updated>2023-11-27T16:03:35+08:00</updated><id>https://ucas.io/ai/3d/pytorch%20%E6%89%A9%E5%B1%95%20%E5%AE%89%E8%A3%85</id><content type="html" xml:base="https://ucas.io/ai/3d/pytorch-%E6%89%A9%E5%B1%95-%E5%AE%89%E8%A3%85/">&lt;h2 id=&quot;涉及项目&quot;&gt;涉及项目&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/xxlong0/Wonder3D&quot;&gt;Wonder3d&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;使用了一个新的罕见词来代表图片的含义，保证新加入的图片对应的词在模型中没有其他太多含义&lt;/li&gt;
-      &lt;li&gt;区别于Textual inversion方法，Dreambooth使用罕见次，而textual inversion是新词。Dreambooth会对整个模型进行微调，而textual inversion只对embedding部分调整&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;问题&lt;/strong&gt;：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fatal error: filesystem: No such file or directory&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;解决方案，升级gcc到8.0以上&lt;/li&gt;
+          &lt;li&gt;参考
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_44128857/article/details/108554751&quot;&gt;Ubuntu问题——Ubuntu18.04 更新gcc和g++的版本号 - CSDN&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://github.com/NVlabs/tiny-cuda-nn/issues/337#issue-1800158950&quot;&gt;Failed to build tinycudann - git&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://askubuntu.com/a/1028656&quot;&gt;Install gcc-8 only on Ubuntu 18.04? - askubuntu&lt;/a&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;解决gcc-8和gcc7共存问题
+                    &lt;ul&gt;
+                      &lt;li&gt;安装高版本[&amp;gt;10]的gcc需要ppa的镜像站, 无国内镜像站
+                        &lt;ul&gt;
+                          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt install software-properties-common&lt;/code&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;add-apt-repository ppa:ubuntu-toolchain-r/test&lt;/code&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt update&lt;/code&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;安装gcc-8: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt install gcc-8 g++-8&lt;/code&gt;&lt;/li&gt;
+                  &lt;li&gt;安装gcc-7: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt install gcc-7 g++-7&lt;/code&gt;&lt;/li&gt;
+                  &lt;li&gt;配置gcc
+                    &lt;ul&gt;
+                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7&lt;/code&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8&lt;/code&gt;
+                        &lt;ul&gt;
+                          &lt;li&gt;中间的数字为优先级，在使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update-alternatives --config&lt;/code&gt;时生效&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;选择默认gcc:&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update-alternatives --config gcc&lt;/code&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><category term="3d" /><summary type="html">涉及项目</summary></entry><entry><title type="html">3d 生成 商业版本</title><link href="https://ucas.io/ai/3d/3d-%E7%94%9F%E6%88%90-%E5%95%86%E4%B8%9A%E7%89%88/" rel="alternate" type="text/html" title="3d 生成 商业版本" /><published>2023-11-22T10:52:22+08:00</published><updated>2023-11-22T10:52:22+08:00</updated><id>https://ucas.io/ai/3d/3d%20%E7%94%9F%E6%88%90%20%E5%95%86%E4%B8%9A%E7%89%88</id><content type="html" xml:base="https://ucas.io/ai/3d/3d-%E7%94%9F%E6%88%90-%E5%95%86%E4%B8%9A%E7%89%88/">&lt;h2 id=&quot;3d-mesh-生成&quot;&gt;3D Mesh 生成&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;web&lt;/th&gt;
+      &lt;th&gt;pipeline&lt;/th&gt;
+      &lt;th&gt;price&lt;/th&gt;
+      &lt;th&gt;result&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;labs.masterpiecex.com&lt;/td&gt;
+      &lt;td&gt;text-&amp;gt;3d&lt;/td&gt;
+      &lt;td&gt;3000c/36.99$/month, pic/50c&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231122110309.png&quot; alt=&quot;20231122110309&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;g3d.ai&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;waitlist&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ponzu.gg&lt;/td&gt;
+      &lt;td&gt;TypeError: Failed to fetch&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://www.prometheanai.com/&lt;/td&gt;
+      &lt;td&gt;Error&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;leonardo.ai&lt;/td&gt;
+      &lt;td&gt;depth-&amp;gt;texture&lt;/td&gt;
+      &lt;td&gt;6000t/month 48$/month&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mirageml.com&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;waitlist&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;pixela.ai&lt;/td&gt;
+      &lt;td&gt;stable diffusion&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://github.com/nv-tlabs/GET3D&lt;/td&gt;
+      &lt;td&gt;**&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;www.kaedim3d.com&lt;/td&gt;
+      &lt;td&gt;image-&amp;gt;3d&lt;/td&gt;
+      &lt;td&gt;60c/1000$/month&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://www.kinetix.tech&lt;/td&gt;
+      &lt;td&gt;animate&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://withpoly.com&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;waitlist&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://www.deepmotion.com/&lt;/td&gt;
+      &lt;td&gt;animate&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;scenario.com&lt;/td&gt;
+      &lt;td&gt;stable diffusion&lt;/td&gt;
+      &lt;td&gt;199$/month&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lumalabs.ai&lt;/td&gt;
+      &lt;td&gt;video-3d&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>麦丽素</name></author><category term="AI" /><category term="3d" /><summary type="html">3D Mesh 生成</summary></entry><entry><title type="html">3d Mesh 深度相关</title><link href="https://ucas.io/ai/3d/3d-Mesh-%E6%B7%B1%E5%BA%A6%E7%9B%B8%E5%85%B3/" rel="alternate" type="text/html" title="3d Mesh 深度相关" /><published>2023-11-12T15:05:17+08:00</published><updated>2023-11-12T15:05:17+08:00</updated><id>https://ucas.io/ai/3d/3d%20Mesh%20%E6%B7%B1%E5%BA%A6%E7%9B%B8%E5%85%B3</id><content type="html" xml:base="https://ucas.io/ai/3d/3d-Mesh-%E6%B7%B1%E5%BA%A6%E7%9B%B8%E5%85%B3/">&lt;h2 id=&quot;3d-mesh-深度学习&quot;&gt;3D Mesh 深度学习&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2106.02285&quot;&gt;Subdivision-Based Mesh Convolution Networks - TOG 2021&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112150600.png&quot; alt=&quot;20231112155640&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;通过细分网格，获得mesh网络的卷积关键面，将细分后的网格作为输入，进行卷积核池化运算，卷积运算即通过面榻缩的方式或者边榻缩的方式，将榻缩后的面作为卷积输出，同时，池化操作也很类似。&lt;/li&gt;
+      &lt;li&gt;作者还给出了不同strip参数和不同kernel参数做卷积运算时与原2d conv的类比图&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112155640.png&quot; alt=&quot;20231112155640&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;同时论文介绍了基于该思想的不同上采样方法&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;h2 id=&quot;3d-mesh-style-transfer&quot;&gt;3D Mesh style transfer&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dreambooth.github.io/&quot;&gt;dreambooth github&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/616245445&quot;&gt;【AI绘画】LoRA训练与正则化的真相：Dreambooth底层原理 - 秋葉aaaki的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/620577688&quot;&gt;stable diffusion——Dreambooth原理与实践 - 冲弱的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Lora</title><link href="https://ucas.io/ai/LORA/" rel="alternate" type="text/html" title="Lora" /><published>2023-07-08T02:24:17+08:00</published><updated>2023-07-08T02:24:17+08:00</updated><id>https://ucas.io/ai/LORA</id><content type="html" xml:base="https://ucas.io/ai/LORA/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;h4 id=&quot;lora-low-rank-adaptation-of-large-language-models&quot;&gt;LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230708022434.png&quot; alt=&quot;20230707020805&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;论文的基本假设，对于一个大模型，参数的秩通常是满的，但是对于一个特定领域的微调模型，存在一个更低维度的秩，使得模型可以适配于特定领域。因此，对于微调的模型，可以通过Lora的方式来训练&lt;/li&gt;
-  &lt;li&gt;其基本公式$W=W_0+\Delta W=W_0+BA$&lt;/li&gt;
-  &lt;li&gt;其中$B\in\reals^{d\times r},A\in\reals^{r\times k}$&lt;/li&gt;
-  &lt;li&gt;秩$r\llless\min(d, k)$&lt;/li&gt;
-  &lt;li&gt;对于$h=W_0x+\Delta Wx=W_0x+BAx$&lt;/li&gt;
-  &lt;li&gt;只需要适当训练BA即可&lt;/li&gt;
-  &lt;li&gt;其中A使用随机高斯初始化，B使用0初始化，因此，训练开始时$BA=0$&lt;/li&gt;
-  &lt;li&gt;该算法可以应用到大部分矩阵，例如对于Transformer[QKVO]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/619468521&quot;&gt;LoRA论文回顾 - 我是阿豪啊的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/611557340&quot;&gt;论文阅读：LORA-大型语言模型的低秩适应 - 小虎AI珏爷的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Palette: Image-to-Image Diffusion Models</title><link href="https://ucas.io/ai/Image-to-Image/" rel="alternate" type="text/html" title="Palette: Image-to-Image Diffusion Models" /><published>2023-07-07T02:18:17+08:00</published><updated>2023-07-07T02:18:17+08:00</updated><id>https://ucas.io/ai/Image-to-Image</id><content type="html" xml:base="https://ucas.io/ai/Image-to-Image/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;第一篇基于Conditional Diffusion 的 Image to Image 任务&lt;/li&gt;
-  &lt;li&gt;在训练Diffusion时，L1， L2的作用，以及self attention
+  &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S1524070323000280&quot;&gt;Neural Style Transfer for 3D Meshes&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;L1 和 L2的结果质量相似，但L2有更好的多样性&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112160950.png&quot; alt=&quot;20231112160950&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;是一种基于mesh conv net的3d风格迁移方法&lt;/li&gt;
+      &lt;li&gt;网络输入还是mesh的三角面片&lt;/li&gt;
+      &lt;li&gt;网路架构类似2d图片风格迁移，可以参考2016年李飞飞的风格迁移论文&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112162850.png&quot; alt=&quot;20231112162850&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;通过比较特征值之间的损失即可得到，同时，损失包含Content loss和style Loss, 在李飞飞2016的论文当中，同样存在两种loss&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020805.png&quot; alt=&quot;20230707020805&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;</content><author><name>麦丽素</name></author><category term="AI" /><category term="3d" /><summary type="html">3D Mesh 深度学习</summary></entry><entry><title type="html">3d Mesh 生成</title><link href="https://ucas.io/ai/3d/3d-Mesh-%E7%94%9F%E6%88%90/" rel="alternate" type="text/html" title="3d Mesh 生成" /><published>2023-10-13T15:25:57+08:00</published><updated>2023-10-13T15:25:57+08:00</updated><id>https://ucas.io/ai/3d/3d%20Mesh%20%E7%94%9F%E6%88%90</id><content type="html" xml:base="https://ucas.io/ai/3d/3d-Mesh-%E7%94%9F%E6%88%90/">&lt;h2 id=&quot;3d-mesh-生成&quot;&gt;3D Mesh 生成&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;损失函数增加了额外的条件信息x
-&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020620.png&quot; alt=&quot;20230707020620&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/p4vv37/NeuralNetworksSketchbook.git&quot;&gt;NeuralNetworksSketchbook - github&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;stable diffusion&lt;/li&gt;
+      &lt;li&gt;blender&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1698393912605.png&quot; alt=&quot;1698393912605&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;格栅化反传&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/TEXTurePaper/TEXTurePaper&quot;&gt;TEXTure: Text-Guided Texturing of 3D Shapes&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231027175344.png&quot; alt=&quot;20231027175344&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;iteration[“keep”, “refine”, “generate”]&lt;/li&gt;
+      &lt;li&gt;多较多球面参数化，获得高清纹理&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231027183619.png&quot; alt=&quot;20231027183619&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2306.17843&quot;&gt;Magic123 - One Image to High-Quality 3D Object Generation Using Both 2D and 3D Diffusion Priors&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;采用两阶段的3dmesh生成方法
+        &lt;ul&gt;
+          &lt;li&gt;第一阶段使用nerf生成粗糙的3d mesh表示&lt;/li&gt;
+          &lt;li&gt;第二阶段用可微的神经网络对粗糙的3d mesh表示进行精细化&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;引入了2D和3D扩散先验的结合&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112184946.png&quot; alt=&quot;20231112184946&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;论文中提到了姿势化，姿势化是指目标物体或人体在图像中的姿势和表情。在一个单一的未指定姿势的图像中，姿势化是指通过计算机视觉技术和深度学习模型，从图像中推断出物体或人体的三维姿势和形状&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.xxlong.site/Wonder3D/&quot;&gt;Wonder3D: Single Image to 3D using Cross-Domain Diffusion&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112190551.png&quot; alt=&quot;20231112190551&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;目前的3d生成任务，在面临多头一致性问题时，不管是边缝还是patch融合，作为一种后处理的方式，在基于nerf的求解框架下无法得到很好的解决，因此有很多基于2步的3d mesh和纹理生成任务的工作，但是这些工作都没有从根本上解决该问题，本论文提出了一种基于法向的mesh生成方案，在传统的mesh生成任务中，多头任务都是基于2d图片的，在2d图片中，法向信息被丢失，因此本文提出的wonder3d利用sd的扩散功能在生成2d images时，一并生成了对应角度的法向信息。同时，作者还引入了一种新颖的法线融合算法，可以从多视图的表示中提取出高质量的表面几何。&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231112191602.png&quot; alt=&quot;20231112191602&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2303.11328&quot;&gt;Zero123: Zero-shot One Image to 3D Object&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231230233016.png&quot; alt=&quot;20231230233016&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;使用合成数据集训练一个具有先验知识的大模型，用于对单张图片进行多视角的预测
+        &lt;ul&gt;
+          &lt;li&gt;数据合成使用blender进行渲染&lt;/li&gt;
+          &lt;li&gt;论文使用图片的相对视角进行合成&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;训练方法
+        &lt;ul&gt;
+          &lt;li&gt;算法目标，计算出合成图片$\hat{x}_{R,T}=f(x,R,T)$&lt;/li&gt;
+          &lt;li&gt;训练输入，${(x, x_{(R,T),R,T})}$&lt;/li&gt;
+          &lt;li&gt;其中，引入$c(x, R,T)$进行embedding：High-resolution image synthesis
+with latent diffusion models&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;算法管道: txt-&amp;gt;img-&amp;gt;3d&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2310.15110&quot;&gt;Zero123++: a Single Image to Consistent Multi-view Diffusion Base Model&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231231022408.png&quot; alt=&quot;20231231022408&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;使用多视图的联合分布，而不是单张图片，以进行更加完整的一致性&lt;/li&gt;
+      &lt;li&gt;改进了Condition，使用线性噪声表&lt;/li&gt;
+      &lt;li&gt;利用Depth control net进行控制(好像不是特别明显的贡献)&lt;/li&gt;
+      &lt;li&gt;主要对比了 zero123, zero123 xl, SyncDreamer&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2309.03453&quot;&gt;SyncDreamer: Generating Multiview-consistent Images from a Single-view Image&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231231030127.png&quot; alt=&quot;20231231030127&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;数据集
+        &lt;ul&gt;
+          &lt;li&gt;Google Scan Dataset&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;主要框架
+        &lt;ul&gt;
+          &lt;li&gt;使用目标视角进行通过unet训练，作者弄了个共享噪声预测器用于共享信息&lt;/li&gt;
+          &lt;li&gt;在图像生成方面，主要使用了zero123的生成能力，上图黄色部分为zero的模型&lt;/li&gt;
+          &lt;li&gt;论文好像水了一部分对比实验，在后文中，使用初始的stable diffusion进行对比，说效果比zero123差，额。。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2306.16928&quot;&gt;One-2-3-45: Any Single Image to 3D Mesh in 45 Seconds without Per-Shape Optimization&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231231032857.png&quot; alt=&quot;20231231032857&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;45秒左右将单个图像转换为高质量的360度纹理网格，无需进行形状优化&lt;/li&gt;
+      &lt;li&gt;几何重建通过引入了SDF信息，进行几何估计，主要用到了相机视角加图片的方法进行体素估计，再转化为SDF，最后进行拍照比对&lt;/li&gt;
+      &lt;li&gt;可以无缝地扩展到支持文本到3D的任务，为文本到网格生成等应用提供了可行的解决方案。&lt;/li&gt;
+      &lt;li&gt;图片生成也主要依赖于zero123
+        &lt;ul&gt;
+          &lt;li&gt;其中，对elevation的估计进行了优化&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/2308.16512&quot;&gt;MVDREAM: MULTI-VIEW DIFFUSION FOR 3D GENERATION&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20231231034409.png&quot; alt=&quot;20231231034409&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;灵感：视频-&amp;gt;3d&lt;/li&gt;
+      &lt;li&gt;改进了现有的Score Distillation Sampling（SDS）方法
+        &lt;ul&gt;
+          &lt;li&gt;SDS方法首先使用多视角扩散模型生成一组候选图像。然后，通过计算每个候选图像的分数，选择与输入文本条件最相匹配的候选图像&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;评分蒸馏采样&lt;/strong&gt; （SDS），它在参数空间而不是像素空间中进行采样
+            &lt;ul&gt;
+              &lt;li&gt;ProlificDream使用变分评分蒸馏(Variational Score Distillation，VSD)&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230707020103.png&quot; alt=&quot;20230707020103&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;h3 id=&quot;数据集&quot;&gt;数据集&lt;/h3&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;管道
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://gitee.com/Lili_Cheng/DeepSnakes/tree/master/generage_pipes_mesh&quot;&gt;DeepSnakes - gitee&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;</content><author><name>麦丽素</name></author><category term="AI" /><category term="3d" /><summary type="html">3D Mesh 生成</summary></entry><entry><title type="html">参数化</title><link href="https://ucas.io/ai/3d/%E5%8F%82%E6%95%B0%E5%8C%96/" rel="alternate" type="text/html" title="参数化" /><published>2023-09-28T15:47:38+08:00</published><updated>2023-09-28T15:47:38+08:00</updated><id>https://ucas.io/ai/3d/%E5%8F%82%E6%95%B0%E5%8C%96</id><content type="html" xml:base="https://ucas.io/ai/3d/%E5%8F%82%E6%95%B0%E5%8C%96/">&lt;h2 id=&quot;参数化-parameterization&quot;&gt;参数化 Parameterization&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/255169637&quot;&gt;网格参数化原理 - 1： Metric Distortion - Allan的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;比较经典&lt;/li&gt;
+      &lt;li&gt;【相容性网络】Compatible mesh
+        &lt;ul&gt;
+          &lt;li&gt;两个mesh的一一对应关系&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;球面参数化 Spherical parameterization
+        &lt;ul&gt;
+          &lt;li&gt;球面参数化度量&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;体参数化 Volumetric parameterization
+        &lt;ul&gt;
+          &lt;li&gt;四面体&lt;/li&gt;
+          &lt;li&gt;$\sigma_1\ge\sigma_2\ge\sigma_3$&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;几何映射 (Geometric Mapping)
+    &lt;ul&gt;
+      &lt;li&gt;$R-&amp;gt;R$ 函数对应&lt;/li&gt;
+      &lt;li&gt;$R^2\rightarrow R^2$&lt;/li&gt;
+      &lt;li&gt;$M\rightarrow R^2$&lt;/li&gt;
+      &lt;li&gt;$M\rightarrow S^2$&lt;/li&gt;
+      &lt;li&gt;$M\rightarrow M’$&lt;/li&gt;
+      &lt;li&gt;$R^3\rightarrow R^3$&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/imgd04569fbaac510add8cd8a9b507021e.jpg&quot; alt=&quot;d04569fbaac510add8cd8a9b507021e&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;低维嵌入
+    &lt;ul&gt;
+      &lt;li&gt;高纬数据可能存在低维结构&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV18T411P7hT/?share_source=copy_web&quot;&gt;【GAMES301-曲面参数化】&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;雅克比矩阵，用于衡量曲面扭曲情况&lt;/li&gt;
+      &lt;li&gt;参数化方法
+        &lt;ul&gt;
+          &lt;li&gt;线性方法
+            &lt;ul&gt;
+              &lt;li&gt;Tutte 1963; Floater 1997
+                &lt;ul&gt;
+                  &lt;li&gt;变形&lt;/li&gt;
+                  &lt;li&gt;Euclidean-orbifold Aigerman et. al. 2015&lt;/li&gt;
+                  &lt;li&gt;Hyperbolic-orbifold Aigerman et. al. 2016&lt;/li&gt;
+                  &lt;li&gt;Spherical-orbifold Aigerman et. al. 2017&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;将mesh的边界映射到凸二维图形中，通过线性方法(求解器)，得到一个一定不会翻转的参数化方法&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;但是会产生高扭曲&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;优化方法
+            &lt;ul&gt;
+              &lt;li&gt;都会产生翻转，因此需要后处理，一步步让翻转消失&lt;/li&gt;
+              &lt;li&gt;As-rigid-as-possible(ARAP) Liu et al. 2008 &lt;strong&gt;刘利刚&lt;/strong&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;CGAL包含&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;ABF/ABF++ Sheffer et al. 2005
+                &lt;ul&gt;
+                  &lt;li&gt;保角&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;Simplex Assembly Fu and Liu 2016 2016 &lt;strong&gt;刘利刚&lt;/strong&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;保角&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;保证无翻转的参数化优化
+            &lt;ul&gt;
+              &lt;li&gt;先保证无翻转，再优化&lt;/li&gt;
+              &lt;li&gt;形变量度量
+                &lt;ul&gt;
+                  &lt;li&gt;
+                    &lt;table&gt;
+                      &lt;thead&gt;
+                        &lt;tr&gt;
+                          &lt;th&gt;方法&lt;/th&gt;
+                          &lt;th&gt;Conformal&lt;/th&gt;
+                          &lt;th&gt;Maximal Isometric Distortion&lt;/th&gt;
+                          &lt;th&gt;MIPS&lt;/th&gt;
+                          &lt;th&gt;isometric&lt;/th&gt;
+                          &lt;th&gt;Symmetric Dirichlet energy&lt;/th&gt;
+                        &lt;/tr&gt;
+                      &lt;/thead&gt;
+                      &lt;tbody&gt;
+                        &lt;tr&gt;
+                          &lt;td&gt;年份&lt;/td&gt;
+                          &lt;td&gt;Degener et al. 2003&lt;/td&gt;
+                          &lt;td&gt;Sorikine et al. 2002&lt;/td&gt;
+                          &lt;td&gt;Hormann and Greiner 2000&lt;/td&gt;
+                          &lt;td&gt;Aigermann et al. 2014&lt;/td&gt;
+                          &lt;td&gt;Smith and Schaefer 2015&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                          &lt;td&gt;度量&lt;/td&gt;
+                          &lt;td&gt;$\frac{\sigma_2}{\color{red}{\sigma_1}}$&lt;/td&gt;
+                          &lt;td&gt;$\max(\sigma_2, \frac{1}{\color{red}{\sigma_1}})$&lt;/td&gt;
+                          &lt;td&gt;$\frac{\color{red}{\sigma_1}}{\sigma_2} + \frac{\sigma_2}{\color{red}{\sigma_1}}$&lt;/td&gt;
+                          &lt;td&gt;$\sqrt{\sigma_2^2+\frac{1}{\color{red}{\sigma_1^2}}}$&lt;/td&gt;
+                          &lt;td&gt;$\sigma_2^2+\frac{1}{\color{red}{\sigma_1^2}}+{\color{red}{\sigma_1^2}}+\frac{1}{\sigma_2^2}$&lt;/td&gt;
+                        &lt;/tr&gt;
+                      &lt;/tbody&gt;
+                    &lt;/table&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/89934333&quot;&gt;微分几何笔记(2) —— 曲线的参数化 - Silence的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;曲线微分&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/89975877&quot;&gt;微分几何笔记(4) —— 二维三维空间中曲线的曲率以及环绕数 - Silence的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;基函数拟合&quot;&gt;基函数拟合&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img1696341320569.jpg&quot; alt=&quot;1696341320569&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://juejin.cn/post/7089391423362957325&quot;&gt;图形学基础——傅里叶变换及球谐函数&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/351289217&quot;&gt;球谐函数介绍（Spherical Harmonics） - 浦夜的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/655283202&quot;&gt;球谐函数原理 - 爅一点都不黑的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;球谐函数推导&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://link.zhihu.com/?target=https%3A//ulyanadupletsa.github.io/SphericalCoordinates.pdf&quot;&gt;Laplacian in Spherical Coordinates.pdf&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://2uv.xyz/post/maths/sh/#-%E7%90%83%E8%B0%90%E5%87%BD%E6%95%B0&quot;&gt;渲染中的球谐函数及Deringing - Far Land&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;比较全面🤙&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/401892655&quot;&gt;球谐光照 从入门到放弃 - 王俊杰 hybrid的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;没看懂&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;
     &lt;table&gt;
       &lt;tbody&gt;
         &lt;tr&gt;
-          &lt;td&gt;[注意力机制的本质&lt;/td&gt;
-          &lt;td&gt;Self-Attention&lt;/td&gt;
-          &lt;td&gt;Transformer&lt;/td&gt;
-          &lt;td&gt;QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f)&lt;/td&gt;
+          &lt;td&gt;[Non Uniform DFT&lt;/td&gt;
+          &lt;td&gt;非均匀离散傅里叶变换&lt;/td&gt;
+          &lt;td&gt;NDFT # 介绍 - 向阳的文章 - 知乎](https://zhuanlan.zhihu.com/p/348240324)&lt;/td&gt;
         &lt;/tr&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1814y1S7US/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;Cross Attention _ Method Explanation _ Math Explained - BiliBili&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Introduction</summary></entry><entry><title type="html">Self-Attention</title><link href="https://ucas.io/ai/Self-Attention/" rel="alternate" type="text/html" title="Self-Attention" /><published>2023-07-04T22:18:17+08:00</published><updated>2023-07-04T22:18:17+08:00</updated><id>https://ucas.io/ai/Self-Attention</id><content type="html" xml:base="https://ucas.io/ai/Self-Attention/">&lt;h2 id=&quot;self-attention&quot;&gt;Self-Attention&lt;/h2&gt;
-
-&lt;p&gt;以腰围和身高举例&lt;/p&gt;
-
-&lt;p&gt;腰围是K，身高是V，有对应关系。这时我希望用Q对合适的K进行查询，Q也是腰围，我希望得到合适的V，一般情况下我需要计算各个腰围K的权重并与V相乘，得到最终结果
-若KQV矩阵是自身，则是自注意力机制。&lt;/p&gt;
-
-&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;h3 id=&quot;self-attention-1&quot;&gt;Self Attention&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704231311.png&quot; alt=&quot;20230704231311&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222448.png&quot; alt=&quot;20230704222448&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704222250.png&quot; alt=&quot;20230704222250&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704230909.png&quot; alt=&quot;20230704230909&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;cross-attention&quot;&gt;Cross Attention&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704230959.png&quot; alt=&quot;20230704230959&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230704231126.png&quot; alt=&quot;20230704231126&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;vitvision-transformer解析&quot;&gt;ViT（Vision Transformer）解析&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230918191122.png&quot; alt=&quot;20230918191122&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;[注意力机制的本质&lt;/td&gt;
-          &lt;td&gt;Self-Attention&lt;/td&gt;
-          &lt;td&gt;Transformer&lt;/td&gt;
-          &lt;td&gt;QKV矩阵 - BiliBili](https://www.bilibili.com/video/BV1dt4y1J7ov/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f)&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1814y1S7US/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;Cross Attention _ Method Explanation _ Math Explained - BiliBili&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/47282410&quot;&gt;Attention机制详解（二）——Self-Attention与Transformer - 川陀学者的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/98863801&quot;&gt;从ReLU到GELU，一文概览神经网络的激活函数 - 机器之心的文章 - 知乎&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;Transformer中使用GELU&lt;/li&gt;
+      &lt;li&gt;非均匀傅里叶&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/445122996&quot;&gt;ViT（Vision Transformer）解析 - 德怀特的文章 - 知乎&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/423540067&quot;&gt;一文搞明白离散傅里叶变换之作用和威力！ - 数理爱好者的文章 - 知乎&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;图片Transformer&lt;/li&gt;
+      &lt;li&gt;有公式推导&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/558574918/answer/2711404815&quot;&gt;VAE、GAN 这种生成模型和 transformer 有什么区别？ - 知乎用户的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/106644634&quot;&gt;一文读懂Transformer模型的位置编码 - 眺望远方的龙的文章 - 知乎&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;位置编码&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230918195627.png&quot; alt=&quot;20230918195627&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/57732839&quot;&gt;自注意力与位置编码 - 机器学习小谈的文章 - 知乎&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230919172214.png&quot; alt=&quot;20230919172214&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/391337035&quot;&gt;【时间序列】Transformer for TimeSeries时序预测算法详解 - VoidOc的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://transformers.run/back/transformer/&quot;&gt;第二章：Transformer 模型&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;英文原文&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/48508221&quot;&gt;详解Transformer （Attention Is All You Need） - 大师兄的文章 - 知乎&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer - Alammar&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://luweikxy.gitbook.io/machine-learning-notes/self-attention-and-transformer&quot;&gt;Self-Attention机制和Transformer&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Self-Attention</summary></entry><entry><title type="html">ControlNet</title><link href="https://ucas.io/ai/ControlNet/" rel="alternate" type="text/html" title="ControlNet" /><published>2023-07-03T02:13:07+08:00</published><updated>2023-07-03T02:13:07+08:00</updated><id>https://ucas.io/ai/ControlNet</id><content type="html" xml:base="https://ucas.io/ai/ControlNet/">&lt;h2 id=&quot;controlnet&quot;&gt;ControlNet&lt;/h2&gt;
-
-&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;利用Stable Diffusion的Copy，对模型的控制模型进行额外的训练。同时对Stable Diffusion的模型进行冻结，转成对ControlNet进行训练&lt;/li&gt;
-  &lt;li&gt;ControlNet的初始化使用Zero Convolution, 初始化为0的卷积核为1的卷积层。&lt;/li&gt;
-  &lt;li&gt;对每次的输出运算同步到Stable Diffusion当中&lt;/li&gt;
-  &lt;li&gt;实际网络连接
-&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230703021632.png&quot; alt=&quot;20230703021632&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/22611929/answer/341436331&quot;&gt;二维傅里叶变换是怎么进行的？ - CharlyGordon的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/68713342&quot;&gt;如何评价球面卷积神经网络(Spherical CNNs)？ - 知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/660428438&quot;&gt;球面傅立叶变换（SFT，Spherical Fourier Transform） - destroyer的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;h2 id=&quot;三维曲面映射&quot;&gt;三维曲面映射&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;[ ]&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/pdf/2302.05543.pdf&quot;&gt;Adding Conditional Control to Text-to-Image Diffusion Models - arxiv&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV13x4y1w7k1/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;ControlNet - BiliBili&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">ControlNet</summary></entry><entry><title type="html">Diffusion Model</title><link href="https://ucas.io/ai/Diffusion-Model/" rel="alternate" type="text/html" title="Diffusion Model" /><published>2023-07-02T19:05:29+08:00</published><updated>2023-07-02T19:05:29+08:00</updated><id>https://ucas.io/ai/Diffusion-Model</id><content type="html" xml:base="https://ucas.io/ai/Diffusion-Model/">&lt;h2 id=&quot;diffusion-model&quot;&gt;Diffusion Model&lt;/h2&gt;
-
-&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;算法主要分为2个部分，第一步讲解关于扩散模型的数据来源和扩散的推导理论，第二部讲解关于反向递推的过程
-其中，模型预测的为上一步的噪音值，而非真实值。&lt;/p&gt;
-
-&lt;p&gt;$\alpha_t=1-\beta_t, beta=0.00001 to 0.002, step =200$&lt;/p&gt;
-
-&lt;p&gt;$x_t=\sqrt{\alpha_t}x_{t-1}+\sqrt{1-\alpha_t}z_1$&lt;/p&gt;
-
-&lt;p&gt;$x_{t-1}=\sqrt{\alpha_{t-1}}x_{t-2}+\sqrt{1-\alpha_{t-1}}z_2$&lt;/p&gt;
-
-&lt;p&gt;$x_t=\sqrt{\alpha_t\alpha_{t-1}}x_{t-2}+\sqrt{1-\alpha_t\alpha_{t-1}}\bar{z_2}$&lt;/p&gt;
-
-&lt;p&gt;$x_t=\sqrt{\bar{\alpha_t}}x_0+\sqrt{1-\bar{\alpha_t}}\bar{z_t}$&lt;/p&gt;
-
-&lt;h3 id=&quot;sample&quot;&gt;Sample&lt;/h3&gt;
-
-&lt;p&gt;采样过程即增加噪音的过程，噪音服从正太分布，每一步的权重根据步骤会进行变化，可以理解为，开始加的噪音小，后面加的噪音大。
-每一步增加的噪音服从正态分布，因此可以根据给定$x_0$得知任意时刻的$x_t$。将每一步增加的噪音值作为GT，通过$x_t$预测$x_{t-1}$时所增加的噪音值&lt;/p&gt;
-
-&lt;p&gt;权重推导&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230705013847.png&quot; alt=&quot;20230705013847&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702195416.png&quot; alt=&quot;20230702195416&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;training&quot;&gt;Training&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/FavorMylikes/hackmd-note/img/img20230702195612.png&quot; alt=&quot;20230702195612&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;训练过程使用了UNet作为噪音的编解码模型对噪音进行预测
-discriminator&lt;/p&gt;
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/cj-express-tech-tildi/stable-diffusion-theory-and-application-a0f98881cb03&quot;&gt;Stable Diffusion: Theory and Applications - medium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV13h411V7vg?p=2&amp;amp;vd_source=fd373f40f4a1d2e059be533c5b77797f&quot;&gt;Diffusion - BiliBili&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/548112711&quot;&gt;扩散模型 Diffusion Models - 原理篇 - 荏苒岁月的文章 - 知乎&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ilovematlab.cn/thread-288157-1-1.html?_dsign=f69799a5&quot;&gt;已知离散点坐标，拟合成封闭曲面&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/607755371&quot;&gt;三维散点图曲面拟合 - 奶香小饼干的文章 - 知乎&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;有代码有图，有原理&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/639540034&quot;&gt;diffusion model（二）—— DDIM（将diffusion model 提速50倍！） - 莫叶何竹的文章 - 知乎&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;DDIM(denoising diffusion implicit models)和DDPM(denoising diffusion probabilistic)的区别&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
+      &lt;li&gt;未解决&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/625386246&quot;&gt;【AIGC第十三篇】Diffusion Autoencoders：基于latent space控制的图像生成技术 - 笑书神侠的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/627133524&quot;&gt;深入浅出讲解Stable Diffusion原理，新手也能看明白 - 北方的郎的文章 - 知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><summary type="html">Diffusion Model</summary></entry></feed>
+  &lt;li&gt;&lt;a href=&quot;https://pages.mtu.edu/~shene/COURSES/cs3621/NOTES/surface/bspline-construct.html&quot;&gt;mtu 教学&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/qq_37340588/article/details/128181123&quot;&gt;B样条曲线 - CSDN&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;$R_1\rightarrow R_2$, $R_1\rightarrow R_3$&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/528642680&quot;&gt;B样条曲线。 - 结庐在人境的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;公式多，可以自己代入运算&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/supuo/b-spline&quot;&gt;球面拟合+B样条&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/468238804&quot;&gt;计算机图形学基础 - 纹理映射 - pozero的文章 - 知乎&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;球面映射&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/pizibing880909/article/details/28910835&quot;&gt;图形学领域的关键算法及源码链接&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;包含一大堆代码&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.numerical-tours.com/matlab/meshdeform_2_parameterization_sphere/&quot;&gt;Spherical Mesh Parameterization&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;matlab代码&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;重要&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/garyptchoi/spherical-conformal-map#spherical-conformal-map&quot;&gt;spherical-conformal-map 2017 - git&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;matlab代码&lt;/li&gt;
+      &lt;li&gt;比上面的快&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>麦丽素</name></author><category term="AI" /><category term="3d" /><summary type="html">参数化 Parameterization</summary></entry></feed>
